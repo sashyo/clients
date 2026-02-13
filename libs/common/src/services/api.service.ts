@@ -1316,7 +1316,12 @@ export class ApiService implements ApiServiceAbstraction {
   }
 
   async fetch(request: Request): Promise<Response> {
-    if (!request.url.startsWith("https://") && !this.platformUtilsService.isDev()) {
+    if (
+      !request.url.startsWith("https://") &&
+      !request.url.startsWith("http://localhost") &&
+      !request.url.startsWith("http://127.0.0.1") &&
+      !this.platformUtilsService.isDev()
+    ) {
       throw new InsecureUrlNotAllowedError();
     }
 

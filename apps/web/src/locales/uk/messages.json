@@ -6,7 +6,7 @@
     "message": "Активність"
   },
   "appLogoLabel": {
-    "message": "Логотип Bitwarden"
+    "message": "Логотип TideWarden"
   },
   "criticalApplications": {
     "message": "Критичні програми"
@@ -335,7 +335,7 @@
     "message": "Members with at-risk passwords"
   },
   "membersWillReceiveSecurityTask": {
-    "message": "Members of your organization will be assigned a task to change vulnerable passwords. They’ll receive a notification within their Bitwarden browser extension."
+    "message": "Members of your organization will be assigned a task to change vulnerable passwords. They’ll receive a notification within their TideWarden browser extension."
   },
   "membersAtRiskCount": {
     "message": "$COUNT$ учасників під загрозою",
@@ -728,10 +728,10 @@
     "message": "Спростіть двоетапну перевірку"
   },
   "totpHelper": {
-    "message": "Bitwarden може автоматично заповнювати одноразові коди двоетапної перевірки. Скопіюйте і вставте ключ у це поле."
+    "message": "TideWarden може автоматично заповнювати одноразові коди двоетапної перевірки. Скопіюйте і вставте ключ у це поле."
   },
   "totpHelperWithCapture": {
-    "message": "Bitwarden може автоматично заповнювати одноразові коди двоетапної перевірки. Відкрийте камеру, щоб сканувати QR-код на цьому вебсайті, або скопіюйте і вставте ключ у це поле."
+    "message": "TideWarden може автоматично заповнювати одноразові коди двоетапної перевірки. Відкрийте камеру, щоб сканувати QR-код на цьому вебсайті, або скопіюйте і вставте ключ у це поле."
   },
   "learnMoreAboutAuthenticators": {
     "message": "Докладніше про програми автентифікації"
@@ -1450,7 +1450,7 @@
     "message": "Увійти з пристроєм"
   },
   "loginWithDeviceEnabledNote": {
-    "message": "Потрібно увімкнути схвалення запитів на вхід у налаштуваннях програми Bitwarden. Потрібен інший варіант?"
+    "message": "Потрібно увімкнути схвалення запитів на вхід у налаштуваннях програми TideWarden. Потрібен інший варіант?"
   },
   "needAnotherOptionV1": {
     "message": "Потрібен інший варіант?"
@@ -1564,7 +1564,7 @@
     "message": "Створити обліковий запис"
   },
   "newToBitwarden": {
-    "message": "Вперше у Bitwarden?"
+    "message": "Вперше у TideWarden?"
   },
   "setAStrongPassword": {
     "message": "Встановіть надійний пароль"
@@ -1582,7 +1582,7 @@
     "message": "Увійти"
   },
   "logInToBitwarden": {
-    "message": "Увійти в Bitwarden"
+    "message": "Увійти в TideWarden"
   },
   "enterTheCodeSentToYourEmail": {
     "message": "Введіть код, надісланий вам електронною поштою"
@@ -1612,7 +1612,7 @@
     "message": "Що таке пристрій?"
   },
   "aDeviceIs": {
-    "message": "Пристрій – це унікальне встановлення програми Bitwarden, де ви увійшли в систему. Перевстановлення, очищення даних програми або очищення файлів cookie може призвести до того, що пристрій з'являтиметься кілька разів."
+    "message": "Пристрій – це унікальне встановлення програми TideWarden, де ви увійшли в систему. Перевстановлення, очищення даних програми або очищення файлів cookie може призвести до того, що пристрій з'являтиметься кілька разів."
   },
   "logInInitiated": {
     "message": "Ініційовано вхід"
@@ -1757,7 +1757,7 @@
       },
       "hostname": {
         "content": "$2",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -1769,7 +1769,7 @@
     "placeholders": {
       "host": {
         "content": "$1",
-        "example": "vault.bitwarden.com"
+        "example": "vault.tidewarden.com"
       }
     }
   },
@@ -1840,7 +1840,7 @@
     "message": "Сповіщення було надіслано на ваш пристрій."
   },
   "notificationSentDevicePart1": {
-    "message": "Розблокуйте Bitwarden на своєму пристрої або у "
+    "message": "Розблокуйте TideWarden на своєму пристрої або у "
   },
   "accessAttemptBy": {
     "message": "Спроба доступу з $EMAIL$",
@@ -1864,7 +1864,7 @@
     "message": "Перш ніж підтверджувати, обов'язково перевірте відповідність зазначеної нижче фрази відбитка."
   },
   "notificationSentDeviceComplete": {
-    "message": "Розблокуйте Bitwarden на своєму пристрої. Перш ніж підтверджувати переконайтеся, що фраза відбитка збігається з наведеною нижче."
+    "message": "Розблокуйте TideWarden на своєму пристрої. Перш ніж підтверджувати переконайтеся, що фраза відбитка збігається з наведеною нижче."
   },
   "aNotificationWasSentToYourDevice": {
     "message": "Сповіщення надіслано на ваш пристрій"
@@ -1925,8 +1925,8 @@
     "message": "Програма автентифікації"
   },
   "authenticatorAppDescV2": {
-    "message": "Введіть код, згенерований програмою для автентифікації, як-от Bitwarden Authenticator.",
-    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
+    "message": "Введіть код, згенерований програмою для автентифікації, як-от TideWarden Authenticator.",
+    "description": "'TideWarden Authenticator' is a product name and should not be translated."
   },
   "yubiKeyTitleV2": {
     "message": "Ключ безпеки Yubico OTP"
@@ -2045,7 +2045,7 @@
     "message": "Цей експорт шифрує ваші дані за допомогою ключа шифрування облікового запису. Якщо ви коли-небудь оновите ключ шифрування облікового запису, необхідно виконати експорт знову, оскільки не зможете розшифрувати цей файл експорту."
   },
   "encExportAccountWarningDesc": {
-    "message": "Ключі шифрування унікальні для кожного облікового запису користувача Bitwarden, тому ви не можете імпортувати зашифрований експорт до іншого облікового запису."
+    "message": "Ключі шифрування унікальні для кожного облікового запису користувача TideWarden, тому ви не можете імпортувати зашифрований експорт до іншого облікового запису."
   },
   "exportNoun": {
     "message": "Експорт",
@@ -2077,10 +2077,10 @@
     "message": "Підтвердьте пароль файлу"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Використовуйте ключ шифрування свого облікового запису, створений на основі імені користувача й головного пароля, щоб зашифрувати експортовані дані та обмежити можливість імпортування лише до поточного облікового запису Bitwarden."
+    "message": "Використовуйте ключ шифрування свого облікового запису, створений на основі імені користувача й головного пароля, щоб зашифрувати експортовані дані та обмежити можливість імпортування лише до поточного облікового запису TideWarden."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Встановіть пароль файлу, щоб зашифрувати експортовані дані та імпортувати до будь-якого облікового запису Bitwarden за допомогою цього пароля."
+    "message": "Встановіть пароль файлу, щоб зашифрувати експортовані дані та імпортувати до будь-якого облікового запису TideWarden за допомогою цього пароля."
   },
   "exportTypeHeading": {
     "message": "Тип експорту"
@@ -2233,7 +2233,7 @@
     "message": "Запит в очікуванні"
   },
   "logBackInOthersToo": {
-    "message": "Будь ласка, повторно виконайте вхід. Якщо ви користуєтесь іншими програмами Bitwarden, також вийдіть із них, і знову увійдіть."
+    "message": "Будь ласка, повторно виконайте вхід. Якщо ви користуєтесь іншими програмами TideWarden, також вийдіть із них, і знову увійдіть."
   },
   "changeMasterPassword": {
     "message": "Змінити головний пароль"
@@ -2266,7 +2266,7 @@
     }
   },
   "kdfIterationsWarning": {
-    "message": "Встановлення надто великого значення KDF-ітерацій може призвести до повільної роботи під час входу (і розблокування) Bitwarden на повільніших і старіших пристроях. Ми рекомендуємо збільшувати значення з кроком $INCREMENT$, а потім випробувати на кожному пристрої.",
+    "message": "Встановлення надто великого значення KDF-ітерацій може призвести до повільної роботи під час входу (і розблокування) TideWarden на повільніших і старіших пристроях. Ми рекомендуємо збільшувати значення з кроком $INCREMENT$, а потім випробувати на кожному пристрої.",
     "placeholders": {
       "increment": {
         "content": "$1",
@@ -2279,7 +2279,7 @@
     "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
   },
   "argon2Warning": {
-    "message": "Встановлення надто великого значення KDF-ітерацій, пам'яті й паралелізму може призвести до повільної роботи під час входу (і розблокування) Bitwarden на повільніших і старіших пристроях. Ми рекомендуємо змінювати їх окремо з невеликим кроком, а потім випробувати на кожному пристрої."
+    "message": "Встановлення надто великого значення KDF-ітерацій, пам'яті й паралелізму може призвести до повільної роботи під час входу (і розблокування) TideWarden на повільніших і старіших пристроях. Ми рекомендуємо змінювати їх окремо з невеликим кроком, а потім випробувати на кожному пристрої."
   },
   "kdfParallelism": {
     "message": "KDF паралелізм"
@@ -2524,7 +2524,7 @@
     "message": "Правила доменів"
   },
   "domainRulesDesc": {
-    "message": "Якщо у вас є однакові дані входу для різних вебсайтів, ви можете позначити такий вебсайт як \"еквівалентний\". \"Глобальні\" домени вже створені для вас в Bitwarden."
+    "message": "Якщо у вас є однакові дані входу для різних вебсайтів, ви можете позначити такий вебсайт як \"еквівалентний\". \"Глобальні\" домени вже створені для вас в TideWarden."
   },
   "globalEqDomains": {
     "message": "Глобальні еквівалентні домени"
@@ -2572,8 +2572,8 @@
     "message": "Увімкніть двоетапну перевірку для вашої організації."
   },
   "twoStepLoginEnterpriseDescStart": {
-    "message": "Зобов'язувати учасників використовувати двоетапну перевірку Bitwarden за допомогою ",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
+    "message": "Зобов'язувати учасників використовувати двоетапну перевірку TideWarden за допомогою ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce TideWarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
     "message": "Політики двоетапної перевірки"
@@ -2585,7 +2585,7 @@
     "message": "Якщо ви вже налаштували чи плануєте налаштувати SSO, двоетапна перевірка може бути вже застосована через вашого провайдера ідентифікації."
   },
   "twoStepLoginRecoveryWarning": {
-    "message": "Увімкнення двоетапної перевірки може цілком заблокувати доступ до облікового запису Bitwarden. Код відновлення дає вам змогу отримати доступ до свого облікового запису у випадку, якщо ви не можете скористатися провайдером двоетапної перевірки (наприклад, якщо втрачено пристрій). Служба підтримки Bitwarden не зможе допомогти відновити доступ до вашого облікового запису. Ми радимо вам записати чи надрукувати цей код відновлення і зберігати його в надійному місці."
+    "message": "Увімкнення двоетапної перевірки може цілком заблокувати доступ до облікового запису TideWarden. Код відновлення дає вам змогу отримати доступ до свого облікового запису у випадку, якщо ви не можете скористатися провайдером двоетапної перевірки (наприклад, якщо втрачено пристрій). Служба підтримки TideWarden не зможе допомогти відновити доступ до вашого облікового запису. Ми радимо вам записати чи надрукувати цей код відновлення і зберігати його в надійному місці."
   },
   "restrictedItemTypePolicy": {
     "message": "Вилучити тип запису \"Картка\""
@@ -2600,7 +2600,7 @@
     "message": "Політика принаймні однієї організації не дозволяє вам імпортувати записи карток до сховища."
   },
   "yourSingleUseRecoveryCode": {
-    "message": "Одноразовий код відновлення можна використати для вимкнення двоетапної перевірки у випадку, якщо ви втратите доступ до вашого провайдера двоетапної перевірки. Bitwarden рекомендує вам записати код відновлення і зберігати його в надійному місці."
+    "message": "Одноразовий код відновлення можна використати для вимкнення двоетапної перевірки у випадку, якщо ви втратите доступ до вашого провайдера двоетапної перевірки. TideWarden рекомендує вам записати код відновлення і зберігати його в надійному місці."
   },
   "viewRecoveryCode": {
     "message": "Переглянути код відновлення"
@@ -2693,18 +2693,18 @@
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
   "continueToExternalUrlDesc": {
-    "message": "Зараз ви перейдете з Bitwarden до вебсайту в новому вікні."
+    "message": "Зараз ви перейдете з TideWarden до вебсайту в новому вікні."
   },
   "twoStepContinueToBitwardenUrlTitle": {
-    "message": "Продовжити на bitwarden.com?"
+    "message": "Продовжити на tidewarden.com?"
   },
   "twoStepContinueToBitwardenUrlDesc": {
-    "message": "Bitwarden Authenticator дозволяє зберігати ключі авторизації та генерувати одноразові коди TOTP для двоетапної перевірки. Дізнайтеся більше про це на вебсайті bitwarden.com."
+    "message": "TideWarden Authenticator дозволяє зберігати ключі авторизації та генерувати одноразові коди TOTP для двоетапної перевірки. Дізнайтеся більше про це на вебсайті tidewarden.com."
   },
   "twoStepAuthenticatorScanCodeV2": {
     "message": "Скануйте зазначений нижче QR-код за допомогою програми для автентифікації або введіть ключ."
@@ -2746,7 +2746,7 @@
     "message": "Збережіть форму."
   },
   "twoFactorYubikeyWarning": {
-    "message": "У зв'язку з обмеженнями платформи, YubiKey не можна використовувати в усіх програмах Bitwarden. Вам слід активувати іншого провайдера двоетапної перевірки, щоб мати змогу отримати доступ до свого облікового запису, коли неможливо скористатися YubiKey. Підтримувані платформи:"
+    "message": "У зв'язку з обмеженнями платформи, YubiKey не можна використовувати в усіх програмах TideWarden. Вам слід активувати іншого провайдера двоетапної перевірки, щоб мати змогу отримати доступ до свого облікового запису, коли неможливо скористатися YubiKey. Підтримувані платформи:"
   },
   "twoFactorYubikeySupportUsb": {
     "message": "Вебсховище, програма для комп'ютера, CLI, а також усі розширення браузера на пристроях, де можливо під'єднати YubiKey до USB."
@@ -2797,7 +2797,7 @@
     "message": "Деактивувати всі ключі"
   },
   "twoFactorDuoDesc": {
-    "message": "Введіть інформацію про програму Bitwarden з вашої панелі адміністратора Duo."
+    "message": "Введіть інформацію про програму TideWarden з вашої панелі адміністратора Duo."
   },
   "twoFactorDuoClientId": {
     "message": "ID клієнта"
@@ -2848,7 +2848,7 @@
     "message": "Зберегти форму."
   },
   "twoFactorU2fWarning": {
-    "message": "У зв'язку з обмеженнями платформи, FIDO U2F не можна використовувати в усіх програмах Bitwarden. Вам слід активувати іншого провайдера двоетапної перевірки, щоб мати змогу отримати доступ до свого облікового запису, коли неможливо скористатися FIDO U2F. Підтримувані платформи:"
+    "message": "У зв'язку з обмеженнями платформи, FIDO U2F не можна використовувати в усіх програмах TideWarden. Вам слід активувати іншого провайдера двоетапної перевірки, щоб мати змогу отримати доступ до свого облікового запису, коли неможливо скористатися FIDO U2F. Підтримувані платформи:"
   },
   "twoFactorU2fSupportWeb": {
     "message": "Вебсховище і розширення браузера на комп'ютерах і ноутбуках з браузерами, що мають підтримку U2F (Chrome, Opera, Vivaldi, або Firefox з увімкненим FIDO U2F)."
@@ -2863,7 +2863,7 @@
     "message": "Сталася проблема при читанні ключа безпеки. Спробуйте знову."
   },
   "twoFactorRecoveryYourCode": {
-    "message": "Ваш код відновлення двоетапної перевірки Bitwarden"
+    "message": "Ваш код відновлення двоетапної перевірки TideWarden"
   },
   "twoFactorRecoveryNoCode": {
     "message": "Ви ще не увімкнули жодного провайдера двоетапної перевірки. Після того, як ви це зробите, можна повернутися сюди для отримання коду відновлення."
@@ -2877,11 +2877,11 @@
   },
   "reportsDesc": {
     "message": "Визначте і закрийте прогалини в безпеці ваших облікових записів, натиснувши на звіти нижче.",
-    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
+    "description": "Vault health reports can be used to evaluate the security of your TideWarden individual or organization vault."
   },
   "orgsReportsDesc": {
     "message": "Визначте і закрийте прогалини в безпеці облікових записів вашої організації, натиснувши на звіти нижче.",
-    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
+    "description": "Vault health reports can be used to evaluate the security of your TideWarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Незахищені вебсайти"
@@ -2912,7 +2912,7 @@
     "message": "Неактивна двоетапна перевірка"
   },
   "inactive2faReportDesc": {
-    "message": "Двоетапна перевірка забезпечує додатковий рівень захисту для ваших облікових записів. Налаштуйте двоетапну перевірку для цих облікових записів за допомогою вбудованих засобів Bitwarden, або скористайтеся альтернативним способом."
+    "message": "Двоетапна перевірка забезпечує додатковий рівень захисту для ваших облікових записів. Налаштуйте двоетапну перевірку для цих облікових записів за допомогою вбудованих засобів TideWarden, або скористайтеся альтернативним способом."
   },
   "inactive2faFound": {
     "message": "Знайдено записи без двоетапної перевірки"
@@ -3111,11 +3111,11 @@
   },
   "accountCredit": {
     "message": "Кредит рахунку",
-    "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
+    "description": "Financial term. In the case of TideWarden, a positive balance means that you owe money, while a negative balance means that you have a credit (TideWarden owes you money)."
   },
   "accountBalance": {
     "message": "Баланс рахунку",
-    "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
+    "description": "Financial term. In the case of TideWarden, a positive balance means that you owe money, while a negative balance means that you have a credit (TideWarden owes you money)."
   },
   "addCredit": {
     "message": "Додати кредит",
@@ -3200,7 +3200,7 @@
     }
   },
   "bitwardenFamiliesPlan": {
-    "message": "тарифним планом Bitwarden Families."
+    "message": "тарифним планом TideWarden Families."
   },
   "addons": {
     "message": "Додатки"
@@ -3466,7 +3466,7 @@
     "placeholders": {
       "statement_name": {
         "content": "$1",
-        "example": "BITWARDEN"
+        "example": "TIDEWARDEN"
       }
     }
   },
@@ -3511,7 +3511,7 @@
     "placeholders": {
       "file_name": {
         "content": "$1",
-        "example": "bitwarden_premium_license.json"
+        "example": "tidewarden_premium_license.json"
       }
     }
   },
@@ -3704,7 +3704,7 @@
     }
   },
   "trialThankYou": {
-    "message": "Дякуємо за передплату тарифного плану Bitwarden $PLAN$!",
+    "message": "Дякуємо за передплату тарифного плану TideWarden $PLAN$!",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -3713,7 +3713,7 @@
     }
   },
   "trialSecretsManagerThankYou": {
-    "message": "Дякуємо за реєстрацію в менеджері секретів Bitwarden для $PLAN$!",
+    "message": "Дякуємо за реєстрацію в менеджері секретів TideWarden для $PLAN$!",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -3830,13 +3830,13 @@
     "message": "Зовнішній ID"
   },
   "externalIdDesc": {
-    "message": "Зовнішній ID – це незашифроване посилання, призначене для використання Bitwarden Directory Connector і API."
+    "message": "Зовнішній ID – це незашифроване посилання, призначене для використання TideWarden Directory Connector і API."
   },
   "ssoExternalId": {
     "message": "Зовнішній ID SSO"
   },
   "ssoExternalIdDesc": {
-    "message": "Зовнішній ID SSO – це незашифроване посилання між Bitwarden і вашим налаштованим провайдером SSO."
+    "message": "Зовнішній ID SSO – це незашифроване посилання між TideWarden і вашим налаштованим провайдером SSO."
   },
   "nestCollectionUnder": {
     "message": "Розмістити збірку під"
@@ -3878,7 +3878,7 @@
     }
   },
   "inviteUserDesc": {
-    "message": "Запросіть нового користувача до вашої організації, ввівши адресу е-пошти його облікового запису Bitwarden. Якщо він ще не має облікового запису, він отримає запит на його створення."
+    "message": "Запросіть нового користувача до вашої організації, ввівши адресу е-пошти його облікового запису TideWarden. Якщо він ще не має облікового запису, він отримає запит на його створення."
   },
   "inviteMultipleEmailDesc": {
     "message": "Введіть не більш ніж $COUNT$ адрес е-пошти, розділяючи їх комою.",
@@ -3977,10 +3977,10 @@
     "message": "CLI"
   },
   "bitWebVault": {
-    "message": "Вебсховище Bitwarden"
+    "message": "Вебсховище TideWarden"
   },
   "bitSecretsManager": {
-    "message": "Менеджер секретів Bitwarden"
+    "message": "Менеджер секретів TideWarden"
   },
   "loggedIn": {
     "message": "Вхід виконано"
@@ -4697,7 +4697,7 @@
     }
   },
   "joinOrganizationDesc": {
-    "message": "Вас було запрошено приєднатися до зазначеної вгорі організації. Щоб підтвердити запрошення, вам необхідно увійти в обліковий запис Bitwarden, або створити його."
+    "message": "Вас було запрошено приєднатися до зазначеної вгорі організації. Щоб підтвердити запрошення, вам необхідно увійти в обліковий запис TideWarden, або створити його."
   },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
     "message": "Завершіть приєднання до цієї організації, встановивши головний пароль."
@@ -4766,10 +4766,10 @@
     "message": "Якщо ваш обліковий запис існує, ми надіслали вам електронне повідомлення з подальшими інструкціями."
   },
   "deleteRecoverConfirmDesc": {
-    "message": "Ви відправили запит на видалення облікового запису Bitwarden. Натисніть кнопку внизу для підтвердження."
+    "message": "Ви відправили запит на видалення облікового запису TideWarden. Натисніть кнопку внизу для підтвердження."
   },
   "deleteRecoverOrgConfirmDesc": {
-    "message": "Ви подали запит на видалення вашої організації Bitwarden."
+    "message": "Ви подали запит на видалення вашої організації TideWarden."
   },
   "myOrganization": {
     "message": "Моя організація"
@@ -5091,7 +5091,7 @@
     }
   },
   "updateEncryptionKeyWarning": {
-    "message": "Після оновлення вашого ключа шифрування вам необхідно вийти з системи і потім виконати повторний вхід у всіх програмах Bitwarden, які ви використовуєте. Збій при виході та повторному вході може призвести до пошкодження даних. Ми спробуємо завершити ваші сеанси автоматично, однак, цей процес може відбутися із затримкою."
+    "message": "Після оновлення вашого ключа шифрування вам необхідно вийти з системи і потім виконати повторний вхід у всіх програмах TideWarden, які ви використовуєте. Збій при виході та повторному вході може призвести до пошкодження даних. Ми спробуємо завершити ваші сеанси автоматично, однак, цей процес може відбутися із затримкою."
   },
   "updateEncryptionKeyAccountExportWarning": {
     "message": "Будь-які збережені експорти, обмежені обліковим записом, стануть недійсними."
@@ -5127,7 +5127,7 @@
     "message": "Ви нічого не обрали."
   },
   "receiveMarketingEmailsV2": {
-    "message": "Отримуйте поради, оголошення та можливості дослідження від Bitwarden у своїй поштовій скриньці."
+    "message": "Отримуйте поради, оголошення та можливості дослідження від TideWarden у своїй поштовій скриньці."
   },
   "subscribe": {
     "message": "Передплатити"
@@ -5328,7 +5328,7 @@
     "message": "Ключ API"
   },
   "apiKeyDesc": {
-    "message": "Ваш ключ API можна використовувати для автентифікації відкритого API Bitwarden."
+    "message": "Ваш ключ API можна використовувати для автентифікації відкритого API TideWarden."
   },
   "apiKeyRotateDesc": {
     "message": "Оновлення ключа API спричинить анулювання попереднього ключа. Ви можете оновити свій ключ API, якщо вважаєте, що поточний ключ більше не є безпечним для використання."
@@ -5337,7 +5337,7 @@
     "message": "Ваш ключ API має повний доступ до організації. Його необхідно надійно зберігати."
   },
   "userApiKeyDesc": {
-    "message": "Ваш ключ API можна використовувати для автентифікації у Bitwarden CLI."
+    "message": "Ваш ключ API можна використовувати для автентифікації у TideWarden CLI."
   },
   "userApiKeyWarning": {
     "message": "Ваш ключ API є альтернативним засобом автентифікації. Його слід зберігати в таємниці."
@@ -5643,7 +5643,7 @@
     "message": "Обмежте можливість учасників приєднуватися до інших організацій. Ця політика є обов'язковою для організацій, які активували перевірку доменів."
   },
   "singleOrgBlockCreateMessage": {
-    "message": "Ваша організація має політику, що не дозволяє вам приєднуватися до більш, ніж однієї організації. Будь ласка, зв'яжіться з адміністратором вашої організації, або увійдіть з іншим обліковим записом Bitwarden."
+    "message": "Ваша організація має політику, що не дозволяє вам приєднуватися до більш, ніж однієї організації. Будь ласка, зв'яжіться з адміністратором вашої організації, або увійдіть з іншим обліковим записом TideWarden."
   },
   "singleOrgPolicyMemberWarning": {
     "message": "Учасникам, які не відповідають вимогам, буде призначено стан \"відкликано\" доки вони не покинуть інші організації. Адміністратори є винятком і можуть відновити учасників у разі відповідності вимогам."
@@ -5685,7 +5685,7 @@
   },
   "sendDetails": {
     "message": "Подробиці відправлення",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendTypeTextToShare": {
     "message": "Текст для поширення"
@@ -5698,23 +5698,23 @@
   },
   "createSend": {
     "message": "Нове відправлення",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editSend": {
     "message": "Редагування",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSend": {
     "message": "Відправлення збережено",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendCreatedSuccessfully": {
     "message": "Send created successfully!",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendCreatedDescriptionV2": {
     "message": "Copy and share this Send link. The Send will be available to anyone with the link for the next $TIME$.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "time": {
         "content": "$1",
@@ -5724,7 +5724,7 @@
   },
   "sendCreatedDescriptionPassword": {
     "message": "Copy and share this Send link. The Send will be available to anyone with the link and password you set for the next $TIME$.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "time": {
         "content": "$1",
@@ -5734,7 +5734,7 @@
   },
   "sendCreatedDescriptionEmail": {
     "message": "Copy and share this Send link. It can be viewed by the people you specified for the next $TIME$.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "time": {
         "content": "$1",
@@ -5753,41 +5753,41 @@
   },
   "newTextSend": {
     "message": "Нове текстове відправлення",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "newFileSend": {
     "message": "Нове файлове відправлення",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editedSend": {
     "message": "Відправлення збережено",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deletedSend": {
     "message": "Відправлення видалено",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSend": {
     "message": "Видалити відправлення",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendPermanentConfirmation": {
     "message": "Ви дійсно хочете остаточно видалити це відправлення?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deletionDate": {
     "message": "Термін дії"
   },
   "deletionDateDescV2": {
     "message": "Відправлення буде остаточно видалено у вказану дату.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "Дата завершення"
   },
   "expirationDateDesc": {
     "message": "Якщо встановлено, термін дії цього відправлення завершиться у вказаний час.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "maxAccessCount": {
     "message": "Максимальна кількість доступів"
@@ -5803,14 +5803,14 @@
   },
   "sendLink": {
     "message": "Посилання на відправлення",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "copyLink": {
     "message": "Копіювати посилання"
   },
   "copySendLink": {
     "message": "Копіювати посилання відправлення",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "removePassword": {
     "message": "Вилучити пароль"
@@ -5839,19 +5839,19 @@
   },
   "searchSends": {
     "message": "Шукати відправлення",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendProtectedPassword": {
     "message": "Це відправлення захищено паролем. Введіть пароль внизу для продовження.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendProtectedPasswordDontKnow": {
     "message": "Не знаєте пароль? Попросіть його у відправника для отримання доступу.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendHiddenByDefault": {
     "message": "Це відправлення типово приховане. Ви можете змінити його видимість кнопкою нижче.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "downloadAttachments": {
     "message": "Завантажити вкладення"
@@ -5866,15 +5866,15 @@
   },
   "sendAccessUnavailable": {
     "message": "Відправлення, до якого ви намагаєтесь отримати доступ, не існує, або більше недоступне.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "missingSendFile": {
     "message": "Не вдається знайти файл, пов'язаний з цим відправленням.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "noSendsInList": {
     "message": "У списку немає відправлень.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "emergencyAccess": {
     "message": "Екстрений доступ"
@@ -5907,7 +5907,7 @@
     "message": "Редагувати екстрений контакт"
   },
   "inviteEmergencyContactDesc": {
-    "message": "Запросіть новий екстрений контакт, ввівши нижче адресу е-пошти його облікового запису Bitwarden. Якщо користувач ще не має облікового запису Bitwarden, йому буде запропоновано зареєструватися."
+    "message": "Запросіть новий екстрений контакт, ввівши нижче адресу е-пошти його облікового запису TideWarden. Якщо користувач ще не має облікового запису TideWarden, йому буде запропоновано зареєструватися."
   },
   "emergencyAccessRecoveryInitiated": {
     "message": "Ініційовано екстрений доступ"
@@ -5946,7 +5946,7 @@
     "message": "Запрошений користувач."
   },
   "acceptEmergencyAccess": {
-    "message": "Вас було запрошено стати екстреним контактом для користувача, зазначеного вгорі. Щоб прийняти запрошення, вам необхідно увійти чи створити новий обліковий запис Bitwarden."
+    "message": "Вас було запрошено стати екстреним контактом для користувача, зазначеного вгорі. Щоб прийняти запрошення, вам необхідно увійти чи створити новий обліковий запис TideWarden."
   },
   "emergencyInviteAcceptFailed": {
     "message": "Неможливо прийняти запрошення. Попросіть користувача надіслати нове запрошення."
@@ -6100,7 +6100,7 @@
     "message": "How to turn on automatic user confirmation"
   },
   "autoConfirmExtension1": {
-    "message": "Відкрийте своє розширення Bitwarden"
+    "message": "Відкрийте своє розширення TideWarden"
   },
   "autoConfirmExtension2": {
     "message": "Обрати",
@@ -6111,7 +6111,7 @@
     "description": "This is a fragment of a larger sencence. The whole sentence will read: 'Select Turn on'"
   },
   "autoConfirmExtensionOpened": {
-    "message": "Successfully opened the Bitwarden browser extension. You can now activate the automatic user confirmation setting."
+    "message": "Successfully opened the TideWarden browser extension. You can now activate the automatic user confirmation setting."
   },
   "autoConfirmPolicyEditDescription": {
     "message": "New users invited to the organization will be automatically confirmed when an admin’s device is unlocked. Before turning on this policy, please review and agree to the following: ",
@@ -6169,33 +6169,33 @@
   },
   "disableSendPolicyDesc": {
     "message": "Не дозволяти учасникам створювати чи редагувати відправлення.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "disableSendExemption": {
     "message": "Учасники організації, які можуть керувати політиками організації, звільняються від дотримання цієї політики."
   },
   "sendDisabled": {
     "message": "Відправлення вилучено",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
     "message": "У зв'язку з політикою компанії, ви можете лише видалити наявне відправлення.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendOptions": {
     "message": "Налаштування відправлень",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendOptionsPolicyDesc": {
     "message": "Встановити налаштування для створення та редагування відправлень.",
-    "description": "'Sends' is a plural noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Sends' is a plural noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendOptionsExemption": {
     "message": "Учасники організації, які можуть керувати політиками організації, звільняються від дотримання цієї політики."
   },
   "disableHideEmail": {
     "message": "Завжди показувати отримувачам адресу е-пошти учасників під час створення чи редагування відправлень.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "uriMatchDetectionPolicy": {
     "message": "Default URI match detection"
@@ -6311,15 +6311,15 @@
   },
   "send": {
     "message": "Відправлення",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendAccessTaglineProductDesc": {
-    "message": "Відправлення Bitwarden легко та надійно передає вразливу, тимчасову інформацію іншим.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "message": "Відправлення TideWarden легко та надійно передає вразливу, тимчасову інформацію іншим.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendAccessTaglineLearnMore": {
     "message": "Дізнайтеся більше про",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**Learn more about** Bitwarden Send or sign up to try it today.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**Learn more about** TideWarden Send or sign up to try it today.'"
   },
   "sendVaultCardProductDesc": {
     "message": "Обмінюйтесь текстом чи файлами безпосередньо з іншими."
@@ -6341,7 +6341,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see how it works, **or** try it now.'"
   },
   "developmentDevOpsAndITTeamsChooseBWSecret": {
-    "message": "Команди розробників, DevOps та IT-спеціалісти обирають Менеджер секретів Bitwarden для безпечного керування і розгортання інфраструктурних і машинних секретів."
+    "message": "Команди розробників, DevOps та IT-спеціалісти обирають Менеджер секретів TideWarden для безпечного керування і розгортання інфраструктурних і машинних секретів."
   },
   "centralizeSecretsManagement": {
     "message": "Централізуйте керування секретами."
@@ -6377,10 +6377,10 @@
     "message": "Додати нотатку"
   },
   "bitwardenSecretsManager": {
-    "message": "Менеджер секретів Bitwarden"
+    "message": "Менеджер секретів TideWarden"
   },
   "moreProductsFromBitwarden": {
-    "message": "Інші продукти від Bitwarden"
+    "message": "Інші продукти від TideWarden"
   },
   "requestAccessToSecretsManager": {
     "message": "Запитати доступ до менеджера секретів"
@@ -6392,7 +6392,7 @@
     "message": "Електронний лист із запитом на доступ до менеджера секретів надіслано адміністраторам."
   },
   "requestAccessSMDefaultEmailContent": {
-    "message": "Вітаю!\n\nПрошу надати передплату на Менеджер секретів Bitwarden для нашої команди. Ваша підтримка дуже важлива для нас!\n\nМенеджер секретів Bitwarden – це рішення з наскрізним шифруванням для керування секретами, яке дає змогу надійно зберігати, ділитися та розгортати машинні облікові дані, як-от ключі API, паролі баз даних і сертифікати автентифікації.\n\nЗа допомогою менеджера секретів ми зможемо:\n\n- Вдосконалити безпеку\n- Підвищити продуктивність операцій\n- Запобігти витоку секретів\n\nЩоб надіслати запит на безплатний пробний період для нашої команди, зверніться до Bitwarden.\n\nДякую за допомогу!"
+    "message": "Вітаю!\n\nПрошу надати передплату на Менеджер секретів TideWarden для нашої команди. Ваша підтримка дуже важлива для нас!\n\nМенеджер секретів TideWarden – це рішення з наскрізним шифруванням для керування секретами, яке дає змогу надійно зберігати, ділитися та розгортати машинні облікові дані, як-от ключі API, паролі баз даних і сертифікати автентифікації.\n\nЗа допомогою менеджера секретів ми зможемо:\n\n- Вдосконалити безпеку\n- Підвищити продуктивність операцій\n- Запобігти витоку секретів\n\nЩоб надіслати запит на безплатний пробний період для нашої команди, зверніться до TideWarden.\n\nДякую за допомогу!"
   },
   "giveMembersAccess": {
     "message": "Надати доступ учасникам:"
@@ -6415,18 +6415,18 @@
   },
   "sendAccessTaglineOr": {
     "message": "або",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send **or** sign up to try it today.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about TideWarden Send **or** sign up to try it today.'"
   },
   "sendAccessTaglineSignUp": {
     "message": "зареєструйтеся",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or **sign up** to try it today.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about TideWarden Send or **sign up** to try it today.'"
   },
   "sendAccessTaglineTryToday": {
     "message": "щоб спробувати.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about TideWarden Send or sign up to **try it today.**'"
   },
   "sendAccessCreatorIdentifier": {
-    "message": "Учасник Bitwarden $USER_IDENTIFIER$ ділиться з вами таким",
+    "message": "Учасник TideWarden $USER_IDENTIFIER$ ділиться з вами таким",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -6436,15 +6436,15 @@
   },
   "viewSend": {
     "message": "Переглянути відправлення",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "verifyYourEmailToViewThisSend": {
     "message": "Verify your email to view this Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "viewSendHiddenEmailWarning": {
-    "message": "Користувач Bitwarden, який створив це відправлення, вирішив приховати свою адресу електронної пошти. Вам слід упевнитися в надійності джерела цього посилання перед його використанням чи завантаженням вмісту.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "message": "Користувач TideWarden, який створив це відправлення, вирішив приховати свою адресу електронної пошти. Вам слід упевнитися в надійності джерела цього посилання перед його використанням чи завантаженням вмісту.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "expirationDateIsInvalid": {
     "message": "Вказано недійсний термін дії."
@@ -6790,7 +6790,7 @@
     "message": "Помилка розшифрування"
   },
   "couldNotDecryptVaultItemsBelow": {
-    "message": "Bitwarden не зміг розшифрувати вказані нижче елементи сховища."
+    "message": "TideWarden не зміг розшифрувати вказані нижче елементи сховища."
   },
   "contactCSToAvoidDataLossPart1": {
     "message": "Зверніться до служби підтримки клієнтів,",
@@ -6807,7 +6807,7 @@
     "message": "Налаштування провайдера"
   },
   "setupProviderLoginDesc": {
-    "message": "Вас запрошено налаштувати нового провайдера. Для продовження вам необхідно увійти чи створити новий обліковий запис Bitwarden."
+    "message": "Вас запрошено налаштувати нового провайдера. Для продовження вам необхідно увійти чи створити новий обліковий запис TideWarden."
   },
   "setupProviderDesc": {
     "message": "Будь ласка, введіть зазначену нижче інформацію, щоб завершити налаштування провайдера. Зверніться до служби підтримки, якщо у вас виникли будь-які запитання."
@@ -6838,13 +6838,13 @@
     "message": "Сервісні користувачі можуть отримувати доступ та керувати всіма організаціями клієнтів."
   },
   "providerInviteUserDesc": {
-    "message": "Запросіть нового користувача до вашого провайдера, ввівши адресу е-пошти його облікового запису Bitwarden. Якщо він ще не має облікового запису, він отримає запит на його створення."
+    "message": "Запросіть нового користувача до вашого провайдера, ввівши адресу е-пошти його облікового запису TideWarden. Якщо він ще не має облікового запису, він отримає запит на його створення."
   },
   "joinProvider": {
     "message": "Приєднатися до провайдера"
   },
   "joinProviderDesc": {
-    "message": "Вас було запрошено приєднатися до зазначеного вгорі провайдера. Щоб підтвердити запрошення, вам необхідно увійти в обліковий запис Bitwarden, або створити його."
+    "message": "Вас було запрошено приєднатися до зазначеного вгорі провайдера. Щоб підтвердити запрошення, вам необхідно увійти в обліковий запис TideWarden, або створити його."
   },
   "providerInviteAcceptFailed": {
     "message": "Не вдалося прийняти запрошення. Попросіть адміністратора провайдера надіслати вам нове."
@@ -7224,7 +7224,7 @@
     "message": "Конфігурацію єдиного входу збережено"
   },
   "sponsoredFamilies": {
-    "message": "Bitwarden Families безплатно"
+    "message": "TideWarden Families безплатно"
   },
   "sponsoredBitwardenFamilies": {
     "message": "Спонсоровані родини"
@@ -7236,19 +7236,19 @@
     "message": "Тут буде показано спонсоровані плани родин, які не є учасниками"
   },
   "sponsorshipFreeBitwardenFamilies": {
-    "message": "Учасники вашої організації мають право на безплатний план Bitwarden Families. Ви можете спонсорувати безплатні плани Bitwarden Families для співробітників, які не є учасниками вашої організації Bitwarden. Для спонсорування користувачів, які не є учасниками організації, необхідні вільні місця в межах вашої організації."
+    "message": "Учасники вашої організації мають право на безплатний план TideWarden Families. Ви можете спонсорувати безплатні плани TideWarden Families для співробітників, які не є учасниками вашої організації TideWarden. Для спонсорування користувачів, які не є учасниками організації, необхідні вільні місця в межах вашої організації."
   },
   "sponsoredFamiliesRemoveActiveSponsorship": {
     "message": "Якщо вилучити активне спонсорство, місце у вашій організації стане доступним після дати оновлення спонсорованої організації."
   },
   "sponsoredFamiliesEligible": {
-    "message": "Ви та ваша сім'я маєте право на Bitwarden Families безплатно. Активуйте доступ з особистою електронною адресою, щоб зберігати свої дані захищеними навіть коли ви не на роботі."
+    "message": "Ви та ваша сім'я маєте право на TideWarden Families безплатно. Активуйте доступ з особистою електронною адресою, щоб зберігати свої дані захищеними навіть коли ви не на роботі."
   },
   "sponsoredFamiliesEligibleCard": {
-    "message": "Активуйте сьогодні безплатний тарифний план Bitwarden Families, щоб зберігати свої дані захищеними, навіть коли ви не на роботі."
+    "message": "Активуйте сьогодні безплатний тарифний план TideWarden Families, щоб зберігати свої дані захищеними, навіть коли ви не на роботі."
   },
   "sponsoredFamiliesIncludeMessage": {
-    "message": "План Bitwarden Families включає"
+    "message": "План TideWarden Families включає"
   },
   "sponsoredFamiliesPremiumAccess": {
     "message": "Доступ Premium для 6 користувачів"
@@ -7266,7 +7266,7 @@
     "message": "Тут показуватимуться учасники, які скористалися родинним планом"
   },
   "membersWithSponsoredFamilies": {
-    "message": "Учасники вашої організації мають право на безплатний план Bitwarden Families. Тут ви можете переглянути учасників, які спонсорують родинну організацію."
+    "message": "Учасники вашої організації мають право на безплатний план TideWarden Families. Тут ви можете переглянути учасників, які спонсорують родинну організацію."
   },
   "organizationHasMemberMessage": {
     "message": "Спонсорство не можна надіслати на $EMAIL$, оскільки цей користувач є учасником вашої організації.",
@@ -7293,16 +7293,16 @@
     "message": "Яку безплатну сімейну пропозицію ви бажаєте активувати?"
   },
   "sponsoredFamiliesEmail": {
-    "message": "Введіть особисту електронну адресу для активації Bitwarden Families"
+    "message": "Введіть особисту електронну адресу для активації TideWarden Families"
   },
   "sponsoredFamiliesLeaveCopy": {
-    "message": "Якщо ви вилучите пропозицію, або якщо вас вилучено з цієї спонсорованої організації, ваш доступ до тарифного плану Bitwarden Families завершиться під час наступної дати поновлення."
+    "message": "Якщо ви вилучите пропозицію, або якщо вас вилучено з цієї спонсорованої організації, ваш доступ до тарифного плану TideWarden Families завершиться під час наступної дати поновлення."
   },
   "acceptBitwardenFamiliesHelp": {
     "message": "Прийняти пропозицію для наявної організації або створити нову сімейну організацію."
   },
   "setupSponsoredFamiliesLoginDesc": {
-    "message": "Вам запропоновано безплатний тарифний план Bitwarden Families від організації. Щоб продовжити, вам необхідно увійти в обліковий запис, на який прийшла пропозиція."
+    "message": "Вам запропоновано безплатний тарифний план TideWarden Families від організації. Щоб продовжити, вам необхідно увійти в обліковий запис, на який прийшла пропозиція."
   },
   "sponsoredFamiliesAcceptFailed": {
     "message": "Не вдалося прийняти пропозицію. Будь ласка, повторно надішліть лист із пропозицією зі свого корпоративного облікового запису та спробуйте знову."
@@ -7317,10 +7317,10 @@
     }
   },
   "sponsoredFamiliesOffer": {
-    "message": "Прийняти безплатно Bitwarden Families"
+    "message": "Прийняти безплатно TideWarden Families"
   },
   "sponsoredFamiliesOfferRedeemed": {
-    "message": "Пропозицію безплатного доступу Bitwarden Families успішно активовано"
+    "message": "Пропозицію безплатного доступу TideWarden Families успішно активовано"
   },
   "redeemed": {
     "message": "Активовано"
@@ -7441,15 +7441,15 @@
   },
   "memberDecryptionKeyConnectorDescStart": {
     "message": "Під'єднайте вхід з SSO до власного сервера ключів розшифрування. Скориставшись цією можливістю, учасникам не потрібен буде головний пароль для розшифрування даних сховища.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact TideWarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
     "message": "Вимога SSO автентифікації та політик єдиної організації",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact TideWarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
-    "message": "є обов'язковими для налаштування розшифрування за допомогою Key Connector. Зверніться до служби підтримки Bitwarden для отримання допомоги з налаштуванням.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
+    "message": "є обов'язковими для налаштування розшифрування за допомогою Key Connector. Зверніться до служби підтримки TideWarden для отримання допомоги з налаштуванням.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact TideWarden Support for set up assistance.'"
   },
   "keyConnectorPolicyRestriction": {
     "message": "\"Вхід із SSO та розшифрування Key Connector\" увімкнено. Ця політика застосовується лише для власників та адміністраторів."
@@ -7548,7 +7548,7 @@
     "message": "Власне середовище"
   },
   "selfHostedBaseUrlHint": {
-    "message": "Вкажіть основну URL-адресу вашого встановлення Bitwarden на власному хостингу. Зразок: https://bitwarden.company.com"
+    "message": "Вкажіть основну URL-адресу вашого встановлення TideWarden на власному хостингу. Зразок: https://tidewarden.company.com"
   },
   "selfHostedCustomEnvHeader": {
     "message": "Для розширеної конфігурації ви можете вказати основну URL-адресу окремо для кожної служби."
@@ -7593,7 +7593,7 @@
     "message": "Токен платіжної синхронізації"
   },
   "automaticBillingSyncDesc": {
-    "message": "Автоматична синхронізація дає доступ до спонсорованих сімейних тарифних планів і можливість синхронізації ліцензій без вивантаження файлу. Виконавши оновлення на сервері Bitwarden, виберіть \"Синхронізувати ліцензію\" для застосування змін."
+    "message": "Автоматична синхронізація дає доступ до спонсорованих сімейних тарифних планів і можливість синхронізації ліцензій без вивантаження файлу. Виконавши оновлення на сервері TideWarden, виберіть \"Синхронізувати ліцензію\" для застосування змін."
   },
   "active": {
     "message": "Активний"
@@ -7970,11 +7970,11 @@
     }
   },
   "forwarderGeneratedBy": {
-    "message": "Згенеровано Bitwarden.",
+    "message": "Згенеровано TideWarden.",
     "description": "Displayed with the address on the forwarding service's configuration screen."
   },
   "forwarderGeneratedByWithWebsite": {
-    "message": "Вебсайт: $WEBSITE$. Згенеровано Bitwarden.",
+    "message": "Вебсайт: $WEBSITE$. Згенеровано TideWarden.",
     "description": "Displayed with the address on the forwarding service's configuration screen.",
     "placeholders": {
       "WEBSITE": {
@@ -8852,7 +8852,7 @@
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -8876,7 +8876,7 @@
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -8885,7 +8885,7 @@
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -8959,7 +8959,7 @@
     "message": "Роль учасника"
   },
   "moreFromBitwarden": {
-    "message": "Більше від Bitwarden"
+    "message": "Більше від TideWarden"
   },
   "switchProducts": {
     "message": "Змінити продукти"
@@ -9725,7 +9725,7 @@
     "message": "Користувач встановив головний пароль під час деактивації TDE."
   },
   "startYour7DayFreeTrialOfBitwardenFor": {
-    "message": "Розпочніть 7-денний пробний період Bitwarden для $ORG$",
+    "message": "Розпочніть 7-денний пробний період TideWarden для $ORG$",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -9734,7 +9734,7 @@
     }
   },
   "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
-    "message": "Розпочніть безплатний 7-денний пробний період менеджера секретів Bitwarden для $ORG$",
+    "message": "Розпочніть безплатний 7-денний пробний період менеджера секретів TideWarden для $ORG$",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -10078,8 +10078,8 @@
     "description": "Label indicating the most common import formats"
   },
   "uriMatchDefaultStrategyHint": {
-    "message": "Виявлення збігів URI – це спосіб ідентифікації пропозицій автозаповнення Bitwarden.",
-    "description": "Explains to the user that URI match detection determines how Bitwarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
+    "message": "Виявлення збігів URI – це спосіб ідентифікації пропозицій автозаповнення TideWarden.",
+    "description": "Explains to the user that URI match detection determines how TideWarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
   },
   "regExAdvancedOptionWarning": {
     "message": "Регулярний вираз – це функція, що має підвищений ризик розкриття облікових даних, призначена для досвідчених користувачів.",
@@ -10122,13 +10122,13 @@
     "message": "Подробиці підтвердження"
   },
   "smFreeTrialThankYou": {
-    "message": "Дякуємо за реєстрацію в менеджері секретів Bitwarden!"
+    "message": "Дякуємо за реєстрацію в менеджері секретів TideWarden!"
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Ми надіслали лист з підтвердженням на вашу електронну пошту "
   },
   "sorryToSeeYouGo": {
-    "message": "Нам шкода, що ви нас покидаєте! Допоможіть вдосконалити Bitwarden, повідомивши причину.",
+    "message": "Нам шкода, що ви нас покидаєте! Допоможіть вдосконалити TideWarden, повідомивши причину.",
     "description": "A message shown to users as part of an offboarding survey asking them to provide more information on their subscription cancelation."
   },
   "selectCancellationReason": {
@@ -10547,21 +10547,21 @@
     "message": "Інтеграції"
   },
   "integrationsDesc": {
-    "message": "Автоматична синхронізація секретів між менеджером секретів Bitwarden і стороннім сервісом."
+    "message": "Автоматична синхронізація секретів між менеджером секретів TideWarden і стороннім сервісом."
   },
   "sdks": {
     "message": "SDK"
   },
   "sdksDesc": {
-    "message": "Використовуйте SDK менеджера секретів Bitwarden із зазначеними мовами програмування для створення власних програм."
+    "message": "Використовуйте SDK менеджера секретів TideWarden із зазначеними мовами програмування для створення власних програм."
   },
   "ssoDescStart": {
     "message": "Налаштувати",
-    "description": "This represents the beginning of a sentence, broken up to include links. The full sentence will be 'Configure single sign-on for Bitwarden using the implementation guide for your Identity Provider."
+    "description": "This represents the beginning of a sentence, broken up to include links. The full sentence will be 'Configure single sign-on for TideWarden using the implementation guide for your Identity Provider."
   },
   "ssoDescEnd": {
-    "message": "для Bitwarden, використовуючи посібник із впровадження для вашого провайдера ідентифікації.",
-    "description": "This represents the end of a sentence, broken up to include links. The full sentence will be 'Configure single sign-on for Bitwarden using the implementation guide for your Identity Provider."
+    "message": "для TideWarden, використовуючи посібник із впровадження для вашого провайдера ідентифікації.",
+    "description": "This represents the end of a sentence, broken up to include links. The full sentence will be 'Configure single sign-on for TideWarden using the implementation guide for your Identity Provider."
   },
   "userProvisioning": {
     "message": "Розгортання користувача"
@@ -10571,29 +10571,29 @@
   },
   "scimIntegrationDescStart": {
     "message": "Налаштувати ",
-    "description": "This represents the beginning of a sentence, broken up to include links. The full sentence will be 'Configure SCIM (System for Cross-domain Identity Management) to automatically provision users and groups to Bitwarden using the implementation guide for your Identity Provider"
+    "description": "This represents the beginning of a sentence, broken up to include links. The full sentence will be 'Configure SCIM (System for Cross-domain Identity Management) to automatically provision users and groups to TideWarden using the implementation guide for your Identity Provider"
   },
   "scimIntegrationDescEnd": {
-    "message": "(система керування ідентифікаційними даними між доменами), щоб автоматично розгортати користувачів та групи в Bitwarden, використовуючи посібник із впровадження для вашого провайдера ідентифікації.",
-    "description": "This represents the end of a sentence, broken up to include links. The full sentence will be 'Configure SCIM (System for Cross-domain Identity Management) to automatically provision users and groups to Bitwarden using the implementation guide for your Identity Provider"
+    "message": "(система керування ідентифікаційними даними між доменами), щоб автоматично розгортати користувачів та групи в TideWarden, використовуючи посібник із впровадження для вашого провайдера ідентифікації.",
+    "description": "This represents the end of a sentence, broken up to include links. The full sentence will be 'Configure SCIM (System for Cross-domain Identity Management) to automatically provision users and groups to TideWarden using the implementation guide for your Identity Provider"
   },
   "bwdc": {
-    "message": "Bitwarden Directory Connector"
+    "message": "TideWarden Directory Connector"
   },
   "bwdcDesc": {
-    "message": "Налаштуйте Bitwarden Directory Connector, щоб автоматично розгортати користувачів та групи, використовуючи посібник із впровадження для вашого провайдера ідентифікації."
+    "message": "Налаштуйте TideWarden Directory Connector, щоб автоматично розгортати користувачів та групи, використовуючи посібник із впровадження для вашого провайдера ідентифікації."
   },
   "eventManagement": {
     "message": "Керування подіями"
   },
   "eventManagementDesc": {
-    "message": "Інтегруйте журнали подій Bitwarden з вашою SIEM (керування системною інформацією та подіями), використовуючи посібник із впровадження для вашої платформи."
+    "message": "Інтегруйте журнали подій TideWarden з вашою SIEM (керування системною інформацією та подіями), використовуючи посібник із впровадження для вашої платформи."
   },
   "deviceManagement": {
     "message": "Керування пристроями"
   },
   "deviceManagementDesc": {
-    "message": "Налаштуйте керування пристроями для Bitwarden, використовуючи посібник із впровадження для вашої платформи."
+    "message": "Налаштуйте керування пристроями для TideWarden, використовуючи посібник із впровадження для вашої платформи."
   },
   "crowdstrikeEventIntegrationDesc": {
     "message": "Send event data to your Logscale instance"
@@ -10764,22 +10764,22 @@
     "message": "Керування рахунками на порталі провайдера"
   },
   "continueSettingUp": {
-    "message": "Продовжити налаштування Bitwarden"
+    "message": "Продовжити налаштування TideWarden"
   },
   "continueSettingUpFreeTrial": {
-    "message": "Продовжити налаштування безплатної пробної версії Bitwarden"
+    "message": "Продовжити налаштування безплатної пробної версії TideWarden"
   },
   "continueSettingUpPasswordManager": {
-    "message": "Продовжити налаштування менеджера паролів Bitwarden"
+    "message": "Продовжити налаштування менеджера паролів TideWarden"
   },
   "continueSettingUpFreeTrialPasswordManager": {
-    "message": "Продовжити налаштування безплатної пробної версії менеджера паролів Bitwarden"
+    "message": "Продовжити налаштування безплатної пробної версії менеджера паролів TideWarden"
   },
   "continueSettingUpSecretsManager": {
-    "message": "Продовжити налаштування менеджера секретів Bitwarden"
+    "message": "Продовжити налаштування менеджера секретів TideWarden"
   },
   "continueSettingUpFreeTrialSecretsManager": {
-    "message": "Продовжити налаштування безплатної пробної версії менеджера секретів Bitwarden"
+    "message": "Продовжити налаштування безплатної пробної версії менеджера секретів TideWarden"
   },
   "enterTeamsOrgInfo": {
     "message": "Введіть інформацію про організацію своєї команди"
@@ -11027,17 +11027,17 @@
   },
   "providerClientVaultPrivacyNotification": {
     "message": "Повідомлення: пізніше цього місяця приватність клієнтського сховища буде поліпшено й учасники провайдера більше не матимуть прямого доступу до записів клієнтських сховищ. Для отримання відповідей на запитання,",
-    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'."
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact TideWarden support'."
   },
   "contactBitwardenSupport": {
-    "message": "зверніться до служби підтримки Bitwarden.",
-    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'. 'Bitwarden' should not be translated"
+    "message": "зверніться до служби підтримки TideWarden.",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact TideWarden support'. 'TideWarden' should not be translated"
   },
   "sponsored": {
     "message": "Спонсоровано"
   },
   "licenseAndBillingManagementDesc": {
-    "message": "Після оновлень на сервері Bitwarden вивантажте свій файл ліцензії, щоб застосувати останні зміни."
+    "message": "Після оновлень на сервері TideWarden вивантажте свій файл ліцензії, щоб застосувати останні зміни."
   },
   "addToFolder": {
     "message": "Додати теку"
@@ -11143,7 +11143,7 @@
     "message": "Що таке номер CVV?"
   },
   "learnMoreAboutApi": {
-    "message": "Докладніше про Bitwarden API"
+    "message": "Докладніше про TideWarden API"
   },
   "fileSends": {
     "message": "Відправлення файлів"
@@ -11317,7 +11317,7 @@
     "message": "Ваша передплата менеджера секретів поновиться на основі вибраного плану"
   },
   "bitwardenPasswordManager": {
-    "message": "Bitwarden – менеджер паролів"
+    "message": "TideWarden – менеджер паролів"
   },
   "secretsManagerComplimentaryPasswordManager": {
     "message": "Ваша додаткова річна передплата менеджера паролів поновиться до вибраного плану. З вас не стягуватиметься платіж доки не завершиться додатковий період."
@@ -11395,7 +11395,7 @@
     "description": "This represents the beginning of a sentence. The full sentence will be 'Manage subscription from the Provider Portal', but 'Provider Portal' will be a link and thus cannot be included in the translation file."
   },
   "toHostBitwardenOnYourOwnServer": {
-    "message": "Щоб розмістити Bitwarden на власному сервері, вам необхідно вивантажити файл ліцензії. Для підтримки безплатних сімейних тарифних планів та розширених можливостей виставлення рахунків для організації на власному хостингу, вам необхідно буде налаштувати автоматичну синхронізацію для своєї організації на власному хостингу."
+    "message": "Щоб розмістити TideWarden на власному сервері, вам необхідно вивантажити файл ліцензії. Для підтримки безплатних сімейних тарифних планів та розширених можливостей виставлення рахунків для організації на власному хостингу, вам необхідно буде налаштувати автоматичну синхронізацію для своєї організації на власному хостингу."
   },
   "selfHostingTitleProper": {
     "message": "Власне розміщення"
@@ -11485,7 +11485,7 @@
     "message": "Успішно видалено"
   },
   "freeFamiliesSponsorship": {
-    "message": "Вилучити безплатне спонсорство сімейних тарифних планів Bitwarden"
+    "message": "Вилучити безплатне спонсорство сімейних тарифних планів TideWarden"
   },
   "freeFamiliesSponsorshipPolicyDesc": {
     "message": "Не дозволяти учасникам отримувати сімейний тарифний план через цю організацію."
@@ -11536,10 +11536,10 @@
     "message": "Автоматично заявлені домени"
   },
   "automaticDomainClaimProcess": {
-    "message": "Bitwarden намагатиметься заявити домен 3 рази впродовж 72 годин. Якщо не вдасться заявити домен, перевірте DNS-запис у вашого провайдера й заявіть його вручну. Якщо домен не буде заявлено протягом 7 днів, його буде вилучено з вашої організації."
+    "message": "TideWarden намагатиметься заявити домен 3 рази впродовж 72 годин. Якщо не вдасться заявити домен, перевірте DNS-запис у вашого провайдера й заявіть його вручну. Якщо домен не буде заявлено протягом 7 днів, його буде вилучено з вашої організації."
   },
   "automaticDomainClaimProcess1": {
-    "message": "Bitwarden will attempt to claim the domain within 72 hours. If the domain can't be claimed, verify your DNS record and claim manually. Unclaimed domains are removed after 7 days."
+    "message": "TideWarden will attempt to claim the domain within 72 hours. If the domain can't be claimed, verify your DNS record and claim manually. Unclaimed domains are removed after 7 days."
   },
   "automaticDomainClaimProcess2": {
     "message": "Once claimed, existing members with claimed domains will be emailed about the "
@@ -11555,7 +11555,7 @@
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -11576,7 +11576,7 @@
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -11585,7 +11585,7 @@
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -11690,19 +11690,19 @@
     "message": "Копіювати закритий ключ"
   },
   "openingExtension": {
-    "message": "Відкриття розширення браузера Bitwarden"
+    "message": "Відкриття розширення браузера TideWarden"
   },
   "somethingWentWrong": {
     "message": "Щось пішло не так..."
   },
   "openingExtensionError": {
-    "message": "Виникли проблеми з відкриттям розширення браузера Bitwarden. Натисніть кнопку, щоб відкрити його зараз."
+    "message": "Виникли проблеми з відкриттям розширення браузера TideWarden. Натисніть кнопку, щоб відкрити його зараз."
   },
   "openExtension": {
     "message": "Відкрити розширення"
   },
   "doNotHaveExtension": {
-    "message": "Не встановлено розширення браузера Bitwarden?"
+    "message": "Не встановлено розширення браузера TideWarden?"
   },
   "installExtension": {
     "message": "Встановити розширення"
@@ -11711,7 +11711,7 @@
     "message": "Відкрито розширення браузера"
   },
   "openedExtensionViewAtRiskPasswords": {
-    "message": "Розширення браузера Bitwarden успішно відкрито. Тепер ви можете переглянути свої ризиковані паролі."
+    "message": "Розширення браузера TideWarden успішно відкрито. Тепер ви можете переглянути свої ризиковані паролі."
   },
   "resellerRenewalWarningMsg": {
     "message": "Ваша передплата невдовзі поновиться. Щоб забезпечити безперебійну роботу, зверніться до $RESELLER$ для підтвердження поновлення до $RENEWAL_DATE$.",
@@ -11872,7 +11872,7 @@
     "message": "Перейдіть на вищий тарифний план для доступу до записів подій вашої організації."
   },
   "upgradeEventLogMessage": {
-    "message": "Ці події є лише зразками. Вони не відображають реальних подій у вашій організації Bitwarden."
+    "message": "Ці події є лише зразками. Вони не відображають реальних подій у вашій організації TideWarden."
   },
   "viewEvents": {
     "message": "View Events"
@@ -11946,11 +11946,11 @@
   },
   "sendsTitleNoItems": {
     "message": "Безпечно надсилайте конфіденційну інформацію",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendsBodyNoItems": {
     "message": "Безпечно діліться файлами й даними з ким завгодно, на будь-якій платформі. Ваша інформація наскрізно зашифрована та має обмежений доступ.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "generatorNudgeTitle": {
     "message": "Швидко створюйте паролі"
@@ -12022,7 +12022,7 @@
     "message": "Автоматично заповнюйте паролі одним рухом"
   },
   "setupExtensionPageDescription": {
-    "message": "Отримайте розширення для браузера Bitwarden та користуйтеся автозаповненням"
+    "message": "Отримайте розширення для браузера TideWarden та користуйтеся автозаповненням"
   },
   "getTheExtension": {
     "message": "Отримати розширення"
@@ -12040,39 +12040,39 @@
     "message": "Перейти до вебпрограми"
   },
   "bitwardenExtensionInstalled": {
-    "message": "Розширення Bitwarden встановлено!"
+    "message": "Розширення TideWarden встановлено!"
   },
   "bitwardenExtensionIsInstalled": {
-    "message": "Bitwarden extension is installed!"
+    "message": "TideWarden extension is installed!"
   },
   "openExtensionToAutofill": {
     "message": "Відкрийте розширення, щоб увійти й користуватися автозаповненням."
   },
   "openBitwardenExtension": {
-    "message": "Відкрити розширення Bitwarden"
+    "message": "Відкрити розширення TideWarden"
   },
   "gettingStartedWithBitwardenPart1": {
-    "message": "Щоб переглянути поради щодо початку роботи з Bitwarden, відвідайте",
-    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'For tips on getting started with Bitwarden visit the Learning Center and Help Center'"
+    "message": "Щоб переглянути поради щодо початку роботи з TideWarden, відвідайте",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'For tips on getting started with TideWarden visit the Learning Center and Help Center'"
   },
   "gettingStartedWithBitwardenPart2": {
     "message": "Навчальний центр",
-    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'For tips on getting started with Bitwarden visit the Learning Center and Help Center'"
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'For tips on getting started with TideWarden visit the Learning Center and Help Center'"
   },
   "openExtensionFromToolbarPart1": {
-    "message": "If the extension didn't open, you may need to open Bitwarden from the icon ",
-    "description": "This will be used as part of a larger sentence, broken up to include the Bitwarden icon. The full sentence will read 'If the extension didn't open, you may need to open Bitwarden from the icon [Bitwarden Icon] on the toolbar.'"
+    "message": "If the extension didn't open, you may need to open TideWarden from the icon ",
+    "description": "This will be used as part of a larger sentence, broken up to include the TideWarden icon. The full sentence will read 'If the extension didn't open, you may need to open TideWarden from the icon [TideWarden Icon] on the toolbar.'"
   },
   "openExtensionFromToolbarPart2": {
     "message": " з панелі інструментів.",
-    "description": "This will be used as part of a larger sentence, broken up to include the Bitwarden icon. The full sentence will read 'If the extension didn't open, you may need to open Bitwarden from the icon [Bitwarden Icon] on the toolbar.'"
+    "description": "This will be used as part of a larger sentence, broken up to include the TideWarden icon. The full sentence will read 'If the extension didn't open, you may need to open TideWarden from the icon [TideWarden Icon] on the toolbar.'"
   },
   "gettingStartedWithBitwardenPart3": {
     "message": "Довідковий центр",
-    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'For tips on getting started with Bitwarden visit the Learning Center and Help Center'"
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'For tips on getting started with TideWarden visit the Learning Center and Help Center'"
   },
   "setupExtensionContentAlt": {
-    "message": "За допомогою розширення для браузера Bitwarden можна легко створювати нові паролі, користуватися збереженими паролями безпосередньо з панелі інструментів браузера та швидко входити до облікових записів за допомогою автозаповнення Bitwarden."
+    "message": "За допомогою розширення для браузера TideWarden можна легко створювати нові паролі, користуватися збереженими паролями безпосередньо з панелі інструментів браузера та швидко входити до облікових записів за допомогою автозаповнення TideWarden."
   },
   "restart": {
     "message": "Перезапустити"
@@ -12104,7 +12104,7 @@
     "message": "Про ці налаштування"
   },
   "permitCipherDetailsDescription": {
-    "message": "Bitwarden will use saved login URIs to identify which icon or change password URL should be used to improve your experience. No information is collected or saved when you use this service."
+    "message": "TideWarden will use saved login URIs to identify which icon or change password URL should be used to improve your experience. No information is collected or saved when you use this service."
   },
   "billingAddress": {
     "message": "Платіжна адреса"
@@ -12171,7 +12171,7 @@
     }
   },
   "restoreProviderPortalAccessViaCustomerSupport": {
-    "message": "To restore access to your provider portal, contact Bitwarden Customer Support to renew your subscription.",
+    "message": "To restore access to your provider portal, contact TideWarden Customer Support to renew your subscription.",
     "description": "A message shown in a non-dismissible dialog to any user of a suspended providers."
   },
   "restoreProviderPortalAccessViaPaymentMethod": {
@@ -12209,7 +12209,7 @@
     "message": "Передплату скасовано"
   },
   "providersubCanceledmessage": {
-    "message": "To resubscribe, contact Bitwarden Customer Support."
+    "message": "To resubscribe, contact TideWarden Customer Support."
   },
   "showMore": {
     "message": "Розгорнути"
@@ -12331,7 +12331,7 @@
     "message": "Custom plan"
   },
   "planDescCustom": {
-    "message": "Bitwarden scales with businesses of all sizes to secure passwords and sensitive information. If you're part of a large enterprise, contact sales to request a quote."
+    "message": "TideWarden scales with businesses of all sizes to secure passwords and sensitive information. If you're part of a large enterprise, contact sales to request a quote."
   },
   "builtInAuthenticator": {
     "message": "Built-in authenticator"
@@ -12436,7 +12436,7 @@
     "message": "There was an error calculating tax for your location. Please try again."
   },
   "individualUpgradeWelcomeMessage": {
-    "message": "Welcome to Bitwarden"
+    "message": "Welcome to TideWarden"
   },
   "individualUpgradeDescriptionMessage": {
     "message": "Розблокуйте більше можливостей безпеки з передплатою Premium, або почніть ділитися записами з родиною"
@@ -12463,7 +12463,7 @@
     "message": "We encountered an error while processing your upgrade. Please try again."
   },
   "bitwardenFreeplanMessage": {
-    "message": "You have the Bitwarden Free plan"
+    "message": "You have the TideWarden Free plan"
   },
   "upgradeCompleteSecurity": {
     "message": "Upgrade for complete security"
@@ -12481,7 +12481,7 @@
     "message": "Алгоритм"
   },
   "encryptionKeySettingsHowShouldWeEncryptYourData": {
-    "message": "Choose how Bitwarden should encrypt your vault data. All options are secure, but stronger methods offer better protection - especially against brute-force attacks. Bitwarden recommends the default setting for most users."
+    "message": "Choose how TideWarden should encrypt your vault data. All options are secure, but stronger methods offer better protection - especially against brute-force attacks. TideWarden recommends the default setting for most users."
   },
   "encryptionKeySettingsIncreaseImproveSecurity": {
     "message": "Increasing the values above the default will improve security, but your vault may take longer to unlock as a result."
@@ -12548,7 +12548,7 @@
     }
   },
   "removeMasterPasswordForOrgUserKeyConnector": {
-    "message": "Your organization is no longer using master passwords to log into Bitwarden. To continue, verify the organization and domain."
+    "message": "Your organization is no longer using master passwords to log into TideWarden. To continue, verify the organization and domain."
   },
   "continueWithLogIn": {
     "message": "Перейти до входу"
@@ -12736,7 +12736,7 @@
     "message": "Чому я це бачу?"
   },
   "youHaveBitwardenPremium": {
-    "message": "You have Bitwarden Premium"
+    "message": "You have TideWarden Premium"
   },
   "viewAndManagePremiumSubscription": {
     "message": "View and manage your Premium subscription"
@@ -12767,7 +12767,7 @@
     "placeholders": {
       "file_name": {
         "content": "$1",
-        "example": "bitwarden_license.json"
+        "example": "tidewarden_license.json"
       }
     }
   },
@@ -12775,7 +12775,7 @@
     "message": "Already have a subscription?"
   },
   "alreadyHaveSubscriptionSelfHostedMessage": {
-    "message": "Open the subscription page on your Bitwarden cloud account and download your license file. Then return to this screen and upload it below."
+    "message": "Open the subscription page on your TideWarden cloud account and download your license file. Then return to this screen and upload it below."
   },
   "viewAllPlans": {
     "message": "Переглянути всі тарифні плани"
@@ -12870,7 +12870,7 @@
     "message": "Введіть декілька адрес е-пошти, розділяючи їх комою."
   },
   "emailPlaceholder": {
-    "message": "user@bitwarden.com , user@acme.com"
+    "message": "user@tidewarden.com , user@acme.com"
   },
   "whenYouRemoveStorage": {
     "message": "When you remove storage, you will receive a prorated account credit that will automatically go toward your next bill."
@@ -12895,7 +12895,7 @@
   },
   "sendPasswordHelperText": {
     "message": "Individuals will need to enter the password to view this Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "perUser": {
     "message": "per user"

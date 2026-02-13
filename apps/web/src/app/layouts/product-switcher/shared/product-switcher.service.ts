@@ -19,11 +19,7 @@ import {
 } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
-import {
-  OrganizationUserType,
-  PolicyType,
-  ProviderType,
-} from "@bitwarden/common/admin-console/enums";
+import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { Provider } from "@bitwarden/common/admin-console/models/domain/provider";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
@@ -161,150 +157,59 @@ export class ProductSwitcherService {
     this.triggerProductUpdate$,
     this.configService.getFeatureFlag$(FeatureFlag.SM1719_RemoveSecretsManagerAds),
   ]).pipe(
-    map(
-      ([orgs, providers, userHasSingleOrgPolicy, paramMap, , removeSecretsManagerAdsFlag]: [
-        Organization[],
-        Provider[],
-        boolean,
-        ParamMap,
-        void,
-        boolean,
-      ]) => {
-        // Sort orgs by name to match the order within the sidebar
-        orgs.sort((a, b) => a.name.localeCompare(b.name));
+    map(([orgs, , , paramMap]: [Organization[], Provider[], boolean, ParamMap, void, boolean]) => {
+      // Sort orgs by name to match the order within the sidebar
+      orgs.sort((a, b) => a.name.localeCompare(b.name));
 
-        let routeOrg = orgs.find((o) => o.id === paramMap.get("organizationId"));
+      let routeOrg = orgs.find((o) => o.id === paramMap.get("organizationId"));
 
-        let organizationIdViaPath: string | null = null;
+      let organizationIdViaPath: string | null = null;
 
-        if (["/sm/", "/organizations/"].some((path) => this.router.url.includes(path))) {
-          // Grab the organization ID from the URL
-          organizationIdViaPath = this.router.url.split("/")[2] ?? null;
-        }
+      if (["/sm/", "/organizations/"].some((path) => this.router.url.includes(path))) {
+        // Grab the organization ID from the URL
+        organizationIdViaPath = this.router.url.split("/")[2] ?? null;
+      }
 
-        // When the user is already viewing an organization within an application use it as the active route org
-        if (organizationIdViaPath && !routeOrg) {
-          routeOrg = orgs.find((o) => o.id === organizationIdViaPath);
-        }
+      // When the user is already viewing an organization within an application use it as the active route org
+      if (organizationIdViaPath && !routeOrg) {
+        routeOrg = orgs.find((o) => o.id === organizationIdViaPath);
+      }
 
-        // If the active route org doesn't have access to SM, find the first org that does.
-        const smOrg =
-          routeOrg?.canAccessSecretsManager && routeOrg?.enabled == true
-            ? routeOrg
-            : orgs.find((o) => o.canAccessSecretsManager && o.enabled == true);
+      // If the active route org doesn't have access to AC, find the first org that does.
+      const acOrg =
+        routeOrg != null && canAccessOrgAdmin(routeOrg)
+          ? routeOrg
+          : orgs.find((o) => canAccessOrgAdmin(o));
 
-        // If the active route org doesn't have access to AC, find the first org that does.
-        const acOrg =
-          routeOrg != null && canAccessOrgAdmin(routeOrg)
-            ? routeOrg
-            : orgs.find((o) => canAccessOrgAdmin(o));
+      const products = {
+        pm: {
+          name: "Password Manager",
+          icon: "bwi-lock",
+          appRoute: "/vault",
+          isActive:
+            !this.router.url.includes("/organizations/") &&
+            !this.router.url.includes("/providers/"),
+        },
+        ac: {
+          name: "Admin Console",
+          icon: "bwi-business",
+          appRoute: ["/organizations", acOrg?.id],
+          isActive: this.router.url.includes("/organizations/"),
+        },
+      } satisfies Record<string, ProductSwitcherItem>;
 
-        const providerPortalName =
-          providers[0]?.providerType === ProviderType.BusinessUnit
-            ? "Business Unit Portal"
-            : "Provider Portal";
+      const bento: ProductSwitcherItem[] = [products.pm];
+      const other: ProductSwitcherItem[] = [];
 
-        const orgsMarketingRoute = this.platformUtilsService.isSelfHost()
-          ? {
-              route: "https://bitwarden.com/products/business/",
-              external: true,
-            }
-          : {
-              route: "/create-organization",
-              external: false,
-            };
+      if (acOrg) {
+        bento.push(products.ac);
+      }
 
-        // Check if SM ads should be disabled for any organization
-        // SM ads are only disabled if the feature flag is enabled AND
-        // the user is a regular User (not Admin or Owner) in an organization that has useDisableSMAdsForUsers enabled
-        const shouldDisableSMAds =
-          removeSecretsManagerAdsFlag &&
-          orgs.some(
-            (org) => org.useDisableSMAdsForUsers === true && org.type === OrganizationUserType.User,
-          );
-
-        const products = {
-          pm: {
-            name: "Password Manager",
-            icon: "bwi-lock",
-            appRoute: "/vault",
-            marketingRoute: {
-              route: "https://bitwarden.com/products/personal/",
-              external: true,
-            },
-            isActive:
-              !this.router.url.includes("/sm/") &&
-              !this.router.url.includes("/organizations/") &&
-              !this.router.url.includes("/providers/"),
-          },
-          sm: {
-            name: "Secrets Manager",
-            icon: "bwi-cli",
-            appRoute: ["/sm", smOrg?.id],
-            marketingRoute: {
-              route: "/sm-landing",
-              external: false,
-            },
-            isActive: this.router.url.includes("/sm/"),
-            otherProductOverrides: {
-              supportingText: this.i18nService.t("secureYourInfrastructure"),
-            },
-          },
-          ac: {
-            name: "Admin Console",
-            icon: "bwi-business",
-            appRoute: ["/organizations", acOrg?.id],
-            marketingRoute: {
-              route: "https://bitwarden.com/products/business/",
-              external: true,
-            },
-            isActive: this.router.url.includes("/organizations/"),
-          },
-          provider: {
-            name: providerPortalName,
-            icon: "bwi-provider",
-            appRoute: ["/providers", providers[0]?.id],
-            isActive: this.router.url.includes("/providers/"),
-          },
-          orgs: {
-            name: "Organizations",
-            icon: "bwi-business",
-            marketingRoute: orgsMarketingRoute,
-            otherProductOverrides: {
-              name: "Share your passwords",
-              supportingText: this.i18nService.t("protectYourFamilyOrBusiness"),
-            },
-          },
-        } satisfies Record<string, ProductSwitcherItem>;
-
-        const bento: ProductSwitcherItem[] = [products.pm];
-        const other: ProductSwitcherItem[] = [];
-
-        if (smOrg) {
-          bento.push(products.sm);
-        } else if (!shouldDisableSMAds) {
-          // Only show SM in "other" section if ads are not disabled
-          other.push(products.sm);
-        }
-
-        if (acOrg) {
-          bento.push(products.ac);
-        } else {
-          if (!userHasSingleOrgPolicy) {
-            other.push(products.orgs);
-          }
-        }
-
-        if (providers.length > 0) {
-          bento.push(products.provider);
-        }
-
-        return {
-          bento,
-          other,
-        };
-      },
-    ),
+      return {
+        bento,
+        other,
+      };
+    }),
   );
 
   /** Poll the `syncService` until a sync is completed */

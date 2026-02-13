@@ -418,17 +418,17 @@ export class VaultListItemsContainerComponent implements AfterViewInit {
   }
 
   async doAutofill(cipher: PopupCipherViewLike) {
-    if (!CipherViewLikeUtils.isCipherListView(cipher)) {
-      await this.vaultPopupAutofillService.doAutofill(cipher);
-      return;
-    }
-
-    // When only the `CipherListView` is available, fetch the full cipher details
+    // Fetch and decrypt fresh so ORK-encrypted fields (type 100) are resolved
+    // before the cipher reaches the autofill service.
     const activeUserId = await firstValueFrom(this.accountService.activeAccount$.pipe(getUserId));
-    const _cipher = await this.cipherService.get(uuidAsString(cipher.id!), activeUserId);
-    const cipherView = await this.cipherService.decrypt(_cipher, activeUserId);
-
-    await this.vaultPopupAutofillService.doAutofill(cipherView);
+    const cipherId = CipherViewLikeUtils.isCipherListView(cipher)
+      ? uuidAsString(cipher.id!)
+      : cipher.id;
+    const encCipher = await this.cipherService.get(cipherId, activeUserId);
+    if (encCipher) {
+      const cipherView = await this.cipherService.decrypt(encCipher, activeUserId);
+      await this.vaultPopupAutofillService.doAutofill(cipherView);
+    }
   }
 
   async onViewCipher(cipher: PopupCipherViewLike) {

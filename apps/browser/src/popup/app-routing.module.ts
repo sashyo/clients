@@ -424,7 +424,7 @@ const routes: Routes = [
         data: {
           pageIcon: VaultIcon,
           pageTitle: {
-            key: "logInToBitwarden",
+            key: "logInToTideWarden",
           },
           elevation: 1,
           showAcctSwitcher: true,

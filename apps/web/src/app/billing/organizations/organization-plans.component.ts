@@ -81,12 +81,7 @@ const Allowed2020PlansForLegacyProviders = [
 @Component({
   selector: "app-organization-plans",
   templateUrl: "organization-plans.component.html",
-  imports: [
-    BillingSharedModule,
-    OrganizationCreateModule,
-    EnterPaymentMethodComponent,
-    EnterBillingAddressComponent,
-  ],
+  imports: [BillingSharedModule, OrganizationCreateModule],
   providers: [SubscriberBillingClient, PreviewInvoiceClient],
 })
 export class OrganizationPlansComponent implements OnInit, OnDestroy {
@@ -258,6 +253,46 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
       ) {
         this.formGroup.controls.businessOwned.setValue(true);
       }
+    } else {
+      // Self-hosted (Vaultwarden): PlanType.Free (0) with Enterprise tier.
+      // Vaultwarden gives enterprise features for free — no billing needed.
+      const freePlan = {
+        type: PlanType.Free,
+        productTier: ProductTierType.Enterprise,
+        name: "Enterprise",
+        isAnnual: false,
+        hasPremiumAccessOption: false,
+        PasswordManager: {
+          basePrice: 0,
+          seatPrice: 0,
+          baseSeats: 2,
+          maxSeats: 0,
+          maxAdditionalSeats: 0,
+          hasAdditionalSeatsOption: false,
+          baseStorageGb: 0,
+          hasAdditionalStorageOption: false,
+          maxAdditionalStorage: 0,
+          hasPremiumAccessOption: false,
+          maxCollections: 0,
+        },
+        SecretsManager: {
+          basePrice: 0,
+          seatPrice: 0,
+          baseSeats: 2,
+          maxSeats: 0,
+          maxAdditionalSeats: 0,
+          hasAdditionalSeatsOption: false,
+          baseServiceAccount: 0,
+          maxServiceAccount: 0,
+          hasAdditionalServiceAccountOption: false,
+          maxAdditionalServiceAccounts: 0,
+          maxProjects: 0,
+        },
+      } as unknown as PlanResponse;
+      this.passwordManagerPlans = [freePlan];
+      this.secretsManagerPlans = [freePlan];
+      this._productTier = ProductTierType.Enterprise;
+      this.formGroup.controls.productTier.setValue(ProductTierType.Enterprise);
     }
 
     const milestone3FeatureEnabled = await this.configService.getFeatureFlag(
@@ -311,9 +346,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     if (this.preSelectedProductTier != null && this.productTier < this.preSelectedProductTier) {
       this.productTier = this.preSelectedProductTier;
     }
-    if (!this.selfHosted) {
-      this.changedProduct();
-    }
+    this.changedProduct();
 
     this.loading = false;
 
@@ -675,9 +708,8 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
         const collectionCt = collection.encryptedString;
         const orgKeys = await this.keyService.makeKeyPair(orgKey[1]);
 
-        orgId = this.selfHosted
-          ? await this.createSelfHosted(key, collectionCt, orgKeys)
-          : await this.createCloudHosted(key, collectionCt, orgKeys, orgKey[1], activeUserId);
+        // Always use cloud-hosted creation path (Vaultwarden handles enterprise natively)
+        orgId = await this.createCloudHosted(key, collectionCt, orgKeys, orgKey[1], activeUserId);
 
         this.toastService.showToast({
           variant: "success",
@@ -994,6 +1026,12 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
   private buildSecretsManagerRequest(
     request: OrganizationCreateRequest | OrganizationUpgradeRequest,
   ): void {
+    // Self-hosted (Vaultwarden): always enable Secrets Manager
+    if (this.selfHosted) {
+      request.useSecretsManager = true;
+      return;
+    }
+
     const formValues = this.secretsManagerForm.value;
 
     request.useSecretsManager = this.planOffersSecretsManager && formValues.enabled;

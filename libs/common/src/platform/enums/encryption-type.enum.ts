@@ -15,6 +15,12 @@ export enum EncryptionType {
   Rsa2048_OaepSha1_B64 = 4,
   Rsa2048_OaepSha256_HmacSha256_B64 = 5,
   Rsa2048_OaepSha1_HmacSha256_B64 = 6,
+
+  // TideCloak ORK encryption — single data part (base64 ORK-encrypted blob)
+  TideCloakOrk = 100,
+
+  // Plaintext — base64-encoded unencrypted data (non-sensitive fields for TideCloak users)
+  Plaintext = 101,
 }
 
 export function encryptionTypeToString(encryptionType: EncryptionType): string {
@@ -46,4 +52,6 @@ export const EXPECTED_NUM_PARTS_BY_ENCRYPTION_TYPE = {
   [EncryptionType.Rsa2048_OaepSha256_HmacSha256_B64]: 2,
   [EncryptionType.Rsa2048_OaepSha1_HmacSha256_B64]: 2,
   [EncryptionType.CoseEncrypt0]: 1,
+  [EncryptionType.TideCloakOrk]: 1,
+  [EncryptionType.Plaintext]: 1,
 };

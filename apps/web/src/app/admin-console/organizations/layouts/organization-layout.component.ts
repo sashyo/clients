@@ -61,6 +61,7 @@ export class OrganizationLayoutComponent implements OnInit {
   protected orgFilter = (org: Organization) => canAccessOrgAdmin(org);
 
   protected integrationPageEnabled$: Observable<boolean>;
+  protected selfHosted: boolean;
 
   organization$: Observable<Organization>;
   canAccessExport$: Observable<boolean>;
@@ -86,6 +87,7 @@ export class OrganizationLayoutComponent implements OnInit {
 
   async ngOnInit() {
     document.body.classList.remove("layout_frontend");
+    this.selfHosted = this.platformUtilsService.isSelfHost();
 
     this.organization$ = this.route.params.pipe(
       map((p) => p.organizationId),
@@ -132,7 +134,9 @@ export class OrganizationLayoutComponent implements OnInit {
       ),
     );
 
-    this.integrationPageEnabled$ = this.organization$.pipe(map((org) => org.canAccessIntegrations));
+    this.integrationPageEnabled$ = this.organization$.pipe(
+      map((org) => !this.platformUtilsService.isSelfHost() && org.canAccessIntegrations),
+    );
 
     this.subscriber$ = this.organization$.pipe(
       map((organization) => ({
@@ -170,10 +174,16 @@ export class OrganizationLayoutComponent implements OnInit {
   }
 
   canShowBillingTab(organization: Organization): boolean {
+    if (this.platformUtilsService.isSelfHost()) {
+      return false;
+    }
     return canAccessBillingTab(organization);
   }
 
   canShowAccessIntelligenceTab(organization: Organization): boolean {
+    if (this.platformUtilsService.isSelfHost()) {
+      return false;
+    }
     return canAccessAccessIntelligence(organization);
   }
 

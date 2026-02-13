@@ -60,7 +60,12 @@ function onlyHttpsValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     const url = control.value as string;
 
-    if (url && !url.startsWith("https://") && !platformUtilsService.isDev()) {
+    const isLocalhost =
+      url &&
+      (url.startsWith("http://localhost") ||
+        url.startsWith("http://127.0.0.1") ||
+        url.startsWith("http://[::1]"));
+    if (url && !url.startsWith("https://") && !platformUtilsService.isDev() && !isLocalhost) {
       return {
         onlyHttpsAllowed: {
           message: i18nService.t("selfHostedEnvMustUseHttps"),

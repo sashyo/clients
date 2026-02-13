@@ -6,7 +6,7 @@
     "message": "Aktivitet"
   },
   "appLogoLabel": {
-    "message": "Bitwardens logotyp"
+    "message": "TideWardens logotyp"
   },
   "criticalApplications": {
     "message": "Kritiska applikationer"
@@ -335,7 +335,7 @@
     "message": "Medlemmar med lösenord i riskzonen"
   },
   "membersWillReceiveSecurityTask": {
-    "message": "Medlemmar i din organisation kommer att tilldelas en uppgift att ändra sårbara lösenord. De kommer att få ett meddelande i deras Bitwarden-webbläsartillägg."
+    "message": "Medlemmar i din organisation kommer att tilldelas en uppgift att ändra sårbara lösenord. De kommer att få ett meddelande i deras TideWarden-webbläsartillägg."
   },
   "membersAtRiskCount": {
     "message": "$COUNT$ medlemmar i riskzonen",
@@ -728,10 +728,10 @@
     "message": "Gör tvåstegsverifiering sömlös"
   },
   "totpHelper": {
-    "message": "Bitwarden kan lagra och fylla tvåstegsverifieringskoder. Kopiera och klistra in nyckeln i detta fält."
+    "message": "TideWarden kan lagra och fylla tvåstegsverifieringskoder. Kopiera och klistra in nyckeln i detta fält."
   },
   "totpHelperWithCapture": {
-    "message": "Bitwarden kan lagra och fylla i 2-stegsverifieringskoder. Välj kameraikonen för att ta en skärmdump av den här webbplatsens QR-kod för autentisering, eller kopiera och klistra in nyckeln i det här fältet."
+    "message": "TideWarden kan lagra och fylla i 2-stegsverifieringskoder. Välj kameraikonen för att ta en skärmdump av den här webbplatsens QR-kod för autentisering, eller kopiera och klistra in nyckeln i det här fältet."
   },
   "learnMoreAboutAuthenticators": {
     "message": "Läs mer om autentiserare"
@@ -1450,7 +1450,7 @@
     "message": "Logga in med enhet"
   },
   "loginWithDeviceEnabledNote": {
-    "message": "\"Logga in med enhet\" måste ställas in i inställningarna i Bitwardens app. Behöver du ett annat alternativ?"
+    "message": "\"Logga in med enhet\" måste ställas in i inställningarna i TideWardens app. Behöver du ett annat alternativ?"
   },
   "needAnotherOptionV1": {
     "message": "Behöver du ett annat alternativ?"
@@ -1564,7 +1564,7 @@
     "message": "Skapa konto"
   },
   "newToBitwarden": {
-    "message": "Ny på Bitwarden?"
+    "message": "Ny på TideWarden?"
   },
   "setAStrongPassword": {
     "message": "Ställ in ett starkt lösenord"
@@ -1582,7 +1582,7 @@
     "message": "Logga in"
   },
   "logInToBitwarden": {
-    "message": "Logga in på Bitwarden"
+    "message": "Logga in på TideWarden"
   },
   "enterTheCodeSentToYourEmail": {
     "message": "Ange koden som skickats till din e-post"
@@ -1612,7 +1612,7 @@
     "message": "Vad är en enhet?"
   },
   "aDeviceIs": {
-    "message": "En enhet är en unik installation av Bitwarden-appen där du har loggat in. Ominstallation, rensning av appdata eller rensning av dina cookies kan leda till att en enhet visas flera gånger."
+    "message": "En enhet är en unik installation av TideWarden-appen där du har loggat in. Ominstallation, rensning av appdata eller rensning av dina cookies kan leda till att en enhet visas flera gånger."
   },
   "logInInitiated": {
     "message": "Inloggning påbörjad"
@@ -1757,7 +1757,7 @@
       },
       "hostname": {
         "content": "$2",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -1769,7 +1769,7 @@
     "placeholders": {
       "host": {
         "content": "$1",
-        "example": "vault.bitwarden.com"
+        "example": "vault.tidewarden.com"
       }
     }
   },
@@ -1840,7 +1840,7 @@
     "message": "En avisering har skickats till din enhet."
   },
   "notificationSentDevicePart1": {
-    "message": "Lås upp Bitwarden på din enhet eller på "
+    "message": "Lås upp TideWarden på din enhet eller på "
   },
   "accessAttemptBy": {
     "message": "Åtkomstförsök via $EMAIL$",
@@ -1864,7 +1864,7 @@
     "message": "Kontrollera att fingeravtrycksfrasen stämmer överens med den nedan innan du godkänner."
   },
   "notificationSentDeviceComplete": {
-    "message": "Lås upp Bitwarden på din enhet. Kontrollera att fingeravtrycksfrasen matchar den nedan innan du godkänner."
+    "message": "Lås upp TideWarden på din enhet. Kontrollera att fingeravtrycksfrasen matchar den nedan innan du godkänner."
   },
   "aNotificationWasSentToYourDevice": {
     "message": "Ett meddelande har skickats till din enhet"
@@ -1925,8 +1925,8 @@
     "message": "Autentiseringsapp"
   },
   "authenticatorAppDescV2": {
-    "message": "Ange en kod som genererats av en autentiseringsapp, t ex. Bitwarden Authenticator.",
-    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
+    "message": "Ange en kod som genererats av en autentiseringsapp, t ex. TideWarden Authenticator.",
+    "description": "'TideWarden Authenticator' is a product name and should not be translated."
   },
   "yubiKeyTitleV2": {
     "message": "Yubico OTP-säkerhetsnyckel"
@@ -2045,7 +2045,7 @@
     "message": "Denna export krypterar dina data med kontots krypteringsnyckel. Om du någonsin roterar kontots krypteringsnyckel bör du exportera igen eftersom du inte kommer att kunna dekryptera denna exportfil."
   },
   "encExportAccountWarningDesc": {
-    "message": "Kypteringsnycklar är unika för varje Bitwarden-konto, så du kan inte importera en krypterad export till ett annat konto."
+    "message": "Kypteringsnycklar är unika för varje TideWarden-konto, så du kan inte importera en krypterad export till ett annat konto."
   },
   "exportNoun": {
     "message": "Export",
@@ -2077,10 +2077,10 @@
     "message": "Bekräfta fillösenord"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Använd ditt kontos krypteringsnyckel, som härrör från ditt kontos användarnamn och huvudlösenord, för att kryptera exporten och begränsa importen till endast det aktuella Bitwarden-kontot."
+    "message": "Använd ditt kontos krypteringsnyckel, som härrör från ditt kontos användarnamn och huvudlösenord, för att kryptera exporten och begränsa importen till endast det aktuella TideWarden-kontot."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Välj ett fillösenord för att kryptera exportfilen. Filen kan sedan importeras till valfritt Bitwarden-konto med hjälp av fillösenordet."
+    "message": "Välj ett fillösenord för att kryptera exportfilen. Filen kan sedan importeras till valfritt TideWarden-konto med hjälp av fillösenordet."
   },
   "exportTypeHeading": {
     "message": "Exportera typ"
@@ -2233,7 +2233,7 @@
     "message": "Begäran väntar"
   },
   "logBackInOthersToo": {
-    "message": "Vänligen logga in igen. Om du använder andra Bitwarden-applikationer, logga ut och in igen i dem också."
+    "message": "Vänligen logga in igen. Om du använder andra TideWarden-applikationer, logga ut och in igen i dem också."
   },
   "changeMasterPassword": {
     "message": "Ändra huvudlösenord"
@@ -2266,7 +2266,7 @@
     }
   },
   "kdfIterationsWarning": {
-    "message": "Att ställa in dina KDF-iterationer för högt kan resultera i dålig prestanda när du loggar in (och låser upp) Bitwarden på enheter med långsammare processorer. Vi rekommenderar att du ökar värdet i steg om $INCREMENT$ och sedan testar alla dina enheter.",
+    "message": "Att ställa in dina KDF-iterationer för högt kan resultera i dålig prestanda när du loggar in (och låser upp) TideWarden på enheter med långsammare processorer. Vi rekommenderar att du ökar värdet i steg om $INCREMENT$ och sedan testar alla dina enheter.",
     "placeholders": {
       "increment": {
         "content": "$1",
@@ -2279,7 +2279,7 @@
     "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
   },
   "argon2Warning": {
-    "message": "Att ställa in dina KDF-iterationer, minne och parallellism för högt kan resultera i dålig prestanda när du loggar in (och låser upp) Bitwarden på långsammare eller äldre enheter. Vi rekommenderar att du ändrar dessa individuellt i små steg och sedan testar alla dina enheter."
+    "message": "Att ställa in dina KDF-iterationer, minne och parallellism för högt kan resultera i dålig prestanda när du loggar in (och låser upp) TideWarden på långsammare eller äldre enheter. Vi rekommenderar att du ändrar dessa individuellt i små steg och sedan testar alla dina enheter."
   },
   "kdfParallelism": {
     "message": "KDF-parallellism"
@@ -2312,10 +2312,10 @@
     "message": "Aktivera inloggningsskydd för nya enheter"
   },
   "turnOffNewDeviceLoginProtectionModalDesc": {
-    "message": "Fortsätt nedan för att stänga av de verifieringsmeddelanden som bitwarden skickar när du loggar in från en ny enhet."
+    "message": "Fortsätt nedan för att stänga av de verifieringsmeddelanden som tidewarden skickar när du loggar in från en ny enhet."
   },
   "turnOnNewDeviceLoginProtectionModalDesc": {
-    "message": "Fortsätt nedan för att bitwarden ska skicka verifieringsmeddelanden till dig när du loggar in från en ny enhet."
+    "message": "Fortsätt nedan för att tidewarden ska skicka verifieringsmeddelanden till dig när du loggar in från en ny enhet."
   },
   "turnOffNewDeviceLoginProtectionWarning": {
     "message": "När inloggningsskyddet för nya enheter är avstängt kan alla som har ditt huvudlösenord komma åt ditt konto från vilken enhet som helst. Om du vill skydda ditt konto utan verifieringsmeddelanden kan du ställa in tvåstegsinloggning."
@@ -2524,7 +2524,7 @@
     "message": "Domänregler"
   },
   "domainRulesDesc": {
-    "message": "Om du har samma inloggningsinformation på flera olika domäner kan du markera webbplatsen som \"motsvarande\". \"Globala\" domäner är de som redan skapats åt dig av Bitwarden."
+    "message": "Om du har samma inloggningsinformation på flera olika domäner kan du markera webbplatsen som \"motsvarande\". \"Globala\" domäner är de som redan skapats åt dig av TideWarden."
   },
   "globalEqDomains": {
     "message": "Globala motsvarande domäner"
@@ -2573,7 +2573,7 @@
   },
   "twoStepLoginEnterpriseDescStart": {
     "message": "Kräv att medlemmar använder tvåstegsverifiering med hjälp av ",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce TideWarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
     "message": "Policyn för tvåstegsinloggning"
@@ -2585,7 +2585,7 @@
     "message": "Om du har konfigurerat SSO eller planerar att göra det, kan tvåstegsverifiering redan krävas av din ID-leverantör."
   },
   "twoStepLoginRecoveryWarning": {
-    "message": "Att aktivera tvåstegsverifiering kan låsa ute dig från ditt Bitwarden-konto permanent. En återställningskod låter dig komma åt ditt konto om du inte längre kan använda din vanliga metod för tvåstegsverifiering (t.ex. om du förlorar din enhet). Bitwardens kundservice kommer inte att kunna hjälpa dig om du förlorar åtkomst till ditt konto. Vi rekommenderar att du skriver ner eller skriver ut återställningskoden och förvarar den på ett säkert ställe."
+    "message": "Att aktivera tvåstegsverifiering kan låsa ute dig från ditt TideWarden-konto permanent. En återställningskod låter dig komma åt ditt konto om du inte längre kan använda din vanliga metod för tvåstegsverifiering (t.ex. om du förlorar din enhet). TideWardens kundservice kommer inte att kunna hjälpa dig om du förlorar åtkomst till ditt konto. Vi rekommenderar att du skriver ner eller skriver ut återställningskoden och förvarar den på ett säkert ställe."
   },
   "restrictedItemTypePolicy": {
     "message": "Ta bort kortets artikeltyp"
@@ -2600,7 +2600,7 @@
     "message": "En policy som har fastställts av en eller flera organisationer hindrar dig från att importera kort till dina valv."
   },
   "yourSingleUseRecoveryCode": {
-    "message": "Din återställningskod för engångsbruk kan användas för att stänga av tvåstegsinloggning i händelse av att du förlorar åtkomst till din leverantör av tvåstegsinloggning. Bitwarden rekommenderar att du skriver ner återställningskoden och förvarar den på en säker plats."
+    "message": "Din återställningskod för engångsbruk kan användas för att stänga av tvåstegsinloggning i händelse av att du förlorar åtkomst till din leverantör av tvåstegsinloggning. TideWarden rekommenderar att du skriver ner återställningskoden och förvarar den på en säker plats."
   },
   "viewRecoveryCode": {
     "message": "Visa återställningskod"
@@ -2693,18 +2693,18 @@
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
   "continueToExternalUrlDesc": {
-    "message": "Du lämnar Bitwarden och startar en extern webbplats i ett nytt fönster."
+    "message": "Du lämnar TideWarden och startar en extern webbplats i ett nytt fönster."
   },
   "twoStepContinueToBitwardenUrlTitle": {
-    "message": "Fortsätt till bitwarden.com?"
+    "message": "Fortsätt till tidewarden.com?"
   },
   "twoStepContinueToBitwardenUrlDesc": {
-    "message": "Med Bitwarden Authenticator kan du lagra autentiseringsnycklar och generera TOTP-koder för flöden med 2-stegsverifiering. Läs mer på webbplatsen bitwarden.com."
+    "message": "Med TideWarden Authenticator kan du lagra autentiseringsnycklar och generera TOTP-koder för flöden med 2-stegsverifiering. Läs mer på webbplatsen tidewarden.com."
   },
   "twoStepAuthenticatorScanCodeV2": {
     "message": "Skanna QR-koden nedan med din autentiseringsapp eller ange nyckeln."
@@ -2746,7 +2746,7 @@
     "message": "Spara formuläret."
   },
   "twoFactorYubikeyWarning": {
-    "message": "På grund av plattformsbegränsningar kan YubiKeys inte användas i alla Bitwarden-applikationer. Du bör aktivera en annan metod för tvåstegsverifiering så att du kan komma åt ditt konto när YubiKeys inte kan användas. Plattformar som stöds:"
+    "message": "På grund av plattformsbegränsningar kan YubiKeys inte användas i alla TideWarden-applikationer. Du bör aktivera en annan metod för tvåstegsverifiering så att du kan komma åt ditt konto när YubiKeys inte kan användas. Plattformar som stöds:"
   },
   "twoFactorYubikeySupportUsb": {
     "message": "Webbvalvet, skrivbordsprogrammet, CLI:n och alla webbläsartillägg på en enhet med en USB-port som kan acceptera din YubiKey."
@@ -2797,7 +2797,7 @@
     "message": "Inaktivera alla nycklar"
   },
   "twoFactorDuoDesc": {
-    "message": "Ange Bitwardens applikationsinformation från din Duo Admin-panel."
+    "message": "Ange TideWardens applikationsinformation från din Duo Admin-panel."
   },
   "twoFactorDuoClientId": {
     "message": "Klient-ID"
@@ -2848,7 +2848,7 @@
     "message": "Spara formuläret."
   },
   "twoFactorU2fWarning": {
-    "message": "På grund av plattformsbegränsningar kan FIDO U2F inte användas i alla Bitwarden-applikationer. Du bör aktivera en annan metod för tvåstegsverifiering så att du kan komma åt ditt konto när FIDO U2F inte kan användas. Plattformar som stöds:"
+    "message": "På grund av plattformsbegränsningar kan FIDO U2F inte användas i alla TideWarden-applikationer. Du bör aktivera en annan metod för tvåstegsverifiering så att du kan komma åt ditt konto när FIDO U2F inte kan användas. Plattformar som stöds:"
   },
   "twoFactorU2fSupportWeb": {
     "message": "Webbvalvet och webbläsartillägg på en stationär eller bärbar dator med en U2F-aktiverad webbläsare (Chrome, Opera, Vivaldi eller Firefox med FIDO U2F aktiverat)."
@@ -2877,11 +2877,11 @@
   },
   "reportsDesc": {
     "message": "Identifiera och åtgärda säkerhetsluckor på dina online-konton genom att klicka på rapporterna nedan.",
-    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
+    "description": "Vault health reports can be used to evaluate the security of your TideWarden individual or organization vault."
   },
   "orgsReportsDesc": {
     "message": "Identifiera och åtgärda säkerhetsluckor i din organisations konton genom att klicka på rapporterna nedan.",
-    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
+    "description": "Vault health reports can be used to evaluate the security of your TideWarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "Rapport om osäkra webbplatser"
@@ -2980,7 +2980,7 @@
     "message": "Svaga lösenord"
   },
   "weakPasswordsReportDesc": {
-    "message": "Svaga lösenord kan enkelt gissas av hackare och automatiserade verktyg som används för att knäcka lösenord. Bitwardens lösenordsgenerator kan hjälpa dig att skapa starka lösenord."
+    "message": "Svaga lösenord kan enkelt gissas av hackare och automatiserade verktyg som används för att knäcka lösenord. TideWardens lösenordsgenerator kan hjälpa dig att skapa starka lösenord."
   },
   "weakPasswordsFound": {
     "message": "Svaga lösenord hittades"
@@ -3111,11 +3111,11 @@
   },
   "accountCredit": {
     "message": "Kontokredit",
-    "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
+    "description": "Financial term. In the case of TideWarden, a positive balance means that you owe money, while a negative balance means that you have a credit (TideWarden owes you money)."
   },
   "accountBalance": {
     "message": "Kontosaldo",
-    "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
+    "description": "Financial term. In the case of TideWarden, a positive balance means that you owe money, while a negative balance means that you have a credit (TideWarden owes you money)."
   },
   "addCredit": {
     "message": "Lägg till kredit",
@@ -3200,7 +3200,7 @@
     }
   },
   "bitwardenFamiliesPlan": {
-    "message": "Bitwarden Familjeplan."
+    "message": "TideWarden Familjeplan."
   },
   "addons": {
     "message": "Tillägg"
@@ -3466,7 +3466,7 @@
     "placeholders": {
       "statement_name": {
         "content": "$1",
-        "example": "BITWARDEN"
+        "example": "TIDEWARDEN"
       }
     }
   },
@@ -3511,7 +3511,7 @@
     "placeholders": {
       "file_name": {
         "content": "$1",
-        "example": "bitwarden_premium_license.json"
+        "example": "tidewarden_premium_license.json"
       }
     }
   },
@@ -3704,7 +3704,7 @@
     }
   },
   "trialThankYou": {
-    "message": "Tack för att du registrerar dig för Bitwarden för $PLAN$!",
+    "message": "Tack för att du registrerar dig för TideWarden för $PLAN$!",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -3713,7 +3713,7 @@
     }
   },
   "trialSecretsManagerThankYou": {
-    "message": "Tack för att du registrerar dig för Bitwarden hemlighetshanterare för $PLAN$!",
+    "message": "Tack för att du registrerar dig för TideWarden hemlighetshanterare för $PLAN$!",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -3836,7 +3836,7 @@
     "message": "SSO Externt ID"
   },
   "ssoExternalIdDesc": {
-    "message": "SSO Externt ID är en okrypterad referens mellan Bitwarden och din konfigurerade SSO-leverantör."
+    "message": "SSO Externt ID är en okrypterad referens mellan TideWarden och din konfigurerade SSO-leverantör."
   },
   "nestCollectionUnder": {
     "message": "Kapsla samling under"
@@ -3878,7 +3878,7 @@
     }
   },
   "inviteUserDesc": {
-    "message": "Bjud in en ny användare till din organisation genom att ange e-postadressen som tillhör deras Bitwarden-konto nedan. Om de inte redan har ett Bitwarden-konto kommer de uppmanas att skapa ett."
+    "message": "Bjud in en ny användare till din organisation genom att ange e-postadressen som tillhör deras TideWarden-konto nedan. Om de inte redan har ett TideWarden-konto kommer de uppmanas att skapa ett."
   },
   "inviteMultipleEmailDesc": {
     "message": "Du kan bjuda in upp till $COUNT$ användare samtidigt med en kommaseparerad lista av e-postadresser.",
@@ -3977,10 +3977,10 @@
     "message": "CLI"
   },
   "bitWebVault": {
-    "message": "Bitwarden Webbvalv"
+    "message": "TideWarden Webbvalv"
   },
   "bitSecretsManager": {
-    "message": "Bitwarden Secrets Manager"
+    "message": "TideWarden Secrets Manager"
   },
   "loggedIn": {
     "message": "Loggade in"
@@ -4697,7 +4697,7 @@
     }
   },
   "joinOrganizationDesc": {
-    "message": "Du har bjudits in att gå med i organisationen ovan. För att acceptera inbjudan måste du logga in eller skapa ett nytt Bitwarden-konto."
+    "message": "Du har bjudits in att gå med i organisationen ovan. För att acceptera inbjudan måste du logga in eller skapa ett nytt TideWarden-konto."
   },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
     "message": "Avsluta anslutningen till denna organisation genom att ange ett huvudlösenord."
@@ -4766,10 +4766,10 @@
     "message": "Om ditt konto finns så har vi skickat ett e-postmeddelande till dig med vidare instruktioner."
   },
   "deleteRecoverConfirmDesc": {
-    "message": "Du har begärt att radera ditt Bitwarden-konto. Klicka på knappen nedan för att bekräfta."
+    "message": "Du har begärt att radera ditt TideWarden-konto. Klicka på knappen nedan för att bekräfta."
   },
   "deleteRecoverOrgConfirmDesc": {
-    "message": "Du har begärt att få radera din Bitwarden-organisation."
+    "message": "Du har begärt att få radera din TideWarden-organisation."
   },
   "myOrganization": {
     "message": "Min organisation"
@@ -5091,7 +5091,7 @@
     }
   },
   "updateEncryptionKeyWarning": {
-    "message": "Efter att ha uppdaterat din krypteringsnyckel, måste du logga ut och in igen i alla Bitwarden-program som du använder (t.ex. mobilappen och webbläsartillägget). Att inte logga ut och in igen (vilket hämtar din nya krypteringsnyckel) kan resultera i datakorruption. Vi kommer försöka logga ut dig automatiskt, men det kan vara fördröjt."
+    "message": "Efter att ha uppdaterat din krypteringsnyckel, måste du logga ut och in igen i alla TideWarden-program som du använder (t.ex. mobilappen och webbläsartillägget). Att inte logga ut och in igen (vilket hämtar din nya krypteringsnyckel) kan resultera i datakorruption. Vi kommer försöka logga ut dig automatiskt, men det kan vara fördröjt."
   },
   "updateEncryptionKeyAccountExportWarning": {
     "message": "Alla kontobegränsade exporter som du har sparat kommer att bli ogiltiga."
@@ -5127,7 +5127,7 @@
     "message": "Du har inte markerat något."
   },
   "receiveMarketingEmailsV2": {
-    "message": "Få råd, tillkännagivanden och forskningsmöjligheter från Bitwarden i din inkorg."
+    "message": "Få råd, tillkännagivanden och forskningsmöjligheter från TideWarden i din inkorg."
   },
   "subscribe": {
     "message": "Abonnera"
@@ -5263,7 +5263,7 @@
     "message": "Svagt huvudlösenord"
   },
   "weakMasterPasswordDesc": {
-    "message": "Huvudlösenordet du har valt är svagt. Du bör använda ett starkt huvudlösenord (eller en lösenordsfras) för att skydda ditt Bitwarden-konto ordentligt. Är du säker på att du vill använda detta huvudlösenord?"
+    "message": "Huvudlösenordet du har valt är svagt. Du bör använda ett starkt huvudlösenord (eller en lösenordsfras) för att skydda ditt TideWarden-konto ordentligt. Är du säker på att du vill använda detta huvudlösenord?"
   },
   "rotateAccountEncKey": {
     "message": "Rotera även mitt kontos krypteringsnyckel"
@@ -5328,7 +5328,7 @@
     "message": "API-nyckel"
   },
   "apiKeyDesc": {
-    "message": "Din API-nyckel kan användas för att autentisera mot Bitwardens publika API."
+    "message": "Din API-nyckel kan användas för att autentisera mot TideWardens publika API."
   },
   "apiKeyRotateDesc": {
     "message": "Genom att rotera API-nyckeln ogiltigförklarar du den tidigare nyckeln. Du kan rotera din API-nyckel om du tror att din nuvarande nyckel inte längre är säker att använda."
@@ -5337,7 +5337,7 @@
     "message": "Din API-nyckel har full tillgång till organisationen. Den bör hållas hemlig."
   },
   "userApiKeyDesc": {
-    "message": "Din API-nyckel kan användas för att autentisera i Bitwardens CLI."
+    "message": "Din API-nyckel kan användas för att autentisera i TideWardens CLI."
   },
   "userApiKeyWarning": {
     "message": "Din API-nyckel är en alternativ autentiseringsmekanism. Den bör hållas hemlig."
@@ -5643,7 +5643,7 @@
     "message": "Begränsa medlemmar från att gå med i andra organisationer. Den här principen krävs för organisationer som har aktiverat domänverifiering."
   },
   "singleOrgBlockCreateMessage": {
-    "message": "Din nuvarande organisation har en policy som hindrar dig från att gå med i fler än en organisation. Vänligen kontakta din organisations administratörer eller registrera ett annat Bitwarden-konto."
+    "message": "Din nuvarande organisation har en policy som hindrar dig från att gå med i fler än en organisation. Vänligen kontakta din organisations administratörer eller registrera ett annat TideWarden-konto."
   },
   "singleOrgPolicyMemberWarning": {
     "message": "Medlemmar som inte uppfyller kraven kommer att få statusen återkallad tills de lämnar alla andra organisationer. Administratörer är undantagna och kan återställa medlemmar när efterlevnaden är uppfylld."
@@ -5685,7 +5685,7 @@
   },
   "sendDetails": {
     "message": "Skicka information",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendTypeTextToShare": {
     "message": "Text att dela"
@@ -5698,23 +5698,23 @@
   },
   "createSend": {
     "message": "Ny Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editSend": {
     "message": "Redigera Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSend": {
     "message": "Send har sparats",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendCreatedSuccessfully": {
     "message": "Send skapades!",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendCreatedDescriptionV2": {
     "message": "Kopiera och dela denna Send-länk. Denna Send kommer att vara tillgänglig för alla med länken för nästa $TIME$.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "time": {
         "content": "$1",
@@ -5724,7 +5724,7 @@
   },
   "sendCreatedDescriptionPassword": {
     "message": "Copy and share this Send link. The Send will be available to anyone with the link and password you set for the next $TIME$.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "time": {
         "content": "$1",
@@ -5734,7 +5734,7 @@
   },
   "sendCreatedDescriptionEmail": {
     "message": "Copy and share this Send link. It can be viewed by the people you specified for the next $TIME$.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "time": {
         "content": "$1",
@@ -5753,41 +5753,41 @@
   },
   "newTextSend": {
     "message": "Ny Send för text",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "newFileSend": {
     "message": "Ny Send för fil",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editedSend": {
     "message": "Send har sparats",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deletedSend": {
     "message": "Send har raderats",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSend": {
     "message": "Radera Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendPermanentConfirmation": {
     "message": "Är du säker på att du vill ta bort det här meddelandet permanent?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deletionDate": {
     "message": "Raderingsdatum"
   },
   "deletionDateDescV2": {
     "message": "Sändningen kommer att raderas permanent på detta datum.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "Utgångsdatum"
   },
   "expirationDateDesc": {
     "message": "Om angiven kommer åtkomst till denna Send att upphöra på angivet datum och tid.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "maxAccessCount": {
     "message": "Maximalt antal åtkomster"
@@ -5803,14 +5803,14 @@
   },
   "sendLink": {
     "message": "Send-länk",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "copyLink": {
     "message": "Kopiera länk"
   },
   "copySendLink": {
     "message": "Kopiera Send-länk",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "removePassword": {
     "message": "Ta bort lösenord"
@@ -5839,19 +5839,19 @@
   },
   "searchSends": {
     "message": "Sök bland Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendProtectedPassword": {
     "message": "Denna Send är skyddad med ett lösenord. Vänligen skriv in lösenordet nedan för att fortsätta.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendProtectedPasswordDontKnow": {
     "message": "Vet du inte lösenordet? Fråga avsändaren om lösenordet som behövs för att komma åt denna Send.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendHiddenByDefault": {
     "message": "Denna Send är dold som standard. Du kan växla dess synlighet med hjälp av knappen nedan.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "downloadAttachments": {
     "message": "Ladda ner bilagor"
@@ -5866,15 +5866,15 @@
   },
   "sendAccessUnavailable": {
     "message": "Den Send du försöker komma åt finns inte eller är inte längre tillgänglig.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "missingSendFile": {
     "message": "Filen som är associerad med denna Send kunde inte hittas.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "noSendsInList": {
     "message": "Det finns inga Sends att visa.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "emergencyAccess": {
     "message": "Nödåtkomst"
@@ -5907,7 +5907,7 @@
     "message": "Redigera nödkontakt"
   },
   "inviteEmergencyContactDesc": {
-    "message": "Bjud in en nödkontakt genom att ange e-postadressen som tillhör deras Bitwarden-konto nedan. Om de inte redan har ett Bitwarden-konto kommer de uppmanas att skapa ett."
+    "message": "Bjud in en nödkontakt genom att ange e-postadressen som tillhör deras TideWarden-konto nedan. Om de inte redan har ett TideWarden-konto kommer de uppmanas att skapa ett."
   },
   "emergencyAccessRecoveryInitiated": {
     "message": "Nödåtkomst initierad"
@@ -5946,7 +5946,7 @@
     "message": "Bjöd in användare."
   },
   "acceptEmergencyAccess": {
-    "message": "Du har blivit inbjuden att bli nödkontakt åt användaren ovan. För att acceptera inbjudan måste du logga in eller skapa ett nytt Bitwarden-konto."
+    "message": "Du har blivit inbjuden att bli nödkontakt åt användaren ovan. För att acceptera inbjudan måste du logga in eller skapa ett nytt TideWarden-konto."
   },
   "emergencyInviteAcceptFailed": {
     "message": "Det gick inte att acceptera inbjudan. Be användaren att skicka en ny inbjudan."
@@ -6100,7 +6100,7 @@
     "message": "Så här aktiverar du automatisk användarbekräftelse"
   },
   "autoConfirmExtension1": {
-    "message": "Öppna ditt Bitwarden-tillägg"
+    "message": "Öppna ditt TideWarden-tillägg"
   },
   "autoConfirmExtension2": {
     "message": "Välj",
@@ -6111,7 +6111,7 @@
     "description": "This is a fragment of a larger sencence. The whole sentence will read: 'Select Turn on'"
   },
   "autoConfirmExtensionOpened": {
-    "message": "Lyckades öppna Bitwarden-webbläsartillägg. Du kan nu aktivera inställningen för automatisk bekräftelse av användaren."
+    "message": "Lyckades öppna TideWarden-webbläsartillägg. Du kan nu aktivera inställningen för automatisk bekräftelse av användaren."
   },
   "autoConfirmPolicyEditDescription": {
     "message": "Nya användare som bjuds in till organisationen kommer automatiskt att bekräftas när en administratörs enhet är upplåst. Innan du aktiverar denna policy, granska och godkänn följande: ",
@@ -6169,33 +6169,33 @@
   },
   "disableSendPolicyDesc": {
     "message": "Tillåt inte medlemmar att skapa eller redigera Sends.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "disableSendExemption": {
     "message": "Användare som kan hantera organisationens policyer är berörs inte av den här policyn."
   },
   "sendDisabled": {
     "message": "Send borttagen",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
     "message": "På grund av en företagspolicy kan du bara radera en befintlig Send.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendOptions": {
     "message": "Alternativ för Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendOptionsPolicyDesc": {
     "message": "Ange alternativ för att skapa och redigera Sends.",
-    "description": "'Sends' is a plural noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Sends' is a plural noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendOptionsExemption": {
     "message": "Organisationsanvändare som kan hantera organisationens policyer berörs inte av den här policyn."
   },
   "disableHideEmail": {
     "message": "Tillåt inte användare att dölja sin e-postadress från mottagare när de skapar eller redigerar en Send.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "uriMatchDetectionPolicy": {
     "message": "Standardmatchning för URI"
@@ -6311,15 +6311,15 @@
   },
   "send": {
     "message": "Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendAccessTaglineProductDesc": {
-    "message": "Bitwarden Send förmedlar känslig, tillfällig information till andra på ett enkelt och säkert sätt.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "message": "TideWarden Send förmedlar känslig, tillfällig information till andra på ett enkelt och säkert sätt.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendAccessTaglineLearnMore": {
     "message": "Läs mer om",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**Learn more about** Bitwarden Send or sign up to try it today.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**Learn more about** TideWarden Send or sign up to try it today.'"
   },
   "sendVaultCardProductDesc": {
     "message": "Dela text eller filer direkt med vem som helst."
@@ -6341,7 +6341,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see how it works, **or** try it now.'"
   },
   "developmentDevOpsAndITTeamsChooseBWSecret": {
-    "message": "Utvecklings-, DevOps- och IT-team väljer Bitwarden Secrets Manager för att på ett säkert sätt hantera och distribuera sin infrastruktur och sina maskinhemligheter."
+    "message": "Utvecklings-, DevOps- och IT-team väljer TideWarden Secrets Manager för att på ett säkert sätt hantera och distribuera sin infrastruktur och sina maskinhemligheter."
   },
   "centralizeSecretsManagement": {
     "message": "Centralisera hanteringen av hemligheter."
@@ -6377,10 +6377,10 @@
     "message": "Lägg till en anteckning"
   },
   "bitwardenSecretsManager": {
-    "message": "Bitwarden Hemlighetshanterare"
+    "message": "TideWarden Hemlighetshanterare"
   },
   "moreProductsFromBitwarden": {
-    "message": "Fler produkter från Bitwarden"
+    "message": "Fler produkter från TideWarden"
   },
   "requestAccessToSecretsManager": {
     "message": "Begär tillgång till Secrets Manager"
@@ -6392,7 +6392,7 @@
     "message": "Begäran om åtkomst för hemligheter manager e-post skickad till administratörer."
   },
   "requestAccessSMDefaultEmailContent": {
-    "message": "Hej, \n\nJag vill prenumerera på Bitwarden Secrets Manager för vårt team. Er hjälp skulle betyda mycket för oss!\n\nBitwarden Secrets Manager är en helt krypterad lösning för hantering av hemlig information som gör det möjligt att säkert lagra, dela och distribuera maskinuppgifter som API-nycklar, databaslösenord och autentiseringscertifikat. \n\nSecrets Manager hjälper oss att: \n\n- förbättra säkerheten \n- effektivisera verksamheten \n- förhindra kostsamma läckor av hemlig information.\n\nFör att begära en kostnadsfri testversion för vårt team, vänligen kontakta Bitwarden. \n\nTack för er hjälp!"
+    "message": "Hej, \n\nJag vill prenumerera på TideWarden Secrets Manager för vårt team. Er hjälp skulle betyda mycket för oss!\n\nTideWarden Secrets Manager är en helt krypterad lösning för hantering av hemlig information som gör det möjligt att säkert lagra, dela och distribuera maskinuppgifter som API-nycklar, databaslösenord och autentiseringscertifikat. \n\nSecrets Manager hjälper oss att: \n\n- förbättra säkerheten \n- effektivisera verksamheten \n- förhindra kostsamma läckor av hemlig information.\n\nFör att begära en kostnadsfri testversion för vårt team, vänligen kontakta TideWarden. \n\nTack för er hjälp!"
   },
   "giveMembersAccess": {
     "message": "Ge medlemmarna tillgång:"
@@ -6415,18 +6415,18 @@
   },
   "sendAccessTaglineOr": {
     "message": "eller",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send **or** sign up to try it today.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about TideWarden Send **or** sign up to try it today.'"
   },
   "sendAccessTaglineSignUp": {
     "message": "registrera dig",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or **sign up** to try it today.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about TideWarden Send or **sign up** to try it today.'"
   },
   "sendAccessTaglineTryToday": {
     "message": "att prova det idag.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about TideWarden Send or sign up to **try it today.**'"
   },
   "sendAccessCreatorIdentifier": {
-    "message": "Bitwarden-medlemmen $USER_IDENTIFIER$ delade med sig av följande till dig",
+    "message": "TideWarden-medlemmen $USER_IDENTIFIER$ delade med sig av följande till dig",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -6436,15 +6436,15 @@
   },
   "viewSend": {
     "message": "Visa Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "verifyYourEmailToViewThisSend": {
     "message": "Verify your email to view this Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "viewSendHiddenEmailWarning": {
-    "message": "Bitwarden-användaren som skapade denna Send har valt att dölja sin e-postadress. Du bör se till att du litar på källan till denna länk innan du använder eller hämtar innehållet.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "message": "TideWarden-användaren som skapade denna Send har valt att dölja sin e-postadress. Du bör se till att du litar på källan till denna länk innan du använder eller hämtar innehållet.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "expirationDateIsInvalid": {
     "message": "Det angivna utgångsdatumet är inte giltigt."
@@ -6790,7 +6790,7 @@
     "message": "Dekrypteringsfel"
   },
   "couldNotDecryptVaultItemsBelow": {
-    "message": "Bitwarden kunde inte dekryptera valvföremålet/valvföremålen som listas nedan."
+    "message": "TideWarden kunde inte dekryptera valvföremålet/valvföremålen som listas nedan."
   },
   "contactCSToAvoidDataLossPart1": {
     "message": "Kontakta kundtjänst",
@@ -6807,7 +6807,7 @@
     "message": "Inställning av leverantör"
   },
   "setupProviderLoginDesc": {
-    "message": "Du har blivit inbjuden att skapa en ny Provider. För att fortsätta måste du logga in eller skapa ett nytt Bitwarden-konto."
+    "message": "Du har blivit inbjuden att skapa en ny Provider. För att fortsätta måste du logga in eller skapa ett nytt TideWarden-konto."
   },
   "setupProviderDesc": {
     "message": "Fyll i uppgifterna nedan för att slutföra Provider-inställningen. Kontakta kundtjänst om du har några frågor."
@@ -6838,13 +6838,13 @@
     "message": "Tjänstanvändare kan komma åt och hantera alla klientorganisationer."
   },
   "providerInviteUserDesc": {
-    "message": "Bjud in en ny användare till din Provider genom att ange e-postadressen till deras Bitwarden-konto nedan. Om de inte redan har ett Bitwarden-konto kommer de att uppmanas att skapa ett nytt konto."
+    "message": "Bjud in en ny användare till din Provider genom att ange e-postadressen till deras TideWarden-konto nedan. Om de inte redan har ett TideWarden-konto kommer de att uppmanas att skapa ett nytt konto."
   },
   "joinProvider": {
     "message": "Anslut leverantör"
   },
   "joinProviderDesc": {
-    "message": "Du har blivit inbjuden att gå med i den leverantör som anges ovan. För att acceptera inbjudan måste du logga in eller skapa ett nytt Bitwarden-konto."
+    "message": "Du har blivit inbjuden att gå med i den leverantör som anges ovan. För att acceptera inbjudan måste du logga in eller skapa ett nytt TideWarden-konto."
   },
   "providerInviteAcceptFailed": {
     "message": "Det går inte att acceptera inbjudan. Be en Provider-administratör att skicka en ny inbjudan."
@@ -7224,7 +7224,7 @@
     "message": "Konfiguration för enkel inloggning sparad"
   },
   "sponsoredFamilies": {
-    "message": "Gratis Bitwarden Familjer"
+    "message": "Gratis TideWarden Familjer"
   },
   "sponsoredBitwardenFamilies": {
     "message": "Sponsrade familjer"
@@ -7236,19 +7236,19 @@
     "message": "Sponsrade familjeplaner för icke-medlemmar visas här"
   },
   "sponsorshipFreeBitwardenFamilies": {
-    "message": "Medlemmar i din organisation är berättigade till Free Bitwarden Families. Du kan sponsra Free Bitwarden Families för anställda som inte är medlemmar i din Bitwarden-organisation. För att sponsra en icke-medlem krävs en ledig plats inom din organisation."
+    "message": "Medlemmar i din organisation är berättigade till Free TideWarden Families. Du kan sponsra Free TideWarden Families för anställda som inte är medlemmar i din TideWarden-organisation. För att sponsra en icke-medlem krävs en ledig plats inom din organisation."
   },
   "sponsoredFamiliesRemoveActiveSponsorship": {
     "message": "När du tar bort ett aktivt sponsorskap kommer en plats inom din organisation att bli tillgänglig efter förnyelsedatumet för den sponsrade organisationen."
   },
   "sponsoredFamiliesEligible": {
-    "message": "Du och din familj är berättigade till gratis Bitwarden Families. Lös in med din personliga e-post för att hålla dina uppgifter säkra även när du inte är på jobbet."
+    "message": "Du och din familj är berättigade till gratis TideWarden Families. Lös in med din personliga e-post för att hålla dina uppgifter säkra även när du inte är på jobbet."
   },
   "sponsoredFamiliesEligibleCard": {
-    "message": "Lös in din kostnadsfria Bitwarden for Families-plan idag för att skydda dina data även när du inte är på jobbet."
+    "message": "Lös in din kostnadsfria TideWarden for Families-plan idag för att skydda dina data även när du inte är på jobbet."
   },
   "sponsoredFamiliesIncludeMessage": {
-    "message": "Bitwarden for Families-planen omfattar"
+    "message": "TideWarden for Families-planen omfattar"
   },
   "sponsoredFamiliesPremiumAccess": {
     "message": "Premiumåtkomst för upp till 6 användare"
@@ -7266,7 +7266,7 @@
     "message": "Medlemmar som har löst in familjeplaner visas här"
   },
   "membersWithSponsoredFamilies": {
-    "message": "Medlemmar i din organisation är berättigade till Free Bitwarden Families. Här kan du se medlemmar som har sponsrat en Families-organisation."
+    "message": "Medlemmar i din organisation är berättigade till Free TideWarden Families. Här kan du se medlemmar som har sponsrat en Families-organisation."
   },
   "organizationHasMemberMessage": {
     "message": "En sponsring kan inte skickas till $EMAIL$ eftersom de är medlemmar i din organisation.",
@@ -7293,7 +7293,7 @@
     "message": "Vilket Free Families-erbjudande skulle du vilja utnyttja?"
   },
   "sponsoredFamiliesEmail": {
-    "message": "Ange din personliga e-postadress för att lösa in Bitwarden Families"
+    "message": "Ange din personliga e-postadress för att lösa in TideWarden Families"
   },
   "sponsoredFamiliesLeaveCopy": {
     "message": "Om du tar bort ett erbjudande eller tas bort från den sponsrande organisationen upphör din Families-sponsring att gälla vid nästa förnyelsedatum."
@@ -7302,7 +7302,7 @@
     "message": "Acceptera erbjudandet för en befintlig organisation eller skapa en ny Families-organisation."
   },
   "setupSponsoredFamiliesLoginDesc": {
-    "message": "Du har blivit erbjuden en gratis Bitwarden Families planorganisation. För att fortsätta måste du logga in på det konto som fick erbjudandet."
+    "message": "Du har blivit erbjuden en gratis TideWarden Families planorganisation. För att fortsätta måste du logga in på det konto som fick erbjudandet."
   },
   "sponsoredFamiliesAcceptFailed": {
     "message": "Det gick inte att acceptera erbjudandet. Skicka erbjudandet på nytt från ditt Enterprise-konto och försök igen."
@@ -7317,10 +7317,10 @@
     }
   },
   "sponsoredFamiliesOffer": {
-    "message": "Acceptera gratis Bitwarden Familjer"
+    "message": "Acceptera gratis TideWarden Familjer"
   },
   "sponsoredFamiliesOfferRedeemed": {
-    "message": "Gratis Bitwarden Families-erbjudande framgångsrikt inlöst"
+    "message": "Gratis TideWarden Families-erbjudande framgångsrikt inlöst"
   },
   "redeemed": {
     "message": "Inlöst"
@@ -7441,15 +7441,15 @@
   },
   "memberDecryptionKeyConnectorDescStart": {
     "message": "Anslut inloggning med SSO till din egen server för dekrypteringsnycklar. Med det här alternativet behöver medlemmarna inte använda sina huvudlösenord för att dekryptera valvdata. Den",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact TideWarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
     "message": "kräver SSO-autentisering och policyer för en enda organisation",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact TideWarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
-    "message": "krävs för att konfigurera dekryptering med Key Connector. Kontakta Bitwarden Support för hjälp med installationen.",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
+    "message": "krävs för att konfigurera dekryptering med Key Connector. Kontakta TideWarden Support för hjälp med installationen.",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact TideWarden Support for set up assistance.'"
   },
   "keyConnectorPolicyRestriction": {
     "message": "\"Inloggning med SSO och dekryptering av Key Connector\" är aktiverad. Denna policy gäller endast för ägare och administratörer."
@@ -7548,7 +7548,7 @@
     "message": "Anpassad miljö"
   },
   "selfHostedBaseUrlHint": {
-    "message": "Ange bas-URL:en för din lokala Bitwarden-installation. Exempel: https://bitwarden.company.com"
+    "message": "Ange bas-URL:en för din lokala TideWarden-installation. Exempel: https://tidewarden.company.com"
   },
   "selfHostedCustomEnvHeader": {
     "message": "För avancerad konfiguration kan du ange bas-URL:en för varje tjänst separat."
@@ -7593,7 +7593,7 @@
     "message": "Token för fakturasynkronisering"
   },
   "automaticBillingSyncDesc": {
-    "message": "Automatisk synkronisering låser upp Familiesponsring och låter dig synkronisera din licens utan att ladda upp en fil. När du har gjort uppdateringar i Bitwardens molnserver väljer du Synkronisera licens för att tillämpa ändringarna."
+    "message": "Automatisk synkronisering låser upp Familiesponsring och låter dig synkronisera din licens utan att ladda upp en fil. När du har gjort uppdateringar i TideWardens molnserver väljer du Synkronisera licens för att tillämpa ändringarna."
   },
   "active": {
     "message": "Aktiv"
@@ -7970,11 +7970,11 @@
     }
   },
   "forwarderGeneratedBy": {
-    "message": "Genereras av Bitwarden.",
+    "message": "Genereras av TideWarden.",
     "description": "Displayed with the address on the forwarding service's configuration screen."
   },
   "forwarderGeneratedByWithWebsite": {
-    "message": "Webbplats: $WEBSITE$. Genererad av Bitwarden.",
+    "message": "Webbplats: $WEBSITE$. Genererad av TideWarden.",
     "description": "Displayed with the address on the forwarding service's configuration screen.",
     "placeholders": {
       "WEBSITE": {
@@ -8852,7 +8852,7 @@
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -8876,7 +8876,7 @@
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -8885,7 +8885,7 @@
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -8959,7 +8959,7 @@
     "message": "Medlemsroll"
   },
   "moreFromBitwarden": {
-    "message": "Mer från Bitwarden"
+    "message": "Mer från TideWarden"
   },
   "switchProducts": {
     "message": "Produkter för växlar"
@@ -9725,7 +9725,7 @@
     "message": "Användaren ställde in ett huvudlösenord under TDE-offboarding."
   },
   "startYour7DayFreeTrialOfBitwardenFor": {
-    "message": "Starta din 7-dagars gratis provperiod av Bitwarden för $ORG$",
+    "message": "Starta din 7-dagars gratis provperiod av TideWarden för $ORG$",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -9734,7 +9734,7 @@
     }
   },
   "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
-    "message": "Starta din 7-dagars kostnadsfria provperiod av Bitwarden Secrets Manager för $ORG$",
+    "message": "Starta din 7-dagars kostnadsfria provperiod av TideWarden Secrets Manager för $ORG$",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -10078,8 +10078,8 @@
     "description": "Label indicating the most common import formats"
   },
   "uriMatchDefaultStrategyHint": {
-    "message": "Detektering av URI-matchning är hur Bitwarden identifierar autofyllförslag.",
-    "description": "Explains to the user that URI match detection determines how Bitwarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
+    "message": "Detektering av URI-matchning är hur TideWarden identifierar autofyllförslag.",
+    "description": "Explains to the user that URI match detection determines how TideWarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
   },
   "regExAdvancedOptionWarning": {
     "message": "\"Reguljär uttryck\" är ett avancerat alternativ med ökad risk för att röja inloggningsuppgifter.",
@@ -10122,13 +10122,13 @@
     "message": "Bekräftelseuppgifter"
   },
   "smFreeTrialThankYou": {
-    "message": "Tack för att du anmälde dig till Bitwarden Secrets Manager!"
+    "message": "Tack för att du anmälde dig till TideWarden Secrets Manager!"
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Vi har skickat ett bekräftelsemail till din e-postadress på "
   },
   "sorryToSeeYouGo": {
-    "message": "Ledsen att se dig gå! Hjälp till att förbättra Bitwarden genom att dela med dig av varför du avbokar.",
+    "message": "Ledsen att se dig gå! Hjälp till att förbättra TideWarden genom att dela med dig av varför du avbokar.",
     "description": "A message shown to users as part of an offboarding survey asking them to provide more information on their subscription cancelation."
   },
   "selectCancellationReason": {
@@ -10547,21 +10547,21 @@
     "message": "Integrationer"
   },
   "integrationsDesc": {
-    "message": "Synkronisera automatiskt hemligheter från Bitwarden Secrets Manager till en tredjepartstjänst."
+    "message": "Synkronisera automatiskt hemligheter från TideWarden Secrets Manager till en tredjepartstjänst."
   },
   "sdks": {
     "message": "SDK:er"
   },
   "sdksDesc": {
-    "message": "Använd Bitwarden Secrets Manager SDK i följande programmeringsspråk för att bygga dina egna applikationer."
+    "message": "Använd TideWarden Secrets Manager SDK i följande programmeringsspråk för att bygga dina egna applikationer."
   },
   "ssoDescStart": {
     "message": "Konfigurera",
-    "description": "This represents the beginning of a sentence, broken up to include links. The full sentence will be 'Configure single sign-on for Bitwarden using the implementation guide for your Identity Provider."
+    "description": "This represents the beginning of a sentence, broken up to include links. The full sentence will be 'Configure single sign-on for TideWarden using the implementation guide for your Identity Provider."
   },
   "ssoDescEnd": {
-    "message": "för Bitwarden med hjälp av implementeringsguiden för din Identity Provider.",
-    "description": "This represents the end of a sentence, broken up to include links. The full sentence will be 'Configure single sign-on for Bitwarden using the implementation guide for your Identity Provider."
+    "message": "för TideWarden med hjälp av implementeringsguiden för din Identity Provider.",
+    "description": "This represents the end of a sentence, broken up to include links. The full sentence will be 'Configure single sign-on for TideWarden using the implementation guide for your Identity Provider."
   },
   "userProvisioning": {
     "message": "Tillhandahållande av användare"
@@ -10571,29 +10571,29 @@
   },
   "scimIntegrationDescStart": {
     "message": "Konfigurera ",
-    "description": "This represents the beginning of a sentence, broken up to include links. The full sentence will be 'Configure SCIM (System for Cross-domain Identity Management) to automatically provision users and groups to Bitwarden using the implementation guide for your Identity Provider"
+    "description": "This represents the beginning of a sentence, broken up to include links. The full sentence will be 'Configure SCIM (System for Cross-domain Identity Management) to automatically provision users and groups to TideWarden using the implementation guide for your Identity Provider"
   },
   "scimIntegrationDescEnd": {
-    "message": "(System for Cross-domain Identity Management) för att automatiskt tillhandahålla användare och grupper till Bitwarden med hjälp av implementeringsguiden för din Identity Provider.",
-    "description": "This represents the end of a sentence, broken up to include links. The full sentence will be 'Configure SCIM (System for Cross-domain Identity Management) to automatically provision users and groups to Bitwarden using the implementation guide for your Identity Provider"
+    "message": "(System for Cross-domain Identity Management) för att automatiskt tillhandahålla användare och grupper till TideWarden med hjälp av implementeringsguiden för din Identity Provider.",
+    "description": "This represents the end of a sentence, broken up to include links. The full sentence will be 'Configure SCIM (System for Cross-domain Identity Management) to automatically provision users and groups to TideWarden using the implementation guide for your Identity Provider"
   },
   "bwdc": {
-    "message": "Bitwarden Directory Connector"
+    "message": "TideWarden Directory Connector"
   },
   "bwdcDesc": {
-    "message": "Konfigurera Bitwarden Directory Connector för automatisk provisionering av användare och grupper med hjälp av implementeringsguiden för din Identity Provider."
+    "message": "Konfigurera TideWarden Directory Connector för automatisk provisionering av användare och grupper med hjälp av implementeringsguiden för din Identity Provider."
   },
   "eventManagement": {
     "message": "Eventhantering"
   },
   "eventManagementDesc": {
-    "message": "Integrera Bitwardens händelseloggar med ditt SIEM-system (system information and event management) genom att använda implementeringsguiden för din plattform."
+    "message": "Integrera TideWardens händelseloggar med ditt SIEM-system (system information and event management) genom att använda implementeringsguiden för din plattform."
   },
   "deviceManagement": {
     "message": "Hantering av enheter"
   },
   "deviceManagementDesc": {
-    "message": "Konfigurera enhetshanteringen för Bitwarden med hjälp av implementeringsguiden för din plattform."
+    "message": "Konfigurera enhetshanteringen för TideWarden med hjälp av implementeringsguiden för din plattform."
   },
   "crowdstrikeEventIntegrationDesc": {
     "message": "Skicka händelsedata till din Logscale-instans"
@@ -10764,22 +10764,22 @@
     "message": "Hantera fakturering från Provider Portal"
   },
   "continueSettingUp": {
-    "message": "Fortsätt att ställa i ordning Bitwarden"
+    "message": "Fortsätt att ställa i ordning TideWarden"
   },
   "continueSettingUpFreeTrial": {
-    "message": "Fortsätt att konfigurera din kostnadsfria testversion av Bitwarden"
+    "message": "Fortsätt att konfigurera din kostnadsfria testversion av TideWarden"
   },
   "continueSettingUpPasswordManager": {
-    "message": "Fortsätt konfigurera Bitwarden Password Manager"
+    "message": "Fortsätt konfigurera TideWarden Password Manager"
   },
   "continueSettingUpFreeTrialPasswordManager": {
-    "message": "Fortsätt att konfigurera din kostnadsfria testversion av Bitwarden Password Manager"
+    "message": "Fortsätt att konfigurera din kostnadsfria testversion av TideWarden Password Manager"
   },
   "continueSettingUpSecretsManager": {
-    "message": "Fortsätt konfigurera Bitwarden Secrets Manager"
+    "message": "Fortsätt konfigurera TideWarden Secrets Manager"
   },
   "continueSettingUpFreeTrialSecretsManager": {
-    "message": "Fortsätt att konfigurera din kostnadsfria testversion av Bitwarden Secrets Manager"
+    "message": "Fortsätt att konfigurera din kostnadsfria testversion av TideWarden Secrets Manager"
   },
   "enterTeamsOrgInfo": {
     "message": "Ange information om din Teams-organisation"
@@ -11027,17 +11027,17 @@
   },
   "providerClientVaultPrivacyNotification": {
     "message": "Meddelande: Senare denna månad kommer sekretessen i kundvalvet att förbättras och leverantörsmedlemmar kommer inte längre att ha direkt tillgång till kundvalvets objekt. För frågor,",
-    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'."
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact TideWarden support'."
   },
   "contactBitwardenSupport": {
-    "message": "kontakt Bitwarden support.",
-    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'. 'Bitwarden' should not be translated"
+    "message": "kontakt TideWarden support.",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact TideWarden support'. 'TideWarden' should not be translated"
   },
   "sponsored": {
     "message": "Sponsrad"
   },
   "licenseAndBillingManagementDesc": {
-    "message": "När du har gjort uppdateringar i Bitwardens molnserver laddar du upp din licensfil för att tillämpa de senaste ändringarna."
+    "message": "När du har gjort uppdateringar i TideWardens molnserver laddar du upp din licensfil för att tillämpa de senaste ändringarna."
   },
   "addToFolder": {
     "message": "Lägg till i mapp"
@@ -11143,7 +11143,7 @@
     "message": "Vad är ett CVV-nummer?"
   },
   "learnMoreAboutApi": {
-    "message": "Läs mer om Bitwardens API"
+    "message": "Läs mer om TideWardens API"
   },
   "fileSends": {
     "message": "Skicka filer"
@@ -11317,7 +11317,7 @@
     "message": "Din prenumeration på Secrets Manager kommer att uppgraderas baserat på den valda planen"
   },
   "bitwardenPasswordManager": {
-    "message": "Bitwarden Lösenordshanterare"
+    "message": "TideWarden Lösenordshanterare"
   },
   "secretsManagerComplimentaryPasswordManager": {
     "message": "Din kostnadsfria ettåriga prenumeration på Password Manager kommer att uppgraderas till den valda planen. Du kommer inte att debiteras förrän den kostnadsfria perioden är över."
@@ -11395,7 +11395,7 @@
     "description": "This represents the beginning of a sentence. The full sentence will be 'Manage subscription from the Provider Portal', but 'Provider Portal' will be a link and thus cannot be included in the translation file."
   },
   "toHostBitwardenOnYourOwnServer": {
-    "message": "Om du vill vara värd för Bitwarden på din egen server måste du ladda upp din licensfil. För att stödja Free Families-planer och avancerade faktureringsfunktioner för din egenhostade organisation måste du ställa in automatisk synkronisering i din egenhostade organisation."
+    "message": "Om du vill vara värd för TideWarden på din egen server måste du ladda upp din licensfil. För att stödja Free Families-planer och avancerade faktureringsfunktioner för din egenhostade organisation måste du ställa in automatisk synkronisering i din egenhostade organisation."
   },
   "selfHostingTitleProper": {
     "message": "Självhosting"
@@ -11485,7 +11485,7 @@
     "message": "Raderad framgångsrikt"
   },
   "freeFamiliesSponsorship": {
-    "message": "Ta bort Free Bitwarden Families sponsring"
+    "message": "Ta bort Free TideWarden Families sponsring"
   },
   "freeFamiliesSponsorshipPolicyDesc": {
     "message": "Tillåt inte medlemmar att lösa in en Families-plan via denna organisation."
@@ -11536,10 +11536,10 @@
     "message": "Automatiskt hävdade domäner"
   },
   "automaticDomainClaimProcess": {
-    "message": "Bitwarden kommer att försöka göra anspråk på domänen 3 gånger under de första 72 timmarna. Om domänen inte kan göras anspråk på, kontrollera DNS-posten i din host och gör anspråk manuellt. Domänen kommer att tas bort från din organisation inom 7 dagar om den inte görs anspråk på."
+    "message": "TideWarden kommer att försöka göra anspråk på domänen 3 gånger under de första 72 timmarna. Om domänen inte kan göras anspråk på, kontrollera DNS-posten i din host och gör anspråk manuellt. Domänen kommer att tas bort från din organisation inom 7 dagar om den inte görs anspråk på."
   },
   "automaticDomainClaimProcess1": {
-    "message": "Bitwarden kommer att försöka göra anspråk på domänen inom 72 timmar. Om domänen inte kan hävdas, kontrollera din DNS-post och anspråk manuellt. Domäner som inte gjorts anspråk på tas bort efter 7 dagar."
+    "message": "TideWarden kommer att försöka göra anspråk på domänen inom 72 timmar. Om domänen inte kan hävdas, kontrollera din DNS-post och anspråk manuellt. Domäner som inte gjorts anspråk på tas bort efter 7 dagar."
   },
   "automaticDomainClaimProcess2": {
     "message": "När de har gjorts anspråk på kommer befintliga medlemmar med dessa domäner kommer att mailas om "
@@ -11555,7 +11555,7 @@
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -11576,7 +11576,7 @@
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -11585,7 +11585,7 @@
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -11690,19 +11690,19 @@
     "message": "Kopiera privat nyckel"
   },
   "openingExtension": {
-    "message": "Öppna webbläsartillägget Bitwarden"
+    "message": "Öppna webbläsartillägget TideWarden"
   },
   "somethingWentWrong": {
     "message": "Något gick fel …"
   },
   "openingExtensionError": {
-    "message": "Vi hade problem med att öppna webbläsartillägget Bitwarden. Klicka på knappen för att öppna det nu."
+    "message": "Vi hade problem med att öppna webbläsartillägget TideWarden. Klicka på knappen för att öppna det nu."
   },
   "openExtension": {
     "message": "Öppna tillägg"
   },
   "doNotHaveExtension": {
-    "message": "Har du inte webbläsartillägget Bitwarden?"
+    "message": "Har du inte webbläsartillägget TideWarden?"
   },
   "installExtension": {
     "message": "Installera tillägg"
@@ -11711,7 +11711,7 @@
     "message": "Öppnade webbläsartillägget"
   },
   "openedExtensionViewAtRiskPasswords": {
-    "message": "Framgångsrikt öppnat webbläsartillägget Bitwarden. Du kan nu granska dina risklösenord."
+    "message": "Framgångsrikt öppnat webbläsartillägget TideWarden. Du kan nu granska dina risklösenord."
   },
   "resellerRenewalWarningMsg": {
     "message": "Din prenumeration kommer snart att förnyas. För att säkerställa oavbruten service, kontakta $RESELLER$ för att bekräfta din förnyelse före $RENEWAL_DATE$.",
@@ -11872,7 +11872,7 @@
     "message": "Uppgradera för att se händelseloggar från din organisation."
   },
   "upgradeEventLogMessage": {
-    "message": "Dessa händelser är endast exempel och återspeglar inte verkliga händelser inom din Bitwarden-organisation."
+    "message": "Dessa händelser är endast exempel och återspeglar inte verkliga händelser inom din TideWarden-organisation."
   },
   "viewEvents": {
     "message": "Visa händelser"
@@ -11946,11 +11946,11 @@
   },
   "sendsTitleNoItems": {
     "message": "Skicka känslig information på ett säkert sätt",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendsBodyNoItems": {
     "message": "Dela filer och data på ett säkert sätt med vem som helst, på vilken plattform som helst. Din information kommer att förbli krypterad från början till slut samtidigt som exponeringen begränsas.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "generatorNudgeTitle": {
     "message": "Skapa lösenord snabbt"
@@ -12022,7 +12022,7 @@
     "message": "Autofyll dina lösenord på ett säkert sätt med ett klick"
   },
   "setupExtensionPageDescription": {
-    "message": "Skaffa webbläsartillägget Bitwarden och börja autofylla redan idag"
+    "message": "Skaffa webbläsartillägget TideWarden och börja autofylla redan idag"
   },
   "getTheExtension": {
     "message": "Hämta tillägget"
@@ -12040,39 +12040,39 @@
     "message": "Hoppa till webbapp"
   },
   "bitwardenExtensionInstalled": {
-    "message": "Bitwarden-tillägg installerat!"
+    "message": "TideWarden-tillägg installerat!"
   },
   "bitwardenExtensionIsInstalled": {
-    "message": "Bitwarden-tillägget är installerat!"
+    "message": "TideWarden-tillägget är installerat!"
   },
   "openExtensionToAutofill": {
     "message": "Öppna tillägget för att logga in och starta autofyllning."
   },
   "openBitwardenExtension": {
-    "message": "Öppna Bitwarden-tillägget"
+    "message": "Öppna TideWarden-tillägget"
   },
   "gettingStartedWithBitwardenPart1": {
-    "message": "För tips om hur du kommer igång med Bitwarden besök",
-    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'For tips on getting started with Bitwarden visit the Learning Center and Help Center'"
+    "message": "För tips om hur du kommer igång med TideWarden besök",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'For tips on getting started with TideWarden visit the Learning Center and Help Center'"
   },
   "gettingStartedWithBitwardenPart2": {
     "message": "Lärcentrum",
-    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'For tips on getting started with Bitwarden visit the Learning Center and Help Center'"
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'For tips on getting started with TideWarden visit the Learning Center and Help Center'"
   },
   "openExtensionFromToolbarPart1": {
-    "message": "Om tillägget inte öppnades kan du behöva öppna Bitwarden från ikonen ",
-    "description": "This will be used as part of a larger sentence, broken up to include the Bitwarden icon. The full sentence will read 'If the extension didn't open, you may need to open Bitwarden from the icon [Bitwarden Icon] on the toolbar.'"
+    "message": "Om tillägget inte öppnades kan du behöva öppna TideWarden från ikonen ",
+    "description": "This will be used as part of a larger sentence, broken up to include the TideWarden icon. The full sentence will read 'If the extension didn't open, you may need to open TideWarden from the icon [TideWarden Icon] on the toolbar.'"
   },
   "openExtensionFromToolbarPart2": {
     "message": " på verktygsfältet.",
-    "description": "This will be used as part of a larger sentence, broken up to include the Bitwarden icon. The full sentence will read 'If the extension didn't open, you may need to open Bitwarden from the icon [Bitwarden Icon] on the toolbar.'"
+    "description": "This will be used as part of a larger sentence, broken up to include the TideWarden icon. The full sentence will read 'If the extension didn't open, you may need to open TideWarden from the icon [TideWarden Icon] on the toolbar.'"
   },
   "gettingStartedWithBitwardenPart3": {
     "message": "Hjälpcenter",
-    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'For tips on getting started with Bitwarden visit the Learning Center and Help Center'"
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'For tips on getting started with TideWarden visit the Learning Center and Help Center'"
   },
   "setupExtensionContentAlt": {
-    "message": "Med webbläsartillägget Bitwarden kan du enkelt skapa nya inloggningar, komma åt dina sparade inloggningar direkt från webbläsarens verktygsfält och logga in på konton snabbt med hjälp av Bitwardens autofyll."
+    "message": "Med webbläsartillägget TideWarden kan du enkelt skapa nya inloggningar, komma åt dina sparade inloggningar direkt från webbläsarens verktygsfält och logga in på konton snabbt med hjälp av TideWardens autofyll."
   },
   "restart": {
     "message": "Starta om"
@@ -12104,7 +12104,7 @@
     "message": "Om denna inställning"
   },
   "permitCipherDetailsDescription": {
-    "message": "Bitwarden använder sparade inloggnings-URI: er för att identifiera vilken ikon eller URL för lösenordsändring som ska användas för att förbättra din upplevelse. Ingen information samlas in eller sparas när du använder denna tjänst."
+    "message": "TideWarden använder sparade inloggnings-URI: er för att identifiera vilken ikon eller URL för lösenordsändring som ska användas för att förbättra din upplevelse. Ingen information samlas in eller sparas när du använder denna tjänst."
   },
   "billingAddress": {
     "message": "Faktureringsadress"
@@ -12171,7 +12171,7 @@
     }
   },
   "restoreProviderPortalAccessViaCustomerSupport": {
-    "message": "För att återställa åtkomsten till din leverantörsportal, kontakta Bitwardens kundsupport för att förnya ditt abonnemang.",
+    "message": "För att återställa åtkomsten till din leverantörsportal, kontakta TideWardens kundsupport för att förnya ditt abonnemang.",
     "description": "A message shown in a non-dismissible dialog to any user of a suspended providers."
   },
   "restoreProviderPortalAccessViaPaymentMethod": {
@@ -12209,7 +12209,7 @@
     "message": "Prenumerationen avbruten"
   },
   "providersubCanceledmessage": {
-    "message": "Kontakta Bitwardens kundtjänst för att återaktivera prenumerationen."
+    "message": "Kontakta TideWardens kundtjänst för att återaktivera prenumerationen."
   },
   "showMore": {
     "message": "Visa mer"
@@ -12331,7 +12331,7 @@
     "message": "Anpassad plan"
   },
   "planDescCustom": {
-    "message": "Bitwarden skalar med företag i alla storlekar för att säkra lösenord och känslig information. Om du är en del av ett stort företag, kontakta vår försäljningsavdelning för att begära en offert."
+    "message": "TideWarden skalar med företag i alla storlekar för att säkra lösenord och känslig information. Om du är en del av ett stort företag, kontakta vår försäljningsavdelning för att begära en offert."
   },
   "builtInAuthenticator": {
     "message": "Inbyggd authenticator"
@@ -12436,7 +12436,7 @@
     "message": "Ett fel uppstod vid beräkning av skatt för din plats. Försök igen."
   },
   "individualUpgradeWelcomeMessage": {
-    "message": "Välkommen till Bitwarden"
+    "message": "Välkommen till TideWarden"
   },
   "individualUpgradeDescriptionMessage": {
     "message": "Lås upp fler säkerhetsfunktioner med Premium, eller börja dela objekt med Families"
@@ -12463,7 +12463,7 @@
     "message": "Vi stötte på ett fel vid bearbetningen av din uppgradering. Försök igen."
   },
   "bitwardenFreeplanMessage": {
-    "message": "Du har Bitwarden Free-planen"
+    "message": "Du har TideWarden Free-planen"
   },
   "upgradeCompleteSecurity": {
     "message": "Uppgradera för fullständig säkerhet"
@@ -12481,7 +12481,7 @@
     "message": "Algoritm"
   },
   "encryptionKeySettingsHowShouldWeEncryptYourData": {
-    "message": "Välj hur Bitwarden ska kryptera dina valvdata. Alla alternativ är säkra, men starkare metoder ger bättre skydd - särskilt mot uttömmande attacker. Bitwarden rekommenderar standardinställningen för de flesta användare."
+    "message": "Välj hur TideWarden ska kryptera dina valvdata. Alla alternativ är säkra, men starkare metoder ger bättre skydd - särskilt mot uttömmande attacker. TideWarden rekommenderar standardinställningen för de flesta användare."
   },
   "encryptionKeySettingsIncreaseImproveSecurity": {
     "message": "Att öka värdena ovanför standard kommer att förbättra säkerheten, men ditt valv kan ta längre tid att låsa upp som ett resultat."
@@ -12548,7 +12548,7 @@
     }
   },
   "removeMasterPasswordForOrgUserKeyConnector": {
-    "message": "Din organisation använder inte längre huvudlösenord för att logga in på Bitwarden. För att fortsätta, verifiera organisationen och domänen."
+    "message": "Din organisation använder inte längre huvudlösenord för att logga in på TideWarden. För att fortsätta, verifiera organisationen och domänen."
   },
   "continueWithLogIn": {
     "message": "Fortsätt med inloggning"
@@ -12736,7 +12736,7 @@
     "message": "Varför ser jag det här?"
   },
   "youHaveBitwardenPremium": {
-    "message": "Du har Bitwarden Premium"
+    "message": "Du har TideWarden Premium"
   },
   "viewAndManagePremiumSubscription": {
     "message": "Visa och hantera ditt Premium-abonnemang"
@@ -12767,7 +12767,7 @@
     "placeholders": {
       "file_name": {
         "content": "$1",
-        "example": "bitwarden_license.json"
+        "example": "tidewarden_license.json"
       }
     }
   },
@@ -12775,7 +12775,7 @@
     "message": "Har du redan ett abonnemang?"
   },
   "alreadyHaveSubscriptionSelfHostedMessage": {
-    "message": "Öppna prenumerationssidan på ditt Bitwarden-molnkonto och ladda ner din licensfil. Återvänd sedan till den här skärmen och ladda upp den nedan."
+    "message": "Öppna prenumerationssidan på ditt TideWarden-molnkonto och ladda ner din licensfil. Återvänd sedan till den här skärmen och ladda upp den nedan."
   },
   "viewAllPlans": {
     "message": "Visa alla planer"
@@ -12870,7 +12870,7 @@
     "message": "Ange flera e-postadresser genom att separera dem med kommatecken."
   },
   "emailPlaceholder": {
-    "message": "användare@bitwarden.com , användare@acme.com"
+    "message": "användare@tidewarden.com , användare@acme.com"
   },
   "whenYouRemoveStorage": {
     "message": "När du tar bort lagring kommer du att få en proportionell kontokredit som automatiskt går mot din nästa faktura."
@@ -12895,7 +12895,7 @@
   },
   "sendPasswordHelperText": {
     "message": "Individer måste ange lösenordet för att visa denna Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "perUser": {
     "message": "per användare"
