@@ -176,7 +176,6 @@ import {
 } from "@bitwarden/common/key-management/crypto";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "@bitwarden/common/key-management/crypto/abstractions/crypto-function.service";
 import { EncryptService } from "@bitwarden/common/key-management/crypto/abstractions/encrypt.service";
-import { EncryptServiceImplementation } from "@bitwarden/common/key-management/crypto/services/encrypt.service.implementation";
 import { WebCryptoFunctionService } from "@bitwarden/common/key-management/crypto/services/web-crypto-function.service";
 import { DeviceTrustServiceAbstraction } from "@bitwarden/common/key-management/device-trust/abstractions/device-trust.service.abstraction";
 import { DeviceTrustService } from "@bitwarden/common/key-management/device-trust/services/device-trust.service.implementation";
@@ -212,6 +211,9 @@ import {
   SendPasswordService,
 } from "@bitwarden/common/key-management/sends";
 import { SessionTimeoutTypeService } from "@bitwarden/common/key-management/session-timeout";
+import { TideCloakService } from "@bitwarden/common/key-management/tidecloak/abstractions/tidecloak.service";
+import { DefaultTideCloakService } from "@bitwarden/common/key-management/tidecloak/services/default-tidecloak.service";
+import { TideCloakEncryptService } from "@bitwarden/common/key-management/tidecloak/services/tidecloak-encrypt.service";
 import {
   DefaultVaultTimeoutService,
   DefaultVaultTimeoutSettingsService,
@@ -575,6 +577,7 @@ const safeProviders: SafeProvider[] = [
       TaskSchedulerService,
       ConfigService,
       AccountCryptographicStateService,
+      TideCloakService,
     ],
   }),
   safeProvider({
@@ -615,6 +618,7 @@ const safeProviders: SafeProvider[] = [
       cipherEncryptionService: CipherEncryptionService,
       messagingService: MessagingServiceAbstraction,
       cipherSdkService: CipherSdkService,
+      tideCloakService: TideCloakService,
     ) =>
       new CipherService(
         keyService,
@@ -632,6 +636,7 @@ const safeProviders: SafeProvider[] = [
         cipherEncryptionService,
         messagingService,
         cipherSdkService,
+        tideCloakService,
       ),
     deps: [
       KeyService,
@@ -649,6 +654,7 @@ const safeProviders: SafeProvider[] = [
       CipherEncryptionService,
       MessagingServiceAbstraction,
       CipherSdkService,
+      TideCloakService,
     ],
   }),
   safeProvider({
@@ -1088,9 +1094,14 @@ const safeProviders: SafeProvider[] = [
     deps: [WINDOW],
   }),
   safeProvider({
+    provide: TideCloakService,
+    useClass: DefaultTideCloakService,
+    deps: [LogService],
+  }),
+  safeProvider({
     provide: EncryptService,
-    useClass: EncryptServiceImplementation,
-    deps: [CryptoFunctionServiceAbstraction, LogService, LOG_MAC_FAILURES],
+    useClass: TideCloakEncryptService,
+    deps: [CryptoFunctionServiceAbstraction, LogService, LOG_MAC_FAILURES, TideCloakService],
   }),
   safeProvider({
     provide: EventUploadServiceAbstraction,

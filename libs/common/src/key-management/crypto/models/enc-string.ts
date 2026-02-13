@@ -110,6 +110,10 @@ export class EncString {
         this.data = encPieces[0];
         this.mac = encPieces[1];
         break;
+      case EncryptionType.TideCloakOrk:
+      case EncryptionType.Plaintext:
+        this.data = encPieces[0];
+        break;
       default:
         return;
     }

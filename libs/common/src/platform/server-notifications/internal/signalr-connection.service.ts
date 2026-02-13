@@ -78,7 +78,12 @@ export class SignalRConnectionService {
   ) {}
 
   connect$(userId: UserId, notificationsUrl: string) {
-    if (!notificationsUrl.startsWith("https://") && !this.platformUtilsService.isDev()) {
+    if (
+      !notificationsUrl.startsWith("https://") &&
+      !notificationsUrl.startsWith("http://localhost") &&
+      !notificationsUrl.startsWith("http://127.0.0.1") &&
+      !this.platformUtilsService.isDev()
+    ) {
       throw new InsecureUrlNotAllowedError();
     }
 

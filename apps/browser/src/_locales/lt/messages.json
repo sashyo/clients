@@ -1,16 +1,16 @@
 {
   "appName": {
-    "message": "Bitwarden"
+    "message": "TideWarden"
   },
   "appLogoLabel": {
-    "message": "„Bitwarden“ logotipas"
+    "message": "„TideWarden“ logotipas"
   },
   "extName": {
-    "message": "„Bitwarden“ slaptažodžių tvarkyklė",
+    "message": "„TideWarden“ slaptažodžių tvarkyklė",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "Namuose, darbe ar kelyje, „Bitwarden“ apsaugo jūsų slaptažodžius, raktažodžius ir svarbią informaciją",
+    "message": "Namuose, darbe ar kelyje, „TideWarden“ apsaugo jūsų slaptažodžius, raktažodžius ir svarbią informaciją",
     "description": "Extension description, MUST be less than 112 characters (Safari restriction)"
   },
   "loginOrCreateNewAccount": {
@@ -6133,5 +6133,8 @@
   "sendPasswordHelperText": {
     "message": "Individuals will need to enter the password to view this Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "logInToTideWarden": {
+    "message": "Prisijungti prie „TideWarden“"
   }
 }

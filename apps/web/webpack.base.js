@@ -244,40 +244,47 @@ module.exports.buildConfig = function buildConfig(params) {
     NODE_ENV !== "development"
       ? {}
       : {
-          server: {
-            type: "https",
-            options: {
-              key: fs.readFileSync(path.resolve(__dirname, "dev-server" + certSuffix + ".pem")),
-              cert: fs.readFileSync(path.resolve(__dirname, "dev-server" + certSuffix + ".pem")),
-            },
-          },
+          server:
+            envConfig.dev?.serverType === "http"
+              ? { type: "http" }
+              : {
+                  type: "https",
+                  options: {
+                    key: fs.readFileSync(
+                      path.resolve(__dirname, "dev-server" + certSuffix + ".pem"),
+                    ),
+                    cert: fs.readFileSync(
+                      path.resolve(__dirname, "dev-server" + certSuffix + ".pem"),
+                    ),
+                  },
+                },
           // host: '192.168.1.9',
           proxy: [
             {
               context: ["/api"],
               target: envConfig.dev?.proxyApi,
-              pathRewrite: { "^/api": "" },
+              pathRewrite: envConfig.dev?.noPathRewrite ? {} : { "^/api": "" },
               secure: false,
               changeOrigin: true,
             },
             {
               context: ["/identity"],
               target: envConfig.dev?.proxyIdentity,
-              pathRewrite: { "^/identity": "" },
+              pathRewrite: envConfig.dev?.noPathRewrite ? {} : { "^/identity": "" },
               secure: false,
               changeOrigin: true,
             },
             {
               context: ["/events"],
               target: envConfig.dev?.proxyEvents,
-              pathRewrite: { "^/events": "" },
+              pathRewrite: envConfig.dev?.noPathRewrite ? {} : { "^/events": "" },
               secure: false,
               changeOrigin: true,
             },
             {
               context: ["/notifications"],
               target: envConfig.dev?.proxyNotifications,
-              pathRewrite: { "^/notifications": "" },
+              pathRewrite: envConfig.dev?.noPathRewrite ? {} : { "^/notifications": "" },
               secure: false,
               changeOrigin: true,
               ws: true,
@@ -285,14 +292,14 @@ module.exports.buildConfig = function buildConfig(params) {
             {
               context: ["/icons"],
               target: envConfig.dev?.proxyIcons,
-              pathRewrite: { "^/icons": "" },
+              pathRewrite: envConfig.dev?.noPathRewrite ? {} : { "^/icons": "" },
               secure: false,
               changeOrigin: true,
             },
             {
               context: ["/key-connector"],
               target: envConfig.dev?.proxyKeyConnector,
-              pathRewrite: { "^/key-connector": "" },
+              pathRewrite: envConfig.dev?.noPathRewrite ? {} : { "^/key-connector": "" },
               secure: false,
               changeOrigin: true,
             },
@@ -335,12 +342,14 @@ module.exports.buildConfig = function buildConfig(params) {
                     https://assets.braintreegateway.com
                     https://*.paypal.com
                     https://*.duosecurity.com
+                    https://*.tideprotocol.com
                     ;frame-src
                     'self'
                     https://js.stripe.com
                     https://assets.braintreegateway.com
                     https://*.paypal.com
                     https://*.duosecurity.com
+                    https://*.tideprotocol.com
                     ;connect-src
                     'self'
                     ${envConfig.dev.wsConnectSrc ?? ""}
@@ -363,6 +372,7 @@ module.exports.buildConfig = function buildConfig(params) {
                     https://api.fastmail.com
                     https://api.forwardemail.net
                     http://localhost:5000
+                    https://*.tideprotocol.com
                     ;object-src
                     'self'
                     blob:
@@ -467,6 +477,11 @@ module.exports.buildConfig = function buildConfig(params) {
       modules: [
         path.resolve(__dirname, "../../node_modules"),
         path.resolve(process.cwd(), "node_modules"),
+        path.resolve(__dirname, "../../node_modules/@tidecloak/js/node_modules"),
+        path.resolve(
+          __dirname,
+          "../../node_modules/@tidecloak/js/node_modules/heimdall-tide/node_modules",
+        ),
       ],
       fallback: {
         buffer: false,

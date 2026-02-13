@@ -16,6 +16,7 @@ import { EncryptedString } from "@bitwarden/common/key-management/crypto/models/
 import { DeviceTrustServiceAbstraction } from "@bitwarden/common/key-management/device-trust/abstractions/device-trust.service.abstraction";
 import { KeyConnectorService } from "@bitwarden/common/key-management/key-connector/abstractions/key-connector.service";
 import { FakeMasterPasswordService } from "@bitwarden/common/key-management/master-password/services/fake-master-password.service";
+import { TideCloakService } from "@bitwarden/common/key-management/tidecloak/abstractions/tidecloak.service";
 import {
   VaultTimeoutAction,
   VaultTimeoutSettingsService,
@@ -36,6 +37,7 @@ import { CsprngArray } from "@bitwarden/common/types/csprng";
 import { UserId } from "@bitwarden/common/types/guid";
 import { DeviceKey, MasterKey, UserKey } from "@bitwarden/common/types/key";
 import { Argon2KdfConfig, KdfConfigService, KeyService } from "@bitwarden/key-management";
+
 
 import {
   AuthRequestServiceAbstraction,
@@ -72,6 +74,7 @@ describe("SsoLoginStrategy", () => {
   let environmentService: MockProxy<EnvironmentService>;
   let configService: MockProxy<ConfigService>;
   let accountCryptographicStateService: MockProxy<AccountCryptographicStateService>;
+  let tideCloakService: MockProxy<TideCloakService>;
 
   let ssoLoginStrategy: SsoLoginStrategy;
   let credentials: SsoLoginCredentials;
@@ -111,6 +114,7 @@ describe("SsoLoginStrategy", () => {
     environmentService = mock<EnvironmentService>();
     configService = mock<ConfigService>();
     accountCryptographicStateService = mock<AccountCryptographicStateService>();
+    tideCloakService = mock<TideCloakService>();
 
     tokenService.getTwoFactorToken.mockResolvedValue(null);
     appIdService.getAppId.mockResolvedValue(deviceId);
@@ -147,6 +151,7 @@ describe("SsoLoginStrategy", () => {
       deviceTrustService,
       authRequestService,
       i18nService,
+      tideCloakService,
       accountService,
       masterPasswordService,
       keyService,

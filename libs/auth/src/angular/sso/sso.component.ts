@@ -474,9 +474,11 @@ export class SsoComponent implements OnInit {
       // In the standard, non TDE case, a user must set password if they don't
       // have one and they aren't using key connector.
       // Note: TDE & Key connector are mutually exclusive org config options.
+      // TideCloak users handle decryption via ORK — no master password needed.
       const requireSetPassword =
         !userDecryptionOpts.hasMasterPassword &&
-        userDecryptionOpts.keyConnectorOption === undefined;
+        userDecryptionOpts.keyConnectorOption === undefined &&
+        !userDecryptionOpts.tideCloakOption;
 
       if (requireSetPassword) {
         // Change implies going no password -> password in this case

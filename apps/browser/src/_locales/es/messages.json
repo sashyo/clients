@@ -1,16 +1,16 @@
 {
   "appName": {
-    "message": "Bitwarden"
+    "message": "TideWarden"
   },
   "appLogoLabel": {
-    "message": "Logo de Bitwarden"
+    "message": "Logo de TideWarden"
   },
   "extName": {
-    "message": "Bitwarden - Administrador de contraseñas",
+    "message": "TideWarden - Administrador de contraseñas",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "En casa, el trabajo o el viaje, Bitwarden asegura todas sus contraseñas, claves e información confidencial",
+    "message": "En casa, el trabajo o el viaje, TideWarden asegura todas sus contraseñas, claves e información confidencial",
     "description": "Extension description, MUST be less than 112 characters (Safari restriction)"
   },
   "loginOrCreateNewAccount": {
@@ -6133,5 +6133,8 @@
   "sendPasswordHelperText": {
     "message": "Los individuos tendrán que introducir la contraseña para ver este Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "logInToTideWarden": {
+    "message": "Iniciar sesión en TideWarden"
   }
 }

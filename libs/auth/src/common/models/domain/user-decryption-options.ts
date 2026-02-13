@@ -4,6 +4,7 @@ import { Jsonify } from "type-fest";
 
 import { IdentityTokenResponse } from "@bitwarden/common/auth/models/response/identity-token.response";
 import { KeyConnectorUserDecryptionOptionResponse } from "@bitwarden/common/auth/models/response/user-decryption-options/key-connector-user-decryption-option.response";
+import { TideCloakUserDecryptionOptionResponse } from "@bitwarden/common/auth/models/response/user-decryption-options/tidecloak-user-decryption-option.response";
 import { TrustedDeviceUserDecryptionOptionResponse } from "@bitwarden/common/auth/models/response/user-decryption-options/trusted-device-user-decryption-option.response";
 import { WebAuthnPrfDecryptionOptionResponse } from "@bitwarden/common/auth/models/response/user-decryption-options/webauthn-prf-decryption-option.response";
 
@@ -153,6 +154,43 @@ export class TrustedDeviceUserDecryptionOption {
  * Represents the decryption options the user has configured on the server. This is intended to be sent
  * to the client on authentication, and can be used to determine how to decrypt the user's vault.
  */
+/**
+ * TideCloak decryption option. Present when TideCloak ORK-based encryption is configured.
+ */
+export class TideCloakUserDecryptionOption {
+  homeOrkUrl: string;
+  vendorId: string;
+  voucherUrl: string;
+  signedClientOrigin: string;
+  signedClientOriginBrowser?: string;
+  encryptedUserKey?: string;
+
+  static fromResponse(
+    response: TideCloakUserDecryptionOptionResponse,
+  ): TideCloakUserDecryptionOption | undefined {
+    if (response == null) {
+      return undefined;
+    }
+    const options = new TideCloakUserDecryptionOption();
+    options.homeOrkUrl = response.homeOrkUrl;
+    options.vendorId = response.vendorId;
+    options.voucherUrl = response.voucherUrl;
+    options.signedClientOrigin = response.signedClientOrigin;
+    options.signedClientOriginBrowser = response.signedClientOriginBrowser;
+    options.encryptedUserKey = response.encryptedUserKey;
+    return options;
+  }
+
+  static fromJSON(
+    obj: Jsonify<TideCloakUserDecryptionOption>,
+  ): TideCloakUserDecryptionOption | undefined {
+    if (obj == null) {
+      return undefined;
+    }
+    return Object.assign(new TideCloakUserDecryptionOption(), obj);
+  }
+}
+
 export class UserDecryptionOptions {
   /** True if the user has a master password configured on the server. */
   hasMasterPassword: boolean;
@@ -162,6 +200,8 @@ export class UserDecryptionOptions {
   keyConnectorOption?: KeyConnectorUserDecryptionOption;
   /** Array of {@link WebAuthnPrfUserDecryptionOption} */
   webAuthnPrfOptions?: WebAuthnPrfUserDecryptionOption[];
+  /** {@link TideCloakUserDecryptionOption} */
+  tideCloakOption?: TideCloakUserDecryptionOption;
 
   /**
    * Initializes a new instance of the UserDecryptionOptions from a response object.
@@ -204,6 +244,10 @@ export class UserDecryptionOptions {
           decryptionOptions.webAuthnPrfOptions = [option];
         }
       }
+
+      decryptionOptions.tideCloakOption = TideCloakUserDecryptionOption.fromResponse(
+        responseOptions.tideCloakOption,
+      );
     } else {
       throw new Error(
         "User Decryption Options are required for client initialization. userDecryptionOptions is missing in response.",
@@ -233,6 +277,10 @@ export class UserDecryptionOptions {
         .map((option) => WebAuthnPrfUserDecryptionOption.fromJSON(option))
         .filter((option) => option !== undefined);
     }
+
+    decryptionOptions.tideCloakOption = TideCloakUserDecryptionOption.fromJSON(
+      obj?.tideCloakOption,
+    );
 
     return decryptionOptions;
   }

@@ -26,6 +26,7 @@ import { DomainSettingsService } from "../../autofill/services/domain-settings.s
 import { FeatureFlag } from "../../enums/feature-flag.enum";
 import { EncryptService } from "../../key-management/crypto/abstractions/encrypt.service";
 import { EncString } from "../../key-management/crypto/models/enc-string";
+import { TideCloakService } from "../../key-management/tidecloak/abstractions/tidecloak.service";
 import { UriMatchStrategySetting } from "../../models/domain/domain-service";
 import { ErrorResponse } from "../../models/response/error.response";
 import { ListResponse } from "../../models/response/list.response";
@@ -33,6 +34,7 @@ import { View } from "../../models/view/view";
 import { ConfigService } from "../../platform/abstractions/config/config.service";
 import { I18nService } from "../../platform/abstractions/i18n.service";
 import { uuidAsString } from "../../platform/abstractions/sdk/sdk.service";
+import { EncryptionType } from "../../platform/enums";
 import { Utils } from "../../platform/misc/utils";
 import Domain from "../../platform/models/domain/domain-base";
 import { EncArrayBuffer } from "../../platform/models/domain/enc-array-buffer";
@@ -129,6 +131,7 @@ export class CipherService implements CipherServiceAbstraction {
     private cipherEncryptionService: CipherEncryptionService,
     private messageSender: MessageSender,
     private cipherSdkService: CipherSdkService,
+    private tideCloakService: TideCloakService,
   ) {}
 
   localData$(userId: UserId): Observable<Record<CipherId, LocalData>> {
@@ -425,7 +428,18 @@ export class CipherService implements CipherServiceAbstraction {
       fieldModel.value = "false";
     }
 
-    await this.encryptObjProperty(fieldModel, field, { name: null, value: null }, key);
+    const tideCloak = await this.isTideCloakActive();
+    if (tideCloak) {
+      // Field name → plaintext; value → ORK only for Hidden fields, plaintext otherwise
+      this.setPlaintextProperties(fieldModel, field, ["name"]);
+      if (fieldModel.type === FieldType.Hidden) {
+        await this.encryptObjProperty(fieldModel, field, { value: null }, key);
+      } else {
+        this.setPlaintextProperties(fieldModel, field, ["value"]);
+      }
+    } else {
+      await this.encryptObjProperty(fieldModel, field, { name: null, value: null }, key);
+    }
 
     return field;
   }
@@ -532,7 +546,26 @@ export class CipherService implements CipherServiceAbstraction {
     ciphers: Cipher[],
     userId: UserId,
   ): Promise<[CipherView[], CipherView[]] | null> {
-    if (await this.configService.getFeatureFlag(FeatureFlag.PM19941MigrateCipherDomainToSdk)) {
+    // Skip ORK decryption during bulk vault load — sensitive fields stay encrypted in memory.
+    // Only plaintext (type 101) fields are decoded. ORK fields are decrypted on-demand
+    // when the user opens a specific cipher or clicks copy.
+    this.tideCloakService.setSkipOrkDecrypt(true);
+    try {
+      return await this.decryptCiphersInternal(ciphers, userId);
+    } finally {
+      this.tideCloakService.setSkipOrkDecrypt(false);
+    }
+  }
+
+  private async decryptCiphersInternal(
+    ciphers: Cipher[],
+    userId: UserId,
+  ): Promise<[CipherView[], CipherView[]] | null> {
+    // TideCloak: force legacy TS path (SDK doesn't know encryption type 100)
+    if (
+      !(await this.isTideCloakActive()) &&
+      (await this.configService.getFeatureFlag(FeatureFlag.PM19941MigrateCipherDomainToSdk))
+    ) {
       const decryptStartTime = performance.now();
 
       const result = await this.decryptCiphersWithSdk(ciphers, userId, true);
@@ -599,9 +632,22 @@ export class CipherService implements CipherServiceAbstraction {
    * @returns A promise that resolves to the decrypted cipher view.
    */
   async decrypt(cipher: Cipher, userId: UserId): Promise<CipherView> {
+    // TideCloak: force legacy TS path (SDK doesn't know encryption type 100)
+    const tideActive = await this.isTideCloakActive();
+    this.logService.info(`[CipherService.decrypt] tideActive=${tideActive}`);
+    if (tideActive) {
+      const encKey = await this.getKeyForCipherKeyDecryption(cipher, userId);
+      const result = await cipher.decrypt(encKey);
+      this.logService.info(
+        `[CipherService.decrypt] TideCloak legacy path - login.username=${result.login?.username != null}, login.password=${result.login?.password != null}`,
+      );
+      return result;
+    }
     if (await this.configService.getFeatureFlag(FeatureFlag.PM19941MigrateCipherDomainToSdk)) {
+      this.logService.info(`[CipherService.decrypt] Using SDK path`);
       return await this.cipherEncryptionService.decrypt(cipher, userId);
     } else {
+      this.logService.info(`[CipherService.decrypt] Using legacy path (no flag)`);
       const encKey = await this.getKeyForCipherKeyDecryption(cipher, userId);
       return await cipher.decrypt(encKey);
     }
@@ -2112,18 +2158,52 @@ export class CipherService implements CipherServiceAbstraction {
     await Promise.all(promises);
   }
 
+  private makePlaintextEncString(value: string): EncString | null {
+    if (value == null || value === "") {
+      return null;
+    }
+    const b64 = Utils.fromBufferToB64(new TextEncoder().encode(value));
+    return new EncString(EncryptionType.Plaintext, b64);
+  }
+
+  private setPlaintextProperties<V extends View, D extends Domain>(
+    model: V,
+    obj: D,
+    props: string[],
+  ): void {
+    for (const prop of props) {
+      const val = (model as any)[prop];
+      (obj as any)[prop] = this.makePlaintextEncString(val);
+    }
+  }
+
+  private async isTideCloakActive(): Promise<boolean> {
+    await this.tideCloakService.ensureInitialized();
+    if (this.tideCloakService.isInitialized()) {
+      return true;
+    }
+    // In service worker (no window), enclave can't init but we still need to detect
+    // TideCloak users to bypass SDK paths that don't understand type 100 encryption
+    return await this.tideCloakService.hasPersistedConfig();
+  }
+
   private async encryptCipherData(cipher: Cipher, model: CipherView, key: SymmetricCryptoKey) {
+    const tideCloak = await this.isTideCloakActive();
+
     switch (cipher.type) {
       case CipherType.Login:
         cipher.login = new Login();
         cipher.login.passwordRevisionDate = model.login.passwordRevisionDate;
         cipher.login.autofillOnPageLoad = model.login.autofillOnPageLoad;
-        await this.encryptObjProperty(
-          model.login,
-          cipher.login,
-          { username: null, password: null, totp: null },
-          key,
-        );
+
+        if (tideCloak) {
+          // Sensitive: username, password, totp → ORK
+          await this.encryptObjProperty(model.login, cipher.login, { username: null, password: null, totp: null }, key);
+        } else {
+          await this.encryptObjProperty(
+            model.login, cipher.login, { username: null, password: null, totp: null }, key,
+          );
+        }
 
         if (model.login.uris != null) {
           cipher.login.uris = [];
@@ -2131,9 +2211,15 @@ export class CipherService implements CipherServiceAbstraction {
           for (let i = 0; i < model.login.uris.length; i++) {
             const loginUri = new LoginUri();
             loginUri.match = model.login.uris[i].match;
-            await this.encryptObjProperty(model.login.uris[i], loginUri, { uri: null }, key);
-            const uriHash = await this.encryptService.hash(model.login.uris[i].uri, "sha256");
-            loginUri.uriChecksum = await this.encryptService.encryptString(uriHash, key);
+            if (tideCloak) {
+              this.setPlaintextProperties(model.login.uris[i], loginUri, ["uri"]);
+              const uriHash = await this.encryptService.hash(model.login.uris[i].uri, "sha256");
+              loginUri.uriChecksum = this.makePlaintextEncString(uriHash);
+            } else {
+              await this.encryptObjProperty(model.login.uris[i], loginUri, { uri: null }, key);
+              const uriHash = await this.encryptService.hash(model.login.uris[i].uri, "sha256");
+              loginUri.uriChecksum = await this.encryptService.encryptString(uriHash, key);
+            }
             cipher.login.uris.push(loginUri);
           }
         }
@@ -2142,32 +2228,23 @@ export class CipherService implements CipherServiceAbstraction {
           cipher.login.fido2Credentials = await Promise.all(
             model.login.fido2Credentials.map(async (viewKey) => {
               const domainKey = new Fido2Credential();
-              await this.encryptObjProperty(
-                viewKey,
-                domainKey,
-                {
-                  credentialId: null,
-                  keyType: null,
-                  keyAlgorithm: null,
-                  keyCurve: null,
-                  keyValue: null,
-                  rpId: null,
-                  rpName: null,
-                  userHandle: null,
-                  userName: null,
-                  userDisplayName: null,
-                  origin: null,
-                },
-                key,
-              );
-              domainKey.counter = await this.encryptService.encryptString(
-                String(viewKey.counter),
-                key,
-              );
-              domainKey.discoverable = await this.encryptService.encryptString(
-                String(viewKey.discoverable),
-                key,
-              );
+              if (tideCloak) {
+                this.setPlaintextProperties(viewKey, domainKey, [
+                  "credentialId", "keyType", "keyAlgorithm", "keyCurve",
+                  "rpId", "rpName", "userHandle", "userName", "userDisplayName", "origin",
+                ]);
+                await this.encryptObjProperty(viewKey, domainKey, { keyValue: null }, key);
+                domainKey.counter = this.makePlaintextEncString(String(viewKey.counter));
+                domainKey.discoverable = this.makePlaintextEncString(String(viewKey.discoverable));
+              } else {
+                await this.encryptObjProperty(viewKey, domainKey, {
+                  credentialId: null, keyType: null, keyAlgorithm: null, keyCurve: null,
+                  keyValue: null, rpId: null, rpName: null, userHandle: null,
+                  userName: null, userDisplayName: null, origin: null,
+                }, key);
+                domainKey.counter = await this.encryptService.encryptString(String(viewKey.counter), key);
+                domainKey.discoverable = await this.encryptService.encryptString(String(viewKey.discoverable), key);
+              }
               domainKey.creationDate = viewKey.creationDate;
               return domainKey;
             }),
@@ -2180,56 +2257,52 @@ export class CipherService implements CipherServiceAbstraction {
         return;
       case CipherType.Card:
         cipher.card = new Card();
-        await this.encryptObjProperty(
-          model.card,
-          cipher.card,
-          {
-            cardholderName: null,
-            brand: null,
-            number: null,
-            expMonth: null,
-            expYear: null,
-            code: null,
-          },
-          key,
-        );
+        if (tideCloak) {
+          // Non-sensitive: cardholderName, brand, expMonth, expYear → plaintext
+          // Sensitive: number, code → ORK
+          this.setPlaintextProperties(model.card, cipher.card, [
+            "cardholderName", "brand", "expMonth", "expYear",
+          ]);
+          await this.encryptObjProperty(model.card, cipher.card, { number: null, code: null }, key);
+        } else {
+          await this.encryptObjProperty(model.card, cipher.card, {
+            cardholderName: null, brand: null, number: null, expMonth: null, expYear: null, code: null,
+          }, key);
+        }
         return;
       case CipherType.Identity:
         cipher.identity = new Identity();
-        await this.encryptObjProperty(
-          model.identity,
-          cipher.identity,
-          {
-            title: null,
-            firstName: null,
-            middleName: null,
-            lastName: null,
-            address1: null,
-            address2: null,
-            address3: null,
-            city: null,
-            state: null,
-            postalCode: null,
-            country: null,
-            company: null,
-            email: null,
-            phone: null,
-            ssn: null,
-            username: null,
-            passportNumber: null,
-            licenseNumber: null,
-          },
-          key,
-        );
+        if (tideCloak) {
+          // Non-sensitive: name, address, contact info → plaintext
+          // Sensitive: ssn, passportNumber, licenseNumber → ORK
+          this.setPlaintextProperties(model.identity, cipher.identity, [
+            "title", "firstName", "middleName", "lastName",
+            "address1", "address2", "address3", "city", "state", "postalCode", "country",
+            "company", "email", "phone", "username",
+          ]);
+          await this.encryptObjProperty(model.identity, cipher.identity, {
+            ssn: null, passportNumber: null, licenseNumber: null,
+          }, key);
+        } else {
+          await this.encryptObjProperty(model.identity, cipher.identity, {
+            title: null, firstName: null, middleName: null, lastName: null,
+            address1: null, address2: null, address3: null, city: null, state: null,
+            postalCode: null, country: null, company: null, email: null, phone: null,
+            ssn: null, username: null, passportNumber: null, licenseNumber: null,
+          }, key);
+        }
         return;
       case CipherType.SshKey:
         cipher.sshKey = new SshKey();
-        await this.encryptObjProperty(
-          model.sshKey,
-          cipher.sshKey,
-          { privateKey: null, publicKey: null, keyFingerprint: null },
-          key,
-        );
+        if (tideCloak) {
+          // Non-sensitive: publicKey, keyFingerprint → plaintext; Sensitive: privateKey → ORK
+          this.setPlaintextProperties(model.sshKey, cipher.sshKey, ["publicKey", "keyFingerprint"]);
+          await this.encryptObjProperty(model.sshKey, cipher.sshKey, { privateKey: null }, key);
+        } else {
+          await this.encryptObjProperty(model.sshKey, cipher.sshKey, {
+            privateKey: null, publicKey: null, keyFingerprint: null,
+          }, key);
+        }
         return;
       default:
         throw new Error("Unknown cipher type.");
@@ -2321,19 +2394,39 @@ export class CipherService implements CipherServiceAbstraction {
       );
     }
 
-    await Promise.all([
-      this.encryptObjProperty(model, cipher, { name: null, notes: null }, key),
-      this.encryptCipherData(cipher, model, key),
-      this.encryptFields(model.fields, key).then((fields) => {
-        cipher.fields = fields;
-      }),
-      this.encryptPasswordHistories(model.passwordHistory, key).then((ph) => {
-        cipher.passwordHistory = ph;
-      }),
-      this.encryptAttachments(model.attachments, key).then((attachments) => {
-        cipher.attachments = attachments;
-      }),
-    ]);
+    const tideCloak = await this.isTideCloakActive();
+
+    if (tideCloak) {
+      // TideCloak: name is plaintext (searchable), notes are sensitive (ORK-encrypted)
+      this.setPlaintextProperties(model, cipher, ["name"]);
+      await Promise.all([
+        this.encryptObjProperty(model, cipher, { notes: null }, key),
+        this.encryptCipherData(cipher, model, key),
+        this.encryptFields(model.fields, key).then((fields) => {
+          cipher.fields = fields;
+        }),
+        this.encryptPasswordHistories(model.passwordHistory, key).then((ph) => {
+          cipher.passwordHistory = ph;
+        }),
+        this.encryptAttachments(model.attachments, key).then((attachments) => {
+          cipher.attachments = attachments;
+        }),
+      ]);
+    } else {
+      await Promise.all([
+        this.encryptObjProperty(model, cipher, { name: null, notes: null }, key),
+        this.encryptCipherData(cipher, model, key),
+        this.encryptFields(model.fields, key).then((fields) => {
+          cipher.fields = fields;
+        }),
+        this.encryptPasswordHistories(model.passwordHistory, key).then((ph) => {
+          cipher.passwordHistory = ph;
+        }),
+        this.encryptAttachments(model.attachments, key).then((attachments) => {
+          cipher.attachments = attachments;
+        }),
+      ]);
+    }
     return cipher;
   }
 

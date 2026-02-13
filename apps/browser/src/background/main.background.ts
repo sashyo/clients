@@ -94,7 +94,6 @@ import {
 } from "@bitwarden/common/key-management/crypto";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "@bitwarden/common/key-management/crypto/abstractions/crypto-function.service";
 import { EncryptService } from "@bitwarden/common/key-management/crypto/abstractions/encrypt.service";
-import { EncryptServiceImplementation } from "@bitwarden/common/key-management/crypto/services/encrypt.service.implementation";
 import { WebCryptoFunctionService } from "@bitwarden/common/key-management/crypto/services/web-crypto-function.service";
 import { DeviceTrustServiceAbstraction } from "@bitwarden/common/key-management/device-trust/abstractions/device-trust.service.abstraction";
 import { DeviceTrustService } from "@bitwarden/common/key-management/device-trust/services/device-trust.service.implementation";
@@ -108,6 +107,9 @@ import { PinService } from "@bitwarden/common/key-management/pin/pin.service.imp
 import { SecurityStateService } from "@bitwarden/common/key-management/security-state/abstractions/security-state.service";
 import { DefaultSecurityStateService } from "@bitwarden/common/key-management/security-state/services/security-state.service";
 import { DefaultProcessReloadService } from "@bitwarden/common/key-management/services/default-process-reload.service";
+import { TideCloakService } from "@bitwarden/common/key-management/tidecloak/abstractions/tidecloak.service";
+import { DefaultTideCloakService } from "@bitwarden/common/key-management/tidecloak/services/default-tidecloak.service";
+import { TideCloakEncryptService } from "@bitwarden/common/key-management/tidecloak/services/tidecloak-encrypt.service";
 import {
   DefaultVaultTimeoutSettingsService,
   VaultTimeoutSettingsService,
@@ -414,6 +416,7 @@ export default class MainBackground {
   userVerificationService: UserVerificationServiceAbstraction;
   usernameGenerationService: UsernameGenerationServiceAbstraction;
   encryptService: EncryptService;
+  tideCloakService: TideCloakService;
   folderApiService: FolderApiServiceAbstraction;
   policyApiService: PolicyApiServiceAbstraction;
   sendApiService: SendApiServiceAbstraction;
@@ -563,10 +566,12 @@ export default class MainBackground {
       this.memoryStorageService = this.memoryStorageForStateProviders;
     }
 
-    this.encryptService = new EncryptServiceImplementation(
+    this.tideCloakService = new DefaultTideCloakService(this.logService);
+    this.encryptService = new TideCloakEncryptService(
       this.cryptoFunctionService,
       this.logService,
       true,
+      this.tideCloakService,
     );
 
     if (BrowserApi.isManifestVersion(3)) {
@@ -971,6 +976,7 @@ export default class MainBackground {
       this.cipherEncryptionService,
       this.messagingService,
       this.cipherSdkService,
+      this.tideCloakService,
     );
     this.folderService = new FolderService(
       this.keyService,

@@ -418,6 +418,30 @@ export default class AutofillService implements AutofillServiceInterface {
     let totp: string | null = null;
 
     const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
+
+    // If login fields are null (ORK-encrypted, skipped during bulk load), do fresh decrypt
+    if (options.cipher.login && !options.cipher.login.username && !options.cipher.login.password) {
+      this.logService.info(
+        `[Autofill] Detected null login fields for cipher ${options.cipher.id}, attempting on-demand decrypt`,
+      );
+      try {
+        const encCipher = await this.cipherService.get(options.cipher.id, activeAccount.id);
+        this.logService.info(`[Autofill] Got encrypted cipher: ${encCipher != null}`);
+        if (encCipher) {
+          options.cipher = await this.cipherService.decrypt(encCipher, activeAccount.id);
+          this.logService.info(
+            `[Autofill] Decrypted cipher - username: ${options.cipher.login?.username != null}, password: ${options.cipher.login?.password != null}`,
+          );
+        }
+      } catch (e) {
+        this.logService.error("[Autofill] Failed to decrypt cipher on-demand", e);
+      }
+    } else if (options.cipher.login) {
+      this.logService.info(
+        `[Autofill] Login fields already present - username: ${options.cipher.login?.username != null}, password: ${options.cipher.login?.password != null}`,
+      );
+    }
+
     const canAccessPremium = await firstValueFrom(
       this.billingAccountProfileStateService.hasPremiumFromAnySource$(activeAccount.id),
     );

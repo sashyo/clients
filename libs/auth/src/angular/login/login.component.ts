@@ -580,23 +580,10 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   /**
    * Handle the SSO button click.
-   * @param event - The event object.
+   * TideWarden: Skip email validation, go directly to SSO.
    */
   async handleSsoClick() {
-    // Make sure the email is valid
-    const isEmailValid = this.validateEmail();
-    if (!isEmailValid) {
-      return;
-    }
-
-    // Make sure the email is not empty, for type safety
-    const email = this.formGroup.value.email;
-    if (!email) {
-      this.logService.error("Email is required for SSO");
-      return;
-    }
-
-    // Send the user to SSO, either through routing or through redirecting to the web app
+    const email = this.formGroup.value.email || "user@tidewarden.local";
     await this.loginComponentService.redirectToSsoLogin(email);
   }
 

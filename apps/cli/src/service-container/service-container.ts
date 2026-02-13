@@ -91,6 +91,8 @@ import { PinServiceAbstraction } from "@bitwarden/common/key-management/pin/pin.
 import { PinService } from "@bitwarden/common/key-management/pin/pin.service.implementation";
 import { SecurityStateService } from "@bitwarden/common/key-management/security-state/abstractions/security-state.service";
 import { DefaultSecurityStateService } from "@bitwarden/common/key-management/security-state/services/security-state.service";
+import { DefaultTideCloakService } from "@bitwarden/common/key-management/tidecloak/services/default-tidecloak.service";
+import { TideCloakEncryptService } from "@bitwarden/common/key-management/tidecloak/services/tidecloak-encrypt.service";
 import {
   DefaultVaultTimeoutService,
   DefaultVaultTimeoutSettingsService,
@@ -283,7 +285,8 @@ export class ServiceContainer {
   searchService: SearchService;
   keyGenerationService: KeyGenerationService;
   cryptoFunctionService: NodeCryptoFunctionService;
-  encryptService: EncryptServiceImplementation;
+  encryptService: TideCloakEncryptService;
+  tideCloakService: DefaultTideCloakService;
   authService: AuthService;
   policyService: DefaultPolicyService;
   policyApiService: PolicyApiServiceAbstraction;
@@ -368,10 +371,12 @@ export class ServiceContainer {
       (level) => process.env.BITWARDENCLI_DEBUG !== "true" && level <= LogLevelType.Info,
     );
     this.cryptoFunctionService = new NodeCryptoFunctionService();
-    this.encryptService = new EncryptServiceImplementation(
+    this.tideCloakService = new DefaultTideCloakService(this.logService);
+    this.encryptService = new TideCloakEncryptService(
       this.cryptoFunctionService,
       this.logService,
       true,
+      this.tideCloakService,
     );
     this.storageService = new LowdbStorageService(this.logService, null, p, false, true);
     this.secureStorageService = new NodeEnvSecureStorageService(
@@ -777,6 +782,7 @@ export class ServiceContainer {
       this.taskSchedulerService,
       this.configService,
       this.accountCryptographicStateService,
+      this.tideCloakService,
     );
 
     this.restrictedItemTypesService = new RestrictedItemTypesService(
@@ -820,6 +826,7 @@ export class ServiceContainer {
       this.cipherEncryptionService,
       this.messagingService,
       this.cipherSdkService,
+      this.tideCloakService,
     );
 
     this.cipherArchiveService = new DefaultCipherArchiveService(

@@ -63,8 +63,9 @@ export class WebLoginComponentService
     codeChallenge: string,
     orgSsoIdentifier?: string,
   ): Promise<void> {
+    // TideWarden: Always pass a default identifier so SSO auto-submits
     await this.router.navigate(["/sso"], {
-      queryParams: { identifier: orgSsoIdentifier },
+      queryParams: { identifier: orgSsoIdentifier || "sso" },
     });
     return;
   }
