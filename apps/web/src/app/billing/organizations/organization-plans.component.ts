@@ -593,6 +593,9 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
 
   changedProduct() {
     const selectedPlan = this.selectablePlans[0];
+    if (selectedPlan == null) {
+      return;
+    }
 
     this.setPlanType(selectedPlan.type);
     this.handlePremiumAddonAccess(selectedPlan.PasswordManager.hasPremiumAccessOption);

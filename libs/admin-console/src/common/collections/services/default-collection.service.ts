@@ -103,15 +103,26 @@ export class DefaultCollectionService implements CollectionService {
   }
 
   private initializeDecryptedState(userId: UserId): Observable<CollectionView[]> {
-    return combineLatest([
-      this.encryptedCollections$(userId),
-      this.keyService.orgKeys$(userId).pipe(filter((orgKeys) => !!orgKeys)),
-    ]).pipe(
-      switchMap(([collections, orgKeys]) =>
-        this.decryptMany$(collections, orgKeys).pipe(
-          delayWhen((collections) => this.setDecryptedCollections(collections, userId)),
-        ),
-      ),
+    return this.encryptedCollections$(userId).pipe(
+      switchMap((collections: Collection[] | null) => {
+        // No collections to decrypt — emit empty immediately without waiting for org keys.
+        // This prevents the observable from hanging when orgKeys$ never emits a truthy value
+        // (e.g. user has no private key or no organizations).
+        if (collections === null || collections.length === 0) {
+          return of([] as CollectionView[]).pipe(
+            delayWhen((colls: CollectionView[]) => this.setDecryptedCollections(colls, userId)),
+          );
+        }
+
+        return this.keyService.orgKeys$(userId).pipe(
+          filter((orgKeys): orgKeys is Record<OrganizationId, OrgKey> => !!orgKeys),
+          switchMap((orgKeys: Record<OrganizationId, OrgKey>) =>
+            this.decryptMany$(collections, orgKeys).pipe(
+              delayWhen((colls: CollectionView[]) => this.setDecryptedCollections(colls, userId)),
+            ),
+          ),
+        );
+      }),
     );
   }
 

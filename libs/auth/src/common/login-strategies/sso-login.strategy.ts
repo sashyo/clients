@@ -12,6 +12,7 @@ import { HttpStatusCode } from "@bitwarden/common/enums";
 import { DeviceTrustServiceAbstraction } from "@bitwarden/common/key-management/device-trust/abstractions/device-trust.service.abstraction";
 import { KeyConnectorService } from "@bitwarden/common/key-management/key-connector/abstractions/key-connector.service";
 import { TideCloakService } from "@bitwarden/common/key-management/tidecloak/abstractions/tidecloak.service";
+import { KeysRequest } from "@bitwarden/common/models/request/keys.request";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
@@ -407,6 +408,17 @@ export class SsoLoginStrategy extends LoginStrategy {
 
       const userKey = new SymmetricCryptoKey(randomBytes) as UserKey;
       await this.keyService.setUserKey(userKey, userId);
+    }
+
+    // Generate RSA key pair if the user doesn't have one.
+    // TideCloak handles data encryption via ORK, but the Bitwarden protocol
+    // still requires RSA keys for org key exchange, member invitations, etc.
+    if (!tokenResponse.accountKeysResponseModel) {
+      this.logService.info("[TideCloak] Generating RSA key pair for compatibility");
+      const userKey = await firstValueFrom(this.keyService.userKey$(userId));
+      const [publicKey, privateKey] = await this.keyService.makeKeyPair(userKey);
+      const keysRequest = new KeysRequest(publicKey, privateKey.encryptedString);
+      await this.apiService.postAccountKeys(keysRequest);
     }
   }
 
