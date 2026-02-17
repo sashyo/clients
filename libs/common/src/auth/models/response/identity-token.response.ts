@@ -42,6 +42,9 @@ export class IdentityTokenResponse extends BaseResponse {
 
   userDecryptionOptions?: UserDecryptionOptionsResponse;
 
+  /** TideCloak doken token, ephemeral — used to initialize the ORK enclave. */
+  doken?: string;
+
   constructor(response: unknown) {
     super(response);
 
@@ -94,6 +97,11 @@ export class IdentityTokenResponse extends BaseResponse {
     const userDecryptionOptions = this.getResponseProperty("UserDecryptionOptions");
     if (userDecryptionOptions != null && typeof userDecryptionOptions === "object") {
       this.userDecryptionOptions = new UserDecryptionOptionsResponse(userDecryptionOptions);
+    }
+
+    const doken = this.getResponseProperty("doken");
+    if (doken != null && typeof doken === "string") {
+      this.doken = doken;
     }
   }
 

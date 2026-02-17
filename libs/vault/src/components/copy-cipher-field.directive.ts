@@ -4,8 +4,9 @@ import { firstValueFrom } from "rxjs";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { getUserId } from "@bitwarden/common/auth/services/account.service";
 import { uuidAsString } from "@bitwarden/common/platform/abstractions/sdk/sdk.service";
+import { EncryptionType } from "@bitwarden/common/platform/enums";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
-import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import {
   CipherViewLike,
   CipherViewLikeUtils,
@@ -76,7 +77,7 @@ export class CopyCipherFieldDirective implements OnChanges {
   private async updateDisabledState() {
     this.disabled =
       !this.cipher ||
-      !this.hasValueToCopy() ||
+      !(await this.hasValueToCopy()) ||
       (this.action === "totp" && !(await this.copyCipherFieldService.totpAllowed(this.cipher)))
         ? true
         : null;
@@ -92,17 +93,25 @@ export class CopyCipherFieldDirective implements OnChanges {
     }
   }
 
-  /** Returns `true` when the cipher has the associated value as populated. */
-  private hasValueToCopy() {
-    return CipherViewLikeUtils.hasCopyableValue(this.cipher, this.action);
-  }
+  /**
+   * Returns `true` when the cipher has the associated value as populated.
+   * For ORK-encrypted fields (type 100), the decrypted CipherView may show null
+   * during bulk load. In that case, check the encrypted cipher's EncString fields.
+   */
+  private async hasValueToCopy(): Promise<boolean> {
+    // Fast path: check cached decrypted value
+    if (CipherViewLikeUtils.hasCopyableValue(this.cipher, this.action)) {
+      return true;
+    }
 
-  /** Returns the value of the cipher to be copied. */
-  private async getValueToCopy() {
-    let _cipher: CipherView;
-
+    // For CipherListView, trust the SDK's copyableFields
     if (CipherViewLikeUtils.isCipherListView(this.cipher)) {
-      // When the cipher is of type `CipherListView`, the full cipher needs to be decrypted
+      return false;
+    }
+
+    // The cached CipherView has null for this field — check if the encrypted
+    // cipher has an ORK-encrypted (type 100) EncString for it
+    try {
       const activeAccountId = await firstValueFrom(
         this.accountService.activeAccount$.pipe(getUserId),
       );
@@ -110,10 +119,62 @@ export class CopyCipherFieldDirective implements OnChanges {
         uuidAsString(this.cipher.id!),
         activeAccountId,
       );
-      _cipher = await this.cipherService.decrypt(encryptedCipher, activeAccountId);
-    } else {
-      _cipher = this.cipher;
+      if (!encryptedCipher) {
+        return false;
+      }
+      return this.hasOrkEncryptedField(encryptedCipher);
+    } catch {
+      return false;
     }
+  }
+
+  /**
+   * Checks if the encrypted cipher has an ORK-encrypted (type 100) EncString
+   * for the current copy action. This handles the case where bulk decryption
+   * skipped ORK fields, leaving them null in the CipherView.
+   */
+  private hasOrkEncryptedField(cipher: Cipher): boolean {
+    const isOrk = (enc: { encryptionType?: number } | null | undefined) =>
+      enc?.encryptionType === EncryptionType.TideCloakOrk;
+
+    switch (this.action) {
+      case "username":
+        return isOrk(cipher.login?.username) || isOrk(cipher.identity?.username);
+      case "password":
+        return isOrk(cipher.login?.password);
+      case "totp":
+        return isOrk(cipher.login?.totp);
+      case "cardNumber":
+        return isOrk(cipher.card?.number);
+      case "securityCode":
+        return isOrk(cipher.card?.code);
+      case "email":
+        return isOrk(cipher.identity?.email);
+      case "phone":
+        return isOrk(cipher.identity?.phone);
+      case "secureNote":
+        return isOrk(cipher.notes);
+      case "privateKey":
+        return isOrk(cipher.sshKey?.privateKey);
+      default:
+        return false;
+    }
+  }
+
+  /**
+   * Returns the value of the cipher to be copied.
+   * Always fetches from the encrypted store and does fresh decryption
+   * to handle ORK-encrypted fields that were null in the cached CipherView.
+   */
+  private async getValueToCopy() {
+    const activeAccountId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(getUserId),
+    );
+    const encryptedCipher = await this.cipherService.get(
+      uuidAsString(this.cipher.id!),
+      activeAccountId,
+    );
+    const _cipher = await this.cipherService.decrypt(encryptedCipher, activeAccountId);
 
     switch (this.action) {
       case "username":

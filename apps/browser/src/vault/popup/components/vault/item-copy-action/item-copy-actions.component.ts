@@ -136,9 +136,14 @@ export class ItemCopyActionsComponent {
         .length;
     }
 
-    return [this.cipher.login.username, this.cipher.login.password, this.cipher.login.totp].filter(
-      Boolean,
-    ).length;
+    const count = [
+      this.cipher.login.username,
+      this.cipher.login.password,
+      this.cipher.login.totp,
+    ].filter(Boolean).length;
+    // If no decrypted values but login exists, fields may be ORK-encrypted (null in cached view).
+    // Return at least 1 so copy menu is enabled — individual items are handled by the directive.
+    return count > 0 ? count : this.cipher.login ? 1 : 0;
   }
 
   /** Sets the number of populated card values for the cipher */
@@ -149,7 +154,8 @@ export class ItemCopyActionsComponent {
         .length;
     }
 
-    return [this.cipher.card.code, this.cipher.card.number].filter(Boolean).length;
+    const count = [this.cipher.card.code, this.cipher.card.number].filter(Boolean).length;
+    return count > 0 ? count : this.cipher.card ? 1 : 0;
   }
 
   /** Sets the number of populated identity values for the cipher */
@@ -165,12 +171,13 @@ export class ItemCopyActionsComponent {
         .length;
     }
 
-    return [
+    const count = [
       this.cipher.identity.fullAddressForCopy,
       this.cipher.identity.email,
       this.cipher.identity.username,
       this.cipher.identity.phone,
     ].filter(Boolean).length;
+    return count > 0 ? count : this.cipher.identity ? 1 : 0;
   }
   /** Sets the number of populated secure note values for the cipher */
   private getNumberOfSecureNoteValues(): number {
@@ -187,10 +194,11 @@ export class ItemCopyActionsComponent {
       return this.cipher.copyableFields.includes("SshKey") ? 1 : 0;
     }
 
-    return [
+    const count = [
       this.cipher.sshKey.privateKey,
       this.cipher.sshKey.publicKey,
       this.cipher.sshKey.keyFingerprint,
     ].filter(Boolean).length;
+    return count > 0 ? count : this.cipher.sshKey ? 1 : 0;
   }
 }

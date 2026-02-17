@@ -1,6 +1,6 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "tidewarden"
   },
   "appLogoLabel": {
     "message": "बिटवार्डन लोगो"
@@ -6133,5 +6133,8 @@
   "sendPasswordHelperText": {
     "message": "Individuals will need to enter the password to view this Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "logInToTideWarden": {
+    "message": "Log in to TideWarden"
   }
 }

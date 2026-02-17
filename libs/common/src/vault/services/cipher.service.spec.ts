@@ -18,6 +18,7 @@ import { AutofillSettingsService } from "../../autofill/services/autofill-settin
 import { DomainSettingsService } from "../../autofill/services/domain-settings.service";
 import { EncryptService } from "../../key-management/crypto/abstractions/encrypt.service";
 import { EncString } from "../../key-management/crypto/models/enc-string";
+import { TideCloakService } from "../../key-management/tidecloak/abstractions/tidecloak.service";
 import { UriMatchStrategy } from "../../models/domain/domain-service";
 import { ConfigService } from "../../platform/abstractions/config/config.service";
 import { I18nService } from "../../platform/abstractions/i18n.service";
@@ -111,6 +112,7 @@ describe("Cipher Service", () => {
   const cipherEncryptionService = mock<CipherEncryptionService>();
   const messageSender = mock<MessageSender>();
   const cipherSdkService = mock<CipherSdkService>();
+  const tideCloakService = mock<TideCloakService>();
 
   const userId = "TestUserId" as UserId;
   const orgId = "4ff8c0b2-1d3e-4f8c-9b2d-1d3e4f8c0b21" as OrganizationId;
@@ -154,6 +156,7 @@ describe("Cipher Service", () => {
       cipherEncryptionService,
       messageSender,
       cipherSdkService,
+      tideCloakService,
     );
 
     encryptionContext = { cipher: new Cipher(cipherData), encryptedFor: userId };

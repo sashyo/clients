@@ -108,26 +108,5 @@
         <i slot="end" class="bwi bwi-angle-right" aria-hidden="true"></i>
       </a>
     </bit-item>
-    <bit-item>
-      <a bit-item-content routerLink="/download-bitwarden" [truncate]="false">
-        <i slot="start" class="bwi bwi-mobile" aria-hidden="true"></i>
-        <div class="tw-flex tw-items-center">
-          <p class="tw-pr-2">{{ "downloadBitwardenApps" | i18n }}</p>
-          @if (showDownloadBitwardenNudge$ | async) {
-            <span bitBadge variant="notification" [attr.aria-label]="'nudgeBadgeAria' | i18n"
-              >1
-            </span>
-          }
-        </div>
-        <i slot="end" class="bwi bwi-angle-right" aria-hidden="true"></i>
-      </a>
-    </bit-item>
-    <bit-item>
-      <a bit-item-content routerLink="/more-from-bitwarden" [truncate]="false">
-        <i slot="start" class="bwi bwi-filter" aria-hidden="true"></i>
-        {{ "moreFromBitwarden" | i18n }}
-        <i slot="end" class="bwi bwi-angle-right" aria-hidden="true"></i>
-      </a>
-    </bit-item>
   </bit-item-group>
 </popup-page>

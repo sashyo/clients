@@ -18,6 +18,7 @@ import { EncryptService } from "@bitwarden/common/key-management/crypto/abstract
 import { DeviceTrustServiceAbstraction } from "@bitwarden/common/key-management/device-trust/abstractions/device-trust.service.abstraction";
 import { KeyConnectorService } from "@bitwarden/common/key-management/key-connector/abstractions/key-connector.service";
 import { FakeMasterPasswordService } from "@bitwarden/common/key-management/master-password/services/fake-master-password.service";
+import { TideCloakService } from "@bitwarden/common/key-management/tidecloak/abstractions/tidecloak.service";
 import {
   VaultTimeoutAction,
   VaultTimeoutSettingsService,
@@ -120,6 +121,7 @@ describe("LoginStrategyService", () => {
     taskSchedulerService = mock<TaskSchedulerService>();
     configService = mock<ConfigService>();
     accountCryptographicStateService = mock<DefaultAccountCryptographicStateService>();
+    const tideCloakService = mock<TideCloakService>();
 
     sut = new LoginStrategyService(
       accountService,
@@ -149,6 +151,7 @@ describe("LoginStrategyService", () => {
       taskSchedulerService,
       configService,
       accountCryptographicStateService,
+      tideCloakService,
     );
 
     loginStrategyCacheExpirationState = stateProvider.getFake(CACHE_EXPIRATION_KEY);

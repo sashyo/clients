@@ -11,9 +11,13 @@ import { IdentityTokenResponse } from "@bitwarden/common/auth/models/response/id
 import { HttpStatusCode } from "@bitwarden/common/enums";
 import { DeviceTrustServiceAbstraction } from "@bitwarden/common/key-management/device-trust/abstractions/device-trust.service.abstraction";
 import { KeyConnectorService } from "@bitwarden/common/key-management/key-connector/abstractions/key-connector.service";
+import { TideCloakService } from "@bitwarden/common/key-management/tidecloak/abstractions/tidecloak.service";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { UserId } from "@bitwarden/common/types/guid";
+import { UserKey } from "@bitwarden/common/types/key";
 
 import { AuthRequestServiceAbstraction } from "../abstractions";
 import { SsoLoginCredentials } from "../models/domain/login-credentials";
@@ -72,6 +76,7 @@ export class SsoLoginStrategy extends LoginStrategy {
     private deviceTrustService: DeviceTrustServiceAbstraction,
     private authRequestService: AuthRequestServiceAbstraction,
     private i18nService: I18nService,
+    private tideCloakService: TideCloakService,
     ...sharedDeps: ConstructorParameters<typeof LoginStrategy>
   ) {
     super(...sharedDeps);
@@ -186,6 +191,12 @@ export class SsoLoginStrategy extends LoginStrategy {
     }
 
     const userDecryptionOptions = tokenResponse?.userDecryptionOptions;
+
+    // TideCloak ORK-based key decryption
+    if (userDecryptionOptions?.tideCloakOption) {
+      await this.trySetUserKeyWithTideCloak(tokenResponse, userId);
+      return;
+    }
 
     // Note: TDE and key connector are mutually exclusive
     if (userDecryptionOptions?.trustedDeviceOption) {
@@ -335,6 +346,70 @@ export class SsoLoginStrategy extends LoginStrategy {
     await this.keyService.setUserKey(userKey, userId);
   }
 
+  private async trySetUserKeyWithTideCloak(
+    tokenResponse: IdentityTokenResponse,
+    userId: UserId,
+  ): Promise<void> {
+    const tideCloakOption = tokenResponse.userDecryptionOptions?.tideCloakOption;
+    if (!tideCloakOption || !tokenResponse.doken) {
+      this.logService.error("[TideCloak] Missing TideCloak config or doken for user key setup");
+      return;
+    }
+
+    // Initialize the ORK enclave with config + doken
+    // Use browser extension origin auth if running in a browser extension context
+    const isBrowserExtension =
+      typeof globalThis.chrome?.runtime?.id === "string" &&
+      globalThis.location?.protocol === "chrome-extension:";
+    const signedOrigin =
+      isBrowserExtension && tideCloakOption.signedClientOriginBrowser
+        ? tideCloakOption.signedClientOriginBrowser
+        : tideCloakOption.signedClientOrigin;
+
+    this.logService.info("[TideCloak] Initializing ORK enclave during SSO login");
+    await this.tideCloakService.initialize(
+      {
+        homeOrkUrl: tideCloakOption.homeOrkUrl,
+        vendorId: tideCloakOption.vendorId,
+        voucherUrl: tideCloakOption.voucherUrl,
+        signedClientOrigin: signedOrigin,
+      },
+      tokenResponse.doken,
+    );
+
+    if (tideCloakOption.encryptedUserKey) {
+      // Existing user: decrypt the ORK-encrypted user key
+      this.logService.info("[TideCloak] Decrypting existing ORK-encrypted user key");
+      const encryptedBytes = Utils.fromB64ToArray(tideCloakOption.encryptedUserKey);
+      const decryptedBytes = await this.tideCloakService.decrypt(
+        new Uint8Array(encryptedBytes.buffer),
+        ["vaultwarden"],
+      );
+      const userKey = new SymmetricCryptoKey(decryptedBytes) as UserKey;
+      await this.keyService.setUserKey(userKey, userId);
+    } else {
+      // New user: generate user key, encrypt with ORK, save to server
+      this.logService.info("[TideCloak] Generating new user key for new TideCloak user");
+      const randomBytes = new Uint8Array(64);
+      crypto.getRandomValues(randomBytes);
+
+      const encryptedBytes = await this.tideCloakService.encrypt(randomBytes, ["vaultwarden"]);
+      const encryptedUserKeyB64 = Utils.fromBufferToB64(encryptedBytes);
+
+      // Save ORK-encrypted user key to server
+      await this.apiService.send(
+        "POST",
+        "/accounts/tide-key",
+        { encryptedUserKey: encryptedUserKeyB64 },
+        true,
+        false,
+      );
+
+      const userKey = new SymmetricCryptoKey(randomBytes) as UserKey;
+      await this.keyService.setUserKey(userKey, userId);
+    }
+  }
+
   protected override async setAccountCryptographicState(
     tokenResponse: IdentityTokenResponse,
     userId: UserId,
@@ -404,6 +479,11 @@ export class SsoLoginStrategy extends LoginStrategy {
       this.keyService.userEncryptedPrivateKey$(userId),
     );
     const hasUserKey = await this.keyService.hasUserKey(userId);
+
+    // TideCloak users handle decryption via ORK — skip all force-set-password checks
+    if (userDecryptionOptions.tideCloakOption) {
+      return false;
+    }
 
     // TODO: PM-23491 we should explore consolidating this logic into a flag on the server. It could be set when an org is switched from TDE to MP encryption for each org user.
     if (

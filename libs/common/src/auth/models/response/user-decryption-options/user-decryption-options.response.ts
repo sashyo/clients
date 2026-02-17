@@ -6,6 +6,10 @@ import {
   KeyConnectorUserDecryptionOptionResponse,
 } from "./key-connector-user-decryption-option.response";
 import {
+  ITideCloakUserDecryptionOptionServerResponse,
+  TideCloakUserDecryptionOptionResponse,
+} from "./tidecloak-user-decryption-option.response";
+import {
   ITrustedDeviceUserDecryptionOptionServerResponse,
   TrustedDeviceUserDecryptionOptionResponse,
 } from "./trusted-device-user-decryption-option.response";
@@ -20,6 +24,7 @@ export interface IUserDecryptionOptionsServerResponse {
   TrustedDeviceOption?: ITrustedDeviceUserDecryptionOptionServerResponse;
   KeyConnectorOption?: IKeyConnectorUserDecryptionOptionServerResponse;
   WebAuthnPrfOption?: IWebAuthnPrfDecryptionOptionServerResponse;
+  TideCloakDecryption?: ITideCloakUserDecryptionOptionServerResponse;
 }
 
 export class UserDecryptionOptionsResponse extends BaseResponse {
@@ -32,6 +37,7 @@ export class UserDecryptionOptionsResponse extends BaseResponse {
    * To support immediate unlock after logging in with the same PRF passkey.
    */
   webAuthnPrfOption?: WebAuthnPrfDecryptionOptionResponse;
+  tideCloakOption?: TideCloakUserDecryptionOptionResponse;
 
   constructor(response: IUserDecryptionOptionsServerResponse) {
     super(response);
@@ -56,6 +62,11 @@ export class UserDecryptionOptionsResponse extends BaseResponse {
     if (response.WebAuthnPrfOption) {
       this.webAuthnPrfOption = new WebAuthnPrfDecryptionOptionResponse(
         this.getResponseProperty("WebAuthnPrfOption"),
+      );
+    }
+    if (response.TideCloakDecryption) {
+      this.tideCloakOption = new TideCloakUserDecryptionOptionResponse(
+        this.getResponseProperty("TideCloakDecryption"),
       );
     }
   }

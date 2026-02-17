@@ -1,16 +1,16 @@
 {
   "appName": {
-    "message": "Bitwarden"
+    "message": "TideWarden"
   },
   "appLogoLabel": {
-    "message": "Bitwarden-logo"
+    "message": "TideWarden-logo"
   },
   "extName": {
-    "message": "Bitwarden - wachtwoordbeheerder",
+    "message": "TideWarden - wachtwoordbeheerder",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "Thuis, op werk of onderweg. Bitwarden beveiligt makkelijk al je wachtwoorden, passkeys en gevoelige informatie",
+    "message": "Thuis, op werk of onderweg. TideWarden beveiligt makkelijk al je wachtwoorden, passkeys en gevoelige informatie",
     "description": "Extension description, MUST be less than 112 characters (Safari restriction)"
   },
   "loginOrCreateNewAccount": {
@@ -6133,5 +6133,8 @@
   "sendPasswordHelperText": {
     "message": "Individuen moeten het wachtwoord invoeren om deze Send te bekijken",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "logInToTideWarden": {
+    "message": "Inloggen op TideWarden"
   }
 }

@@ -6,7 +6,7 @@
     "message": "活动"
   },
   "appLogoLabel": {
-    "message": "Bitwarden logo"
+    "message": "TideWarden logo"
   },
   "criticalApplications": {
     "message": "关键应用程序"
@@ -335,7 +335,7 @@
     "message": "密码存在风险的成员"
   },
   "membersWillReceiveSecurityTask": {
-    "message": "您的组织成员将被分配更改易受攻击的密码的任务。他们将在 Bitwarden 浏览器扩展中收到通知。"
+    "message": "您的组织成员将被分配更改易受攻击的密码的任务。他们将在 TideWarden 浏览器扩展中收到通知。"
   },
   "membersAtRiskCount": {
     "message": "$COUNT$ 个成员存在风险",
@@ -728,10 +728,10 @@
     "message": "无缝两步验证"
   },
   "totpHelper": {
-    "message": "Bitwarden 可以存储并填充两步验证码。将密钥复制并粘贴到此字段。"
+    "message": "TideWarden 可以存储并填充两步验证码。将密钥复制并粘贴到此字段。"
   },
   "totpHelperWithCapture": {
-    "message": "Bitwarden 可以存储并填充两步验证码。选择相机图标来拍摄此网站的验证器二维码，或将密钥复制并粘贴到此字段。"
+    "message": "TideWarden 可以存储并填充两步验证码。选择相机图标来拍摄此网站的验证器二维码，或将密钥复制并粘贴到此字段。"
   },
   "learnMoreAboutAuthenticators": {
     "message": "进一步了解验证器"
@@ -1450,7 +1450,7 @@
     "message": "使用设备登录"
   },
   "loginWithDeviceEnabledNote": {
-    "message": "必须在 Bitwarden App 的设置中设置设备登录。需要其他选项吗？"
+    "message": "必须在 TideWarden App 的设置中设置设备登录。需要其他选项吗？"
   },
   "needAnotherOptionV1": {
     "message": "需要其他选项吗？"
@@ -1564,7 +1564,7 @@
     "message": "创建账户"
   },
   "newToBitwarden": {
-    "message": "Bitwarden 新手吗？"
+    "message": "TideWarden 新手吗？"
   },
   "setAStrongPassword": {
     "message": "设置强密码"
@@ -1582,7 +1582,7 @@
     "message": "登录"
   },
   "logInToBitwarden": {
-    "message": "登录到 Bitwarden"
+    "message": "登录到 TideWarden"
   },
   "enterTheCodeSentToYourEmail": {
     "message": "输入发送到您的电子邮箱的代码"
@@ -1612,7 +1612,7 @@
     "message": "什么是设备？"
   },
   "aDeviceIs": {
-    "message": "设备是您登录过的 Bitwarden App 的独立安装。重新安装、清除 App 数据或清除 Cookie，可能会导致设备多次出现。"
+    "message": "设备是您登录过的 TideWarden App 的独立安装。重新安装、清除 App 数据或清除 Cookie，可能会导致设备多次出现。"
   },
   "logInInitiated": {
     "message": "登录已发起"
@@ -1757,7 +1757,7 @@
       },
       "hostname": {
         "content": "$2",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -1769,7 +1769,7 @@
     "placeholders": {
       "host": {
         "content": "$1",
-        "example": "vault.bitwarden.com"
+        "example": "vault.tidewarden.com"
       }
     }
   },
@@ -1840,7 +1840,7 @@
     "message": "通知已发送到您的设备。"
   },
   "notificationSentDevicePart1": {
-    "message": "解锁您设备上的 Bitwarden 或通过"
+    "message": "解锁您设备上的 TideWarden 或通过"
   },
   "accessAttemptBy": {
     "message": "$EMAIL$ 的访问尝试",
@@ -1864,7 +1864,7 @@
     "message": "批准前，请确保指纹短语与下面的相匹配。"
   },
   "notificationSentDeviceComplete": {
-    "message": "解锁您设备上的 Bitwarden。批准前，请确保指纹短语与下面的相匹配。"
+    "message": "解锁您设备上的 TideWarden。批准前，请确保指纹短语与下面的相匹配。"
   },
   "aNotificationWasSentToYourDevice": {
     "message": "通知已发送到您的设备"
@@ -1925,8 +1925,8 @@
     "message": "验证器 App"
   },
   "authenticatorAppDescV2": {
-    "message": "输入验证器 App（例如 Bitwarden Authenticator）生成的代码。",
-    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
+    "message": "输入验证器 App（例如 TideWarden Authenticator）生成的代码。",
+    "description": "'TideWarden Authenticator' is a product name and should not be translated."
   },
   "yubiKeyTitleV2": {
     "message": "Yubico OTP 安全密钥"
@@ -2045,7 +2045,7 @@
     "message": "此导出使用您账户的加密密钥来加密您的数据。如果您曾经轮换过账户的加密密钥，您应将其重新导出，否则您将无法解密导出的文件。"
   },
   "encExportAccountWarningDesc": {
-    "message": "每个 Bitwarden 用户账户的账户加密密钥都是唯一的，因此您无法将加密的导出导入到另一个账户。"
+    "message": "每个 TideWarden 用户账户的账户加密密钥都是唯一的，因此您无法将加密的导出导入到另一个账户。"
   },
   "exportNoun": {
     "message": "导出",
@@ -2077,10 +2077,10 @@
     "message": "确认文件密码"
   },
   "accountRestrictedOptionDescription": {
-    "message": "使用衍生自您账户用户名和主密码的加密密钥以加密此导出，并限制只能导入到当前 Bitwarden 账户。"
+    "message": "使用衍生自您账户用户名和主密码的加密密钥以加密此导出，并限制只能导入到当前 TideWarden 账户。"
   },
   "passwordProtectedOptionDescription": {
-    "message": "设置一个文件密码以加密此导出，并使用此密码解密以导入到任意 Bitwarden 账户。"
+    "message": "设置一个文件密码以加密此导出，并使用此密码解密以导入到任意 TideWarden 账户。"
   },
   "exportTypeHeading": {
     "message": "导出类型"
@@ -2233,7 +2233,7 @@
     "message": "请求待处理"
   },
   "logBackInOthersToo": {
-    "message": "请重新登录。如果您还在使用其他 Bitwarden 应用程序，也请注销并重新登陆。"
+    "message": "请重新登录。如果您还在使用其他 TideWarden 应用程序，也请注销并重新登陆。"
   },
   "changeMasterPassword": {
     "message": "修改主密码"
@@ -2266,7 +2266,7 @@
     }
   },
   "kdfIterationsWarning": {
-    "message": "如果将 KDF 迭代次数设置得太高，可能导致在相对老旧的设备上登录（以及解锁）Bitwarden 时性能不佳。我们建议您以 $INCREMENT$ 的增量值递增，然后测试您的所有设备。",
+    "message": "如果将 KDF 迭代次数设置得太高，可能导致在相对老旧的设备上登录（以及解锁）TideWarden 时性能不佳。我们建议您以 $INCREMENT$ 的增量值递增，然后测试您的所有设备。",
     "placeholders": {
       "increment": {
         "content": "$1",
@@ -2279,7 +2279,7 @@
     "description": "Memory refers to computer memory (RAM). MB is short for megabytes."
   },
   "argon2Warning": {
-    "message": "如果将 KDF 迭代次数、内存和并行线程数设置得太高，可能导致在相对老旧的设备上登录（以及解锁）Bitwarden 时性能不佳。我们建议以小量递增的方式更改这些设置，然后测试您的所有设备。"
+    "message": "如果将 KDF 迭代次数、内存和并行线程数设置得太高，可能导致在相对老旧的设备上登录（以及解锁）TideWarden 时性能不佳。我们建议以小量递增的方式更改这些设置，然后测试您的所有设备。"
   },
   "kdfParallelism": {
     "message": "KDF 并行线程数"
@@ -2312,10 +2312,10 @@
     "message": "启用新设备登录保护"
   },
   "turnOffNewDeviceLoginProtectionModalDesc": {
-    "message": "继续下面的操作以停用从新设备登录 Bitwarden 时发送验证电子邮件的功能。"
+    "message": "继续下面的操作以停用从新设备登录 TideWarden 时发送验证电子邮件的功能。"
   },
   "turnOnNewDeviceLoginProtectionModalDesc": {
-    "message": "继续下面的操作以启用从新设备登录 Bitwarden 时发送验证电子邮件的功能。"
+    "message": "继续下面的操作以启用从新设备登录 TideWarden 时发送验证电子邮件的功能。"
   },
   "turnOffNewDeviceLoginProtectionWarning": {
     "message": "停用新设备登录保护后，任何拥有您的主密码的人都可以从任何设备访问您的账户。要在没有验证电子邮件的情况下保护您的账户，请设置两步登录。"
@@ -2524,7 +2524,7 @@
     "message": "域名规则"
   },
   "domainRulesDesc": {
-    "message": "如果您在多个不同网站域名中使用同一个登录信息，您可以把这些网站标记为「等效」。「全局」域名是由 Bitwarden 为您预先创建的域名。"
+    "message": "如果您在多个不同网站域名中使用同一个登录信息，您可以把这些网站标记为「等效」。「全局」域名是由 TideWarden 为您预先创建的域名。"
   },
   "globalEqDomains": {
     "message": "全局等效域名"
@@ -2572,8 +2572,8 @@
     "message": "为您的组织启用两步登录。"
   },
   "twoStepLoginEnterpriseDescStart": {
-    "message": "要为成员强制实施 Bitwarden 两步登录选项，请使用",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
+    "message": "要为成员强制实施 TideWarden 两步登录选项，请使用",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce TideWarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
     "message": "两步登录策略"
@@ -2585,7 +2585,7 @@
     "message": "如果您已设置 SSO 或计划设置 SSO，两步登录可能已经通过您的身份提供程序强制实施了。"
   },
   "twoStepLoginRecoveryWarning": {
-    "message": "启用两步登录可能会将您永久锁定在 Bitwarden 账户之外。当您无法使用常规的两步登录提供程序（例如您丢失了设备）时，可以使用恢复代码访问您的账户。如果您失去对您账户的访问，Bitwarden 支持也无法帮助您。我们建议您写下或打印恢复代码，并将其妥善保管。"
+    "message": "启用两步登录可能会将您永久锁定在 TideWarden 账户之外。当您无法使用常规的两步登录提供程序（例如您丢失了设备）时，可以使用恢复代码访问您的账户。如果您失去对您账户的访问，TideWarden 支持也无法帮助您。我们建议您写下或打印恢复代码，并将其妥善保管。"
   },
   "restrictedItemTypePolicy": {
     "message": "禁用支付卡项目类型"
@@ -2600,7 +2600,7 @@
     "message": "由 1 个或多个组织设置的策略阻止您将支付卡导入密码库。"
   },
   "yourSingleUseRecoveryCode": {
-    "message": "当您无法访问两步登录提供程序时，您的一次性恢复代码可用于停用两步登录。Bitwarden 建议您写下恢复代码，并将其妥善保管。"
+    "message": "当您无法访问两步登录提供程序时，您的一次性恢复代码可用于停用两步登录。TideWarden 建议您写下恢复代码，并将其妥善保管。"
   },
   "viewRecoveryCode": {
     "message": "查看恢复代码"
@@ -2693,18 +2693,18 @@
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
   "continueToExternalUrlDesc": {
-    "message": "您将离开 Bitwarden 并将在新窗口中打开一个外部网站。"
+    "message": "您将离开 TideWarden 并将在新窗口中打开一个外部网站。"
   },
   "twoStepContinueToBitwardenUrlTitle": {
-    "message": "前往 bitwarden.com 吗？"
+    "message": "前往 tidewarden.com 吗？"
   },
   "twoStepContinueToBitwardenUrlDesc": {
-    "message": "Bitwarden Authenticator 允许您存储验证器密钥以及为两步验证流程生成 TOTP 代码。访问 bitwarden.com 网站了解更多信息。"
+    "message": "TideWarden Authenticator 允许您存储验证器密钥以及为两步验证流程生成 TOTP 代码。访问 tidewarden.com 网站了解更多信息。"
   },
   "twoStepAuthenticatorScanCodeV2": {
     "message": "用您的验证器 App 扫描下面的二维码或输入密钥。"
@@ -2746,7 +2746,7 @@
     "message": "保存表单。"
   },
   "twoFactorYubikeyWarning": {
-    "message": "由于平台限制，YubiKey 不能在所有 Bitwarden 应用程序上使用。您应该设置其他两步登录提供程序，以便在无法使用 YubiKey 时可以访问您的账户。支持的平台："
+    "message": "由于平台限制，YubiKey 不能在所有 TideWarden 应用程序上使用。您应该设置其他两步登录提供程序，以便在无法使用 YubiKey 时可以访问您的账户。支持的平台："
   },
   "twoFactorYubikeySupportUsb": {
     "message": "具有可使用 YubiKey 的 USB 端口的设备上的网页密码库、桌面应用程序、CLI 以及浏览器扩展。"
@@ -2797,7 +2797,7 @@
     "message": "停用全部密钥"
   },
   "twoFactorDuoDesc": {
-    "message": "输入 Duo 管理面板提供的 Bitwarden 应用程序信息。"
+    "message": "输入 Duo 管理面板提供的 TideWarden 应用程序信息。"
   },
   "twoFactorDuoClientId": {
     "message": "Client ID"
@@ -2848,7 +2848,7 @@
     "message": "保存表单。"
   },
   "twoFactorU2fWarning": {
-    "message": "由于平台限制，FIDO U2F 不能在所有 Bitwarden 应用程序上使用。您应该设置其他两步登录提供程序，以便在无法使用 FIDO U2F 时可以访问您的账户。支持的平台："
+    "message": "由于平台限制，FIDO U2F 不能在所有 TideWarden 应用程序上使用。您应该设置其他两步登录提供程序，以便在无法使用 FIDO U2F 时可以访问您的账户。支持的平台："
   },
   "twoFactorU2fSupportWeb": {
     "message": "桌面/笔记本电脑上支持 U2F 的浏览器（启用了 FIDO U2F 的 Chrome、Opera、Vivaldi 或 Firefox）中的网页密码库和浏览器扩展。"
@@ -2863,7 +2863,7 @@
     "message": "读取安全密钥时出现问题。请重试。"
   },
   "twoFactorRecoveryYourCode": {
-    "message": "您的 Bitwarden 两步登录恢复代码"
+    "message": "您的 TideWarden 两步登录恢复代码"
   },
   "twoFactorRecoveryNoCode": {
     "message": "您尚未设置任何两步登录提供程序。设置两步登录提供程序后，返回这里查看您的恢复代码。"
@@ -2877,11 +2877,11 @@
   },
   "reportsDesc": {
     "message": "点击下面的报告，识别并消除您的在线账户中的安全漏洞。",
-    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
+    "description": "Vault health reports can be used to evaluate the security of your TideWarden individual or organization vault."
   },
   "orgsReportsDesc": {
     "message": "点击下面的报告，找出并消除您的组织账户中的安全漏洞。",
-    "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
+    "description": "Vault health reports can be used to evaluate the security of your TideWarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
     "message": "不安全的网站"
@@ -2912,7 +2912,7 @@
     "message": "未激活两步登录"
   },
   "inactive2faReportDesc": {
-    "message": "两步登录为您的账户增加了一层保护。使用 Bitwarden Authenticator 或其他方式为这些账户设置两步登录。"
+    "message": "两步登录为您的账户增加了一层保护。使用 TideWarden Authenticator 或其他方式为这些账户设置两步登录。"
   },
   "inactive2faFound": {
     "message": "发现未启用两步登录的登录项目"
@@ -3111,11 +3111,11 @@
   },
   "accountCredit": {
     "message": "账户信用额度",
-    "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
+    "description": "Financial term. In the case of TideWarden, a positive balance means that you owe money, while a negative balance means that you have a credit (TideWarden owes you money)."
   },
   "accountBalance": {
     "message": "账户余额",
-    "description": "Financial term. In the case of Bitwarden, a positive balance means that you owe money, while a negative balance means that you have a credit (Bitwarden owes you money)."
+    "description": "Financial term. In the case of TideWarden, a positive balance means that you owe money, while a negative balance means that you have a credit (TideWarden owes you money)."
   },
   "addCredit": {
     "message": "添加信用额度",
@@ -3200,7 +3200,7 @@
     }
   },
   "bitwardenFamiliesPlan": {
-    "message": "Bitwarden 家庭版方案。"
+    "message": "TideWarden 家庭版方案。"
   },
   "addons": {
     "message": "附加项目"
@@ -3466,7 +3466,7 @@
     "placeholders": {
       "statement_name": {
         "content": "$1",
-        "example": "BITWARDEN"
+        "example": "TIDEWARDEN"
       }
     }
   },
@@ -3511,7 +3511,7 @@
     "placeholders": {
       "file_name": {
         "content": "$1",
-        "example": "bitwarden_premium_license.json"
+        "example": "tidewarden_premium_license.json"
       }
     }
   },
@@ -3704,7 +3704,7 @@
     }
   },
   "trialThankYou": {
-    "message": "感谢您注册 $PLAN$ Bitwarden！",
+    "message": "感谢您注册 $PLAN$ TideWarden！",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -3713,7 +3713,7 @@
     }
   },
   "trialSecretsManagerThankYou": {
-    "message": "感谢您注册 $PLAN$ Bitwarden 机密管理器！",
+    "message": "感谢您注册 $PLAN$ TideWarden 机密管理器！",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -3830,13 +3830,13 @@
     "message": "外部 ID"
   },
   "externalIdDesc": {
-    "message": "外部 ID 是 Bitwarden Directory Connector 和 API 使用的未经加密的参考。"
+    "message": "外部 ID 是 TideWarden Directory Connector 和 API 使用的未经加密的参考。"
   },
   "ssoExternalId": {
     "message": "SSO 外部 ID"
   },
   "ssoExternalIdDesc": {
-    "message": "SSO 外部 ID 是 Bitwarden 与您配置的 SSO 提供程序之间的未经加密的参考。"
+    "message": "SSO 外部 ID 是 TideWarden 与您配置的 SSO 提供程序之间的未经加密的参考。"
   },
   "nestCollectionUnder": {
     "message": "嵌套于集合下"
@@ -3878,7 +3878,7 @@
     }
   },
   "inviteUserDesc": {
-    "message": "在下面输入他们的 Bitwarden 账户电子邮箱地址，以邀请新用户加入您的组织。如果他们还没有 Bitwarden 账户，将提示他们创建一个新账户。"
+    "message": "在下面输入他们的 TideWarden 账户电子邮箱地址，以邀请新用户加入您的组织。如果他们还没有 TideWarden 账户，将提示他们创建一个新账户。"
   },
   "inviteMultipleEmailDesc": {
     "message": "最多输入 $COUNT$ 个电子邮箱（使用逗号分隔）。",
@@ -3977,10 +3977,10 @@
     "message": "CLI"
   },
   "bitWebVault": {
-    "message": "Bitwarden 网页密码库"
+    "message": "TideWarden 网页密码库"
   },
   "bitSecretsManager": {
-    "message": "Bitwarden 机密管理器"
+    "message": "TideWarden 机密管理器"
   },
   "loggedIn": {
     "message": "登录了"
@@ -4697,7 +4697,7 @@
     }
   },
   "joinOrganizationDesc": {
-    "message": "您已被邀请加入上面的组织。要接受邀请，您需要登录或者创建一个新的 Bitwarden 账户。"
+    "message": "您已被邀请加入上面的组织。要接受邀请，您需要登录或者创建一个新的 TideWarden 账户。"
   },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
     "message": "通过设置主密码完成加入此组织。"
@@ -4766,10 +4766,10 @@
     "message": "如果您的账户存在，我们已经向您发送了电子邮件，其中包含了进一步说明。"
   },
   "deleteRecoverConfirmDesc": {
-    "message": "您已请求删除您的 Bitwarden 账户。单击下面的按钮以确认。"
+    "message": "您已请求删除您的 TideWarden 账户。单击下面的按钮以确认。"
   },
   "deleteRecoverOrgConfirmDesc": {
-    "message": "您已请求删除您的 Bitwarden 组织。"
+    "message": "您已请求删除您的 TideWarden 组织。"
   },
   "myOrganization": {
     "message": "我的组织"
@@ -5091,7 +5091,7 @@
     }
   },
   "updateEncryptionKeyWarning": {
-    "message": "更新加密密钥后，您需要注销所有当前使用的 Bitwarden 应用程序（例如移动 App 或浏览器扩展）然后重新登录。注销或者重新登录（这将下载新的加密密钥）失败可能会导致数据损坏。我们会尝试自动为您注销，但可能会有所延迟。"
+    "message": "更新加密密钥后，您需要注销所有当前使用的 TideWarden 应用程序（例如移动 App 或浏览器扩展）然后重新登录。注销或者重新登录（这将下载新的加密密钥）失败可能会导致数据损坏。我们会尝试自动为您注销，但可能会有所延迟。"
   },
   "updateEncryptionKeyAccountExportWarning": {
     "message": "所有您已保存的账户限制的导出文件将失效。"
@@ -5127,7 +5127,7 @@
     "message": "您没有选择任何内容。"
   },
   "receiveMarketingEmailsV2": {
-    "message": "获取来自 Bitwarden 的建议、公告和调研电子邮件。"
+    "message": "获取来自 TideWarden 的建议、公告和调研电子邮件。"
   },
   "subscribe": {
     "message": "订阅"
@@ -5328,7 +5328,7 @@
     "message": "API 密钥"
   },
   "apiKeyDesc": {
-    "message": "您的 API 密钥可用于验证 Bitwarden 公共 API。"
+    "message": "您的 API 密钥可用于验证 TideWarden 公共 API。"
   },
   "apiKeyRotateDesc": {
     "message": "轮换 API 密钥将使之前的密钥失效。如果您认为当前密钥不再安全，您可以轮换您的 API 密钥。"
@@ -5337,7 +5337,7 @@
     "message": "您的 API 密钥拥有组织的全部访问权限。请严格保密。"
   },
   "userApiKeyDesc": {
-    "message": "您的 API 密钥可用于在 Bitwarden CLI 中进行身份验证。"
+    "message": "您的 API 密钥可用于在 TideWarden CLI 中进行身份验证。"
   },
   "userApiKeyWarning": {
     "message": "您的 API 密钥是一种替代身份验证机制。请严格保密。"
@@ -5643,7 +5643,7 @@
     "message": "限制成员加入其他组织。对于已启用域名验证的组织来说，该策略是必需的。"
   },
   "singleOrgBlockCreateMessage": {
-    "message": "您当前的组织策略禁止您加入多个组织。请联系您的组织管理员，或从其他 Bitwarden 账户注册。"
+    "message": "您当前的组织策略禁止您加入多个组织。请联系您的组织管理员，或从其他 TideWarden 账户注册。"
   },
   "singleOrgPolicyMemberWarning": {
     "message": "不符合要求的成员将被置于已撤销状态，直到他们退出所有其他组织，管理员不受此约束。达到要求后，管理员可以恢复他们的成员资格。"
@@ -5685,7 +5685,7 @@
   },
   "sendDetails": {
     "message": "Send 详细信息",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendTypeTextToShare": {
     "message": "要分享的文本"
@@ -5698,23 +5698,23 @@
   },
   "createSend": {
     "message": "新增 Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editSend": {
     "message": "编辑 Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSend": {
     "message": "Send 已保存",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendCreatedSuccessfully": {
     "message": "Send 创建成功！",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendCreatedDescriptionV2": {
     "message": "复制并分享此 Send 链接。在接下来的 $TIME$ 内，拥有此链接的任何人都可以访问此 Send。",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "time": {
         "content": "$1",
@@ -5723,8 +5723,8 @@
     }
   },
   "sendCreatedDescriptionPassword": {
-    "message": "复制并分享此 Send 链接。在接下来的 $TIME$ 内，拥有此链接以及您设置的密码的任何人都可以访问此 Send。",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "message": "复制并分享此 Send 链接。在接下来的 $TIME$ 内，任何拥有此链接以及您设置的密码的人都可以访问此 Send。",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "time": {
         "content": "$1",
@@ -5734,7 +5734,7 @@
   },
   "sendCreatedDescriptionEmail": {
     "message": "复制并分享此 Send 链接。在接下来的 $TIME$ 内，您指定的人员可查看此 Send。",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "time": {
         "content": "$1",
@@ -5753,41 +5753,41 @@
   },
   "newTextSend": {
     "message": "新增文本 Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "newFileSend": {
     "message": "新增文件 Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editedSend": {
     "message": "Send 已保存",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deletedSend": {
     "message": "Send 已删除",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSend": {
     "message": "删除 Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendPermanentConfirmation": {
     "message": "确定要永久删除此 Send 吗？",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deletionDate": {
     "message": "删除日期"
   },
   "deletionDateDescV2": {
     "message": "此 Send 将在此日期后被永久删除。",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "过期日期"
   },
   "expirationDateDesc": {
     "message": "设置后，对此 Send 的访问将在指定的日期和时间后过期。",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "maxAccessCount": {
     "message": "最大访问次数"
@@ -5803,14 +5803,14 @@
   },
   "sendLink": {
     "message": "Send 链接",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "copyLink": {
     "message": "复制链接"
   },
   "copySendLink": {
     "message": "复制 Send 链接",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "removePassword": {
     "message": "移除密码"
@@ -5839,19 +5839,19 @@
   },
   "searchSends": {
     "message": "搜索 Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendProtectedPassword": {
     "message": "此 Send 受到密码保护。在下方输入密码以继续。",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendProtectedPasswordDontKnow": {
     "message": "不知道密码吗？请向发送者索取访问此 Send 所需的密码。",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendHiddenByDefault": {
     "message": "此 Send 默认隐藏。您可以使用下方的按钮切换其可见性。",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "downloadAttachments": {
     "message": "下载附件"
@@ -5866,15 +5866,15 @@
   },
   "sendAccessUnavailable": {
     "message": "您尝试访问的 Send 不存在或不再可用。",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "missingSendFile": {
     "message": "没有找到与此 Send 关联的文件。",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "noSendsInList": {
     "message": "没有可列出的 Send。",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "emergencyAccess": {
     "message": "紧急访问"
@@ -5907,7 +5907,7 @@
     "message": "编辑紧急联系人"
   },
   "inviteEmergencyContactDesc": {
-    "message": "在下面输入他们的 Bitwarden 账户电子邮箱地址，以邀请新的紧急联系人。如果他们还没有 Bitwarden 账户，将提示他们创建一个新账户。"
+    "message": "在下面输入他们的 TideWarden 账户电子邮箱地址，以邀请新的紧急联系人。如果他们还没有 TideWarden 账户，将提示他们创建一个新账户。"
   },
   "emergencyAccessRecoveryInitiated": {
     "message": "紧急访问已发起"
@@ -5946,7 +5946,7 @@
     "message": "已邀请用户。"
   },
   "acceptEmergencyAccess": {
-    "message": "您已被邀请成为上面所列用户的紧急联系人。要接受邀请，您需要登录或创建一个新的 Bitwarden 账户。"
+    "message": "您已被邀请成为上面所列用户的紧急联系人。要接受邀请，您需要登录或创建一个新的 TideWarden 账户。"
   },
   "emergencyInviteAcceptFailed": {
     "message": "无法接受邀请。请向用户请求发送新的邀请。"
@@ -6100,7 +6100,7 @@
     "message": "如何启用自动用户确认"
   },
   "autoConfirmExtension1": {
-    "message": "打开您的 Bitwarden 扩展"
+    "message": "打开您的 TideWarden 扩展"
   },
   "autoConfirmExtension2": {
     "message": "选择",
@@ -6111,7 +6111,7 @@
     "description": "This is a fragment of a larger sencence. The whole sentence will read: 'Select Turn on'"
   },
   "autoConfirmExtensionOpened": {
-    "message": "成功打开 Bitwarden 浏览器扩展。您现在可以激活自动用户确认设置。"
+    "message": "成功打开 TideWarden 浏览器扩展。您现在可以激活自动用户确认设置。"
   },
   "autoConfirmPolicyEditDescription": {
     "message": "当管理员的设备解锁时，邀请加入组织的新用户将被自动确认。启用此策略前，请审查并同意：",
@@ -6169,33 +6169,33 @@
   },
   "disableSendPolicyDesc": {
     "message": "不允许成员创建或编辑 Send。",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "disableSendExemption": {
     "message": "可以管理组织策略的组织成员不受此策略的约束。"
   },
   "sendDisabled": {
     "message": "Send 已禁用",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
     "message": "由于某个企业策略，您只能删除现有的 Send。",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendOptions": {
     "message": "Send 选项",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendOptionsPolicyDesc": {
     "message": "设置用于创建和编辑 Send 的选项。",
-    "description": "'Sends' is a plural noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Sends' is a plural noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendOptionsExemption": {
     "message": "可以管理组织策略的组织成员不受此策略的约束。"
   },
   "disableHideEmail": {
     "message": "创建或编辑 Send 时，始终向接收者显示成员的电子邮箱地址。",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "uriMatchDetectionPolicy": {
     "message": "默认 URI 匹配检测"
@@ -6311,15 +6311,15 @@
   },
   "send": {
     "message": "Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendAccessTaglineProductDesc": {
-    "message": "Bitwarden Send 能轻松、安全地向他人传送敏感的临时信息。",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "message": "TideWarden Send 能轻松、安全地向他人传送敏感的临时信息。",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendAccessTaglineLearnMore": {
     "message": "进一步了解",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**Learn more about** Bitwarden Send or sign up to try it today.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read '**Learn more about** TideWarden Send or sign up to try it today.'"
   },
   "sendVaultCardProductDesc": {
     "message": "直接与其他人分享文本或文件。"
@@ -6341,7 +6341,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see how it works, **or** try it now.'"
   },
   "developmentDevOpsAndITTeamsChooseBWSecret": {
-    "message": "开发、DevOps 和 IT 团队选择 Bitwarden 机密管理器来安全地管理和部署他们的基础设施和机器机密。"
+    "message": "开发、DevOps 和 IT 团队选择 TideWarden 机密管理器来安全地管理和部署他们的基础设施和机器机密。"
   },
   "centralizeSecretsManagement": {
     "message": "集中管理机密。"
@@ -6377,10 +6377,10 @@
     "message": "添加笔记"
   },
   "bitwardenSecretsManager": {
-    "message": "Bitwarden 机密管理器"
+    "message": "TideWarden 机密管理器"
   },
   "moreProductsFromBitwarden": {
-    "message": "更多来自 Bitwarden 的产品"
+    "message": "更多来自 TideWarden 的产品"
   },
   "requestAccessToSecretsManager": {
     "message": "请求访问机密管理器"
@@ -6392,7 +6392,7 @@
     "message": "对机密管理器的访问请求电子邮件已发送给管理员。"
   },
   "requestAccessSMDefaultEmailContent": {
-    "message": "您好，\n\n我请求为我们的团队订阅 Bitwarden Secrets Manager。您的支持对我们来说意义重大！\n\nBitwarden Secrets Manager 是一个端到端加密的机密管理解决方案，用于安全地存储、共享和部署机器凭证，如 API 密钥、数据库密码和身份验证证书。\n\nSecrets Manager 将帮助我们：\n\n- 提高安全性\n- 精简操作\n- 防止昂贵的机密遭泄漏\n\n要为我们的团队申请免费试用，请联系 Bitwarden。\n\n感谢您的帮助！"
+    "message": "您好，\n\n我请求为我们的团队订阅 TideWarden Secrets Manager。您的支持对我们来说意义重大！\n\nTideWarden Secrets Manager 是一个端到端加密的机密管理解决方案，用于安全地存储、共享和部署机器凭证，如 API 密钥、数据库密码和身份验证证书。\n\nSecrets Manager 将帮助我们：\n\n- 提高安全性\n- 精简操作\n- 防止昂贵的机密遭泄漏\n\n要为我们的团队申请免费试用，请联系 TideWarden。\n\n感谢您的帮助！"
   },
   "giveMembersAccess": {
     "message": "授予成员访问权限："
@@ -6415,18 +6415,18 @@
   },
   "sendAccessTaglineOr": {
     "message": "或",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send **or** sign up to try it today.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about TideWarden Send **or** sign up to try it today.'"
   },
   "sendAccessTaglineSignUp": {
     "message": "注册",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or **sign up** to try it today.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about TideWarden Send or **sign up** to try it today.'"
   },
   "sendAccessTaglineTryToday": {
     "message": "以立即体验。",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about TideWarden Send or sign up to **try it today.**'"
   },
   "sendAccessCreatorIdentifier": {
-    "message": "Bitwarden 成员 $USER_IDENTIFIER$ 与您分享了以下内容",
+    "message": "TideWarden 成员 $USER_IDENTIFIER$ 与您分享了以下内容",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -6436,15 +6436,15 @@
   },
   "viewSend": {
     "message": "查看 Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "verifyYourEmailToViewThisSend": {
     "message": "Verify your email to view this Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "viewSendHiddenEmailWarning": {
-    "message": "创建此 Send 的 Bitwarden 用户已选择隐藏他们的电子邮箱地址。在使用或下载其内容之前，您应确保信任此链接的来源。",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "message": "创建此 Send 的 TideWarden 用户已选择隐藏他们的电子邮箱地址。在使用或下载其内容之前，您应确保信任此链接的来源。",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "expirationDateIsInvalid": {
     "message": "所提供的过期日期无效。"
@@ -6790,7 +6790,7 @@
     "message": "解密错误"
   },
   "couldNotDecryptVaultItemsBelow": {
-    "message": "Bitwarden 无法解密下列密码库项目。"
+    "message": "TideWarden 无法解密下列密码库项目。"
   },
   "contactCSToAvoidDataLossPart1": {
     "message": "联系客户成功团队",
@@ -6807,7 +6807,7 @@
     "message": "提供商设置"
   },
   "setupProviderLoginDesc": {
-    "message": "您已被邀请设置一个新的提供商。要继续，您需要登录或创建一个新的 Bitwarden 账户。"
+    "message": "您已被邀请设置一个新的提供商。要继续，您需要登录或创建一个新的 TideWarden 账户。"
   },
   "setupProviderDesc": {
     "message": "请在下面输入详细信息以完成提供商设置。如果您有任何疑问，请联系客户支持。"
@@ -6838,13 +6838,13 @@
     "message": "服务用户可以访问和管理所有客户组织。"
   },
   "providerInviteUserDesc": {
-    "message": "在下面输入他们的 Bitwarden 账户电子邮箱地址，以邀请新用户加入您的提供商。如果他们还没有 Bitwarden 账户，将提示他们创建一个新账户。"
+    "message": "在下面输入他们的 TideWarden 账户电子邮箱地址，以邀请新用户加入您的提供商。如果他们还没有 TideWarden 账户，将提示他们创建一个新账户。"
   },
   "joinProvider": {
     "message": "加入提供商"
   },
   "joinProviderDesc": {
-    "message": "您已被邀请加入上面列出的提供商。要接受邀请，您需要登录或创建一个新的 Bitwarden 账户。"
+    "message": "您已被邀请加入上面列出的提供商。要接受邀请，您需要登录或创建一个新的 TideWarden 账户。"
   },
   "providerInviteAcceptFailed": {
     "message": "无法接受邀请。请向提供商管理员请求发送新的邀请。"
@@ -7224,7 +7224,7 @@
     "message": "单点登录配置已保存"
   },
   "sponsoredFamilies": {
-    "message": "免费的 Bitwarden 家庭版"
+    "message": "免费的 TideWarden 家庭版"
   },
   "sponsoredBitwardenFamilies": {
     "message": "赞助的家庭"
@@ -7236,19 +7236,19 @@
     "message": "已赞助的非成员家庭版方案将显示在这里"
   },
   "sponsorshipFreeBitwardenFamilies": {
-    "message": "您的组织成员有资格获得免费的 Bitwarden 家庭版。您可以为不是您的 Bitwarden 组织成员的员工赞助免费的 Bitwarden 家庭版。赞助非成员需要您的组织内有可用的席位。"
+    "message": "您的组织成员有资格获得免费的 TideWarden 家庭版。您可以为不是您的 TideWarden 组织成员的员工赞助免费的 TideWarden 家庭版。赞助非成员需要您的组织内有可用的席位。"
   },
   "sponsoredFamiliesRemoveActiveSponsorship": {
     "message": "当您移除某个活动赞助，在被赞助组织的续费日期之后，您的组织中将释放一个可用的席位。"
   },
   "sponsoredFamiliesEligible": {
-    "message": "您和您的家人有资格获得免费的 Bitwarden 家庭版。使用您的个人电子邮箱兑换，即使您不在工作中，也能确保您的数据安全。"
+    "message": "您和您的家人有资格获得免费的 TideWarden 家庭版。使用您的个人电子邮箱兑换，即使您不在工作中，也能确保您的数据安全。"
   },
   "sponsoredFamiliesEligibleCard": {
-    "message": "立即兑换免费的 Bitwarden 家庭版方案，即使您不在工作中，也能确保您的数据安全。"
+    "message": "立即兑换免费的 TideWarden 家庭版方案，即使您不在工作中，也能确保您的数据安全。"
   },
   "sponsoredFamiliesIncludeMessage": {
-    "message": "Bitwarden 家庭版方案包含"
+    "message": "TideWarden 家庭版方案包含"
   },
   "sponsoredFamiliesPremiumAccess": {
     "message": "最多 6 个高级版访问权限的用户"
@@ -7266,7 +7266,7 @@
     "message": "已兑换家庭版方案的成员将在这里显示"
   },
   "membersWithSponsoredFamilies": {
-    "message": "您的组织成员有资格获得免费的 Bitwarden 家庭版。在这里，您可以看到已赞助了家庭版组织的成员。"
+    "message": "您的组织成员有资格获得免费的 TideWarden 家庭版。在这里，您可以看到已赞助了家庭版组织的成员。"
   },
   "organizationHasMemberMessage": {
     "message": "由于他们是您组织的成员，因此不能将赞助发送给 $EMAIL$。",
@@ -7293,7 +7293,7 @@
     "message": "您想兑换哪一个免费家庭版邀请？"
   },
   "sponsoredFamiliesEmail": {
-    "message": "输入您的个人电子邮箱以兑换 Bitwarden 家庭版"
+    "message": "输入您的个人电子邮箱以兑换 TideWarden 家庭版"
   },
   "sponsoredFamiliesLeaveCopy": {
     "message": "如果您移除邀请或您被从赞助组织中移除，您的家庭版赞助将在下一个续费日到期。"
@@ -7302,7 +7302,7 @@
     "message": "接受现有组织的邀请或创建一个新的家庭版组织。"
   },
   "setupSponsoredFamiliesLoginDesc": {
-    "message": "您已被邀请加入免费的 Bitwarden 家庭版方案组织。要继续，您需要登录到接收邀请的账户。"
+    "message": "您已被邀请加入免费的 TideWarden 家庭版方案组织。要继续，您需要登录到接收邀请的账户。"
   },
   "sponsoredFamiliesAcceptFailed": {
     "message": "无法接受邀请。请通过您的企业账户重新发送邀请邮件，然后重试。"
@@ -7317,10 +7317,10 @@
     }
   },
   "sponsoredFamiliesOffer": {
-    "message": "接受免费的 Bitwarden 家庭版"
+    "message": "接受免费的 TideWarden 家庭版"
   },
   "sponsoredFamiliesOfferRedeemed": {
-    "message": "免费的 Bitwarden 家庭版邀请已成功兑换"
+    "message": "免费的 TideWarden 家庭版邀请已成功兑换"
   },
   "redeemed": {
     "message": "已兑换"
@@ -7441,15 +7441,15 @@
   },
   "memberDecryptionKeyConnectorDescStart": {
     "message": "连接 SSO 登录到您的自托管解密密钥服务器。使用此选项后，成员将不再需要使用主密码解密密码库数据。需要",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact TideWarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
     "message": "要求 SSO 身份验证和单一组织策略",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact TideWarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
-    "message": "以用于设置 Key Connector 解密。请联系 Bitwarden 支持寻求帮助。",
-    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
+    "message": "以用于设置 Key Connector 解密。请联系 TideWarden 支持寻求帮助。",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact TideWarden Support for set up assistance.'"
   },
   "keyConnectorPolicyRestriction": {
     "message": "「SSO 登录和 Key Connector 解密」已激活。此策略仅适用于所有者和管理员。"
@@ -7548,7 +7548,7 @@
     "message": "自定义环境"
   },
   "selfHostedBaseUrlHint": {
-    "message": "指定您的本地托管 Bitwarden 安装的基础 URL。例如：https://bitwarden.company.com"
+    "message": "指定您的本地托管 TideWarden 安装的基础 URL。例如：https://tidewarden.company.com"
   },
   "selfHostedCustomEnvHeader": {
     "message": "对于高级配置，您可以单独指定每个服务的基础 URL。"
@@ -7593,7 +7593,7 @@
     "message": "计费同步令牌"
   },
   "automaticBillingSyncDesc": {
-    "message": "自动同步将解锁家庭版赞助功能，并允许您同步许可证而无需上传文件。在 Bitwarden 云服务器中进行更新后，选择「同步许可证」以应用更改。"
+    "message": "自动同步将解锁家庭版赞助功能，并允许您同步许可证而无需上传文件。在 TideWarden 云服务器中进行更新后，选择「同步许可证」以应用更改。"
   },
   "active": {
     "message": "已生效"
@@ -7970,11 +7970,11 @@
     }
   },
   "forwarderGeneratedBy": {
-    "message": "由 Bitwarden 生成。",
+    "message": "由 TideWarden 生成。",
     "description": "Displayed with the address on the forwarding service's configuration screen."
   },
   "forwarderGeneratedByWithWebsite": {
-    "message": "网站：$WEBSITE$。由 Bitwarden 生成。",
+    "message": "网站：$WEBSITE$。由 TideWarden 生成。",
     "description": "Displayed with the address on the forwarding service's configuration screen.",
     "placeholders": {
       "WEBSITE": {
@@ -8852,7 +8852,7 @@
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -8876,7 +8876,7 @@
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -8885,7 +8885,7 @@
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -8959,7 +8959,7 @@
     "message": "成员角色"
   },
   "moreFromBitwarden": {
-    "message": "更多来自 Bitwarden 的产品"
+    "message": "更多来自 TideWarden 的产品"
   },
   "switchProducts": {
     "message": "切换产品"
@@ -9725,7 +9725,7 @@
     "message": "用户在 TDE 卸载期间设置了主密码。"
   },
   "startYour7DayFreeTrialOfBitwardenFor": {
-    "message": "开始 $ORG$ 的 Bitwarden 7 天免费试用",
+    "message": "开始 $ORG$ 的 TideWarden 7 天免费试用",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -9734,7 +9734,7 @@
     }
   },
   "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
-    "message": "开始 $ORG$ 的 Bitwarden 机密管理器 7 天免费试用",
+    "message": "开始 $ORG$ 的 TideWarden 机密管理器 7 天免费试用",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -10078,8 +10078,8 @@
     "description": "Label indicating the most common import formats"
   },
   "uriMatchDefaultStrategyHint": {
-    "message": "Bitwarden 根据 URI 匹配检测来识别自动填充建议。",
-    "description": "Explains to the user that URI match detection determines how Bitwarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
+    "message": "TideWarden 根据 URI 匹配检测来识别自动填充建议。",
+    "description": "Explains to the user that URI match detection determines how TideWarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
   },
   "regExAdvancedOptionWarning": {
     "message": "「正则表达方式」是一种高级选项，会增加暴露凭据的风险。",
@@ -10122,13 +10122,13 @@
     "message": "确认详细信息"
   },
   "smFreeTrialThankYou": {
-    "message": "感谢您注册 Bitwarden 机密管理器！"
+    "message": "感谢您注册 TideWarden 机密管理器！"
   },
   "smFreeTrialConfirmationEmail": {
     "message": "我们已经发送了一封确认电子邮件到 "
   },
   "sorryToSeeYouGo": {
-    "message": "很遗憾看到您离开！请分享您取消的原因，以帮助改进 Bitwarden。",
+    "message": "很遗憾看到您离开！请分享您取消的原因，以帮助改进 TideWarden。",
     "description": "A message shown to users as part of an offboarding survey asking them to provide more information on their subscription cancelation."
   },
   "selectCancellationReason": {
@@ -10547,21 +10547,21 @@
     "message": "集成"
   },
   "integrationsDesc": {
-    "message": "自动将机密从 Bitwarden 机密管理器同步到第三方服务。"
+    "message": "自动将机密从 TideWarden 机密管理器同步到第三方服务。"
   },
   "sdks": {
     "message": "SDK"
   },
   "sdksDesc": {
-    "message": "在以下编程语言中使用 Bitwarden 机密管理器 SDK 来构建您自己的应用程序。"
+    "message": "在以下编程语言中使用 TideWarden 机密管理器 SDK 来构建您自己的应用程序。"
   },
   "ssoDescStart": {
-    "message": "使用适合您的身份提供程序的实施指南为 Bitwarden 配置",
-    "description": "This represents the beginning of a sentence, broken up to include links. The full sentence will be 'Configure single sign-on for Bitwarden using the implementation guide for your Identity Provider."
+    "message": "使用适合您的身份提供程序的实施指南为 TideWarden 配置",
+    "description": "This represents the beginning of a sentence, broken up to include links. The full sentence will be 'Configure single sign-on for TideWarden using the implementation guide for your Identity Provider."
   },
   "ssoDescEnd": {
     "message": "。",
-    "description": "This represents the end of a sentence, broken up to include links. The full sentence will be 'Configure single sign-on for Bitwarden using the implementation guide for your Identity Provider."
+    "description": "This represents the end of a sentence, broken up to include links. The full sentence will be 'Configure single sign-on for TideWarden using the implementation guide for your Identity Provider."
   },
   "userProvisioning": {
     "message": "用户配置"
@@ -10571,29 +10571,29 @@
   },
   "scimIntegrationDescStart": {
     "message": "使用适合您的身份提供程序的实施指南配置 ",
-    "description": "This represents the beginning of a sentence, broken up to include links. The full sentence will be 'Configure SCIM (System for Cross-domain Identity Management) to automatically provision users and groups to Bitwarden using the implementation guide for your Identity Provider"
+    "description": "This represents the beginning of a sentence, broken up to include links. The full sentence will be 'Configure SCIM (System for Cross-domain Identity Management) to automatically provision users and groups to TideWarden using the implementation guide for your Identity Provider"
   },
   "scimIntegrationDescEnd": {
-    "message": "（跨域身份管理系统）以自动向 Bitwarden 配置用户和群组。",
-    "description": "This represents the end of a sentence, broken up to include links. The full sentence will be 'Configure SCIM (System for Cross-domain Identity Management) to automatically provision users and groups to Bitwarden using the implementation guide for your Identity Provider"
+    "message": "（跨域身份管理系统）以自动向 TideWarden 配置用户和群组。",
+    "description": "This represents the end of a sentence, broken up to include links. The full sentence will be 'Configure SCIM (System for Cross-domain Identity Management) to automatically provision users and groups to TideWarden using the implementation guide for your Identity Provider"
   },
   "bwdc": {
-    "message": "Bitwarden Directory Connector"
+    "message": "TideWarden Directory Connector"
   },
   "bwdcDesc": {
-    "message": "使用适合您的身份提供程序的实施指南配置 Bitwarden Directory Connector 以自动配置用户和群组。"
+    "message": "使用适合您的身份提供程序的实施指南配置 TideWarden Directory Connector 以自动配置用户和群组。"
   },
   "eventManagement": {
     "message": "事件管理"
   },
   "eventManagementDesc": {
-    "message": "使用适合您的平台的实施指南将 Bitwarden 事件日志与您的 SIEM（系统信息和事件管理）系统集成。"
+    "message": "使用适合您的平台的实施指南将 TideWarden 事件日志与您的 SIEM（系统信息和事件管理）系统集成。"
   },
   "deviceManagement": {
     "message": "设备管理"
   },
   "deviceManagementDesc": {
-    "message": "使用适合您的平台的实施指南为 Bitwarden 配置设备管理。"
+    "message": "使用适合您的平台的实施指南为 TideWarden 配置设备管理。"
   },
   "crowdstrikeEventIntegrationDesc": {
     "message": "将事件数据发送到您的 Logscale 实例"
@@ -10764,22 +10764,22 @@
     "message": "从提供商门户管理账单"
   },
   "continueSettingUp": {
-    "message": "继续设置 Bitwarden"
+    "message": "继续设置 TideWarden"
   },
   "continueSettingUpFreeTrial": {
-    "message": "继续设置您的免费试用版 Bitwarden"
+    "message": "继续设置您的免费试用版 TideWarden"
   },
   "continueSettingUpPasswordManager": {
-    "message": "继续设置 Bitwarden 密码管理器"
+    "message": "继续设置 TideWarden 密码管理器"
   },
   "continueSettingUpFreeTrialPasswordManager": {
-    "message": "继续设置您的免费试用版 Bitwarden 密码管理器"
+    "message": "继续设置您的免费试用版 TideWarden 密码管理器"
   },
   "continueSettingUpSecretsManager": {
-    "message": "继续设置 Bitwarden 机密管理器"
+    "message": "继续设置 TideWarden 机密管理器"
   },
   "continueSettingUpFreeTrialSecretsManager": {
-    "message": "继续设置您的免费试用版 Bitwarden 机密管理器"
+    "message": "继续设置您的免费试用版 TideWarden 机密管理器"
   },
   "enterTeamsOrgInfo": {
     "message": "输入您的团队组织信息"
@@ -11027,17 +11027,17 @@
   },
   "providerClientVaultPrivacyNotification": {
     "message": "通知：本月晚些时候，客户密码库隐私将进行升级，提供商成员将不再能够直接访问客户密码库项目。如有疑问，",
-    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'."
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact TideWarden support'."
   },
   "contactBitwardenSupport": {
-    "message": "联系 Bitwarden 支持。",
-    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'. 'Bitwarden' should not be translated"
+    "message": "联系 TideWarden 支持。",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact TideWarden support'. 'TideWarden' should not be translated"
   },
   "sponsored": {
     "message": "赞助"
   },
   "licenseAndBillingManagementDesc": {
-    "message": "在 Bitwarden 云服务器中进行更新后，上传许可证文件以应用最新的更改。"
+    "message": "在 TideWarden 云服务器中进行更新后，上传许可证文件以应用最新的更改。"
   },
   "addToFolder": {
     "message": "添加到文件夹"
@@ -11143,7 +11143,7 @@
     "message": "CVV 码是什么？"
   },
   "learnMoreAboutApi": {
-    "message": "进一步了解 Bitwarden API"
+    "message": "进一步了解 TideWarden API"
   },
   "fileSends": {
     "message": "文件 Send"
@@ -11317,7 +11317,7 @@
     "message": "您的机密管理器订阅将基于选择的方案升级"
   },
   "bitwardenPasswordManager": {
-    "message": "Bitwarden 密码管理器"
+    "message": "TideWarden 密码管理器"
   },
   "secretsManagerComplimentaryPasswordManager": {
     "message": "您的一年免费密码管理器订阅将升级到所选方案。在免费期结束前，我们不会向您收取费用。"
@@ -11395,7 +11395,7 @@
     "description": "This represents the beginning of a sentence. The full sentence will be 'Manage subscription from the Provider Portal', but 'Provider Portal' will be a link and thus cannot be included in the translation file."
   },
   "toHostBitwardenOnYourOwnServer": {
-    "message": "要在您自己的服务器上托管 Bitwarden，您需要上传许可证文件。要支持自托管组织的免费版家庭版方案和高级计费功能，您需要在自托管组织中设置自动同步。"
+    "message": "要在您自己的服务器上托管 TideWarden，您需要上传许可证文件。要支持自托管组织的免费版家庭版方案和高级计费功能，您需要在自托管组织中设置自动同步。"
   },
   "selfHostingTitleProper": {
     "message": "自托管"
@@ -11485,7 +11485,7 @@
     "message": "删除成功"
   },
   "freeFamiliesSponsorship": {
-    "message": "禁用免费的 Bitwarden 家庭版赞助"
+    "message": "禁用免费的 TideWarden 家庭版赞助"
   },
   "freeFamiliesSponsorshipPolicyDesc": {
     "message": "不允许成员通过此组织兑换家庭版方案。"
@@ -11536,10 +11536,10 @@
     "message": "自动声明域名"
   },
   "automaticDomainClaimProcess": {
-    "message": "Bitwarden 将在最初的 72 小时内尝试声明域名 3 次。如果此域名无法声明，请检查您主机中的 DNS 记录并手动声明。如果此域名在 7 天内未声明，它将被从您的组织中移除。"
+    "message": "TideWarden 将在最初的 72 小时内尝试声明域名 3 次。如果此域名无法声明，请检查您主机中的 DNS 记录并手动声明。如果此域名在 7 天内未声明，它将被从您的组织中移除。"
   },
   "automaticDomainClaimProcess1": {
-    "message": "Bitwarden 将在 72 小时内尝试声明此域名。如果此域名无法声明，请验证您的 DNS 记录并手动声明。未声明的域名将在 7 天后被移除。"
+    "message": "TideWarden 将在 72 小时内尝试声明此域名。如果此域名无法声明，请验证您的 DNS 记录并手动声明。未声明的域名将在 7 天后被移除。"
   },
   "automaticDomainClaimProcess2": {
     "message": "声明后，使用已声明域名的现有成员将收到关于"
@@ -11555,7 +11555,7 @@
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -11576,7 +11576,7 @@
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -11585,7 +11585,7 @@
     "placeholders": {
       "DOMAIN": {
         "content": "$1",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -11690,19 +11690,19 @@
     "message": "复制私钥"
   },
   "openingExtension": {
-    "message": "正在打开 Bitwarden 浏览器扩展"
+    "message": "正在打开 TideWarden 浏览器扩展"
   },
   "somethingWentWrong": {
     "message": "出错了..."
   },
   "openingExtensionError": {
-    "message": "我们无法打开 Bitwarden 浏览器扩展。请点击按钮立即打开。"
+    "message": "我们无法打开 TideWarden 浏览器扩展。请点击按钮立即打开。"
   },
   "openExtension": {
     "message": "打开扩展"
   },
   "doNotHaveExtension": {
-    "message": "没有 Bitwarden 浏览器扩展吗？"
+    "message": "没有 TideWarden 浏览器扩展吗？"
   },
   "installExtension": {
     "message": "安装扩展"
@@ -11711,7 +11711,7 @@
     "message": "已打开浏览器扩展"
   },
   "openedExtensionViewAtRiskPasswords": {
-    "message": "成功打开 Bitwarden 浏览器扩展。您现在可以审查存在风险的密码了。"
+    "message": "成功打开 TideWarden 浏览器扩展。您现在可以审查存在风险的密码了。"
   },
   "resellerRenewalWarningMsg": {
     "message": "您的订阅即将续期。为确保服务不会中断，请在 $RENEWAL_DATE$ 之前联系 $RESELLER$ 确认您的续订。",
@@ -11872,7 +11872,7 @@
     "message": "升级以查看您组织中的事件日志。"
   },
   "upgradeEventLogMessage": {
-    "message": "这些事件仅为示例，并不反映您 Bitwarden 组织内的真实事件。"
+    "message": "这些事件仅为示例，并不反映您 TideWarden 组织内的真实事件。"
   },
   "viewEvents": {
     "message": "查看事件"
@@ -11946,11 +11946,11 @@
   },
   "sendsTitleNoItems": {
     "message": "安全地发送敏感信息",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendsBodyNoItems": {
     "message": "在任何平台上安全地与任何人共享文件和数据。您的信息将在限制曝光的同时保持端到端加密。",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "generatorNudgeTitle": {
     "message": "快速创建密码"
@@ -12022,7 +12022,7 @@
     "message": "一键安全地自动填充您的密码"
   },
   "setupExtensionPageDescription": {
-    "message": "获取 Bitwarden 浏览器扩展，即刻开启自动填充"
+    "message": "获取 TideWarden 浏览器扩展，即刻开启自动填充"
   },
   "getTheExtension": {
     "message": "获取扩展"
@@ -12040,39 +12040,39 @@
     "message": "跳转到网页 App"
   },
   "bitwardenExtensionInstalled": {
-    "message": "Bitwarden 扩展已安装！"
+    "message": "TideWarden 扩展已安装！"
   },
   "bitwardenExtensionIsInstalled": {
-    "message": "Bitwarden 扩展已安装！"
+    "message": "TideWarden 扩展已安装！"
   },
   "openExtensionToAutofill": {
     "message": "打开扩展以登录并开始自动填充。"
   },
   "openBitwardenExtension": {
-    "message": "打开 Bitwarden 扩展"
+    "message": "打开 TideWarden 扩展"
   },
   "gettingStartedWithBitwardenPart1": {
-    "message": "有关开始使用 Bitwarden 的提示，请访问",
-    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'For tips on getting started with Bitwarden visit the Learning Center and Help Center'"
+    "message": "有关开始使用 TideWarden 的提示，请访问",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'For tips on getting started with TideWarden visit the Learning Center and Help Center'"
   },
   "gettingStartedWithBitwardenPart2": {
     "message": "学习中心",
-    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'For tips on getting started with Bitwarden visit the Learning Center and Help Center'"
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'For tips on getting started with TideWarden visit the Learning Center and Help Center'"
   },
   "openExtensionFromToolbarPart1": {
     "message": "如果扩展未打开，您可能需要通过工具栏上的图标 ",
-    "description": "This will be used as part of a larger sentence, broken up to include the Bitwarden icon. The full sentence will read 'If the extension didn't open, you may need to open Bitwarden from the icon [Bitwarden Icon] on the toolbar.'"
+    "description": "This will be used as part of a larger sentence, broken up to include the TideWarden icon. The full sentence will read 'If the extension didn't open, you may need to open TideWarden from the icon [TideWarden Icon] on the toolbar.'"
   },
   "openExtensionFromToolbarPart2": {
-    "message": " 来打开 Bitwarden。",
-    "description": "This will be used as part of a larger sentence, broken up to include the Bitwarden icon. The full sentence will read 'If the extension didn't open, you may need to open Bitwarden from the icon [Bitwarden Icon] on the toolbar.'"
+    "message": " 来打开 TideWarden。",
+    "description": "This will be used as part of a larger sentence, broken up to include the TideWarden icon. The full sentence will read 'If the extension didn't open, you may need to open TideWarden from the icon [TideWarden Icon] on the toolbar.'"
   },
   "gettingStartedWithBitwardenPart3": {
     "message": "帮助中心",
-    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'For tips on getting started with Bitwarden visit the Learning Center and Help Center'"
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'For tips on getting started with TideWarden visit the Learning Center and Help Center'"
   },
   "setupExtensionContentAlt": {
-    "message": "使用 Bitwarden 浏览器扩展，您可以轻松地创建新的登录，直接从您的浏览器工具栏访问已保存的登录，以及使用 Bitwarden 自动填充功能快速登录账户。"
+    "message": "使用 TideWarden 浏览器扩展，您可以轻松地创建新的登录，直接从您的浏览器工具栏访问已保存的登录，以及使用 TideWarden 自动填充功能快速登录账户。"
   },
   "restart": {
     "message": "重启"
@@ -12104,7 +12104,7 @@
     "message": "关于此设置"
   },
   "permitCipherDetailsDescription": {
-    "message": "Bitwarden 将使用已保存的登录 URI 来确定应使用的图标或更改密码的 URL，以提升您的使用体验。使用此服务时不会收集或保存任何信息。"
+    "message": "TideWarden 将使用已保存的登录 URI 来确定应使用的图标或更改密码的 URL，以提升您的使用体验。使用此服务时不会收集或保存任何信息。"
   },
   "billingAddress": {
     "message": "计费地址"
@@ -12171,7 +12171,7 @@
     }
   },
   "restoreProviderPortalAccessViaCustomerSupport": {
-    "message": "要恢复对您的提供商门户的访问权限，请联系 Bitwarden 客户支持续费您的订阅。",
+    "message": "要恢复对您的提供商门户的访问权限，请联系 TideWarden 客户支持续费您的订阅。",
     "description": "A message shown in a non-dismissible dialog to any user of a suspended providers."
   },
   "restoreProviderPortalAccessViaPaymentMethod": {
@@ -12209,7 +12209,7 @@
     "message": "订阅已取消"
   },
   "providersubCanceledmessage": {
-    "message": "要重新订阅，请联系 Bitwarden 客户支持。"
+    "message": "要重新订阅，请联系 TideWarden 客户支持。"
   },
   "showMore": {
     "message": "显示更多"
@@ -12331,7 +12331,7 @@
     "message": "自定义方案"
   },
   "planDescCustom": {
-    "message": "Bitwarden 适用于各种规模的企业，为密码和敏感信息提供安全保障。若您属于大型企业，请联系销售人员获取报价。"
+    "message": "TideWarden 适用于各种规模的企业，为密码和敏感信息提供安全保障。若您属于大型企业，请联系销售人员获取报价。"
   },
   "builtInAuthenticator": {
     "message": "内置身份验证器"
@@ -12436,7 +12436,7 @@
     "message": "计算您所在位置的税费时出错。请重试。"
   },
   "individualUpgradeWelcomeMessage": {
-    "message": "欢迎使用 Bitwarden"
+    "message": "欢迎使用 TideWarden"
   },
   "individualUpgradeDescriptionMessage": {
     "message": "使用高级版解锁更多安全功能，或使用家庭版开始分享项目"
@@ -12463,7 +12463,7 @@
     "message": "我们在处理您的升级时遇到错误。请重试。"
   },
   "bitwardenFreeplanMessage": {
-    "message": "您拥有 Bitwarden 免费方案"
+    "message": "您拥有 TideWarden 免费方案"
   },
   "upgradeCompleteSecurity": {
     "message": "升级以获得全面的安全防护"
@@ -12481,7 +12481,7 @@
     "message": "算法"
   },
   "encryptionKeySettingsHowShouldWeEncryptYourData": {
-    "message": "选择 Bitwarden 加密您的密码库数据的方式。所有选项都是安全的，但更强大的方式提供了更好的保护 - 特别是针对暴力攻击。Bitwarden 建议大多数用户使用默认设置。"
+    "message": "选择 TideWarden 加密您的密码库数据的方式。所有选项都是安全的，但更强大的方式提供了更好的保护 - 特别是针对暴力攻击。TideWarden 建议大多数用户使用默认设置。"
   },
   "encryptionKeySettingsIncreaseImproveSecurity": {
     "message": "将值增加为高于默认值将提高安全性，但您的密码库相应需要更长时间才能解锁。"
@@ -12548,7 +12548,7 @@
     }
   },
   "removeMasterPasswordForOrgUserKeyConnector": {
-    "message": "您的组织已不再使用主密码登录 Bitwarden。要继续，请验证组织和域名。"
+    "message": "您的组织已不再使用主密码登录 TideWarden。要继续，请验证组织和域名。"
   },
   "continueWithLogIn": {
     "message": "继续登录"
@@ -12736,7 +12736,7 @@
     "message": "为什么我会看到这个？"
   },
   "youHaveBitwardenPremium": {
-    "message": "您有 Bitwarden 高级版"
+    "message": "您有 TideWarden 高级版"
   },
   "viewAndManagePremiumSubscription": {
     "message": "查看和管理您的高级版订阅"
@@ -12767,7 +12767,7 @@
     "placeholders": {
       "file_name": {
         "content": "$1",
-        "example": "bitwarden_license.json"
+        "example": "tidewarden_license.json"
       }
     }
   },
@@ -12775,7 +12775,7 @@
     "message": "已经有一个订阅了吗？"
   },
   "alreadyHaveSubscriptionSelfHostedMessage": {
-    "message": "打开您的 Bitwarden 云账户中的订阅页面并下载您的许可证文件。然后返回此界面并在下方上传该文件。"
+    "message": "打开您的 TideWarden 云账户中的订阅页面并下载您的许可证文件。然后返回此界面并在下方上传该文件。"
   },
   "viewAllPlans": {
     "message": "查看所有方案"
@@ -12870,7 +12870,7 @@
     "message": "输入多个电子邮箱（使用逗号分隔）。"
   },
   "emailPlaceholder": {
-    "message": "user@bitwarden.com, user@acme.com"
+    "message": "user@tidewarden.com, user@acme.com"
   },
   "whenYouRemoveStorage": {
     "message": "当您移除存储空间时，您将收到一笔按比例计算的账户信用额度，其将用于自动抵扣您的下一笔费用。"
@@ -12895,7 +12895,7 @@
   },
   "sendPasswordHelperText": {
     "message": "个人需要输入密码才能查看此 Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "perUser": {
     "message": "每用户"
