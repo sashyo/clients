@@ -5,11 +5,13 @@ const STORAGE_KEY_CONFIG = "tidecloak_config";
 const STORAGE_KEY_DOKEN = "tidecloak_doken";
 
 export class DefaultTideCloakService extends TideCloakService {
-   
-  private enclave: any | null = null; // RequestEnclave
+
+  private tc: any | null = null; // TideCloak
   private config: TideCloakConfig | null = null;
   private initializingPromise: Promise<void> | null = null;
   private _skipOrkDecrypt = false;
+  // Serialization queue — RequestEnclave can't handle concurrent postMessage operations
+  private _opQueue: Promise<any> = Promise.resolve();
 
   constructor(private logService: LogService) {
     super();
@@ -18,27 +20,34 @@ export class DefaultTideCloakService extends TideCloakService {
   async initialize(config: TideCloakConfig, doken: string): Promise<void> {
     this.config = config;
 
-    const { RequestEnclave } = await import("@tidecloak/js");
+    // Extract auth server URL, realm, and session ID from the pre-built voucher URL
+    const voucherUrlObj = new URL(config.voucherUrl);
+    const pathParts = voucherUrlObj.pathname.split("/");
+    const realmIndex = pathParts.indexOf("realms");
+    const realm = realmIndex >= 0 ? decodeURIComponent(pathParts[realmIndex + 1]) : "";
+    const authServerUrl = voucherUrlObj.origin;
+    const sessionId = voucherUrlObj.searchParams.get("sessionId") ?? "";
 
-    this.enclave = new RequestEnclave({
-      homeOrkOrigin: config.homeOrkUrl,
+    const { TideCloak } = await import("@tidecloak/js");
+
+    this.tc = new TideCloak({
+      url: authServerUrl,
+      realm: realm,
+      clientId: "tidewarden",
       vendorId: config.vendorId,
-      voucherURL: config.voucherUrl,
-      signed_client_origin: config.signedClientOrigin,
+      clientOriginAuth: config.signedClientOrigin,
     });
 
-    this.enclave.init({
-      doken,
-      dokenRefreshCallback: async () => {
-        const stored = await this.loadDoken();
-        return stored ?? doken;
-      },
-      requireReloginCallback: async () => "",
-      backgroundUrl: "",
-      logoUrl: "",
-    });
+    // Set public fields that initRequestEnclave() and #getVoucherUrl() need
+    this.tc.authServerUrl = authServerUrl;
+    this.tc.realm = realm;
+    this.tc.doken = doken;
+    this.tc.dokenParsed = JSON.parse(atob(doken.split(".")[1]));
+    this.tc.tokenParsed = { sid: sessionId };
 
-    await this.enclave.initDone;
+    this.tc.initRequestEnclave();
+    await this.tc.requestEnclave.initDone;
+
     await this.persistConfig(config);
     await this.persistDoken(doken);
 
@@ -46,41 +55,55 @@ export class DefaultTideCloakService extends TideCloakService {
   }
 
   async encrypt(data: Uint8Array, tags: string[]): Promise<Uint8Array> {
-    if (!this.enclave) {
+    if (!this.tc?.requestEnclave) {
       throw new Error("[TideCloak] Enclave not initialized");
     }
-    const results = await this.enclave.encrypt([{ data, tags }]);
+    // Serialize — RequestEnclave postMessage listeners can't handle concurrent ops
+    const op = this._opQueue.then(() =>
+      this.tc.requestEnclave.encrypt([{ data, tags }]),
+    );
+    this._opQueue = op.catch(() => {});
+    const results = await op;
     return results[0];
   }
 
   async decrypt(encrypted: Uint8Array, tags: string[]): Promise<Uint8Array> {
-    if (!this.enclave) {
+    if (!this.tc?.requestEnclave) {
       throw new Error("[TideCloak] Enclave not initialized");
     }
-    const results = await this.enclave.decrypt([{ encrypted, tags }]);
+    // Serialize — RequestEnclave postMessage listeners can't handle concurrent ops
+    const op = this._opQueue.then(() =>
+      this.tc.requestEnclave.decrypt([{ encrypted, tags }]),
+    );
+    this._opQueue = op.catch(() => {});
+    const results = await op;
     return results[0];
   }
 
   async updateDoken(doken: string): Promise<void> {
-    if (this.enclave) {
-      this.enclave.updateDoken(doken);
+    if (this.tc) {
+      this.tc.doken = doken;
+      this.tc.dokenParsed = JSON.parse(atob(doken.split(".")[1]));
+      if (this.tc.requestEnclave) {
+        this.tc.requestEnclave.updateDoken(doken);
+      }
     }
     await this.persistDoken(doken);
   }
 
   isInitialized(): boolean {
-    return this.enclave != null;
+    return this.tc?.requestEnclave != null;
   }
 
   async ensureInitialized(): Promise<boolean> {
-    if (this.enclave != null) {
+    if (this.tc?.requestEnclave != null) {
       return true;
     }
 
     // Avoid concurrent re-initialization attempts
     if (this.initializingPromise != null) {
       await this.initializingPromise;
-      return this.enclave != null;
+      return this.tc?.requestEnclave != null;
     }
 
     // Can't create RequestEnclave without DOM (service worker, CLI)
@@ -107,7 +130,7 @@ export class DefaultTideCloakService extends TideCloakService {
       });
 
     await this.initializingPromise;
-    return this.enclave != null;
+    return this.tc?.requestEnclave != null;
   }
 
   async hasPersistedConfig(): Promise<boolean> {
@@ -124,15 +147,16 @@ export class DefaultTideCloakService extends TideCloakService {
   }
 
   destroy(): void {
-    if (this.enclave) {
+    if (this.tc?.requestEnclave) {
       try {
-        this.enclave.close();
+        this.tc.requestEnclave.close();
       } catch {
         // Enclave may already be closed
       }
     }
-    this.enclave = null;
+    this.tc = null;
     this.config = null;
+    this._opQueue = Promise.resolve();
     this.clearStorage();
   }
 
@@ -140,7 +164,7 @@ export class DefaultTideCloakService extends TideCloakService {
 
   private isBrowserExtension(): boolean {
     try {
-       
+
       const g = globalThis as any;
       return g.chrome?.storage?.session != null;
     } catch {
@@ -148,7 +172,7 @@ export class DefaultTideCloakService extends TideCloakService {
     }
   }
 
-   
+
   private get chromeSessionStorage(): any {
     return (globalThis as any).chrome.storage.session;
   }
