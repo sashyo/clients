@@ -311,6 +311,7 @@ import {
 import { AutofillService as AutofillServiceAbstraction } from "../autofill/services/abstractions/autofill.service";
 import { AutofillBadgeUpdaterService } from "../autofill/services/autofill-badge-updater.service";
 import AutofillService from "../autofill/services/autofill.service";
+import { OffscreenTideCloakService } from "../key-management/tidecloak/offscreen-tidecloak.service";
 import { InlineMenuFieldQualificationService } from "../autofill/services/inline-menu-field-qualification.service";
 import { SafariApp } from "../browser/safariApp";
 import { PhishingDataService } from "../dirt/phishing-detection/services/phishing-data.service";
@@ -580,7 +581,9 @@ export default class MainBackground {
       this.memoryStorageService = this.memoryStorageForStateProviders;
     }
 
-    this.tideCloakService = new DefaultTideCloakService(this.logService);
+    this.tideCloakService = BrowserApi.isManifestVersion(3)
+      ? new OffscreenTideCloakService(this.offscreenDocumentService, this.logService)
+      : new DefaultTideCloakService(this.logService);
     this.encryptService = new TideCloakEncryptService(
       this.cryptoFunctionService,
       this.logService,
@@ -1170,11 +1173,7 @@ export default class MainBackground {
     this.individualVaultExportService = new IndividualVaultExportService(
       this.folderService,
       this.cipherService,
-      this.keyGenerationService,
-      this.keyService,
       this.encryptService,
-      this.cryptoFunctionService,
-      this.kdfConfigService,
       this.apiService,
       this.restrictedItemTypesService,
     );
@@ -1184,12 +1183,9 @@ export default class MainBackground {
     this.organizationVaultExportService = new OrganizationVaultExportService(
       this.cipherService,
       this.exportApiService,
-      this.keyGenerationService,
       this.keyService,
       this.encryptService,
-      this.cryptoFunctionService,
       this.collectionService,
-      this.kdfConfigService,
       this.restrictedItemTypesService,
     );
 

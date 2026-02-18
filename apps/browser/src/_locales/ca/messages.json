@@ -5505,8 +5505,8 @@
     "description": "Notification message for when a password has been regenerated"
   },
   "saveToBitwarden": {
-    "message": "Save to Bitwarden",
-    "description": "Confirmation message for saving a login to Bitwarden"
+    "message": "Save to TideWarden",
+    "description": "Confirmation message for saving a login to TideWarden"
   },
   "spaceCharacterDescriptor": {
     "message": "Espai",

@@ -29,13 +29,11 @@ export abstract class VaultExportServiceAbstraction {
   abstract getExport: (
     userId: UserId,
     format: ExportFormat,
-    password: string,
   ) => Promise<ExportedVault>;
   abstract getOrganizationExport: (
     userId: UserId,
     organizationId: OrganizationId,
     format: ExportFormat,
-    password: string,
     onlyManagedCollections?: boolean,
   ) => Promise<ExportedVault>;
 

@@ -120,13 +120,13 @@ export class DefaultOrganizationUserApiService implements OrganizationUserApiSer
   postOrganizationUserInvite(
     organizationId: string,
     request: OrganizationUserInviteRequest,
-  ): Promise<void> {
+  ): Promise<{ data?: { email: string; link: string }[] }> {
     return this.apiService.send(
       "POST",
       "/organizations/" + organizationId + "/users/invite",
       request,
       true,
-      false,
+      true,
     );
   }
 

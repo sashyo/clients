@@ -10,7 +10,40 @@
       <span bitBadge variant="secondary" *ngIf="isRevoked">{{ "revoked" | i18n }}</span>
     </span>
     <div bitDialogContent>
-      <ng-container *ngIf="loading">
+      <ng-container *ngIf="inviteLinks.length > 0">
+        <p bitTypography="body1">Invite links generated. Share these with your members:</p>
+        <div *ngFor="let invite of inviteLinks" class="tw-mb-3">
+          <label class="tw-block tw-text-sm tw-font-semibold tw-mb-1">{{ invite.email }}</label>
+          <div class="tw-flex tw-gap-2">
+            <input
+              bitInput
+              type="text"
+              [value]="invite.link"
+              readonly
+              class="tw-flex-1 tw-text-xs"
+            />
+            <button
+              type="button"
+              bitButton
+              buttonType="secondary"
+              (click)="copyLink(invite.link)"
+            >
+              <i class="bwi bwi-clone" aria-hidden="true"></i>
+              Copy
+            </button>
+          </div>
+        </div>
+        <button
+          type="button"
+          bitButton
+          buttonType="primary"
+          (click)="closeAfterInvite()"
+          class="tw-mt-2"
+        >
+          Done
+        </button>
+      </ng-container>
+      <ng-container *ngIf="loading && inviteLinks.length === 0">
         <i
           class="bwi bwi-spinner bwi-spin tw-text-muted"
           title="{{ 'loading' | i18n }}"
@@ -19,7 +52,7 @@
         <span class="tw-sr-only">{{ "loading" | i18n }}</span>
       </ng-container>
       <bit-tab-group
-        *ngIf="!loading && organization$ | async as organization"
+        *ngIf="!loading && inviteLinks.length === 0 && (organization$ | async) as organization"
         [(selectedIndex)]="tabIndex"
       >
         <bit-tab [label]="'role' | i18n">
@@ -231,7 +264,7 @@
         ></bit-tab>
       </bit-tab-group>
     </div>
-    <ng-container bitDialogFooter>
+    <ng-container bitDialogFooter *ngIf="inviteLinks.length === 0">
       <button type="submit" bitButton bitFormButton buttonType="primary" [disabled]="loading">
         {{ "save" | i18n }}
       </button>

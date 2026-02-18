@@ -115,7 +115,7 @@ export class DefaultCollectionService implements CollectionService {
         }
 
         return this.keyService.orgKeys$(userId).pipe(
-          filter((orgKeys): orgKeys is Record<OrganizationId, OrgKey> => !!orgKeys),
+          map((orgKeys) => orgKeys ?? ({} as Record<OrganizationId, OrgKey>)),
           switchMap((orgKeys: Record<OrganizationId, OrgKey>) =>
             this.decryptMany$(collections, orgKeys).pipe(
               delayWhen((colls: CollectionView[]) => this.setDecryptedCollections(colls, userId)),

@@ -1,7 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { OptionValues } from "commander";
-import * as inquirer from "inquirer";
 import { firstValueFrom, switchMap } from "rxjs";
 
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
@@ -44,13 +43,7 @@ export class ExportCommand {
       );
     }
 
-    let password = options.password;
-
-    // has password and format is 'json' => should have the same behaviour as 'encrypted_json'
-    // format is 'undefined' => Defaults to 'csv'
-    // Any other case => returns the options.format
-    const format =
-      password && options.format == "json" ? "encrypted_json" : (options.format ?? "csv");
+    const format = options.format ?? "csv";
 
     if (!this.isSupportedExportFormat(format)) {
       return Response.badRequest(
@@ -66,20 +59,15 @@ export class ExportCommand {
 
     let exportContent: ExportedVault = null;
     try {
-      if (format === "encrypted_json") {
-        password = await this.promptPassword(password);
-      }
-
       const userId = await firstValueFrom(this.accountService.activeAccount$.pipe(getUserId));
 
       exportContent =
         options.organizationid == null
-          ? await this.exportService.getExport(userId, format, password)
+          ? await this.exportService.getExport(userId, format)
           : await this.exportService.getOrganizationExport(
               userId,
               options.organizationid,
               format,
-              password,
             );
 
       const eventType = options.organizationid
@@ -111,25 +99,6 @@ export class ExportCommand {
     } catch (e) {
       return Response.error(e.toString());
     }
-  }
-
-  private async promptPassword(password: string | boolean) {
-    // boolean => flag set with no value, we need to prompt for password
-    // string => flag set with value, use this value for password
-    // undefined/null/false => account protect, not password, no password needed
-    if (typeof password === "string") {
-      return password;
-    } else if (password) {
-      const answer: inquirer.Answers = await inquirer.createPromptModule({
-        output: process.stderr,
-      })({
-        type: "password",
-        name: "password",
-        message: "Export file password:",
-      });
-      return answer.password as string;
-    }
-    return null;
   }
 
   private isSupportedExportFormat(format: string): format is ExportFormat {

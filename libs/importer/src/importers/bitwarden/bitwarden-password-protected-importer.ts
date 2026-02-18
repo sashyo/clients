@@ -17,7 +17,9 @@ import {
 import {
   BitwardenJsonExport,
   BitwardenPasswordProtectedFileFormat,
+  BitwardenTideCloakEncryptedFileFormat,
   isPasswordProtected,
+  isTideCloakEncrypted,
 } from "@bitwarden/vault-export-core";
 
 import { ImportResult } from "../../models/import-result";
@@ -45,11 +47,19 @@ export class BitwardenPasswordProtectedImporter
 
   async parse(data: string): Promise<ImportResult> {
     const result = new ImportResult();
-    const parsedData: BitwardenPasswordProtectedFileFormat | BitwardenJsonExport = JSON.parse(data);
+    const parsedData:
+      | BitwardenPasswordProtectedFileFormat
+      | BitwardenTideCloakEncryptedFileFormat
+      | BitwardenJsonExport = JSON.parse(data);
 
     if (!parsedData) {
       result.success = false;
       return result;
+    }
+
+    // TideCloak ORK-encrypted files are handled by the parent class
+    if (isTideCloakEncrypted(parsedData)) {
+      return await super.parse(data);
     }
 
     if (!isPasswordProtected(parsedData)) {

@@ -5506,7 +5506,7 @@
   },
   "saveToBitwarden": {
     "message": "已儲存至 Bitwarden。",
-    "description": "Confirmation message for saving a login to Bitwarden"
+    "description": "Confirmation message for saving a login to TideWarden"
   },
   "spaceCharacterDescriptor": {
     "message": "空格",

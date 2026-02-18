@@ -33,39 +33,23 @@ describe("VaultExportService", () => {
     it("calls checkForImpersonation with userId", async () => {
       const spy = jest.spyOn(service as any, "checkForImpersonation");
 
-      await service.getExport(mockUserId, "json", "");
+      await service.getExport(mockUserId, "json");
       expect(spy).toHaveBeenCalledWith(mockUserId);
     });
 
     it("validates the given userId matches the current authenticated user", async () => {
       const anotherUserId = "another-user-id" as UserId;
 
-      await expect(service.getExport(anotherUserId, "json", "")).rejects.toThrow(
+      await expect(service.getExport(anotherUserId, "json")).rejects.toThrow(
         "UserId does not match the currently authenticated user",
       );
 
       expect(individualVaultExportService.getExport).not.toHaveBeenCalledWith(mockUserId, "json");
     });
 
-    it("calls getExport when password is empty", async () => {
-      await service.getExport(mockUserId, "json", "");
+    it("calls getExport with json format", async () => {
+      await service.getExport(mockUserId, "json");
       expect(individualVaultExportService.getExport).toHaveBeenCalledWith(mockUserId, "json");
-    });
-
-    it("throws error if format is csv and password is provided", async () => {
-      await expect(service.getExport(mockUserId, "csv", "secret")).rejects.toThrow(
-        "CSV does not support password protected export",
-      );
-      expect(individualVaultExportService.getPasswordProtectedExport).not.toHaveBeenCalled();
-      expect(individualVaultExportService.getExport).not.toHaveBeenCalled();
-    });
-
-    it("calls getPasswordProtectedExport when password is provided and format is not csv", async () => {
-      await service.getExport(mockUserId, "json", "somePassword");
-      expect(individualVaultExportService.getPasswordProtectedExport).toHaveBeenCalledWith(
-        mockUserId,
-        "somePassword",
-      );
     });
 
     it("uses default format csv if not provided", async () => {
@@ -78,7 +62,7 @@ describe("VaultExportService", () => {
     it("calls checkForImpersonation with userId", async () => {
       const spy = jest.spyOn(service as any, "checkForImpersonation");
 
-      await service.getOrganizationExport(mockUserId, mockOrganizationId, "json", "");
+      await service.getOrganizationExport(mockUserId, mockOrganizationId, "json");
       expect(spy).toHaveBeenCalledWith(mockUserId);
     });
 
@@ -86,7 +70,7 @@ describe("VaultExportService", () => {
       const anotherUserId = "another-user-id" as UserId;
 
       await expect(
-        service.getOrganizationExport(anotherUserId, mockOrganizationId, "json", ""),
+        service.getOrganizationExport(anotherUserId, mockOrganizationId, "json"),
       ).rejects.toThrow("UserId does not match the currently authenticated user");
 
       expect(organizationVaultExportService.getOrganizationExport).not.toHaveBeenCalledWith(
@@ -96,8 +80,8 @@ describe("VaultExportService", () => {
       );
     });
 
-    it("calls getOrganizationExport when password is empty", async () => {
-      await service.getOrganizationExport(mockUserId, mockOrganizationId, "json", "");
+    it("calls getOrganizationExport", async () => {
+      await service.getOrganizationExport(mockUserId, mockOrganizationId, "json");
       expect(organizationVaultExportService.getOrganizationExport).toHaveBeenCalledWith(
         mockUserId,
         mockOrganizationId,
@@ -106,46 +90,12 @@ describe("VaultExportService", () => {
       );
     });
 
-    it("throws error if format is csv and password is provided", async () => {
-      await expect(
-        service.getOrganizationExport(mockUserId, mockOrganizationId, "csv", "secret"),
-      ).rejects.toThrow("CSV does not support password protected export");
-      expect(organizationVaultExportService.getPasswordProtectedExport).not.toHaveBeenCalled();
-      expect(organizationVaultExportService.getOrganizationExport).not.toHaveBeenCalled();
-    });
-
-    it("calls getPasswordProtectedExport when password is provided and format is not csv", async () => {
-      await service.getOrganizationExport(mockUserId, mockOrganizationId, "json", "somePassword");
-      expect(organizationVaultExportService.getPasswordProtectedExport).toHaveBeenCalledWith(
-        mockUserId,
-        mockOrganizationId,
-        "somePassword",
-        false,
-      );
-    });
-
-    it("when calling getOrganizationExport without a password it passes onlyManagedCollection param on", async () => {
-      await service.getOrganizationExport(mockUserId, mockOrganizationId, "json", "", true);
+    it("passes onlyManagedCollections param", async () => {
+      await service.getOrganizationExport(mockUserId, mockOrganizationId, "json", true);
       expect(organizationVaultExportService.getOrganizationExport).toHaveBeenCalledWith(
         mockUserId,
         mockOrganizationId,
         "json",
-        true,
-      );
-    });
-
-    it("when calling getOrganizationExport with a password it passes onlyManagedCollection param on", async () => {
-      await service.getOrganizationExport(
-        mockUserId,
-        mockOrganizationId,
-        "json",
-        "somePassword",
-        true,
-      );
-      expect(organizationVaultExportService.getPasswordProtectedExport).toHaveBeenCalledWith(
-        mockUserId,
-        mockOrganizationId,
-        "somePassword",
         true,
       );
     });

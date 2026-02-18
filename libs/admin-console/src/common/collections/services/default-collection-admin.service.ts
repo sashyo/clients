@@ -202,7 +202,7 @@ export class DefaultCollectionAdminService implements CollectionAdminService {
       }
       return new UpdateCollectionRequest({
         name: model.canEditName(org)
-          ? await this.encryptService.encryptString(model.name, key)
+          ? await this.encryptService.withoutOrk(() => this.encryptService.encryptString(model.name, key))
           : null,
         externalId: model.externalId,
         users,
@@ -211,7 +211,7 @@ export class DefaultCollectionAdminService implements CollectionAdminService {
     }
 
     return new CreateCollectionRequest({
-      name: await this.encryptService.encryptString(model.name, key),
+      name: await this.encryptService.withoutOrk(() => this.encryptService.encryptString(model.name, key)),
       externalId: model.externalId,
       users,
       groups,

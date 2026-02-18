@@ -13,6 +13,12 @@ export type OffscreenDocumentExtensionMessageHandlers = {
   [key: string]: ({ message, sender }: OffscreenExtensionMessageEventParams) => any;
   offscreenCopyToClipboard: ({ message }: OffscreenExtensionMessageEventParams) => any;
   offscreenReadFromClipboard: () => any;
+  tidecloakInit: ({ message }: OffscreenExtensionMessageEventParams) => any;
+  tidecloakEncrypt: ({ message }: OffscreenExtensionMessageEventParams) => any;
+  tidecloakDecrypt: ({ message }: OffscreenExtensionMessageEventParams) => any;
+  tidecloakUpdateDoken: ({ message }: OffscreenExtensionMessageEventParams) => any;
+  tidecloakDestroy: () => any;
+  tidecloakIsInitialized: () => any;
 };
 
 export interface OffscreenDocument {

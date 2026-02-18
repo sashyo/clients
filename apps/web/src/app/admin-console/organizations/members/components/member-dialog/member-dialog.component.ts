@@ -542,16 +542,35 @@ export class MemberDialogComponent implements OnDestroy {
     this.close(MemberDialogResult.Saved);
   }
 
+  inviteLinks: { email: string; link: string }[] = [];
+
   private async handleInviteUsers(userView: OrganizationUserAdminView, organization: Organization) {
     const emails = [...new Set(this.formGroup.value.emails.trim().split(/\s*,\s*/))];
 
-    await this.userService.invite(emails, userView);
+    const links = await this.userService.invite(emails, userView);
 
+    if (links && links.length > 0) {
+      this.inviteLinks = links;
+    } else {
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("invitedUsers"),
+      });
+      this.close(MemberDialogResult.Saved);
+    }
+  }
+
+  async copyLink(link: string) {
+    await navigator.clipboard.writeText(link);
     this.toastService.showToast({
       variant: "success",
       title: null,
-      message: this.i18nService.t("invitedUsers"),
+      message: this.i18nService.t("copySuccessful"),
     });
+  }
+
+  closeAfterInvite() {
     this.close(MemberDialogResult.Saved);
   }
 

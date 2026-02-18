@@ -23,8 +23,10 @@ import {
   BitwardenEncryptedOrgJsonExport,
   BitwardenJsonExport,
   BitwardenPasswordProtectedFileFormat,
+  BitwardenTideCloakEncryptedFileFormat,
   isOrgEncrypted,
   isPasswordProtected,
+  isTideCloakEncrypted,
   isUnencrypted,
 } from "@bitwarden/vault-export-core";
 
@@ -45,7 +47,17 @@ export class BitwardenEncryptedJsonImporter extends BitwardenJsonImporter implem
   }
 
   async parse(data: string): Promise<ImportResult> {
-    const results: BitwardenPasswordProtectedFileFormat | BitwardenJsonExport = JSON.parse(data);
+    const results:
+      | BitwardenPasswordProtectedFileFormat
+      | BitwardenTideCloakEncryptedFileFormat
+      | BitwardenJsonExport = JSON.parse(data);
+
+    // TideCloak ORK-encrypted format: decrypt via TideCloak, then parse the decrypted JSON
+    if (isTideCloakEncrypted(results)) {
+      const encData = new EncString(results.data);
+      const clearTextData = await this.encryptService.decryptString(encData, null);
+      return await super.parse(clearTextData);
+    }
 
     if (isPasswordProtected(results)) {
       throw new Error(
@@ -53,17 +65,17 @@ export class BitwardenEncryptedJsonImporter extends BitwardenJsonImporter implem
       );
     }
 
-    if (results == null || results.items == null) {
+    if (results == null || (results as BitwardenJsonExport).items == null) {
       const result = new ImportResult();
       result.success = false;
       return result;
     }
 
-    if (isUnencrypted(results)) {
+    if (isUnencrypted(results as BitwardenJsonExport)) {
       return super.parse(data);
     }
 
-    return await this.parseEncrypted(results);
+    return await this.parseEncrypted(results as BitwardenEncryptedJsonExport);
   }
 
   private async parseEncrypted(data: BitwardenEncryptedJsonExport): Promise<ImportResult> {

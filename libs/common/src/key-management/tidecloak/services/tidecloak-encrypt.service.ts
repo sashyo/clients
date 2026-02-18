@@ -8,15 +8,21 @@ import { EncryptServiceImplementation } from "../../crypto/services/encrypt.serv
 import { TideCloakService } from "../abstractions/tidecloak.service";
 
 /**
- * EncryptService that routes data encryption/decryption through the TideCloak ORK
+ * EncryptService that routes encryption/decryption through the TideCloak ORK
  * when the enclave is available.
  *
- * When the ORK enclave is not available (e.g. service worker context),
- * encrypt falls through to standard AES and decrypt returns null for type 100.
+ * Non-sensitive fields (names) should call setSkipOrkEncrypt(true) before
+ * encrypting so they use standard AES and remain readable by other org members.
  *
  * Key management methods (wrap/unwrap/encapsulate) are inherited unchanged.
  */
 export class TideCloakEncryptService extends EncryptServiceImplementation {
+  // After an ORK decrypt failure (e.g. data encrypted by another user's ORK),
+  // skip subsequent ORK decrypts for a cooldown period so the edit dialog
+  // doesn't hang for 5s × N fields.  Resets after 10s so the user's own
+  // ORK-encrypted data can still be decrypted on the next interaction.
+  private _orkDecryptCooldownUntil = 0;
+
   constructor(
     cryptoFunctionService: CryptoFunctionService,
     logService: LogService,
@@ -34,7 +40,11 @@ export class TideCloakEncryptService extends EncryptServiceImplementation {
       return null;
     }
 
-    // Re-initialize enclave from persisted state if needed (e.g. after page refresh)
+    // Non-sensitive fields (names) bypass ORK so all org members can decrypt
+    if (this.tideCloakService.shouldSkipOrkEncrypt()) {
+      return super.encryptString(plainValue, key);
+    }
+
     await this.tideCloakService.ensureInitialized();
 
     if (this.tideCloakService.isInitialized()) {
@@ -51,8 +61,29 @@ export class TideCloakEncryptService extends EncryptServiceImplementation {
       }
     }
 
-    // Enclave not available (e.g. service worker) — fall through to AES
     return super.encryptString(plainValue, key);
+  }
+
+  override async encryptBytes(
+    plainValue: Uint8Array,
+    key: SymmetricCryptoKey,
+  ): Promise<EncString> {
+    await this.tideCloakService.ensureInitialized();
+
+    if (this.tideCloakService.isInitialized()) {
+      try {
+        const encrypted = await this.tideCloakService.encrypt(plainValue, ["vaultwarden"]);
+        const b64 = Utils.fromBufferToB64(encrypted);
+        return new EncString(EncryptionType.TideCloakOrk, b64);
+      } catch (e) {
+        this.logService.error(`[TideCloakEncrypt] ORK byte encryption failed: ${e}`);
+        throw new Error(
+          "TideCloak encryption failed. Your data could not be encrypted securely.",
+        );
+      }
+    }
+
+    return super.encryptBytes(plainValue, key);
   }
 
   override async decryptString(
@@ -71,6 +102,12 @@ export class TideCloakEncryptService extends EncryptServiceImplementation {
         return null;
       }
 
+      // After a recent ORK decrypt failure, skip immediately so the UI
+      // doesn't block on 5s timeout per field
+      if (Date.now() < this._orkDecryptCooldownUntil) {
+        throw new Error("ORK decrypt temporarily disabled after recent failure");
+      }
+
       // Re-initialize enclave from persisted state if needed
       await this.tideCloakService.ensureInitialized();
 
@@ -87,6 +124,8 @@ export class TideCloakEncryptService extends EncryptServiceImplementation {
         return new TextDecoder().decode(decrypted);
       } catch (e) {
         this.logService.error(`[TideCloakEncrypt] ORK decryption failed: ${e}`);
+        // Skip subsequent ORK decrypts for 10s so remaining fields fail instantly
+        this._orkDecryptCooldownUntil = Date.now() + 10_000;
         throw new Error(
           "TideCloak decryption failed. Please try again or re-login.",
         );
@@ -95,30 +134,6 @@ export class TideCloakEncryptService extends EncryptServiceImplementation {
 
     // For any other encryption type (e.g. AES), use parent
     return super.decryptString(encString, key);
-  }
-
-  override async encryptBytes(
-    plainValue: Uint8Array,
-    key: SymmetricCryptoKey,
-  ): Promise<EncString> {
-    // Re-initialize enclave from persisted state if needed
-    await this.tideCloakService.ensureInitialized();
-
-    if (this.tideCloakService.isInitialized()) {
-      try {
-        const encrypted = await this.tideCloakService.encrypt(plainValue, ["vaultwarden"]);
-        const b64 = Utils.fromBufferToB64(encrypted);
-        return new EncString(EncryptionType.TideCloakOrk, b64);
-      } catch (e) {
-        this.logService.error(`[TideCloakEncrypt] ORK byte encryption failed: ${e}`);
-        throw new Error(
-          "TideCloak encryption failed. Your data could not be encrypted securely.",
-        );
-      }
-    }
-
-    // Enclave not available — fall through to AES
-    return super.encryptBytes(plainValue, key);
   }
 
   override async decryptBytes(
@@ -136,6 +151,11 @@ export class TideCloakEncryptService extends EncryptServiceImplementation {
         return null;
       }
 
+      // After a recent ORK decrypt failure, skip immediately
+      if (Date.now() < this._orkDecryptCooldownUntil) {
+        throw new Error("ORK decrypt temporarily disabled after recent failure");
+      }
+
       // Re-initialize enclave from persisted state if needed
       await this.tideCloakService.ensureInitialized();
 
@@ -149,6 +169,7 @@ export class TideCloakEncryptService extends EncryptServiceImplementation {
         return await this.tideCloakService.decrypt(bytes, ["vaultwarden"]);
       } catch (e) {
         this.logService.error(`[TideCloakEncrypt] ORK byte decryption failed: ${e}`);
+        this._orkDecryptCooldownUntil = Date.now() + 10_000;
         throw new Error(
           "TideCloak decryption failed. Please try again or re-login.",
         );
@@ -157,6 +178,15 @@ export class TideCloakEncryptService extends EncryptServiceImplementation {
 
     // For any other encryption type (e.g. AES), use parent
     return super.decryptBytes(encString, key);
+  }
+
+  override async withoutOrk<T>(fn: () => Promise<T>): Promise<T> {
+    this.tideCloakService.setSkipOrkEncrypt(true);
+    try {
+      return await fn();
+    } finally {
+      this.tideCloakService.setSkipOrkEncrypt(false);
+    }
   }
 
   // encryptFileData / decryptFileData: inherited (standard AES — files can be large)

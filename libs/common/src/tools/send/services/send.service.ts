@@ -116,7 +116,7 @@ export class SendService implements InternalSendServiceAbstraction {
     send.key = await this.encryptService.encryptBytes(model.key, userKey);
     send.name =
       model.name != null
-        ? await this.encryptService.encryptString(model.name, model.cryptoKey)
+        ? await this.encryptService.withoutOrk(() => this.encryptService.encryptString(model.name, model.cryptoKey))
         : null;
     send.notes =
       model.notes != null

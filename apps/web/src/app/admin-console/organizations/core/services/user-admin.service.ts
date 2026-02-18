@@ -47,7 +47,10 @@ export class UserAdminService {
     );
   }
 
-  async invite(emails: string[], user: OrganizationUserAdminView): Promise<void> {
+  async invite(
+    emails: string[],
+    user: OrganizationUserAdminView,
+  ): Promise<{ email: string; link: string }[]> {
     const request = new OrganizationUserInviteRequest();
     request.emails = emails;
     request.permissions = user.permissions;
@@ -56,6 +59,10 @@ export class UserAdminService {
     request.groups = user.groups;
     request.accessSecretsManager = user.accessSecretsManager;
 
-    await this.organizationUserApiService.postOrganizationUserInvite(user.organizationId, request);
+    const response = await this.organizationUserApiService.postOrganizationUserInvite(
+      user.organizationId,
+      request,
+    );
+    return response?.data ?? [];
   }
 }

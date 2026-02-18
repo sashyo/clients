@@ -5506,7 +5506,7 @@
   },
   "saveToBitwarden": {
     "message": "Uložit do Bitwardenu",
-    "description": "Confirmation message for saving a login to Bitwarden"
+    "description": "Confirmation message for saving a login to TideWarden"
   },
   "spaceCharacterDescriptor": {
     "message": "Mezera",

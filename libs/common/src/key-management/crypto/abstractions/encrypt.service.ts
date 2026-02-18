@@ -169,6 +169,16 @@ export abstract class EncryptService {
   abstract rsaDecrypt(data: EncString, privateKey: Uint8Array): Promise<Uint8Array>;
 
   /**
+   * Executes the callback with ORK encryption disabled so the data is
+   * encrypted with standard AES instead.  Used for non-sensitive fields
+   * (names) that need to be readable by all org members.
+   * Default: just calls the callback (no ORK to disable).
+   */
+  async withoutOrk<T>(fn: () => Promise<T>): Promise<T> {
+    return fn();
+  }
+
+  /**
    * Generates a base64-encoded hash of the given value
    * @param value The value to hash
    * @param algorithm The hashing algorithm to use

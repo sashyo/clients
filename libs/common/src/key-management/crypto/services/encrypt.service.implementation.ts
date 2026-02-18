@@ -220,6 +220,10 @@ export class EncryptServiceImplementation implements EncryptService {
     return new SymmetricCryptoKey(keyBytes);
   }
 
+  async withoutOrk<T>(fn: () => Promise<T>): Promise<T> {
+    return fn();
+  }
+
   async rsaDecrypt(data: EncString, privateKey: Uint8Array): Promise<Uint8Array> {
     if (data == null) {
       throw new Error("[Encrypt service] rsaDecrypt: No data provided for decryption.");

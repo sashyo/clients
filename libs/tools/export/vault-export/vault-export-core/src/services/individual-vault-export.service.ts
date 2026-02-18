@@ -5,25 +5,19 @@ import * as papa from "papaparse";
 import { firstValueFrom } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { KeyGenerationService } from "@bitwarden/common/key-management/crypto";
-import { CryptoFunctionService } from "@bitwarden/common/key-management/crypto/abstractions/crypto-function.service";
 import { EncryptService } from "@bitwarden/common/key-management/crypto/abstractions/encrypt.service";
 import { CipherWithIdExport, FolderWithIdExport } from "@bitwarden/common/models/export";
-import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherId, UserId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { CipherType } from "@bitwarden/common/vault/enums";
-import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
-import { Folder } from "@bitwarden/common/vault/models/domain/folder";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 import { RestrictedItemTypesService } from "@bitwarden/common/vault/services/restricted-item-types.service";
-import { KdfConfigService, KeyService } from "@bitwarden/key-management";
 
 import {
   BitwardenCsvIndividualExportType,
-  BitwardenEncryptedIndividualJsonExport,
+  BitwardenTideCloakEncryptedFileFormat,
   BitwardenUnEncryptedIndividualJsonExport,
   ExportedVault,
   ExportedVaultAsBlob,
@@ -42,21 +36,13 @@ export class IndividualVaultExportService
   constructor(
     private folderService: FolderService,
     private cipherService: CipherService,
-    keyGenerationService: KeyGenerationService,
-    private keyService: KeyService,
     encryptService: EncryptService,
-    cryptoFunctionService: CryptoFunctionService,
-    kdfConfigService: KdfConfigService,
     private apiService: ApiService,
     private restrictedItemTypesService: RestrictedItemTypesService,
   ) {
-    super(keyGenerationService, encryptService, cryptoFunctionService, kdfConfigService);
+    super(encryptService);
   }
 
-  /** Creates an export of an individual vault (My Vault). Based on the provided format it will either be unencrypted, encrypted or password protected and in case zip is selected will include attachments
-   * @param userId The userId of the account requesting the export
-   * @param format The format of the export
-   */
   async getExport(userId: UserId, format: ExportFormat = "csv"): Promise<ExportedVault> {
     if (format === "encrypted_json") {
       return this.getEncryptedExport(userId);
@@ -66,36 +52,9 @@ export class IndividualVaultExportService
     return this.getDecryptedExport(userId, format);
   }
 
-  /** Creates a password protected export of an individual vault (My Vault) as a JSON file
-   * @param userId The userId of the account requesting the export
-   * @param password The password to encrypt the export with
-   * @returns A password-protected encrypted individual vault export
-   */
-  async getPasswordProtectedExport(
-    userId: UserId,
-    password: string,
-  ): Promise<ExportedVaultAsString> {
-    const exportVault = await this.getExport(userId, "json");
-
-    if (exportVault.type !== "text/plain") {
-      throw new Error("Unexpected export type");
-    }
-
-    return {
-      type: "text/plain",
-      data: await this.buildPasswordExport(userId, exportVault.data, password),
-      fileName: ExportHelper.getFileName("", "encrypted_json"),
-    } as ExportedVaultAsString;
-  }
-
-  /** Creates a unencrypted export of an individual vault including attachments
-   * @param activeUserId The user ID of the user requesting the export
-   * @returns A unencrypted export including attachments
-   */
   async getDecryptedExportZip(activeUserId: UserId): Promise<ExportedVaultAsBlob> {
     const zip = new JSZip();
 
-    // ciphers
     const exportedVault = await this.getDecryptedExport(activeUserId, "json");
     zip.file("data.json", exportedVault.data);
 
@@ -104,7 +63,6 @@ export class IndividualVaultExportService
       throw new Error("Error creating attachments folder");
     }
 
-    // attachments
     for (const cipher of await this.cipherService.getAllDecrypted(activeUserId)) {
       if (
         !cipher.attachments ||
@@ -205,58 +163,15 @@ export class IndividualVaultExportService
       throw new Error("User ID must not be null or undefined");
     }
 
-    let folders: Folder[] = [];
-    let ciphers: Cipher[] = [];
-    const promises = [];
+    // Get the decrypted JSON export, then encrypt the whole thing via TideCloak ORK
+    const decryptedExport = await this.getDecryptedExport(activeUserId, "json");
+    const encData = await this.encryptService.encryptString(decryptedExport.data, null);
 
-    promises.push(
-      firstValueFrom(this.folderService.folders$(activeUserId)).then((f) => {
-        folders = f;
-      }),
-    );
-
-    const restrictions = await firstValueFrom(this.restrictedItemTypesService.restricted$);
-
-    promises.push(
-      this.cipherService.getAll(activeUserId).then((c) => {
-        ciphers = c.filter(
-          (f) =>
-            f.deletedDate == null &&
-            !this.restrictedItemTypesService.isCipherRestricted(f, restrictions),
-        );
-      }),
-    );
-
-    await Promise.all(promises);
-
-    const userKey = await firstValueFrom(this.keyService.userKey$(activeUserId));
-    const encKeyValidation = await this.encryptService.encryptString(Utils.newGuid(), userKey);
-
-    const jsonDoc: BitwardenEncryptedIndividualJsonExport = {
+    const jsonDoc: BitwardenTideCloakEncryptedFileFormat = {
       encrypted: true,
-      encKeyValidation_DO_NOT_EDIT: encKeyValidation.encryptedString,
-      folders: [],
-      items: [],
+      tideCloakEncrypted: true,
+      data: encData.encryptedString,
     };
-
-    folders.forEach((f) => {
-      if (!f.id) {
-        return;
-      }
-      const folder = new FolderWithIdExport();
-      folder.build(f);
-      jsonDoc.folders.push(folder);
-    });
-
-    ciphers.forEach((c) => {
-      if (c.organizationId != null) {
-        return;
-      }
-      const cipher = new CipherWithIdExport();
-      cipher.build(c);
-      cipher.collectionIds = null;
-      jsonDoc.items.push(cipher);
-    });
 
     return {
       type: "text/plain",

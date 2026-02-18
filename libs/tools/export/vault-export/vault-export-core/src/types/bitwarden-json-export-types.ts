@@ -43,7 +43,7 @@ export type BitwardenEncryptedOrgJsonExport = {
   collections: CollectionWithIdExport[];
 };
 
-// Password-protected
+// Password-protected (legacy)
 export type BitwardenPasswordProtectedFileFormat = {
   encrypted: true;
   passwordProtected: true;
@@ -53,6 +53,13 @@ export type BitwardenPasswordProtectedFileFormat = {
   kdfParallelism?: number;
   kdfType: number;
   encKeyValidation_DO_NOT_EDIT: string;
+  data: string;
+};
+
+// TideCloak ORK-encrypted
+export type BitwardenTideCloakEncryptedFileFormat = {
+  encrypted: true;
+  tideCloakEncrypted: true;
   data: string;
 };
 
@@ -88,6 +95,21 @@ export function isPasswordProtected(
     data != null &&
     (data as { encrypted?: unknown }).encrypted === true &&
     (data as { passwordProtected?: unknown }).passwordProtected === true
+  );
+}
+
+export function isTideCloakEncrypted(
+  data:
+    | BitwardenTideCloakEncryptedFileFormat
+    | BitwardenPasswordProtectedFileFormat
+    | BitwardenJsonExport
+    | null
+    | undefined,
+): data is BitwardenTideCloakEncryptedFileFormat {
+  return (
+    data != null &&
+    (data as { encrypted?: unknown }).encrypted === true &&
+    (data as { tideCloakEncrypted?: unknown }).tideCloakEncrypted === true
   );
 }
 

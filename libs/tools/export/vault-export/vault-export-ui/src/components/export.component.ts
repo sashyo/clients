@@ -19,11 +19,9 @@ import {
   combineLatest,
   firstValueFrom,
   map,
-  merge,
   Observable,
   of,
   shareReplay,
-  startWith,
   Subject,
   switchMap,
   takeUntil,
@@ -32,8 +30,7 @@ import {
 
 import { CollectionService } from "@bitwarden/admin-console/common";
 import { JslibModule } from "@bitwarden/angular/jslib.module";
-import { PasswordStrengthV2Component } from "@bitwarden/angular/tools/password-strength/password-strength-v2.component";
-import { UserVerificationDialogComponent } from "@bitwarden/auth/angular";
+
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
@@ -48,7 +45,6 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { getById } from "@bitwarden/common/platform/misc";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { pin } from "@bitwarden/common/tools/rx";
 import { isId, OrganizationId } from "@bitwarden/common/types/guid";
 import {
   AsyncActionsModule,
@@ -58,19 +54,14 @@ import {
   DialogService,
   FormFieldModule,
   IconButtonModule,
-  RadioButtonModule,
   SelectModule,
   ToastService,
 } from "@bitwarden/components";
-import { GeneratorServicesModule } from "@bitwarden/generator-components";
-import { CredentialGeneratorService, GenerateRequest, Type } from "@bitwarden/generator-core";
 import {
   ExportedVault,
   ExportFormatMetadata,
   VaultExportServiceAbstraction,
 } from "@bitwarden/vault-export-core";
-
-import { EncryptedExportType } from "../enums/encrypted-export-type.enum";
 
 import { ExportScopeCalloutComponent } from "./export-scope-callout.component";
 
@@ -89,10 +80,7 @@ import { ExportScopeCalloutComponent } from "./export-scope-callout.component";
     IconButtonModule,
     SelectModule,
     CalloutModule,
-    RadioButtonModule,
     ExportScopeCalloutComponent,
-    PasswordStrengthV2Component,
-    GeneratorServicesModule,
   ],
 })
 export class ExportComponent implements OnInit, OnDestroy, AfterViewInit {
@@ -195,13 +183,6 @@ export class ExportComponent implements OnInit, OnDestroy, AfterViewInit {
   @Output()
   onSuccessfulExport = new EventEmitter<OrganizationId | undefined>();
 
-  // TODO: Fix this the next time the file is edited.
-  // eslint-disable-next-line @angular-eslint/prefer-signals
-  @ViewChild(PasswordStrengthV2Component) passwordStrengthComponent: PasswordStrengthV2Component;
-
-  encryptedExportType = EncryptedExportType;
-  protected showFilePassword: boolean;
-
   private _disabledByPolicy = false;
 
   organizations$: Observable<Organization[]>;
@@ -226,9 +207,6 @@ export class ExportComponent implements OnInit, OnDestroy, AfterViewInit {
     ],
     format: ["json", Validators.required],
     secret: [""],
-    filePassword: ["", Validators.required],
-    confirmFilePassword: ["", Validators.required],
-    fileEncryptionType: [EncryptedExportType.AccountEncrypted],
   });
 
   /**
@@ -239,14 +217,12 @@ export class ExportComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private destroy$ = new Subject<void>();
   private onlyManagedCollections = true;
-  private onGenerate$ = new Subject<GenerateRequest>();
 
   constructor(
     protected i18nService: I18nService,
     protected toastService: ToastService,
     protected exportService: VaultExportServiceAbstraction,
     protected eventCollectionService: EventCollectionService,
-    protected generatorService: CredentialGeneratorService,
     private policyService: PolicyService,
     private logService: LogService,
     private formBuilder: UntypedFormBuilder,
@@ -266,8 +242,6 @@ export class ExportComponent implements OnInit, OnDestroy, AfterViewInit {
 
     // order is important below this line
     this.observeMyItemsExclusionCriteria();
-    this.observeValidatorAdjustments();
-    this.setupPasswordGeneration();
 
     if (this.organizationId) {
       // organization vault export
@@ -388,40 +362,6 @@ export class ExportComponent implements OnInit, OnDestroy, AfterViewInit {
       });
   }
 
-  // Setup validator adjustments based on format and encryption type changes
-  private observeValidatorAdjustments(): void {
-    merge(
-      this.exportForm.get("format").valueChanges,
-      this.exportForm.get("fileEncryptionType").valueChanges,
-    )
-      .pipe(startWith(0), takeUntil(this.destroy$))
-      .subscribe(() => this.adjustValidators());
-  }
-
-  // Wire up the password generation for password-protected exports
-  private setupPasswordGeneration(): void {
-    const account$ = this.accountService.activeAccount$.pipe(
-      pin({
-        name() {
-          return "active export account";
-        },
-        distinct(previous, current) {
-          return previous.id === current.id;
-        },
-      }),
-    );
-
-    this.generatorService
-      .generate$({ on$: this.onGenerate$, account$ })
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((generated) => {
-        this.exportForm.patchValue({
-          filePassword: generated.credential,
-          confirmFilePassword: generated.credential,
-        });
-      });
-  }
-
   /*
   Initialize component for organization only export
   Hides "My Vault" option by returning immediately
@@ -513,24 +453,6 @@ export class ExportComponent implements OnInit, OnDestroy, AfterViewInit {
     this.destroy$.complete();
   }
 
-  get encryptedFormat() {
-    return this.format === "encrypted_json";
-  }
-
-  get isFileEncryptedExport() {
-    return (
-      this.format === "encrypted_json" &&
-      this.fileEncryptionType === EncryptedExportType.FileEncrypted
-    );
-  }
-
-  get isAccountEncryptedExport() {
-    return (
-      this.format === "encrypted_json" &&
-      this.fileEncryptionType === EncryptedExportType.AccountEncrypted
-    );
-  }
-
   protected async doExport() {
     try {
       const data = await this.getExportData();
@@ -552,20 +474,7 @@ export class ExportComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
-  generatePassword = async () => {
-    this.onGenerate$.next({ source: "export", type: Type.password });
-  };
-
   submit = async () => {
-    if (this.isFileEncryptedExport && this.filePassword != this.confirmFilePassword) {
-      this.toastService.showToast({
-        variant: "error",
-        title: this.i18nService.t("errorOccurred"),
-        message: this.i18nService.t("filePasswordAndConfirmFilePasswordDoNotMatch"),
-      });
-      return;
-    }
-
     this.exportForm.markAllAsTouched();
     if (this.exportForm.invalid) {
       return;
@@ -580,57 +489,17 @@ export class ExportComponent implements OnInit, OnDestroy, AfterViewInit {
       return;
     }
 
-    const userVerified = await this.verifyUser();
-    if (!userVerified) {
-      return;
-    }
-
     await this.doExport();
   };
-
-  private async verifyUser(): Promise<boolean> {
-    let confirmDescription = "exportWarningDesc";
-    if (this.isFileEncryptedExport) {
-      confirmDescription = "fileEncryptedExportWarningDesc";
-    } else if (this.isAccountEncryptedExport) {
-      confirmDescription = "encExportKeyWarningDesc";
-    }
-
-    const result = await UserVerificationDialogComponent.open(this.dialogService, {
-      title: "confirmVaultExport",
-      bodyText: confirmDescription,
-      confirmButtonOptions: {
-        text: "continue",
-        type: "primary",
-      },
-    });
-
-    // Handle the result of the dialog based on user action and verification success
-    if (result.userAction === "cancel") {
-      // User cancelled the dialog
-      return false;
-    }
-
-    // User confirmed the dialog so check verification success
-    if (!result.verificationSuccess) {
-      if (result.noAvailableClientVerificationMethods) {
-        // No client-side verification methods are available
-        // Could send user to configure a verification method like PIN or biometrics
-      }
-      return false;
-    }
-    return true;
-  }
 
   protected async getExportData(): Promise<ExportedVault> {
     const userId = await firstValueFrom(this.accountService.activeAccount$.pipe(getUserId));
     return Utils.isNullOrWhitespace(this.organizationId)
-      ? this.exportService.getExport(userId, this.format, this.filePassword)
+      ? this.exportService.getExport(userId, this.format)
       : this.exportService.getOrganizationExport(
           userId,
           this.organizationId,
           this.format,
-          this.filePassword,
           this.onlyManagedCollections,
         );
   }
@@ -649,31 +518,6 @@ export class ExportComponent implements OnInit, OnDestroy, AfterViewInit {
 
   get format() {
     return this.exportForm.get("format").value;
-  }
-
-  get filePassword() {
-    return this.exportForm.get("filePassword").value;
-  }
-
-  get confirmFilePassword() {
-    return this.exportForm.get("confirmFilePassword").value;
-  }
-
-  get fileEncryptionType() {
-    return this.exportForm.get("fileEncryptionType").value;
-  }
-
-  adjustValidators() {
-    this.exportForm.get("confirmFilePassword").reset();
-    this.exportForm.get("filePassword").reset();
-
-    if (this.encryptedFormat && this.fileEncryptionType == EncryptedExportType.FileEncrypted) {
-      this.exportForm.controls.filePassword.enable();
-      this.exportForm.controls.confirmFilePassword.enable();
-    } else {
-      this.exportForm.controls.filePassword.disable();
-      this.exportForm.controls.confirmFilePassword.disable();
-    }
   }
 
   private downloadFile(exportedVault: ExportedVault): void {

@@ -1,54 +1,14 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { KeyGenerationService } from "@bitwarden/common/key-management/crypto";
-import { CryptoFunctionService } from "@bitwarden/common/key-management/crypto/abstractions/crypto-function.service";
 import { EncryptService } from "@bitwarden/common/key-management/crypto/abstractions/encrypt.service";
-import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { UserId } from "@bitwarden/common/types/guid";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
-import { KdfConfig, KdfConfigService, KdfType } from "@bitwarden/key-management";
 
-import { BitwardenCsvExportType, BitwardenPasswordProtectedFileFormat } from "../types";
+import { BitwardenCsvExportType } from "../types";
 export class BaseVaultExportService {
   constructor(
-    protected keyGenerationService: KeyGenerationService,
     protected encryptService: EncryptService,
-    private cryptoFunctionService: CryptoFunctionService,
-    private kdfConfigService: KdfConfigService,
   ) {}
-
-  protected async buildPasswordExport(
-    userId: UserId,
-    clearText: string,
-    password: string,
-  ): Promise<string> {
-    const kdfConfig: KdfConfig = await this.kdfConfigService.getKdfConfig(userId);
-
-    const salt = Utils.fromBufferToB64(await this.cryptoFunctionService.randomBytes(16));
-
-    const key = await this.keyGenerationService.deriveVaultExportKey(password, salt, kdfConfig);
-
-    const encKeyValidation = await this.encryptService.encryptString(Utils.newGuid(), key);
-    const encText = await this.encryptService.encryptString(clearText, key);
-
-    const jsonDoc: BitwardenPasswordProtectedFileFormat = {
-      encrypted: true,
-      passwordProtected: true,
-      salt: salt,
-      kdfType: kdfConfig.kdfType,
-      kdfIterations: kdfConfig.iterations,
-      encKeyValidation_DO_NOT_EDIT: encKeyValidation.encryptedString,
-      data: encText.encryptedString,
-    };
-
-    if (kdfConfig.kdfType === KdfType.Argon2id) {
-      jsonDoc.kdfMemory = kdfConfig.memory;
-      jsonDoc.kdfParallelism = kdfConfig.parallelism;
-    }
-
-    return JSON.stringify(jsonDoc, null, "  ");
-  }
 
   protected buildCommonCipher(
     cipher: BitwardenCsvExportType,

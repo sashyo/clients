@@ -967,11 +967,7 @@ export class ServiceContainer {
     this.individualExportService = new IndividualVaultExportService(
       this.folderService,
       this.cipherService,
-      this.keyGenerationService,
-      this.keyService,
       this.encryptService,
-      this.cryptoFunctionService,
-      this.kdfConfigService,
       this.apiService,
       this.restrictedItemTypesService,
     );
@@ -981,12 +977,9 @@ export class ServiceContainer {
     this.organizationExportService = new OrganizationVaultExportService(
       this.cipherService,
       this.vaultExportApiService,
-      this.keyGenerationService,
       this.keyService,
       this.encryptService,
-      this.cryptoFunctionService,
       this.collectionService,
-      this.kdfConfigService,
       this.restrictedItemTypesService,
     );
 

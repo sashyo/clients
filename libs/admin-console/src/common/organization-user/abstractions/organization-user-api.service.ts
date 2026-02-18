@@ -92,7 +92,7 @@ export abstract class OrganizationUserApiService {
   abstract postOrganizationUserInvite(
     organizationId: string,
     request: OrganizationUserInviteRequest,
-  ): Promise<void>;
+  ): Promise<{ data?: { email: string; link: string }[] }>;
 
   /**
    * Re-invite the specified organization user

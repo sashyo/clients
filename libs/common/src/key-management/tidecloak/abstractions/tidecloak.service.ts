@@ -30,5 +30,12 @@ export abstract class TideCloakService {
    */
   abstract setSkipOrkDecrypt(skip: boolean): void;
   abstract shouldSkipOrkDecrypt(): boolean;
+  /**
+   * When true, ORK encryption is skipped and standard AES is used instead.
+   * Used when encrypting non-sensitive fields (e.g. collection/folder/send names)
+   * that need to be readable by other org members.
+   */
+  abstract setSkipOrkEncrypt(skip: boolean): void;
+  abstract shouldSkipOrkEncrypt(): boolean;
   abstract destroy(): void;
 }

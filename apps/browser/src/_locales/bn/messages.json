@@ -4152,7 +4152,7 @@
     "description": "Page title for the iframe containing the overlay button"
   },
   "toggleBitwardenVaultOverlay": {
-    "message": "Toggle Bitwarden autofill menu",
+    "message": "Toggle TideWarden autofill menu",
     "description": "Screen reader and tool tip label for the overlay button"
   },
   "bitwardenVault": {
@@ -5505,8 +5505,8 @@
     "description": "Notification message for when a password has been regenerated"
   },
   "saveToBitwarden": {
-    "message": "Save to Bitwarden",
-    "description": "Confirmation message for saving a login to Bitwarden"
+    "message": "Save to TideWarden",
+    "description": "Confirmation message for saving a login to TideWarden"
   },
   "spaceCharacterDescriptor": {
     "message": "Space",

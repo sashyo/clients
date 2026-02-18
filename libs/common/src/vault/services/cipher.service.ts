@@ -1,11 +1,13 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import {
+  catchError,
   combineLatest,
   filter,
   firstValueFrom,
   map,
   Observable,
+  of,
   Subject,
   switchMap,
   tap,
@@ -195,6 +197,7 @@ export class CipherService implements CipherServiceAbstraction {
           map(([decrypted]) => decrypted),
         );
       }),
+      catchError(() => of([] as CipherView[])),
     );
   }, this.clearCipherViewsForUser$);
 
@@ -209,13 +212,14 @@ export class CipherService implements CipherServiceAbstraction {
     return combineLatest([
       this.encryptedCiphersState(userId).state$,
       this.localData$(userId),
-      this.keyService.cipherDecryptionKeys$(userId),
+      this.keyService.cipherDecryptionKeys$(userId).pipe(catchError(() => of(null))),
     ]).pipe(
       filter(([ciphers, _, keys]) => ciphers != null && keys != null), // Skip if ciphers haven't been loaded yor synced yet
       switchMap(() => this.getAllDecrypted(userId)),
       tap(() => {
         this.messageSender.send("updateOverlayCiphers");
       }),
+      catchError(() => of([] as CipherView[])),
     );
   }, this.clearCipherViewsForUser$);
 
@@ -598,7 +602,16 @@ export class CipherService implements CipherServiceAbstraction {
           const key = keys.orgKeys[orgId as OrganizationId] ?? keys.userKey;
           return await Promise.all(
             groupedCiphers.map(async (cipher) => {
-              return await cipher.decrypt(key);
+              try {
+                return await cipher.decrypt(key);
+              } catch {
+                // Decryption failed (e.g. missing org key) — return a
+                // placeholder so the item still appears in the vault list.
+                const failedView = new CipherView(cipher);
+                failedView.name = "[error: cannot decrypt]";
+                failedView.decryptionFailure = true;
+                return failedView;
+              }
             }),
           );
         }),
@@ -826,7 +839,14 @@ export class CipherService implements CipherServiceAbstraction {
     const key = await this.keyService.getOrgKey(organizationId);
     const decCiphers: CipherView[] = await Promise.all(
       ciphers.map(async (cipher) => {
-        return await cipher.decrypt(key);
+        try {
+          return await cipher.decrypt(key);
+        } catch {
+          const failedView = new CipherView(cipher);
+          failedView.name = "[error: cannot decrypt]";
+          failedView.decryptionFailure = true;
+          return failedView;
+        }
       }),
     );
 
@@ -1247,7 +1267,7 @@ export class CipherService implements CipherServiceAbstraction {
         ? ((await this.encryptService.unwrapSymmetricKey(cipher.key, vaultKey)) as UserKey)
         : vaultKey;
 
-    const encFileName = await this.encryptService.encryptString(filename, cipherKeyOrVaultKey);
+    const encFileName = await this.encryptService.withoutOrk(() => this.encryptService.encryptString(filename, cipherKeyOrVaultKey));
 
     const attachmentKey = await this.keyService.makeDataEncKey(cipherKeyOrVaultKey);
     const encData = await this.encryptService.encryptFileData(

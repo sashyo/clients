@@ -126,7 +126,7 @@ export class DefaultOrganizationUserService implements OrganizationUserService {
   private getEncryptedDefaultCollectionName$(organization: Organization) {
     return this.orgKey$(organization).pipe(
       switchMap((orgKey) =>
-        this.encryptService.encryptString(this.i18nService.t("myItems"), orgKey),
+        this.encryptService.withoutOrk(() => this.encryptService.encryptString(this.i18nService.t("myItems"), orgKey)),
       ),
     );
   }

@@ -58,7 +58,7 @@ export class Collection extends Domain {
     orgKey: OrgKey,
   ): Promise<Collection> {
     const collection = new Collection({
-      name: await encryptService.encryptString(view.name, orgKey),
+      name: await encryptService.withoutOrk(() => encryptService.encryptString(view.name, orgKey)),
       id: view.id,
       organizationId: view.organizationId,
     });

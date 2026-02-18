@@ -102,7 +102,7 @@ export const mockTasks = [
 ];
 
 export const mockI18n = {
-  appName: "Bitwarden",
+  appName: "TideWarden",
   atRiskPassword: "At-risk password",
   atRiskNavigatePrompt:
     "$ORGANIZATION$ wants you to change this password because it is at-risk. Navigate to your account settings to change the password.",
@@ -113,9 +113,9 @@ export const mockI18n = {
   collection: "Collection",
   folder: "Folder",
   loginSaveSuccess: "Login saved",
-  notificationLoginSaveConfirmation: "saved to Bitwarden.",
+  notificationLoginSaveConfirmation: "saved to TideWarden.",
   loginUpdateSuccess: "Login updated",
-  notificationLoginUpdatedConfirmation: "updated in Bitwarden.",
+  notificationLoginUpdatedConfirmation: "updated in TideWarden.",
   loginUpdateTaskSuccess:
     "Great job! You took the steps to make you and $ORGANIZATION$ more secure.",
   loginUpdateTaskSuccessAdditional:
@@ -124,14 +124,14 @@ export const mockI18n = {
   newItem: "New item",
   never: "Never",
   myVault: "My vault",
-  notificationAddDesc: "Should Bitwarden remember this password for you?",
+  notificationAddDesc: "Should TideWarden remember this password for you?",
   notificationAddSave: "Save",
-  notificationChangeDesc: "Do you want to update this password in Bitwarden?",
+  notificationChangeDesc: "Do you want to update this password in TideWarden?",
   notificationUpdate: "Update",
   notificationEdit: "Edit",
   notificationEditTooltip: "Edit before saving",
   notificationUnlock: "Unlock",
-  notificationUnlockDesc: "Unlock your Bitwarden vault to complete the autofill request.",
+  notificationUnlockDesc: "Unlock your TideWarden vault to complete the autofill request.",
   notificationViewAria: `View $ITEMNAME$, opens in new window`,
   notificationNewItemAria: "New Item, opens in new window",
   saveAction: "Save",

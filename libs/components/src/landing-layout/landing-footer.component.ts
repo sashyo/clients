@@ -16,7 +16,7 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
  * <bit-landing-footer>
  *   <div class="tw-text-center tw-text-sm">
  *     <a routerLink="/privacy">Privacy</a>
- *     <span>© 2024 Bitwarden</span>
+ *     <span>© 2024 TideWarden</span>
  *   </div>
  * </bit-landing-footer>
  * ```

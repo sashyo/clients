@@ -10,6 +10,7 @@ export class DefaultTideCloakService extends TideCloakService {
   private config: TideCloakConfig | null = null;
   private initializingPromise: Promise<void> | null = null;
   private _skipOrkDecrypt = false;
+  private _skipOrkEncrypt = false;
   // Serialization queue — RequestEnclave can't handle concurrent postMessage operations
   private _opQueue: Promise<any> = Promise.resolve();
 
@@ -73,7 +74,12 @@ export class DefaultTideCloakService extends TideCloakService {
     }
     // Serialize — RequestEnclave postMessage listeners can't handle concurrent ops
     const op = this._opQueue.then(() =>
-      this.tc.requestEnclave.decrypt([{ encrypted, tags }]),
+      Promise.race([
+        this.tc.requestEnclave.decrypt([{ encrypted, tags }]),
+        new Promise<never>((_, reject) =>
+          setTimeout(() => reject(new Error("[TideCloak] ORK decrypt timed out")), 5_000),
+        ),
+      ]),
     );
     this._opQueue = op.catch(() => {});
     const results = await op;
@@ -144,6 +150,14 @@ export class DefaultTideCloakService extends TideCloakService {
 
   shouldSkipOrkDecrypt(): boolean {
     return this._skipOrkDecrypt;
+  }
+
+  setSkipOrkEncrypt(skip: boolean): void {
+    this._skipOrkEncrypt = skip;
+  }
+
+  shouldSkipOrkEncrypt(): boolean {
+    return this._skipOrkEncrypt;
   }
 
   destroy(): void {
