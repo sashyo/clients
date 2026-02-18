@@ -341,7 +341,7 @@
     "message": "More from TideWarden"
   },
   "continueToTideWardenDotCom": {
-    "message": "Continue to bitwarden.com?"
+    "message": "Continue to tidewarden.com?"
   },
   "bitwardenForBusiness": {
     "message": "TideWarden for Business"
@@ -350,19 +350,19 @@
     "message": "TideWarden Authenticator"
   },
   "continueToAuthenticatorPageDesc": {
-    "message": "TideWarden Authenticator allows you to store authenticator keys and generate TOTP codes for 2-step verification flows. Learn more on the bitwarden.com website"
+    "message": "TideWarden Authenticator allows you to store authenticator keys and generate TOTP codes for 2-step verification flows. Learn more on the tidewarden.com website"
   },
   "bitwardenSecretsManager": {
     "message": "TideWarden Secrets Manager"
   },
   "continueToSecretsManagerPageDesc": {
-    "message": "Securely store, manage, and share developer secrets with TideWarden Secrets Manager. Learn more on the bitwarden.com website."
+    "message": "Securely store, manage, and share developer secrets with TideWarden Secrets Manager. Learn more on the tidewarden.com website."
   },
   "passwordlessDotDev": {
     "message": "Passwordless.dev"
   },
   "continueToPasswordlessDotDevPageDesc": {
-    "message": "Create smooth and secure login experiences free from traditional passwords with Passwordless.dev. Learn more on the bitwarden.com website."
+    "message": "Create smooth and secure login experiences free from traditional passwords with Passwordless.dev. Learn more on the tidewarden.com website."
   },
   "freeTideWardenFamilies": {
     "message": "Free TideWarden Families"
@@ -750,7 +750,7 @@
       },
       "hostname": {
         "content": "$2",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -762,7 +762,7 @@
     "placeholders": {
       "host": {
         "content": "$1",
-        "example": "vault.bitwarden.com"
+        "example": "vault.tidewarden.com"
       }
     }
   },
@@ -1006,7 +1006,7 @@
     "message": "Folder added"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be set up on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be set up on the tidewarden.com web vault. Do you want to visit the website now?"
   },
   "twoStepLoginConfirmationContent": {
     "message": "Make your account more secure by setting up two-step login in the TideWarden web app."
@@ -1056,7 +1056,7 @@
   },
   "addDomain": {
     "message": "Add domain",
-    "description": "'Domain' here refers to an internet domain name (e.g. 'bitwarden.com') and the message in whole described the act of putting a domain value into the context."
+    "description": "'Domain' here refers to an internet domain name (e.g. 'tidewarden.com') and the message in whole described the act of putting a domain value into the context."
   },
   "addedItem": {
     "message": "Item added"
@@ -1410,7 +1410,7 @@
     "message": "Shared"
   },
   "bitwardenForBusinessPageDesc": {
-    "message": "TideWarden for Business allows you to share your vault items with others by using an organization. Learn more on the bitwarden.com website."
+    "message": "TideWarden for Business allows you to share your vault items with others by using an organization. Learn more on the tidewarden.com website."
   },
   "moveToOrganization": {
     "message": "Move to organization"
@@ -1522,7 +1522,7 @@
     "message": "Manage membership"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "You can manage your membership on the tidewarden.com web vault. Do you want to visit the website now?"
   },
   "premiumRefresh": {
     "message": "Refresh membership"
@@ -1721,7 +1721,7 @@
     "message": "Self-hosted environment"
   },
   "selfHostedBaseUrlHint": {
-    "message": "Specify the base URL of your on-premises hosted TideWarden installation. Example: https://bitwarden.company.com"
+    "message": "Specify the base URL of your on-premises hosted TideWarden installation. Example: https://tidewarden.company.com"
   },
   "selfHostedCustomEnvHeader": {
     "message": "For advanced configuration, you can specify the base URL of each service independently."
@@ -3094,7 +3094,7 @@
   },
   "sendCreatedDescriptionV2": {
     "message": "Copy and share this Send link. The Send will be available to anyone with the link for the next $TIME$.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "time": {
         "content": "$1",
@@ -3104,7 +3104,7 @@
   },
   "sendCreatedDescriptionPassword": {
     "message": "Copy and share this Send link. The Send will be available to anyone with the link and password you set for the next $TIME$.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "time": {
         "content": "$1",
@@ -3114,7 +3114,7 @@
   },
   "sendCreatedDescriptionEmail": {
     "message": "Copy and share this Send link. It can be viewed by the people you specified for the next $TIME$.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "time": {
         "content": "$1",
@@ -5044,7 +5044,7 @@
     "message": "Access your vault without a browser, then set up unlock with biometrics to expedite unlocking in both the desktop app and browser extension."
   },
   "downloadFromTideWardenNow": {
-    "message": "Download from bitwarden.com now"
+    "message": "Download from tidewarden.com now"
   },
   "getItOnGooglePlay": {
     "message": "Get it on Google Play"
@@ -6164,11 +6164,11 @@
     "message": "Enter multiple emails by separating with a comma."
   },
   "emailPlaceholder": {
-    "message": "user@bitwarden.com , user@acme.com"
+    "message": "user@tidewarden.com , user@acme.com"
   },
 
   "downloadBitwardenApps": {
-    "message": "Download Bitwarden apps"
+    "message": "Download TideWarden apps"
   },
   "emailProtected": {
     "message": "Email protected"

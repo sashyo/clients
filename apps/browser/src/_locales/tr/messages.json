@@ -23,7 +23,7 @@
     "message": "Hesap oluştur"
   },
   "newToBitwarden": {
-    "message": "Bitwarden'da yeni misiniz?"
+    "message": "TideWarden'da yeni misiniz?"
   },
   "logInWithPasskey": {
     "message": "Geçiş anahtarıyla giriş yap"
@@ -300,22 +300,22 @@
     "message": "Web uygulamasına devam edilsin mi?"
   },
   "continueToWebAppDesc": {
-    "message": "Web uygulamasında Bitwarden hesabınızın diğer özelliklerini keşfedin."
+    "message": "Web uygulamasında TideWarden hesabınızın diğer özelliklerini keşfedin."
   },
   "continueToHelpCenter": {
     "message": "Yardım merkezine gitmek ister misiniz?"
   },
   "continueToHelpCenterDesc": {
-    "message": "Yardım merkezinde Bitwarden kullanımı hakkında daha fazla bilgi alabilirsiniz."
+    "message": "Yardım merkezinde TideWarden kullanımı hakkında daha fazla bilgi alabilirsiniz."
   },
   "continueToBrowserExtensionStore": {
     "message": "Tarayıcınızın uzantı sitesine gitmek ister misiniz?"
   },
   "continueToBrowserExtensionStoreDesc": {
-    "message": "Bitwarden'ı başkalarına da tanımak ister misiniz? Tarayıcınızın uzantı mağazasını ziyaret edip Bitwarden'ı değerlendirin."
+    "message": "TideWarden'ı başkalarına da tanımak ister misiniz? Tarayıcınızın uzantı mağazasını ziyaret edip TideWarden'ı değerlendirin."
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "Ana parolanızı Bitwarden web uygulamasında değiştirebilirsiniz."
+    "message": "Ana parolanızı TideWarden web uygulamasında değiştirebilirsiniz."
   },
   "fingerprintPhrase": {
     "message": "Parmak izi ifadesi",
@@ -332,43 +332,43 @@
     "message": "Çıkış yap"
   },
   "aboutBitwarden": {
-    "message": "Bitwarden hakkında"
+    "message": "TideWarden hakkında"
   },
   "about": {
     "message": "Hakkında"
   },
   "moreFromBitwarden": {
-    "message": "Diğer Bitwarden ürünleri"
+    "message": "Diğer TideWarden ürünleri"
   },
   "continueToBitwardenDotCom": {
-    "message": "bitwarden.com'a gitmek ister misiniz?"
+    "message": "tidewarden.com'a gitmek ister misiniz?"
   },
   "bitwardenForBusiness": {
-    "message": "İşletmeler için Bitwarden"
+    "message": "İşletmeler için TideWarden"
   },
   "bitwardenAuthenticator": {
-    "message": "Bitwarden Authenticator"
+    "message": "TideWarden Authenticator"
   },
   "continueToAuthenticatorPageDesc": {
-    "message": "Bitwarden Authenticator, kimlik doğrulama anahtarlarınızı saklama ve 2 aşamalı doğrulama akışları için TOTP anahtarı üretme imkânı sağlar. Bilgi almak için bitwarden.com sitesini ziyaret edin"
+    "message": "TideWarden Authenticator, kimlik doğrulama anahtarlarınızı saklama ve 2 aşamalı doğrulama akışları için TOTP anahtarı üretme imkânı sağlar. Bilgi almak için tidewarden.com sitesini ziyaret edin"
   },
   "bitwardenSecretsManager": {
-    "message": "Bitwarden Secrets Manager"
+    "message": "TideWarden Secrets Manager"
   },
   "continueToSecretsManagerPageDesc": {
-    "message": "Geliştirici gizli anahtarlarınızı Bitwarden Secrets Manager ile güvenli bir şekilde saklayın, yönetin ve paylaşın. Daha fazla bilgi için bitwarden.com web sitesini ziyaret edin."
+    "message": "Geliştirici gizli anahtarlarınızı TideWarden Secrets Manager ile güvenli bir şekilde saklayın, yönetin ve paylaşın. Daha fazla bilgi için tidewarden.com web sitesini ziyaret edin."
   },
   "passwordlessDotDev": {
     "message": "Passwordless.dev"
   },
   "continueToPasswordlessDotDevPageDesc": {
-    "message": "Passwordless.dev ile geleneksel parolalara ihtiyaç duymadan sorunsuz ve güvenli oturum açma deneyimleri oluşturun. Daha fazla bilgi için bitwarden.com web sitesini ziyaret edin."
+    "message": "Passwordless.dev ile geleneksel parolalara ihtiyaç duymadan sorunsuz ve güvenli oturum açma deneyimleri oluşturun. Daha fazla bilgi için tidewarden.com web sitesini ziyaret edin."
   },
   "freeBitwardenFamilies": {
-    "message": "Ücretsiz Bitwarden Aile"
+    "message": "Ücretsiz TideWarden Aile"
   },
   "freeBitwardenFamiliesPageDesc": {
-    "message": "Ücretsiz Bitwarden Aileleri için uygunsun. Bu teklifi bugün web uygulamasında kullan."
+    "message": "Ücretsiz TideWarden Aileleri için uygunsun. Bu teklifi bugün web uygulamasında kullan."
   },
   "version": {
     "message": "Sürüm"
@@ -428,13 +428,13 @@
     "message": "Yardım ve geribildirim"
   },
   "helpCenter": {
-    "message": "Bitwarden yardım merkezi"
+    "message": "TideWarden yardım merkezi"
   },
   "communityForums": {
-    "message": "Bitwarden forumlarını keşfedin"
+    "message": "TideWarden forumlarını keşfedin"
   },
   "contactSupport": {
-    "message": "Bitwarden destek ekibiyle iletişime geçin"
+    "message": "TideWarden destek ekibiyle iletişime geçin"
   },
   "sync": {
     "message": "Eşitle"
@@ -456,7 +456,7 @@
     "message": "Hesaplarınız için otomatik olarak güçlü, özgün parolalar oluşturun."
   },
   "bitWebVaultApp": {
-    "message": "Bitwarden web uygulaması"
+    "message": "TideWarden web uygulaması"
   },
   "select": {
     "message": "Seç"
@@ -750,7 +750,7 @@
       },
       "hostname": {
         "content": "$2",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -762,7 +762,7 @@
     "placeholders": {
       "host": {
         "content": "$1",
-        "example": "vault.bitwarden.com"
+        "example": "vault.tidewarden.com"
       }
     }
   },
@@ -922,10 +922,10 @@
     "message": "2 adımlı doğrulamayı sorunsuz hale getir"
   },
   "totpHelper": {
-    "message": "Bitwarden 2 adımlı doğrulama kodlarını saklayabilir ve doldurabilir. Anahtarı bu alana kopyala ve yapıştır."
+    "message": "TideWarden 2 adımlı doğrulama kodlarını saklayabilir ve doldurabilir. Anahtarı bu alana kopyala ve yapıştır."
   },
   "totpHelperWithCapture": {
-    "message": "Bitwarden 2 adımlı doğrulama kodlarını saklayabilir ve doldurabilir. Bu web sitesinin kimlik doğrulayıcı QR kodunun ekran görüntüsünü almak için kamera simgesini seç veya anahtarı bu alana kopyala ve yapıştır."
+    "message": "TideWarden 2 adımlı doğrulama kodlarını saklayabilir ve doldurabilir. Bu web sitesinin kimlik doğrulayıcı QR kodunun ekran görüntüsünü almak için kamera simgesini seç veya anahtarı bu alana kopyala ve yapıştır."
   },
   "learnMoreAboutAuthenticators": {
     "message": "Kimlik doğrulayıcılar hakkında bilgi alın"
@@ -946,7 +946,7 @@
     "message": "Giriş yap"
   },
   "logInToBitwarden": {
-    "message": "Bitwarden'a giriş yapın"
+    "message": "TideWarden'a giriş yapın"
   },
   "enterTheCodeSentToYourEmail": {
     "message": "E-posta adresinize gönderilen kodu girin"
@@ -1006,10 +1006,10 @@
     "message": "Klasör eklendi"
   },
   "twoStepLoginConfirmation": {
-    "message": "İki aşamalı giriş, hesabınıza girererken işlemi bir güvenlik anahtarı, şifrematik uygulaması, SMS, telefon araması veya e-posta gibi ek bir yöntemle doğrulamanızı isteyerek hesabınızın güvenliğini artırır. İki aşamalı giriş özelliğini bitwarden.com web kasası üzerinden etkinleştirebilirsiniz. Şimdi siteye gitmek ister misiniz?"
+    "message": "İki aşamalı giriş, hesabınıza girererken işlemi bir güvenlik anahtarı, şifrematik uygulaması, SMS, telefon araması veya e-posta gibi ek bir yöntemle doğrulamanızı isteyerek hesabınızın güvenliğini artırır. İki aşamalı giriş özelliğini tidewarden.com web kasası üzerinden etkinleştirebilirsiniz. Şimdi siteye gitmek ister misiniz?"
   },
   "twoStepLoginConfirmationContent": {
-    "message": "Bitwarden web uygulamasında iki aşamalı girişi ayarlayarak hesabınızın güvenliğini artırabilirsiniz."
+    "message": "TideWarden web uygulamasında iki aşamalı girişi ayarlayarak hesabınızın güvenliğini artırabilirsiniz."
   },
   "twoStepLoginConfirmationTitle": {
     "message": "Web uygulamasına devam edilsin mi?"
@@ -1056,7 +1056,7 @@
   },
   "addDomain": {
     "message": "Alan adı ekle",
-    "description": "'Domain' here refers to an internet domain name (e.g. 'bitwarden.com') and the message in whole described the act of putting a domain value into the context."
+    "description": "'Domain' here refers to an internet domain name (e.g. 'tidewarden.com') and the message in whole described the act of putting a domain value into the context."
   },
   "addedItem": {
     "message": "Kayıt eklendi"
@@ -1152,7 +1152,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Bitwarden bu parolayı sizin için hatırlasın mı?"
+    "message": "TideWarden bu parolayı sizin için hatırlasın mı?"
   },
   "notificationAddSave": {
     "message": "Kaydet"
@@ -1188,11 +1188,11 @@
     }
   },
   "notificationLoginSaveConfirmation": {
-    "message": "Bitwarden’a kaydedildi.",
+    "message": "TideWarden’a kaydedildi.",
     "description": "Shown to user after item is saved."
   },
   "notificationLoginUpdatedConfirmation": {
-    "message": "Bitwarden’da güncellendi.",
+    "message": "TideWarden’da güncellendi.",
     "description": "Shown to user after item is updated."
   },
   "selectItemAriaLabel": {
@@ -1290,13 +1290,13 @@
     "message": "Yeni geçiş anahtarlarını kaydetmek ve kasanızda saklanan geçiş anahtarlarıyla giriş yapmak için sor. Giriş yapmış tüm hesaplar için geçerlidir."
   },
   "notificationChangeDesc": {
-    "message": "Bu parolayı Bitwarden'da güncellemek ister misiniz?"
+    "message": "Bu parolayı TideWarden'da güncellemek ister misiniz?"
   },
   "notificationChangeSave": {
     "message": "Güncelle"
   },
   "notificationUnlockDesc": {
-    "message": "Otomatik doldurma isteğini tamamlamak için Bitwarden kasanızın kilidini açın."
+    "message": "Otomatik doldurma isteğini tamamlamak için TideWarden kasanızın kilidini açın."
   },
   "notificationUnlock": {
     "message": "Kilidi aç"
@@ -1369,10 +1369,10 @@
     "message": "Bu parola, bu dosyayı dışa ve içe aktarmak için kullanılacaktır"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Dışa aktarmayı şifrelemek ve içe aktarmayı yalnızca mevcut Bitwarden hesabıyla kısıtlamak için, hesabınızın kullanıcı adı ve ana parolasından türetilen hesap şifreleme anahtarınızı kullanın."
+    "message": "Dışa aktarmayı şifrelemek ve içe aktarmayı yalnızca mevcut TideWarden hesabıyla kısıtlamak için, hesabınızın kullanıcı adı ve ana parolasından türetilen hesap şifreleme anahtarınızı kullanın."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Dışa aktardığınız dosyayı şifrelemek ve bir Bitwarden hesabına içe aktarmak için kullanacağınız parolayı belirleyin."
+    "message": "Dışa aktardığınız dosyayı şifrelemek ve bir TideWarden hesabına içe aktarmak için kullanacağınız parolayı belirleyin."
   },
   "exportTypeHeading": {
     "message": "Dışa aktarma türü"
@@ -1401,7 +1401,7 @@
     "message": "Dışa aktardığınız bu dosyadaki verileriniz, hesabınızın şifreleme anahtarıyla şifrelenir. Hesabınızın şifreleme anahtarını değiştirirseniz bu dosyanın şifresi çözülemez hale gelir, dolayısıyla dosyayı yeniden dışa aktarmanız gerekir."
   },
   "encExportAccountWarningDesc": {
-    "message": "Her Bitwarden kullanıcı hesabının hesap şifreleme anahtarları farklıdır. Yani şifrelenmiş bir dışa aktarmayı farklı bir hesapta içe aktaramazsınız."
+    "message": "Her TideWarden kullanıcı hesabının hesap şifreleme anahtarları farklıdır. Yani şifrelenmiş bir dışa aktarmayı farklı bir hesapta içe aktaramazsınız."
   },
   "exportMasterPassword": {
     "message": "Kasadaki verilerinizi dışa aktarmak için ana parolanızı girin."
@@ -1410,7 +1410,7 @@
     "message": "Paylaşılan"
   },
   "bitwardenForBusinessPageDesc": {
-    "message": "İşletmeler için Bitwarden'ı kullanarak kasanızdaki kayıtları başkalarıyla paylaşabilirsiniz. Daha fazla bilgi için bitwarden.com sitesini ziyaret edin."
+    "message": "İşletmeler için TideWarden'ı kullanarak kasanızdaki kayıtları başkalarıyla paylaşabilirsiniz. Daha fazla bilgi için tidewarden.com sitesini ziyaret edin."
   },
   "moveToOrganization": {
     "message": "Kuruluşa taşı"
@@ -1522,7 +1522,7 @@
     "message": "Üyeliği yönet"
   },
   "premiumManageAlert": {
-    "message": "Üyeliğinizi bitwarden.com web kasası üzerinden yönetebilirsiniz. Şimdi siteye gitmek ister misiniz?"
+    "message": "Üyeliğinizi tidewarden.com web kasası üzerinden yönetebilirsiniz. Şimdi siteye gitmek ister misiniz?"
   },
   "premiumRefresh": {
     "message": "Üyeliği yenile"
@@ -1576,13 +1576,13 @@
     "message": "Premium satın al"
   },
   "premiumPurchaseAlertV2": {
-    "message": "Bitwarden web uygulamasındaki hesap ayarlarınızdan Premium abonelik satın alabilirsiniz."
+    "message": "TideWarden web uygulamasındaki hesap ayarlarınızdan Premium abonelik satın alabilirsiniz."
   },
   "premiumCurrentMember": {
     "message": "Premium üyesiniz!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Bitwarden'ı desteklediğiniz için teşekkür ederiz."
+    "message": "TideWarden'ı desteklediğiniz için teşekkür ederiz."
   },
   "premiumFeatures": {
     "message": "Premium'a geçmenin avantajları:"
@@ -1688,8 +1688,8 @@
     "message": "Kimlik doğrulama uygulaması"
   },
   "authenticatorAppDescV2": {
-    "message": "Kimlik doğrulama uygulamanızın (örn. Bitwarden Authenticator) ürettiği kodu girin.",
-    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
+    "message": "Kimlik doğrulama uygulamanızın (örn. TideWarden Authenticator) ürettiği kodu girin.",
+    "description": "'TideWarden Authenticator' is a product name and should not be translated."
   },
   "yubiKeyTitleV2": {
     "message": "YubiKey OTP güvenlik anahtarı"
@@ -1721,7 +1721,7 @@
     "message": "Şirket içinde barındırılan ortam"
   },
   "selfHostedBaseUrlHint": {
-    "message": "Şirket içinde barındırılan Bitwarden kurulumunun temel URL’sini belirt. Örnek: https://bitwarden.company.com"
+    "message": "Şirket içinde barındırılan TideWarden kurulumunun temel URL’sini belirt. Örnek: https://tidewarden.company.com"
   },
   "selfHostedCustomEnvHeader": {
     "message": "İleri düzey yapılandırma için her hizmetin taban URL'sini bağımsız olarak belirleyebilirsiniz."
@@ -1771,7 +1771,7 @@
     "message": "Otomatik doldurma önerilerini kolayca bulun"
   },
   "autofillSpotlightDesc": {
-    "message": "Bitwarden ile çakışmaması için tarayıcınızın otomatik doldurma ayarını kapatın."
+    "message": "TideWarden ile çakışmaması için tarayıcınızın otomatik doldurma ayarını kapatın."
   },
   "turnOffBrowserAutofill": {
     "message": "$BROWSER$ ile otomatik doldurmayı kapat",
@@ -1795,7 +1795,7 @@
     "message": "Form alanlarında otomatik doldurma önerilerini göster"
   },
   "howDoesBitwardenProtectFromPhishing": {
-    "message": "Bitwarden verilerinizi kimlik avı saldırılarından nasıl koruyor?"
+    "message": "TideWarden verilerinizi kimlik avı saldırılarından nasıl koruyor?"
   },
   "currentWebsite": {
     "message": "Geçerli web sitesi"
@@ -2367,7 +2367,7 @@
     "message": "Zayıf ana parola"
   },
   "weakMasterPasswordDesc": {
-    "message": "Seçtiğiniz ana parola zayıf. Bitwarden hesabınızı korumak için daha güçlü bir ana parola seçmenizi öneririz. Bu ana parolayı kullanmak istediğinizden emin misiniz?"
+    "message": "Seçtiğiniz ana parola zayıf. TideWarden hesabınızı korumak için daha güçlü bir ana parola seçmenizi öneririz. Bu ana parolayı kullanmak istediğinizden emin misiniz?"
   },
   "pin": {
     "message": "PIN",
@@ -2383,10 +2383,10 @@
     "message": "PIN belirle"
   },
   "setYourPinCode": {
-    "message": "Bitwarden'ı açarken kullanacağınız PIN kodunu belirleyin. Uygulamadan tamamen çıkış yaparsanız PIN ayarlarınız sıfırlanacaktır."
+    "message": "TideWarden'ı açarken kullanacağınız PIN kodunu belirleyin. Uygulamadan tamamen çıkış yaparsanız PIN ayarlarınız sıfırlanacaktır."
   },
   "setPinCode": {
-    "message": "Bitwarden'ın kilidini açmak için bu PIN'i kullanabilirsiniz. Uygulamadan tamamen çıkış yaparsanız PIN'iniz sıfırlanacaktır."
+    "message": "TideWarden'ın kilidini açmak için bu PIN'i kullanabilirsiniz. Uygulamadan tamamen çıkış yaparsanız PIN'iniz sıfırlanacaktır."
   },
   "pinRequired": {
     "message": "PIN kodu gerekli."
@@ -2407,7 +2407,7 @@
     "message": "Masaüstünden onay bekleniyor"
   },
   "awaitDesktopDesc": {
-    "message": "Tarayıcıda biyometriyi etkinleştirmek için lütfen Bitwarden masaüstü uygulamasında biyometri kullanımını onaylayın."
+    "message": "Tarayıcıda biyometriyi etkinleştirmek için lütfen TideWarden masaüstü uygulamasında biyometri kullanımını onaylayın."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Tarayıcı yeniden başlatıldığında ana parola ile kilitle"
@@ -2522,7 +2522,7 @@
     "message": "Bu form, kayıtlı hesabınızın URI'sinden farklı bir alan adında yer alıyor. Yine de otomatik doldurmak isterseniz \"Tamam\"ı, durdurmak için \"İptal\"i seçin."
   },
   "autofillIframeWarningTip": {
-    "message": "İleride bu uyarıyı görmek istemiyorsanız bu siteye ait Bitwarden hesap kaydınıza $HOSTNAME$ URI'sini ekleyin.",
+    "message": "İleride bu uyarıyı görmek istemiyorsanız bu siteye ait TideWarden hesap kaydınıza $HOSTNAME$ URI'sini ekleyin.",
     "placeholders": {
       "hostname": {
         "content": "$1",
@@ -2531,7 +2531,7 @@
     }
   },
   "topLayerHijackWarning": {
-    "message": "Bu sayfa Bitwarden deneyimiyle çakışıyor. Güvenlik önlemi olarak Bitwarden satır içi menüsü geçici olarak devre dışı bırakıldı."
+    "message": "Bu sayfa TideWarden deneyimiyle çakışıyor. Güvenlik önlemi olarak TideWarden satır içi menüsü geçici olarak devre dışı bırakıldı."
   },
   "setMasterPassword": {
     "message": "Ana parolayı belirle"
@@ -2588,7 +2588,7 @@
     "message": "Yeni ana parolanız ilke gereksinimlerini karşılamıyor."
   },
   "receiveMarketingEmailsV2": {
-    "message": "Bitwarden'dan öneriler, duyurular ve araştırma fırsatları e-posta adresinize gelsin."
+    "message": "TideWarden'dan öneriler, duyurular ve araştırma fırsatları e-posta adresinize gelsin."
   },
   "unsubscribe": {
     "message": "İstediğiniz zaman"
@@ -2639,13 +2639,13 @@
     "message": "Tarayıcı entegrasyonu ayarlanmadı"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Bitwarden masaüstü uygulamasında tarayıcı entegrasyonu ayarlanmamış. Lütfen masaüstü uygulamasının ayarlarından tarayıcı entegrasyonunu kurun."
+    "message": "TideWarden masaüstü uygulamasında tarayıcı entegrasyonu ayarlanmamış. Lütfen masaüstü uygulamasının ayarlarından tarayıcı entegrasyonunu kurun."
   },
   "startDesktopTitle": {
-    "message": "Bitwarden masaüstü uygulamasını başlat"
+    "message": "TideWarden masaüstü uygulamasını başlat"
   },
   "startDesktopDesc": {
-    "message": "Biyometri ile açma işlevini kullanmak için Bitwarden masaüstü uygulamasını çalıştırmanız gerekir."
+    "message": "Biyometri ile açma işlevini kullanmak için TideWarden masaüstü uygulamasını çalıştırmanız gerekir."
   },
   "errorEnableBiometricTitle": {
     "message": "Biyometri ayarlanamadı"
@@ -2699,13 +2699,13 @@
     "message": "Biyometri doğrulanamadı"
   },
   "biometricsFailedDesc": {
-    "message": "Biyometri doğrulaması tamamlanamadı. Ana parolanızı kullanabilir veya çıkış yapabilirsiniz. Sorun devam ederse Bitwarden destek ekibiyle iletişime geçin."
+    "message": "Biyometri doğrulaması tamamlanamadı. Ana parolanızı kullanabilir veya çıkış yapabilirsiniz. Sorun devam ederse TideWarden destek ekibiyle iletişime geçin."
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "İzin verilmedi"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "Bitwarden masaüstü uygulamasıyla iletişim kurma iznimiz olmadan tarayıcı uzantısında biyometriyi kullanamayız. Lütfen tekrar deneyin."
+    "message": "TideWarden masaüstü uygulamasıyla iletişim kurma iznimiz olmadan tarayıcı uzantısında biyometriyi kullanamayız. Lütfen tekrar deneyin."
   },
   "nativeMessaginPermissionSidebarTitle": {
     "message": "İzin isteme hatası"
@@ -2742,7 +2742,7 @@
     "message": "Hariç tutulan alan adları"
   },
   "excludedDomainsDesc": {
-    "message": "Bitwarden bu alan adlarında hesaplarınızı kaydetmeyi sormayacaktır. Değişikliklerin etkili olması için sayfayı yenilemelisiniz."
+    "message": "TideWarden bu alan adlarında hesaplarınızı kaydetmeyi sormayacaktır. Değişikliklerin etkili olması için sayfayı yenilemelisiniz."
   },
   "blockedDomainsDesc": {
     "message": "Bu siteler için otomatik doldurma ve diğer ilgili özellikler önerilmeyecektir. Değişikliklerin devreye girmesi için sayfayı yenilemelisiniz."
@@ -2858,21 +2858,21 @@
     "message": "Risk altındaki hesap listesinin illüstrasyonu."
   },
   "generatePasswordSlideDesc": {
-    "message": "Riskli sitede Bitwarden otomatik doldurma menüsünü kullanarak hızlıca güçlü ve benzersiz bir parola oluştur.",
+    "message": "Riskli sitede TideWarden otomatik doldurma menüsünü kullanarak hızlıca güçlü ve benzersiz bir parola oluştur.",
     "description": "Description of the generate password slide on the at-risk password page carousel"
   },
   "generatePasswordSlideImgAltPeriod": {
-    "message": "Oluşturulan parolayı gösteren Bitwarden otomatik doldurma menüsünün görseli."
+    "message": "Oluşturulan parolayı gösteren TideWarden otomatik doldurma menüsünün görseli."
   },
   "updateInBitwarden": {
-    "message": "Bitwarden’da güncelleyin"
+    "message": "TideWarden’da güncelleyin"
   },
   "updateInBitwardenSlideDesc": {
-    "message": "Bitwarden, ardından parola yöneticisinde parolayı güncellemeniz için sizi yönlendirecektir.",
-    "description": "Description of the update in Bitwarden slide on the at-risk password page carousel"
+    "message": "TideWarden, ardından parola yöneticisinde parolayı güncellemeniz için sizi yönlendirecektir.",
+    "description": "Description of the update in TideWarden slide on the at-risk password page carousel"
   },
   "updateInBitwardenSlideImgAltPeriod": {
-    "message": "Kullanıcıya giriş bilgilerini güncellemesi için bildirim gönderen Bitwarden’in görseli."
+    "message": "Kullanıcıya giriş bilgilerini güncellemesi için bildirim gönderen TideWarden’in görseli."
   },
   "turnOnAutofill": {
     "message": "Otomatik doldurmayı etkinleştir"
@@ -2926,11 +2926,11 @@
   },
   "send": {
     "message": "Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDetails": {
     "message": "Send ayrıntıları",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendTypeText": {
     "message": "Metin"
@@ -2943,7 +2943,7 @@
   },
   "allSends": {
     "message": "Tüm Send'ler",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
     "message": "Maksimum erişim sayısına ulaşıldı",
@@ -2963,7 +2963,7 @@
   },
   "copySendLink": {
     "message": "Send bağlantısını kopyala",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "removePassword": {
     "message": "Parolayı kaldır"
@@ -2976,11 +2976,11 @@
   },
   "deletedSend": {
     "message": "Send silindi",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendLink": {
     "message": "Send bağlantısı",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "disabled": {
     "message": "Devre dışı"
@@ -2990,26 +2990,26 @@
   },
   "deleteSend": {
     "message": "Send'i sil",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
     "message": "Bu Send'i silmek istediğinizden emin misiniz?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendPermanentConfirmation": {
     "message": "Bu Send'i kalıcı olarak silmek istediğinizden emin misiniz?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editSend": {
     "message": "Send'i düzenle",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deletionDate": {
     "message": "Silinme tarihi"
   },
   "deletionDateDescV2": {
     "message": "Bu Send belirtilen tarihte kalıcı olacak silinecek.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "Son kullanma tarihi"
@@ -3031,34 +3031,34 @@
   },
   "createSend": {
     "message": "Yeni Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Yeni parola"
   },
   "sendDisabled": {
     "message": "Send silindi",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
     "message": "Bir kuruluş ilkesi nedeniyle yalnızca mevcut Send'leri silebilirsiniz.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSend": {
     "message": "Send oluşturuldu",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSendSuccessfully": {
     "message": "Send başarıyla oluşturuldu.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInHoursSingle": {
     "message": "Önümüzdeki 1 saat boyunca bu bağlantıya sahip olan herkes bu Send'e ulaşabilir.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInHours": {
     "message": "Önümüzdeki $HOURS$ saat boyunca bu bağlantıya sahip olan herkes bu Send'e ulaşabilir.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3068,11 +3068,11 @@
   },
   "sendExpiresInDaysSingle": {
     "message": "Önümüzdeki 1 gün boyunca bu bağlantıya sahip olan herkes bu Send'e ulaşabilir.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInDays": {
     "message": "Önümüzdeki $DAYS$ gün boyunca bu bağlantıya sahip olan herkes bu Send'e ulaşabilir.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -3082,11 +3082,11 @@
   },
   "sendLinkCopied": {
     "message": "Send bağlantısı kopyalandı",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editedSend": {
     "message": "Send kaydedildi",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "popOut": {
     "message": "Dışarı al"
@@ -3362,7 +3362,7 @@
     "message": "Otomatik doldurma verileri alınırken hata oluştu"
   },
   "couldNotDecryptVaultItemsBelow": {
-    "message": "Bitwarden aşağıdaki kasa öğelerini deşifre edemedi."
+    "message": "TideWarden aşağıdaki kasa öğelerini deşifre edemedi."
   },
   "contactCSToAvoidDataLossPart1": {
     "message": "Müşteri hizmetleriyle iletişime geçerek",
@@ -3466,11 +3466,11 @@
     }
   },
   "forwarderGeneratedBy": {
-    "message": "Bitwarden tarafından üretildi.",
+    "message": "TideWarden tarafından üretildi.",
     "description": "Displayed with the address on the forwarding service's configuration screen."
   },
   "forwarderGeneratedByWithWebsite": {
-    "message": "Web sitesi: $WEBSITE$. Bitwarden tarafından üretildi.",
+    "message": "Web sitesi: $WEBSITE$. TideWarden tarafından üretildi.",
     "description": "Displayed with the address on the forwarding service's configuration screen.",
     "placeholders": {
       "WEBSITE": {
@@ -3663,7 +3663,7 @@
     "message": "Cihazınıza bir bildirim gönderildi."
   },
   "notificationSentDevicePart1": {
-    "message": "Bitwarden kilidini cihazınızdan veya"
+    "message": "TideWarden kilidini cihazınızdan veya"
   },
   "notificationSentDeviceAnchor": {
     "message": "web uygulamasından açın"
@@ -4003,11 +4003,11 @@
   },
   "sendsTitleNoItems": {
     "message": "Hassas bilgileri güvenle paylaşın",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendsBodyNoItems": {
     "message": "Dosyaları ve verileri istediğiniz kişilerle, istediğiniz platformda paylaşın. Bilgileriniz başkalarının eline geçmemesi için uçtan şifrelenecektir.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "inputRequired": {
     "message": "Girdi gerekli."
@@ -4148,15 +4148,15 @@
     "message": "İçeriğe geç"
   },
   "bitwardenOverlayButton": {
-    "message": "Bitwarden otomatik doldurma menüsü düğmesi",
+    "message": "TideWarden otomatik doldurma menüsü düğmesi",
     "description": "Page title for the iframe containing the overlay button"
   },
   "toggleBitwardenVaultOverlay": {
-    "message": "Bitwarden otomatik doldurma menüsünü aç/kapat",
+    "message": "TideWarden otomatik doldurma menüsünü aç/kapat",
     "description": "Screen reader and tool tip label for the overlay button"
   },
   "bitwardenVault": {
-    "message": "Bitwarden otomatik doldurma menüsü",
+    "message": "TideWarden otomatik doldurma menüsü",
     "description": "Page title in overlay"
   },
   "unlockYourAccountToViewMatchingLogins": {
@@ -4228,7 +4228,7 @@
     "description": "Screen reader text (aria-label) for new identity button within inline menu"
   },
   "bitwardenOverlayMenuAvailable": {
-    "message": "Bitwarden otomatik doldurma menüsü mevcut. Seçmek için aşağı ok tuşuna basın.",
+    "message": "TideWarden otomatik doldurma menüsü mevcut. Seçmek için aşağı ok tuşuna basın.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
   "turnOn": {
@@ -4540,7 +4540,7 @@
     "message": "Aktif hesap"
   },
   "bitwardenAccount": {
-    "message": "Bitwarden hesabı"
+    "message": "TideWarden hesabı"
   },
   "availableAccounts": {
     "message": "Mevcut hesaplar"
@@ -4586,8 +4586,8 @@
     "description": "Label indicating the most common import formats"
   },
   "uriMatchDefaultStrategyHint": {
-    "message": "URl eşleştirme tespiti, Bitwarden'ın otomatik doldurma önerilerini nasıl tanımladığıdır.",
-    "description": "Explains to the user that URI match detection determines how Bitwarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
+    "message": "URl eşleştirme tespiti, TideWarden'ın otomatik doldurma önerilerini nasıl tanımladığıdır.",
+    "description": "Explains to the user that URI match detection determines how TideWarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
   },
   "regExAdvancedOptionWarning": {
     "message": "\"Düzenli ifadeler\" gelişmiş bir seçenektir ve kimlik bilgilerini açığa çıkarma riski taşır.",
@@ -4630,23 +4630,23 @@
     "description": "Body content for dialog which asks if the user wants to proceed to the browser's keyboard shortcut settings page"
   },
   "overrideDefaultBrowserAutofillTitle": {
-    "message": "Bitwarden varsayılan parola yöneticiniz yapılsın mı?",
+    "message": "TideWarden varsayılan parola yöneticiniz yapılsın mı?",
     "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutofillDescription": {
-    "message": "Bu seçeneği göz ardı ederseniz Bitwarden otomatik doldurma menüsüyle tarayıcınızınki arasında çakışma yaşanabilir.",
+    "message": "Bu seçeneği göz ardı ederseniz TideWarden otomatik doldurma menüsüyle tarayıcınızınki arasında çakışma yaşanabilir.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {
-    "message": "Bitwarden'ı varsayılan parola yöneticiniz yapın",
+    "message": "TideWarden'ı varsayılan parola yöneticiniz yapın",
     "description": "Label for the setting that allows overriding the default browser autofill settings"
   },
   "privacyPermissionAdditionNotGrantedTitle": {
-    "message": "Bitwarden varsayılan parola yöneticisi olarak ayarlanamadı",
+    "message": "TideWarden varsayılan parola yöneticisi olarak ayarlanamadı",
     "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "privacyPermissionAdditionNotGrantedDescription": {
-    "message": "Bitwarden'ı varsayılan parola yöneticisi olarak ayarlamak için tarayıcı gizlilik izinlerini vermeniz gerekir.",
+    "message": "TideWarden'ı varsayılan parola yöneticisi olarak ayarlamak için tarayıcı gizlilik izinlerini vermeniz gerekir.",
     "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "makeDefault": {
@@ -4984,16 +4984,16 @@
     "message": "Ek dosyayı indir"
   },
   "downloadBitwarden": {
-    "message": "Bitwarden’ı indirin"
+    "message": "TideWarden’ı indirin"
   },
   "downloadBitwardenOnAllDevices": {
-    "message": "Bitwarden’ı tüm cihazlarınıza indirin"
+    "message": "TideWarden’ı tüm cihazlarınıza indirin"
   },
   "getTheMobileApp": {
     "message": "Mobil uygulamayı indirin"
   },
   "getTheMobileAppDesc": {
-    "message": "Parolalarınıza Bitwarden mobil uygulaması sayesinde her yerden ulaşın."
+    "message": "Parolalarınıza TideWarden mobil uygulaması sayesinde her yerden ulaşın."
   },
   "getTheDesktopApp": {
     "message": "Masaüstü uygulamasını indirin"
@@ -5002,7 +5002,7 @@
     "message": "Kasanıza tarayıcıyı kullanmadan erişin, biyometri ile kilit açmayı etkinleştirerek hem masaüstü uygulamasından hem de tarayıcı uzantısından kilit açmayı geliştirin."
   },
   "downloadFromBitwardenNow": {
-    "message": "Şimdi bitwarden.com’dan indirin"
+    "message": "Şimdi tidewarden.com’dan indirin"
   },
   "getItOnGooglePlay": {
     "message": "Google Play'den edinin"
@@ -5467,10 +5467,10 @@
     "message": "Biyometrik kilit açma, yanlış yapılandırılmış sistem dosyaları nedeniyle kullanılamıyor."
   },
   "biometricsStatusHelptextDesktopDisconnected": {
-    "message": "Bitwarden masaüstü uygulaması kapalı olduğu için biyometrik kilit açma kullanılamıyor."
+    "message": "TideWarden masaüstü uygulaması kapalı olduğu için biyometrik kilit açma kullanılamıyor."
   },
   "biometricsStatusHelptextNotEnabledInDesktop": {
-    "message": "Biyometrik kilit açma, Bitwarden masaüstü uygulamasında $EMAIL$ etkin olmadığı için kullanılamıyor.",
+    "message": "Biyometrik kilit açma, TideWarden masaüstü uygulamasında $EMAIL$ etkin olmadığı için kullanılamıyor.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5505,7 +5505,7 @@
     "description": "Notification message for when a password has been regenerated"
   },
   "saveToBitwarden": {
-    "message": "Bitwarden’a kaydet",
+    "message": "TideWarden’a kaydet",
     "description": "Confirmation message for saving a login to TideWarden"
   },
   "spaceCharacterDescriptor": {
@@ -5731,13 +5731,13 @@
     "message": "Kasanız sadece parolalarınız için değil. Hesaplarınızı, kimliklerinizi, kredi kartlarınızı ve notlarınızı da güvenle burada depolayabilirsiniz."
   },
   "introCarouselLabel": {
-    "message": "Bitwarden’a hoş geldiniz"
+    "message": "TideWarden’a hoş geldiniz"
   },
   "securityPrioritized": {
     "message": "Önce güvenlik"
   },
   "securityPrioritizedBody": {
-    "message": "Hesaplarınızı, kartlarınızı ve kimliklerinizi güvenli kasanıza kaydedin. Bitwarden'ın sıfır bilgi ispatlı uçtan uca şifrelemesi sizin için önemli olan her şeyi korur."
+    "message": "Hesaplarınızı, kartlarınızı ve kimliklerinizi güvenli kasanıza kaydedin. TideWarden'ın sıfır bilgi ispatlı uçtan uca şifrelemesi sizin için önemli olan her şeyi korur."
   },
   "quickLogin": {
     "message": "Hızlı ve kolay giriş"
@@ -5755,7 +5755,7 @@
     "message": "Verilerinize her zaman, her yerden ulaşın"
   },
   "secureDevicesBody": {
-    "message": "Bitwarden mobil, tarayıcı ve masaüstü uygulamalarıyla istediğiniz kadar cihaza istediğiniz kadar parola kaydedebilirsiniz."
+    "message": "TideWarden mobil, tarayıcı ve masaüstü uygulamalarıyla istediğiniz kadar cihaza istediğiniz kadar parola kaydedebilirsiniz."
   },
   "nudgeBadgeAria": {
     "message": "1 bildirim"
@@ -5764,7 +5764,7 @@
     "message": "Mevcut parolaları içe aktar"
   },
   "emptyVaultNudgeBody": {
-    "message": "Hesapları manuel olarak eklemeden Bitwarden'a hızlı bir şekilde aktarmak için içe aktarıcıyı kullanın."
+    "message": "Hesapları manuel olarak eklemeden TideWarden'a hızlı bir şekilde aktarmak için içe aktarıcıyı kullanın."
   },
   "emptyVaultNudgeButton": {
     "message": "Şimdi içe aktar"
@@ -5800,7 +5800,7 @@
     "placeholders": {
       "product": {
         "content": "$1",
-        "example": "Bitwarden Phishing Blocker"
+        "example": "TideWarden Phishing Blocker"
       }
     }
   },
@@ -5883,13 +5883,13 @@
     "message": "Bu ayar hakkında"
   },
   "permitCipherDetailsDescription": {
-    "message": "Bitwarden, deneyimini iyileştirmek için hangi simgenin veya parola değiştirme URL’sinin kullanılacağını belirlemek amacıyla kaydedilmiş hesap URI’lerini kullanır. Bu hizmeti kullandığında hiçbir bilgi toplanmaz veya kaydedilmez."
+    "message": "TideWarden, deneyimini iyileştirmek için hangi simgenin veya parola değiştirme URL’sinin kullanılacağını belirlemek amacıyla kaydedilmiş hesap URI’lerini kullanır. Bu hizmeti kullandığında hiçbir bilgi toplanmaz veya kaydedilmez."
   },
   "noPermissionsViewPage": {
     "message": "Bu sayfayı görüntüleme izniniz yok. Farklı bir hesapla giriş yapmayı deneyin."
   },
   "wasmNotSupported": {
-    "message": "Tarayıcınızda WebAssembly desteklenmiyor veya etkinleştirilmemişt. Bitwarden uygulamasını kullanmak için WebAssembly gereklidir.",
+    "message": "Tarayıcınızda WebAssembly desteklenmiyor veya etkinleştirilmemişt. TideWarden uygulamasını kullanmak için WebAssembly gereklidir.",
     "description": "'WebAssembly' is a technical term and should not be translated."
   },
   "showMore": {
@@ -5964,7 +5964,7 @@
     "message": "Hata: Deşifre edilemiyor"
   },
   "removeMasterPasswordForOrgUserKeyConnector": {
-    "message": "Your organization is no longer using master passwords to log into Bitwarden. To continue, verify the organization and domain."
+    "message": "Your organization is no longer using master passwords to log into TideWarden. To continue, verify the organization and domain."
   },
   "continueWithLogIn": {
     "message": "Continue with log in"
@@ -6122,17 +6122,17 @@
     "message": "E-posta adreslerini virgülle ayırarak yazın."
   },
   "emailPlaceholder": {
-    "message": "kullanici@bitwarden.com , kullanici@acme.com"
+    "message": "kullanici@tidewarden.com , kullanici@acme.com"
   },
   "downloadBitwardenApps": {
-    "message": "Bitwarden uygulamalarını indir"
+    "message": "TideWarden uygulamalarını indir"
   },
   "emailProtected": {
     "message": "Email protected"
   },
   "sendPasswordHelperText": {
     "message": "Bu Send'i görmek isteyen kişilerin parola girmesi gerekecektir",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "logInToTideWarden": {
     "message": "TideWarden'a giriş yapın"

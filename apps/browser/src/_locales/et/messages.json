@@ -300,13 +300,13 @@
     "message": "Jätka veebibrauseris?"
   },
   "continueToWebAppDesc": {
-    "message": "Uuri teisi Bitwardeni konto funktsioone veebirakenduses."
+    "message": "Uuri teisi TideWardeni konto funktsioone veebirakenduses."
   },
   "continueToHelpCenter": {
     "message": "Kas soovid minna Abikeskusesse?"
   },
   "continueToHelpCenterDesc": {
-    "message": "Uuri teisigi Bitwardeni kasutusvõimalusi Abikeskuses."
+    "message": "Uuri teisigi TideWardeni kasutusvõimalusi Abikeskuses."
   },
   "continueToBrowserExtensionStore": {
     "message": "Mine edasi veebilaienduste poodi?"
@@ -315,7 +315,7 @@
     "message": "Aita meil jõuda rohkemate inimesteni. Külasta enda laienduste veebipoodi ja jäta sinna positiivne hinnang."
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "Ülemparooli saab muuta Bitwardeni veebirakenduses."
+    "message": "Ülemparooli saab muuta TideWardeni veebirakenduses."
   },
   "fingerprintPhrase": {
     "message": "Unikaalne sõnajada",
@@ -338,37 +338,37 @@
     "message": "Rakenduse info"
   },
   "moreFromBitwarden": {
-    "message": "Rohkem Bitwardeni kohta"
+    "message": "Rohkem TideWardeni kohta"
   },
   "continueToBitwardenDotCom": {
-    "message": "Mine edasi bitwarden.com-i?"
+    "message": "Mine edasi tidewarden.com-i?"
   },
   "bitwardenForBusiness": {
-    "message": "Bitwarden Ärikliendile"
+    "message": "TideWarden Ärikliendile"
   },
   "bitwardenAuthenticator": {
-    "message": "Bitwarden Authenticator"
+    "message": "TideWarden Authenticator"
   },
   "continueToAuthenticatorPageDesc": {
-    "message": "Bitwardeni Autentiteerijaga saad sa hoiustada autentiteerimise võtmeid ja luua TOTP koode kaheastmeliseks kinnitamiseks. Uuri lähemalt veebilehelt bitwarden.com"
+    "message": "TideWardeni Autentiteerijaga saad sa hoiustada autentiteerimise võtmeid ja luua TOTP koode kaheastmeliseks kinnitamiseks. Uuri lähemalt veebilehelt tidewarden.com"
   },
   "bitwardenSecretsManager": {
-    "message": "Bitwarden Secrets Manager"
+    "message": "TideWarden Secrets Manager"
   },
   "continueToSecretsManagerPageDesc": {
-    "message": "Hoiusta, halda ja jaga turvaliselt arendajate saladusi läbi Bitwarden Secrets Manageri. Uuri lähemalt veebilehelt bitwarden.com."
+    "message": "Hoiusta, halda ja jaga turvaliselt arendajate saladusi läbi TideWarden Secrets Manageri. Uuri lähemalt veebilehelt tidewarden.com."
   },
   "passwordlessDotDev": {
     "message": "Passwordless.dev"
   },
   "continueToPasswordlessDotDevPageDesc": {
-    "message": "Loo sujuv ja turvaline kogemus sisselogimisel Passwordless.dev-iga ja ilma traditsiooniliste paroolideta. Uuri lähemalt veebilehelt bitwarden.com."
+    "message": "Loo sujuv ja turvaline kogemus sisselogimisel Passwordless.dev-iga ja ilma traditsiooniliste paroolideta. Uuri lähemalt veebilehelt tidewarden.com."
   },
   "freeBitwardenFamilies": {
-    "message": "Tasuta Bitwarden Peredele"
+    "message": "Tasuta TideWarden Peredele"
   },
   "freeBitwardenFamiliesPageDesc": {
-    "message": "Sul on võimalik saada endale tasuta Bitwarden Families plaan. Lunasta see pakkumine meie veebirakenduses."
+    "message": "Sul on võimalik saada endale tasuta TideWarden Families plaan. Lunasta see pakkumine meie veebirakenduses."
   },
   "version": {
     "message": "Versioon"
@@ -428,13 +428,13 @@
     "message": "Abi ja tagasiside"
   },
   "helpCenter": {
-    "message": "Bitwardeni abikeskus"
+    "message": "TideWardeni abikeskus"
   },
   "communityForums": {
-    "message": "Ava Bitwardeni foorum"
+    "message": "Ava TideWardeni foorum"
   },
   "contactSupport": {
-    "message": "Võta Bitwardeniga ühendust"
+    "message": "Võta TideWardeniga ühendust"
   },
   "sync": {
     "message": "Sünkroniseeri"
@@ -456,7 +456,7 @@
     "message": "Loo oma kontodele tugevaid ja unikaalseid paroole."
   },
   "bitWebVaultApp": {
-    "message": "Bitwardeni veebirakendus"
+    "message": "TideWardeni veebirakendus"
   },
   "select": {
     "message": "Vali"
@@ -750,7 +750,7 @@
       },
       "hostname": {
         "content": "$2",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -762,7 +762,7 @@
     "placeholders": {
       "host": {
         "content": "$1",
-        "example": "vault.bitwarden.com"
+        "example": "vault.tidewarden.com"
       }
     }
   },
@@ -922,10 +922,10 @@
     "message": "Muuda 2-astmeline kinnitamine sujuvaks"
   },
   "totpHelper": {
-    "message": "Bitwarden saab hoiustada ja täita 2-astmelise kinnitamise koode. Kopeeri ja kleebi võti siia."
+    "message": "TideWarden saab hoiustada ja täita 2-astmelise kinnitamise koode. Kopeeri ja kleebi võti siia."
   },
   "totpHelperWithCapture": {
-    "message": "Bitwarden saab hoiustada ja täita 2-astmelise kinnitamise koode. Vajuta kaamera ikoonile, et teha ekraanipilt autentiteerimise QR koodist või kopeeri ja kleebi võti siia."
+    "message": "TideWarden saab hoiustada ja täita 2-astmelise kinnitamise koode. Vajuta kaamera ikoonile, et teha ekraanipilt autentiteerimise QR koodist või kopeeri ja kleebi võti siia."
   },
   "learnMoreAboutAuthenticators": {
     "message": "Uuri lähemalt autentikaatorite kohta"
@@ -946,7 +946,7 @@
     "message": "Logi sisse"
   },
   "logInToBitwarden": {
-    "message": "Log in to Bitwarden"
+    "message": "Log in to TideWarden"
   },
   "enterTheCodeSentToYourEmail": {
     "message": "Enter the code sent to your email"
@@ -1006,10 +1006,10 @@
     "message": "Kaust on lisatud"
   },
   "twoStepLoginConfirmation": {
-    "message": "Kaheastmeline kinnitamine aitab konto turvalisust tõsta. Lisaks paroolile pead kontole ligipääsemiseks kinnitama sisselogimise päringu SMS-ga, telefonikõnega, autentimise rakendusega või e-postiga. Kaheastmelist kinnitust saab sisse lülitada bitwarden.com veebihoidlas. Soovid seda kohe avada?"
+    "message": "Kaheastmeline kinnitamine aitab konto turvalisust tõsta. Lisaks paroolile pead kontole ligipääsemiseks kinnitama sisselogimise päringu SMS-ga, telefonikõnega, autentimise rakendusega või e-postiga. Kaheastmelist kinnitust saab sisse lülitada tidewarden.com veebihoidlas. Soovid seda kohe avada?"
   },
   "twoStepLoginConfirmationContent": {
-    "message": "Make your account more secure by setting up two-step login in the Bitwarden web app."
+    "message": "Make your account more secure by setting up two-step login in the TideWarden web app."
   },
   "twoStepLoginConfirmationTitle": {
     "message": "Continue to web app?"
@@ -1056,7 +1056,7 @@
   },
   "addDomain": {
     "message": "Add domain",
-    "description": "'Domain' here refers to an internet domain name (e.g. 'bitwarden.com') and the message in whole described the act of putting a domain value into the context."
+    "description": "'Domain' here refers to an internet domain name (e.g. 'tidewarden.com') and the message in whole described the act of putting a domain value into the context."
   },
   "addedItem": {
     "message": "Kirje on lisatud"
@@ -1114,7 +1114,7 @@
     "message": "Save to vault options"
   },
   "addLoginNotificationDesc": {
-    "message": "\"Lisa konto andmed\" teavitus ilmub pärast esimest sisselogimist ning võimaldab kontoandmeid automaatselt Bitwardenisse lisada."
+    "message": "\"Lisa konto andmed\" teavitus ilmub pärast esimest sisselogimist ning võimaldab kontoandmeid automaatselt TideWardenisse lisada."
   },
   "addLoginNotificationDescAlt": {
     "message": "Ask to add an item if one isn't found in your vault. Applies to all logged in accounts."
@@ -1188,11 +1188,11 @@
     }
   },
   "notificationLoginSaveConfirmation": {
-    "message": "saved to Bitwarden.",
+    "message": "saved to TideWarden.",
     "description": "Shown to user after item is saved."
   },
   "notificationLoginUpdatedConfirmation": {
-    "message": "updated in Bitwarden.",
+    "message": "updated in TideWarden.",
     "description": "Shown to user after item is updated."
   },
   "selectItemAriaLabel": {
@@ -1278,7 +1278,7 @@
     "message": "Paku olemasolevate andmete uuendamist"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Kui veebilehel tuvastatakse olemasolevate andmete muutmine, siis pakutakse nende andmete uuendamist Bitwardenis."
+    "message": "Kui veebilehel tuvastatakse olemasolevate andmete muutmine, siis pakutakse nende andmete uuendamist TideWardenis."
   },
   "changedPasswordNotificationDescAlt": {
     "message": "Ask to update a login's password when a change is detected on a website. Applies to all logged in accounts."
@@ -1290,13 +1290,13 @@
     "message": "Ask to save new passkeys or log in with passkeys stored in your vault. Applies to all logged in accounts."
   },
   "notificationChangeDesc": {
-    "message": "Soovid seda parooli ka Bitwardenis uuendada?"
+    "message": "Soovid seda parooli ka TideWardenis uuendada?"
   },
   "notificationChangeSave": {
     "message": "Jah, uuenda"
   },
   "notificationUnlockDesc": {
-    "message": "Ava Bitwardeni hoidla, et automaattäide lõpuni viia."
+    "message": "Ava TideWardeni hoidla, et automaattäide lõpuni viia."
   },
   "notificationUnlock": {
     "message": "Lukusta lahti"
@@ -1308,7 +1308,7 @@
     "message": "Kuva parema kliki menüü valikud"
   },
   "contextMenuItemDesc": {
-    "message": "Võimaldab parema kliki menüüs kaustada Bitwardeni valikuid, nt kontoandmete täitmist või parooli genereerimist. "
+    "message": "Võimaldab parema kliki menüüs kaustada TideWardeni valikuid, nt kontoandmete täitmist või parooli genereerimist. "
   },
   "contextMenuItemDescAlt": {
     "message": "Use a secondary click to access password generation and matching logins for the website. Applies to all logged in accounts."
@@ -1369,10 +1369,10 @@
     "message": "This password will be used to export and import this file"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
+    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current TideWarden account."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Set a file password to encrypt the export and import it to any Bitwarden account using the password for decryption."
+    "message": "Set a file password to encrypt the export and import it to any TideWarden account using the password for decryption."
   },
   "exportTypeHeading": {
     "message": "Export type"
@@ -1401,7 +1401,7 @@
     "message": "Eksporditavate andmete krüpteerimiseks kasutatakse kontol olevat krüpteerimisvõtit. Kui sa peaksid seda krüpteerimise võtit roteerima, ei saa sa järgnevalt eksporditavaid andmeid enam dekrüpteerida."
   },
   "encExportAccountWarningDesc": {
-    "message": "Iga Bitwardeni kasutaja krüpteerimisvõti on unikaalne. Eksporditud andmeid ei saa importida teise Bitwardeni kasutajakontosse."
+    "message": "Iga TideWardeni kasutaja krüpteerimisvõti on unikaalne. Eksporditud andmeid ei saa importida teise TideWardeni kasutajakontosse."
   },
   "exportMasterPassword": {
     "message": "Hoidlas olevate andmete eksportimiseks on vajalik ülemparooli sisestamine."
@@ -1410,7 +1410,7 @@
     "message": "Jagatud"
   },
   "bitwardenForBusinessPageDesc": {
-    "message": "Bitwarden for Business allows you to share your vault items with others by using an organization. Learn more on the bitwarden.com website."
+    "message": "TideWarden for Business allows you to share your vault items with others by using an organization. Learn more on the tidewarden.com website."
   },
   "moveToOrganization": {
     "message": "Teisalda organisatsiooni"
@@ -1522,7 +1522,7 @@
     "message": "Halda Premium versiooni"
   },
   "premiumManageAlert": {
-    "message": "Saad Premium versiooni hallata bitwarden.com veebihoidlas. Soovid seda kohe teha?"
+    "message": "Saad Premium versiooni hallata tidewarden.com veebihoidlas. Soovid seda kohe teha?"
   },
   "premiumRefresh": {
     "message": "Uuenda tellimust"
@@ -1576,13 +1576,13 @@
     "message": "Osta Premium"
   },
   "premiumPurchaseAlertV2": {
-    "message": "You can purchase Premium from your account settings on the Bitwarden web app."
+    "message": "You can purchase Premium from your account settings on the TideWarden web app."
   },
   "premiumCurrentMember": {
     "message": "Oled premium kasutaja!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Täname, et toetad Bitwardenit."
+    "message": "Täname, et toetad TideWardenit."
   },
   "premiumFeatures": {
     "message": "Upgrade to Premium and receive:"
@@ -1688,8 +1688,8 @@
     "message": "Autentimise rakendus"
   },
   "authenticatorAppDescV2": {
-    "message": "Enter a code generated by an authenticator app like Bitwarden Authenticator.",
-    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
+    "message": "Enter a code generated by an authenticator app like TideWarden Authenticator.",
+    "description": "'TideWarden Authenticator' is a product name and should not be translated."
   },
   "yubiKeyTitleV2": {
     "message": "Yubico OTP Security Key"
@@ -1721,7 +1721,7 @@
     "message": "Self-hosted Environment"
   },
   "selfHostedBaseUrlHint": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+    "message": "Specify the base URL of your on-premises hosted TideWarden installation. Example: https://tidewarden.company.com"
   },
   "selfHostedCustomEnvHeader": {
     "message": "For advanced configuration, you can specify the base URL of each service independently."
@@ -1771,7 +1771,7 @@
     "message": "Easily find autofill suggestions"
   },
   "autofillSpotlightDesc": {
-    "message": "Turn off your browser's autofill settings, so they don't conflict with Bitwarden."
+    "message": "Turn off your browser's autofill settings, so they don't conflict with TideWarden."
   },
   "turnOffBrowserAutofill": {
     "message": "Turn off $BROWSER$ autofill",
@@ -1795,7 +1795,7 @@
     "message": "Show autofill suggestions on form fields"
   },
   "howDoesBitwardenProtectFromPhishing": {
-    "message": "How does Bitwarden protect your data from phishing?"
+    "message": "How does TideWarden protect your data from phishing?"
   },
   "currentWebsite": {
     "message": "Current website"
@@ -2367,7 +2367,7 @@
     "message": "Nõrk ülemparool"
   },
   "weakMasterPasswordDesc": {
-    "message": "Valitud ülemparool on nõrk. Oma Bitwardeni konto paremaks kaitsmiseks peaksid kasutama tugevat parooli. Oled kindel, et soovid seda parooli ülemparoolina kasutada?"
+    "message": "Valitud ülemparool on nõrk. Oma TideWardeni konto paremaks kaitsmiseks peaksid kasutama tugevat parooli. Oled kindel, et soovid seda parooli ülemparoolina kasutada?"
   },
   "pin": {
     "message": "PIN",
@@ -2383,10 +2383,10 @@
     "message": "Set PIN"
   },
   "setYourPinCode": {
-    "message": "Määra Bitwardeni lahtilukustamiseks PIN kood. Rakendusest täielikult välja logides nullitakse ka PIN koodi seaded."
+    "message": "Määra TideWardeni lahtilukustamiseks PIN kood. Rakendusest täielikult välja logides nullitakse ka PIN koodi seaded."
   },
   "setPinCode": {
-    "message": "You can use this PIN to unlock Bitwarden. Your PIN will be reset if you ever fully log out of the application."
+    "message": "You can use this PIN to unlock TideWarden. Your PIN will be reset if you ever fully log out of the application."
   },
   "pinRequired": {
     "message": "Nõutakse PIN koodi."
@@ -2407,7 +2407,7 @@
     "message": "Kinnituse ootamine töölaua rakenduselt"
   },
   "awaitDesktopDesc": {
-    "message": "Kinnitamiseks kasuta biomeetrilist lahtilukustamist Bitwardeni töölaua rakenduses."
+    "message": "Kinnitamiseks kasuta biomeetrilist lahtilukustamist TideWardeni töölaua rakenduses."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Nõua ülemparooli, kui brauser taaskäivitatakse"
@@ -2522,7 +2522,7 @@
     "message": "See vorm on majutatud teistsugusel domeenil kui sinu salvestatud URI. Vajuta OK, et automaattäita või Tühista, et täitmine peatada."
   },
   "autofillIframeWarningTip": {
-    "message": "Selleks, et antud teavitust edaspidi ei kuvataks, salvesta see URI $HOSTNAME$ Bitwardeni kirjesse.",
+    "message": "Selleks, et antud teavitust edaspidi ei kuvataks, salvesta see URI $HOSTNAME$ TideWardeni kirjesse.",
     "placeholders": {
       "hostname": {
         "content": "$1",
@@ -2531,7 +2531,7 @@
     }
   },
   "topLayerHijackWarning": {
-    "message": "This page is interfering with the Bitwarden experience. The Bitwarden inline menu has been temporarily disabled as a safety measure."
+    "message": "This page is interfering with the TideWarden experience. The TideWarden inline menu has been temporarily disabled as a safety measure."
   },
   "setMasterPassword": {
     "message": "Määra ülemparool"
@@ -2588,7 +2588,7 @@
     "message": "Uus ülemparool ei vasta eeskirjades väljatoodud tingimustele."
   },
   "receiveMarketingEmailsV2": {
-    "message": "Soovin saada nõuandeid, uudiseid ja pakkumisi Bitwardenilt oma postkasti."
+    "message": "Soovin saada nõuandeid, uudiseid ja pakkumisi TideWardenilt oma postkasti."
   },
   "unsubscribe": {
     "message": "Lõpeta tellimus"
@@ -2639,13 +2639,13 @@
     "message": "Brauseri integratsioon ei ole sisse lülitatud"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Brauseri integratsioon ei ole Bitwardeni töölaua rakenduses sisse lülitatud. Palun lülita see töölaua rakenduse seadetes sisse."
+    "message": "Brauseri integratsioon ei ole TideWardeni töölaua rakenduses sisse lülitatud. Palun lülita see töölaua rakenduse seadetes sisse."
   },
   "startDesktopTitle": {
-    "message": "Käivita Bitwardeni töölaua rakendus"
+    "message": "Käivita TideWardeni töölaua rakendus"
   },
   "startDesktopDesc": {
-    "message": "Enne selle funktsiooni sisselülitamist peab käivitama Bitwardeni töölaua rakenduse."
+    "message": "Enne selle funktsiooni sisselülitamist peab käivitama TideWardeni töölaua rakenduse."
   },
   "errorEnableBiometricTitle": {
     "message": "Biomeetria sisselülitamine nurjus"
@@ -2675,7 +2675,7 @@
     "message": "Biomeetria ei ole sisse lülitatud"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Biomeetria kasutamiseks brauseris peab esmalt Bitwardeni töölaua rakenduse seadetes biomeetria lubama."
+    "message": "Biomeetria kasutamiseks brauseris peab esmalt TideWardeni töölaua rakenduse seadetes biomeetria lubama."
   },
   "biometricsNotSupportedTitle": {
     "message": "Biomeetriat ei toetata"
@@ -2699,13 +2699,13 @@
     "message": "Biomeetria nurjus"
   },
   "biometricsFailedDesc": {
-    "message": "Biomeetriaga kinnitamine ebaõnnestus. Kasuta ülemparooli või logi välja. Kui probleem püsib, võta ühendust Bitwardeni toega."
+    "message": "Biomeetriaga kinnitamine ebaõnnestus. Kasuta ülemparooli või logi välja. Kui probleem püsib, võta ühendust TideWardeni toega."
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "Luba puudub"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "Puudub luba, et suhelda Bitwardeni töölaua rakendusega. Selle tõttu ei saa brauseri lisas biomeetriat kasutada. Palun proovi uuesti."
+    "message": "Puudub luba, et suhelda TideWardeni töölaua rakendusega. Selle tõttu ei saa brauseri lisas biomeetriat kasutada. Palun proovi uuesti."
   },
   "nativeMessaginPermissionSidebarTitle": {
     "message": "Loa taotlemisel ilmnes viga"
@@ -2742,7 +2742,7 @@
     "message": "Väljajäetud domeenid"
   },
   "excludedDomainsDesc": {
-    "message": "Nendel domeenidel Bitwarden paroolide salvestamise valikut ei paku. Muudatuste jõustamiseks pead lehekülge värskendama."
+    "message": "Nendel domeenidel TideWarden paroolide salvestamise valikut ei paku. Muudatuste jõustamiseks pead lehekülge värskendama."
   },
   "blockedDomainsDesc": {
     "message": "Autofill and other related features will not be offered for these websites. You must refresh the page for changes to take effect."
@@ -2858,21 +2858,21 @@
     "message": "Illustration of a list of logins that are at-risk."
   },
   "generatePasswordSlideDesc": {
-    "message": "Quickly generate a strong, unique password with the Bitwarden autofill menu on the at-risk site.",
+    "message": "Quickly generate a strong, unique password with the TideWarden autofill menu on the at-risk site.",
     "description": "Description of the generate password slide on the at-risk password page carousel"
   },
   "generatePasswordSlideImgAltPeriod": {
-    "message": "Illustration of the Bitwarden autofill menu displaying a generated password."
+    "message": "Illustration of the TideWarden autofill menu displaying a generated password."
   },
   "updateInBitwarden": {
-    "message": "Update in Bitwarden"
+    "message": "Update in TideWarden"
   },
   "updateInBitwardenSlideDesc": {
-    "message": "Bitwarden will then prompt you to update the password in the password manager.",
-    "description": "Description of the update in Bitwarden slide on the at-risk password page carousel"
+    "message": "TideWarden will then prompt you to update the password in the password manager.",
+    "description": "Description of the update in TideWarden slide on the at-risk password page carousel"
   },
   "updateInBitwardenSlideImgAltPeriod": {
-    "message": "Illustration of a Bitwarden’s notification prompting the user to update the login."
+    "message": "Illustration of a TideWarden’s notification prompting the user to update the login."
   },
   "turnOnAutofill": {
     "message": "Turn on autofill"
@@ -2926,11 +2926,11 @@
   },
   "send": {
     "message": "Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDetails": {
     "message": "Send details",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendTypeText": {
     "message": "Tekst"
@@ -2943,7 +2943,7 @@
   },
   "allSends": {
     "message": "Kõik Sendid",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
     "message": "Max access count reached",
@@ -2963,7 +2963,7 @@
   },
   "copySendLink": {
     "message": "Kopeeri Sendi link",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "removePassword": {
     "message": "Eemalda parool"
@@ -2976,11 +2976,11 @@
   },
   "deletedSend": {
     "message": "Kustutas Sendi",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendLink": {
     "message": "Sendi link",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "disabled": {
     "message": "Keelatud"
@@ -2990,26 +2990,26 @@
   },
   "deleteSend": {
     "message": "Kustuta Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
     "message": "Soovid tõesti selle Sendi kustutada?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendPermanentConfirmation": {
     "message": "Are you sure you want to permanently delete this Send?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editSend": {
     "message": "Muuda Sendi",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deletionDate": {
     "message": "Kustutamise kuupäev"
   },
   "deletionDateDescV2": {
     "message": "The Send will be permanently deleted on this date.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "Aegumiskuupäev"
@@ -3031,34 +3031,34 @@
   },
   "createSend": {
     "message": "Loo uus Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Uus Parool"
   },
   "sendDisabled": {
     "message": "Send on väljalülitatud",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
     "message": "Ettevõtte poliitika kohaselt saad ainult olemasolevat Sendi kustutada.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSend": {
     "message": "Send on loodud",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSendSuccessfully": {
     "message": "Send created successfully!",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInHoursSingle": {
     "message": "The Send will be available to anyone with the link for the next 1 hour.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInHours": {
     "message": "The Send will be available to anyone with the link for the next $HOURS$ hours.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3068,11 +3068,11 @@
   },
   "sendExpiresInDaysSingle": {
     "message": "The Send will be available to anyone with the link for the next 1 day.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInDays": {
     "message": "The Send will be available to anyone with the link for the next $DAYS$ days.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -3082,11 +3082,11 @@
   },
   "sendLinkCopied": {
     "message": "Send link copied",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editedSend": {
     "message": "Muudetud",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "popOut": {
     "message": "Pop out"
@@ -3362,7 +3362,7 @@
     "message": "Error getting autofill data"
   },
   "couldNotDecryptVaultItemsBelow": {
-    "message": "Bitwarden could not decrypt the vault item(s) listed below."
+    "message": "TideWarden could not decrypt the vault item(s) listed below."
   },
   "contactCSToAvoidDataLossPart1": {
     "message": "Contact customer success",
@@ -3466,11 +3466,11 @@
     }
   },
   "forwarderGeneratedBy": {
-    "message": "Generated by Bitwarden.",
+    "message": "Generated by TideWarden.",
     "description": "Displayed with the address on the forwarding service's configuration screen."
   },
   "forwarderGeneratedByWithWebsite": {
-    "message": "Website: $WEBSITE$. Generated by Bitwarden.",
+    "message": "Website: $WEBSITE$. Generated by TideWarden.",
     "description": "Displayed with the address on the forwarding service's configuration screen.",
     "placeholders": {
       "WEBSITE": {
@@ -3663,7 +3663,7 @@
     "message": "Sinu seadmesse saadeti teavitus."
   },
   "notificationSentDevicePart1": {
-    "message": "Unlock Bitwarden on your device or on the"
+    "message": "Unlock TideWarden on your device or on the"
   },
   "notificationSentDeviceAnchor": {
     "message": "web app"
@@ -4003,11 +4003,11 @@
   },
   "sendsTitleNoItems": {
     "message": "Send sensitive information safely",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendsBodyNoItems": {
     "message": "Share files and data securely with anyone, on any platform. Your information will remain end-to-end encrypted while limiting exposure.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "inputRequired": {
     "message": "Sisestus on nõutav."
@@ -4148,7 +4148,7 @@
     "message": "Skip to content"
   },
   "bitwardenOverlayButton": {
-    "message": "Bitwarden autofill menu button",
+    "message": "TideWarden autofill menu button",
     "description": "Page title for the iframe containing the overlay button"
   },
   "toggleBitwardenVaultOverlay": {
@@ -4156,7 +4156,7 @@
     "description": "Screen reader and tool tip label for the overlay button"
   },
   "bitwardenVault": {
-    "message": "Bitwarden autofill menu",
+    "message": "TideWarden autofill menu",
     "description": "Page title in overlay"
   },
   "unlockYourAccountToViewMatchingLogins": {
@@ -4228,7 +4228,7 @@
     "description": "Screen reader text (aria-label) for new identity button within inline menu"
   },
   "bitwardenOverlayMenuAvailable": {
-    "message": "Bitwarden autofill menu available. Press the down arrow key to select.",
+    "message": "TideWarden autofill menu available. Press the down arrow key to select.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
   "turnOn": {
@@ -4540,7 +4540,7 @@
     "message": "Active account"
   },
   "bitwardenAccount": {
-    "message": "Bitwarden account"
+    "message": "TideWarden account"
   },
   "availableAccounts": {
     "message": "Available accounts"
@@ -4586,8 +4586,8 @@
     "description": "Label indicating the most common import formats"
   },
   "uriMatchDefaultStrategyHint": {
-    "message": "URI match detection is how Bitwarden identifies autofill suggestions.",
-    "description": "Explains to the user that URI match detection determines how Bitwarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
+    "message": "URI match detection is how TideWarden identifies autofill suggestions.",
+    "description": "Explains to the user that URI match detection determines how TideWarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
   },
   "regExAdvancedOptionWarning": {
     "message": "\"Regular expression\" is an advanced option with increased risk of exposing credentials.",
@@ -4630,23 +4630,23 @@
     "description": "Body content for dialog which asks if the user wants to proceed to the browser's keyboard shortcut settings page"
   },
   "overrideDefaultBrowserAutofillTitle": {
-    "message": "Make Bitwarden your default password manager?",
+    "message": "Make TideWarden your default password manager?",
     "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutofillDescription": {
-    "message": "Ignoring this option may cause conflicts between Bitwarden autofill suggestions and your browser's.",
+    "message": "Ignoring this option may cause conflicts between TideWarden autofill suggestions and your browser's.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {
-    "message": "Make Bitwarden your default password manager",
+    "message": "Make TideWarden your default password manager",
     "description": "Label for the setting that allows overriding the default browser autofill settings"
   },
   "privacyPermissionAdditionNotGrantedTitle": {
-    "message": "Unable to set Bitwarden as the default password manager",
+    "message": "Unable to set TideWarden as the default password manager",
     "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "privacyPermissionAdditionNotGrantedDescription": {
-    "message": "You must grant browser privacy permissions to Bitwarden to set it as the default password manager.",
+    "message": "You must grant browser privacy permissions to TideWarden to set it as the default password manager.",
     "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "makeDefault": {
@@ -4984,16 +4984,16 @@
     "message": "Download Attachment"
   },
   "downloadBitwarden": {
-    "message": "Download Bitwarden"
+    "message": "Download TideWarden"
   },
   "downloadBitwardenOnAllDevices": {
-    "message": "Download Bitwarden on all devices"
+    "message": "Download TideWarden on all devices"
   },
   "getTheMobileApp": {
     "message": "Get the mobile app"
   },
   "getTheMobileAppDesc": {
-    "message": "Access your passwords on the go with the Bitwarden mobile app."
+    "message": "Access your passwords on the go with the TideWarden mobile app."
   },
   "getTheDesktopApp": {
     "message": "Get the desktop app"
@@ -5002,7 +5002,7 @@
     "message": "Access your vault without a browser, then set up unlock with biometrics to expedite unlocking in both the desktop app and browser extension."
   },
   "downloadFromBitwardenNow": {
-    "message": "Download from bitwarden.com now"
+    "message": "Download from tidewarden.com now"
   },
   "getItOnGooglePlay": {
     "message": "Get it on Google Play"
@@ -5467,10 +5467,10 @@
     "message": "Biometric unlock is unavailable due to misconfigured system files."
   },
   "biometricsStatusHelptextDesktopDisconnected": {
-    "message": "Biometric unlock is unavailable because the Bitwarden desktop app is closed."
+    "message": "Biometric unlock is unavailable because the TideWarden desktop app is closed."
   },
   "biometricsStatusHelptextNotEnabledInDesktop": {
-    "message": "Biometric unlock is unavailable because it is not enabled for $EMAIL$ in the Bitwarden desktop app.",
+    "message": "Biometric unlock is unavailable because it is not enabled for $EMAIL$ in the TideWarden desktop app.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5731,13 +5731,13 @@
     "message": "The vault protects more than just your passwords. Store secure logins, IDs, cards and notes securely here."
   },
   "introCarouselLabel": {
-    "message": "Welcome to Bitwarden"
+    "message": "Welcome to TideWarden"
   },
   "securityPrioritized": {
     "message": "Security, prioritized"
   },
   "securityPrioritizedBody": {
-    "message": "Save logins, cards, and identities to your secure vault. Bitwarden uses zero-knowledge, end-to-end encryption to protect what’s important to you."
+    "message": "Save logins, cards, and identities to your secure vault. TideWarden uses zero-knowledge, end-to-end encryption to protect what’s important to you."
   },
   "quickLogin": {
     "message": "Quick and easy login"
@@ -5755,7 +5755,7 @@
     "message": "Your data, when and where you need it"
   },
   "secureDevicesBody": {
-    "message": "Save unlimited passwords across unlimited devices with Bitwarden mobile, browser, and desktop apps."
+    "message": "Save unlimited passwords across unlimited devices with TideWarden mobile, browser, and desktop apps."
   },
   "nudgeBadgeAria": {
     "message": "1 notification"
@@ -5764,7 +5764,7 @@
     "message": "Import existing passwords"
   },
   "emptyVaultNudgeBody": {
-    "message": "Use the importer to quickly transfer logins to Bitwarden without manually adding them."
+    "message": "Use the importer to quickly transfer logins to TideWarden without manually adding them."
   },
   "emptyVaultNudgeButton": {
     "message": "Import now"
@@ -5800,7 +5800,7 @@
     "placeholders": {
       "product": {
         "content": "$1",
-        "example": "Bitwarden Phishing Blocker"
+        "example": "TideWarden Phishing Blocker"
       }
     }
   },
@@ -5883,13 +5883,13 @@
     "message": "About this setting"
   },
   "permitCipherDetailsDescription": {
-    "message": "Bitwarden will use saved login URIs to identify which icon or change password URL should be used to improve your experience. No information is collected or saved when you use this service."
+    "message": "TideWarden will use saved login URIs to identify which icon or change password URL should be used to improve your experience. No information is collected or saved when you use this service."
   },
   "noPermissionsViewPage": {
     "message": "You do not have permissions to view this page. Try logging in with a different account."
   },
   "wasmNotSupported": {
-    "message": "WebAssembly is not supported on your browser or is not enabled. WebAssembly is required to use the Bitwarden app.",
+    "message": "WebAssembly is not supported on your browser or is not enabled. WebAssembly is required to use the TideWarden app.",
     "description": "'WebAssembly' is a technical term and should not be translated."
   },
   "showMore": {
@@ -5964,7 +5964,7 @@
     "message": "Error: Cannot decrypt"
   },
   "removeMasterPasswordForOrgUserKeyConnector": {
-    "message": "Your organization is no longer using master passwords to log into Bitwarden. To continue, verify the organization and domain."
+    "message": "Your organization is no longer using master passwords to log into TideWarden. To continue, verify the organization and domain."
   },
   "continueWithLogIn": {
     "message": "Continue with log in"
@@ -6122,17 +6122,17 @@
     "message": "Enter multiple emails by separating with a comma."
   },
   "emailPlaceholder": {
-    "message": "user@bitwarden.com , user@acme.com"
+    "message": "user@tidewarden.com , user@acme.com"
   },
   "downloadBitwardenApps": {
-    "message": "Download Bitwarden apps"
+    "message": "Download TideWarden apps"
   },
   "emailProtected": {
     "message": "Email protected"
   },
   "sendPasswordHelperText": {
     "message": "Individuals will need to enter the password to view this Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "logInToTideWarden": {
     "message": "Log in to TideWarden"

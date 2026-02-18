@@ -23,7 +23,7 @@
     "message": "Sukurti paskyrą"
   },
   "newToBitwarden": {
-    "message": "Pirmą kartą „Bitwarden“?"
+    "message": "Pirmą kartą „TideWarden“?"
   },
   "logInWithPasskey": {
     "message": "Prisijungti naudojant prieigos raktą"
@@ -300,22 +300,22 @@
     "message": "Tęsti į žiniatinklio programą?"
   },
   "continueToWebAppDesc": {
-    "message": "Atraskite daugiau savo „Bitwarden“ paskyros funkcijų žiniatinklio programoje."
+    "message": "Atraskite daugiau savo „TideWarden“ paskyros funkcijų žiniatinklio programoje."
   },
   "continueToHelpCenter": {
     "message": "Eiti į pagalbos centrą?"
   },
   "continueToHelpCenterDesc": {
-    "message": "Pagalbos centre sužinokite daugiau, kaip naudotis „Bitwarden“."
+    "message": "Pagalbos centre sužinokite daugiau, kaip naudotis „TideWarden“."
   },
   "continueToBrowserExtensionStore": {
     "message": "Eiti į naršyklės plėtinių svetainę?"
   },
   "continueToBrowserExtensionStoreDesc": {
-    "message": "Padėkite kitiems sužinoti ar B„itwarden“ yra jiems tinkamas. Apsilankykite naršyklės plėtinių svetainėje ir įvertinkite „Bitwarden“."
+    "message": "Padėkite kitiems sužinoti ar B„itwarden“ yra jiems tinkamas. Apsilankykite naršyklės plėtinių svetainėje ir įvertinkite „TideWarden“."
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "Pagrindinį slaptažodį galite pakeisti „Bitwarden“ žiniatinklio programoje."
+    "message": "Pagrindinį slaptažodį galite pakeisti „TideWarden“ žiniatinklio programoje."
   },
   "fingerprintPhrase": {
     "message": "Pirštų atspaudų frazė",
@@ -332,43 +332,43 @@
     "message": "Atsijungti"
   },
   "aboutBitwarden": {
-    "message": "Apie Bitwarden"
+    "message": "Apie TideWarden"
   },
   "about": {
     "message": "Apie"
   },
   "moreFromBitwarden": {
-    "message": "Daugiau iš Bitwarden"
+    "message": "Daugiau iš TideWarden"
   },
   "continueToBitwardenDotCom": {
-    "message": "Eiti į bitwarden.com?"
+    "message": "Eiti į tidewarden.com?"
   },
   "bitwardenForBusiness": {
-    "message": "Bitwarden Verslui"
+    "message": "TideWarden Verslui"
   },
   "bitwardenAuthenticator": {
-    "message": "Bitwarden Authenticator"
+    "message": "TideWarden Authenticator"
   },
   "continueToAuthenticatorPageDesc": {
-    "message": "„Bitwarden Authenticator“ leidžia saugoti autentifikavimo raktus ir generuoti TOTP kodus dviejų etapų patvirtinimui. Sužinokite daugiau bitwarden.com svetainėje"
+    "message": "„TideWarden Authenticator“ leidžia saugoti autentifikavimo raktus ir generuoti TOTP kodus dviejų etapų patvirtinimui. Sužinokite daugiau tidewarden.com svetainėje"
   },
   "bitwardenSecretsManager": {
-    "message": "Bitwarden Secrets Manager"
+    "message": "TideWarden Secrets Manager"
   },
   "continueToSecretsManagerPageDesc": {
-    "message": "Saugiai saugokite, tvarkykite ir dalinkitės kūrėjų slaptais duomenimis su „Bitwarden Secrets Manager“. Sužinokite daugiau bitwarden.com svetainėje."
+    "message": "Saugiai saugokite, tvarkykite ir dalinkitės kūrėjų slaptais duomenimis su „TideWarden Secrets Manager“. Sužinokite daugiau tidewarden.com svetainėje."
   },
   "passwordlessDotDev": {
     "message": "Passwordless.dev"
   },
   "continueToPasswordlessDotDevPageDesc": {
-    "message": "Sukurkite sklandžią ir saugią prisijungimo patirtį be tradicinių slaptažodžių su Passwordless.dev. Sužinokite daugiau bitwarden.com svetainėje."
+    "message": "Sukurkite sklandžią ir saugią prisijungimo patirtį be tradicinių slaptažodžių su Passwordless.dev. Sužinokite daugiau tidewarden.com svetainėje."
   },
   "freeBitwardenFamilies": {
-    "message": "Nemokamas „Bitwarden Families“"
+    "message": "Nemokamas „TideWarden Families“"
   },
   "freeBitwardenFamiliesPageDesc": {
-    "message": "Jūs turite galimybę gauti nemokamą „Bitwarden Families“ paskyrą. Pasinaudokite šiuo pasiūlymu šiandien Interneto svetainėje."
+    "message": "Jūs turite galimybę gauti nemokamą „TideWarden Families“ paskyrą. Pasinaudokite šiuo pasiūlymu šiandien Interneto svetainėje."
   },
   "version": {
     "message": "Versija"
@@ -428,13 +428,13 @@
     "message": "Pagalba ir atsiliepimai"
   },
   "helpCenter": {
-    "message": "„Bitwarden“ Pagalbos centras"
+    "message": "„TideWarden“ Pagalbos centras"
   },
   "communityForums": {
-    "message": "Naršyti „Bitwarden“ bendruomenės forumus"
+    "message": "Naršyti „TideWarden“ bendruomenės forumus"
   },
   "contactSupport": {
-    "message": "Susisiekti su „Bitwarden“ palaikymo komanda"
+    "message": "Susisiekti su „TideWarden“ palaikymo komanda"
   },
   "sync": {
     "message": "Sinchronizuoti"
@@ -456,7 +456,7 @@
     "message": "Automatiškai generuokite stiprius, unikalius prisijungimo slaptažodžius."
   },
   "bitWebVaultApp": {
-    "message": "Bitwarden Interneto svetainė"
+    "message": "TideWarden Interneto svetainė"
   },
   "select": {
     "message": "Pasirinkti"
@@ -750,7 +750,7 @@
       },
       "hostname": {
         "content": "$2",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -762,7 +762,7 @@
     "placeholders": {
       "host": {
         "content": "$1",
-        "example": "vault.bitwarden.com"
+        "example": "vault.tidewarden.com"
       }
     }
   },
@@ -922,10 +922,10 @@
     "message": "Padaryti dviejų veiksnių patvirtinimą sklandų"
   },
   "totpHelper": {
-    "message": "Bitwarden can store and fill 2-step verification codes. Copy and paste the key into this field."
+    "message": "TideWarden can store and fill 2-step verification codes. Copy and paste the key into this field."
   },
   "totpHelperWithCapture": {
-    "message": "Bitwarden can store and fill 2-step verification codes. Select the camera icon to take a screenshot of this website's authenticator QR code, or copy and paste the key into this field."
+    "message": "TideWarden can store and fill 2-step verification codes. Select the camera icon to take a screenshot of this website's authenticator QR code, or copy and paste the key into this field."
   },
   "learnMoreAboutAuthenticators": {
     "message": "Learn more about authenticators"
@@ -946,7 +946,7 @@
     "message": "Prisijungti"
   },
   "logInToBitwarden": {
-    "message": "Prisijungti prie „Bitwarden“"
+    "message": "Prisijungti prie „TideWarden“"
   },
   "enterTheCodeSentToYourEmail": {
     "message": "Įveskite kodą išsiųstą jums el. paštu"
@@ -1006,10 +1006,10 @@
     "message": "Katalogas pridėtas"
   },
   "twoStepLoginConfirmation": {
-    "message": "Prisijungus dviem veiksmais, jūsų paskyra tampa saugesnė, reikalaujant patvirtinti prisijungimą naudojant kitą įrenginį, pvz., saugos raktą, autentifikavimo programėlę, SMS, telefono skambutį ar el. paštą. Dviejų žingsnių prisijungimą galima įjungti „bitwarden.com“ interneto saugykloje. Ar norite dabar apsilankyti svetainėje?"
+    "message": "Prisijungus dviem veiksmais, jūsų paskyra tampa saugesnė, reikalaujant patvirtinti prisijungimą naudojant kitą įrenginį, pvz., saugos raktą, autentifikavimo programėlę, SMS, telefono skambutį ar el. paštą. Dviejų žingsnių prisijungimą galima įjungti „tidewarden.com“ interneto saugykloje. Ar norite dabar apsilankyti svetainėje?"
   },
   "twoStepLoginConfirmationContent": {
-    "message": "Make your account more secure by setting up two-step login in the Bitwarden web app."
+    "message": "Make your account more secure by setting up two-step login in the TideWarden web app."
   },
   "twoStepLoginConfirmationTitle": {
     "message": "Continue to web app?"
@@ -1056,7 +1056,7 @@
   },
   "addDomain": {
     "message": "Pridėti domeną",
-    "description": "'Domain' here refers to an internet domain name (e.g. 'bitwarden.com') and the message in whole described the act of putting a domain value into the context."
+    "description": "'Domain' here refers to an internet domain name (e.g. 'tidewarden.com') and the message in whole described the act of putting a domain value into the context."
   },
   "addedItem": {
     "message": "Pridėtas elementas"
@@ -1152,7 +1152,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Ar „Bitwarden“ turėtų įsiminti šį slaptažodį už Jus?"
+    "message": "Ar „TideWarden“ turėtų įsiminti šį slaptažodį už Jus?"
   },
   "notificationAddSave": {
     "message": "Išsaugoti"
@@ -1188,11 +1188,11 @@
     }
   },
   "notificationLoginSaveConfirmation": {
-    "message": "saved to Bitwarden.",
+    "message": "saved to TideWarden.",
     "description": "Shown to user after item is saved."
   },
   "notificationLoginUpdatedConfirmation": {
-    "message": "updated in Bitwarden.",
+    "message": "updated in TideWarden.",
     "description": "Shown to user after item is updated."
   },
   "selectItemAriaLabel": {
@@ -1290,13 +1290,13 @@
     "message": "Paprašykite išsaugoti naujus prieigos raktus arba prisijungti naudodant saugykloje saugomus prieigos raktus. Taikoma visoms prisijungusioms paskyroms."
   },
   "notificationChangeDesc": {
-    "message": "Ar nori atnaujinti šį slaptažodį „Bitwarden“ programėlėje?"
+    "message": "Ar nori atnaujinti šį slaptažodį „TideWarden“ programėlėje?"
   },
   "notificationChangeSave": {
     "message": "Atnaujinti"
   },
   "notificationUnlockDesc": {
-    "message": "Atrakinkite savo „Bitwarden“ saugyklą, kad užbaigtumėte automatinio užpildymo užklausą."
+    "message": "Atrakinkite savo „TideWarden“ saugyklą, kad užbaigtumėte automatinio užpildymo užklausą."
   },
   "notificationUnlock": {
     "message": "Atrakinti"
@@ -1369,10 +1369,10 @@
     "message": "This password will be used to export and import this file"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
+    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current TideWarden account."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Set a file password to encrypt the export and import it to any Bitwarden account using the password for decryption."
+    "message": "Set a file password to encrypt the export and import it to any TideWarden account using the password for decryption."
   },
   "exportTypeHeading": {
     "message": "Export type"
@@ -1401,7 +1401,7 @@
     "message": "Šis duomenų exportavimas užšifruoja jūsų duomenis naudodamas jūsų prieigos kodų raktu. Jei jūs kada nuspręsite pakeisti prieigos kodų raktą, jūs turėtumėte per naują eksportuoti duomenis, nes kitaip, jūs negalėsite iššifruoti išeksportuotų duomenų."
   },
   "encExportAccountWarningDesc": {
-    "message": "Paskyros šifravimo raktai yra unikalūs kiekvienai „Bitwarden“ vartotojo paskyrai, todėl negalite importuoti užšifruoto eksportavimo į kitą paskyrą."
+    "message": "Paskyros šifravimo raktai yra unikalūs kiekvienai „TideWarden“ vartotojo paskyrai, todėl negalite importuoti užšifruoto eksportavimo į kitą paskyrą."
   },
   "exportMasterPassword": {
     "message": "Įveskite pagrindinį slaptažodį norint išsinešti saugyklos duomenis."
@@ -1410,7 +1410,7 @@
     "message": "Pasidalinti"
   },
   "bitwardenForBusinessPageDesc": {
-    "message": "Bitwarden for Business allows you to share your vault items with others by using an organization. Learn more on the bitwarden.com website."
+    "message": "TideWarden for Business allows you to share your vault items with others by using an organization. Learn more on the tidewarden.com website."
   },
   "moveToOrganization": {
     "message": "Perkelti į organizaciją"
@@ -1522,7 +1522,7 @@
     "message": "Tvarkyti narystę"
   },
   "premiumManageAlert": {
-    "message": "Savo narystę galite tvarkyti „bitwarden.com“ žiniatinklio saugykloje. Ar norite apsilankyti svetainėje dabar?"
+    "message": "Savo narystę galite tvarkyti „tidewarden.com“ žiniatinklio saugykloje. Ar norite apsilankyti svetainėje dabar?"
   },
   "premiumRefresh": {
     "message": "Atnaujinti narystę"
@@ -1576,13 +1576,13 @@
     "message": "Įsigyti Premium"
   },
   "premiumPurchaseAlertV2": {
-    "message": "You can purchase Premium from your account settings on the Bitwarden web app."
+    "message": "You can purchase Premium from your account settings on the TideWarden web app."
   },
   "premiumCurrentMember": {
     "message": "Tu esi Premium narys!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Dėkojame, kad palaikote „Bitwarden“."
+    "message": "Dėkojame, kad palaikote „TideWarden“."
   },
   "premiumFeatures": {
     "message": "Upgrade to Premium and receive:"
@@ -1688,8 +1688,8 @@
     "message": "Autentifikavimo programa"
   },
   "authenticatorAppDescV2": {
-    "message": "Įveskite autentifikatoriaus programėlės sugeneruotą kodą, pvz., „Bitwarden Authenticator“.",
-    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
+    "message": "Įveskite autentifikatoriaus programėlės sugeneruotą kodą, pvz., „TideWarden Authenticator“.",
+    "description": "'TideWarden Authenticator' is a product name and should not be translated."
   },
   "yubiKeyTitleV2": {
     "message": "„Yubico“ OTP saugumo raktas"
@@ -1721,7 +1721,7 @@
     "message": "Savarankiškai sukurta aplinka"
   },
   "selfHostedBaseUrlHint": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+    "message": "Specify the base URL of your on-premises hosted TideWarden installation. Example: https://tidewarden.company.com"
   },
   "selfHostedCustomEnvHeader": {
     "message": "For advanced configuration, you can specify the base URL of each service independently."
@@ -1771,7 +1771,7 @@
     "message": "Easily find autofill suggestions"
   },
   "autofillSpotlightDesc": {
-    "message": "Turn off your browser's autofill settings, so they don't conflict with Bitwarden."
+    "message": "Turn off your browser's autofill settings, so they don't conflict with TideWarden."
   },
   "turnOffBrowserAutofill": {
     "message": "Turn off $BROWSER$ autofill",
@@ -1795,7 +1795,7 @@
     "message": "Show autofill suggestions on form fields"
   },
   "howDoesBitwardenProtectFromPhishing": {
-    "message": "How does Bitwarden protect your data from phishing?"
+    "message": "How does TideWarden protect your data from phishing?"
   },
   "currentWebsite": {
     "message": "Current website"
@@ -2367,7 +2367,7 @@
     "message": "Silpnas pagrindinis slaptažodis"
   },
   "weakMasterPasswordDesc": {
-    "message": "Jūsų pasirinktas pagrindinis slaptažodis yra silpnas. Turėtumėte naudoti stiprų pagrindinį slaptažodį (arba slaptafrazę), kad tinkamai apsaugotumėte savo „Bitwarden“ paskyrą. Ar tikrai norite naudoti šį pagrindinį slaptažodį?"
+    "message": "Jūsų pasirinktas pagrindinis slaptažodis yra silpnas. Turėtumėte naudoti stiprų pagrindinį slaptažodį (arba slaptafrazę), kad tinkamai apsaugotumėte savo „TideWarden“ paskyrą. Ar tikrai norite naudoti šį pagrindinį slaptažodį?"
   },
   "pin": {
     "message": "PIN",
@@ -2383,10 +2383,10 @@
     "message": "Set PIN"
   },
   "setYourPinCode": {
-    "message": "Nustatykite savo PIN kodą, kad atrakintumėte „Bitwarden“. Jūsų PIN nustatymai bus nustatyti iš naujo, jei kada nors visiškai atsijungsite nuo programos."
+    "message": "Nustatykite savo PIN kodą, kad atrakintumėte „TideWarden“. Jūsų PIN nustatymai bus nustatyti iš naujo, jei kada nors visiškai atsijungsite nuo programos."
   },
   "setPinCode": {
-    "message": "You can use this PIN to unlock Bitwarden. Your PIN will be reset if you ever fully log out of the application."
+    "message": "You can use this PIN to unlock TideWarden. Your PIN will be reset if you ever fully log out of the application."
   },
   "pinRequired": {
     "message": "PIN kodas yra privalomas."
@@ -2407,7 +2407,7 @@
     "message": "Laukiama patvirtinimo iš darbalaukio"
   },
   "awaitDesktopDesc": {
-    "message": "Patvirtinkite naudodami biometrinius duomenis „Bitwarden“ darbalaukio programoje, kad nustatytumėte naršyklės biometrinius duomenis."
+    "message": "Patvirtinkite naudodami biometrinius duomenis „TideWarden“ darbalaukio programoje, kad nustatytumėte naršyklės biometrinius duomenis."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Užrakinkite pagrindiniu slaptažodžiu paleidus naršyklę iš naujo"
@@ -2522,7 +2522,7 @@
     "message": "Formą priglobia kitas domenas nei išsaugoto prisijungimo URI. Pasirinkite „Gerai“, kad vis tiek pildytumėte automatiškai arba „Atšaukti“, kad sustabdytumėte."
   },
   "autofillIframeWarningTip": {
-    "message": "Norėdami išvengti šio įspėjimo ateityje išsaugokite šį URI $HOSTNAME$, Jūsų „Bitwarden“, šios svetainės, prisijungimo elemente.",
+    "message": "Norėdami išvengti šio įspėjimo ateityje išsaugokite šį URI $HOSTNAME$, Jūsų „TideWarden“, šios svetainės, prisijungimo elemente.",
     "placeholders": {
       "hostname": {
         "content": "$1",
@@ -2531,7 +2531,7 @@
     }
   },
   "topLayerHijackWarning": {
-    "message": "This page is interfering with the Bitwarden experience. The Bitwarden inline menu has been temporarily disabled as a safety measure."
+    "message": "This page is interfering with the TideWarden experience. The TideWarden inline menu has been temporarily disabled as a safety measure."
   },
   "setMasterPassword": {
     "message": "Pagrindinio slaptažodžio nustatymas"
@@ -2588,7 +2588,7 @@
     "message": "Tavo naujasis pagrindinis slaptažodis neatitinka politikos reikalavimų."
   },
   "receiveMarketingEmailsV2": {
-    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
+    "message": "Get advice, announcements, and research opportunities from TideWarden in your inbox."
   },
   "unsubscribe": {
     "message": "Atsisakyti prenumeratos"
@@ -2639,13 +2639,13 @@
     "message": "Naršyklės integracija nėra nustatyta"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Naršyklės integravimas nenustatytas Bitwarden darbalaukio programoje. Nustatykite jį darbalaukio programos nustatymuose."
+    "message": "Naršyklės integravimas nenustatytas TideWarden darbalaukio programoje. Nustatykite jį darbalaukio programos nustatymuose."
   },
   "startDesktopTitle": {
-    "message": "Paleiskite Bitwarden darbalaukio programą"
+    "message": "Paleiskite TideWarden darbalaukio programą"
   },
   "startDesktopDesc": {
-    "message": "Reikia paleisti Bitwarden darbalaukio programą prieš naudojant atrakinimą biometriniais duomenimis."
+    "message": "Reikia paleisti TideWarden darbalaukio programą prieš naudojant atrakinimą biometriniais duomenimis."
   },
   "errorEnableBiometricTitle": {
     "message": "Nepavyko nustatyti biometrinių duomenų"
@@ -2699,13 +2699,13 @@
     "message": "Biometrika nepavyko"
   },
   "biometricsFailedDesc": {
-    "message": "Biometriniai duomenys negali būti užpildyti, apsvarstyk galimybę naudoti pagrindinį slaptažodį arba atsijungti. Jei tai tęsiasi, kreipkitės į Bitwarden pagalbą."
+    "message": "Biometriniai duomenys negali būti užpildyti, apsvarstyk galimybę naudoti pagrindinį slaptažodį arba atsijungti. Jei tai tęsiasi, kreipkitės į TideWarden pagalbą."
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "Nesuteiktos teisės"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "Negalime pateikti biometrinių duomenų naršyklės plėtinyje be leidimo susisiekti su Bitwarden darbalaukio programa. Bandykite dar kartą."
+    "message": "Negalime pateikti biometrinių duomenų naršyklės plėtinyje be leidimo susisiekti su TideWarden darbalaukio programa. Bandykite dar kartą."
   },
   "nativeMessaginPermissionSidebarTitle": {
     "message": "Teisių užklausos klaida"
@@ -2742,7 +2742,7 @@
     "message": "Išskirti domenai"
   },
   "excludedDomainsDesc": {
-    "message": "„Bitwarden“ neprašys išsaugoti šių domenų prisijungimo duomenų. Turite atnaujinti puslapį, kad pokyčiai pradėtų galioti."
+    "message": "„TideWarden“ neprašys išsaugoti šių domenų prisijungimo duomenų. Turite atnaujinti puslapį, kad pokyčiai pradėtų galioti."
   },
   "blockedDomainsDesc": {
     "message": "Autofill and other related features will not be offered for these websites. You must refresh the page for changes to take effect."
@@ -2858,21 +2858,21 @@
     "message": "Illustration of a list of logins that are at-risk."
   },
   "generatePasswordSlideDesc": {
-    "message": "Quickly generate a strong, unique password with the Bitwarden autofill menu on the at-risk site.",
+    "message": "Quickly generate a strong, unique password with the TideWarden autofill menu on the at-risk site.",
     "description": "Description of the generate password slide on the at-risk password page carousel"
   },
   "generatePasswordSlideImgAltPeriod": {
-    "message": "Illustration of the Bitwarden autofill menu displaying a generated password."
+    "message": "Illustration of the TideWarden autofill menu displaying a generated password."
   },
   "updateInBitwarden": {
-    "message": "Update in Bitwarden"
+    "message": "Update in TideWarden"
   },
   "updateInBitwardenSlideDesc": {
-    "message": "Bitwarden will then prompt you to update the password in the password manager.",
-    "description": "Description of the update in Bitwarden slide on the at-risk password page carousel"
+    "message": "TideWarden will then prompt you to update the password in the password manager.",
+    "description": "Description of the update in TideWarden slide on the at-risk password page carousel"
   },
   "updateInBitwardenSlideImgAltPeriod": {
-    "message": "Illustration of a Bitwarden’s notification prompting the user to update the login."
+    "message": "Illustration of a TideWarden’s notification prompting the user to update the login."
   },
   "turnOnAutofill": {
     "message": "Turn on autofill"
@@ -2926,11 +2926,11 @@
   },
   "send": {
     "message": "Siųsti",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDetails": {
     "message": "Send details",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendTypeText": {
     "message": "Tekstas"
@@ -2943,7 +2943,7 @@
   },
   "allSends": {
     "message": "Visi siuntimai",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
     "message": "Max access count reached",
@@ -2963,7 +2963,7 @@
   },
   "copySendLink": {
     "message": "Kopijuoti siuntimo nuorodą",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "removePassword": {
     "message": "Šalinti slaptažodį"
@@ -2976,11 +2976,11 @@
   },
   "deletedSend": {
     "message": "Siuntinys ištrintas",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendLink": {
     "message": "Siųsti nuorodą",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "disabled": {
     "message": "Išjungta"
@@ -2990,26 +2990,26 @@
   },
   "deleteSend": {
     "message": "Ištrinti siuntinį",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
     "message": "Ar tikrai norite ištrinti šį „Send“?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendPermanentConfirmation": {
     "message": "Are you sure you want to permanently delete this Send?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editSend": {
     "message": "Redaguoti „Send“",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deletionDate": {
     "message": "Ištrynimo data"
   },
   "deletionDateDescV2": {
     "message": "The Send will be permanently deleted on this date.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "Galiojimo data"
@@ -3031,34 +3031,34 @@
   },
   "createSend": {
     "message": "Naujas Siuntinys",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Naujas slaptažodis"
   },
   "sendDisabled": {
     "message": "Siuntimas pašalintas",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
     "message": "Dėl įmonės politikos galite ištrinti tik esamą „Send“.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSend": {
     "message": "Siuntinys sukurtas",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSendSuccessfully": {
     "message": "Send created successfully!",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInHoursSingle": {
     "message": "The Send will be available to anyone with the link for the next 1 hour.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInHours": {
     "message": "The Send will be available to anyone with the link for the next $HOURS$ hours.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3068,11 +3068,11 @@
   },
   "sendExpiresInDaysSingle": {
     "message": "The Send will be available to anyone with the link for the next 1 day.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInDays": {
     "message": "The Send will be available to anyone with the link for the next $DAYS$ days.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -3082,11 +3082,11 @@
   },
   "sendLinkCopied": {
     "message": "Send link copied",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editedSend": {
     "message": "Siuntinys išsaugotas",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "popOut": {
     "message": "Pop out"
@@ -3362,7 +3362,7 @@
     "message": "Error getting autofill data"
   },
   "couldNotDecryptVaultItemsBelow": {
-    "message": "Bitwarden could not decrypt the vault item(s) listed below."
+    "message": "TideWarden could not decrypt the vault item(s) listed below."
   },
   "contactCSToAvoidDataLossPart1": {
     "message": "Contact customer success",
@@ -3466,11 +3466,11 @@
     }
   },
   "forwarderGeneratedBy": {
-    "message": "Sugeneravo „Bitwarden“.",
+    "message": "Sugeneravo „TideWarden“.",
     "description": "Displayed with the address on the forwarding service's configuration screen."
   },
   "forwarderGeneratedByWithWebsite": {
-    "message": "Svetainė: $WEBSITE$. Sugeneravo „Bitwarden“.",
+    "message": "Svetainė: $WEBSITE$. Sugeneravo „TideWarden“.",
     "description": "Displayed with the address on the forwarding service's configuration screen.",
     "placeholders": {
       "WEBSITE": {
@@ -3663,7 +3663,7 @@
     "message": "A notification has been sent to your device."
   },
   "notificationSentDevicePart1": {
-    "message": "Unlock Bitwarden on your device or on the"
+    "message": "Unlock TideWarden on your device or on the"
   },
   "notificationSentDeviceAnchor": {
     "message": "web app"
@@ -4003,11 +4003,11 @@
   },
   "sendsTitleNoItems": {
     "message": "Send sensitive information safely",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendsBodyNoItems": {
     "message": "Share files and data securely with anyone, on any platform. Your information will remain end-to-end encrypted while limiting exposure.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "inputRequired": {
     "message": "Input is required."
@@ -4148,15 +4148,15 @@
     "message": "Pereiti prie turinio"
   },
   "bitwardenOverlayButton": {
-    "message": "„Bitwarden“ automatinio pildymo meniu mygtukas",
+    "message": "„TideWarden“ automatinio pildymo meniu mygtukas",
     "description": "Page title for the iframe containing the overlay button"
   },
   "toggleBitwardenVaultOverlay": {
-    "message": "Perjungti „Bitwarden“ automatinio pildymo meniu",
+    "message": "Perjungti „TideWarden“ automatinio pildymo meniu",
     "description": "Screen reader and tool tip label for the overlay button"
   },
   "bitwardenVault": {
-    "message": "„Bitwarden“ automatinio pildymo meniu",
+    "message": "„TideWarden“ automatinio pildymo meniu",
     "description": "Page title in overlay"
   },
   "unlockYourAccountToViewMatchingLogins": {
@@ -4228,7 +4228,7 @@
     "description": "Screen reader text (aria-label) for new identity button within inline menu"
   },
   "bitwardenOverlayMenuAvailable": {
-    "message": "Galimas „Bitwarden“ automatinio pildymo meniu. Norėdami pasirinkti, paspauskite rodyklės žemyn klavišą.",
+    "message": "Galimas „TideWarden“ automatinio pildymo meniu. Norėdami pasirinkti, paspauskite rodyklės žemyn klavišą.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
   "turnOn": {
@@ -4540,7 +4540,7 @@
     "message": "Active account"
   },
   "bitwardenAccount": {
-    "message": "Bitwarden account"
+    "message": "TideWarden account"
   },
   "availableAccounts": {
     "message": "Pasiekiamos paskyros"
@@ -4586,8 +4586,8 @@
     "description": "Label indicating the most common import formats"
   },
   "uriMatchDefaultStrategyHint": {
-    "message": "URI match detection is how Bitwarden identifies autofill suggestions.",
-    "description": "Explains to the user that URI match detection determines how Bitwarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
+    "message": "URI match detection is how TideWarden identifies autofill suggestions.",
+    "description": "Explains to the user that URI match detection determines how TideWarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
   },
   "regExAdvancedOptionWarning": {
     "message": "\"Regular expression\" is an advanced option with increased risk of exposing credentials.",
@@ -4630,23 +4630,23 @@
     "description": "Body content for dialog which asks if the user wants to proceed to the browser's keyboard shortcut settings page"
   },
   "overrideDefaultBrowserAutofillTitle": {
-    "message": "Padaryti Bitwarden savo numatytuoju slaptažodžių tvarkytuvu?",
+    "message": "Padaryti TideWarden savo numatytuoju slaptažodžių tvarkytuvu?",
     "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutofillDescription": {
-    "message": "Ignoruojant šią parinktį, gali kilti konfliktų tarp Bitwarden automatinio užpildymo meniu ir naršyklės.",
+    "message": "Ignoruojant šią parinktį, gali kilti konfliktų tarp TideWarden automatinio užpildymo meniu ir naršyklės.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {
-    "message": "Padaryti Bitwarden savo numatytuoju slaptažodžių tvarkytuvu",
+    "message": "Padaryti TideWarden savo numatytuoju slaptažodžių tvarkytuvu",
     "description": "Label for the setting that allows overriding the default browser autofill settings"
   },
   "privacyPermissionAdditionNotGrantedTitle": {
-    "message": "Nepavyksta nustatyti Bitwarden kaip numatytosios slaptažodžių tvarkyklės",
+    "message": "Nepavyksta nustatyti TideWarden kaip numatytosios slaptažodžių tvarkyklės",
     "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "privacyPermissionAdditionNotGrantedDescription": {
-    "message": "Norėdamas (-a) nustatyti Bitwarden kaip numatytąją slaptažodžių tvarkyklę, turi suteikti Bitwarden naršyklės privatumo leidimus.",
+    "message": "Norėdamas (-a) nustatyti TideWarden kaip numatytąją slaptažodžių tvarkyklę, turi suteikti TideWarden naršyklės privatumo leidimus.",
     "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "makeDefault": {
@@ -4984,16 +4984,16 @@
     "message": "Download Attachment"
   },
   "downloadBitwarden": {
-    "message": "Download Bitwarden"
+    "message": "Download TideWarden"
   },
   "downloadBitwardenOnAllDevices": {
-    "message": "Download Bitwarden on all devices"
+    "message": "Download TideWarden on all devices"
   },
   "getTheMobileApp": {
     "message": "Get the mobile app"
   },
   "getTheMobileAppDesc": {
-    "message": "Access your passwords on the go with the Bitwarden mobile app."
+    "message": "Access your passwords on the go with the TideWarden mobile app."
   },
   "getTheDesktopApp": {
     "message": "Get the desktop app"
@@ -5002,7 +5002,7 @@
     "message": "Access your vault without a browser, then set up unlock with biometrics to expedite unlocking in both the desktop app and browser extension."
   },
   "downloadFromBitwardenNow": {
-    "message": "Download from bitwarden.com now"
+    "message": "Download from tidewarden.com now"
   },
   "getItOnGooglePlay": {
     "message": "Get it on Google Play"
@@ -5467,10 +5467,10 @@
     "message": "Biometric unlock is unavailable due to misconfigured system files."
   },
   "biometricsStatusHelptextDesktopDisconnected": {
-    "message": "Biometric unlock is unavailable because the Bitwarden desktop app is closed."
+    "message": "Biometric unlock is unavailable because the TideWarden desktop app is closed."
   },
   "biometricsStatusHelptextNotEnabledInDesktop": {
-    "message": "Biometric unlock is unavailable because it is not enabled for $EMAIL$ in the Bitwarden desktop app.",
+    "message": "Biometric unlock is unavailable because it is not enabled for $EMAIL$ in the TideWarden desktop app.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5731,13 +5731,13 @@
     "message": "The vault protects more than just your passwords. Store secure logins, IDs, cards and notes securely here."
   },
   "introCarouselLabel": {
-    "message": "Welcome to Bitwarden"
+    "message": "Welcome to TideWarden"
   },
   "securityPrioritized": {
     "message": "Security, prioritized"
   },
   "securityPrioritizedBody": {
-    "message": "Save logins, cards, and identities to your secure vault. Bitwarden uses zero-knowledge, end-to-end encryption to protect what’s important to you."
+    "message": "Save logins, cards, and identities to your secure vault. TideWarden uses zero-knowledge, end-to-end encryption to protect what’s important to you."
   },
   "quickLogin": {
     "message": "Quick and easy login"
@@ -5755,7 +5755,7 @@
     "message": "Your data, when and where you need it"
   },
   "secureDevicesBody": {
-    "message": "Save unlimited passwords across unlimited devices with Bitwarden mobile, browser, and desktop apps."
+    "message": "Save unlimited passwords across unlimited devices with TideWarden mobile, browser, and desktop apps."
   },
   "nudgeBadgeAria": {
     "message": "1 notification"
@@ -5764,7 +5764,7 @@
     "message": "Import existing passwords"
   },
   "emptyVaultNudgeBody": {
-    "message": "Use the importer to quickly transfer logins to Bitwarden without manually adding them."
+    "message": "Use the importer to quickly transfer logins to TideWarden without manually adding them."
   },
   "emptyVaultNudgeButton": {
     "message": "Import now"
@@ -5800,7 +5800,7 @@
     "placeholders": {
       "product": {
         "content": "$1",
-        "example": "Bitwarden Phishing Blocker"
+        "example": "TideWarden Phishing Blocker"
       }
     }
   },
@@ -5883,13 +5883,13 @@
     "message": "About this setting"
   },
   "permitCipherDetailsDescription": {
-    "message": "Bitwarden will use saved login URIs to identify which icon or change password URL should be used to improve your experience. No information is collected or saved when you use this service."
+    "message": "TideWarden will use saved login URIs to identify which icon or change password URL should be used to improve your experience. No information is collected or saved when you use this service."
   },
   "noPermissionsViewPage": {
     "message": "You do not have permissions to view this page. Try logging in with a different account."
   },
   "wasmNotSupported": {
-    "message": "WebAssembly is not supported on your browser or is not enabled. WebAssembly is required to use the Bitwarden app.",
+    "message": "WebAssembly is not supported on your browser or is not enabled. WebAssembly is required to use the TideWarden app.",
     "description": "'WebAssembly' is a technical term and should not be translated."
   },
   "showMore": {
@@ -5964,7 +5964,7 @@
     "message": "Error: Cannot decrypt"
   },
   "removeMasterPasswordForOrgUserKeyConnector": {
-    "message": "Your organization is no longer using master passwords to log into Bitwarden. To continue, verify the organization and domain."
+    "message": "Your organization is no longer using master passwords to log into TideWarden. To continue, verify the organization and domain."
   },
   "continueWithLogIn": {
     "message": "Continue with log in"
@@ -6122,17 +6122,17 @@
     "message": "Enter multiple emails by separating with a comma."
   },
   "emailPlaceholder": {
-    "message": "user@bitwarden.com , user@acme.com"
+    "message": "user@tidewarden.com , user@acme.com"
   },
   "downloadBitwardenApps": {
-    "message": "Download Bitwarden apps"
+    "message": "Download TideWarden apps"
   },
   "emailProtected": {
     "message": "Email protected"
   },
   "sendPasswordHelperText": {
     "message": "Individuals will need to enter the password to view this Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "logInToTideWarden": {
     "message": "Prisijungti prie „TideWarden“"

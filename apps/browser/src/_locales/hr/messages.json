@@ -23,7 +23,7 @@
     "message": "Stvori račun"
   },
   "newToBitwarden": {
-    "message": "Novi u Bitwardenu?"
+    "message": "Novi u TideWardenu?"
   },
   "logInWithPasskey": {
     "message": "Prijava pristupnim ključem"
@@ -300,22 +300,22 @@
     "message": "Nastavi na web aplikaciju?"
   },
   "continueToWebAppDesc": {
-    "message": "Pronađi više značajki svojeg Bitwarden računa u web aplikaciji."
+    "message": "Pronađi više značajki svojeg TideWarden računa u web aplikaciji."
   },
   "continueToHelpCenter": {
     "message": "Nastavi u centar za pomoć?"
   },
   "continueToHelpCenterDesc": {
-    "message": "Za pomoć oko korištenja Bitwardena posjeti centar za pomoć."
+    "message": "Za pomoć oko korištenja TideWardena posjeti centar za pomoć."
   },
   "continueToBrowserExtensionStore": {
     "message": "Nastaviti na trgovinu proširenja za preglednik?"
   },
   "continueToBrowserExtensionStoreDesc": {
-    "message": "Želiš preporučiti Bitwarden drugima? Posjeti trgovinu proširenja svojeg preglednika i ostavi recenziju."
+    "message": "Želiš preporučiti TideWarden drugima? Posjeti trgovinu proširenja svojeg preglednika i ostavi recenziju."
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "Svoju lozinku možeš promijeniti u Bitwarden web aplikaciji."
+    "message": "Svoju lozinku možeš promijeniti u TideWarden web aplikaciji."
   },
   "fingerprintPhrase": {
     "message": "Jedinstvena fraza",
@@ -332,43 +332,43 @@
     "message": "Odjava"
   },
   "aboutBitwarden": {
-    "message": "O Bitwardenu"
+    "message": "O TideWardenu"
   },
   "about": {
     "message": "O aplikaciji"
   },
   "moreFromBitwarden": {
-    "message": "Više od Bitwardena"
+    "message": "Više od TideWardena"
   },
   "continueToBitwardenDotCom": {
-    "message": "Nastavi na bitwarden.com?"
+    "message": "Nastavi na tidewarden.com?"
   },
   "bitwardenForBusiness": {
-    "message": "Bitwarden za tvrtke"
+    "message": "TideWarden za tvrtke"
   },
   "bitwardenAuthenticator": {
-    "message": "Bitwarden autentifikator"
+    "message": "TideWarden autentifikator"
   },
   "continueToAuthenticatorPageDesc": {
-    "message": "Bitwarden autentifikator omogućuje pohranu autentifikatorskih ključeva i generiranje TOTP kodova za dvostruku autentifikaciju. Saznaj više na web stranici bitwarden.com"
+    "message": "TideWarden autentifikator omogućuje pohranu autentifikatorskih ključeva i generiranje TOTP kodova za dvostruku autentifikaciju. Saznaj više na web stranici tidewarden.com"
   },
   "bitwardenSecretsManager": {
-    "message": "Bitwarden Secrets Manager"
+    "message": "TideWarden Secrets Manager"
   },
   "continueToSecretsManagerPageDesc": {
-    "message": "Sigurno pohrani, upravljaj i dijeli programerske tajne s Bitwarden Secrets Managerom. Saznajte više na web stranici bitwarden.com."
+    "message": "Sigurno pohrani, upravljaj i dijeli programerske tajne s TideWarden Secrets Managerom. Saznajte više na web stranici tidewarden.com."
   },
   "passwordlessDotDev": {
     "message": "Passwordless.dev"
   },
   "continueToPasswordlessDotDevPageDesc": {
-    "message": "Stvori laka i sigurna iskustva prijave bez tradicionalnih lozinki uz Passwordless.dev. Saznaj više na web stranici bitwarden.com."
+    "message": "Stvori laka i sigurna iskustva prijave bez tradicionalnih lozinki uz Passwordless.dev. Saznaj više na web stranici tidewarden.com."
   },
   "freeBitwardenFamilies": {
-    "message": "Besplatni Bitwarden Families"
+    "message": "Besplatni TideWarden Families"
   },
   "freeBitwardenFamiliesPageDesc": {
-    "message": "Ispunjavaš uvjete za besplatni Bitwarden Families. Iskoristi ovu ponudu u web aplikaciji već danas."
+    "message": "Ispunjavaš uvjete za besplatni TideWarden Families. Iskoristi ovu ponudu u web aplikaciji već danas."
   },
   "version": {
     "message": "Verzija"
@@ -428,13 +428,13 @@
     "message": "Pomoć i povratne informacije"
   },
   "helpCenter": {
-    "message": "Bitwarden centar za pomoć"
+    "message": "TideWarden centar za pomoć"
   },
   "communityForums": {
-    "message": "Istraži forume zajednice Bitwarden"
+    "message": "Istraži forume zajednice TideWarden"
   },
   "contactSupport": {
-    "message": "Kontaktiraj Bitwarden pomoć"
+    "message": "Kontaktiraj TideWarden pomoć"
   },
   "sync": {
     "message": "Sinkronizacija"
@@ -456,7 +456,7 @@
     "message": "Automatski generiraj jake, jedinstvene lozinke."
   },
   "bitWebVaultApp": {
-    "message": "Bitwarden web trezor"
+    "message": "TideWarden web trezor"
   },
   "select": {
     "message": "Odaberi"
@@ -750,7 +750,7 @@
       },
       "hostname": {
         "content": "$2",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -762,7 +762,7 @@
     "placeholders": {
       "host": {
         "content": "$1",
-        "example": "vault.bitwarden.com"
+        "example": "vault.tidewarden.com"
       }
     }
   },
@@ -922,10 +922,10 @@
     "message": "Učini dvostruku autentifikaciju besprijekornom"
   },
   "totpHelper": {
-    "message": "Bitwarden može pohraniti i ispuniti kodove za dvostruku autentifikaciju. Kopiraj i zalijepi ključ u ovo polje."
+    "message": "TideWarden može pohraniti i ispuniti kodove za dvostruku autentifikaciju. Kopiraj i zalijepi ključ u ovo polje."
   },
   "totpHelperWithCapture": {
-    "message": "Bitwarden može pohraniti i ispuniti kodove za dvostruku autentifikaciju. Odaberi ikonu kamere i označi QR kôd za provjeru autentičnosti ove web stranice ili kopiraj i zalijepi ključ u ovo polje."
+    "message": "TideWarden može pohraniti i ispuniti kodove za dvostruku autentifikaciju. Odaberi ikonu kamere i označi QR kôd za provjeru autentičnosti ove web stranice ili kopiraj i zalijepi ključ u ovo polje."
   },
   "learnMoreAboutAuthenticators": {
     "message": "Više o autentifikatorima"
@@ -946,7 +946,7 @@
     "message": "Prijavi se"
   },
   "logInToBitwarden": {
-    "message": "Prijavi se u Bitwarden"
+    "message": "Prijavi se u TideWarden"
   },
   "enterTheCodeSentToYourEmail": {
     "message": "Unesi kôd poslan e-poštom"
@@ -1006,10 +1006,10 @@
     "message": "Mapa dodana"
   },
   "twoStepLoginConfirmation": {
-    "message": "Prijava dvostrukom autentifikacijom čini tvoj račun još sigurnijim tako što će zahtijevati potvrdu prijave drugim uređajem kao što je sigurnosni ključ, autentifikatorska aplikacija, SMS, poziv ili e-pošta. Prijavu dvostrukom autentifikacijom možeš omogućiti na web trezoru. Želiš li sada posjetiti bitwarden.com?"
+    "message": "Prijava dvostrukom autentifikacijom čini tvoj račun još sigurnijim tako što će zahtijevati potvrdu prijave drugim uređajem kao što je sigurnosni ključ, autentifikatorska aplikacija, SMS, poziv ili e-pošta. Prijavu dvostrukom autentifikacijom možeš omogućiti na web trezoru. Želiš li sada posjetiti tidewarden.com?"
   },
   "twoStepLoginConfirmationContent": {
-    "message": "Učini svoj račun sigurnijim uključivanjem prijave dvofaktorskom autentifikacijom u Bitwarden web aplikaciji."
+    "message": "Učini svoj račun sigurnijim uključivanjem prijave dvofaktorskom autentifikacijom u TideWarden web aplikaciji."
   },
   "twoStepLoginConfirmationTitle": {
     "message": "Nastavi na web aplikaciju?"
@@ -1056,7 +1056,7 @@
   },
   "addDomain": {
     "message": "Dodaj domenu",
-    "description": "'Domain' here refers to an internet domain name (e.g. 'bitwarden.com') and the message in whole described the act of putting a domain value into the context."
+    "description": "'Domain' here refers to an internet domain name (e.g. 'tidewarden.com') and the message in whole described the act of putting a domain value into the context."
   },
   "addedItem": {
     "message": "Stavka dodana"
@@ -1114,7 +1114,7 @@
     "message": "Mogućnosti spremanja u trezor"
   },
   "addLoginNotificationDesc": {
-    "message": "Upit za dodavanje prijave pojavljuje se kada se otkrije prva prijava na neko web mjesto. Bitwarden će te pitatati želiš li uneseno korisničko ime i lozinku spremiti u svoj trezor."
+    "message": "Upit za dodavanje prijave pojavljuje se kada se otkrije prva prijava na neko web mjesto. TideWarden će te pitatati želiš li uneseno korisničko ime i lozinku spremiti u svoj trezor."
   },
   "addLoginNotificationDescAlt": {
     "message": "Pitaj za dodavanje stavke ako nije pronađena u tvojem trezoru. Primjenjuje se na sve prijavljene račune."
@@ -1152,7 +1152,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Treba li Bitwarden zapamtiti ovu lozinku?"
+    "message": "Treba li TideWarden zapamtiti ovu lozinku?"
   },
   "notificationAddSave": {
     "message": "Spremi"
@@ -1188,7 +1188,7 @@
     }
   },
   "notificationLoginSaveConfirmation": {
-    "message": "spremljeno u Bitwarden.",
+    "message": "spremljeno u TideWarden.",
     "description": "Shown to user after item is saved."
   },
   "notificationLoginUpdatedConfirmation": {
@@ -1290,13 +1290,13 @@
     "message": "Pitaj za spremanje novih pristupnih ključeva ili se prijavi pomoću pristupnih ključeva pohranjenih u tvojem trezoru. Primjenjuje se na sve prijavljene račune."
   },
   "notificationChangeDesc": {
-    "message": "Želiš li ovu lozinku ažurirati u Bitwarden-u?"
+    "message": "Želiš li ovu lozinku ažurirati u TideWarden-u?"
   },
   "notificationChangeSave": {
     "message": "Ažuriraj"
   },
   "notificationUnlockDesc": {
-    "message": "Za dovršetak auto-ispune, otključaj svoj Bitwarden trezor."
+    "message": "Za dovršetak auto-ispune, otključaj svoj TideWarden trezor."
   },
   "notificationUnlock": {
     "message": "Otključaj"
@@ -1369,10 +1369,10 @@
     "message": "Ova će se lozinka koristiti za izvoz i uvoz ove datoteke"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Upotrijebi svoj ključ za šifriranje računa, izveden iz korisničkog imena i glavne lozinke za šifriranje izvoza i ograničavanje uvoza samo na trenutni Bitwarden račun."
+    "message": "Upotrijebi svoj ključ za šifriranje računa, izveden iz korisničkog imena i glavne lozinke za šifriranje izvoza i ograničavanje uvoza samo na trenutni TideWarden račun."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Bitwarden omogućuje dijeljenje trezora s drugima pomoću organizacijskog računa. Za više informacija posjeti bitwarden. com."
+    "message": "TideWarden omogućuje dijeljenje trezora s drugima pomoću organizacijskog računa. Za više informacija posjeti bitwarden. com."
   },
   "exportTypeHeading": {
     "message": "Tip izvoza"
@@ -1401,7 +1401,7 @@
     "message": "Ovaj izvoz šifrira tvoje podatke koristeći ključ za šifriranje. Promijeniš li naknadno ključ za šifriranje, potrebno je ponovno napraviti izvoz jer nećeš moći dešifrirati ovu izvezenu datoteku."
   },
   "encExportAccountWarningDesc": {
-    "message": "Ključ za šifriranje jedinstven je za svakog Bitwarden korisnika, kako bi se šifrirani izvoz mogao uvesti u drugi korisnički račun."
+    "message": "Ključ za šifriranje jedinstven je za svakog TideWarden korisnika, kako bi se šifrirani izvoz mogao uvesti u drugi korisnički račun."
   },
   "exportMasterPassword": {
     "message": "Unesi glavnu lozinku za izvoz podataka iz trezora."
@@ -1410,7 +1410,7 @@
     "message": "Dijeljeno"
   },
   "bitwardenForBusinessPageDesc": {
-    "message": "Bitwarden for Business omogućuje dijeljenje stavki trezora s drugima koristeći organizacije. Za više informacija posjeti bitwarden.com."
+    "message": "TideWarden for Business omogućuje dijeljenje stavki trezora s drugima koristeći organizacije. Za više informacija posjeti tidewarden.com."
   },
   "moveToOrganization": {
     "message": "Premjesti u organizaciju"
@@ -1522,7 +1522,7 @@
     "message": "Upravljaj članstvom"
   },
   "premiumManageAlert": {
-    "message": "Svojim članstvom možeš upravljati na web trezoru. Želiš li sada posjetiti bitwarden.com?"
+    "message": "Svojim članstvom možeš upravljati na web trezoru. Želiš li sada posjetiti tidewarden.com?"
   },
   "premiumRefresh": {
     "message": "Osvježi status članstva"
@@ -1576,13 +1576,13 @@
     "message": "Kupi premium članstvo"
   },
   "premiumPurchaseAlertV2": {
-    "message": "Premium možeš kupiti u postavkama računa na Bitwarden web aplikaciji."
+    "message": "Premium možeš kupiti u postavkama računa na TideWarden web aplikaciji."
   },
   "premiumCurrentMember": {
     "message": "Ti si premium član!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Hvala ti što podupireš Bitwarden."
+    "message": "Hvala ti što podupireš TideWarden."
   },
   "premiumFeatures": {
     "message": "Nadogradi na Premium za:"
@@ -1688,8 +1688,8 @@
     "message": "Autentifikatorska aplikacija"
   },
   "authenticatorAppDescV2": {
-    "message": "Unesi kôd generiran autentifikatorskom aplikacijom kao npr. Bitwarden Authenticatorom.",
-    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
+    "message": "Unesi kôd generiran autentifikatorskom aplikacijom kao npr. TideWarden Authenticatorom.",
+    "description": "'TideWarden Authenticator' is a product name and should not be translated."
   },
   "yubiKeyTitleV2": {
     "message": "Yubico OTP sigurnosni ključ"
@@ -1721,7 +1721,7 @@
     "message": "Vlastito hosting okruženje"
   },
   "selfHostedBaseUrlHint": {
-    "message": "Navedi osnovni URL svoje lokalne Bitwarden instalacije, npr.: https://bitwarden.company.com"
+    "message": "Navedi osnovni URL svoje lokalne TideWarden instalacije, npr.: https://tidewarden.company.com"
   },
   "selfHostedCustomEnvHeader": {
     "message": "Kao naprednu postavku, možeš odrediti osnovni URL svake usluge zasebno."
@@ -1771,7 +1771,7 @@
     "message": "Jednostavno pronađi prijedloge auto-ispune"
   },
   "autofillSpotlightDesc": {
-    "message": "Isključi postavke auto-ispune preglenika kako se ne bi kosile s Bitwardenom."
+    "message": "Isključi postavke auto-ispune preglenika kako se ne bi kosile s TideWardenom."
   },
   "turnOffBrowserAutofill": {
     "message": "Isključi auto-ispunu za $BROWSER$",
@@ -1795,7 +1795,7 @@
     "message": "Prikaži prijedloge auto-ispune na poljima obrazaca"
   },
   "howDoesBitwardenProtectFromPhishing": {
-    "message": "Kako Bitwarden štiti tvoje podatke od phishinga?"
+    "message": "Kako TideWarden štiti tvoje podatke od phishinga?"
   },
   "currentWebsite": {
     "message": "Trenutna web stranica"
@@ -2367,7 +2367,7 @@
     "message": "Slaba glavna lozinka"
   },
   "weakMasterPasswordDesc": {
-    "message": "Odabrana glavna lozinka je slaba. Trebaš koristiti jaču glavnu lozinku (ili frazu) kako bi tvoj Bitwarden račun bio pravilno zaštićen. Sigurno želiš koristiti ovakvu, slabu glavnu lozinku?"
+    "message": "Odabrana glavna lozinka je slaba. Trebaš koristiti jaču glavnu lozinku (ili frazu) kako bi tvoj TideWarden račun bio pravilno zaštićen. Sigurno želiš koristiti ovakvu, slabu glavnu lozinku?"
   },
   "pin": {
     "message": "PIN",
@@ -2383,10 +2383,10 @@
     "message": "Postavi PIN"
   },
   "setYourPinCode": {
-    "message": "Postavi svoj PIN kôd za otključavanje Bitwardena. Postavke PIN-a se resetiraju ako se potpuno odjaviš iz aplikacije."
+    "message": "Postavi svoj PIN kôd za otključavanje TideWardena. Postavke PIN-a se resetiraju ako se potpuno odjaviš iz aplikacije."
   },
   "setPinCode": {
-    "message": "Ovim PIN-om možeš otključati Bitwarden. Tvoj PIN će se resetirati ako se ikada potpuno odjaviš iz aplikacije."
+    "message": "Ovim PIN-om možeš otključati TideWarden. Tvoj PIN će se resetirati ako se ikada potpuno odjaviš iz aplikacije."
   },
   "pinRequired": {
     "message": "Potreban je PIN."
@@ -2407,7 +2407,7 @@
     "message": "Čekanje potvrde iz desktop aplikacije"
   },
   "awaitDesktopDesc": {
-    "message": "Potvrdi korištenje biometrije u Bitwarden desktop aplikaciji za korištenje biometrije u pregledniku."
+    "message": "Potvrdi korištenje biometrije u TideWarden desktop aplikaciji za korištenje biometrije u pregledniku."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zaključaj glavnom lozinkom kod svakog pokretanja preglednika"
@@ -2531,7 +2531,7 @@
     }
   },
   "topLayerHijackWarning": {
-    "message": "Ova stranica ometa Bitwarden iskustvo. Kao sigurnosna mjera, Bitwarden inline izbornik je privremeno onemogućen."
+    "message": "Ova stranica ometa TideWarden iskustvo. Kao sigurnosna mjera, TideWarden inline izbornik je privremeno onemogućen."
   },
   "setMasterPassword": {
     "message": "Postavi glavnu lozinku"
@@ -2588,7 +2588,7 @@
     "message": "Tvoja nova glavna lozinka ne ispunjava zahtjeve."
   },
   "receiveMarketingEmailsV2": {
-    "message": "Primaj e-poštom od Bitwardena savjete, najave i mogućnosti istraživanja."
+    "message": "Primaj e-poštom od TideWardena savjete, najave i mogućnosti istraživanja."
   },
   "unsubscribe": {
     "message": "Poništi pretplatu"
@@ -2639,13 +2639,13 @@
     "message": "Integracija s preglednikom nije omogućena"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Integracija s preglednikom nije omogućena u Bitwarden desktop aplikaciji. Omogući integraciju u postavkama desktop aplikacije."
+    "message": "Integracija s preglednikom nije omogućena u TideWarden desktop aplikaciji. Omogući integraciju u postavkama desktop aplikacije."
   },
   "startDesktopTitle": {
-    "message": "Pokreni Bitwarden dekstop aplikaciju"
+    "message": "Pokreni TideWarden dekstop aplikaciju"
   },
   "startDesktopDesc": {
-    "message": "Bitwarden desktop aplikacija mora biti pokrenuta prije korištenja ove funkcije."
+    "message": "TideWarden desktop aplikacija mora biti pokrenuta prije korištenja ove funkcije."
   },
   "errorEnableBiometricTitle": {
     "message": "Nije moguće omogućiti biometriju"
@@ -2675,7 +2675,7 @@
     "message": "Biometrija nije omogućena"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Biometrija preglednika zahtijeva prethodno omogućenu biometriju u Bitwarden desktop aplikaciji."
+    "message": "Biometrija preglednika zahtijeva prethodno omogućenu biometriju u TideWarden desktop aplikaciji."
   },
   "biometricsNotSupportedTitle": {
     "message": "Biometrija nije podržana"
@@ -2699,13 +2699,13 @@
     "message": "Biometrija neuspješna"
   },
   "biometricsFailedDesc": {
-    "message": "Biometrija se ne može dovršiti. Pokušaj glavnom lozinkom ili se odjavi i ponovno prijavi. Ako se ovo nastavi, obrati se Bitwarden podršci."
+    "message": "Biometrija se ne može dovršiti. Pokušaj glavnom lozinkom ili se odjavi i ponovno prijavi. Ako se ovo nastavi, obrati se TideWarden podršci."
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "Dopuštenje nije dano"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "Bez odobrenja za komunikaciju s Bitwarden Desktop aplikacijom nije moguće korištenje biometrije u proširenju preglednika."
+    "message": "Bez odobrenja za komunikaciju s TideWarden Desktop aplikacijom nije moguće korištenje biometrije u proširenju preglednika."
   },
   "nativeMessaginPermissionSidebarTitle": {
     "message": "Greška zahtjeva dozvole"
@@ -2742,7 +2742,7 @@
     "message": "Izuzete domene"
   },
   "excludedDomainsDesc": {
-    "message": "Bitwarden neće pitati treba li spremiti prijavne podatke za ove domene. Za primjenu promjena, potrebno je osvježiti stranicu."
+    "message": "TideWarden neće pitati treba li spremiti prijavne podatke za ove domene. Za primjenu promjena, potrebno je osvježiti stranicu."
   },
   "blockedDomainsDesc": {
     "message": "Auto-ispuna i druge vezane značajke neće biti ponuđene za ova web mjesta. Potrebno je osvježiti stranicu zaprimjenu postavki."
@@ -2858,21 +2858,21 @@
     "message": "Ilustracija liste rizičnih prijava."
   },
   "generatePasswordSlideDesc": {
-    "message": "Brzo generiraj jake, jedinstvene lozinke koristeći Bitwarden dijalog auto-ispune direktno na stranici.",
+    "message": "Brzo generiraj jake, jedinstvene lozinke koristeći TideWarden dijalog auto-ispune direktno na stranici.",
     "description": "Description of the generate password slide on the at-risk password page carousel"
   },
   "generatePasswordSlideImgAltPeriod": {
-    "message": "Ilustracija Bitwarden dijaloga auto-ispune s prikazom generirane lozinke."
+    "message": "Ilustracija TideWarden dijaloga auto-ispune s prikazom generirane lozinke."
   },
   "updateInBitwarden": {
-    "message": "Ažuriraj u Bitwardenu"
+    "message": "Ažuriraj u TideWardenu"
   },
   "updateInBitwardenSlideDesc": {
-    "message": "Bitwarden će te pitati treba li ažurirati lozinku u upravitelju lozinki.",
-    "description": "Description of the update in Bitwarden slide on the at-risk password page carousel"
+    "message": "TideWarden će te pitati treba li ažurirati lozinku u upravitelju lozinki.",
+    "description": "Description of the update in TideWarden slide on the at-risk password page carousel"
   },
   "updateInBitwardenSlideImgAltPeriod": {
-    "message": "Ilustracija Bitwarden upita za ažuriranje prijave."
+    "message": "Ilustracija TideWarden upita za ažuriranje prijave."
   },
   "turnOnAutofill": {
     "message": "Uključi auto-ispunu"
@@ -2926,11 +2926,11 @@
   },
   "send": {
     "message": "Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDetails": {
     "message": "Detalji Senda",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendTypeText": {
     "message": "Tekst"
@@ -2943,7 +2943,7 @@
   },
   "allSends": {
     "message": "Svi Sendovi",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
     "message": "Dostignut najveći broj pristupanja",
@@ -2963,7 +2963,7 @@
   },
   "copySendLink": {
     "message": "Kopiraj vezu na Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "removePassword": {
     "message": "Ukloni lozinku"
@@ -2976,11 +2976,11 @@
   },
   "deletedSend": {
     "message": "Send izbrisan",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendLink": {
     "message": "Veza na Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "disabled": {
     "message": "Onemogućeno"
@@ -2990,26 +2990,26 @@
   },
   "deleteSend": {
     "message": "Izbriši Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
     "message": "Sigurno želiš izbrisati ovaj Send?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendPermanentConfirmation": {
     "message": "Sigurno želiš trajno izbrisati ovaj Send?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editSend": {
     "message": "Uredi Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deletionDate": {
     "message": "Obriši za"
   },
   "deletionDateDescV2": {
     "message": "Send će na ovaj datum biti trajno izbrisan.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "Vremenski ograničeni pristup"
@@ -3031,34 +3031,34 @@
   },
   "createSend": {
     "message": "Stvori novi Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Nova lozinka"
   },
   "sendDisabled": {
     "message": "Send onemogućen",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
     "message": "Pravila tvrtke omogućuju brisanje samo postojećeg Senda",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSend": {
     "message": "Send stvoren",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSendSuccessfully": {
     "message": "Send je uspješno stvoren!",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInHoursSingle": {
     "message": "Send će biti dostupan svakome s poveznicom sljedećih sat vremena.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInHours": {
     "message": "Send če biti dostupan svakome s poveznicom ovoliko sati: $HOURS$",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3068,11 +3068,11 @@
   },
   "sendExpiresInDaysSingle": {
     "message": "Send će biti dostupan svakome s poveznicom 1 dan.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInDays": {
     "message": "Send će biti dostupan svakome s poveznom ovoliko dana: $DAYS$",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -3082,11 +3082,11 @@
   },
   "sendLinkCopied": {
     "message": "Kopirana poveznica Senda",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editedSend": {
     "message": "Send spremljen",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "popOut": {
     "message": "Otvori"
@@ -3362,7 +3362,7 @@
     "message": "Greška kod dohvata podataka za auto-ispunu"
   },
   "couldNotDecryptVaultItemsBelow": {
-    "message": "Bitwarden nije mogao dešifrirati sljedeće stavke trezora."
+    "message": "TideWarden nije mogao dešifrirati sljedeće stavke trezora."
   },
   "contactCSToAvoidDataLossPart1": {
     "message": "Kontaktiraj službu za korisnike",
@@ -3466,11 +3466,11 @@
     }
   },
   "forwarderGeneratedBy": {
-    "message": "Generirao Bitwarden.",
+    "message": "Generirao TideWarden.",
     "description": "Displayed with the address on the forwarding service's configuration screen."
   },
   "forwarderGeneratedByWithWebsite": {
-    "message": "Web: $WEBSITE$. Generirao Bitwarden.",
+    "message": "Web: $WEBSITE$. Generirao TideWarden.",
     "description": "Displayed with the address on the forwarding service's configuration screen.",
     "placeholders": {
       "WEBSITE": {
@@ -3663,7 +3663,7 @@
     "message": "Obavijest je poslana na tvoj uređaj."
   },
   "notificationSentDevicePart1": {
-    "message": "Otključaj Bitwarden na svojem uređaju ili na"
+    "message": "Otključaj TideWarden na svojem uređaju ili na"
   },
   "notificationSentDeviceAnchor": {
     "message": "web trezoru"
@@ -4003,11 +4003,11 @@
   },
   "sendsTitleNoItems": {
     "message": "Sigurno pošalji osjetljive podatke",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendsBodyNoItems": {
     "message": "Sigurno dijeli datoteke i podatke s bilo kime, na bilo kojoj platformi. Tvoji podaci ostaju kriptirani uz ograničenje izloženosti.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "inputRequired": {
     "message": "Potreban je unos."
@@ -4148,15 +4148,15 @@
     "message": "Preskoči na sadržaj"
   },
   "bitwardenOverlayButton": {
-    "message": "Tipka izbornika Bitwarden auto-ispune",
+    "message": "Tipka izbornika TideWarden auto-ispune",
     "description": "Page title for the iframe containing the overlay button"
   },
   "toggleBitwardenVaultOverlay": {
-    "message": "U/isključivanje izbornika Bitwarden auto-ispune",
+    "message": "U/isključivanje izbornika TideWarden auto-ispune",
     "description": "Screen reader and tool tip label for the overlay button"
   },
   "bitwardenVault": {
-    "message": "Izbornik Bitwarden auto-ispune",
+    "message": "Izbornik TideWarden auto-ispune",
     "description": "Page title in overlay"
   },
   "unlockYourAccountToViewMatchingLogins": {
@@ -4228,7 +4228,7 @@
     "description": "Screen reader text (aria-label) for new identity button within inline menu"
   },
   "bitwardenOverlayMenuAvailable": {
-    "message": "Dostupan je Bitwarden izbornik auto-ispune. Pritisni tipku sa strelicom prema dolje za odabir.",
+    "message": "Dostupan je TideWarden izbornik auto-ispune. Pritisni tipku sa strelicom prema dolje za odabir.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
   "turnOn": {
@@ -4540,7 +4540,7 @@
     "message": "Aktivni račun"
   },
   "bitwardenAccount": {
-    "message": "Bitwarden račun"
+    "message": "TideWarden račun"
   },
   "availableAccounts": {
     "message": "Dostupni računi"
@@ -4586,8 +4586,8 @@
     "description": "Label indicating the most common import formats"
   },
   "uriMatchDefaultStrategyHint": {
-    "message": "Otkrivanje podudaranja URI-ja je način na koji Bitwarden identificira prijedloge za auto-ispunu.",
-    "description": "Explains to the user that URI match detection determines how Bitwarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
+    "message": "Otkrivanje podudaranja URI-ja je način na koji TideWarden identificira prijedloge za auto-ispunu.",
+    "description": "Explains to the user that URI match detection determines how TideWarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
   },
   "regExAdvancedOptionWarning": {
     "message": "„Regularni izraz” je napredna mogućnost s povećanim rizikom od otkrivanja vjerodajnica.",
@@ -4630,23 +4630,23 @@
     "description": "Body content for dialog which asks if the user wants to proceed to the browser's keyboard shortcut settings page"
   },
   "overrideDefaultBrowserAutofillTitle": {
-    "message": "Postavi Bitwarden kao zadani upravitelj lozinki?",
+    "message": "Postavi TideWarden kao zadani upravitelj lozinki?",
     "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutofillDescription": {
-    "message": "Ostavljanje ove postavke isključenom može uzrokovati sukob između prijedloga za auto-ispunu Bitwardena i tvojeg preglednika.",
+    "message": "Ostavljanje ove postavke isključenom može uzrokovati sukob između prijedloga za auto-ispunu TideWardena i tvojeg preglednika.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {
-    "message": "Postavi Bitwarden kao zadani upravitelj lozinki",
+    "message": "Postavi TideWarden kao zadani upravitelj lozinki",
     "description": "Label for the setting that allows overriding the default browser autofill settings"
   },
   "privacyPermissionAdditionNotGrantedTitle": {
-    "message": "Nije moguće postaviti Bitwarden kao zadani upravitelj lozinki",
+    "message": "Nije moguće postaviti TideWarden kao zadani upravitelj lozinki",
     "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "privacyPermissionAdditionNotGrantedDescription": {
-    "message": "Za postavljanje Bitwardena kao zadanog upravitelja lozinki moraš pregledniku dati dopuštenje privatnosti.",
+    "message": "Za postavljanje TideWardena kao zadanog upravitelja lozinki moraš pregledniku dati dopuštenje privatnosti.",
     "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "makeDefault": {
@@ -4984,16 +4984,16 @@
     "message": "Download Attachment"
   },
   "downloadBitwarden": {
-    "message": "Preuzmi Bitwarden"
+    "message": "Preuzmi TideWarden"
   },
   "downloadBitwardenOnAllDevices": {
-    "message": "Preuzmi Bitwarden na svim uređajima"
+    "message": "Preuzmi TideWarden na svim uređajima"
   },
   "getTheMobileApp": {
     "message": "Nabavi mobilnu aplikaciju"
   },
   "getTheMobileAppDesc": {
-    "message": "Pristupi svojim lozinkama bilo gdje s Bitwarden mobilnom aplikacijom."
+    "message": "Pristupi svojim lozinkama bilo gdje s TideWarden mobilnom aplikacijom."
   },
   "getTheDesktopApp": {
     "message": "Nabavi aplikaciju za stolna računala"
@@ -5002,7 +5002,7 @@
     "message": "Pristupi svojem trezoru bez preglednika, a zatim postavi otključavanje biometrijom za brže otključavanje aplikacije za stolna računala i prošitenja preglednika."
   },
   "downloadFromBitwardenNow": {
-    "message": "Odmah preusmi s bitwarden.com"
+    "message": "Odmah preusmi s tidewarden.com"
   },
   "getItOnGooglePlay": {
     "message": "Nabavi u Google Play"
@@ -5467,10 +5467,10 @@
     "message": "Biometrijsko otključavanje nije dostupno zbog pogrešno konfiguriranih sistemskih datoteka."
   },
   "biometricsStatusHelptextDesktopDisconnected": {
-    "message": "Biometrijsko otključavanje nije dostupno jer je Bitwarden dekstop aplikacija zatvorena."
+    "message": "Biometrijsko otključavanje nije dostupno jer je TideWarden dekstop aplikacija zatvorena."
   },
   "biometricsStatusHelptextNotEnabledInDesktop": {
-    "message": "Biometrijsko otključavanje nije dostupno jer nije omogućeno za $EMAIL$ u Bitwarden desktop aplikaciji.",
+    "message": "Biometrijsko otključavanje nije dostupno jer nije omogućeno za $EMAIL$ u TideWarden desktop aplikaciji.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5505,7 +5505,7 @@
     "description": "Notification message for when a password has been regenerated"
   },
   "saveToBitwarden": {
-    "message": "Spremi u Bitwarden",
+    "message": "Spremi u TideWarden",
     "description": "Confirmation message for saving a login to TideWarden"
   },
   "spaceCharacterDescriptor": {
@@ -5731,13 +5731,13 @@
     "message": "Trezor štiti više od lozinki. Sigurno spremi prijave, identitete, kartice i bilješke."
   },
   "introCarouselLabel": {
-    "message": "Dobrodošli u Bitwarden"
+    "message": "Dobrodošli u TideWarden"
   },
   "securityPrioritized": {
     "message": "Sigurnost je imperativ"
   },
   "securityPrioritizedBody": {
-    "message": "Spremi prijave, kartice i identitete u svoj sigurni trezor. Bitwarden koristi end-to-end enkripciju bez znanja kako bi zaštitio ono što ti je važno."
+    "message": "Spremi prijave, kartice i identitete u svoj sigurni trezor. TideWarden koristi end-to-end enkripciju bez znanja kako bi zaštitio ono što ti je važno."
   },
   "quickLogin": {
     "message": "Brza i jednostavna prijava"
@@ -5755,7 +5755,7 @@
     "message": "Tvoji podaci kada god i gdje god su ti potrebni"
   },
   "secureDevicesBody": {
-    "message": "Spremi neograničen broj lozinki na neograničenom broju uređaja s Bitwarden mobilnom aplikacijom, proširenjem za preglednik i aplikacijom za stolna računala."
+    "message": "Spremi neograničen broj lozinki na neograničenom broju uređaja s TideWarden mobilnom aplikacijom, proširenjem za preglednik i aplikacijom za stolna računala."
   },
   "nudgeBadgeAria": {
     "message": "1 obavijest"
@@ -5764,7 +5764,7 @@
     "message": "Uvezi postojeće lozinke"
   },
   "emptyVaultNudgeBody": {
-    "message": "Koristi uvoz za brzi prijenos prijava u Bitwarden bez ručnog dodavanja."
+    "message": "Koristi uvoz za brzi prijenos prijava u TideWarden bez ručnog dodavanja."
   },
   "emptyVaultNudgeButton": {
     "message": "Uvezi odmah"
@@ -5800,7 +5800,7 @@
     "placeholders": {
       "product": {
         "content": "$1",
-        "example": "Bitwarden Phishing Blocker"
+        "example": "TideWarden Phishing Blocker"
       }
     }
   },
@@ -5883,13 +5883,13 @@
     "message": "O ovoj postavci"
   },
   "permitCipherDetailsDescription": {
-    "message": "Bitwarden će koristiti spremljene URI-je za prijavu kako bi identificirao ikonu ili URL za promjenu lozinke koji treba koristiti za poboljšanje tvojeg iskustva. Nikakvi podaci se ne prikupljaju, niti spremaju kada koristiš ovu uslugu."
+    "message": "TideWarden će koristiti spremljene URI-je za prijavu kako bi identificirao ikonu ili URL za promjenu lozinke koji treba koristiti za poboljšanje tvojeg iskustva. Nikakvi podaci se ne prikupljaju, niti spremaju kada koristiš ovu uslugu."
   },
   "noPermissionsViewPage": {
     "message": "Nemaš dozvolu za pregled ove stranice. Pokušaj se prijaviti s drugim računom."
   },
   "wasmNotSupported": {
-    "message": "WebAssembly ili nije podržan ili nije omogućen u tvom pregledniku. WebAssembly je potreban za korištenje Bitwarden aplikacije.",
+    "message": "WebAssembly ili nije podržan ili nije omogućen u tvom pregledniku. WebAssembly je potreban za korištenje TideWarden aplikacije.",
     "description": "'WebAssembly' is a technical term and should not be translated."
   },
   "showMore": {
@@ -5964,7 +5964,7 @@
     "message": "Error: Cannot decrypt"
   },
   "removeMasterPasswordForOrgUserKeyConnector": {
-    "message": "Your organization is no longer using master passwords to log into Bitwarden. To continue, verify the organization and domain."
+    "message": "Your organization is no longer using master passwords to log into TideWarden. To continue, verify the organization and domain."
   },
   "continueWithLogIn": {
     "message": "Continue with log in"
@@ -6122,17 +6122,17 @@
     "message": "Enter multiple emails by separating with a comma."
   },
   "emailPlaceholder": {
-    "message": "user@bitwarden.com , user@acme.com"
+    "message": "user@tidewarden.com , user@acme.com"
   },
   "downloadBitwardenApps": {
-    "message": "Download Bitwarden apps"
+    "message": "Download TideWarden apps"
   },
   "emailProtected": {
     "message": "Email protected"
   },
   "sendPasswordHelperText": {
     "message": "Individuals will need to enter the password to view this Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "logInToTideWarden": {
     "message": "Prijavi se u TideWarden"

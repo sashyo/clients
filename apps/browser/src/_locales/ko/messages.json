@@ -23,7 +23,7 @@
     "message": "계정 만들기"
   },
   "newToBitwarden": {
-    "message": "Bitwarden을 처음 이용하시나요?"
+    "message": "TideWarden을 처음 이용하시나요?"
   },
   "logInWithPasskey": {
     "message": "패스키를 사용하여 로그인하기"
@@ -300,22 +300,22 @@
     "message": "웹 앱에서 계속하시겠나요?"
   },
   "continueToWebAppDesc": {
-    "message": "웹 앱에서 Bitwarden 계정의 더 많은 기능을 탐색해보세요."
+    "message": "웹 앱에서 TideWarden 계정의 더 많은 기능을 탐색해보세요."
   },
   "continueToHelpCenter": {
     "message": "도움말 센터로 이동"
   },
   "continueToHelpCenterDesc": {
-    "message": "Bitwarden의 자세한 사용법은 도움말 센터에서 확인하세요."
+    "message": "TideWarden의 자세한 사용법은 도움말 센터에서 확인하세요."
   },
   "continueToBrowserExtensionStore": {
     "message": "브라우저 확장 스토어로 이동하시겠습니까?"
   },
   "continueToBrowserExtensionStoreDesc": {
-    "message": "다른 사람들이 Bitwarden이 적합한지 알 수 있도록 도와주세요. 당신의 브라우저 확장 스토어로 방문하여 별점을 남겨주세요."
+    "message": "다른 사람들이 TideWarden이 적합한지 알 수 있도록 도와주세요. 당신의 브라우저 확장 스토어로 방문하여 별점을 남겨주세요."
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "Bitwarden 웹 앱에서 마스터 비밀번호를 변경할 수 있습니다."
+    "message": "TideWarden 웹 앱에서 마스터 비밀번호를 변경할 수 있습니다."
   },
   "fingerprintPhrase": {
     "message": "지문 구절",
@@ -332,43 +332,43 @@
     "message": "로그아웃"
   },
   "aboutBitwarden": {
-    "message": "Bitwarden 에 대하여"
+    "message": "TideWarden 에 대하여"
   },
   "about": {
     "message": "정보"
   },
   "moreFromBitwarden": {
-    "message": "Bitwarden에 대한 더 많은 정보"
+    "message": "TideWarden에 대한 더 많은 정보"
   },
   "continueToBitwardenDotCom": {
-    "message": "bitwarden.com 으로 이동할까요?"
+    "message": "tidewarden.com 으로 이동할까요?"
   },
   "bitwardenForBusiness": {
-    "message": "비지니스용 Bitwarden"
+    "message": "비지니스용 TideWarden"
   },
   "bitwardenAuthenticator": {
-    "message": "Bitwarden 인증 도구"
+    "message": "TideWarden 인증 도구"
   },
   "continueToAuthenticatorPageDesc": {
-    "message": "Bitwarden 인증 도구를 사용하면, 인증키를 저장하고, 2단계 인증을 위한 TOTP 코드를 생성할 수 있습니다. 자세한 내용은 bitwarden.com 사이트에서 확인해주세요."
+    "message": "TideWarden 인증 도구를 사용하면, 인증키를 저장하고, 2단계 인증을 위한 TOTP 코드를 생성할 수 있습니다. 자세한 내용은 tidewarden.com 사이트에서 확인해주세요."
   },
   "bitwardenSecretsManager": {
-    "message": "Bitwarden 보안 매니저"
+    "message": "TideWarden 보안 매니저"
   },
   "continueToSecretsManagerPageDesc": {
-    "message": "Bitwarden 보안 매니저를 이용하여, 개발자의 기밀을 안전하게 저장하고, 관리하고, 공유하세요. 자세한 내용은 bitwarden.com 사이트에서 확인해주요."
+    "message": "TideWarden 보안 매니저를 이용하여, 개발자의 기밀을 안전하게 저장하고, 관리하고, 공유하세요. 자세한 내용은 tidewarden.com 사이트에서 확인해주요."
   },
   "passwordlessDotDev": {
     "message": "Passwordless.dev"
   },
   "continueToPasswordlessDotDevPageDesc": {
-    "message": "Passwordless.dev와 함께, 기존의 비밀번호 로그인 방식으로 부터 벗어나, 매끄럽고 안전한 로그인 경험을 만들어보세요. 자세한 내용은 bitwarden.com 사이트에서 확인해주요"
+    "message": "Passwordless.dev와 함께, 기존의 비밀번호 로그인 방식으로 부터 벗어나, 매끄럽고 안전한 로그인 경험을 만들어보세요. 자세한 내용은 tidewarden.com 사이트에서 확인해주요"
   },
   "freeBitwardenFamilies": {
     "message": "무료 bitwarden 가족 플랜"
   },
   "freeBitwardenFamiliesPageDesc": {
-    "message": "무료 Bitwarden 가족 플랜을 이용하실 수 있습니다. 오늘 웹앱에서 이 혜택을 사용하세요."
+    "message": "무료 TideWarden 가족 플랜을 이용하실 수 있습니다. 오늘 웹앱에서 이 혜택을 사용하세요."
   },
   "version": {
     "message": "버전"
@@ -428,13 +428,13 @@
     "message": "도움말 및 의견"
   },
   "helpCenter": {
-    "message": "Bitwarden 도움말 센터"
+    "message": "TideWarden 도움말 센터"
   },
   "communityForums": {
-    "message": "Bitwarden 커뮤니티 포럼 탐색하기"
+    "message": "TideWarden 커뮤니티 포럼 탐색하기"
   },
   "contactSupport": {
-    "message": "Bitwarden 지원에 문의하기"
+    "message": "TideWarden 지원에 문의하기"
   },
   "sync": {
     "message": "동기화"
@@ -456,7 +456,7 @@
     "message": "유일무이하고 강력한 비밀번호를 자동으로 생성합니다."
   },
   "bitWebVaultApp": {
-    "message": "Bitwarden 웹 앱"
+    "message": "TideWarden 웹 앱"
   },
   "select": {
     "message": "선택"
@@ -750,7 +750,7 @@
       },
       "hostname": {
         "content": "$2",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -762,7 +762,7 @@
     "placeholders": {
       "host": {
         "content": "$1",
-        "example": "vault.bitwarden.com"
+        "example": "vault.tidewarden.com"
       }
     }
   },
@@ -922,10 +922,10 @@
     "message": "간편하게 2단계 인증을 만들기"
   },
   "totpHelper": {
-    "message": "Bitwarden은 2단계 인증 코드들을 저장하고, 채워넣을 수 있습니다. 키를 복사하여 이 필드에 붙여넣으세요."
+    "message": "TideWarden은 2단계 인증 코드들을 저장하고, 채워넣을 수 있습니다. 키를 복사하여 이 필드에 붙여넣으세요."
   },
   "totpHelperWithCapture": {
-    "message": "Bitwarden은 2단계 인증 코드들을 저장하고, 채워넣을 수 있습니다. 카메라 아이콘을 선택하고, 이 웹사이드의 인증 도구 QR코드를 스크린샷을 찍거나, 키를 복사하여 이 필드에 붙여넣으세요."
+    "message": "TideWarden은 2단계 인증 코드들을 저장하고, 채워넣을 수 있습니다. 카메라 아이콘을 선택하고, 이 웹사이드의 인증 도구 QR코드를 스크린샷을 찍거나, 키를 복사하여 이 필드에 붙여넣으세요."
   },
   "learnMoreAboutAuthenticators": {
     "message": "인증 도구에 대해 더 알아보기"
@@ -946,7 +946,7 @@
     "message": "로그인"
   },
   "logInToBitwarden": {
-    "message": "Bitwarden에 로그인"
+    "message": "TideWarden에 로그인"
   },
   "enterTheCodeSentToYourEmail": {
     "message": "이메일로 전송된 코드를 입력하세요."
@@ -1006,10 +1006,10 @@
     "message": "폴더 추가함"
   },
   "twoStepLoginConfirmation": {
-    "message": "2단계 인증은 보안 키, 인증 앱, SMS, 전화 통화 등의 다른 기기로 사용자의 로그인 시도를 검증하여 사용자의 계정을 더욱 안전하게 만듭니다. 2단계 인증은 bitwarden.com 웹 보관함에서 활성화할 수 있습니다. 지금 웹 사이트를 방문하시겠습니까?"
+    "message": "2단계 인증은 보안 키, 인증 앱, SMS, 전화 통화 등의 다른 기기로 사용자의 로그인 시도를 검증하여 사용자의 계정을 더욱 안전하게 만듭니다. 2단계 인증은 tidewarden.com 웹 보관함에서 활성화할 수 있습니다. 지금 웹 사이트를 방문하시겠습니까?"
   },
   "twoStepLoginConfirmationContent": {
-    "message": "Bitwarden 웹 앱에 2단계 인증을 설정하여, 당신의 계정을 좀 더 안전하게 만드세요."
+    "message": "TideWarden 웹 앱에 2단계 인증을 설정하여, 당신의 계정을 좀 더 안전하게 만드세요."
   },
   "twoStepLoginConfirmationTitle": {
     "message": "웹 앱으로 진행하나요?"
@@ -1056,7 +1056,7 @@
   },
   "addDomain": {
     "message": "도메인 추가",
-    "description": "'Domain' here refers to an internet domain name (e.g. 'bitwarden.com') and the message in whole described the act of putting a domain value into the context."
+    "description": "'Domain' here refers to an internet domain name (e.g. 'tidewarden.com') and the message in whole described the act of putting a domain value into the context."
   },
   "addedItem": {
     "message": "항목 추가함"
@@ -1152,7 +1152,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Bitwarden이 이 비밀번호를 기억하도록 하시겠습니까?"
+    "message": "TideWarden이 이 비밀번호를 기억하도록 하시겠습니까?"
   },
   "notificationAddSave": {
     "message": "예, 지금 저장하겠습니다."
@@ -1188,11 +1188,11 @@
     }
   },
   "notificationLoginSaveConfirmation": {
-    "message": "Bitwarden에 저장되었습니다.",
+    "message": "TideWarden에 저장되었습니다.",
     "description": "Shown to user after item is saved."
   },
   "notificationLoginUpdatedConfirmation": {
-    "message": "Bitwarden에서 업데이트되었습니다.",
+    "message": "TideWarden에서 업데이트되었습니다.",
     "description": "Shown to user after item is updated."
   },
   "selectItemAriaLabel": {
@@ -1290,13 +1290,13 @@
     "message": "보관함에 새 패스키를 저장하거나 로그인할지 물어봅니다. 모든 로그인된 계정에 적용됩니다."
   },
   "notificationChangeDesc": {
-    "message": "Bitwarden에 저장되어 있는 비밀번호를 이 비밀번호로 변경하시겠습니까?"
+    "message": "TideWarden에 저장되어 있는 비밀번호를 이 비밀번호로 변경하시겠습니까?"
   },
   "notificationChangeSave": {
     "message": "예, 지금 변경하겠습니다."
   },
   "notificationUnlockDesc": {
-    "message": "Bitwarden 보관함을 잠금 해제 하여 자동완성 요청을 완료하세요."
+    "message": "TideWarden 보관함을 잠금 해제 하여 자동완성 요청을 완료하세요."
   },
   "notificationUnlock": {
     "message": "잠금 해제"
@@ -1369,10 +1369,10 @@
     "message": "이 비밀번호는 이 파일을 파일 내보내거나, 가져오는데 사용됩니다."
   },
   "accountRestrictedOptionDescription": {
-    "message": "당신 계정의 사용자 이름과 마스터 비밀번호를 통한 암호화 키로 내보내기 파일을 암호화 하고, 현재의 Bitwarden 계정으로만 가져올 수 있도록 제한합니다."
+    "message": "당신 계정의 사용자 이름과 마스터 비밀번호를 통한 암호화 키로 내보내기 파일을 암호화 하고, 현재의 TideWarden 계정으로만 가져올 수 있도록 제한합니다."
   },
   "passwordProtectedOptionDescription": {
-    "message": "파일에 비밀번호를 설정하여 내보내기 파일을 암호화하며, 그 비밀번호만 입력하면 어느 Bitwarden 계정으로든 가져올 수 있습니다."
+    "message": "파일에 비밀번호를 설정하여 내보내기 파일을 암호화하며, 그 비밀번호만 입력하면 어느 TideWarden 계정으로든 가져올 수 있습니다."
   },
   "exportTypeHeading": {
     "message": "내보내기 유형"
@@ -1401,7 +1401,7 @@
     "message": "이 내보내기는 계정의 암호화 키를 사용하여 데이터를 암호화합니다. 추후 계정의 암호화 키를 교체할 경우 다시 내보내기를 진행해야 합니다. 그러지 않을 경우 이 내보내기 파일을 해독할 수 없게 됩니다."
   },
   "encExportAccountWarningDesc": {
-    "message": "모든 Bitwarden 사용자 계정은 고유한 계정 암호화 키를 가지고 있습니다. 따라서, 다른 계정에서는 암호화된 내보내기를 가져올 수 없습니다."
+    "message": "모든 TideWarden 사용자 계정은 고유한 계정 암호화 키를 가지고 있습니다. 따라서, 다른 계정에서는 암호화된 내보내기를 가져올 수 없습니다."
   },
   "exportMasterPassword": {
     "message": "보관함 데이터를 내보내려면 마스터 비밀번호를 입력하세요."
@@ -1410,7 +1410,7 @@
     "message": "공유됨"
   },
   "bitwardenForBusinessPageDesc": {
-    "message": "비지니스용 Bitwarden은 조직을 사용하여 보관함 항목들을 다른 사람과 공유할 수 있게 해줍니다. 자세한 내용은 bitwarden.com 사이트에서 확인해주세요"
+    "message": "비지니스용 TideWarden은 조직을 사용하여 보관함 항목들을 다른 사람과 공유할 수 있게 해줍니다. 자세한 내용은 tidewarden.com 사이트에서 확인해주세요"
   },
   "moveToOrganization": {
     "message": "조직으로 이동하기"
@@ -1522,7 +1522,7 @@
     "message": "멤버십 관리"
   },
   "premiumManageAlert": {
-    "message": "bitwarden.com 웹 보관함에서 멤버십을 관리할 수 있습니다. 지금 웹 사이트를 방문하시겠습니까?"
+    "message": "tidewarden.com 웹 보관함에서 멤버십을 관리할 수 있습니다. 지금 웹 사이트를 방문하시겠습니까?"
   },
   "premiumRefresh": {
     "message": "멤버십 새로 고침"
@@ -1576,13 +1576,13 @@
     "message": "프리미엄 멤버십 구입"
   },
   "premiumPurchaseAlertV2": {
-    "message": "Bitwarden 웹 앱의 계정 설정에서 프리미엄에 대한 결제를 할 수 있습니다."
+    "message": "TideWarden 웹 앱의 계정 설정에서 프리미엄에 대한 결제를 할 수 있습니다."
   },
   "premiumCurrentMember": {
     "message": "프리미엄 사용자입니다!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Bitwarden을 지원해 주셔서 감사합니다."
+    "message": "TideWarden을 지원해 주셔서 감사합니다."
   },
   "premiumFeatures": {
     "message": "프리미엄으로 업그래이드 하고 받기: "
@@ -1688,8 +1688,8 @@
     "message": "인증 앱"
   },
   "authenticatorAppDescV2": {
-    "message": "Bitwarden 인증같은 인증 앱을 통해 코드를 생성하여 입력해주세요",
-    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
+    "message": "TideWarden 인증같은 인증 앱을 통해 코드를 생성하여 입력해주세요",
+    "description": "'TideWarden Authenticator' is a product name and should not be translated."
   },
   "yubiKeyTitleV2": {
     "message": "YubiKey OTP 보안 키"
@@ -1721,7 +1721,7 @@
     "message": "자체 호스팅 환경"
   },
   "selfHostedBaseUrlHint": {
-    "message": "온-프레미스 Bitwarden이 호스팅되고 있는 서버의 기본 URL을 지정하세요. 예: https://bitwarden.company.com"
+    "message": "온-프레미스 TideWarden이 호스팅되고 있는 서버의 기본 URL을 지정하세요. 예: https://tidewarden.company.com"
   },
   "selfHostedCustomEnvHeader": {
     "message": "고급 구성의 경우 각 서비스의 기본 URL을 독립적으로 지정할 수 있습니다."
@@ -1771,7 +1771,7 @@
     "message": "Easily find autofill suggestions"
   },
   "autofillSpotlightDesc": {
-    "message": "Turn off your browser's autofill settings, so they don't conflict with Bitwarden."
+    "message": "Turn off your browser's autofill settings, so they don't conflict with TideWarden."
   },
   "turnOffBrowserAutofill": {
     "message": "Turn off $BROWSER$ autofill",
@@ -1795,7 +1795,7 @@
     "message": "양식 필드에 자동 완성 제안 표시"
   },
   "howDoesBitwardenProtectFromPhishing": {
-    "message": "How does Bitwarden protect your data from phishing?"
+    "message": "How does TideWarden protect your data from phishing?"
   },
   "currentWebsite": {
     "message": "Current website"
@@ -2367,7 +2367,7 @@
     "message": "취약한 마스터 비밀번호"
   },
   "weakMasterPasswordDesc": {
-    "message": "선택한 마스터 비밀번호는 취약합니다. Bitwarden 계정을 확실히 보호하려면 강력한 마스터 비밀번호(혹은 패스프레이즈)를 사용해야 합니다. 정말 이 마스터 비밀번호를 사용하시겠습니까?"
+    "message": "선택한 마스터 비밀번호는 취약합니다. TideWarden 계정을 확실히 보호하려면 강력한 마스터 비밀번호(혹은 패스프레이즈)를 사용해야 합니다. 정말 이 마스터 비밀번호를 사용하시겠습니까?"
   },
   "pin": {
     "message": "PIN",
@@ -2383,10 +2383,10 @@
     "message": "PIN 설정"
   },
   "setYourPinCode": {
-    "message": "Bitwarden 잠금해제에 사용될 PIN 코드를 설정합니다. 이 애플리케이션에서 완전히 로그아웃할 경우 PIN 설정이 초기화됩니다."
+    "message": "TideWarden 잠금해제에 사용될 PIN 코드를 설정합니다. 이 애플리케이션에서 완전히 로그아웃할 경우 PIN 설정이 초기화됩니다."
   },
   "setPinCode": {
-    "message": "You can use this PIN to unlock Bitwarden. Your PIN will be reset if you ever fully log out of the application."
+    "message": "You can use this PIN to unlock TideWarden. Your PIN will be reset if you ever fully log out of the application."
   },
   "pinRequired": {
     "message": "PIN 코드가 필요합니다."
@@ -2407,7 +2407,7 @@
     "message": "데스크톱으로부터의 확인을 대기 중"
   },
   "awaitDesktopDesc": {
-    "message": "브라우저 생체 인식을 사용하기 위해서는 Bitwarden 데스크톱 앱에서 생체 인식을 이용하여 승인해주세요."
+    "message": "브라우저 생체 인식을 사용하기 위해서는 TideWarden 데스크톱 앱에서 생체 인식을 이용하여 승인해주세요."
   },
   "lockWithMasterPassOnRestart": {
     "message": "브라우저 다시 시작 시 마스터 비밀번호로 잠금"
@@ -2522,7 +2522,7 @@
     "message": "양식은 저장된 로그인의 URI가 아닌 다른 도메인에서 호스팅됩니다. 그래도 자동 완성을 사용하시려면 OK, 아니라면 취소 버튼을 선택해주세요."
   },
   "autofillIframeWarningTip": {
-    "message": "향후 이 경고를 방지하려면 이 URI인 $HOSTNAME$(을)를 Bitwarden로그인 항목에 저장하세요.",
+    "message": "향후 이 경고를 방지하려면 이 URI인 $HOSTNAME$(을)를 TideWarden로그인 항목에 저장하세요.",
     "placeholders": {
       "hostname": {
         "content": "$1",
@@ -2531,7 +2531,7 @@
     }
   },
   "topLayerHijackWarning": {
-    "message": "This page is interfering with the Bitwarden experience. The Bitwarden inline menu has been temporarily disabled as a safety measure."
+    "message": "This page is interfering with the TideWarden experience. The TideWarden inline menu has been temporarily disabled as a safety measure."
   },
   "setMasterPassword": {
     "message": "마스터 비밀번호 설정"
@@ -2588,7 +2588,7 @@
     "message": "새 마스터 비밀번호가 정책 요구 사항을 따르지 않습니다."
   },
   "receiveMarketingEmailsV2": {
-    "message": "Email 받은 편지함을 통해 Bitwarden의 조언, 공지사항 및 연구 기회들을 얻어보세요"
+    "message": "Email 받은 편지함을 통해 TideWarden의 조언, 공지사항 및 연구 기회들을 얻어보세요"
   },
   "unsubscribe": {
     "message": "구독 취소"
@@ -2639,13 +2639,13 @@
     "message": "브라우저와 연결이 활성화되지 않았습니다"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "브라우저와 연결이 Bitwarden 데스크톱 앱에서 활성화되지 않았습니다. 데스크톱 앱의 설정에서 브라우저와 연결을 활성화해주세요."
+    "message": "브라우저와 연결이 TideWarden 데스크톱 앱에서 활성화되지 않았습니다. 데스크톱 앱의 설정에서 브라우저와 연결을 활성화해주세요."
   },
   "startDesktopTitle": {
-    "message": "Bitwarden 데스크톱 앱을 실행하세요"
+    "message": "TideWarden 데스크톱 앱을 실행하세요"
   },
   "startDesktopDesc": {
-    "message": "이 기능을 사용하기 위해서는 Bitwarden 데스크톱 앱이 먼저 실행되어 있어야 합니다."
+    "message": "이 기능을 사용하기 위해서는 TideWarden 데스크톱 앱이 먼저 실행되어 있어야 합니다."
   },
   "errorEnableBiometricTitle": {
     "message": "생체 인식을 활성화할 수 없음"
@@ -2699,13 +2699,13 @@
     "message": "생체 인식 실패"
   },
   "biometricsFailedDesc": {
-    "message": "생체 인식을 완료할 수 없습니다. 마스터 비밀번호를 사용하거나 로그아웃하는 것을 고려하세요. 이 문제가 계속되면 Bitwarden 지원팀에 문의해 주세요."
+    "message": "생체 인식을 완료할 수 없습니다. 마스터 비밀번호를 사용하거나 로그아웃하는 것을 고려하세요. 이 문제가 계속되면 TideWarden 지원팀에 문의해 주세요."
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "권한이 부여되지 않음"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "Bitwarden 데스크톱 앱과 통신할 권한이 부여되지 않은 상태에서는 브라우저 확장 프로그램에서 생체 인식을 사용할 수 없습니다. 다시 시도해 주세요."
+    "message": "TideWarden 데스크톱 앱과 통신할 권한이 부여되지 않은 상태에서는 브라우저 확장 프로그램에서 생체 인식을 사용할 수 없습니다. 다시 시도해 주세요."
   },
   "nativeMessaginPermissionSidebarTitle": {
     "message": "권한 요청 오류"
@@ -2742,7 +2742,7 @@
     "message": "제외된 도메인"
   },
   "excludedDomainsDesc": {
-    "message": "Bitwarden은 이 도메인들에 대해 로그인 정보를 저장할 것인지 묻지 않습니다. 페이지를 새로고침해야 변경된 내용이 적용됩니다."
+    "message": "TideWarden은 이 도메인들에 대해 로그인 정보를 저장할 것인지 묻지 않습니다. 페이지를 새로고침해야 변경된 내용이 적용됩니다."
   },
   "blockedDomainsDesc": {
     "message": "Autofill and other related features will not be offered for these websites. You must refresh the page for changes to take effect."
@@ -2858,21 +2858,21 @@
     "message": "Illustration of a list of logins that are at-risk."
   },
   "generatePasswordSlideDesc": {
-    "message": "Quickly generate a strong, unique password with the Bitwarden autofill menu on the at-risk site.",
+    "message": "Quickly generate a strong, unique password with the TideWarden autofill menu on the at-risk site.",
     "description": "Description of the generate password slide on the at-risk password page carousel"
   },
   "generatePasswordSlideImgAltPeriod": {
-    "message": "Illustration of the Bitwarden autofill menu displaying a generated password."
+    "message": "Illustration of the TideWarden autofill menu displaying a generated password."
   },
   "updateInBitwarden": {
-    "message": "Update in Bitwarden"
+    "message": "Update in TideWarden"
   },
   "updateInBitwardenSlideDesc": {
-    "message": "Bitwarden will then prompt you to update the password in the password manager.",
-    "description": "Description of the update in Bitwarden slide on the at-risk password page carousel"
+    "message": "TideWarden will then prompt you to update the password in the password manager.",
+    "description": "Description of the update in TideWarden slide on the at-risk password page carousel"
   },
   "updateInBitwardenSlideImgAltPeriod": {
-    "message": "Illustration of a Bitwarden’s notification prompting the user to update the login."
+    "message": "Illustration of a TideWarden’s notification prompting the user to update the login."
   },
   "turnOnAutofill": {
     "message": "Turn on autofill"
@@ -2926,11 +2926,11 @@
   },
   "send": {
     "message": "보내기",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDetails": {
     "message": "보내기 세부 정보",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendTypeText": {
     "message": "텍스트"
@@ -2943,7 +2943,7 @@
   },
   "allSends": {
     "message": "모든 Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
     "message": "Max access count reached",
@@ -2963,7 +2963,7 @@
   },
   "copySendLink": {
     "message": " Send 링크 복사",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "removePassword": {
     "message": "비밀번호 제거"
@@ -2976,11 +2976,11 @@
   },
   "deletedSend": {
     "message": " Send  삭제함",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendLink": {
     "message": "링크 보내기",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "disabled": {
     "message": "비활성화됨"
@@ -2990,26 +2990,26 @@
   },
   "deleteSend": {
     "message": " Send 삭제",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
     "message": "정말 이  Send를 삭제하시겠습니까?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendPermanentConfirmation": {
     "message": "이  Send을 영구적으로 삭제하시겠습니까?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editSend": {
     "message": " Send 편집",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deletionDate": {
     "message": "삭제 날짜"
   },
   "deletionDateDescV2": {
     "message": "이  Send가 이 날짜에 영구적으로 삭제됩니다.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "만료 날짜"
@@ -3031,34 +3031,34 @@
   },
   "createSend": {
     "message": "새 Send 생성",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "새 비밀번호"
   },
   "sendDisabled": {
     "message": "Send 비활성화됨",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
     "message": "엔터프라이즈 정책으로 인해 이미 생성된 Send를 삭제하는 것만 허용됩니다.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSend": {
     "message": "Send 생성함",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSendSuccessfully": {
     "message": "Send가 성공적으로 생성되었습니다!",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInHoursSingle": {
     "message": "이 Send는 링크가 있는 누구나 향후 1시간 동안 이용할 수 있습니다.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInHours": {
     "message": "이 전송은 링크가 있는 누구나 향후 $HOURS$ 시간 동안 이용할 수 있습니다.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3068,11 +3068,11 @@
   },
   "sendExpiresInDaysSingle": {
     "message": "이 Send은 향후 1일 동안 링크가 있는 누구나 이용할 수 있습니다.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInDays": {
     "message": "이 Send은 향후 $DAYS$일 동안 링크가 있는 누구나 이용할 수 있습니다.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -3082,11 +3082,11 @@
   },
   "sendLinkCopied": {
     "message": "Send 링크 복사됨",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editedSend": {
     "message": "Send 수정됨",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "popOut": {
     "message": "새 창에서 열기"
@@ -3362,7 +3362,7 @@
     "message": "Error getting autofill data"
   },
   "couldNotDecryptVaultItemsBelow": {
-    "message": "Bitwarden could not decrypt the vault item(s) listed below."
+    "message": "TideWarden could not decrypt the vault item(s) listed below."
   },
   "contactCSToAvoidDataLossPart1": {
     "message": "Contact customer success",
@@ -3466,11 +3466,11 @@
     }
   },
   "forwarderGeneratedBy": {
-    "message": "Bitwarden에서 생성됨",
+    "message": "TideWarden에서 생성됨",
     "description": "Displayed with the address on the forwarding service's configuration screen."
   },
   "forwarderGeneratedByWithWebsite": {
-    "message": "웹사이트: $WEBSITE$. Bitwarden에서 생성됨",
+    "message": "웹사이트: $WEBSITE$. TideWarden에서 생성됨",
     "description": "Displayed with the address on the forwarding service's configuration screen.",
     "placeholders": {
       "WEBSITE": {
@@ -3663,7 +3663,7 @@
     "message": "기기에 알림이 전송되었습니다."
   },
   "notificationSentDevicePart1": {
-    "message": "Unlock Bitwarden on your device or on the"
+    "message": "Unlock TideWarden on your device or on the"
   },
   "notificationSentDeviceAnchor": {
     "message": "web app"
@@ -4003,11 +4003,11 @@
   },
   "sendsTitleNoItems": {
     "message": "민감한 정보 안전하게 보내세요",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendsBodyNoItems": {
     "message": "플랫폼에 구애받지 않고 누구에게나 파일과 데이터를 안전하게 공유하세요. 전송하는 정보는 종단 간 암호화로 보호되어 외부 노출이 최소화됩니다.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "inputRequired": {
     "message": "입력이 필요합니다."
@@ -4148,15 +4148,15 @@
     "message": "콘텐츠로 건너뛰기"
   },
   "bitwardenOverlayButton": {
-    "message": "Bitwarden 자동 완성 메뉴 버튼",
+    "message": "TideWarden 자동 완성 메뉴 버튼",
     "description": "Page title for the iframe containing the overlay button"
   },
   "toggleBitwardenVaultOverlay": {
-    "message": "Bitwarden 자동 완성메뉴 전환",
+    "message": "TideWarden 자동 완성메뉴 전환",
     "description": "Screen reader and tool tip label for the overlay button"
   },
   "bitwardenVault": {
-    "message": "Bitwarden 자동 완성 매뉴",
+    "message": "TideWarden 자동 완성 매뉴",
     "description": "Page title in overlay"
   },
   "unlockYourAccountToViewMatchingLogins": {
@@ -4228,7 +4228,7 @@
     "description": "Screen reader text (aria-label) for new identity button within inline menu"
   },
   "bitwardenOverlayMenuAvailable": {
-    "message": "Bitwarden 자동 완성 메뉴를 사용할 수 있습니다. 아래쪽 화살표 키를 눌러 선택하세요.",
+    "message": "TideWarden 자동 완성 메뉴를 사용할 수 있습니다. 아래쪽 화살표 키를 눌러 선택하세요.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
   "turnOn": {
@@ -4540,7 +4540,7 @@
     "message": "계정 활성화"
   },
   "bitwardenAccount": {
-    "message": "Bitwarden account"
+    "message": "TideWarden account"
   },
   "availableAccounts": {
     "message": "사용 가능한 계정"
@@ -4586,8 +4586,8 @@
     "description": "Label indicating the most common import formats"
   },
   "uriMatchDefaultStrategyHint": {
-    "message": "Bitwarden에서 자동 채우기 제안을 식별하는 방법은 URI 일치 감지입니다.",
-    "description": "Explains to the user that URI match detection determines how Bitwarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
+    "message": "TideWarden에서 자동 채우기 제안을 식별하는 방법은 URI 일치 감지입니다.",
+    "description": "Explains to the user that URI match detection determines how TideWarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
   },
   "regExAdvancedOptionWarning": {
     "message": "\"Regular expression\" is an advanced option with increased risk of exposing credentials.",
@@ -4630,23 +4630,23 @@
     "description": "Body content for dialog which asks if the user wants to proceed to the browser's keyboard shortcut settings page"
   },
   "overrideDefaultBrowserAutofillTitle": {
-    "message": "Bitwarden을 기본 비밀번호 관리자로 지정하시겠습니까?",
+    "message": "TideWarden을 기본 비밀번호 관리자로 지정하시겠습니까?",
     "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutofillDescription": {
-    "message": "이 옵션을 무시하면 Bitwarden 자동 완성 제안과 브라우저 간에 충돌이 발생할 수 있습니다",
+    "message": "이 옵션을 무시하면 TideWarden 자동 완성 제안과 브라우저 간에 충돌이 발생할 수 있습니다",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {
-    "message": "Bitwarden을 기본 비밀번호 관리자로 지정",
+    "message": "TideWarden을 기본 비밀번호 관리자로 지정",
     "description": "Label for the setting that allows overriding the default browser autofill settings"
   },
   "privacyPermissionAdditionNotGrantedTitle": {
-    "message": "Bitwarden을 기본 비밀번호 관리자로 설정할 수 없습니다",
+    "message": "TideWarden을 기본 비밀번호 관리자로 설정할 수 없습니다",
     "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "privacyPermissionAdditionNotGrantedDescription": {
-    "message": "기본 비밀번호 관리자로 설정하려면 Bitwarden에게 브라우저 개인정보 보호 권한을 부여해야 합니다.",
+    "message": "기본 비밀번호 관리자로 설정하려면 TideWarden에게 브라우저 개인정보 보호 권한을 부여해야 합니다.",
     "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "makeDefault": {
@@ -4984,16 +4984,16 @@
     "message": "Download Attachment"
   },
   "downloadBitwarden": {
-    "message": "Download Bitwarden"
+    "message": "Download TideWarden"
   },
   "downloadBitwardenOnAllDevices": {
-    "message": "Download Bitwarden on all devices"
+    "message": "Download TideWarden on all devices"
   },
   "getTheMobileApp": {
     "message": "Get the mobile app"
   },
   "getTheMobileAppDesc": {
-    "message": "Access your passwords on the go with the Bitwarden mobile app."
+    "message": "Access your passwords on the go with the TideWarden mobile app."
   },
   "getTheDesktopApp": {
     "message": "Get the desktop app"
@@ -5002,7 +5002,7 @@
     "message": "Access your vault without a browser, then set up unlock with biometrics to expedite unlocking in both the desktop app and browser extension."
   },
   "downloadFromBitwardenNow": {
-    "message": "Download from bitwarden.com now"
+    "message": "Download from tidewarden.com now"
   },
   "getItOnGooglePlay": {
     "message": "Get it on Google Play"
@@ -5467,10 +5467,10 @@
     "message": "Biometric unlock is unavailable due to misconfigured system files."
   },
   "biometricsStatusHelptextDesktopDisconnected": {
-    "message": "Biometric unlock is unavailable because the Bitwarden desktop app is closed."
+    "message": "Biometric unlock is unavailable because the TideWarden desktop app is closed."
   },
   "biometricsStatusHelptextNotEnabledInDesktop": {
-    "message": "Biometric unlock is unavailable because it is not enabled for $EMAIL$ in the Bitwarden desktop app.",
+    "message": "Biometric unlock is unavailable because it is not enabled for $EMAIL$ in the TideWarden desktop app.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5731,13 +5731,13 @@
     "message": "The vault protects more than just your passwords. Store secure logins, IDs, cards and notes securely here."
   },
   "introCarouselLabel": {
-    "message": "Welcome to Bitwarden"
+    "message": "Welcome to TideWarden"
   },
   "securityPrioritized": {
     "message": "Security, prioritized"
   },
   "securityPrioritizedBody": {
-    "message": "Save logins, cards, and identities to your secure vault. Bitwarden uses zero-knowledge, end-to-end encryption to protect what’s important to you."
+    "message": "Save logins, cards, and identities to your secure vault. TideWarden uses zero-knowledge, end-to-end encryption to protect what’s important to you."
   },
   "quickLogin": {
     "message": "Quick and easy login"
@@ -5755,7 +5755,7 @@
     "message": "Your data, when and where you need it"
   },
   "secureDevicesBody": {
-    "message": "Save unlimited passwords across unlimited devices with Bitwarden mobile, browser, and desktop apps."
+    "message": "Save unlimited passwords across unlimited devices with TideWarden mobile, browser, and desktop apps."
   },
   "nudgeBadgeAria": {
     "message": "1 notification"
@@ -5764,7 +5764,7 @@
     "message": "Import existing passwords"
   },
   "emptyVaultNudgeBody": {
-    "message": "Use the importer to quickly transfer logins to Bitwarden without manually adding them."
+    "message": "Use the importer to quickly transfer logins to TideWarden without manually adding them."
   },
   "emptyVaultNudgeButton": {
     "message": "Import now"
@@ -5800,7 +5800,7 @@
     "placeholders": {
       "product": {
         "content": "$1",
-        "example": "Bitwarden Phishing Blocker"
+        "example": "TideWarden Phishing Blocker"
       }
     }
   },
@@ -5883,13 +5883,13 @@
     "message": "About this setting"
   },
   "permitCipherDetailsDescription": {
-    "message": "Bitwarden will use saved login URIs to identify which icon or change password URL should be used to improve your experience. No information is collected or saved when you use this service."
+    "message": "TideWarden will use saved login URIs to identify which icon or change password URL should be used to improve your experience. No information is collected or saved when you use this service."
   },
   "noPermissionsViewPage": {
     "message": "You do not have permissions to view this page. Try logging in with a different account."
   },
   "wasmNotSupported": {
-    "message": "WebAssembly is not supported on your browser or is not enabled. WebAssembly is required to use the Bitwarden app.",
+    "message": "WebAssembly is not supported on your browser or is not enabled. WebAssembly is required to use the TideWarden app.",
     "description": "'WebAssembly' is a technical term and should not be translated."
   },
   "showMore": {
@@ -5964,7 +5964,7 @@
     "message": "Error: Cannot decrypt"
   },
   "removeMasterPasswordForOrgUserKeyConnector": {
-    "message": "Your organization is no longer using master passwords to log into Bitwarden. To continue, verify the organization and domain."
+    "message": "Your organization is no longer using master passwords to log into TideWarden. To continue, verify the organization and domain."
   },
   "continueWithLogIn": {
     "message": "Continue with log in"
@@ -6122,17 +6122,17 @@
     "message": "Enter multiple emails by separating with a comma."
   },
   "emailPlaceholder": {
-    "message": "user@bitwarden.com , user@acme.com"
+    "message": "user@tidewarden.com , user@acme.com"
   },
   "downloadBitwardenApps": {
-    "message": "Download Bitwarden apps"
+    "message": "Download TideWarden apps"
   },
   "emailProtected": {
     "message": "Email protected"
   },
   "sendPasswordHelperText": {
     "message": "Individuals will need to enter the password to view this Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "logInToTideWarden": {
     "message": "TideWarden에 로그인"

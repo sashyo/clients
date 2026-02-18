@@ -23,7 +23,7 @@
     "message": "Δημιουργία λογαριασμού"
   },
   "newToBitwarden": {
-    "message": "Νέος/α στο Bitwarden;"
+    "message": "Νέος/α στο TideWarden;"
   },
   "logInWithPasskey": {
     "message": "Σύνδεση με κλειδί πρόσβασης"
@@ -300,22 +300,22 @@
     "message": "Συνέχεια στη διαδικτυακή εφαρμογή;"
   },
   "continueToWebAppDesc": {
-    "message": "Εξερευνήστε περισσότερες δυνατότητες του λογαριασμού σας Bitwarden στη διαδικτυακή εφαρμογή."
+    "message": "Εξερευνήστε περισσότερες δυνατότητες του λογαριασμού σας TideWarden στη διαδικτυακή εφαρμογή."
   },
   "continueToHelpCenter": {
     "message": "Συνεχίστε στο Κέντρο Βοήθειας;"
   },
   "continueToHelpCenterDesc": {
-    "message": "Μάθετε περισσότερα για το πώς να χρησιμοποιήσετε το Bitwarden στο Κέντρο Βοήθειας."
+    "message": "Μάθετε περισσότερα για το πώς να χρησιμοποιήσετε το TideWarden στο Κέντρο Βοήθειας."
   },
   "continueToBrowserExtensionStore": {
     "message": "Συνεχίστε στο κατάστημα επεκτάσεων περιηγητή;"
   },
   "continueToBrowserExtensionStoreDesc": {
-    "message": "Βοηθήστε άλλους να μάθουν αν το Bitwarden είναι κατάλληλο για αυτούς. Επισκεφθείτε το κατάστημα επεκτάσεων του περιηγητή σας και αφήστε τώρα μια βαθμολογία."
+    "message": "Βοηθήστε άλλους να μάθουν αν το TideWarden είναι κατάλληλο για αυτούς. Επισκεφθείτε το κατάστημα επεκτάσεων του περιηγητή σας και αφήστε τώρα μια βαθμολογία."
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "Μπορείτε να αλλάξετε τον κύριο κωδικό πρόσβασής σας στη διαδικτυακή εφαρμογή του Bitwarden."
+    "message": "Μπορείτε να αλλάξετε τον κύριο κωδικό πρόσβασής σας στη διαδικτυακή εφαρμογή του TideWarden."
   },
   "fingerprintPhrase": {
     "message": "Φράση Δακτυλικών Αποτυπωμάτων",
@@ -332,43 +332,43 @@
     "message": "Αποσύνδεση"
   },
   "aboutBitwarden": {
-    "message": "Σχετικά με το Bitwarden"
+    "message": "Σχετικά με το TideWarden"
   },
   "about": {
     "message": "Σχετικά"
   },
   "moreFromBitwarden": {
-    "message": "Περισσότερα από το Bitwarden"
+    "message": "Περισσότερα από το TideWarden"
   },
   "continueToBitwardenDotCom": {
-    "message": "Συνέχεια στο bitwarden.com;"
+    "message": "Συνέχεια στο tidewarden.com;"
   },
   "bitwardenForBusiness": {
-    "message": "Bitwarden για Επιχειρήσεις"
+    "message": "TideWarden για Επιχειρήσεις"
   },
   "bitwardenAuthenticator": {
-    "message": "Αυθεντικοποιητής Bitwarden"
+    "message": "Αυθεντικοποιητής TideWarden"
   },
   "continueToAuthenticatorPageDesc": {
-    "message": "Ο αυθεντικοποιητής Bitwarden σάς επιτρέπει να αποθηκεύετε τα κλειδιά αυθεντικοποίησης και να δημιουργείτε κωδικούς TOTP για ροές επαλήθευσης δύο βημάτων. Μάθετε περισσότερα στην ιστοσελίδα bitwarden.com"
+    "message": "Ο αυθεντικοποιητής TideWarden σάς επιτρέπει να αποθηκεύετε τα κλειδιά αυθεντικοποίησης και να δημιουργείτε κωδικούς TOTP για ροές επαλήθευσης δύο βημάτων. Μάθετε περισσότερα στην ιστοσελίδα tidewarden.com"
   },
   "bitwardenSecretsManager": {
-    "message": "Διαχειριστής Bitwarden Secrets"
+    "message": "Διαχειριστής TideWarden Secrets"
   },
   "continueToSecretsManagerPageDesc": {
-    "message": "Αποθηκεύστε και μοιραστείτε μυστικά προγραμματιστών με τον Διαχειριστή Bitwarden Secrets. Μάθετε περισσότερα στον ιστότοπο bitwarden.com."
+    "message": "Αποθηκεύστε και μοιραστείτε μυστικά προγραμματιστών με τον Διαχειριστή TideWarden Secrets. Μάθετε περισσότερα στον ιστότοπο tidewarden.com."
   },
   "passwordlessDotDev": {
     "message": "Passwordless.dev"
   },
   "continueToPasswordlessDotDevPageDesc": {
-    "message": "Δημιουργήστε ομαλές και ασφαλείς εμπειρίες σύνδεσης δωρεάν από παραδοσιακούς κωδικούς πρόσβασης με το Passwordless.dev. Μάθετε περισσότερα στην ιστοσελίδα bitwarden.com."
+    "message": "Δημιουργήστε ομαλές και ασφαλείς εμπειρίες σύνδεσης δωρεάν από παραδοσιακούς κωδικούς πρόσβασης με το Passwordless.dev. Μάθετε περισσότερα στην ιστοσελίδα tidewarden.com."
   },
   "freeBitwardenFamilies": {
-    "message": "Δωρεάν Bitwarden για Οικογένειες"
+    "message": "Δωρεάν TideWarden για Οικογένειες"
   },
   "freeBitwardenFamiliesPageDesc": {
-    "message": "Δικαιούστε το Δωρεάν Bitwarden για Οικογένειες. Εξαργυρώστε αυτή την προσφορά σήμερα στην διαδικτυακή εφαρμογή."
+    "message": "Δικαιούστε το Δωρεάν TideWarden για Οικογένειες. Εξαργυρώστε αυτή την προσφορά σήμερα στην διαδικτυακή εφαρμογή."
   },
   "version": {
     "message": "Έκδοση"
@@ -428,13 +428,13 @@
     "message": "Βοήθεια & Σχόλια"
   },
   "helpCenter": {
-    "message": "Κέντρο Βοήθειας Bitwarden"
+    "message": "Κέντρο Βοήθειας TideWarden"
   },
   "communityForums": {
-    "message": "Εξερευνήστε τα φόρουμ κοινότητας Bitwarden"
+    "message": "Εξερευνήστε τα φόρουμ κοινότητας TideWarden"
   },
   "contactSupport": {
-    "message": "Επικοινωνία με την υποστήριξη του Bitwarden"
+    "message": "Επικοινωνία με την υποστήριξη του TideWarden"
   },
   "sync": {
     "message": "Συγχρονισμός"
@@ -456,7 +456,7 @@
     "message": "Δημιουργήστε αυτόματα ισχυρούς και μοναδικούς κωδικούς πρόσβασης για τις συνδέσεις σας."
   },
   "bitWebVaultApp": {
-    "message": "Διαδικτυακή εφαρμογή Bitwarden"
+    "message": "Διαδικτυακή εφαρμογή TideWarden"
   },
   "select": {
     "message": "Επιλογή"
@@ -750,7 +750,7 @@
       },
       "hostname": {
         "content": "$2",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -762,7 +762,7 @@
     "placeholders": {
       "host": {
         "content": "$1",
-        "example": "vault.bitwarden.com"
+        "example": "vault.tidewarden.com"
       }
     }
   },
@@ -922,10 +922,10 @@
     "message": "Κάντε την επαλήθευση δύο βημάτων απρόσκοπτη"
   },
   "totpHelper": {
-    "message": "Το Bitwarden μπορεί να αποθηκεύσει και να συμπληρώσει τους κωδικούς επαλήθευσης 2 βημάτων. Αντιγράψτε και επικολλήστε το κλειδί σε αυτό το πεδίο."
+    "message": "Το TideWarden μπορεί να αποθηκεύσει και να συμπληρώσει τους κωδικούς επαλήθευσης 2 βημάτων. Αντιγράψτε και επικολλήστε το κλειδί σε αυτό το πεδίο."
   },
   "totpHelperWithCapture": {
-    "message": "Το Bitwarden μπορεί να αποθηκεύσει και να συμπληρώσει τους κωδικούς επαλήθευσης 2 βημάτων. Επιλέξτε το εικονίδιο της κάμερας για λήψη στιγμιότυπου του κωδικού QR του αυθεντικοποιητή αυτής της ιστοσελίδας, ή αντιγράψτε και επικολλήστε το κλειδί σε αυτό το πεδίο."
+    "message": "Το TideWarden μπορεί να αποθηκεύσει και να συμπληρώσει τους κωδικούς επαλήθευσης 2 βημάτων. Επιλέξτε το εικονίδιο της κάμερας για λήψη στιγμιότυπου του κωδικού QR του αυθεντικοποιητή αυτής της ιστοσελίδας, ή αντιγράψτε και επικολλήστε το κλειδί σε αυτό το πεδίο."
   },
   "learnMoreAboutAuthenticators": {
     "message": "Μάθετε περισσότερα για της εφαρμογές αυθεντικοποίησης"
@@ -946,7 +946,7 @@
     "message": "Σύνδεση"
   },
   "logInToBitwarden": {
-    "message": "Σύνδεση στο Bitwarden"
+    "message": "Σύνδεση στο TideWarden"
   },
   "enterTheCodeSentToYourEmail": {
     "message": "Εισάγετε τον κωδικό που στάλθηκε στο email σας"
@@ -1006,10 +1006,10 @@
     "message": "Προστέθηκε φάκελος"
   },
   "twoStepLoginConfirmation": {
-    "message": "Η σύνδεση δύο βημάτων καθιστά πιο ασφαλή τον λογαριασμό σας, απαιτώντας να επαληθεύσετε τη συνδεσή σας με μια άλλη συσκευή, όπως ένα κλειδί ασφαλείας, μία εφαρμογή επαλήθευσης, ένα μήνυμα SMS, μία τηλεφωνική κλήση ή ένα μήνυμα ηλ. ταχυδρομείου. Μπορείτε να ενεργοποιήσετε τη σύνδεση δύο βημάτων στο διαδικτυακό θυσαυ/κιο bitwarden.com. Θέλετε να επισκεφθείτε την ιστοσελίδα τώρα;"
+    "message": "Η σύνδεση δύο βημάτων καθιστά πιο ασφαλή τον λογαριασμό σας, απαιτώντας να επαληθεύσετε τη συνδεσή σας με μια άλλη συσκευή, όπως ένα κλειδί ασφαλείας, μία εφαρμογή επαλήθευσης, ένα μήνυμα SMS, μία τηλεφωνική κλήση ή ένα μήνυμα ηλ. ταχυδρομείου. Μπορείτε να ενεργοποιήσετε τη σύνδεση δύο βημάτων στο διαδικτυακό θυσαυ/κιο tidewarden.com. Θέλετε να επισκεφθείτε την ιστοσελίδα τώρα;"
   },
   "twoStepLoginConfirmationContent": {
-    "message": "Κάντε τον λογαριασμό σας πιο ασφαλή με τη ρύθμιση της σύνδεσης δύο βημάτων στη διαδικτυακή εφαρμογή του Bitwarden."
+    "message": "Κάντε τον λογαριασμό σας πιο ασφαλή με τη ρύθμιση της σύνδεσης δύο βημάτων στη διαδικτυακή εφαρμογή του TideWarden."
   },
   "twoStepLoginConfirmationTitle": {
     "message": "Συνέχεια στη διαδικτυακή εφαρμογή;"
@@ -1056,7 +1056,7 @@
   },
   "addDomain": {
     "message": "Προσθήκη τομέα",
-    "description": "'Domain' here refers to an internet domain name (e.g. 'bitwarden.com') and the message in whole described the act of putting a domain value into the context."
+    "description": "'Domain' here refers to an internet domain name (e.g. 'tidewarden.com') and the message in whole described the act of putting a domain value into the context."
   },
   "addedItem": {
     "message": "Το στοιχείο προστέθηκε"
@@ -1152,7 +1152,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Πρέπει το Bitwarden να θυμάται αυτόν τον κωδικό πρόσβασης για εσάς;"
+    "message": "Πρέπει το TideWarden να θυμάται αυτόν τον κωδικό πρόσβασης για εσάς;"
   },
   "notificationAddSave": {
     "message": "Ναι, Αποθήκευση Τώρα"
@@ -1188,11 +1188,11 @@
     }
   },
   "notificationLoginSaveConfirmation": {
-    "message": "αποθηκεύτηκε στο Bitwarden.",
+    "message": "αποθηκεύτηκε στο TideWarden.",
     "description": "Shown to user after item is saved."
   },
   "notificationLoginUpdatedConfirmation": {
-    "message": "ενημερώθηκε στο Bitwarden.",
+    "message": "ενημερώθηκε στο TideWarden.",
     "description": "Shown to user after item is updated."
   },
   "selectItemAriaLabel": {
@@ -1290,13 +1290,13 @@
     "message": "Ρώτησε με για την αποθήκευση νέων συνθηματικών ή σύνδεση με κλειδιά πρόσβασης αποθηκευμένα στο θησαυ/κιό μου. Ισχύει για όλους τους συνδεδεμένους λογαριασμούς."
   },
   "notificationChangeDesc": {
-    "message": "Θέλετε να ενημερώσετε αυτό τον κωδικό στο Bitwarden ;"
+    "message": "Θέλετε να ενημερώσετε αυτό τον κωδικό στο TideWarden ;"
   },
   "notificationChangeSave": {
     "message": "Ναι, Ενημέρωση Τώρα"
   },
   "notificationUnlockDesc": {
-    "message": "Ξεκλειδώστε το θησαυ/κιο Bitwarden σας για να ολοκληρώσετε το αίτημα αυτόματης πλήρωσης."
+    "message": "Ξεκλειδώστε το θησαυ/κιο TideWarden σας για να ολοκληρώσετε το αίτημα αυτόματης πλήρωσης."
   },
   "notificationUnlock": {
     "message": "Ξεκλείδωμα"
@@ -1369,10 +1369,10 @@
     "message": "Αυτός ο κωδικός πρόσβασης θα χρησιμοποιηθεί για την εξαγωγή και εισαγωγή αυτού του αρχείου"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Χρησιμοποιήστε το κλειδί κρυπτογράφησης του λογαριασμού σας, που προέρχεται από το όνομα χρήστη και τον Κύριο Κωδικό Πρόσβασης του λογαριασμού σας, για να κρυπτογραφήσετε την εξαγωγή και να περιορίσετε την εισαγωγή μόνο στον τρέχοντα λογαριασμό Bitwarden."
+    "message": "Χρησιμοποιήστε το κλειδί κρυπτογράφησης του λογαριασμού σας, που προέρχεται από το όνομα χρήστη και τον Κύριο Κωδικό Πρόσβασης του λογαριασμού σας, για να κρυπτογραφήσετε την εξαγωγή και να περιορίσετε την εισαγωγή μόνο στον τρέχοντα λογαριασμό TideWarden."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Ορίστε έναν κωδικό πρόσβασης αρχείου για να κρυπτογραφήσετε την εξαγωγή, και να την εισάγετε σε οποιονδήποτε λογαριασμό Bitwarden χρησιμοποιώντας τον κωδικό πρόσβασης για αποκρυπτογράφηση."
+    "message": "Ορίστε έναν κωδικό πρόσβασης αρχείου για να κρυπτογραφήσετε την εξαγωγή, και να την εισάγετε σε οποιονδήποτε λογαριασμό TideWarden χρησιμοποιώντας τον κωδικό πρόσβασης για αποκρυπτογράφηση."
   },
   "exportTypeHeading": {
     "message": "Τύπος εξαγωγής"
@@ -1401,7 +1401,7 @@
     "message": "Αυτή η εξαγωγή κρυπτογραφεί τα δεδομένα σας χρησιμοποιώντας το κλειδί κρυπτογράφησης του λογαριασμού σας. Εάν ποτέ περιστρέψετε το κλειδί κρυπτογράφησης του λογαριασμού σας, θα πρέπει να κάνετε εξαγωγή ξανά, καθώς δεν θα μπορείτε να αποκρυπτογραφήσετε αυτό το αρχείο εξαγωγής."
   },
   "encExportAccountWarningDesc": {
-    "message": "Τα κλειδιά κρυπτογράφησης λογαριασμού είναι μοναδικά για κάθε λογαριασμό χρήστη Bitwarden, οπότε δεν μπορείτε να εισάγετε μια κρυπτογραφημένη εξαγωγή σε διαφορετικό λογαριασμό."
+    "message": "Τα κλειδιά κρυπτογράφησης λογαριασμού είναι μοναδικά για κάθε λογαριασμό χρήστη TideWarden, οπότε δεν μπορείτε να εισάγετε μια κρυπτογραφημένη εξαγωγή σε διαφορετικό λογαριασμό."
   },
   "exportMasterPassword": {
     "message": "Πληκτρολογήστε τον κύριο κωδικό για εξαγωγή δεδομένων vault."
@@ -1410,7 +1410,7 @@
     "message": "Κοινοποιήθηκε"
   },
   "bitwardenForBusinessPageDesc": {
-    "message": "Το Bitwarden για Επιχειρήσεις σας επιτρέπει να μοιραστείτε τα αντικείμενα του θησαυ/κίου σας με άλλους χρησιμοποιώντας έναν οργανισμό. Μάθετε περισσότερα στην ιστοσελίδα bitwarden.com."
+    "message": "Το TideWarden για Επιχειρήσεις σας επιτρέπει να μοιραστείτε τα αντικείμενα του θησαυ/κίου σας με άλλους χρησιμοποιώντας έναν οργανισμό. Μάθετε περισσότερα στην ιστοσελίδα tidewarden.com."
   },
   "moveToOrganization": {
     "message": "Μετακίνηση σε οργανισμό"
@@ -1522,7 +1522,7 @@
     "message": "Διαχείριση συνδρομής"
   },
   "premiumManageAlert": {
-    "message": "Μπορείτε να διαχειριστείτε την ιδιότητά σας ως μέλος στο bitwarden.com web vault. Θέλετε να επισκεφθείτε την ιστοσελίδα τώρα;"
+    "message": "Μπορείτε να διαχειριστείτε την ιδιότητά σας ως μέλος στο tidewarden.com web vault. Θέλετε να επισκεφθείτε την ιστοσελίδα τώρα;"
   },
   "premiumRefresh": {
     "message": "Ανανέωση συνδρομής"
@@ -1576,13 +1576,13 @@
     "message": "Αγορά Premium έκδοσης"
   },
   "premiumPurchaseAlertV2": {
-    "message": "Μπορείτε να αγοράσετε το Premium από τις ρυθμίσεις του λογαριασμού σας στην διαδικτυακή εφαρμογή Bitwarden."
+    "message": "Μπορείτε να αγοράσετε το Premium από τις ρυθμίσεις του λογαριασμού σας στην διαδικτυακή εφαρμογή TideWarden."
   },
   "premiumCurrentMember": {
     "message": "Είστε Premium μέλος!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Ευχαριστούμε που υποστηρίζετε το Bitwarden."
+    "message": "Ευχαριστούμε που υποστηρίζετε το TideWarden."
   },
   "premiumFeatures": {
     "message": "Αναβαθμίστε σε Premium και λάβετε:"
@@ -1688,8 +1688,8 @@
     "message": "Εφαρμογή αυθεντικοποίησης"
   },
   "authenticatorAppDescV2": {
-    "message": "Εισάγετε έναν κωδικό που δημιουργήθηκε από μια εφαρμογή αυθεντικοποίησης όπως το Bitwarden Authenticator.",
-    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
+    "message": "Εισάγετε έναν κωδικό που δημιουργήθηκε από μια εφαρμογή αυθεντικοποίησης όπως το TideWarden Authenticator.",
+    "description": "'TideWarden Authenticator' is a product name and should not be translated."
   },
   "yubiKeyTitleV2": {
     "message": "Κλειδί Ασφαλείας Yubico OTP"
@@ -1721,7 +1721,7 @@
     "message": "Αυτο-φιλοξενούμενο περιβάλλον"
   },
   "selfHostedBaseUrlHint": {
-    "message": "Καθορίστε το βασικό URL της εγκατάστασης Bitwarden στο χώρο σας. Παράδειγμα: https://bitwarden.company.com"
+    "message": "Καθορίστε το βασικό URL της εγκατάστασης TideWarden στο χώρο σας. Παράδειγμα: https://tidewarden.company.com"
   },
   "selfHostedCustomEnvHeader": {
     "message": "Για προχωρημένη παραμετροποίηση, μπορείτε να ορίσετε ανεξάρτητα το βασικό URL κάθε υπηρεσίας."
@@ -1771,7 +1771,7 @@
     "message": "Easily find autofill suggestions"
   },
   "autofillSpotlightDesc": {
-    "message": "Απενεργοποιήστε τις ρυθμίσεις αυτόματης συμπλήρωσης του προγράμματος περιήγησής σας, έτσι ώστε να μη συγκρούονται με αυτές του Bitwarden."
+    "message": "Απενεργοποιήστε τις ρυθμίσεις αυτόματης συμπλήρωσης του προγράμματος περιήγησής σας, έτσι ώστε να μη συγκρούονται με αυτές του TideWarden."
   },
   "turnOffBrowserAutofill": {
     "message": "Απενεργοποίηση αυτόματης συμπλήρωσης του $BROWSER$",
@@ -1795,7 +1795,7 @@
     "message": "Εμφάνιση μενού αυτόματης συμπλήρωσης στα πεδία της φόρμας"
   },
   "howDoesBitwardenProtectFromPhishing": {
-    "message": "Πώς προστατεύει το Bitwarden τα δεδομένα σας από phishing (ψάρεμα);"
+    "message": "Πώς προστατεύει το TideWarden τα δεδομένα σας από phishing (ψάρεμα);"
   },
   "currentWebsite": {
     "message": "Τρέχων ιστότοπος"
@@ -2367,7 +2367,7 @@
     "message": "Αδύναμος Κύριος Κωδικός"
   },
   "weakMasterPasswordDesc": {
-    "message": "Ο κύριος κωδικός που έχετε επιλέξει είναι αδύναμος. Θα πρέπει να χρησιμοποιήσετε έναν ισχυρό κύριο κωδικό (ή μια φράση) για την κατάλληλη προστασία του λογαριασμού Bitwarden. Είστε βέβαιοι ότι θέλετε να χρησιμοποιήσετε αυτόν τον κύριο κωδικό;"
+    "message": "Ο κύριος κωδικός που έχετε επιλέξει είναι αδύναμος. Θα πρέπει να χρησιμοποιήσετε έναν ισχυρό κύριο κωδικό (ή μια φράση) για την κατάλληλη προστασία του λογαριασμού TideWarden. Είστε βέβαιοι ότι θέλετε να χρησιμοποιήσετε αυτόν τον κύριο κωδικό;"
   },
   "pin": {
     "message": "PIN",
@@ -2383,10 +2383,10 @@
     "message": "Ορισμός PIN"
   },
   "setYourPinCode": {
-    "message": "Ορίστε τον κωδικό PIN για να ξεκλειδώσετε το Bitwarden. Οι ρυθμίσεις PIN θα επαναρυθμιστούν αν αποσυνδεθείτε πλήρως από την εφαρμογή."
+    "message": "Ορίστε τον κωδικό PIN για να ξεκλειδώσετε το TideWarden. Οι ρυθμίσεις PIN θα επαναρυθμιστούν αν αποσυνδεθείτε πλήρως από την εφαρμογή."
   },
   "setPinCode": {
-    "message": "You can use this PIN to unlock Bitwarden. Your PIN will be reset if you ever fully log out of the application."
+    "message": "You can use this PIN to unlock TideWarden. Your PIN will be reset if you ever fully log out of the application."
   },
   "pinRequired": {
     "message": "Απαιτείται κωδικός PIN."
@@ -2407,7 +2407,7 @@
     "message": "Αναμονή επιβεβαίωσης από την επιφάνεια εργασίας"
   },
   "awaitDesktopDesc": {
-    "message": "Παρακαλώ επιβεβαιώστε τη χρήση βιομετρικών στην εφαρμογή Bitwarden της επιφάνειας εργασίας για να ενεργοποιήσετε τα βιομετρικά για τον περιηγητή."
+    "message": "Παρακαλώ επιβεβαιώστε τη χρήση βιομετρικών στην εφαρμογή TideWarden της επιφάνειας εργασίας για να ενεργοποιήσετε τα βιομετρικά για τον περιηγητή."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Κλείδωμα με κύριο κωδικό πρόσβασης στην επανεκκίνηση του προγράμματος περιήγησης"
@@ -2522,7 +2522,7 @@
     "message": "Η φόρμα φιλοξενείται από διαφορετικό τομέα (domain) από το λινκ (uri) της αποθηκευμένης σύνδεσης σας (login). Επιλέξτε OK για αυτόματη συμπλήρωση, ή Ακύρωση για να σταματήσετε."
   },
   "autofillIframeWarningTip": {
-    "message": "Για να αποτρέψετε αυτή την προειδοποίηση στο μέλλον, αποθηκεύστε αυτό το URI, $HOSTNAME$, στο στοιχείο σύνδεσης Bitwarden σας για αυτόν τον ιστότοπο.",
+    "message": "Για να αποτρέψετε αυτή την προειδοποίηση στο μέλλον, αποθηκεύστε αυτό το URI, $HOSTNAME$, στο στοιχείο σύνδεσης TideWarden σας για αυτόν τον ιστότοπο.",
     "placeholders": {
       "hostname": {
         "content": "$1",
@@ -2531,7 +2531,7 @@
     }
   },
   "topLayerHijackWarning": {
-    "message": "This page is interfering with the Bitwarden experience. The Bitwarden inline menu has been temporarily disabled as a safety measure."
+    "message": "This page is interfering with the TideWarden experience. The TideWarden inline menu has been temporarily disabled as a safety measure."
   },
   "setMasterPassword": {
     "message": "Ορισμός κύριου κωδικού πρόσβασης"
@@ -2588,7 +2588,7 @@
     "message": "Ο νέος κύριος κωδικός δεν πληροί τις απαιτήσεις πολιτικής."
   },
   "receiveMarketingEmailsV2": {
-    "message": "Λάβετε συμβουλές, ανακοινώσεις και ευκαιρίες έρευνας από το Bitwarden στα εισερχόμενά σας."
+    "message": "Λάβετε συμβουλές, ανακοινώσεις και ευκαιρίες έρευνας από το TideWarden στα εισερχόμενά σας."
   },
   "unsubscribe": {
     "message": "Ακύρωση συνδρομής"
@@ -2639,13 +2639,13 @@
     "message": "Η ενσωμάτωση περιηγητή δεν έχει οριστεί"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Η ενσωμάτωση περιηγητή δεν έχει οριστεί στην εφαρμογή Bitwarden Desktop. Παρακαλώ ορίστε την στις ρυθμίσεις της εφαρμογής desktop."
+    "message": "Η ενσωμάτωση περιηγητή δεν έχει οριστεί στην εφαρμογή TideWarden Desktop. Παρακαλώ ορίστε την στις ρυθμίσεις της εφαρμογής desktop."
   },
   "startDesktopTitle": {
-    "message": "Ξεκινήστε την εφαρμογή Bitwarden Επιφάνεια εργασίας"
+    "message": "Ξεκινήστε την εφαρμογή TideWarden Επιφάνεια εργασίας"
   },
   "startDesktopDesc": {
-    "message": "Η εφαρμογή Bitwarden Desktop πρέπει να εκκινηθεί για να χρησιμοποιηθεί αυτή η λειτουργία."
+    "message": "Η εφαρμογή TideWarden Desktop πρέπει να εκκινηθεί για να χρησιμοποιηθεί αυτή η λειτουργία."
   },
   "errorEnableBiometricTitle": {
     "message": "Αδυναμία ενεργοποίησης βιομετρικών στοιχείων"
@@ -2699,13 +2699,13 @@
     "message": "Τα βιομετρικά απέτυχαν"
   },
   "biometricsFailedDesc": {
-    "message": "Τα βιομετρικά δεν μπόρεσαν να ολοκληρωθούν, σκεφτείτε να χρησιμοποιήσετε έναν κύριο κωδικό πρόσβασης ή να αποσυνδεθείτε. Αν αυτό εξακολουθεί να συμβαίνει, παρακαλώ επικοινωνήστε με την υποστήριξη της Bitwarden."
+    "message": "Τα βιομετρικά δεν μπόρεσαν να ολοκληρωθούν, σκεφτείτε να χρησιμοποιήσετε έναν κύριο κωδικό πρόσβασης ή να αποσυνδεθείτε. Αν αυτό εξακολουθεί να συμβαίνει, παρακαλώ επικοινωνήστε με την υποστήριξη της TideWarden."
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "Δεν Έχει Χορηγηθεί Άδεια"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "Χωρίς άδεια επικοινωνίας με την εφαρμογή Bitwarden Desktop δεν μπορούμε να παρέχουμε βιομετρικά στοιχεία στην επέκταση του προγράμματος περιήγησης. Παρακαλώ δοκιμάστε ξανά."
+    "message": "Χωρίς άδεια επικοινωνίας με την εφαρμογή TideWarden Desktop δεν μπορούμε να παρέχουμε βιομετρικά στοιχεία στην επέκταση του προγράμματος περιήγησης. Παρακαλώ δοκιμάστε ξανά."
   },
   "nativeMessaginPermissionSidebarTitle": {
     "message": "Σφάλμα αιτήματος άδειας"
@@ -2742,7 +2742,7 @@
     "message": "Εξαιρούμενοι Τομείς"
   },
   "excludedDomainsDesc": {
-    "message": "Το Bitwarden δεν θα ζητήσει να αποθηκεύσετε τα στοιχεία σύνδεσης για αυτούς τους τομείς. Πρέπει να ανανεώσετε τη σελίδα για να τεθούν σε ισχύ οι αλλαγές."
+    "message": "Το TideWarden δεν θα ζητήσει να αποθηκεύσετε τα στοιχεία σύνδεσης για αυτούς τους τομείς. Πρέπει να ανανεώσετε τη σελίδα για να τεθούν σε ισχύ οι αλλαγές."
   },
   "blockedDomainsDesc": {
     "message": "Η αυτόματη συμπλήρωση και άλλες σχετικές λειτουργίες δεν θα προσφερθούν για αυτούς τους ιστότοπους. Πρέπει να ανανεώσετε τη σελίδα για να τεθούν σε ισχύ οι αλλαγές."
@@ -2858,21 +2858,21 @@
     "message": "Illustration of a list of logins that are at-risk."
   },
   "generatePasswordSlideDesc": {
-    "message": "Quickly generate a strong, unique password with the Bitwarden autofill menu on the at-risk site.",
+    "message": "Quickly generate a strong, unique password with the TideWarden autofill menu on the at-risk site.",
     "description": "Description of the generate password slide on the at-risk password page carousel"
   },
   "generatePasswordSlideImgAltPeriod": {
-    "message": "Illustration of the Bitwarden autofill menu displaying a generated password."
+    "message": "Illustration of the TideWarden autofill menu displaying a generated password."
   },
   "updateInBitwarden": {
-    "message": "Ενημέρωση στο Bitwarden"
+    "message": "Ενημέρωση στο TideWarden"
   },
   "updateInBitwardenSlideDesc": {
-    "message": "Bitwarden will then prompt you to update the password in the password manager.",
-    "description": "Description of the update in Bitwarden slide on the at-risk password page carousel"
+    "message": "TideWarden will then prompt you to update the password in the password manager.",
+    "description": "Description of the update in TideWarden slide on the at-risk password page carousel"
   },
   "updateInBitwardenSlideImgAltPeriod": {
-    "message": "Illustration of a Bitwarden’s notification prompting the user to update the login."
+    "message": "Illustration of a TideWarden’s notification prompting the user to update the login."
   },
   "turnOnAutofill": {
     "message": "Ενεργοποίηση αυτόματης συμπλήρωσης"
@@ -2926,11 +2926,11 @@
   },
   "send": {
     "message": "Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDetails": {
     "message": "Στοιχεία Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendTypeText": {
     "message": "Κείμενο"
@@ -2943,7 +2943,7 @@
   },
   "allSends": {
     "message": "Όλα τα Sends",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
     "message": "Max access count reached",
@@ -2963,7 +2963,7 @@
   },
   "copySendLink": {
     "message": "Αντιγραφή συνδέσμου Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "removePassword": {
     "message": "Αφαίρεση Κωδικού"
@@ -2976,11 +2976,11 @@
   },
   "deletedSend": {
     "message": "Το Send διαγράφηκε",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendLink": {
     "message": "Σύνδεσμος Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "disabled": {
     "message": "Απενεργοποιημένο"
@@ -2990,26 +2990,26 @@
   },
   "deleteSend": {
     "message": "Διαγραφή Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
     "message": "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το Send;",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendPermanentConfirmation": {
     "message": "Θέλετε σίγουρα να διαγράψετε οριστικά αυτό το Send;",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editSend": {
     "message": "Επεξεργασία Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deletionDate": {
     "message": "Ημερομηνία διαγραφής"
   },
   "deletionDateDescV2": {
     "message": "Το Send θα διαγραφεί οριστικά σε αυτήν την ημερομηνία.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "Ημερομηνία λήξης"
@@ -3031,34 +3031,34 @@
   },
   "createSend": {
     "message": "Νέο Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Νέος κωδικός πρόσβασης"
   },
   "sendDisabled": {
     "message": "Το Send αφαιρέθηκε",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
     "message": "Λόγω μιας επιχειρηματικής πολιτικής, είστε σε θέση να διαγράψετε μόνο ένα υπάρχον Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSend": {
     "message": "Το Send δημιουργήθηκε",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSendSuccessfully": {
     "message": "Το Send δημιουργήθηκε επιτυχώς!",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInHoursSingle": {
     "message": "Το Send θα είναι διαθέσιμο σε όποιον έχει τον σύνδεσμο για την επόμενη 1 ώρα.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInHours": {
     "message": "Το Send θα είναι διαθέσιμο σε όποιον έχει τον σύνδεσμο για τις επόμενες $HOURS$ ώρες.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3068,11 +3068,11 @@
   },
   "sendExpiresInDaysSingle": {
     "message": "Το Send θα είναι διαθέσιμο σε όποιον έχει τον σύνδεσμο για την επόμενη 1 ημέρα.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInDays": {
     "message": "Το Send θα είναι διαθέσιμο σε όποιον έχει τον σύνδεσμο για τις επόμενες $DAYS$ ημέρες.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -3082,11 +3082,11 @@
   },
   "sendLinkCopied": {
     "message": "Ο σύνδεσμος Send αντιγράφηκε",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editedSend": {
     "message": "Το Send αποθηκεύτηκε",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "popOut": {
     "message": "Άνοιγμα σε αναδυόμενο παράθυρο"
@@ -3362,7 +3362,7 @@
     "message": "Error getting autofill data"
   },
   "couldNotDecryptVaultItemsBelow": {
-    "message": "Το Bitwarden δεν μπόρεσε να αποκρυπτογραφήσει τα αντικείμενα θησαυ/κίου που αναφέρονται παρακάτω."
+    "message": "Το TideWarden δεν μπόρεσε να αποκρυπτογραφήσει τα αντικείμενα θησαυ/κίου που αναφέρονται παρακάτω."
   },
   "contactCSToAvoidDataLossPart1": {
     "message": "Contact customer success",
@@ -3466,11 +3466,11 @@
     }
   },
   "forwarderGeneratedBy": {
-    "message": "Δημιουργήθηκε από το Bitwarden.",
+    "message": "Δημιουργήθηκε από το TideWarden.",
     "description": "Displayed with the address on the forwarding service's configuration screen."
   },
   "forwarderGeneratedByWithWebsite": {
-    "message": "Ιστοσελίδα: $WEBSITE$. Δημιουργήθηκε από το Bitwarden.",
+    "message": "Ιστοσελίδα: $WEBSITE$. Δημιουργήθηκε από το TideWarden.",
     "description": "Displayed with the address on the forwarding service's configuration screen.",
     "placeholders": {
       "WEBSITE": {
@@ -3663,7 +3663,7 @@
     "message": "Μια ειδοποίηση έχει σταλεί στη συσκευή σας."
   },
   "notificationSentDevicePart1": {
-    "message": "Ξεκλειδώστε το Bitwarden στη συσκευή σας ή στην"
+    "message": "Ξεκλειδώστε το TideWarden στη συσκευή σας ή στην"
   },
   "notificationSentDeviceAnchor": {
     "message": "εφαρμογή web"
@@ -4003,11 +4003,11 @@
   },
   "sendsTitleNoItems": {
     "message": "Send sensitive information safely",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendsBodyNoItems": {
     "message": "Share files and data securely with anyone, on any platform. Your information will remain end-to-end encrypted while limiting exposure.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "inputRequired": {
     "message": "Απαιτείται εισαγωγή."
@@ -4148,15 +4148,15 @@
     "message": "Μετάβαση στο περιεχόμενο"
   },
   "bitwardenOverlayButton": {
-    "message": "Πλήκτρο μενού αυτόματης συμπλήρωσης Bitwarden",
+    "message": "Πλήκτρο μενού αυτόματης συμπλήρωσης TideWarden",
     "description": "Page title for the iframe containing the overlay button"
   },
   "toggleBitwardenVaultOverlay": {
-    "message": "Εναλλαγή ορατότητας μενού αυτόματης συμπλήρωσης Bitwarden",
+    "message": "Εναλλαγή ορατότητας μενού αυτόματης συμπλήρωσης TideWarden",
     "description": "Screen reader and tool tip label for the overlay button"
   },
   "bitwardenVault": {
-    "message": "Μενού αυτόματης συμπλήρωσης Bitwarden",
+    "message": "Μενού αυτόματης συμπλήρωσης TideWarden",
     "description": "Page title in overlay"
   },
   "unlockYourAccountToViewMatchingLogins": {
@@ -4228,7 +4228,7 @@
     "description": "Screen reader text (aria-label) for new identity button within inline menu"
   },
   "bitwardenOverlayMenuAvailable": {
-    "message": "Είναι διαθέσιμο το Bitwarden μενού αυτόματης συμπλήρωσης. Πατήστε το πλήκτρο κάτω βέλος για να επιλέξετε.",
+    "message": "Είναι διαθέσιμο το TideWarden μενού αυτόματης συμπλήρωσης. Πατήστε το πλήκτρο κάτω βέλος για να επιλέξετε.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
   "turnOn": {
@@ -4540,7 +4540,7 @@
     "message": "Ενεργός λογαριασμός"
   },
   "bitwardenAccount": {
-    "message": "Λογαριασμός Bitwarden"
+    "message": "Λογαριασμός TideWarden"
   },
   "availableAccounts": {
     "message": "Διαθέσιμοι λογαριασμοί"
@@ -4586,8 +4586,8 @@
     "description": "Label indicating the most common import formats"
   },
   "uriMatchDefaultStrategyHint": {
-    "message": "URI match detection is how Bitwarden identifies autofill suggestions.",
-    "description": "Explains to the user that URI match detection determines how Bitwarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
+    "message": "URI match detection is how TideWarden identifies autofill suggestions.",
+    "description": "Explains to the user that URI match detection determines how TideWarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
   },
   "regExAdvancedOptionWarning": {
     "message": "\"Regular expression\" is an advanced option with increased risk of exposing credentials.",
@@ -4630,23 +4630,23 @@
     "description": "Body content for dialog which asks if the user wants to proceed to the browser's keyboard shortcut settings page"
   },
   "overrideDefaultBrowserAutofillTitle": {
-    "message": "Να γίνει το Bitwarden ο προεπιλεγμένος διαχειριστής κωδικών πρόσβασης σας;",
+    "message": "Να γίνει το TideWarden ο προεπιλεγμένος διαχειριστής κωδικών πρόσβασης σας;",
     "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutofillDescription": {
-    "message": "Η αγνόηση αυτής της επιλογής μπορεί να προκαλέσει συγκρούσεις μεταξύ του μενού αυτόματης συμπλήρωσης Bitwarden και του περιηγητή σας.",
+    "message": "Η αγνόηση αυτής της επιλογής μπορεί να προκαλέσει συγκρούσεις μεταξύ του μενού αυτόματης συμπλήρωσης TideWarden και του περιηγητή σας.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {
-    "message": "Να γίνει το Bitwarden ο προεπιλεγμένος διαχειριστής κωδικών πρόσβασης σας",
+    "message": "Να γίνει το TideWarden ο προεπιλεγμένος διαχειριστής κωδικών πρόσβασης σας",
     "description": "Label for the setting that allows overriding the default browser autofill settings"
   },
   "privacyPermissionAdditionNotGrantedTitle": {
-    "message": "Αδυναμία ορισμού του Bitwarden ως προεπιλεγμένου διαχειριστή κωδικών πρόσβασης",
+    "message": "Αδυναμία ορισμού του TideWarden ως προεπιλεγμένου διαχειριστή κωδικών πρόσβασης",
     "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "privacyPermissionAdditionNotGrantedDescription": {
-    "message": "Πρέπει να παραχωρήσετε δικαιώματα απορρήτου περιηγητή στο Bitwarden για να το ορίσετε ως προεπιλεγμένο διαχειριστή κωδικών πρόσβασης.",
+    "message": "Πρέπει να παραχωρήσετε δικαιώματα απορρήτου περιηγητή στο TideWarden για να το ορίσετε ως προεπιλεγμένο διαχειριστή κωδικών πρόσβασης.",
     "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "makeDefault": {
@@ -4984,16 +4984,16 @@
     "message": "Download Attachment"
   },
   "downloadBitwarden": {
-    "message": "Λήψη του Bitwarden"
+    "message": "Λήψη του TideWarden"
   },
   "downloadBitwardenOnAllDevices": {
-    "message": "Download Bitwarden on all devices"
+    "message": "Download TideWarden on all devices"
   },
   "getTheMobileApp": {
     "message": "Get the mobile app"
   },
   "getTheMobileAppDesc": {
-    "message": "Access your passwords on the go with the Bitwarden mobile app."
+    "message": "Access your passwords on the go with the TideWarden mobile app."
   },
   "getTheDesktopApp": {
     "message": "Get the desktop app"
@@ -5002,7 +5002,7 @@
     "message": "Access your vault without a browser, then set up unlock with biometrics to expedite unlocking in both the desktop app and browser extension."
   },
   "downloadFromBitwardenNow": {
-    "message": "Download from bitwarden.com now"
+    "message": "Download from tidewarden.com now"
   },
   "getItOnGooglePlay": {
     "message": "Αποκτήστε το στο Google Play"
@@ -5467,10 +5467,10 @@
     "message": "Το βιομετρικό ξεκλείδωμα δεν είναι διαθέσιμο λόγω εσφαλμένων ρυθμίσεων αρχείων συστήματος."
   },
   "biometricsStatusHelptextDesktopDisconnected": {
-    "message": "Το βιομετρικό ξεκλείδωμα δεν είναι διαθέσιμο επειδή η εφαρμογή Bitwarden επιφάνειας εργασίας είναι κλειστή."
+    "message": "Το βιομετρικό ξεκλείδωμα δεν είναι διαθέσιμο επειδή η εφαρμογή TideWarden επιφάνειας εργασίας είναι κλειστή."
   },
   "biometricsStatusHelptextNotEnabledInDesktop": {
-    "message": "Biometric unlock is unavailable because it is not enabled for $EMAIL$ in the Bitwarden desktop app.",
+    "message": "Biometric unlock is unavailable because it is not enabled for $EMAIL$ in the TideWarden desktop app.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5505,7 +5505,7 @@
     "description": "Notification message for when a password has been regenerated"
   },
   "saveToBitwarden": {
-    "message": "Αποθήκευση στο Bitwarden",
+    "message": "Αποθήκευση στο TideWarden",
     "description": "Confirmation message for saving a login to TideWarden"
   },
   "spaceCharacterDescriptor": {
@@ -5731,13 +5731,13 @@
     "message": "The vault protects more than just your passwords. Store secure logins, IDs, cards and notes securely here."
   },
   "introCarouselLabel": {
-    "message": "Καλώς ορίσατε στο Bitwarden"
+    "message": "Καλώς ορίσατε στο TideWarden"
   },
   "securityPrioritized": {
     "message": "Security, prioritized"
   },
   "securityPrioritizedBody": {
-    "message": "Save logins, cards, and identities to your secure vault. Bitwarden uses zero-knowledge, end-to-end encryption to protect what’s important to you."
+    "message": "Save logins, cards, and identities to your secure vault. TideWarden uses zero-knowledge, end-to-end encryption to protect what’s important to you."
   },
   "quickLogin": {
     "message": "Εύκολη και γρήγορη σύνδεση"
@@ -5755,7 +5755,7 @@
     "message": "Your data, when and where you need it"
   },
   "secureDevicesBody": {
-    "message": "Save unlimited passwords across unlimited devices with Bitwarden mobile, browser, and desktop apps."
+    "message": "Save unlimited passwords across unlimited devices with TideWarden mobile, browser, and desktop apps."
   },
   "nudgeBadgeAria": {
     "message": "1 ειδοποίηση"
@@ -5764,7 +5764,7 @@
     "message": "Εισαγωγή υπαρχόντων κωδικών πρόσβασης"
   },
   "emptyVaultNudgeBody": {
-    "message": "Use the importer to quickly transfer logins to Bitwarden without manually adding them."
+    "message": "Use the importer to quickly transfer logins to TideWarden without manually adding them."
   },
   "emptyVaultNudgeButton": {
     "message": "Εισαγωγή τώρα"
@@ -5800,7 +5800,7 @@
     "placeholders": {
       "product": {
         "content": "$1",
-        "example": "Bitwarden Phishing Blocker"
+        "example": "TideWarden Phishing Blocker"
       }
     }
   },
@@ -5883,13 +5883,13 @@
     "message": "About this setting"
   },
   "permitCipherDetailsDescription": {
-    "message": "Bitwarden will use saved login URIs to identify which icon or change password URL should be used to improve your experience. No information is collected or saved when you use this service."
+    "message": "TideWarden will use saved login URIs to identify which icon or change password URL should be used to improve your experience. No information is collected or saved when you use this service."
   },
   "noPermissionsViewPage": {
     "message": "You do not have permissions to view this page. Try logging in with a different account."
   },
   "wasmNotSupported": {
-    "message": "WebAssembly is not supported on your browser or is not enabled. WebAssembly is required to use the Bitwarden app.",
+    "message": "WebAssembly is not supported on your browser or is not enabled. WebAssembly is required to use the TideWarden app.",
     "description": "'WebAssembly' is a technical term and should not be translated."
   },
   "showMore": {
@@ -5964,7 +5964,7 @@
     "message": "Error: Cannot decrypt"
   },
   "removeMasterPasswordForOrgUserKeyConnector": {
-    "message": "Your organization is no longer using master passwords to log into Bitwarden. To continue, verify the organization and domain."
+    "message": "Your organization is no longer using master passwords to log into TideWarden. To continue, verify the organization and domain."
   },
   "continueWithLogIn": {
     "message": "Continue with log in"
@@ -6122,17 +6122,17 @@
     "message": "Enter multiple emails by separating with a comma."
   },
   "emailPlaceholder": {
-    "message": "user@bitwarden.com , user@acme.com"
+    "message": "user@tidewarden.com , user@acme.com"
   },
   "downloadBitwardenApps": {
-    "message": "Download Bitwarden apps"
+    "message": "Download TideWarden apps"
   },
   "emailProtected": {
     "message": "Email protected"
   },
   "sendPasswordHelperText": {
     "message": "Individuals will need to enter the password to view this Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "logInToTideWarden": {
     "message": "Σύνδεση στο TideWarden"

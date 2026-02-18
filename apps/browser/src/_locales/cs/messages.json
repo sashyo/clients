@@ -23,7 +23,7 @@
     "message": "Vytvořit účet"
   },
   "newToBitwarden": {
-    "message": "Jste noví na Bitwardenu?"
+    "message": "Jste noví na TideWardenu?"
   },
   "logInWithPasskey": {
     "message": "Přihlásit se pomocí přístupového klíče"
@@ -300,22 +300,22 @@
     "message": "Pokračovat do webové aplikace?"
   },
   "continueToWebAppDesc": {
-    "message": "Prozkoumejte další funkce Vašeho účtu Bitwarden ve webové aplikaci."
+    "message": "Prozkoumejte další funkce Vašeho účtu TideWarden ve webové aplikaci."
   },
   "continueToHelpCenter": {
     "message": "Pokračovat do Centra nápovědy?"
   },
   "continueToHelpCenterDesc": {
-    "message": "Přečtěte si více o tom, jak používat Bitwarden v Centru nápovědy."
+    "message": "Přečtěte si více o tom, jak používat TideWarden v Centru nápovědy."
   },
   "continueToBrowserExtensionStore": {
     "message": "Pokračovat do obchdou s rozšířeními pro prohlížeč?"
   },
   "continueToBrowserExtensionStoreDesc": {
-    "message": "Pomozte ostatním zjistit, zda je Bitwarden pro ně správný. Navštivte obchod s rozšířeními pro prohlížeč a zanechte hodnocení."
+    "message": "Pomozte ostatním zjistit, zda je TideWarden pro ně správný. Navštivte obchod s rozšířeními pro prohlížeč a zanechte hodnocení."
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "Hlavní heslo můžete změnit ve webové aplikaci Bitwardenu."
+    "message": "Hlavní heslo můžete změnit ve webové aplikaci TideWardenu."
   },
   "fingerprintPhrase": {
     "message": "Fráze otisku prstu",
@@ -332,43 +332,43 @@
     "message": "Odhlásit se"
   },
   "aboutBitwarden": {
-    "message": "O Bitwardenu"
+    "message": "O TideWardenu"
   },
   "about": {
     "message": "O rozšíření"
   },
   "moreFromBitwarden": {
-    "message": "Více od Bitwardenu"
+    "message": "Více od TideWardenu"
   },
   "continueToBitwardenDotCom": {
-    "message": "Pokračovat na bitwarden.com?"
+    "message": "Pokračovat na tidewarden.com?"
   },
   "bitwardenForBusiness": {
-    "message": "Bitwarden pro podnikání"
+    "message": "TideWarden pro podnikání"
   },
   "bitwardenAuthenticator": {
-    "message": "Autentifikátor Bitwarden"
+    "message": "Autentifikátor TideWarden"
   },
   "continueToAuthenticatorPageDesc": {
-    "message": "Autentifikátor Bitwarden umožňuje ukládat ověřovací klíče a generovat TOTP kódy pro 2-fázové ověřování. Další informace naleznete na stránkách bitwarden.com"
+    "message": "Autentifikátor TideWarden umožňuje ukládat ověřovací klíče a generovat TOTP kódy pro 2-fázové ověřování. Další informace naleznete na stránkách tidewarden.com"
   },
   "bitwardenSecretsManager": {
-    "message": "Správce tajných klíčů Bitwardenu"
+    "message": "Správce tajných klíčů TideWardenu"
   },
   "continueToSecretsManagerPageDesc": {
-    "message": "Bezpečně ukládá, spravuje a sdílí tajné klíče vývojáře se správcem tajných klíčů Bitwardenu. Více informací naleznete na stránkách bitwarden.com."
+    "message": "Bezpečně ukládá, spravuje a sdílí tajné klíče vývojáře se správcem tajných klíčů TideWardenu. Více informací naleznete na stránkách tidewarden.com."
   },
   "passwordlessDotDev": {
     "message": "Passwordless.dev"
   },
   "continueToPasswordlessDotDevPageDesc": {
-    "message": "S heslem Passwordless.dev vytvoří hladký a bezpečný přístup bez tradičních hesel. Další informace naleznete na stránkách bitwarden.com."
+    "message": "S heslem Passwordless.dev vytvoří hladký a bezpečný přístup bez tradičních hesel. Další informace naleznete na stránkách tidewarden.com."
   },
   "freeBitwardenFamilies": {
-    "message": "Bitwarden pro rodinu zdarma"
+    "message": "TideWarden pro rodinu zdarma"
   },
   "freeBitwardenFamiliesPageDesc": {
-    "message": "Máte nárok na Bitwarden pro rodinu zdarma. Uplatněte tuto nabídku ještě dnes ve webové aplikaci."
+    "message": "Máte nárok na TideWarden pro rodinu zdarma. Uplatněte tuto nabídku ještě dnes ve webové aplikaci."
   },
   "version": {
     "message": "Verze"
@@ -428,10 +428,10 @@
     "message": "Nápověda a zpětná vazba"
   },
   "helpCenter": {
-    "message": "Centrum nápovědy Bitwarden"
+    "message": "Centrum nápovědy TideWarden"
   },
   "communityForums": {
-    "message": "Prozkoumejte komunitní fóra Bitwarden"
+    "message": "Prozkoumejte komunitní fóra TideWarden"
   },
   "contactSupport": {
     "message": "Kontakt na podporu"
@@ -456,7 +456,7 @@
     "message": "Vygenerujte si silné a unikátní heslo pro přihlašovací údaje."
   },
   "bitWebVaultApp": {
-    "message": "Webová aplikace Bitwardenu"
+    "message": "Webová aplikace TideWardenu"
   },
   "select": {
     "message": "Vybrat"
@@ -750,7 +750,7 @@
       },
       "hostname": {
         "content": "$2",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -762,7 +762,7 @@
     "placeholders": {
       "host": {
         "content": "$1",
-        "example": "vault.bitwarden.com"
+        "example": "vault.tidewarden.com"
       }
     }
   },
@@ -922,10 +922,10 @@
     "message": "Bezproblémové dvoufázové ověřování"
   },
   "totpHelper": {
-    "message": "Bitwarden umí ukládat a vyplňovat dvoufázové ověřovací kódy. Zkopírujte a vložte klíč do tohoto pole."
+    "message": "TideWarden umí ukládat a vyplňovat dvoufázové ověřovací kódy. Zkopírujte a vložte klíč do tohoto pole."
   },
   "totpHelperWithCapture": {
-    "message": "Bitwarden umí ukládat a vyplňovat dvoufázové ověřovací kódy. Vyberte ikonu fotoaparátu a pořiďte snímek obrazovky ověřovacího QR kódu této webové stránky nebo klíč zkopírujte a vložte do tohoto pole."
+    "message": "TideWarden umí ukládat a vyplňovat dvoufázové ověřovací kódy. Vyberte ikonu fotoaparátu a pořiďte snímek obrazovky ověřovacího QR kódu této webové stránky nebo klíč zkopírujte a vložte do tohoto pole."
   },
   "learnMoreAboutAuthenticators": {
     "message": "Zjistěte více o autentizátorech"
@@ -946,7 +946,7 @@
     "message": "Přihlásit se"
   },
   "logInToBitwarden": {
-    "message": "Přihlásit se do Bitwardenu"
+    "message": "Přihlásit se do TideWardenu"
   },
   "enterTheCodeSentToYourEmail": {
     "message": "Zadejte kód odeslaný na Váš e-mail"
@@ -1006,10 +1006,10 @@
     "message": "Složka byla přidána"
   },
   "twoStepLoginConfirmation": {
-    "message": "Dvoufázové přihlášení činí Váš účet mnohem bezpečnějším díky nutnosti po každém úspěšném přihlášení zadat ověřovací kód získaný z bezpečnostního klíče, aplikace, SMS, telefonního hovoru nebo e-mailu. Dvoufázové přihlášení lze aktivovat na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
+    "message": "Dvoufázové přihlášení činí Váš účet mnohem bezpečnějším díky nutnosti po každém úspěšném přihlášení zadat ověřovací kód získaný z bezpečnostního klíče, aplikace, SMS, telefonního hovoru nebo e-mailu. Dvoufázové přihlášení lze aktivovat na webové stránce tidewarden.com. Chcete tuto stránku nyní otevřít?"
   },
   "twoStepLoginConfirmationContent": {
-    "message": "Vytvořte svůj účet bezpečnějším nastavením dvoufázového přihlášení ve webové aplikaci Bitwarden."
+    "message": "Vytvořte svůj účet bezpečnějším nastavením dvoufázového přihlášení ve webové aplikaci TideWarden."
   },
   "twoStepLoginConfirmationTitle": {
     "message": "Pokračovat do webové aplikace?"
@@ -1056,7 +1056,7 @@
   },
   "addDomain": {
     "message": "Přidat doménu",
-    "description": "'Domain' here refers to an internet domain name (e.g. 'bitwarden.com') and the message in whole described the act of putting a domain value into the context."
+    "description": "'Domain' here refers to an internet domain name (e.g. 'tidewarden.com') and the message in whole described the act of putting a domain value into the context."
   },
   "addedItem": {
     "message": "Položka byla přidána"
@@ -1152,7 +1152,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Má si Bitwarden toto heslo pamatovat?"
+    "message": "Má si TideWarden toto heslo pamatovat?"
   },
   "notificationAddSave": {
     "message": "Uložit"
@@ -1188,11 +1188,11 @@
     }
   },
   "notificationLoginSaveConfirmation": {
-    "message": "uloženo do Bitwardenu.",
+    "message": "uloženo do TideWardenu.",
     "description": "Shown to user after item is saved."
   },
   "notificationLoginUpdatedConfirmation": {
-    "message": "aktualizováno v Bitwardenu.",
+    "message": "aktualizováno v TideWardenu.",
     "description": "Shown to user after item is updated."
   },
   "selectItemAriaLabel": {
@@ -1290,13 +1290,13 @@
     "message": "Zeptá se na uložení nového hesla nebo se přihlásí pomocí přístupových hesel uložených ve Vašem trezoru. Platí pro všechny přihlášené účty."
   },
   "notificationChangeDesc": {
-    "message": "Chcete aktualizovat toto heslo v Bitwardenu?"
+    "message": "Chcete aktualizovat toto heslo v TideWardenu?"
   },
   "notificationChangeSave": {
     "message": "Aktualizovat"
   },
   "notificationUnlockDesc": {
-    "message": "Pro dokončení požadavku na automatické vyplnění odemkněte Váš trezor na Bitwardenu."
+    "message": "Pro dokončení požadavku na automatické vyplnění odemkněte Váš trezor na TideWardenu."
   },
   "notificationUnlock": {
     "message": "Odemknout"
@@ -1369,10 +1369,10 @@
     "message": "Toto heslo bude použito pro export a import tohoto souboru"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Pro zašifrování exportu a omezení importu pouze na aktuální účet Bitwardenu použijte šifrovací klíč Vašeho účtu odvozený z uživatelského jména a hlavního hesla."
+    "message": "Pro zašifrování exportu a omezení importu pouze na aktuální účet TideWardenu použijte šifrovací klíč Vašeho účtu odvozený z uživatelského jména a hlavního hesla."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Nastavte heslo pro šifrování exportu a importujte ho do libovolného účtu Bitwardenu pomocí hesla pro dešifrování."
+    "message": "Nastavte heslo pro šifrování exportu a importujte ho do libovolného účtu TideWardenu pomocí hesla pro dešifrování."
   },
   "exportTypeHeading": {
     "message": "Typ exportu"
@@ -1401,7 +1401,7 @@
     "message": "Tento export zašifruje Vaše data pomocí šifrovacího klíče Vašeho účtu. Pokud někdy změníte šifrovací klíč Vašeho účtu, měli by jste vyexportovat data znovu, protože tento exportovaný soubor nebudete moci dešifrovat."
   },
   "encExportAccountWarningDesc": {
-    "message": "Šifrovací klíče účtu jsou pro každý uživatelský účet Bitwardenu jedinečné, takže nelze importovat šifrovaný export do jiného účtu."
+    "message": "Šifrovací klíče účtu jsou pro každý uživatelský účet TideWardenu jedinečné, takže nelze importovat šifrovaný export do jiného účtu."
   },
   "exportMasterPassword": {
     "message": "Pro exportování dat zadejte své hlavní heslo."
@@ -1410,7 +1410,7 @@
     "message": "Sdílené"
   },
   "bitwardenForBusinessPageDesc": {
-    "message": "Bitwarden pro podnikání Vám umožňuje sdílet položky v trezoru s ostatními prostřednictvím organizace. Více informací naleznete na bitwarden.com."
+    "message": "TideWarden pro podnikání Vám umožňuje sdílet položky v trezoru s ostatními prostřednictvím organizace. Více informací naleznete na tidewarden.com."
   },
   "moveToOrganization": {
     "message": "Přesunout do organizace"
@@ -1522,7 +1522,7 @@
     "message": "Spravovat členství"
   },
   "premiumManageAlert": {
-    "message": "Své členství můžete spravovat na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
+    "message": "Své členství můžete spravovat na webové stránce tidewarden.com. Chcete tuto stránku nyní otevřít?"
   },
   "premiumRefresh": {
     "message": "Obnovit členství"
@@ -1576,13 +1576,13 @@
     "message": "Zakoupit členství Premium"
   },
   "premiumPurchaseAlertV2": {
-    "message": "Premium si můžete zakoupit v nastavení účtu ve webové aplikaci Bitwarden."
+    "message": "Premium si můžete zakoupit v nastavení účtu ve webové aplikaci TideWarden."
   },
   "premiumCurrentMember": {
     "message": "Jste prémiovým členem!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Děkujeme za podporu Bitwardenu."
+    "message": "Děkujeme za podporu TideWardenu."
   },
   "premiumFeatures": {
     "message": "Přejděte na Premium a získáte:"
@@ -1688,8 +1688,8 @@
     "message": "Ověřovací aplikace"
   },
   "authenticatorAppDescV2": {
-    "message": "Zadejte kód vygenerovaný ověřovací aplikací, jako je Autentikátor Bitwarden.",
-    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
+    "message": "Zadejte kód vygenerovaný ověřovací aplikací, jako je Autentikátor TideWarden.",
+    "description": "'TideWarden Authenticator' is a product name and should not be translated."
   },
   "yubiKeyTitleV2": {
     "message": "Bezpečnostní klíč YubiKey OTP"
@@ -1721,7 +1721,7 @@
     "message": "Vlastní hostované prostředí"
   },
   "selfHostedBaseUrlHint": {
-    "message": "Zadejte základní URL adresu Vaší vlastní hostované aplikace Bitwarden. Příklad: https://bitwarden.spolecnost.cz"
+    "message": "Zadejte základní URL adresu Vaší vlastní hostované aplikace TideWarden. Příklad: https://bitwarden.spolecnost.cz"
   },
   "selfHostedCustomEnvHeader": {
     "message": "Pro rozšířená nastavení můžete zadat základní URL adresu každé služby zvlášť."
@@ -1771,7 +1771,7 @@
     "message": "Snadné hledání návrhů automatického vyplňování"
   },
   "autofillSpotlightDesc": {
-    "message": "Vypněte nastavení automatického vyplňování prohlížeče, takže nebude v rozporu s Bitwardenem."
+    "message": "Vypněte nastavení automatického vyplňování prohlížeče, takže nebude v rozporu s TideWardenem."
   },
   "turnOffBrowserAutofill": {
     "message": "Vypnout automatické vyplňování $BROWSER$",
@@ -1795,7 +1795,7 @@
     "message": "Zobrazit návrhy automatického vyplňování v polích formuláře"
   },
   "howDoesBitwardenProtectFromPhishing": {
-    "message": "Jak Bitwarden chrání Vaše data před phishingem?"
+    "message": "Jak TideWarden chrání Vaše data před phishingem?"
   },
   "currentWebsite": {
     "message": "Aktuální webová stránka"
@@ -2367,7 +2367,7 @@
     "message": "Slabé hlavní heslo"
   },
   "weakMasterPasswordDesc": {
-    "message": "Zvolené hlavní heslo je slabé. Pro správnou ochranu účtu Bitwardenu byste měli použít silné hlavní heslo (nebo heslovou frázi). Opravdu chcete toto heslo použít?"
+    "message": "Zvolené hlavní heslo je slabé. Pro správnou ochranu účtu TideWardenu byste měli použít silné hlavní heslo (nebo heslovou frázi). Opravdu chcete toto heslo použít?"
   },
   "pin": {
     "message": "PIN",
@@ -2386,7 +2386,7 @@
     "message": "Nastavte svůj PIN kód pro odemknutí trezoru. Pokud se zcela odhlásíte z aplikace bude Váš aktuální PIN resetován."
   },
   "setPinCode": {
-    "message": "Tento PIN můžete použít k odemknutí Bitwardenu. Váš PIN bude resetován, pokud seněkdy úplně odhlásíte z aplikace."
+    "message": "Tento PIN můžete použít k odemknutí TideWardenu. Váš PIN bude resetován, pokud seněkdy úplně odhlásíte z aplikace."
   },
   "pinRequired": {
     "message": "Je vyžadován PIN kód."
@@ -2407,7 +2407,7 @@
     "message": "Čeká se na potvrzení z aplikace v počítači"
   },
   "awaitDesktopDesc": {
-    "message": "Pro povolení biometrie v prohlížeči potvrďte její použití v desktopové aplikaci Bitwarden."
+    "message": "Pro povolení biometrie v prohlížeči potvrďte její použití v desktopové aplikaci TideWarden."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zamknout trezor při restartu prohlížeče pomocí hlavního hesla"
@@ -2522,7 +2522,7 @@
     "message": "Formulář je hostován jinou doménou než URI uloženého přihlášení. Zvolte OK pro automatické vyplnění nebo Zrušit pro zrušení."
   },
   "autofillIframeWarningTip": {
-    "message": "Aby se zabránilo tomuto varování v budoucnu, uložte tuto URI: $HOSTNAME$ do vaší přihlašovací položky Bitwarden pro tuto stránku.",
+    "message": "Aby se zabránilo tomuto varování v budoucnu, uložte tuto URI: $HOSTNAME$ do vaší přihlašovací položky TideWarden pro tuto stránku.",
     "placeholders": {
       "hostname": {
         "content": "$1",
@@ -2531,7 +2531,7 @@
     }
   },
   "topLayerHijackWarning": {
-    "message": "Tato stránka narušuje zážitek z Bitwardenu. Vložené menu Bitwarden bylo dočasně vypnuto jako bezpečnostní opatření."
+    "message": "Tato stránka narušuje zážitek z TideWardenu. Vložené menu TideWarden bylo dočasně vypnuto jako bezpečnostní opatření."
   },
   "setMasterPassword": {
     "message": "Nastavit hlavní heslo"
@@ -2588,7 +2588,7 @@
     "message": "Vaše nové hlavní heslo nesplňuje požadavky zásad organizace."
   },
   "receiveMarketingEmailsV2": {
-    "message": "Dostávejte do své e-mailové schránky rady, oznámení a příležitosti k výzkumu od společnosti Bitwarden."
+    "message": "Dostávejte do své e-mailové schránky rady, oznámení a příležitosti k výzkumu od společnosti TideWarden."
   },
   "unsubscribe": {
     "message": "Odhlásit odběr"
@@ -2639,13 +2639,13 @@
     "message": "Integrace prohlížeče není nastavena"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Integrace prohlížeče není v aplikaci Bitwarden nastavena. Nastavte ji v aplikaci pro počítač."
+    "message": "Integrace prohlížeče není v aplikaci TideWarden nastavena. Nastavte ji v aplikaci pro počítač."
   },
   "startDesktopTitle": {
-    "message": "Spustit aplikaci Bitwarden pro počítač"
+    "message": "Spustit aplikaci TideWarden pro počítač"
   },
   "startDesktopDesc": {
-    "message": "Před použitím této funkce musí být spuštěna aplikace Bitwarden pro počítač."
+    "message": "Před použitím této funkce musí být spuštěna aplikace TideWarden pro počítač."
   },
   "errorEnableBiometricTitle": {
     "message": "Nelze nastavit biometrii"
@@ -2699,13 +2699,13 @@
     "message": "Biometrika selhala"
   },
   "biometricsFailedDesc": {
-    "message": "Biometriku nelze dokončit, zvažte použití hlavního hesla nebo odhlášení. Pokud to přetrvává, kontaktujte podporu Bitwardenu."
+    "message": "Biometriku nelze dokončit, zvažte použití hlavního hesla nebo odhlášení. Pokud to přetrvává, kontaktujte podporu TideWardenu."
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "Oprávnění nebylo uděleno"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "Bez oprávnění ke komunikaci s aplikací Bitwarden pro počítač nelze v rozšíření prohlížeče používat biometrické údaje. Zkuste to znovu."
+    "message": "Bez oprávnění ke komunikaci s aplikací TideWarden pro počítač nelze v rozšíření prohlížeče používat biometrické údaje. Zkuste to znovu."
   },
   "nativeMessaginPermissionSidebarTitle": {
     "message": "Žádost o oprávnění selhala"
@@ -2742,7 +2742,7 @@
     "message": "Vyloučené domény"
   },
   "excludedDomainsDesc": {
-    "message": "Bitwarden nebude žádat o uložení přihlašovacích údajů pro tyto domény. Aby se změny projevily, musíte stránku obnovit."
+    "message": "TideWarden nebude žádat o uložení přihlašovacích údajů pro tyto domény. Aby se změny projevily, musíte stránku obnovit."
   },
   "blockedDomainsDesc": {
     "message": "Automatické vyplňování a další související funkce nebudou pro tyto webové stránky nabízeny. Aby se změny projevily, musíte stránku aktualizovat."
@@ -2858,21 +2858,21 @@
     "message": "Ilustrace seznamu přihlášení, která jsou ohrožená."
   },
   "generatePasswordSlideDesc": {
-    "message": "Rychle vygeneruje silné, unikátní heslo s nabídkou automatického vyplňování Bitwarden na ohrožených stránkách.",
+    "message": "Rychle vygeneruje silné, unikátní heslo s nabídkou automatického vyplňování TideWarden na ohrožených stránkách.",
     "description": "Description of the generate password slide on the at-risk password page carousel"
   },
   "generatePasswordSlideImgAltPeriod": {
-    "message": "Ilustrace nabídky automatického vyplňování Bitwarden zobrazující vygenerované heslo."
+    "message": "Ilustrace nabídky automatického vyplňování TideWarden zobrazující vygenerované heslo."
   },
   "updateInBitwarden": {
-    "message": "Aktualizovat v Bitwardenu"
+    "message": "Aktualizovat v TideWardenu"
   },
   "updateInBitwardenSlideDesc": {
-    "message": "Bitwarden Vás poté požádá o aktualizaci hesla ve správci hesel.",
-    "description": "Description of the update in Bitwarden slide on the at-risk password page carousel"
+    "message": "TideWarden Vás poté požádá o aktualizaci hesla ve správci hesel.",
+    "description": "Description of the update in TideWarden slide on the at-risk password page carousel"
   },
   "updateInBitwardenSlideImgAltPeriod": {
-    "message": "Ilustrace oznámení v Bitwardenu, která uživatele vyzývá k aktualizaci přihlášení."
+    "message": "Ilustrace oznámení v TideWardenu, která uživatele vyzývá k aktualizaci přihlášení."
   },
   "turnOnAutofill": {
     "message": "Zapnout automatické vyplňování"
@@ -2926,11 +2926,11 @@
   },
   "send": {
     "message": "Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDetails": {
     "message": "Podrobnosti Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendTypeText": {
     "message": "Text"
@@ -2943,7 +2943,7 @@
   },
   "allSends": {
     "message": "Všechny Sends",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
     "message": "Dosažen maximální počet přístupů",
@@ -2963,7 +2963,7 @@
   },
   "copySendLink": {
     "message": "Zkopírovat odkaz Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "removePassword": {
     "message": "Odebrat heslo"
@@ -2976,11 +2976,11 @@
   },
   "deletedSend": {
     "message": "Send smazán",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendLink": {
     "message": "Odkaz pro Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "disabled": {
     "message": "Zakázáno"
@@ -2990,26 +2990,26 @@
   },
   "deleteSend": {
     "message": "Smazat Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
     "message": "Opravdu chcete smazat tento Send?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendPermanentConfirmation": {
     "message": "Opravdu chcete tento Send trvale smazat?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editSend": {
     "message": "Upravit Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deletionDate": {
     "message": "Datum smazání"
   },
   "deletionDateDescV2": {
     "message": "Tento Send bude trvale smazán v určené datum.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "Datum vypršení platnosti"
@@ -3031,34 +3031,34 @@
   },
   "createSend": {
     "message": "Nový Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Nové heslo"
   },
   "sendDisabled": {
     "message": "Send odebrán",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
     "message": "Z důvodu podnikových zásad můžete smazat pouze existující Send.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSend": {
     "message": "Send vytvořen",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSendSuccessfully": {
     "message": "Send byl úspěšně vytvořen!",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInHoursSingle": {
     "message": "Send bude k dispozici na příští 1 hodinu každému, kdo má odkaz.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInHours": {
     "message": "Send bude k dispozici na příštích $HOURS$ hodin každému, kdo má odkaz.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3068,11 +3068,11 @@
   },
   "sendExpiresInDaysSingle": {
     "message": "Send bude k dispozici na příští 1 den každému, kdo má odkaz.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInDays": {
     "message": "Send bude k dispozici na příštích $DAYS$ dnů každému, kdo má odkaz.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -3082,11 +3082,11 @@
   },
   "sendLinkCopied": {
     "message": "Odkaz Send byl zkopírován",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editedSend": {
     "message": "Send upraven",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "popOut": {
     "message": "Nové okno"
@@ -3362,7 +3362,7 @@
     "message": "Chyba při načítání dat automatického vyplňování"
   },
   "couldNotDecryptVaultItemsBelow": {
-    "message": "Bitwarden nemohl dešifrovat níže uvedené položky v trezoru."
+    "message": "TideWarden nemohl dešifrovat níže uvedené položky v trezoru."
   },
   "contactCSToAvoidDataLossPart1": {
     "message": "Kontaktujte zákaznickou podporu,",
@@ -3466,11 +3466,11 @@
     }
   },
   "forwarderGeneratedBy": {
-    "message": "Vygenerováno Bitwardenem.",
+    "message": "Vygenerováno TideWardenem.",
     "description": "Displayed with the address on the forwarding service's configuration screen."
   },
   "forwarderGeneratedByWithWebsite": {
-    "message": "Webová stránka: $WEBSITE$. Vygenerováno Bitwardenem.",
+    "message": "Webová stránka: $WEBSITE$. Vygenerováno TideWardenem.",
     "description": "Displayed with the address on the forwarding service's configuration screen.",
     "placeholders": {
       "WEBSITE": {
@@ -3663,7 +3663,7 @@
     "message": "Na Vaše zařízení bylo odesláno oznámení."
   },
   "notificationSentDevicePart1": {
-    "message": "Odemknout Bitwarden na Vašem zařízení nebo na"
+    "message": "Odemknout TideWarden na Vašem zařízení nebo na"
   },
   "notificationSentDeviceAnchor": {
     "message": "webová aplikace"
@@ -4003,11 +4003,11 @@
   },
   "sendsTitleNoItems": {
     "message": "Posílejte citlivé informace bezpečně",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendsBodyNoItems": {
     "message": "Sdílejte bezpečně soubory a data s kýmkoli na libovolné platformě. Vaše informace zůstanou šifrovány a zároveň omezují expozici.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "inputRequired": {
     "message": "Je vyžadován vstup."
@@ -4148,15 +4148,15 @@
     "message": "Přeskočit na obsah"
   },
   "bitwardenOverlayButton": {
-    "message": "Tlačítko nabídky automatického vyplňování Bitwardenu",
+    "message": "Tlačítko nabídky automatického vyplňování TideWardenu",
     "description": "Page title for the iframe containing the overlay button"
   },
   "toggleBitwardenVaultOverlay": {
-    "message": "Přepnout nabídku automatického vyplňování Bitwardenu",
+    "message": "Přepnout nabídku automatického vyplňování TideWardenu",
     "description": "Screen reader and tool tip label for the overlay button"
   },
   "bitwardenVault": {
-    "message": "Nabídka automatického vyplňování Bitwardenu",
+    "message": "Nabídka automatického vyplňování TideWardenu",
     "description": "Page title in overlay"
   },
   "unlockYourAccountToViewMatchingLogins": {
@@ -4228,7 +4228,7 @@
     "description": "Screen reader text (aria-label) for new identity button within inline menu"
   },
   "bitwardenOverlayMenuAvailable": {
-    "message": "Nabídka automatického vyplňování Bitwardenu. Pro výběr stiskněte šipku dolů.",
+    "message": "Nabídka automatického vyplňování TideWardenu. Pro výběr stiskněte šipku dolů.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
   "turnOn": {
@@ -4540,7 +4540,7 @@
     "message": "Aktivní účet"
   },
   "bitwardenAccount": {
-    "message": "Účet Bitwarden"
+    "message": "Účet TideWarden"
   },
   "availableAccounts": {
     "message": "Dostupné účty"
@@ -4586,8 +4586,8 @@
     "description": "Label indicating the most common import formats"
   },
   "uriMatchDefaultStrategyHint": {
-    "message": "Detekce shody URI je způsob, jakým Bitwarden identifikuje návrhy automatického vyplňování.",
-    "description": "Explains to the user that URI match detection determines how Bitwarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
+    "message": "Detekce shody URI je způsob, jakým TideWarden identifikuje návrhy automatického vyplňování.",
+    "description": "Explains to the user that URI match detection determines how TideWarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
   },
   "regExAdvancedOptionWarning": {
     "message": "\"Regulární výraz\" je pokročilá volba se zvýšeným rizikem odhalení přihlašovacích údajů.",
@@ -4630,23 +4630,23 @@
     "description": "Body content for dialog which asks if the user wants to proceed to the browser's keyboard shortcut settings page"
   },
   "overrideDefaultBrowserAutofillTitle": {
-    "message": "Nastavit Bitwarden jako výchozí správce hesel?",
+    "message": "Nastavit TideWarden jako výchozí správce hesel?",
     "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutofillDescription": {
-    "message": "Ignorování této volby může způsobit konflikty mezi nabídkou automatického vyplňování Bitwardenu a Vaším prohlížečem.",
+    "message": "Ignorování této volby může způsobit konflikty mezi nabídkou automatického vyplňování TideWardenu a Vaším prohlížečem.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {
-    "message": "Nastavit Bitwarden jako výchozí správce hesel",
+    "message": "Nastavit TideWarden jako výchozí správce hesel",
     "description": "Label for the setting that allows overriding the default browser autofill settings"
   },
   "privacyPermissionAdditionNotGrantedTitle": {
-    "message": "Bitwarden nelze nastavit jako výchozí správce hesel",
+    "message": "TideWarden nelze nastavit jako výchozí správce hesel",
     "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "privacyPermissionAdditionNotGrantedDescription": {
-    "message": "Pro nastavení jako výchozí správce hesel musíte Bitwardenu udělit oprávnění zabezpečení v prohlížeči.",
+    "message": "Pro nastavení jako výchozí správce hesel musíte TideWardenu udělit oprávnění zabezpečení v prohlížeči.",
     "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "makeDefault": {
@@ -4984,16 +4984,16 @@
     "message": "Stáhnout přílohu"
   },
   "downloadBitwarden": {
-    "message": "Stáhnout Bitwarden"
+    "message": "Stáhnout TideWarden"
   },
   "downloadBitwardenOnAllDevices": {
-    "message": "Stáhnout Bitwarden na všech zařízeních"
+    "message": "Stáhnout TideWarden na všech zařízeních"
   },
   "getTheMobileApp": {
     "message": "Získejte mobilní aplikaci"
   },
   "getTheMobileAppDesc": {
-    "message": "Přistupujte k Vašim heslům pomocí mobilní aplikace Bitwarden."
+    "message": "Přistupujte k Vašim heslům pomocí mobilní aplikace TideWarden."
   },
   "getTheDesktopApp": {
     "message": "Získejte desktopovou aplikaci"
@@ -5002,7 +5002,7 @@
     "message": "Přistupujte k Vašemu trezoru bez prohlížeče a poté nastavte odemknutí s biometrikou jak v desktopové aplikaci, tak v rozšíření prohlížeče."
   },
   "downloadFromBitwardenNow": {
-    "message": "Stáhnout z bitwarden.com nyní"
+    "message": "Stáhnout z tidewarden.com nyní"
   },
   "getItOnGooglePlay": {
     "message": "Získejte ji na Google Play"
@@ -5467,10 +5467,10 @@
     "message": "Biometrické odemknutí není dostupné kvůli chybnému nastavení systémových souborů."
   },
   "biometricsStatusHelptextDesktopDisconnected": {
-    "message": "Biometrické odemknutí není dostupné, protože je aplikace Bitwarden zavřena."
+    "message": "Biometrické odemknutí není dostupné, protože je aplikace TideWarden zavřena."
   },
   "biometricsStatusHelptextNotEnabledInDesktop": {
-    "message": "Biometrické odemknutí není dostupné, protože není povoleno pro $EMAIL$ v desktopové aplikaci Bitwarden.",
+    "message": "Biometrické odemknutí není dostupné, protože není povoleno pro $EMAIL$ v desktopové aplikaci TideWarden.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5505,7 +5505,7 @@
     "description": "Notification message for when a password has been regenerated"
   },
   "saveToBitwarden": {
-    "message": "Uložit do Bitwardenu",
+    "message": "Uložit do TideWardenu",
     "description": "Confirmation message for saving a login to TideWarden"
   },
   "spaceCharacterDescriptor": {
@@ -5731,13 +5731,13 @@
     "message": "Trezor chrání více než jen Vaše hesla. Bezpečně zde uložte zabezpečená přihlášení, ID, karty a poznámky."
   },
   "introCarouselLabel": {
-    "message": "Vítejte v Bitwardenu"
+    "message": "Vítejte v TideWardenu"
   },
   "securityPrioritized": {
     "message": "Bezpečnost, priorita"
   },
   "securityPrioritizedBody": {
-    "message": "Uložte si přihlašovací údaje, karty a identity do zabezpečeného trezoru. Bitwarden používá šifrování end-to-end s nulovou znalostí, aby ochránil to, co je pro Vás důležité."
+    "message": "Uložte si přihlašovací údaje, karty a identity do zabezpečeného trezoru. TideWarden používá šifrování end-to-end s nulovou znalostí, aby ochránil to, co je pro Vás důležité."
   },
   "quickLogin": {
     "message": "Rychlé a snadné přihlášení"
@@ -5755,7 +5755,7 @@
     "message": "Vaše data, kdy a kde je potřebujete"
   },
   "secureDevicesBody": {
-    "message": "Uložte neomezená hesla na neomezených zařízeních s Bitwardenem na mobilu, prohlížeči a desktopové aplikaci."
+    "message": "Uložte neomezená hesla na neomezených zařízeních s TideWardenem na mobilu, prohlížeči a desktopové aplikaci."
   },
   "nudgeBadgeAria": {
     "message": "1 oznámení"
@@ -5764,7 +5764,7 @@
     "message": "Importovat existující hesla"
   },
   "emptyVaultNudgeBody": {
-    "message": "Pomocí importu rychle přenesete přihlašovací údaje do Bitwardenu a to bez jejich ručního přidání."
+    "message": "Pomocí importu rychle přenesete přihlašovací údaje do TideWardenu a to bez jejich ručního přidání."
   },
   "emptyVaultNudgeButton": {
     "message": "Importovat nyní"
@@ -5800,7 +5800,7 @@
     "placeholders": {
       "product": {
         "content": "$1",
-        "example": "Bitwarden Phishing Blocker"
+        "example": "TideWarden Phishing Blocker"
       }
     }
   },
@@ -5883,13 +5883,13 @@
     "message": "O tomto nastavení"
   },
   "permitCipherDetailsDescription": {
-    "message": "Bitwarden bude používat uložené přihlašovací URI k identifikaci, která ikona nebo změna adresy URL by měla být použita pro zlepšení Vašeho zážitku. Při používání této služby nejsou shromažďovány ani ukládány žádné informace."
+    "message": "TideWarden bude používat uložené přihlašovací URI k identifikaci, která ikona nebo změna adresy URL by měla být použita pro zlepšení Vašeho zážitku. Při používání této služby nejsou shromažďovány ani ukládány žádné informace."
   },
   "noPermissionsViewPage": {
     "message": "Nemáte oprávnění k zobrazení této stránky. Zkuste se přihlásit jiným účtem."
   },
   "wasmNotSupported": {
-    "message": "WebAssembly není ve Vašem prohlížeči podporováno nebo není povoleno. WebAssembly je vyžadováno pro použití aplikace Bitwarden.",
+    "message": "WebAssembly není ve Vašem prohlížeči podporováno nebo není povoleno. WebAssembly je vyžadováno pro použití aplikace TideWarden.",
     "description": "'WebAssembly' is a technical term and should not be translated."
   },
   "showMore": {
@@ -5964,7 +5964,7 @@
     "message": "Chyba: Nelze dešifrovat"
   },
   "removeMasterPasswordForOrgUserKeyConnector": {
-    "message": "Vaše organizace již k přihlášení do Bitwardenu nepoužívá hlavní hesla. Chcete-li pokračovat, ověřte organizaci a doménu."
+    "message": "Vaše organizace již k přihlášení do TideWardenu nepoužívá hlavní hesla. Chcete-li pokračovat, ověřte organizaci a doménu."
   },
   "continueWithLogIn": {
     "message": "Pokračovat s přihlášením"
@@ -6122,17 +6122,17 @@
     "message": "Zadejte více e-mailů oddělených čárkou."
   },
   "emailPlaceholder": {
-    "message": "user@bitwarden.com , user@acme.com"
+    "message": "user@tidewarden.com , user@acme.com"
   },
   "downloadBitwardenApps": {
-    "message": "Stáhnout aplikace Bitwarden"
+    "message": "Stáhnout aplikace TideWarden"
   },
   "emailProtected": {
     "message": "E-mail je chráněný"
   },
   "sendPasswordHelperText": {
     "message": "Pro zobrazení tohoto Send budou muset jednotlivci zadat heslo",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "logInToTideWarden": {
     "message": "Přihlásit se do TideWardenu"

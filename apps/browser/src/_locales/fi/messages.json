@@ -23,7 +23,7 @@
     "message": "Luo tili"
   },
   "newToBitwarden": {
-    "message": "Oletko uusi Bitwarden-käyttäjä?"
+    "message": "Oletko uusi TideWarden-käyttäjä?"
   },
   "logInWithPasskey": {
     "message": "Kirjaudu pääsyavaimella"
@@ -300,22 +300,22 @@
     "message": "Avataanko verkkosovellus?"
   },
   "continueToWebAppDesc": {
-    "message": "Tutustu Bitwarden-tilisi muihin ominaisuuksiin verkkosovelluksessa."
+    "message": "Tutustu TideWarden-tilisi muihin ominaisuuksiin verkkosovelluksessa."
   },
   "continueToHelpCenter": {
     "message": "Avataanko tukikeskus?"
   },
   "continueToHelpCenterDesc": {
-    "message": "Lue Tukikeskuksesta lisää Bitwardenin käytöstä."
+    "message": "Lue Tukikeskuksesta lisää TideWardenin käytöstä."
   },
   "continueToBrowserExtensionStore": {
     "message": "Avataanko selaimen laajennuskauppa?"
   },
   "continueToBrowserExtensionStoreDesc": {
-    "message": "Auta muita selvittämään sopiiko Bitwarden heille. Arvioi se selaimesi laajennuskaupassa nyt."
+    "message": "Auta muita selvittämään sopiiko TideWarden heille. Arvioi se selaimesi laajennuskaupassa nyt."
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "Voit vaihtaa pääsalasanasi Bitwardenin verkkosovelluksessa."
+    "message": "Voit vaihtaa pääsalasanasi TideWardenin verkkosovelluksessa."
   },
   "fingerprintPhrase": {
     "message": "Tunnistelause",
@@ -332,43 +332,43 @@
     "message": "Kirjaudu ulos"
   },
   "aboutBitwarden": {
-    "message": "Tietoja Bitwardenista"
+    "message": "Tietoja TideWardenista"
   },
   "about": {
     "message": "Tietoja"
   },
   "moreFromBitwarden": {
-    "message": "Lisää Bitwardenilta"
+    "message": "Lisää TideWardenilta"
   },
   "continueToBitwardenDotCom": {
-    "message": "Avataanko bitwarden.com?"
+    "message": "Avataanko tidewarden.com?"
   },
   "bitwardenForBusiness": {
-    "message": "Bitwarden for Business"
+    "message": "TideWarden for Business"
   },
   "bitwardenAuthenticator": {
-    "message": "Bitwarden Authenticator"
+    "message": "TideWarden Authenticator"
   },
   "continueToAuthenticatorPageDesc": {
-    "message": "Bitwarden Authenticatorin avulla voit säilyttää todennusavaimet ja luoda TOTP-koodeja kaksivaiheista kirjautumista varten. Lue lisää bitwarden.com-sivustolta."
+    "message": "TideWarden Authenticatorin avulla voit säilyttää todennusavaimet ja luoda TOTP-koodeja kaksivaiheista kirjautumista varten. Lue lisää tidewarden.com-sivustolta."
   },
   "bitwardenSecretsManager": {
-    "message": "Bitwarden Salaisuushallinta"
+    "message": "TideWarden Salaisuushallinta"
   },
   "continueToSecretsManagerPageDesc": {
-    "message": "Säilytä, hallitse ja jaa kehittäjäsalaisuuksia turvallisesti Bitwardenin Salaisuushallinnalla. Lue lisää bitwarden.com-sivustolta."
+    "message": "Säilytä, hallitse ja jaa kehittäjäsalaisuuksia turvallisesti TideWardenin Salaisuushallinnalla. Lue lisää tidewarden.com-sivustolta."
   },
   "passwordlessDotDev": {
     "message": "Passwordless.dev"
   },
   "continueToPasswordlessDotDevPageDesc": {
-    "message": "Luo perinteisistä salasanoista vapaita sujuvia ja turvallisia kirjautumisratkaisuja Passwordless.dev-palvelussa. Tutustu palveluun bitwarden.com-sivustolla."
+    "message": "Luo perinteisistä salasanoista vapaita sujuvia ja turvallisia kirjautumisratkaisuja Passwordless.dev-palvelussa. Tutustu palveluun tidewarden.com-sivustolla."
   },
   "freeBitwardenFamilies": {
-    "message": "Ilmainen Bitwarden Families"
+    "message": "Ilmainen TideWarden Families"
   },
   "freeBitwardenFamiliesPageDesc": {
-    "message": "Olet oikeutettu ilmaiseen Bitwarden Families -tilaukseen. Lunasta tarjous verkkosovelluksessa tänään."
+    "message": "Olet oikeutettu ilmaiseen TideWarden Families -tilaukseen. Lunasta tarjous verkkosovelluksessa tänään."
   },
   "version": {
     "message": "Versio"
@@ -428,13 +428,13 @@
     "message": "Tuki ja palaute"
   },
   "helpCenter": {
-    "message": "Bitwardenin Tukikeskus"
+    "message": "TideWardenin Tukikeskus"
   },
   "communityForums": {
-    "message": "Tutustu Bitwardenin keskustelualueeseen"
+    "message": "Tutustu TideWardenin keskustelualueeseen"
   },
   "contactSupport": {
-    "message": "Ota yhteyttä Bitwardenin asiakaspalveluun"
+    "message": "Ota yhteyttä TideWardenin asiakaspalveluun"
   },
   "sync": {
     "message": "Synkronointi"
@@ -456,7 +456,7 @@
     "message": "Luo kirjautumistiedoillesi automaattisesti vahvoja, ainutlaatuisia salasanoja."
   },
   "bitWebVaultApp": {
-    "message": "Bitwarden Verkkosovellus"
+    "message": "TideWarden Verkkosovellus"
   },
   "select": {
     "message": "Valitse"
@@ -750,7 +750,7 @@
       },
       "hostname": {
         "content": "$2",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -762,7 +762,7 @@
     "placeholders": {
       "host": {
         "content": "$1",
-        "example": "vault.bitwarden.com"
+        "example": "vault.tidewarden.com"
       }
     }
   },
@@ -922,10 +922,10 @@
     "message": "Tee kaksivaiheisesta kirjautumisesta saumatonta"
   },
   "totpHelper": {
-    "message": "Bitwarden voi säilyttää ja täyttää kaksivaiheisen kirjautumisen koodit. Kopioi ja liitä todennusavain tähän kenttään."
+    "message": "TideWarden voi säilyttää ja täyttää kaksivaiheisen kirjautumisen koodit. Kopioi ja liitä todennusavain tähän kenttään."
   },
   "totpHelperWithCapture": {
-    "message": "Bitwarden voi säilyttää ja täyttää kaksivaiheisen kirjautumisen koodit. Kamerakuvakkeella voit kaapata todennusavaimen avoimen sivun QR-koodista automaattisesti, tai voit kopioida ja liittää sen tähän kenttään manuaalisesti."
+    "message": "TideWarden voi säilyttää ja täyttää kaksivaiheisen kirjautumisen koodit. Kamerakuvakkeella voit kaapata todennusavaimen avoimen sivun QR-koodista automaattisesti, tai voit kopioida ja liittää sen tähän kenttään manuaalisesti."
   },
   "learnMoreAboutAuthenticators": {
     "message": "Lue lisää todentajista"
@@ -946,7 +946,7 @@
     "message": "Kirjaudu"
   },
   "logInToBitwarden": {
-    "message": "Kirjaudu Bitwardeniin"
+    "message": "Kirjaudu TideWardeniin"
   },
   "enterTheCodeSentToYourEmail": {
     "message": "Syötä sähköpostitse saamasi koodi"
@@ -1006,10 +1006,10 @@
     "message": "Kansio lisätty"
   },
   "twoStepLoginConfirmation": {
-    "message": "Kaksivaiheinen kirjautuminen parantaa tilisi suojausta vaatimalla kirjautumisen vahvistuksen salasanan lisäksi suojausavaimen, ‑sovelluksen, tekstiviestin, puhelun tai sähköpostin avulla. Voit ottaa kaksivaiheisen kirjautumisen käyttöön bitwarden.com‑verkkoholvissa. Haluatko avata sen nyt?"
+    "message": "Kaksivaiheinen kirjautuminen parantaa tilisi suojausta vaatimalla kirjautumisen vahvistuksen salasanan lisäksi suojausavaimen, ‑sovelluksen, tekstiviestin, puhelun tai sähköpostin avulla. Voit ottaa kaksivaiheisen kirjautumisen käyttöön tidewarden.com‑verkkoholvissa. Haluatko avata sen nyt?"
   },
   "twoStepLoginConfirmationContent": {
-    "message": "Paranna tilisi suojausta määrittämällä kaksivaiheinen kirjautuminen Bitwardenin verkkosovelluksessa."
+    "message": "Paranna tilisi suojausta määrittämällä kaksivaiheinen kirjautuminen TideWardenin verkkosovelluksessa."
   },
   "twoStepLoginConfirmationTitle": {
     "message": "Avataanko verkkosovellus?"
@@ -1056,7 +1056,7 @@
   },
   "addDomain": {
     "message": "Lisää verkkotunnus",
-    "description": "'Domain' here refers to an internet domain name (e.g. 'bitwarden.com') and the message in whole described the act of putting a domain value into the context."
+    "description": "'Domain' here refers to an internet domain name (e.g. 'tidewarden.com') and the message in whole described the act of putting a domain value into the context."
   },
   "addedItem": {
     "message": "Kohde lisättiin"
@@ -1152,7 +1152,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Haluatko, että Bitwarden muistaa salasanan puolestasi?"
+    "message": "Haluatko, että TideWarden muistaa salasanan puolestasi?"
   },
   "notificationAddSave": {
     "message": "Tallenna"
@@ -1188,11 +1188,11 @@
     }
   },
   "notificationLoginSaveConfirmation": {
-    "message": "tallennettu Bitwardeniin.",
+    "message": "tallennettu TideWardeniin.",
     "description": "Shown to user after item is saved."
   },
   "notificationLoginUpdatedConfirmation": {
-    "message": "päivitetty Bitwardeniin.",
+    "message": "päivitetty TideWardeniin.",
     "description": "Shown to user after item is updated."
   },
   "selectItemAriaLabel": {
@@ -1290,13 +1290,13 @@
     "message": "Tarjoa uusien pääsyavainten tallennusta sekä kirjautumista holvissasi olevilla pääsyavaimilla. Koskee kaikkia kirjautuneita tilejä."
   },
   "notificationChangeDesc": {
-    "message": "Haluatko päivittää salasanan Bitwardeniin?"
+    "message": "Haluatko päivittää salasanan TideWardeniin?"
   },
   "notificationChangeSave": {
     "message": "Päivitä"
   },
   "notificationUnlockDesc": {
-    "message": "Viimeistele automaattitäyttö avaamalla Bitwarden-holvisi lukitus."
+    "message": "Viimeistele automaattitäyttö avaamalla TideWarden-holvisi lukitus."
   },
   "notificationUnlock": {
     "message": "Avaa"
@@ -1369,10 +1369,10 @@
     "message": "Tätä salasanaa käytetään tämän tiedoston viennissä ja tuonnissa"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Salaa vienti ja rajoita tuonti vain nykyiselle Bitwarden-tilille tilisi käyttäjätunnukseen ja pääsalasanaan pohjautuvalla salausavaimella."
+    "message": "Salaa vienti ja rajoita tuonti vain nykyiselle TideWarden-tilille tilisi käyttäjätunnukseen ja pääsalasanaan pohjautuvalla salausavaimella."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Salaa vientitiedosto salasanalla, joka mahdollistaa sen tuonnin mille tahansa Bitwarden-tilille."
+    "message": "Salaa vientitiedosto salasanalla, joka mahdollistaa sen tuonnin mille tahansa TideWarden-tilille."
   },
   "exportTypeHeading": {
     "message": "Viennin tyyppi"
@@ -1401,7 +1401,7 @@
     "message": "Tämä vienti salaa tietosi käyttäjätilisi salausavaimella. Jos joskus uudistat tilisi salausavaimen, on tiedot vietävä uudelleen, koska et voi enää purkaa nyt luodun vientitiedoston salausta."
   },
   "encExportAccountWarningDesc": {
-    "message": "Tilin salausavaimet ovat ainutlaatuisia jokaiselle Bitwarden-käyttäjätilille, joten et voi tuoda salattua vientitiedostoa toiselle tilille."
+    "message": "Tilin salausavaimet ovat ainutlaatuisia jokaiselle TideWarden-käyttäjätilille, joten et voi tuoda salattua vientitiedostoa toiselle tilille."
   },
   "exportMasterPassword": {
     "message": "Syötä pääsalasana viedäksesi holvisi tiedot."
@@ -1410,7 +1410,7 @@
     "message": "Jaettu"
   },
   "bitwardenForBusinessPageDesc": {
-    "message": "Bitwarden for Business mahdollistaa holvisi sisällön jakamisen organisaation avulla. Lue lisää osoitteesta bitwarden.com."
+    "message": "TideWarden for Business mahdollistaa holvisi sisällön jakamisen organisaation avulla. Lue lisää osoitteesta tidewarden.com."
   },
   "moveToOrganization": {
     "message": "Siirrä organisaatiolle"
@@ -1522,7 +1522,7 @@
     "message": "Hallitse jäsenyyttä"
   },
   "premiumManageAlert": {
-    "message": "Voit hallita jäsenyyttäsi bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?"
+    "message": "Voit hallita jäsenyyttäsi tidewarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?"
   },
   "premiumRefresh": {
     "message": "Päivitä jäsenyys"
@@ -1576,13 +1576,13 @@
     "message": "Osta Premium"
   },
   "premiumPurchaseAlertV2": {
-    "message": "Voit ostaa Premiumin tiliasetuksistasi Bitwardenin verkkosovelluksen kautta."
+    "message": "Voit ostaa Premiumin tiliasetuksistasi TideWardenin verkkosovelluksen kautta."
   },
   "premiumCurrentMember": {
     "message": "Olet Premium-jäsen!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Kiitos kun tuet Bitwardenia."
+    "message": "Kiitos kun tuet TideWardenia."
   },
   "premiumFeatures": {
     "message": "Päivitä Premiumiin niin saat:"
@@ -1688,8 +1688,8 @@
     "message": "Todennussovellus"
   },
   "authenticatorAppDescV2": {
-    "message": "Syötä Bitwarden Authenticatorin kaltaisen todennusovelluksen luoma koodi.",
-    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
+    "message": "Syötä TideWarden Authenticatorin kaltaisen todennusovelluksen luoma koodi.",
+    "description": "'TideWarden Authenticator' is a product name and should not be translated."
   },
   "yubiKeyTitleV2": {
     "message": "Yubico OTP -suojausavain"
@@ -1721,7 +1721,7 @@
     "message": "Itse ylläpidetty palvelinympäristö"
   },
   "selfHostedBaseUrlHint": {
-    "message": "Määritä itse ylläpitämäsi Bitwarden-asennuksen perusosoite. Esimerkki: https://bitwarden.yritys.fi."
+    "message": "Määritä itse ylläpitämäsi TideWarden-asennuksen perusosoite. Esimerkki: https://bitwarden.yritys.fi."
   },
   "selfHostedCustomEnvHeader": {
     "message": "Edistynyttä määritystä varten voit syöttää jokaisen palvelun perusosoitteen erikseen."
@@ -1771,7 +1771,7 @@
     "message": "Löydä helposti automaattisen täytön ehdotukset"
   },
   "autofillSpotlightDesc": {
-    "message": "Poista käytöstä selaimesi oletuksena asetetut automaattisen täytön asetukset, joten ne eivät aiheuta ongelmia Bitwardenin kanssa."
+    "message": "Poista käytöstä selaimesi oletuksena asetetut automaattisen täytön asetukset, joten ne eivät aiheuta ongelmia TideWardenin kanssa."
   },
   "turnOffBrowserAutofill": {
     "message": "Poista automaattitäyttö käytöstä selaimessa $BROWSER$",
@@ -1795,7 +1795,7 @@
     "message": "Näytä automaattitäytön ehdotukset lomakekentissä"
   },
   "howDoesBitwardenProtectFromPhishing": {
-    "message": "How does Bitwarden protect your data from phishing?"
+    "message": "How does TideWarden protect your data from phishing?"
   },
   "currentWebsite": {
     "message": "Current website"
@@ -2367,7 +2367,7 @@
     "message": "Heikko pääsalasana"
   },
   "weakMasterPasswordDesc": {
-    "message": "Valitsemasi pääsalasana on heikko. Sinun tulisi käyttää vahvaa pääsalasanaa (tai salauslausetta) suojataksesi Bitwarden-tilisi kunnolla. Haluatko varmasti käyttää tätä pääsalasanaa?"
+    "message": "Valitsemasi pääsalasana on heikko. Sinun tulisi käyttää vahvaa pääsalasanaa (tai salauslausetta) suojataksesi TideWarden-tilisi kunnolla. Haluatko varmasti käyttää tätä pääsalasanaa?"
   },
   "pin": {
     "message": "PIN",
@@ -2383,10 +2383,10 @@
     "message": "Aseta PIN"
   },
   "setYourPinCode": {
-    "message": "Aseta PIN-koodi Bitwardenin avaukselle. PIN-asetukset tyhjentyvät, jos kirjaudut laajennuksesta kokonaan ulos."
+    "message": "Aseta PIN-koodi TideWardenin avaukselle. PIN-asetukset tyhjentyvät, jos kirjaudut laajennuksesta kokonaan ulos."
   },
   "setPinCode": {
-    "message": "Voit käyttää PIN-koodia avataksesi Bitwardenin. PIN-koodisi nollataan, mikäli kirjaudut täysin ulos sovelluksesta."
+    "message": "Voit käyttää PIN-koodia avataksesi TideWardenin. PIN-koodisi nollataan, mikäli kirjaudut täysin ulos sovelluksesta."
   },
   "pinRequired": {
     "message": "PIN-koodi vaaditaan."
@@ -2407,7 +2407,7 @@
     "message": "Odottaa vahvistusta työpöydältä"
   },
   "awaitDesktopDesc": {
-    "message": "Vahvista biometrian käyttö Bitwardenin työpöytäsovelluksesta käyttääksesi sitä selaimessa."
+    "message": "Vahvista biometrian käyttö TideWardenin työpöytäsovelluksesta käyttääksesi sitä selaimessa."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lukitse pääsalasanalla kun selain käynnistetään uudelleen"
@@ -2522,7 +2522,7 @@
     "message": "Lomakkeen URI-osoite poikkeaa kirjautumistietoon tallennetusta osoitteesta. Salli sen automaattinen täyttö siitä huolimatta valitsemalla OK tai estä se valitsemalla Peruuta."
   },
   "autofillIframeWarningTip": {
-    "message": "Välttyäksesi varoitukselta jatkossa, tallenna URI $HOSTNAME$ sivustolle tallennettuun Bitwarden-kirjautumistietoosi.",
+    "message": "Välttyäksesi varoitukselta jatkossa, tallenna URI $HOSTNAME$ sivustolle tallennettuun TideWarden-kirjautumistietoosi.",
     "placeholders": {
       "hostname": {
         "content": "$1",
@@ -2531,7 +2531,7 @@
     }
   },
   "topLayerHijackWarning": {
-    "message": "This page is interfering with the Bitwarden experience. The Bitwarden inline menu has been temporarily disabled as a safety measure."
+    "message": "This page is interfering with the TideWarden experience. The TideWarden inline menu has been temporarily disabled as a safety measure."
   },
   "setMasterPassword": {
     "message": "Aseta pääsalasana"
@@ -2588,7 +2588,7 @@
     "message": "Uusi pääsalasanasi ei täytä käytännön määrittämiä vaatimuksia."
   },
   "receiveMarketingEmailsV2": {
-    "message": "Vastaanota Bitwardenilta postilaatikkoosi vinkkejä, uutisia ja tutkimusmahdollisuuksia."
+    "message": "Vastaanota TideWardenilta postilaatikkoosi vinkkejä, uutisia ja tutkimusmahdollisuuksia."
   },
   "unsubscribe": {
     "message": "Lopeta tilaus"
@@ -2639,13 +2639,13 @@
     "message": "Selainintegraatio ei ole käytössä"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Selainintegraatiota ei ole määritetty Bitwardenin työpöytäsovelluksesta. Määritä se työpöytäsovelluksen asetuksista."
+    "message": "Selainintegraatiota ei ole määritetty TideWardenin työpöytäsovelluksesta. Määritä se työpöytäsovelluksen asetuksista."
   },
   "startDesktopTitle": {
-    "message": "Käynnistä Bitwardenin työpöytäsovellus"
+    "message": "Käynnistä TideWardenin työpöytäsovellus"
   },
   "startDesktopDesc": {
-    "message": "Bitwardenin työpöytäsovellus on käynnistettävä ennen kuin biometristä avausta voidaan käyttää."
+    "message": "TideWardenin työpöytäsovellus on käynnistettävä ennen kuin biometristä avausta voidaan käyttää."
   },
   "errorEnableBiometricTitle": {
     "message": "Biometriaa ei voitu määrittää"
@@ -2699,13 +2699,13 @@
     "message": "Biometria epäonnistui"
   },
   "biometricsFailedDesc": {
-    "message": "Biometristä todennusta ei voida suorittaa. Harkitse pääsalasanan käyttämistä tai uloskirjautumista. Jos tämä jatkuu, ole yhteydessä Bitwardenin asiakaspalveluun."
+    "message": "Biometristä todennusta ei voida suorittaa. Harkitse pääsalasanan käyttämistä tai uloskirjautumista. Jos tämä jatkuu, ole yhteydessä TideWardenin asiakaspalveluun."
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "Oikeutta ei myönnetty"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "Biometriaa ei tueta selainlaajennuksessa ilman viestintäoikeutta Bitwardenin työpöytäsovelluksen kanssa. Yritä uudelleen."
+    "message": "Biometriaa ei tueta selainlaajennuksessa ilman viestintäoikeutta TideWardenin työpöytäsovelluksen kanssa. Yritä uudelleen."
   },
   "nativeMessaginPermissionSidebarTitle": {
     "message": "Käyttöoikeuspyynnön virhe"
@@ -2742,7 +2742,7 @@
     "message": "Ohitettavat verkkotunnukset"
   },
   "excludedDomainsDesc": {
-    "message": "Bitwarden ei pyydä kirjautumistietojen tallennusta näille verkkotunnuksille. Päivitä sivu ottaaksesi muutokset käyttöön."
+    "message": "TideWarden ei pyydä kirjautumistietojen tallennusta näille verkkotunnuksille. Päivitä sivu ottaaksesi muutokset käyttöön."
   },
   "blockedDomainsDesc": {
     "message": "Näille sivustoille ei tarjota automaattista täyttöä eikä muita siihen liittyviä ominaisuuksia. Sinun on päivitettävä sivu, jotta muutokset tulevat voimaan."
@@ -2858,21 +2858,21 @@
     "message": "Kuvitus vaarantuneiden kirjautumistietojen luettelosta."
   },
   "generatePasswordSlideDesc": {
-    "message": "Luo vahva ja ainutlaatuinen salasana nopeasti Bitwardenin automaattitäytön valikosta vaarantuneella sivustolla.",
+    "message": "Luo vahva ja ainutlaatuinen salasana nopeasti TideWardenin automaattitäytön valikosta vaarantuneella sivustolla.",
     "description": "Description of the generate password slide on the at-risk password page carousel"
   },
   "generatePasswordSlideImgAltPeriod": {
-    "message": "Kuvitus Bitwardenin automaattitäytön valikosta, luodulla salasanalla."
+    "message": "Kuvitus TideWardenin automaattitäytön valikosta, luodulla salasanalla."
   },
   "updateInBitwarden": {
-    "message": "Päivitä Bitwardenissa"
+    "message": "Päivitä TideWardenissa"
   },
   "updateInBitwardenSlideDesc": {
-    "message": "Bitwarden pyytää sinua sitten päivittämään salasanan salasanahallinnassa.",
-    "description": "Description of the update in Bitwarden slide on the at-risk password page carousel"
+    "message": "TideWarden pyytää sinua sitten päivittämään salasanan salasanahallinnassa.",
+    "description": "Description of the update in TideWarden slide on the at-risk password page carousel"
   },
   "updateInBitwardenSlideImgAltPeriod": {
-    "message": "Kuvitus ilmoituksesta, jossa Bitwarden tarjoaa kirjautumistiedon päivitystä."
+    "message": "Kuvitus ilmoituksesta, jossa TideWarden tarjoaa kirjautumistiedon päivitystä."
   },
   "turnOnAutofill": {
     "message": "Ota automaattitäyttö käyttöön"
@@ -2926,11 +2926,11 @@
   },
   "send": {
     "message": "Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDetails": {
     "message": "Sendin tiedot",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendTypeText": {
     "message": "Teksti"
@@ -2943,7 +2943,7 @@
   },
   "allSends": {
     "message": "Kaikki Sendit",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
     "message": "Käyttökertojen enimmäismäärä on saavutettu",
@@ -2963,7 +2963,7 @@
   },
   "copySendLink": {
     "message": "Kopioi Send-linkki",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "removePassword": {
     "message": "Poista salasana"
@@ -2976,11 +2976,11 @@
   },
   "deletedSend": {
     "message": "Send poistettiin",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendLink": {
     "message": "Send-linkki",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "disabled": {
     "message": "Poistettu käytöstä"
@@ -2990,26 +2990,26 @@
   },
   "deleteSend": {
     "message": "Poista Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
     "message": "Haluatko varmasti poistaa Sendin?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendPermanentConfirmation": {
     "message": "Haluatko varmasti poistaa Sendin pysyvästi?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editSend": {
     "message": "Muokkaa Sendiä",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deletionDate": {
     "message": "Poistoajankohta"
   },
   "deletionDateDescV2": {
     "message": "Send poistuu pysyvästi tänä päivänä.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "Erääntymisajankohta"
@@ -3031,34 +3031,34 @@
   },
   "createSend": {
     "message": "Uusi Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Uusi salasana"
   },
   "sendDisabled": {
     "message": "Send poistettiin",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
     "message": "Yrityskäytännön vuoksi voit poistaa vain olemassa olevan Sendin.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSend": {
     "message": "Send luotiin",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSendSuccessfully": {
     "message": "Sendin luonti onnistui!",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInHoursSingle": {
     "message": "Tämän linkin välityksellä Send on kenen tahansa avattavissa seuraavan tunnin ajan.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInHours": {
     "message": "Tämän linkin välityksellä Send on kenen tahansa avattavissa seuraavien $HOURS$ tunnin ajan.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3068,11 +3068,11 @@
   },
   "sendExpiresInDaysSingle": {
     "message": "Tämän linkin välityksellä Send on kenen tahansa avattavissa seuraavan päivän ajan.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInDays": {
     "message": "Tämän linkin välityksellä Send on kenen tahansa avattavissa seuraavien $DAYS$ päivän ajan.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -3082,11 +3082,11 @@
   },
   "sendLinkCopied": {
     "message": "Send-linkki kopioitiin",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editedSend": {
     "message": "Send tallennettiin",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "popOut": {
     "message": "Irrota"
@@ -3362,7 +3362,7 @@
     "message": "Error getting autofill data"
   },
   "couldNotDecryptVaultItemsBelow": {
-    "message": "Bitwarden ei pystynyt purkamaan alla lueteltuja holvin kohteita."
+    "message": "TideWarden ei pystynyt purkamaan alla lueteltuja holvin kohteita."
   },
   "contactCSToAvoidDataLossPart1": {
     "message": "Ota yhteyttä asiakkaaseen",
@@ -3466,11 +3466,11 @@
     }
   },
   "forwarderGeneratedBy": {
-    "message": "Bitwardenin luoma.",
+    "message": "TideWardenin luoma.",
     "description": "Displayed with the address on the forwarding service's configuration screen."
   },
   "forwarderGeneratedByWithWebsite": {
-    "message": "Verkkosivusto: $WEBSITE$. Bitwardenin luoma.",
+    "message": "Verkkosivusto: $WEBSITE$. TideWardenin luoma.",
     "description": "Displayed with the address on the forwarding service's configuration screen.",
     "placeholders": {
       "WEBSITE": {
@@ -3663,7 +3663,7 @@
     "message": "Laitteellesi on lähetetty ilmoitus."
   },
   "notificationSentDevicePart1": {
-    "message": "Avaa Bitwarden laitteellasi tai"
+    "message": "Avaa TideWarden laitteellasi tai"
   },
   "notificationSentDeviceAnchor": {
     "message": "verkkosovelluksena"
@@ -4003,11 +4003,11 @@
   },
   "sendsTitleNoItems": {
     "message": "Lähetä arkaluonteisia tietoja turvallisesti",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendsBodyNoItems": {
     "message": "Jaa tiedostoja ja dataa turvallisesti kenen tahansa kanssa millä tahansa alustalla. Tiedot pysyvät päästä päähän salattuina.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "inputRequired": {
     "message": "Syöte vaaditaan."
@@ -4148,15 +4148,15 @@
     "message": "Siirry sisältöön"
   },
   "bitwardenOverlayButton": {
-    "message": "Bitwardenin automaattitäytön painike",
+    "message": "TideWardenin automaattitäytön painike",
     "description": "Page title for the iframe containing the overlay button"
   },
   "toggleBitwardenVaultOverlay": {
-    "message": "Kytke Bitwardenin automaattitäytön valikko",
+    "message": "Kytke TideWardenin automaattitäytön valikko",
     "description": "Screen reader and tool tip label for the overlay button"
   },
   "bitwardenVault": {
-    "message": "Bitwardenin automaattitäytön valikko",
+    "message": "TideWardenin automaattitäytön valikko",
     "description": "Page title in overlay"
   },
   "unlockYourAccountToViewMatchingLogins": {
@@ -4228,7 +4228,7 @@
     "description": "Screen reader text (aria-label) for new identity button within inline menu"
   },
   "bitwardenOverlayMenuAvailable": {
-    "message": "Bitwardenin automaattitäytön valikko on käytettävissä. Avaa se painamalla alas-nuolinäppäintä.",
+    "message": "TideWardenin automaattitäytön valikko on käytettävissä. Avaa se painamalla alas-nuolinäppäintä.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
   "turnOn": {
@@ -4540,7 +4540,7 @@
     "message": "Aktiivinen tili"
   },
   "bitwardenAccount": {
-    "message": "Bitwarden-tili"
+    "message": "TideWarden-tili"
   },
   "availableAccounts": {
     "message": "Käytettävissä olevat tilit"
@@ -4586,8 +4586,8 @@
     "description": "Label indicating the most common import formats"
   },
   "uriMatchDefaultStrategyHint": {
-    "message": "URI:n Säännöllinen lauseke -asetus on se tapa, jolla Bitwarden tekee automaattisen täytön.",
-    "description": "Explains to the user that URI match detection determines how Bitwarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
+    "message": "URI:n Säännöllinen lauseke -asetus on se tapa, jolla TideWarden tekee automaattisen täytön.",
+    "description": "Explains to the user that URI match detection determines how TideWarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
   },
   "regExAdvancedOptionWarning": {
     "message": "Säänöllinen lauseke -asetus on kehittynyt asetus, joka lisää kirjautumistietoja kaappausriskiä.",
@@ -4630,23 +4630,23 @@
     "description": "Body content for dialog which asks if the user wants to proceed to the browser's keyboard shortcut settings page"
   },
   "overrideDefaultBrowserAutofillTitle": {
-    "message": "Määritetäänkö Bitwarden oletusarvoiseksi salasanahallinnaksi?",
+    "message": "Määritetäänkö TideWarden oletusarvoiseksi salasanahallinnaksi?",
     "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutofillDescription": {
-    "message": "Tämän asetuksen ohituksesta voi seurata ongelmia Bitwardenin ja selaimen automaattitäytön välillä.",
+    "message": "Tämän asetuksen ohituksesta voi seurata ongelmia TideWardenin ja selaimen automaattitäytön välillä.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {
-    "message": "Määritä Bitwarden oletusarvoiseksi salasanahallinnaksi",
+    "message": "Määritä TideWarden oletusarvoiseksi salasanahallinnaksi",
     "description": "Label for the setting that allows overriding the default browser autofill settings"
   },
   "privacyPermissionAdditionNotGrantedTitle": {
-    "message": "Bitwardenia ei voida määrittää oletusarvoiseksi salasanahallinnaksi",
+    "message": "TideWardenia ei voida määrittää oletusarvoiseksi salasanahallinnaksi",
     "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "privacyPermissionAdditionNotGrantedDescription": {
-    "message": "Jotta Bitwarden voidaan määrittää oletusarvoiseksi salasanahallinnaksi, on sille myönettävä oikeus käsitellä yksityisiä tietoja selaimessa.",
+    "message": "Jotta TideWarden voidaan määrittää oletusarvoiseksi salasanahallinnaksi, on sille myönettävä oikeus käsitellä yksityisiä tietoja selaimessa.",
     "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "makeDefault": {
@@ -4984,16 +4984,16 @@
     "message": "Download Attachment"
   },
   "downloadBitwarden": {
-    "message": "Lataa Bitwarden"
+    "message": "Lataa TideWarden"
   },
   "downloadBitwardenOnAllDevices": {
-    "message": "Lataa Bitwarden kaikille laitteille"
+    "message": "Lataa TideWarden kaikille laitteille"
   },
   "getTheMobileApp": {
     "message": "Hanki mobiilisovellus"
   },
   "getTheMobileAppDesc": {
-    "message": "Pääse käsiksi salasanoihisi, jos et pääse tietokoneen ääreen Bitwarden-mobiilisovelluksella."
+    "message": "Pääse käsiksi salasanoihisi, jos et pääse tietokoneen ääreen TideWarden-mobiilisovelluksella."
   },
   "getTheDesktopApp": {
     "message": "Hanki työpöytäsovellus"
@@ -5002,7 +5002,7 @@
     "message": "Käytä holviasi ilman selainta ja aseta sitten lukitus biometriikan avulla nopeuttaaksesi lukituksen avaamista sekä työpöytäsovelluksessa että selaimessa."
   },
   "downloadFromBitwardenNow": {
-    "message": "Lataa bitwarden.comista nyt"
+    "message": "Lataa tidewarden.comista nyt"
   },
   "getItOnGooglePlay": {
     "message": "Hanki se Google Playstä"
@@ -5467,10 +5467,10 @@
     "message": "Biometrinen avaus ei ole käytettävissä, koska järjestelmätiedostoja ei ole määritetty."
   },
   "biometricsStatusHelptextDesktopDisconnected": {
-    "message": "Biometrinen avaus ei ole käytettävissä, koska Bitwardenin työpöytäsovellus on suljettu."
+    "message": "Biometrinen avaus ei ole käytettävissä, koska TideWardenin työpöytäsovellus on suljettu."
   },
   "biometricsStatusHelptextNotEnabledInDesktop": {
-    "message": "Biometrinen avaus ei ole käytettävissä, koska sitä ei ole otettu käyttöön osoitteelle $EMAIL$ Bitwardenin työpöytäsovelluksessa.",
+    "message": "Biometrinen avaus ei ole käytettävissä, koska sitä ei ole otettu käyttöön osoitteelle $EMAIL$ TideWardenin työpöytäsovelluksessa.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5505,7 +5505,7 @@
     "description": "Notification message for when a password has been regenerated"
   },
   "saveToBitwarden": {
-    "message": "Tallenna Bitwardeniin",
+    "message": "Tallenna TideWardeniin",
     "description": "Confirmation message for saving a login to TideWarden"
   },
   "spaceCharacterDescriptor": {
@@ -5731,13 +5731,13 @@
     "message": "Holvi suojaa muutakin kuin salasanojasi. Säilytä kirjautumsitietojen lisäksi kortteja, muistiinpanoja ja henkilötietoja turvallisesti."
   },
   "introCarouselLabel": {
-    "message": "Tervetuloa Bitwardeniin"
+    "message": "Tervetuloa TideWardeniin"
   },
   "securityPrioritized": {
     "message": "Tietoturva etusijalla"
   },
   "securityPrioritizedBody": {
-    "message": "Tallenna kirjautumistiedot, kortit ja henkilöllisyydet suojattuun holviisi. Bitwarden suojaa tärkeät tietosi nollatietoisella päästä päähän -salauksella."
+    "message": "Tallenna kirjautumistiedot, kortit ja henkilöllisyydet suojattuun holviisi. TideWarden suojaa tärkeät tietosi nollatietoisella päästä päähän -salauksella."
   },
   "quickLogin": {
     "message": "Nopea ja helppo kirjautuminen"
@@ -5755,7 +5755,7 @@
     "message": "Sinun tietosi, missä ja milloin tarvitset niitä"
   },
   "secureDevicesBody": {
-    "message": "Tallenna rajattomasti salasanoja, rajattomalla määrällä laitteita, Bitwardenin mobiili-, selain- ja työpöytäsovelluksilla."
+    "message": "Tallenna rajattomasti salasanoja, rajattomalla määrällä laitteita, TideWardenin mobiili-, selain- ja työpöytäsovelluksilla."
   },
   "nudgeBadgeAria": {
     "message": "1 ilmoitus"
@@ -5764,7 +5764,7 @@
     "message": "Tuo olemassa olevat salasanat"
   },
   "emptyVaultNudgeBody": {
-    "message": "Käytä tuojaa siirtääksesi kirjautumisia nopeasti Bitwardeniin lisäämättä niitä manuaalisesti."
+    "message": "Käytä tuojaa siirtääksesi kirjautumisia nopeasti TideWardeniin lisäämättä niitä manuaalisesti."
   },
   "emptyVaultNudgeButton": {
     "message": "Tuo nyt"
@@ -5800,7 +5800,7 @@
     "placeholders": {
       "product": {
         "content": "$1",
-        "example": "Bitwarden Phishing Blocker"
+        "example": "TideWarden Phishing Blocker"
       }
     }
   },
@@ -5883,13 +5883,13 @@
     "message": "About this setting"
   },
   "permitCipherDetailsDescription": {
-    "message": "Bitwarden will use saved login URIs to identify which icon or change password URL should be used to improve your experience. No information is collected or saved when you use this service."
+    "message": "TideWarden will use saved login URIs to identify which icon or change password URL should be used to improve your experience. No information is collected or saved when you use this service."
   },
   "noPermissionsViewPage": {
     "message": "Sinulla ei ole oikeuksia tähän sivuun. Yritä kirjautua sisään toisella tilillä."
   },
   "wasmNotSupported": {
-    "message": "WebAssembly ei ole tuettu selaimessasi tai se ei ole käytössä. WebAssembly vaaditaan, jotta voi käyttää Bitwardenia.",
+    "message": "WebAssembly ei ole tuettu selaimessasi tai se ei ole käytössä. WebAssembly vaaditaan, jotta voi käyttää TideWardenia.",
     "description": "'WebAssembly' is a technical term and should not be translated."
   },
   "showMore": {
@@ -5964,7 +5964,7 @@
     "message": "Error: Cannot decrypt"
   },
   "removeMasterPasswordForOrgUserKeyConnector": {
-    "message": "Your organization is no longer using master passwords to log into Bitwarden. To continue, verify the organization and domain."
+    "message": "Your organization is no longer using master passwords to log into TideWarden. To continue, verify the organization and domain."
   },
   "continueWithLogIn": {
     "message": "Continue with log in"
@@ -6122,17 +6122,17 @@
     "message": "Enter multiple emails by separating with a comma."
   },
   "emailPlaceholder": {
-    "message": "user@bitwarden.com , user@acme.com"
+    "message": "user@tidewarden.com , user@acme.com"
   },
   "downloadBitwardenApps": {
-    "message": "Download Bitwarden apps"
+    "message": "Download TideWarden apps"
   },
   "emailProtected": {
     "message": "Email protected"
   },
   "sendPasswordHelperText": {
     "message": "Individuals will need to enter the password to view this Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "logInToTideWarden": {
     "message": "Kirjaudu TideWardeniin"

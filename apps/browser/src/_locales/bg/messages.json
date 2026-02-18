@@ -341,7 +341,7 @@
     "message": "Още от Битуорден"
   },
   "continueToBitwardenDotCom": {
-    "message": "Продължаване към bitwarden.com?"
+    "message": "Продължаване към tidewarden.com?"
   },
   "bitwardenForBusiness": {
     "message": "Битуорден за бизнеса"
@@ -350,19 +350,19 @@
     "message": "Удостоверител на Битуорден"
   },
   "continueToAuthenticatorPageDesc": {
-    "message": "Удостоверителя на Битуорден позволява да запазвате ключове за удостоверяване, както и да произвеждате еднократни кодове за достъп за местата, където се изисква удостоверяване в 2 стъпки. Научете повече в уеб сайта bitwarden.com"
+    "message": "Удостоверителя на Битуорден позволява да запазвате ключове за удостоверяване, както и да произвеждате еднократни кодове за достъп за местата, където се изисква удостоверяване в 2 стъпки. Научете повече в уеб сайта tidewarden.com"
   },
   "bitwardenSecretsManager": {
     "message": "Управление на тайни"
   },
   "continueToSecretsManagerPageDesc": {
-    "message": "Съхранявайте, управлявайте и споделяйте тайните по време на разработка с Управлението на тайни на Битуорден. Научете повече в уеб сайта bitwarden.com."
+    "message": "Съхранявайте, управлявайте и споделяйте тайните по време на разработка с Управлението на тайни на Битуорден. Научете повече в уеб сайта tidewarden.com."
   },
   "passwordlessDotDev": {
     "message": "Passwordless.dev"
   },
   "continueToPasswordlessDotDevPageDesc": {
-    "message": "Създавайте лесни за ползване, но защитени процеси за вписване без нужда от традиционни пароли с помощта на Passwordless.dev. Научете повече в уеб сайта bitwarden.com."
+    "message": "Създавайте лесни за ползване, но защитени процеси за вписване без нужда от традиционни пароли с помощта на Passwordless.dev. Научете повече в уеб сайта tidewarden.com."
   },
   "freeBitwardenFamilies": {
     "message": "Безплатен Битуорден за семейства"
@@ -750,7 +750,7 @@
       },
       "hostname": {
         "content": "$2",
-        "example": "bitwarden.com"
+        "example": "tidewarden.com"
       }
     }
   },
@@ -762,7 +762,7 @@
     "placeholders": {
       "host": {
         "content": "$1",
-        "example": "vault.bitwarden.com"
+        "example": "vault.tidewarden.com"
       }
     }
   },
@@ -1006,7 +1006,7 @@
     "message": "Добавена папка"
   },
   "twoStepLoginConfirmation": {
-    "message": "Двустепенното вписване защитава регистрацията ви, като ви кара да потвърдите влизането си чрез устройство-ключ, приложение за удостоверение, мобилно съобщение, телефонно обаждане или електронна поща. Двустепенното вписване може да се включи чрез сайта bitwarden.com. Искате ли да го посетите?"
+    "message": "Двустепенното вписване защитава регистрацията ви, като ви кара да потвърдите влизането си чрез устройство-ключ, приложение за удостоверение, мобилно съобщение, телефонно обаждане или електронна поща. Двустепенното вписване може да се включи чрез сайта tidewarden.com. Искате ли да го посетите?"
   },
   "twoStepLoginConfirmationContent": {
     "message": "Подобрете защитата на регистрацията си, като настроите двустепенното удостоверяване в уеб приложението на Битуорден."
@@ -1027,7 +1027,7 @@
     "message": "Въведение"
   },
   "gettingStartedTutorialVideo": {
-    "message": "Изгледайте въведението, за да извлечете максимална полза от разширението Bitwarden."
+    "message": "Изгледайте въведението, за да извлечете максимална полза от разширението TideWarden."
   },
   "syncingComplete": {
     "message": "Синхронизацията завърши"
@@ -1056,7 +1056,7 @@
   },
   "addDomain": {
     "message": "Добавяне на домейн",
-    "description": "'Domain' here refers to an internet domain name (e.g. 'bitwarden.com') and the message in whole described the act of putting a domain value into the context."
+    "description": "'Domain' here refers to an internet domain name (e.g. 'tidewarden.com') and the message in whole described the act of putting a domain value into the context."
   },
   "addedItem": {
     "message": "Елементът е добавен"
@@ -1290,7 +1290,7 @@
     "message": "Питане за запазване на нови секретни ключове или за вписване чрез секретни ключове, пазени в трезора. Прилага се за всички регистрации, в които сте вписан(а)."
   },
   "notificationChangeDesc": {
-    "message": "Да се обнови ли паролата в Bitwarden?"
+    "message": "Да се обнови ли паролата в TideWarden?"
   },
   "notificationChangeSave": {
     "message": "Осъвременяване"
@@ -1410,7 +1410,7 @@
     "message": "Споделено"
   },
   "bitwardenForBusinessPageDesc": {
-    "message": "Битуорден за бизнеса позволява да споделяте части от трезора си чрез използването на организация. Научете повече в уеб сайта bitwarden.com."
+    "message": "Битуорден за бизнеса позволява да споделяте части от трезора си чрез използването на организация. Научете повече в уеб сайта tidewarden.com."
   },
   "moveToOrganization": {
     "message": "Преместване в организация"
@@ -1522,7 +1522,7 @@
     "message": "Управление на абонамента"
   },
   "premiumManageAlert": {
-    "message": "Може да управлявате членството си в мрежата на трезора в bitwarden.com. Искате ли да посетите уебсайта сега?"
+    "message": "Може да управлявате членството си в мрежата на трезора в tidewarden.com. Искате ли да посетите уебсайта сега?"
   },
   "premiumRefresh": {
     "message": "Опресняване на абонамента"
@@ -1582,7 +1582,7 @@
     "message": "Честито, ползвате платен абонамент!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Благодарим ви за подкрепата на Bitwarden."
+    "message": "Благодарим ви за подкрепата на TideWarden."
   },
   "premiumFeatures": {
     "message": "Преминете към платената версия и ще получите:"
@@ -1689,7 +1689,7 @@
   },
   "authenticatorAppDescV2": {
     "message": "Въведете код създаден чрез приложение за удостоверяване, като например това на Битуорден.",
-    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
+    "description": "'TideWarden Authenticator' is a product name and should not be translated."
   },
   "yubiKeyTitleV2": {
     "message": "Ключ за сигурност YubiKey OTP"
@@ -1721,7 +1721,7 @@
     "message": "Собствена среда"
   },
   "selfHostedBaseUrlHint": {
-    "message": "Посочете базовия адрес на Вашата собствена инсталация на Битуорден. Пример: https://bitwarden.company.com"
+    "message": "Посочете базовия адрес на Вашата собствена инсталация на Битуорден. Пример: https://tidewarden.company.com"
   },
   "selfHostedCustomEnvHeader": {
     "message": "За по-детайлна настройка, може да укажете основния адрес на всяка услуга поотделно."
@@ -2367,7 +2367,7 @@
     "message": "Слаба главна парола"
   },
   "weakMasterPasswordDesc": {
-    "message": "Зададената главна парола е твърде слаба. Главната парола трябва да е силна. Добре е да ползвате цяла фраза за парола, за да защитите данните в трезора в Bitwarden. Уверени ли сте, че искате да ползвате слаба парола?"
+    "message": "Зададената главна парола е твърде слаба. Главната парола трябва да е силна. Добре е да ползвате цяла фраза за парола, за да защитите данните в трезора в TideWarden. Уверени ли сте, че искате да ползвате слаба парола?"
   },
   "pin": {
     "message": "ПИН",
@@ -2383,7 +2383,7 @@
     "message": "Задаване на ПИН"
   },
   "setYourPinCode": {
-    "message": "Задайте ПИН за отключване на Bitwarden. Настройките за ПИН се изчистват при всяко пълно излизане от програмата."
+    "message": "Задайте ПИН за отключване на TideWarden. Настройките за ПИН се изчистват при всяко пълно излизане от програмата."
   },
   "setPinCode": {
     "message": "Може да използвате този ПИН за отключване на Битуорден. Вашият ПИН ще се нулира ако в някакъв момент се отпишете напълно от приложението."
@@ -2869,7 +2869,7 @@
   },
   "updateInBitwardenSlideDesc": {
     "message": "След това Битуорден ще попита дали искате да обновите паролата в управителя на пароли.",
-    "description": "Description of the update in Bitwarden slide on the at-risk password page carousel"
+    "description": "Description of the update in TideWarden slide on the at-risk password page carousel"
   },
   "updateInBitwardenSlideImgAltPeriod": {
     "message": "Илюстрация на известието на Битуорден, чрез което пита потребителя дали да се обновят данните за вписване."
@@ -2926,11 +2926,11 @@
   },
   "send": {
     "message": "Изпращане",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDetails": {
     "message": "Подробности за Изпращането",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendTypeText": {
     "message": "Текст"
@@ -2943,7 +2943,7 @@
   },
   "allSends": {
     "message": "Всички изпращания",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
     "message": "Достигнат е максималният брой достъпвания",
@@ -2963,7 +2963,7 @@
   },
   "copySendLink": {
     "message": "Копиране на връзката към изпратеното",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "removePassword": {
     "message": "Премахване на парола"
@@ -2976,11 +2976,11 @@
   },
   "deletedSend": {
     "message": "Изтрито изпращане",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendLink": {
     "message": "Изпращане на връзката",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "disabled": {
     "message": "Изключено"
@@ -2990,26 +2990,26 @@
   },
   "deleteSend": {
     "message": "Изтриване на изпращане",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
     "message": "Сигурни ли сте, че искате да изтриете това изпращане?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deleteSendPermanentConfirmation": {
     "message": "Наистина ли искате да изтриете завинаги това Изпращане?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editSend": {
     "message": "Редактиране на изпращане",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "deletionDate": {
     "message": "Дата на изтриване"
   },
   "deletionDateDescV2": {
     "message": "Изпращането ще бъде окончателно изтрито на тази дата.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "Срок на валидност"
@@ -3031,34 +3031,34 @@
   },
   "createSend": {
     "message": "Създаване на изпращане",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Нова парола"
   },
   "sendDisabled": {
     "message": "Изпращането е изключено",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
     "message": "Поради политика на организация, може само да изтривате съществуващи изпращания.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSend": {
     "message": "Създадено изпращане",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "createdSendSuccessfully": {
     "message": "Изпращането е създадено успешно!",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInHoursSingle": {
     "message": "Изпращането ще бъде достъпно за всеки с връзката през следващия 1 час.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInHours": {
     "message": "Изпращането ще бъде достъпно за всеки с връзката през следващите $HOURS$ часа.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -3068,11 +3068,11 @@
   },
   "sendExpiresInDaysSingle": {
     "message": "Изпращането ще бъде достъпно за всеки с връзката през следващия 1 ден.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendExpiresInDays": {
     "message": "Изпращането ще бъде достъпно за всеки с връзката през следващите $DAYS$ дни.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -3082,11 +3082,11 @@
   },
   "sendLinkCopied": {
     "message": "Връзката към Изпращането е копирана",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "editedSend": {
     "message": "Редактирано изпращане",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "popOut": {
     "message": "Отваряне в прозорец"
@@ -4003,11 +4003,11 @@
   },
   "sendsTitleNoItems": {
     "message": "Изпращайте чувствителна информация сигурно",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "sendsBodyNoItems": {
     "message": "Споделяйте сигурно файлове и данни с всекиго, през всяка система. Информацията Ви ще бъде защитена с шифроване от край до край, а видимостта ѝ ще бъде ограничена.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "inputRequired": {
     "message": "Полето е задължително да бъде попълнено."
@@ -4587,7 +4587,7 @@
   },
   "uriMatchDefaultStrategyHint": {
     "message": "Разпознаването на съвпадения чрез адреса е начинът, по който Битуорден определя кои елементи да предложи за автоматично попълване.",
-    "description": "Explains to the user that URI match detection determines how Bitwarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
+    "description": "Explains to the user that URI match detection determines how TideWarden suggests autofill options, and clarifies that this default strategy applies when no specific match detection is set for a login item."
   },
   "regExAdvancedOptionWarning": {
     "message": "„Регулярен израз“ е по-сложен метод, който е и по-рисков, тъй като може да застраши сигурността на данните за вписване.",
@@ -5002,7 +5002,7 @@
     "message": "Използвайте трезора си без браузър. Можете да настроите отключване с биометрични данни, за да ускорите отключването както в настолното приложение, така и в добавката за браузъра."
   },
   "downloadFromBitwardenNow": {
-    "message": "Свалете от bitwarden.com сега"
+    "message": "Свалете от tidewarden.com сега"
   },
   "getItOnGooglePlay": {
     "message": "Вземете го от Google Play"
@@ -5800,7 +5800,7 @@
     "placeholders": {
       "product": {
         "content": "$1",
-        "example": "Bitwarden Phishing Blocker"
+        "example": "TideWarden Phishing Blocker"
       }
     }
   },
@@ -6122,7 +6122,7 @@
     "message": "Можете да въведете повече е-пощи, като ги разделите със запетая."
   },
   "emailPlaceholder": {
-    "message": "потребител@bitwarden.com , потребител@acme.com"
+    "message": "потребител@tidewarden.com , потребител@acme.com"
   },
   "downloadBitwardenApps": {
     "message": "Сваляне на приложенията на Битуорден"
@@ -6132,7 +6132,7 @@
   },
   "sendPasswordHelperText": {
     "message": "Хората ще трябва да въведат паролата, за да видят това Изпращане",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'TideWarden Send'. It should not be translated."
   },
   "logInToTideWarden": {
     "message": "Впишете се в Битуорден"
