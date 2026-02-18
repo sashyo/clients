@@ -64,6 +64,12 @@ export abstract class CipherService implements UserKeyRotationDataProvider<Ciphe
   abstract get(id: string, userId: UserId): Promise<Cipher>;
   abstract getAll(userId: UserId): Promise<Cipher[]>;
   abstract getAllDecrypted(userId: UserId): Promise<CipherView[]>;
+  /**
+   * Decrypts all ciphers including ORK Type 100 fields (bypasses skipOrkDecrypt).
+   * Results are NOT cached to avoid polluting the normal vault cache.
+   * Intended for reports that need to analyze password/URI/username values.
+   */
+  abstract getAllDecryptedFullOrk(userId: UserId): Promise<CipherView[]>;
   abstract getAllDecryptedForGrouping(
     groupingId: string,
     userId: UserId,

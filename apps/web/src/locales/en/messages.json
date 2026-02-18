@@ -12948,5 +12948,11 @@
   },
   "paymentMethodUpdateError": {
     "message": "There was an error updating your payment method."
+  },
+  "reportDecryptionRequired": {
+    "message": "Decryption Required"
+  },
+  "reportDecryptionWarning": {
+    "message": "Your vault data will be fully decrypted to perform this analysis. Do you want to continue?"
   }
 }

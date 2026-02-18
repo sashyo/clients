@@ -1,4 +1,4 @@
-import { Directive, OnDestroy } from "@angular/core";
+import { Directive, inject, OnDestroy } from "@angular/core";
 import {
   BehaviorSubject,
   lastValueFrom,
@@ -13,6 +13,7 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { getUserId } from "@bitwarden/common/auth/services/account.service";
+import { TideCloakService } from "@bitwarden/common/key-management/tidecloak/abstractions/tidecloak.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CipherId, CollectionId, OrganizationId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -56,6 +57,7 @@ export abstract class CipherReportComponent implements OnDestroy {
   protected filterOrgStatus$ = new BehaviorSubject<number | string>(0);
   protected destroyed$: Subject<void> = new Subject();
   private vaultItemDialogRef?: DialogRef<VaultItemDialogResult> | undefined;
+  private tideCloakService = inject(TideCloakService);
 
   constructor(
     protected cipherService: CipherService,
@@ -286,6 +288,23 @@ export abstract class CipherReportComponent implements OnDestroy {
 
   protected async getAllCiphers(): Promise<CipherView[]> {
     const activeUserId = await firstValueFrom(this.accountService.activeAccount$.pipe(getUserId));
+
+    const isTideCloak = await this.tideCloakService.hasPersistedConfig();
+    if (isTideCloak) {
+      const confirmed = await this.dialogService.openSimpleDialog({
+        title: this.i18nService.t("reportDecryptionRequired"),
+        content: this.i18nService.t("reportDecryptionWarning"),
+        acceptButtonText: this.i18nService.t("continue"),
+        type: "warning",
+      });
+
+      if (!confirmed) {
+        return [];
+      }
+
+      return await this.cipherService.getAllDecryptedFullOrk(activeUserId);
+    }
+
     return await this.cipherService.getAllDecrypted(activeUserId);
   }
 

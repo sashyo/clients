@@ -533,6 +533,16 @@ export class CipherService implements CipherServiceAbstraction {
     return newDecCiphers;
   }
 
+  async getAllDecryptedFullOrk(userId: UserId): Promise<CipherView[]> {
+    const ciphers = await this.getAll(userId);
+    const result = await this.decryptCiphersInternal(ciphers, userId);
+    if (result == null) {
+      return [];
+    }
+    const [decrypted] = result;
+    return decrypted;
+  }
+
   private async getDecryptedCiphers(userId: UserId) {
     return Object.values(
       await firstValueFrom(this.decryptedCiphersState(userId).state$.pipe(map((c) => c ?? {}))),
