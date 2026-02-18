@@ -284,6 +284,7 @@ export class FolderService implements InternalFolderServiceAbstraction {
       .sort(Utils.getSortFunction(this.i18nService, "name"));
 
     const noneFolder = new FolderView();
+    noneFolder.id = null;
     noneFolder.name = this.i18nService.t("noneFolder");
     decryptedFolders.push(noneFolder);
 

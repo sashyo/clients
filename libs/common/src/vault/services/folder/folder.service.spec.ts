@@ -204,7 +204,7 @@ describe("Folder Service", () => {
 
     const folderViews = await firstValueFrom(folderService.folderViews$(mockUserId));
     expect(folderViews.length).toBe(1);
-    expect(folderViews[0].id).toEqual(""); // Should be the "No Folder" folder
+    expect(folderViews[0].id).toBeNull(); // Should be the "No Folder" folder
   });
 
   describe("getRotatedData", () => {
