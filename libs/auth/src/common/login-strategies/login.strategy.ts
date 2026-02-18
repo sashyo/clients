@@ -268,6 +268,17 @@ export abstract class LoginStrategy {
     // This needs to run after the keys are set because it checks for the existence of the encrypted private key
     await this.processForceSetPasswordReason(response.forcePasswordReset, userId);
 
+    // Persist the SSO end_session_endpoint and client_id so we can perform OIDC logout later.
+    if (response.ssoEndSessionEndpoint) {
+      globalThis.localStorage?.setItem("ssoEndSessionEndpoint", response.ssoEndSessionEndpoint);
+    }
+    if (response.ssoClientId) {
+      globalThis.localStorage?.setItem("ssoClientId", response.ssoClientId);
+    }
+    if (response.ssoIdTokenHint) {
+      globalThis.localStorage?.setItem("ssoIdTokenHint", response.ssoIdTokenHint);
+    }
+
     this.messagingService.send("loggedIn");
     // There is an import cycle between PasswordLoginStrategyData and LoginStrategy, which means this cast is necessary, which is solved by extracting the data classes.
     // TODO: https://bitwarden.atlassian.net/browse/PM-27573

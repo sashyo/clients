@@ -45,6 +45,15 @@ export class IdentityTokenResponse extends BaseResponse {
   /** TideCloak doken token, ephemeral — used to initialize the ORK enclave. */
   doken?: string;
 
+  /** SSO provider's end_session_endpoint for OIDC logout. */
+  ssoEndSessionEndpoint?: string;
+
+  /** SSO client ID for OIDC logout (required by Keycloak). */
+  ssoClientId?: string;
+
+  /** Raw OIDC id_token for use as id_token_hint during logout. */
+  ssoIdTokenHint?: string;
+
   constructor(response: unknown) {
     super(response);
 
@@ -102,6 +111,21 @@ export class IdentityTokenResponse extends BaseResponse {
     const doken = this.getResponseProperty("doken");
     if (doken != null && typeof doken === "string") {
       this.doken = doken;
+    }
+
+    const ssoEndSessionEndpoint = this.getResponseProperty("SsoEndSessionEndpoint");
+    if (ssoEndSessionEndpoint != null && typeof ssoEndSessionEndpoint === "string") {
+      this.ssoEndSessionEndpoint = ssoEndSessionEndpoint;
+    }
+
+    const ssoClientId = this.getResponseProperty("SsoClientId");
+    if (ssoClientId != null && typeof ssoClientId === "string") {
+      this.ssoClientId = ssoClientId;
+    }
+
+    const ssoIdTokenHint = this.getResponseProperty("SsoIdTokenHint");
+    if (ssoIdTokenHint != null && typeof ssoIdTokenHint === "string") {
+      this.ssoIdTokenHint = ssoIdTokenHint;
     }
   }
 

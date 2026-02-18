@@ -35,7 +35,8 @@ export class BillingConstraintService {
   ): SeatLimitResult {
     const occupiedSeats = billingMetadata?.organizationOccupiedSeats;
     if (occupiedSeats == null) {
-      throw new Error("Cannot check seat limit: billingMetadata is null or undefined.");
+      // Self-hosted (Vaultwarden) does not provide billing metadata; allow unlimited members.
+      return { canAddUsers: true };
     }
     const totalSeats = organization.seats;
 

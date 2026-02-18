@@ -238,6 +238,11 @@ export class AppComponent implements OnDestroy, OnInit {
     // Note: we don't display a toast logout reason anymore as the process reload
     // will prevent any toasts from being displayed long enough to be read
 
+    // Grab the SSO logout params before clearing state.
+    const ssoEndSessionEndpoint = globalThis.localStorage?.getItem("ssoEndSessionEndpoint");
+    const ssoClientId = globalThis.localStorage?.getItem("ssoClientId");
+    const ssoIdTokenHint = globalThis.localStorage?.getItem("ssoIdTokenHint");
+
     await this.eventUploadService.uploadEvents();
     const userId = await firstValueFrom(getUserId(this.accountService.activeAccount$));
 
@@ -270,6 +275,25 @@ export class AppComponent implements OnDestroy, OnInit {
       await this.accountService.switchAccount(null);
 
       await logoutPromise;
+
+      globalThis.localStorage?.removeItem("ssoEndSessionEndpoint");
+      globalThis.localStorage?.removeItem("ssoClientId");
+      globalThis.localStorage?.removeItem("ssoIdTokenHint");
+
+      // Redirect to the SSO provider's OIDC logout endpoint to clear the IdP session.
+      if (ssoEndSessionEndpoint) {
+        const redirectUri = window.location.origin + "/#/";
+        let logoutUrl =
+          ssoEndSessionEndpoint + "?post_logout_redirect_uri=" + encodeURIComponent(redirectUri);
+        if (ssoIdTokenHint) {
+          logoutUrl += "&id_token_hint=" + encodeURIComponent(ssoIdTokenHint);
+        }
+        if (ssoClientId) {
+          logoutUrl += "&client_id=" + encodeURIComponent(ssoClientId);
+        }
+        window.location.href = logoutUrl;
+        return;
+      }
 
       if (redirect) {
         await this.router.navigate(["/"]);
