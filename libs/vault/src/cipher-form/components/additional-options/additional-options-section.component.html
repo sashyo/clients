@@ -9,7 +9,7 @@
 
   <bit-card>
     <bit-form-field>
-      <bit-label>{{ "notes" | i18n }}</bit-label>
+      <bit-label>{{ "notes" | i18n }}<vault-encryption-indicator [encrypted]="true" /></bit-label>
       <textarea bitInput rows="5" formControlName="notes"></textarea>
     </bit-form-field>
     <bit-form-control
@@ -17,7 +17,9 @@
       [disableMargin]="hasCustomFields || isPartialEdit"
     >
       <input type="checkbox" bitCheckbox formControlName="reprompt" />
-      <bit-label>{{ "passwordPrompt" | i18n }}</bit-label>
+      <bit-label
+        >{{ "passwordPrompt" | i18n }}<vault-encryption-indicator [encrypted]="false"
+      /></bit-label>
     </bit-form-control>
 
     <button

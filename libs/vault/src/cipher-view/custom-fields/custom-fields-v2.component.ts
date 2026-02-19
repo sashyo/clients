@@ -22,6 +22,7 @@ import {
   ColorPasswordModule,
 } from "@bitwarden/components";
 
+import { EncryptionIndicatorComponent } from "../../cipher-form/components/encryption-indicator/encryption-indicator.component";
 import { VaultAutosizeReadOnlyTextArea } from "../../directives/readonly-textarea.directive";
 
 // FIXME(https://bitwarden.atlassian.net/browse/CL-764): Migrate to OnPush
@@ -41,6 +42,7 @@ import { VaultAutosizeReadOnlyTextArea } from "../../directives/readonly-textare
     CheckboxModule,
     ColorPasswordModule,
     VaultAutosizeReadOnlyTextArea,
+    EncryptionIndicatorComponent,
   ],
 })
 export class CustomFieldV2Component implements OnInit, OnChanges {

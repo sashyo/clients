@@ -6,7 +6,9 @@
   </bit-section-header>
   <bit-card>
     <bit-form-field>
-      <bit-label>{{ "sshPrivateKey" | i18n }}</bit-label>
+      <bit-label
+        >{{ "sshPrivateKey" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input id="privateKey" bitInput formControlName="privateKey" type="password" />
       <button
         type="button"
@@ -28,12 +30,16 @@
     </bit-form-field>
 
     <bit-form-field>
-      <bit-label>{{ "sshPublicKey" | i18n }}</bit-label>
+      <bit-label
+        >{{ "sshPublicKey" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input id="publicKey" bitInput formControlName="publicKey" />
     </bit-form-field>
 
     <bit-form-field>
-      <bit-label>{{ "sshFingerprint" | i18n }}</bit-label>
+      <bit-label
+        >{{ "sshFingerprint" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input id="keyFingerprint" bitInput formControlName="keyFingerprint" />
     </bit-form-field>
   </bit-card>

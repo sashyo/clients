@@ -4,7 +4,9 @@
   </bit-section-header>
   <read-only-cipher-card>
     <bit-form-field>
-      <bit-label>{{ "sshPrivateKey" | i18n }}</bit-label>
+      <bit-label
+        >{{ "sshPrivateKey" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input
         readonly
         bitInput
@@ -32,7 +34,9 @@
       ></button>
     </bit-form-field>
     <bit-form-field>
-      <bit-label>{{ "sshPublicKey" | i18n }}</bit-label>
+      <bit-label
+        >{{ "sshPublicKey" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input
         readonly
         bitInput
@@ -51,7 +55,9 @@
       ></button>
     </bit-form-field>
     <bit-form-field>
-      <bit-label>{{ "sshFingerprint" | i18n }}</bit-label>
+      <bit-label
+        >{{ "sshFingerprint" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input
         readonly
         bitInput

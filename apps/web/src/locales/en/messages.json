@@ -12954,5 +12954,11 @@
   },
   "reportDecryptionWarning": {
     "message": "Your vault data will be fully decrypted to perform this analysis. Do you want to continue?"
+  },
+  "fieldEncrypted": {
+    "message": "This field is end-to-end encrypted"
+  },
+  "fieldNotEncrypted": {
+    "message": "This field is not encrypted"
   }
 }

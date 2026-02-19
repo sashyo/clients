@@ -19,11 +19,13 @@
   </bit-section-header>
   <bit-card>
     <bit-form-field>
-      <bit-label>{{ "itemName" | i18n }}</bit-label>
+      <bit-label
+        >{{ "itemName" | i18n }}<vault-encryption-indicator [encrypted]="false"
+      /></bit-label>
       <input bitInput formControlName="name" />
     </bit-form-field>
     <bit-form-field *ngIf="showOwnership">
-      <bit-label>{{ "owner" | i18n }}</bit-label>
+      <bit-label>{{ "owner" | i18n }}<vault-encryption-indicator [encrypted]="false" /></bit-label>
       <bit-select formControlName="organizationId">
         <bit-option
           *ngIf="showPersonalOwnershipOption"
@@ -39,7 +41,9 @@
     </bit-form-field>
     <ng-container *ngIf="showCollectionsControl">
       <bit-form-field class="tw-w-full" [disableMargin]="config.hideIndividualVaultFields">
-        <bit-label>{{ "collections" | i18n }}</bit-label>
+        <bit-label
+          >{{ "collections" | i18n }}<vault-encryption-indicator [encrypted]="false"
+        /></bit-label>
         <bit-multi-select
           class="tw-w-full"
           formControlName="collectionIds"
@@ -51,7 +55,7 @@
       </bit-form-field>
     </ng-container>
     <bit-form-field *ngIf="!config.hideIndividualVaultFields" disableMargin>
-      <bit-label>{{ "folder" | i18n }}</bit-label>
+      <bit-label>{{ "folder" | i18n }}<vault-encryption-indicator [encrypted]="false" /></bit-label>
       <bit-select formControlName="folderId">
         <bit-option
           *ngFor="let folder of config.folders"

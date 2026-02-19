@@ -43,6 +43,7 @@ import {
 } from "@bitwarden/components";
 
 import { CipherFormContainer } from "../../cipher-form-container";
+import { EncryptionIndicatorComponent } from "../encryption-indicator/encryption-indicator.component";
 
 import {
   AddEditCustomFieldDialogComponent,
@@ -87,6 +88,7 @@ export type CustomField = {
     SelectModule,
     DragDropModule,
     LinkModule,
+    EncryptionIndicatorComponent,
   ],
 })
 export class CustomFieldsComponent implements OnInit, AfterViewInit {

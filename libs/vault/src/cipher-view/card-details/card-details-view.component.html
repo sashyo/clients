@@ -4,7 +4,9 @@
   </bit-section-header>
   <read-only-cipher-card>
     <bit-form-field *ngIf="card.cardholderName">
-      <bit-label [appTextDrag]="card.cardholderName">{{ "cardholderName" | i18n }}</bit-label>
+      <bit-label [appTextDrag]="card.cardholderName"
+        >{{ "cardholderName" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input
         id="cardholderName"
         readonly
@@ -16,7 +18,9 @@
       />
     </bit-form-field>
     <bit-form-field *ngIf="card.number">
-      <bit-label [appTextDrag]="card.number">{{ "number" | i18n }}</bit-label>
+      <bit-label [appTextDrag]="card.number"
+        >{{ "number" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input
         id="cardNumber"
         readonly
@@ -48,7 +52,9 @@
       ></button>
     </bit-form-field>
     <bit-form-field *ngIf="card.expiration">
-      <bit-label [appTextDrag]="card.expiration">{{ "expiration" | i18n }}</bit-label>
+      <bit-label [appTextDrag]="card.expiration"
+        >{{ "expiration" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input
         id="expiration"
         readonly
@@ -60,7 +66,9 @@
       />
     </bit-form-field>
     <bit-form-field *ngIf="card.code">
-      <bit-label [appTextDrag]="card.code">{{ "securityCode" | i18n }}</bit-label>
+      <bit-label [appTextDrag]="card.code"
+        >{{ "securityCode" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input
         id="securityCode"
         readonly

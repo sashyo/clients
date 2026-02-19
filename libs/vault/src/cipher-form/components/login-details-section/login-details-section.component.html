@@ -7,7 +7,9 @@
 
   <bit-card>
     <bit-form-field>
-      <bit-label>{{ "username" | i18n }}</bit-label>
+      <bit-label
+        >{{ "username" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input bitInput formControlName="username" />
       <button
         type="button"
@@ -21,7 +23,9 @@
     </bit-form-field>
 
     <bit-form-field>
-      <bit-label>{{ "password" | i18n }}</bit-label>
+      <bit-label
+        >{{ "password" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input bitInput formControlName="password" type="password" class="tw-font-mono" />
       <bit-hint *ngIf="loginDetailsForm.controls.password.enabled">
         <ng-container *ngIf="newPasswordGenerated">
@@ -71,7 +75,9 @@
     </bit-form-field>
 
     <bit-form-field *ngIf="hasPasskey">
-      <bit-label>{{ "typePasskey" | i18n }}</bit-label>
+      <bit-label
+        >{{ "typePasskey" | i18n }}<vault-encryption-indicator [encrypted]="false"
+      /></bit-label>
       <input
         bitInput
         disabled
@@ -93,6 +99,7 @@
     <bit-form-field disableMargin>
       <bit-label>
         {{ "authenticatorKey" | i18n }}
+        <vault-encryption-indicator [encrypted]="true" />
         <button
           bitLink
           type="button"

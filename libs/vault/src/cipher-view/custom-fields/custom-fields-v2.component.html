@@ -10,7 +10,9 @@
       data-testid="custom-field"
     >
       <bit-form-field *ngIf="field.type === fieldType.Text" [disableReadOnlyBorder]="last">
-        <bit-label [appTextDrag]="field.value">{{ field.name }}</bit-label>
+        <bit-label [appTextDrag]="field.value"
+          >{{ field.name }}<vault-encryption-indicator [encrypted]="true"
+        /></bit-label>
         <textarea
           readonly
           bitInput
@@ -30,7 +32,9 @@
         ></button>
       </bit-form-field>
       <bit-form-field *ngIf="field.type === fieldType.Hidden" [disableReadOnlyBorder]="last">
-        <bit-label [appTextDrag]="field.value">{{ field.name }}</bit-label>
+        <bit-label [appTextDrag]="field.value"
+          >{{ field.name }}<vault-encryption-indicator [encrypted]="true"
+        /></bit-label>
         <input
           readonly
           bitInput
@@ -101,10 +105,14 @@
         />
         <bit-label [appTextDrag]="field.value">
           {{ field.name }}
+          <vault-encryption-indicator [encrypted]="true" />
         </bit-label>
       </bit-form-control>
       <bit-form-field *ngIf="field.type === fieldType.Linked" [disableReadOnlyBorder]="last">
-        <bit-label> {{ "cfTypeLinked" | i18n }}: {{ field.name }} </bit-label>
+        <bit-label>
+          {{ "cfTypeLinked" | i18n }}: {{ field.name
+          }}<vault-encryption-indicator [encrypted]="true" />
+        </bit-label>
         <input
           readonly
           bitInput

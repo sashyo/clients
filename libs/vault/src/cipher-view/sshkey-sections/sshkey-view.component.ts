@@ -12,6 +12,7 @@ import {
   IconButtonModule,
 } from "@bitwarden/components";
 
+import { EncryptionIndicatorComponent } from "../../cipher-form/components/encryption-indicator/encryption-indicator.component";
 import { ReadOnlyCipherCardComponent } from "../read-only-cipher-card/read-only-cipher-card.component";
 
 // FIXME(https://bitwarden.atlassian.net/browse/CL-764): Migrate to OnPush
@@ -27,6 +28,7 @@ import { ReadOnlyCipherCardComponent } from "../read-only-cipher-card/read-only-
     TypographyModule,
     FormFieldModule,
     IconButtonModule,
+    EncryptionIndicatorComponent,
   ],
 })
 export class SshKeyViewComponent implements OnChanges {

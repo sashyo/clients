@@ -11,6 +11,8 @@ import {
   FormFieldModule,
 } from "@bitwarden/components";
 
+import { EncryptionIndicatorComponent } from "../../cipher-form/components/encryption-indicator/encryption-indicator.component";
+
 // FIXME(https://bitwarden.atlassian.net/browse/CL-764): Migrate to OnPush
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
 @Component({
@@ -25,6 +27,7 @@ import {
     SectionHeaderComponent,
     TypographyModule,
     FormFieldModule,
+    EncryptionIndicatorComponent,
   ],
 })
 export class AdditionalOptionsComponent {

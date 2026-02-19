@@ -6,7 +6,7 @@
     <bit-card>
       <bit-form-field>
         <bit-label>
-          {{ "title" | i18n }}
+          {{ "title" | i18n }}<vault-encryption-indicator [encrypted]="true" />
         </bit-label>
         <bit-select formControlName="title">
           <bit-option
@@ -19,31 +19,31 @@
       </bit-form-field>
       <bit-form-field>
         <bit-label>
-          {{ "firstName" | i18n }}
+          {{ "firstName" | i18n }}<vault-encryption-indicator [encrypted]="true" />
         </bit-label>
         <input bitInput formControlName="firstName" />
       </bit-form-field>
       <bit-form-field>
         <bit-label>
-          {{ "middleName" | i18n }}
+          {{ "middleName" | i18n }}<vault-encryption-indicator [encrypted]="true" />
         </bit-label>
         <input bitInput formControlName="middleName" />
       </bit-form-field>
       <bit-form-field>
         <bit-label>
-          {{ "lastName" | i18n }}
+          {{ "lastName" | i18n }}<vault-encryption-indicator [encrypted]="true" />
         </bit-label>
         <input bitInput formControlName="lastName" />
       </bit-form-field>
       <bit-form-field>
         <bit-label>
-          {{ "username" | i18n }}
+          {{ "username" | i18n }}<vault-encryption-indicator [encrypted]="true" />
         </bit-label>
         <input bitInput formControlName="username" />
       </bit-form-field>
       <bit-form-field disableMargin>
         <bit-label>
-          {{ "company" | i18n }}
+          {{ "company" | i18n }}<vault-encryption-indicator [encrypted]="true" />
         </bit-label>
         <input bitInput formControlName="company" />
       </bit-form-field>
@@ -55,9 +55,7 @@
     </bit-section-header>
     <bit-card>
       <bit-form-field>
-        <bit-label>
-          {{ "ssn" | i18n }}
-        </bit-label>
+        <bit-label> {{ "ssn" | i18n }}<vault-encryption-indicator [encrypted]="true" /> </bit-label>
         <input formControlName="ssn" bitInput type="password" />
         <button
           type="button"
@@ -69,7 +67,7 @@
       </bit-form-field>
       <bit-form-field>
         <bit-label>
-          {{ "passportNumber" | i18n }}
+          {{ "passportNumber" | i18n }}<vault-encryption-indicator [encrypted]="true" />
         </bit-label>
         <input formControlName="passportNumber" bitInput type="password" />
         <button
@@ -82,7 +80,7 @@
       </bit-form-field>
       <bit-form-field disableMargin>
         <bit-label>
-          {{ "licenseNumber" | i18n }}
+          {{ "licenseNumber" | i18n }}<vault-encryption-indicator [encrypted]="true" />
         </bit-label>
         <input bitInput formControlName="licenseNumber" />
       </bit-form-field>
@@ -95,13 +93,13 @@
     <bit-card>
       <bit-form-field>
         <bit-label>
-          {{ "email" | i18n }}
+          {{ "email" | i18n }}<vault-encryption-indicator [encrypted]="true" />
         </bit-label>
         <input bitInput formControlName="email" />
       </bit-form-field>
       <bit-form-field disableMargin>
         <bit-label>
-          {{ "phone" | i18n }}
+          {{ "phone" | i18n }}<vault-encryption-indicator [encrypted]="true" />
         </bit-label>
         <input bitInput formControlName="phone" />
       </bit-form-field>
@@ -114,43 +112,43 @@
     <bit-card>
       <bit-form-field>
         <bit-label>
-          {{ "address1" | i18n }}
+          {{ "address1" | i18n }}<vault-encryption-indicator [encrypted]="true" />
         </bit-label>
         <input bitInput formControlName="address1" />
       </bit-form-field>
       <bit-form-field>
         <bit-label>
-          {{ "address2" | i18n }}
+          {{ "address2" | i18n }}<vault-encryption-indicator [encrypted]="true" />
         </bit-label>
         <input bitInput formControlName="address2" />
       </bit-form-field>
       <bit-form-field>
         <bit-label>
-          {{ "address3" | i18n }}
+          {{ "address3" | i18n }}<vault-encryption-indicator [encrypted]="true" />
         </bit-label>
         <input bitInput formControlName="address3" />
       </bit-form-field>
       <bit-form-field>
         <bit-label>
-          {{ "cityTown" | i18n }}
+          {{ "cityTown" | i18n }}<vault-encryption-indicator [encrypted]="true" />
         </bit-label>
         <input bitInput formControlName="city" />
       </bit-form-field>
       <bit-form-field>
         <bit-label>
-          {{ "stateProvince" | i18n }}
+          {{ "stateProvince" | i18n }}<vault-encryption-indicator [encrypted]="true" />
         </bit-label>
         <input bitInput formControlName="state" />
       </bit-form-field>
       <bit-form-field>
         <bit-label>
-          {{ "zipPostalCodeLabel" | i18n }}
+          {{ "zipPostalCodeLabel" | i18n }}<vault-encryption-indicator [encrypted]="true" />
         </bit-label>
         <input bitInput formControlName="postalCode" />
       </bit-form-field>
       <bit-form-field disableMargin>
         <bit-label>
-          {{ "country" | i18n }}
+          {{ "country" | i18n }}<vault-encryption-indicator [encrypted]="true" />
         </bit-label>
         <input bitInput formControlName="country" />
       </bit-form-field>

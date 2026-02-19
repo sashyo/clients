@@ -34,6 +34,8 @@ import {
   SelectModule,
 } from "@bitwarden/components";
 
+import { EncryptionIndicatorComponent } from "../encryption-indicator/encryption-indicator.component";
+
 import { AdvancedUriOptionDialogComponent } from "./advanced-uri-option-dialog.component";
 
 // FIXME(https://bitwarden.atlassian.net/browse/CL-764): Migrate to OnPush
@@ -57,6 +59,7 @@ import { AdvancedUriOptionDialogComponent } from "./advanced-uri-option-dialog.c
     SelectModule,
     NgForOf,
     NgIf,
+    EncryptionIndicatorComponent,
   ],
 })
 export class UriOptionComponent implements ControlValueAccessor {

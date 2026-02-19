@@ -5,7 +5,9 @@
 
   <read-only-cipher-card>
     <bit-form-field *ngIf="cipher.identity.fullName">
-      <bit-label [appTextDrag]="cipher.identity.fullName">{{ "name" | i18n }}</bit-label>
+      <bit-label [appTextDrag]="cipher.identity.fullName"
+        >{{ "name" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input
         bitInput
         id="fullName"
@@ -25,7 +27,9 @@
       ></button>
     </bit-form-field>
     <bit-form-field *ngIf="cipher.identity.username">
-      <bit-label [appTextDrag]="cipher.identity.username">{{ "username" | i18n }}</bit-label>
+      <bit-label [appTextDrag]="cipher.identity.username"
+        >{{ "username" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input
         bitInput
         id="username"
@@ -44,7 +48,9 @@
       ></button>
     </bit-form-field>
     <bit-form-field *ngIf="cipher.identity.company">
-      <bit-label [appTextDrag]="cipher.identity.company">{{ "company" | i18n }}</bit-label>
+      <bit-label [appTextDrag]="cipher.identity.company"
+        >{{ "company" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input
         bitInput
         id="company"
@@ -73,7 +79,9 @@
 
   <read-only-cipher-card>
     <bit-form-field *ngIf="cipher.identity.ssn">
-      <bit-label [appTextDrag]="cipher.identity.ssn">{{ "ssn" | i18n }}</bit-label>
+      <bit-label [appTextDrag]="cipher.identity.ssn"
+        >{{ "ssn" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input
         bitInput
         id="ssn"
@@ -101,9 +109,9 @@
       ></button>
     </bit-form-field>
     <bit-form-field *ngIf="cipher.identity.passportNumber">
-      <bit-label [appTextDrag]="cipher.identity.passportNumber">{{
-        "passportNumber" | i18n
-      }}</bit-label>
+      <bit-label [appTextDrag]="cipher.identity.passportNumber"
+        >{{ "passportNumber" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input
         id="passportNumber"
         bitInput
@@ -131,9 +139,9 @@
       ></button>
     </bit-form-field>
     <bit-form-field *ngIf="cipher.identity.licenseNumber">
-      <bit-label [appTextDrag]="cipher.identity.licenseNumber">{{
-        "licenseNumber" | i18n
-      }}</bit-label>
+      <bit-label [appTextDrag]="cipher.identity.licenseNumber"
+        >{{ "licenseNumber" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input
         bitInput
         id="licenseNumber"
@@ -162,7 +170,9 @@
 
   <read-only-cipher-card>
     <bit-form-field *ngIf="cipher.identity.email">
-      <bit-label [appTextDrag]="cipher.identity.email">{{ "email" | i18n }}</bit-label>
+      <bit-label [appTextDrag]="cipher.identity.email"
+        >{{ "email" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input bitInput id="email" [value]="cipher.identity.email" readonly data-testid="email" />
       <button
         type="button"
@@ -176,7 +186,9 @@
       ></button>
     </bit-form-field>
     <bit-form-field *ngIf="cipher.identity.phone">
-      <bit-label [appTextDrag]="cipher.identity.phone">{{ "phone" | i18n }}</bit-label>
+      <bit-label [appTextDrag]="cipher.identity.phone"
+        >{{ "phone" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <input bitInput id="phone" [value]="cipher.identity.phone" readonly data-testid="phone" />
       <button
         type="button"
@@ -190,7 +202,9 @@
       ></button>
     </bit-form-field>
     <bit-form-field *ngIf="addressFields">
-      <bit-label [appTextDrag]="addressFields">{{ "address" | i18n }}</bit-label>
+      <bit-label [appTextDrag]="addressFields"
+        >{{ "address" | i18n }}<vault-encryption-indicator [encrypted]="true"
+      /></bit-label>
       <textarea
         bitInput
         id="address"

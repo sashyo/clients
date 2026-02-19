@@ -29,6 +29,7 @@ import { CipherFormGenerationService } from "../../abstractions/cipher-form-gene
 import { TotpCaptureService } from "../../abstractions/totp-capture.service";
 import { CipherFormContainer } from "../../cipher-form-container";
 import { AutofillOptionsComponent } from "../autofill-options/autofill-options.component";
+import { EncryptionIndicatorComponent } from "../encryption-indicator/encryption-indicator.component";
 
 // FIXME(https://bitwarden.atlassian.net/browse/CL-764): Migrate to OnPush
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
@@ -48,6 +49,7 @@ import { AutofillOptionsComponent } from "../autofill-options/autofill-options.c
     PopoverModule,
     AutofillOptionsComponent,
     LinkModule,
+    EncryptionIndicatorComponent,
   ],
 })
 export class LoginDetailsSectionComponent implements OnInit {

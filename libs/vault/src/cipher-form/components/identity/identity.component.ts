@@ -20,6 +20,7 @@ import {
 } from "@bitwarden/components";
 
 import { CipherFormContainer } from "../../cipher-form-container";
+import { EncryptionIndicatorComponent } from "../encryption-indicator/encryption-indicator.component";
 
 // FIXME(https://bitwarden.atlassian.net/browse/CL-764): Migrate to OnPush
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
@@ -37,6 +38,7 @@ import { CipherFormContainer } from "../../cipher-form-container";
     IconButtonModule,
     SelectModule,
     TypographyModule,
+    EncryptionIndicatorComponent,
   ],
 })
 export class IdentitySectionComponent implements OnInit {

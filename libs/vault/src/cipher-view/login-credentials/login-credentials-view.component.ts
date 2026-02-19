@@ -34,6 +34,7 @@ import {
   ColorPasswordModule,
 } from "@bitwarden/components";
 
+import { EncryptionIndicatorComponent } from "../../cipher-form/components/encryption-indicator/encryption-indicator.component";
 import { BitTotpCountdownComponent } from "../../components/totp-countdown/totp-countdown.component";
 import { ReadOnlyCipherCardComponent } from "../read-only-cipher-card/read-only-cipher-card.component";
 
@@ -60,6 +61,7 @@ type TotpCodeValues = {
     ReadOnlyCipherCardComponent,
     LinkModule,
     PremiumBadgeComponent,
+    EncryptionIndicatorComponent,
   ],
 })
 export class LoginCredentialsViewComponent implements OnChanges {

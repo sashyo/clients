@@ -20,6 +20,7 @@ import {
 import { PasswordRepromptService } from "../../../services/password-reprompt.service";
 import { CipherFormContainer } from "../../cipher-form-container";
 import { CustomFieldsComponent } from "../custom-fields/custom-fields.component";
+import { EncryptionIndicatorComponent } from "../encryption-indicator/encryption-indicator.component";
 
 // FIXME(https://bitwarden.atlassian.net/browse/CL-764): Migrate to OnPush
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
@@ -38,6 +39,7 @@ import { CustomFieldsComponent } from "../custom-fields/custom-fields.component"
     CommonModule,
     CustomFieldsComponent,
     LinkModule,
+    EncryptionIndicatorComponent,
   ],
 })
 export class AdditionalOptionsSectionComponent implements OnInit {

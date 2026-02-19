@@ -39,6 +39,7 @@ import {
   OptionalInitialValues,
 } from "../../abstractions/cipher-form-config.service";
 import { CipherFormContainer } from "../../cipher-form-container";
+import { EncryptionIndicatorComponent } from "../encryption-indicator/encryption-indicator.component";
 
 // FIXME(https://bitwarden.atlassian.net/browse/CL-764): Migrate to OnPush
 // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
@@ -56,6 +57,7 @@ import { CipherFormContainer } from "../../cipher-form-container";
     JslibModule,
     CommonModule,
     BadgeComponent,
+    EncryptionIndicatorComponent,
   ],
 })
 export class ItemDetailsSectionComponent implements OnInit {
