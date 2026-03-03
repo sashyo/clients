@@ -24,6 +24,11 @@ import { GroupsComponent } from "./manage/groups.component";
 
 const routes: Routes = [
   {
+    path: "",
+    pathMatch: "full",
+    redirectTo: "/vault",
+  },
+  {
     path: ":organizationId",
     component: OrganizationLayoutComponent,
     canActivate: [deepLinkGuard(), authGuard, organizationPermissionsGuard(canAccessOrgAdmin)],
@@ -70,6 +75,38 @@ const routes: Routes = [
           import("../../billing/organizations/organization-billing.module").then(
             (m) => m.OrganizationBillingModule,
           ),
+      },
+      {
+        path: "templates",
+        loadComponent: () =>
+          import("./tide-pages/templates-page.component").then(
+            (m) => m.OrgTemplatesPageComponent,
+          ),
+        canActivate: [organizationPermissionsGuard(canAccessSettingsTab)],
+      },
+      {
+        path: "approvals",
+        loadComponent: () =>
+          import("./tide-pages/approvals-page.component").then(
+            (m) => m.OrgApprovalsPageComponent,
+          ),
+        canActivate: [organizationPermissionsGuard(canAccessSettingsTab)],
+      },
+      {
+        path: "roles",
+        loadComponent: () =>
+          import("./tide-pages/roles-page.component").then(
+            (m) => m.OrgRolesPageComponent,
+          ),
+        canActivate: [organizationPermissionsGuard(canAccessSettingsTab)],
+      },
+      {
+        path: "collection-access",
+        loadComponent: () =>
+          import("./tide-pages/collection-access-page.component").then(
+            (m) => m.OrgCollectionAccessPageComponent,
+          ),
+        canActivate: [organizationPermissionsGuard(canAccessSettingsTab)],
       },
     ],
   },

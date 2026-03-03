@@ -7,12 +7,12 @@ import { FreeBitwardenFamiliesComponent } from "../../../billing/members/free-bi
 import { organizationPermissionsGuard } from "../guards/org-permissions.guard";
 
 import { canAccessSponsoredFamilies } from "./../../../billing/guards/can-access-sponsored-families.guard";
-import { MembersComponent } from "./members.component";
 
 const routes: Routes = [
   {
     path: "",
-    component: MembersComponent,
+    loadComponent: () =>
+      import("../tide-pages/users-page.component").then((m) => m.OrgUsersPageComponent),
     canActivate: [organizationPermissionsGuard(canAccessMembersTab)],
     data: {
       titleId: "members",

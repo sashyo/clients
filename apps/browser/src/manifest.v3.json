@@ -170,8 +170,12 @@
   ],
   "__firefox__browser_specific_settings": {
     "gecko": {
-      "id": "{446900e4-71c2-419f-a6a7-df9c091e268b}",
-      "strict_min_version": "91.0"
+      "id": "{995a9b68-11e3-4ede-b4b9-997c9b34dcd0}",
+      "strict_min_version": "91.0",
+      "data_collection_permissions": {
+        "required": ["none"],
+        "optional": ["technicalAndInteraction"]
+      }
     }
   },
   "__firefox__sidebar_action": {

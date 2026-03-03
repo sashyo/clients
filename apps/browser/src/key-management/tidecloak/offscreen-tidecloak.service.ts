@@ -187,6 +187,31 @@ export class OffscreenTideCloakService extends TideCloakService {
     return this._skipOrkEncrypt;
   }
 
+  async createTideRequest(_encodedRequest: Uint8Array): Promise<Uint8Array> {
+    throw new Error("[OffscreenTideCloak] createTideRequest not supported in browser extension");
+  }
+
+  getVendorId(): string {
+    if (!this.config) {
+      throw new Error("[OffscreenTideCloak] Config not initialized");
+    }
+    return this.config.vendorId;
+  }
+
+  getResource(): string {
+    return "tidewarden";
+  }
+
+  async approveTideRequests(
+    _requests: { id: string; request: Uint8Array }[],
+  ): Promise<{ id: string; request: Uint8Array; status: "approved" | "denied" | "pending" }[]> {
+    throw new Error("[OffscreenTideCloak] approveTideRequests not supported in browser extension");
+  }
+
+  async executeSignRequest(_request: Uint8Array): Promise<Uint8Array[]> {
+    throw new Error("[OffscreenTideCloak] executeSignRequest not supported in browser extension");
+  }
+
   destroy(): void {
     if (this._initialized) {
       // Send cleanup message to the offscreen document
