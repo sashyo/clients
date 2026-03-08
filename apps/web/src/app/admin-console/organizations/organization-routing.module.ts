@@ -100,14 +100,6 @@ const routes: Routes = [
           ),
         canActivate: [organizationPermissionsGuard(canAccessSettingsTab)],
       },
-      {
-        path: "membership-proofs",
-        loadComponent: () =>
-          import("./tide-pages/membership-proofs-page.component").then(
-            (m) => m.OrgMembershipProofsPageComponent,
-          ),
-        canActivate: [organizationPermissionsGuard(canAccessSettingsTab)],
-      },
     ],
   },
 ];

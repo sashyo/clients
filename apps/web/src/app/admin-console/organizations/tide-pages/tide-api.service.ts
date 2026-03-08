@@ -222,13 +222,11 @@ export function createBackendCollectionAccessAPI(apiService: ApiService, orgId: 
       userId: string,
       collectionId: string,
       accessLevel: string,
-      membershipData?: string,
-      signature?: string,
     ) => {
       return await apiService.send(
         "POST",
         `${basePath}/users/${userId}/collection-access`,
-        { collectionId, accessLevel, membershipData, signature },
+        { collectionId, accessLevel },
         true,
         true,
       );
@@ -237,13 +235,11 @@ export function createBackendCollectionAccessAPI(apiService: ApiService, orgId: 
     removeUserAccess: async (
       userId: string,
       collectionId: string,
-      membershipData?: string,
-      signature?: string,
     ) => {
       await apiService.send(
         "POST",
         `${basePath}/users/${userId}/collection-access/remove`,
-        { collectionId, membershipData, signature },
+        { collectionId },
         true,
         false,
       );
@@ -265,30 +261,6 @@ export function createBackendCollectionAccessAPI(apiService: ApiService, orgId: 
 
     resetCryptoPolicy: async () => {
       return await apiService.send("DELETE", `${basePath}/crypto-policy`, null, true, true);
-    },
-
-    getMembershipSig: async (collectionId: string) => {
-      return await apiService.send(
-        "GET",
-        `${basePath}/collection-membership-sig/${collectionId}`,
-        null,
-        true,
-        true,
-      );
-    },
-
-    storeMembershipSig: async (
-      collectionId: string,
-      membershipData: string,
-      signature: string,
-    ) => {
-      return await apiService.send(
-        "POST",
-        `${basePath}/collection-membership-sig`,
-        { collectionId, membershipData, signature },
-        true,
-        true,
-      );
     },
 
     getTideUserContext: async (tcUserId: string, clientId: string) => {

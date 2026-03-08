@@ -96,20 +96,8 @@
       route="roles"
       *ngIf="canShowSettingsTab(organization)"
     ></bit-nav-item>
-    <bit-nav-item
-      icon="bwi-lock"
-      [text]="'membershipProofs' | i18n"
-      route="membership-proofs"
-      *ngIf="canShowSettingsTab(organization)"
-    ></bit-nav-item>
   </app-side-nav>
 
-  <bit-callout *ngIf="orgOwnerBanner === 'pending'" type="warning">
-    <p>Org Owner policy needs to be approved. Go to the Approvals tab to sign and commit it.</p>
-    <button class="tw-btn tw-btn-sm tw-btn-outline-danger tw-mt-2" (click)="resetOrgOwnerPolicy()">
-      Reset Policy
-    </button>
-  </bit-callout>
   <bit-callout *ngIf="orgOwnerBanner === 'committed'" type="info">
     <button class="tw-btn tw-btn-sm tw-btn-outline-danger" (click)="resetOrgOwnerPolicy()">
       Re-create Org Owner Policy

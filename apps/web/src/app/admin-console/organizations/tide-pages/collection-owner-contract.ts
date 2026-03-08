@@ -174,14 +174,19 @@ public class Contract : IAccessPolicy
 						if (r.Equals("appUser", StringComparison.Ordinal))
 							continue;
 
+						// Roles scoped to THIS org are always allowed
 						if (r.StartsWith(ownOrgPrefix, StringComparison.Ordinal))
+							continue;
+
+						// Roles scoped to OTHER orgs are outside this contract's jurisdiction — allow them
+						if (r.StartsWith("org:", StringComparison.Ordinal) && TryExtractOrgId(r, out _))
 							continue;
 
 						if (previousRoles.Contains(r))
 							continue;
 
 						return PolicyDecision.Deny(
-							$"UserContext[{i}] role '{r}' is not scoped to org '{allowedOrgId}' and not pre-existing");
+							$"UserContext[{i}] role '{r}' is not scoped to an org and not pre-existing");
 					}
 				}
 
