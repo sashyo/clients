@@ -50,9 +50,11 @@ export class TideCloakEncryptService extends EncryptServiceImplementation {
     if (this.tideCloakService.isInitialized()) {
       try {
         const bytes = new TextEncoder().encode(plainValue);
-        const encrypted = await this.tideCloakService.encrypt(bytes, ["vaultwarden"]);
+        const { tags, policy } = this.getEncryptionContext();
+        const encrypted = await this.tideCloakService.encrypt(bytes, tags, policy);
         const b64 = Utils.fromBufferToB64(encrypted);
-        return new EncString(EncryptionType.TideCloakOrk, b64);
+        const encType = policy ? EncryptionType.TideCloakOrkPolicy : EncryptionType.TideCloakOrk;
+        return new EncString(encType, b64);
       } catch (e) {
         this.logService.error(`[TideCloakEncrypt] ORK encryption failed: ${e}`);
         throw new Error(
@@ -72,9 +74,11 @@ export class TideCloakEncryptService extends EncryptServiceImplementation {
 
     if (this.tideCloakService.isInitialized()) {
       try {
-        const encrypted = await this.tideCloakService.encrypt(plainValue, ["vaultwarden"]);
+        const { tags, policy } = this.getEncryptionContext();
+        const encrypted = await this.tideCloakService.encrypt(plainValue, tags, policy);
         const b64 = Utils.fromBufferToB64(encrypted);
-        return new EncString(EncryptionType.TideCloakOrk, b64);
+        const encType = policy ? EncryptionType.TideCloakOrkPolicy : EncryptionType.TideCloakOrk;
+        return new EncString(encType, b64);
       } catch (e) {
         this.logService.error(`[TideCloakEncrypt] ORK byte encryption failed: ${e}`);
         throw new Error(
@@ -96,7 +100,10 @@ export class TideCloakEncryptService extends EncryptServiceImplementation {
       return new TextDecoder().decode(bytes);
     }
 
-    if (encString.encryptionType === EncryptionType.TideCloakOrk) {
+    if (
+      encString.encryptionType === EncryptionType.TideCloakOrk ||
+      encString.encryptionType === EncryptionType.TideCloakOrkPolicy
+    ) {
       // During bulk vault load, skip ORK decryption — sensitive data stays encrypted in memory
       if (this.tideCloakService.shouldSkipOrkDecrypt()) {
         return null;
@@ -120,7 +127,18 @@ export class TideCloakEncryptService extends EncryptServiceImplementation {
 
       try {
         const bytes = Utils.fromB64ToArray(encString.data);
-        const decrypted = await this.tideCloakService.decrypt(bytes, ["vaultwarden"]);
+        // Policy-encrypted data (type 102) requires the crypto policy for decryption.
+        // Legacy selfencrypt data (type 100) uses ["vaultwarden"] without a policy.
+        const isPolicyEncrypted = encString.encryptionType === EncryptionType.TideCloakOrkPolicy;
+        const { tags, policy } = isPolicyEncrypted
+          ? this.getDecryptionContext()
+          : { tags: ["vaultwarden"], policy: undefined };
+        // Policy-encrypted data without a scope set (e.g. list preview) — can't decrypt
+        // without the correct tags+policy, so return null instead of crashing
+        if (isPolicyEncrypted && !policy) {
+          return null;
+        }
+        const decrypted = await this.tideCloakService.decrypt(bytes, tags, policy);
         return new TextDecoder().decode(decrypted);
       } catch (e) {
         this.logService.error(`[TideCloakEncrypt] ORK decryption failed: ${e}`);
@@ -145,7 +163,10 @@ export class TideCloakEncryptService extends EncryptServiceImplementation {
       return Utils.fromB64ToArray(encString.data);
     }
 
-    if (encString.encryptionType === EncryptionType.TideCloakOrk) {
+    if (
+      encString.encryptionType === EncryptionType.TideCloakOrk ||
+      encString.encryptionType === EncryptionType.TideCloakOrkPolicy
+    ) {
       // During bulk vault load, skip ORK decryption — sensitive data stays encrypted in memory
       if (this.tideCloakService.shouldSkipOrkDecrypt()) {
         return null;
@@ -166,7 +187,15 @@ export class TideCloakEncryptService extends EncryptServiceImplementation {
 
       try {
         const bytes = Utils.fromB64ToArray(encString.data);
-        return await this.tideCloakService.decrypt(bytes, ["vaultwarden"]);
+        const isPolicyEncrypted = encString.encryptionType === EncryptionType.TideCloakOrkPolicy;
+        const { tags, policy } = isPolicyEncrypted
+          ? this.getDecryptionContext()
+          : { tags: ["vaultwarden"], policy: undefined };
+        // Policy-encrypted data without a scope set — can't decrypt without correct tags+policy
+        if (isPolicyEncrypted && !policy) {
+          return null;
+        }
+        return await this.tideCloakService.decrypt(bytes, tags, policy);
       } catch (e) {
         this.logService.error(`[TideCloakEncrypt] ORK byte decryption failed: ${e}`);
         this._orkDecryptCooldownUntil = Date.now() + 10_000;
@@ -178,6 +207,40 @@ export class TideCloakEncryptService extends EncryptServiceImplementation {
 
     // For any other encryption type (e.g. AES), use parent
     return super.decryptBytes(encString, key);
+  }
+
+  /**
+   * Returns tags and policy for encryption based on the current scope.
+   * Org ciphers use collection-scoped tags + crypto policy (PolicyEnabledEncryption).
+   * Personal vault ciphers use ["vaultwarden"] tags (selfencrypt).
+   */
+  private getEncryptionContext(): { tags: string[]; policy?: Uint8Array } {
+    const scope = this.tideCloakService.getEncryptionScope();
+    if (scope) {
+      const tags = scope.collectionIds.map(
+        (cid) => `org:${scope.orgId}:collection:${cid}`,
+      );
+      console.info(`[TideCloakEncrypt] getEncryptionContext: scope SET, tags=${JSON.stringify(tags)}, policyLen=${scope.policy?.length}`);
+      return { tags, policy: scope.policy };
+    }
+    console.info(`[TideCloakEncrypt] getEncryptionContext: NO scope, using default tags=["vaultwarden"]`);
+    return { tags: ["vaultwarden"] };
+  }
+
+  /**
+   * Returns tags and policy for decryption based on the current scope.
+   * Org ciphers use collection-scoped tags + crypto policy (PolicyEnabledDecryption).
+   * Personal vault ciphers use ["vaultwarden"] tags (selfdecrypt).
+   */
+  private getDecryptionContext(): { tags: string[]; policy?: Uint8Array } {
+    const scope = this.tideCloakService.getEncryptionScope();
+    if (scope) {
+      const tags = scope.collectionIds.map(
+        (cid) => `org:${scope.orgId}:collection:${cid}`,
+      );
+      return { tags, policy: scope.policy };
+    }
+    return { tags: ["vaultwarden"] };
   }
 
   override async withoutOrk<T>(fn: () => Promise<T>): Promise<T> {

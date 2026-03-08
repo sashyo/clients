@@ -5,10 +5,16 @@ export interface TideCloakConfig {
   signedClientOrigin: string;
 }
 
+export interface EncryptionScope {
+  orgId: string;
+  collectionIds: string[];
+  policy: Uint8Array;
+}
+
 export abstract class TideCloakService {
   abstract initialize(config: TideCloakConfig, doken: string): Promise<void>;
-  abstract encrypt(data: Uint8Array, tags: string[]): Promise<Uint8Array>;
-  abstract decrypt(encrypted: Uint8Array, tags: string[]): Promise<Uint8Array>;
+  abstract encrypt(data: Uint8Array, tags: string[], decryptionPolicy?: Uint8Array): Promise<Uint8Array>;
+  abstract decrypt(encrypted: Uint8Array, tags: string[], decryptionPolicy?: Uint8Array): Promise<Uint8Array>;
   abstract updateDoken(doken: string): Promise<void>;
   abstract isInitialized(): boolean;
   /**
@@ -65,6 +71,19 @@ export abstract class TideCloakService {
   /**
    * Executes a signed Tide request against the ORK to get the final VVK signature.
    * Called after a policy has been approved and is ready to commit.
+   * @param initialize - If true (default), also calls createTideRequest before executing.
+   *   Pass false for commit to avoid double initialization.
    */
-  abstract executeSignRequest(request: Uint8Array): Promise<Uint8Array[]>;
+  abstract executeSignRequest(request: Uint8Array, initialize?: boolean): Promise<Uint8Array[]>;
+  /**
+   * Returns the current doken string, or null if not available.
+   */
+  abstract getDoken(): string | null;
+  /**
+   * Sets the current encryption scope for org/collection policy-enabled encryption.
+   * When set, encrypt/decrypt will use the policy and collection-scoped tags
+   * instead of selfencrypt/selfdecrypt realm roles.
+   */
+  abstract setEncryptionScope(scope: EncryptionScope | null): void;
+  abstract getEncryptionScope(): EncryptionScope | null;
 }

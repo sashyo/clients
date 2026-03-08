@@ -170,7 +170,7 @@
     "@microsoft/signalr": "8.0.7",
     "@microsoft/signalr-protocol-msgpack": "8.0.7",
     "@ng-select/ng-select": "20.7.0",
-    "@tidecloak/js": "0.13.16",
+    "@tidecloak/js": "0.13.21",
     "@tideorg/ui": "0.0.1",
     "big-integer": "1.6.52",
     "braintree-web-drop-in": "1.46.0",
@@ -222,7 +222,8 @@
     "tailwindcss": "$tailwindcss",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "@types/react": "18.3.27"
+    "@types/react": "18.3.27",
+    "heimdall-tide": "0.13.21"
   },
   "engines": {
     "node": ">=22.12.0",

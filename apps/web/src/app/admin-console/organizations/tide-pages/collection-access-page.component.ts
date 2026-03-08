@@ -83,9 +83,9 @@ interface AccessEntry {
                   class="tw-border tw-border-secondary-500 tw-rounded tw-px-2 tw-py-1 tw-bg-background tw-text-sm"
                   [ngModel]="entry.accessLevel"
                   (ngModelChange)="changeAccess(entry.collectionId, $event)"
+                  [disabled]="saving"
                 >
                   <option value="read">Read</option>
-                  <option value="read-hidden">Read (Hidden Passwords)</option>
                   <option value="write">Write</option>
                   <option value="manage">Manage</option>
                 </select>
@@ -93,6 +93,7 @@ interface AccessEntry {
               <td class="tw-py-2">
                 <button
                   class="tw-text-danger tw-text-sm tw-underline hover:tw-no-underline"
+                  [disabled]="saving"
                   (click)="removeAccess(entry.collectionId)"
                 >
                   Remove
@@ -129,7 +130,6 @@ interface AccessEntry {
               [(ngModel)]="newAccessLevel"
             >
               <option value="read">Read</option>
-              <option value="read-hidden">Read (Hidden Passwords)</option>
               <option value="write">Write</option>
               <option value="manage">Manage</option>
             </select>
@@ -166,13 +166,14 @@ export class OrgCollectionAccessPageComponent implements OnInit {
   private apiService = inject(ApiService);
   private cdr = inject(ChangeDetectorRef);
 
+  private orgId = "";
   private adminAPI: any;
   private collectionAccessAPI: any;
 
   async ngOnInit() {
-    const orgId = this.route.snapshot.params["organizationId"] ?? "";
-    this.adminAPI = createBackendAdminAPI(this.apiService, orgId);
-    this.collectionAccessAPI = createBackendCollectionAccessAPI(this.apiService, orgId);
+    this.orgId = this.route.snapshot.params["organizationId"] ?? "";
+    this.adminAPI = createBackendAdminAPI(this.apiService, this.orgId);
+    this.collectionAccessAPI = createBackendCollectionAccessAPI(this.apiService, this.orgId);
 
     this.loading = true;
     this.cdr.markForCheck();
@@ -182,9 +183,11 @@ export class OrgCollectionAccessPageComponent implements OnInit {
         this.adminAPI.getUsers(),
         this.collectionAccessAPI.getCollections(),
       ]);
+      console.info("[TideWarden] Loaded users:", users?.length, "collections:", collections?.length);
       this.users = users || [];
       this.collections = collections || [];
     } catch (e: any) {
+      console.error("[TideWarden] Failed to load users or collections:", e);
       this.errorMessage = "Failed to load users or collections.";
     }
 
@@ -193,6 +196,7 @@ export class OrgCollectionAccessPageComponent implements OnInit {
   }
 
   async onUserSelected() {
+    console.info("[TideWarden] onUserSelected called, selectedUserId:", this.selectedUserId);
     if (!this.selectedUserId) {
       this.userAccess = [];
       this.cdr.markForCheck();
@@ -204,8 +208,11 @@ export class OrgCollectionAccessPageComponent implements OnInit {
     this.cdr.markForCheck();
 
     try {
+      console.info("[TideWarden] Fetching access for user:", this.selectedUserId);
       this.userAccess = (await this.collectionAccessAPI.getUserAccess(this.selectedUserId)) || [];
-    } catch {
+      console.info("[TideWarden] User access loaded:", this.userAccess.length, "entries");
+    } catch (e: any) {
+      console.error("[TideWarden] Failed to load user access:", e);
       this.userAccess = [];
       this.errorMessage = "Failed to load user access.";
     }
@@ -236,8 +243,8 @@ export class OrgCollectionAccessPageComponent implements OnInit {
       );
       this.newCollectionId = "";
       await this.onUserSelected();
-    } catch {
-      this.errorMessage = "Failed to set collection access.";
+    } catch (e: any) {
+      this.errorMessage = e?.message || "Failed to set collection access.";
     }
 
     this.saving = false;
@@ -245,28 +252,41 @@ export class OrgCollectionAccessPageComponent implements OnInit {
   }
 
   async changeAccess(collectionId: string, newLevel: string) {
+    this.saving = true;
     this.errorMessage = "";
     this.cdr.markForCheck();
 
     try {
-      await this.collectionAccessAPI.setUserAccess(this.selectedUserId, collectionId, newLevel);
+      await this.collectionAccessAPI.setUserAccess(
+        this.selectedUserId,
+        collectionId,
+        newLevel,
+      );
       await this.onUserSelected();
-    } catch {
-      this.errorMessage = "Failed to update access level.";
-      this.cdr.markForCheck();
+    } catch (e: any) {
+      this.errorMessage = e?.message || "Failed to update access level.";
     }
+
+    this.saving = false;
+    this.cdr.markForCheck();
   }
 
   async removeAccess(collectionId: string) {
+    this.saving = true;
     this.errorMessage = "";
     this.cdr.markForCheck();
 
     try {
-      await this.collectionAccessAPI.removeUserAccess(this.selectedUserId, collectionId);
+      await this.collectionAccessAPI.removeUserAccess(
+        this.selectedUserId,
+        collectionId,
+      );
       await this.onUserSelected();
-    } catch {
-      this.errorMessage = "Failed to remove access.";
-      this.cdr.markForCheck();
+    } catch (e: any) {
+      this.errorMessage = e?.message || "Failed to remove access.";
     }
+
+    this.saving = false;
+    this.cdr.markForCheck();
   }
 }

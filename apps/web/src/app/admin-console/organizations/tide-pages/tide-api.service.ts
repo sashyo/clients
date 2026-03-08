@@ -44,16 +44,16 @@ export function createBackendPolicyApprovalsAPI(apiService: ApiService, orgId: s
       return await apiService.send("POST", basePath, data, true, true);
     },
 
-    approve: async (id: string, rejected?: boolean, username?: string) => {
-      await apiService.send("POST", `${basePath}/${id}/approve`, { rejected, username }, true, false);
+    approve: async (id: string, rejected?: boolean, username?: string, policyRequestData?: string) => {
+      await apiService.send("POST", `${basePath}/${id}/approve`, { rejected, username, policyRequestData }, true, false);
     },
 
     revoke: async (id: string, username?: string) => {
       await apiService.send("POST", `${basePath}/${id}/revoke`, { username }, true, false);
     },
 
-    commit: async (id: string) => {
-      await apiService.send("POST", `${basePath}/${id}/commit`, null, true, false);
+    commit: async (id: string, signedPolicyData?: string, signedPolicySignature?: string) => {
+      await apiService.send("POST", `${basePath}/${id}/commit`, { signedPolicyData, signedPolicySignature }, true, false);
     },
 
     cancel: async (id: string) => {
@@ -218,24 +218,91 @@ export function createBackendCollectionAccessAPI(apiService: ApiService, orgId: 
       );
     },
 
-    setUserAccess: async (userId: string, collectionId: string, accessLevel: string) => {
+    setUserAccess: async (
+      userId: string,
+      collectionId: string,
+      accessLevel: string,
+      membershipData?: string,
+      signature?: string,
+    ) => {
       return await apiService.send(
         "POST",
         `${basePath}/users/${userId}/collection-access`,
-        { collectionId, accessLevel },
+        { collectionId, accessLevel, membershipData, signature },
         true,
         true,
       );
     },
 
-    removeUserAccess: async (userId: string, collectionId: string) => {
+    removeUserAccess: async (
+      userId: string,
+      collectionId: string,
+      membershipData?: string,
+      signature?: string,
+    ) => {
       await apiService.send(
-        "DELETE",
-        `${basePath}/users/${userId}/collection-access/${collectionId}`,
-        null,
+        "POST",
+        `${basePath}/users/${userId}/collection-access/remove`,
+        { collectionId, membershipData, signature },
         true,
         false,
       );
+    },
+
+    getCommittedPolicy: async (roleName: string) => {
+      return await apiService.send(
+        "GET",
+        `${basePath}/committed-policies/${encodeURIComponent(roleName)}`,
+        null,
+        true,
+        true,
+      );
+    },
+
+    getAdminPolicy: async () => {
+      return await apiService.send("GET", `${basePath}/admin-policy`, null, true, true);
+    },
+
+    resetCryptoPolicy: async () => {
+      return await apiService.send("DELETE", `${basePath}/crypto-policy`, null, true, true);
+    },
+
+    getMembershipSig: async (collectionId: string) => {
+      return await apiService.send(
+        "GET",
+        `${basePath}/collection-membership-sig/${collectionId}`,
+        null,
+        true,
+        true,
+      );
+    },
+
+    storeMembershipSig: async (
+      collectionId: string,
+      membershipData: string,
+      signature: string,
+    ) => {
+      return await apiService.send(
+        "POST",
+        `${basePath}/collection-membership-sig`,
+        { collectionId, membershipData, signature },
+        true,
+        true,
+      );
+    },
+
+    getTideUserContext: async (tcUserId: string, clientId: string) => {
+      return await apiService.send(
+        "GET",
+        `${basePath}/user-context/${encodeURIComponent(tcUserId)}/${encodeURIComponent(clientId)}`,
+        null,
+        true,
+        true,
+      );
+    },
+
+    getVvkPublic: async () => {
+      return await apiService.send("GET", `${basePath}/vvk-public`, null, true, true);
     },
   };
 }
@@ -256,6 +323,92 @@ export function createBackendPolicyLogsAPI(apiService: ApiService, orgId: string
 
     addLog: async (log: any) => {
       await apiService.send("POST", basePath, log, true, false);
+    },
+  };
+}
+
+export function createBackendChangeRequestAPI(apiService: ApiService, orgId: string): any {
+  const basePath = `/organizations/${orgId}/tide/change-requests`;
+
+  return {
+    getPendingChangeSets: async () => {
+      const [users, roles, clients] = await Promise.all([
+        apiService.send("GET", `${basePath}/users`, null, true, true).catch((): any[] => []),
+        apiService.send("GET", `${basePath}/roles`, null, true, true).catch((): any[] => []),
+        apiService.send("GET", `${basePath}/clients`, null, true, true).catch((): any[] => []),
+      ]);
+      return [...(users || []), ...(roles || []), ...(clients || [])];
+    },
+
+    approveChangeSet: async (changeSet: any) => {
+      return await apiService.send("POST", `${basePath}/sign`, changeSet, true, true);
+    },
+
+    commitChangeSet: async (changeSet: any) => {
+      return await apiService.send("POST", `${basePath}/commit`, changeSet, true, true);
+    },
+
+    cancelChangeSet: async (changeSet: any) => {
+      return await apiService.send("POST", `${basePath}/cancel`, changeSet, true, true);
+    },
+
+    getRawChangeSetRequest: async (changeSet: any) => {
+      const result = await apiService.send("POST", `${basePath}/sign`, changeSet, true, true);
+      if (Array.isArray(result)) return result;
+      return [result];
+    },
+
+    approveChangeSetWithSignature: async (changeSet: any, signedRequest: string) => {
+      // Step 1: Record the approval (add-review) with signed request data
+      await apiService.send(
+        "POST",
+        `${basePath}/add-review`,
+        {
+          changeSetId: changeSet.changeSetId,
+          changeSetType: changeSet.changeSetType,
+          actionType: changeSet.actionType,
+          requests: [signedRequest],
+        },
+        true,
+        false,
+      );
+      // Step 2: Commit the change set
+      await apiService.send(
+        "POST",
+        `${basePath}/commit`,
+        changeSet,
+        true,
+        false,
+      );
+    },
+
+    addReview: async (changeSet: any, signedRequests: string[]) => {
+      await apiService.send(
+        "POST",
+        `${basePath}/add-review`,
+        {
+          changeSetId: changeSet.changeSetId,
+          changeSetType: changeSet.changeSetType,
+          actionType: changeSet.actionType,
+          requests: signedRequests,
+        },
+        true,
+        false,
+      );
+    },
+
+    addRejection: async (changeSet: any) => {
+      await apiService.send(
+        "POST",
+        `${basePath}/add-rejection`,
+        {
+          changeSetId: changeSet.changeSetId,
+          changeSetType: changeSet.changeSetType,
+          actionType: changeSet.actionType,
+        },
+        true,
+        false,
+      );
     },
   };
 }

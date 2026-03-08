@@ -1,6 +1,7 @@
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import {
+  EncryptionScope,
   TideCloakConfig,
   TideCloakService,
 } from "@bitwarden/common/key-management/tidecloak/abstractions/tidecloak.service";
@@ -27,6 +28,7 @@ export class OffscreenTideCloakService extends TideCloakService {
   private initializingPromise: Promise<void> | null = null;
   private _skipOrkDecrypt = false;
   private _skipOrkEncrypt = false;
+  private _encryptionScope: EncryptionScope | null = null;
 
   /** Resolving this releases the persistent hold on the offscreen document. */
   private keepAliveResolve: (() => void) | null = null;
@@ -75,7 +77,7 @@ export class OffscreenTideCloakService extends TideCloakService {
     this.logService.info("[OffscreenTideCloak] Enclave initialized via offscreen document");
   }
 
-  async encrypt(data: Uint8Array, tags: string[]): Promise<Uint8Array> {
+  async encrypt(data: Uint8Array, tags: string[], decryptionPolicy?: Uint8Array): Promise<Uint8Array> {
     if (!this._initialized) {
       throw new Error("[OffscreenTideCloak] Encrypt failed: Enclave not initialized");
     }
@@ -86,6 +88,7 @@ export class OffscreenTideCloakService extends TideCloakService {
       error?: string;
     }>("tidecloakEncrypt", {
       dataB64: Utils.fromBufferToB64(data),
+      policyB64: decryptionPolicy ? Utils.fromBufferToB64(decryptionPolicy) : undefined,
       tags,
     });
 
@@ -98,7 +101,7 @@ export class OffscreenTideCloakService extends TideCloakService {
     return Utils.fromB64ToArray(response.resultB64);
   }
 
-  async decrypt(encrypted: Uint8Array, tags: string[]): Promise<Uint8Array> {
+  async decrypt(encrypted: Uint8Array, tags: string[], decryptionPolicy?: Uint8Array): Promise<Uint8Array> {
     if (!this._initialized) {
       throw new Error("[OffscreenTideCloak] Decrypt failed: Enclave not initialized");
     }
@@ -109,6 +112,7 @@ export class OffscreenTideCloakService extends TideCloakService {
       error?: string;
     }>("tidecloakDecrypt", {
       encryptedB64: Utils.fromBufferToB64(encrypted),
+      policyB64: decryptionPolicy ? Utils.fromBufferToB64(decryptionPolicy) : undefined,
       tags,
     });
 
@@ -187,6 +191,14 @@ export class OffscreenTideCloakService extends TideCloakService {
     return this._skipOrkEncrypt;
   }
 
+  setEncryptionScope(scope: EncryptionScope | null): void {
+    this._encryptionScope = scope;
+  }
+
+  getEncryptionScope(): EncryptionScope | null {
+    return this._encryptionScope;
+  }
+
   async createTideRequest(_encodedRequest: Uint8Array): Promise<Uint8Array> {
     throw new Error("[OffscreenTideCloak] createTideRequest not supported in browser extension");
   }
@@ -208,8 +220,13 @@ export class OffscreenTideCloakService extends TideCloakService {
     throw new Error("[OffscreenTideCloak] approveTideRequests not supported in browser extension");
   }
 
-  async executeSignRequest(_request: Uint8Array): Promise<Uint8Array[]> {
+  async executeSignRequest(_request: Uint8Array, _initialize?: boolean): Promise<Uint8Array[]> {
     throw new Error("[OffscreenTideCloak] executeSignRequest not supported in browser extension");
+  }
+
+  getDoken(): string | null {
+    // In browser extension, doken is persisted in storage; not available synchronously
+    return null;
   }
 
   destroy(): void {

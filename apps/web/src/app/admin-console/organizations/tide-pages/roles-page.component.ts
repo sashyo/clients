@@ -8,15 +8,19 @@ import { ReactHostComponent } from "../../../shared/react-host/react-host.compon
 
 import {
   createBackendAdminAPI,
+  createBackendCollectionAccessAPI,
   createBackendPolicyAPI,
   createBackendPolicyApprovalsAPI,
   createBackendPolicyLogsAPI,
   createBackendTemplateAPI,
 } from "./tide-api.service";
+import { ORG_OWNER_CONTRACT } from "./collection-owner-contract";
+import { ORG_CRYPTO_CONTRACT } from "./org-crypto-contract";
 import {
   loadTideLibs,
   areTideLibsAvailable,
   createSignedPolicyRequest,
+  MODEL_IDS,
 } from "./tide-policy.service";
 
 @Component({
@@ -45,6 +49,7 @@ export class OrgRolesPageComponent implements OnInit {
     const policyAPI = createBackendPolicyAPI(this.apiService, orgId);
     const policyApprovalsAPI = createBackendPolicyApprovalsAPI(this.apiService, orgId);
     const policyLogsAPI = createBackendPolicyLogsAPI(this.apiService, orgId);
+    const collectionAccessAPI = createBackendCollectionAccessAPI(this.apiService, orgId);
     const tideCloakService = this.tideCloakService;
     const templateAPI = createBackendTemplateAPI(this.apiService, orgId);
 
@@ -61,9 +66,14 @@ export class OrgRolesPageComponent implements OnInit {
         templateParams?: Record<string, any>;
         threshold: number;
       }) => {
-        // Resolve contract code from the selected template (like KeyleSSH's SSH_CONTRACT)
+        // Resolve contract code: use built-in contracts for orgOwner/appUser,
+        // or fetch from template for custom roles.
         let contractCode: string | undefined;
-        if (params.templateId) {
+        if (params.roleName === "orgOwner") {
+          contractCode = ORG_OWNER_CONTRACT;
+        } else if (params.roleName === "appUser") {
+          contractCode = ORG_CRYPTO_CONTRACT;
+        } else if (params.templateId) {
           try {
             const template = await templateAPI.getTemplate(params.templateId);
             contractCode = template?.csCode;
@@ -73,7 +83,7 @@ export class OrgRolesPageComponent implements OnInit {
         }
 
         const approvalType = params.policyConfig?.approvalType || "explicit";
-        const executionType = params.policyConfig?.executionType || "private";
+        const executionType = params.policyConfig?.executionType || "public";
 
         // Save role policy config to backend
         await policyAPI.upsertPolicy({
@@ -87,16 +97,13 @@ export class OrgRolesPageComponent implements OnInit {
           templateParams: params.templateParams,
         });
 
-        // Build policyRequestData — attempt Tide signing (like KeyleSSH),
-        // fall back to JSON if anything fails so the approval is always created
-        let policyRequestData: string;
+        // Build policyRequestData via Tide signing
+        await loadTideLibs();
+        await tideCloakService.ensureInitialized();
 
-        try {
-          await loadTideLibs();
-          await tideCloakService.ensureInitialized();
-
-          if (contractCode && areTideLibsAvailable() && tideCloakService.isInitialized()) {
-            console.info("[TideWarden] Creating Tide-signed policy request");
+        let policyRequestData: string | undefined;
+        if (contractCode && areTideLibsAvailable() && tideCloakService.isInitialized()) {
+          try {
             const { policyRequestBase64 } = await createSignedPolicyRequest(
               {
                 roleName: params.roleName,
@@ -106,41 +113,93 @@ export class OrgRolesPageComponent implements OnInit {
                 resource: tideCloakService.getResource(),
                 vendorId: tideCloakService.getVendorId(),
                 contractCode,
+                templateParams: params.templateParams,
               },
               tideCloakService,
             );
             policyRequestData = policyRequestBase64;
-          } else {
-            console.warn(
-              "[TideWarden] Tide signing not available, using JSON fallback.",
-              "contractCode:", !!contractCode,
-              "tideLibs:", areTideLibsAvailable(),
-              "enclaveReady:", tideCloakService.isInitialized(),
-            );
-            policyRequestData = JSON.stringify({
-              roleName: params.roleName,
-              contractCode,
-              approvalType,
-              executionType,
-            });
+            console.info("[TideWarden] Created signed policy request for", params.roleName, ":", policyRequestData.length, "chars");
+          } catch (e) {
+            console.error("[TideWarden] Failed to create signed policy request:", e);
           }
-        } catch (e) {
-          console.error("[TideWarden] Tide signing failed, using JSON fallback:", e);
-          policyRequestData = JSON.stringify({
-            roleName: params.roleName,
-            contractCode,
-            approvalType,
-            executionType,
-          });
         }
 
-        // Create pending approval in backend
-        await policyApprovalsAPI.createApproval({
-          roleId: params.roleName,
-          threshold: params.threshold,
-          policyRequestData,
-          contractCode,
-        });
+        // Create or update pending approval in backend.
+        // The backend sync may have already created an empty approval for this role,
+        // so update the existing one instead of creating a duplicate.
+        const existingApprovals = await policyApprovalsAPI.getPendingPolicies();
+        const existingApproval = existingApprovals.find(
+          (a: any) => a.roleId === params.roleName && !a.policyRequestData,
+        );
+        if (existingApproval && policyRequestData) {
+          await this.apiService.send(
+            "PUT",
+            `/organizations/${orgId}/tide/policy-approvals/${existingApproval.id}/data`,
+            { policyRequestData, contractCode },
+            true,
+            false,
+          );
+          console.info("[TideWarden] Updated existing approval", existingApproval.id, "with policyRequestData");
+        } else if (policyRequestData) {
+          await policyApprovalsAPI.createApproval({
+            roleId: params.roleName,
+            threshold: params.threshold,
+            policyRequestData,
+            contractCode,
+          });
+          console.info("[TideWarden] Created new approval for", params.roleName);
+        } else {
+          console.error("[TideWarden] Cannot create policy — no policyRequestData generated");
+        }
+
+        // When creating orgOwner, also update/create the appUser crypto policy
+        if (params.roleName === "orgOwner" && areTideLibsAvailable() && tideCloakService.isInitialized()) {
+          try {
+            // Delete any existing committed appUser crypto policy so we can recreate with correct model IDs
+            try {
+              await collectionAccessAPI.resetCryptoPolicy();
+            } catch {
+              // No existing policy to reset — that's fine
+            }
+            const cryptoContractCode = ORG_CRYPTO_CONTRACT;
+            const { policyRequestBase64: cryptoPolicyBase64 } = await createSignedPolicyRequest(
+              {
+                roleName: "appUser",
+                threshold: 1,
+                approvalType: "implicit",
+                executionType: "private",
+                modelId: [MODEL_IDS.ENCRYPTION, MODEL_IDS.DECRYPTION],
+                resource: tideCloakService.getResource(),
+                vendorId: tideCloakService.getVendorId(),
+                contractCode: cryptoContractCode,
+              },
+              tideCloakService,
+            );
+            // Update existing empty appUser approval or create new
+            const existingAppUser = existingApprovals.find(
+              (a: any) => a.roleId === "appUser" && !a.policyRequestData,
+            );
+            if (existingAppUser) {
+              await this.apiService.send(
+                "PUT",
+                `/organizations/${orgId}/tide/policy-approvals/${existingAppUser.id}/data`,
+                { policyRequestData: cryptoPolicyBase64, contractCode: cryptoContractCode },
+                true,
+                false,
+              );
+            } else {
+              await policyApprovalsAPI.createApproval({
+                roleId: "appUser",
+                threshold: 1,
+                policyRequestData: cryptoPolicyBase64,
+                contractCode: cryptoContractCode,
+              });
+            }
+            console.info("[TideWarden] appUser crypto policy ready alongside orgOwner");
+          } catch (cryptoErr) {
+            console.warn("[TideWarden] Failed to create appUser crypto policy:", cryptoErr);
+          }
+        }
 
         // Log the policy creation
         await policyLogsAPI.addLog({

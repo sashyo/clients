@@ -9649,6 +9649,9 @@
   "collectionAccess": {
     "message": "Collection Access"
   },
+  "membershipProofs": {
+    "message": "Membership Proofs"
+  },
   "deviceApprovalsDesc": {
     "message": "Approve login requests below to allow the requesting member to finish logging in. Unapproved requests expire after 1 week. Verify the member’s information before approving."
   },

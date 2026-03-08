@@ -136,6 +136,58 @@ export class CipherService implements CipherServiceAbstraction {
     private tideCloakService: TideCloakService,
   ) {}
 
+  // Cached committed crypto policy bytes (appUser role) for PolicyEnabledEncryption/Decryption
+  private _cryptoPolicyCache: Map<string, Uint8Array> = new Map();
+
+  /**
+   * Fetches and caches the committed crypto policy (appUser) for an org.
+   * Returns the signed policy bytes, or null if no crypto policy is committed.
+   */
+  private async getCryptoPolicy(orgId: string): Promise<Uint8Array | null> {
+    if (this._cryptoPolicyCache.has(orgId)) {
+      return this._cryptoPolicyCache.get(orgId);
+    }
+    try {
+      const response = await this.apiService.send(
+        "GET",
+        `/organizations/${orgId}/tide/crypto-policy`,
+        null,
+        true,
+        true,
+      );
+      if (response?.signedPolicyData) {
+        const bytes = Utils.fromB64ToArray(response.signedPolicyData);
+        this._cryptoPolicyCache.set(orgId, bytes);
+        return bytes;
+      }
+    } catch (e) {
+      this.logService.warning(`[CipherService] Failed to fetch crypto policy for org ${orgId}: ${e}`);
+    }
+    return null;
+  }
+
+  /**
+   * Sets the encryption scope on the TideCloakService for org cipher operations.
+   * Uses the committed crypto policy for PolicyEnabledEncryption/Decryption.
+   */
+  async setOrgEncryptionScope(orgId: string, collectionIds: string[]): Promise<void> {
+    const policy = await this.getCryptoPolicy(orgId);
+    if (policy) {
+      this.logService.info(
+        `[CipherService] Setting org encryption scope: orgId=${orgId}, collections=${collectionIds.length}, policyBytes=${policy.length}`,
+      );
+      this.tideCloakService.setEncryptionScope({ orgId, collectionIds, policy });
+    } else {
+      this.logService.warning(
+        `[CipherService] No committed crypto policy for org ${orgId} — org cipher encryption will fail`,
+      );
+    }
+  }
+
+  clearEncryptionScope(): void {
+    this.tideCloakService.setEncryptionScope(null);
+  }
+
   localData$(userId: UserId): Observable<Record<CipherId, LocalData>> {
     return this.localDataState(userId).state$.pipe(map((data) => data ?? {}));
   }
@@ -524,12 +576,50 @@ export class CipherService implements CipherServiceAbstraction {
 
   async getAllDecryptedFullOrk(userId: UserId): Promise<CipherView[]> {
     const ciphers = await this.getAll(userId);
-    const result = await this.decryptCiphersInternal(ciphers, userId);
-    if (result == null) {
+    const keys = await firstValueFrom(this.keyService.cipherDecryptionKeys$(userId));
+    if (keys == null || (keys.userKey == null && Object.keys(keys.orgKeys).length === 0)) {
       return [];
     }
-    const [decrypted] = result;
-    return decrypted;
+
+    // Group ciphers by orgId so we can set per-org encryption scope
+    const grouped = ciphers.reduce(
+      (agg, c) => {
+        agg[c.organizationId ?? "personal"] ??= [];
+        agg[c.organizationId ?? "personal"].push(c);
+        return agg;
+      },
+      {} as Record<string, Cipher[]>,
+    );
+
+    const allViews: CipherView[] = [];
+    // Process each org group sequentially to avoid concurrent scope conflicts
+    for (const [orgId, groupedCiphers] of Object.entries(grouped)) {
+      if (orgId !== "personal") {
+        const collectionIds = [...new Set(groupedCiphers.flatMap((c) => c.collectionIds ?? []))];
+        await this.setOrgEncryptionScope(orgId, collectionIds);
+      }
+      try {
+        const key = keys.orgKeys[orgId as OrganizationId] ?? keys.userKey;
+        const views = await Promise.all(
+          groupedCiphers.map(async (cipher) => {
+            try {
+              return await cipher.decrypt(key);
+            } catch {
+              const failedView = new CipherView(cipher);
+              failedView.name = "[error: cannot decrypt]";
+              failedView.decryptionFailure = true;
+              return failedView;
+            }
+          }),
+        );
+        allViews.push(...views);
+      } finally {
+        this.clearEncryptionScope();
+      }
+    }
+
+    allViews.sort(this.getLocaleSortingFunction());
+    return allViews;
   }
 
   private async getDecryptedCiphers(userId: UserId) {
@@ -644,16 +734,24 @@ export class CipherService implements CipherServiceAbstraction {
    * @returns A promise that resolves to the decrypted cipher view.
    */
   async decrypt(cipher: Cipher, userId: UserId): Promise<CipherView> {
-    // TideCloak: force legacy TS path (SDK doesn't know encryption type 100)
+    // TideCloak: force legacy TS path (SDK doesn't know encryption type 100/102)
     const tideActive = await this.isTideCloakActive();
     this.logService.info(`[CipherService.decrypt] tideActive=${tideActive}`);
     if (tideActive) {
-      const encKey = await this.getKeyForCipherKeyDecryption(cipher, userId);
-      const result = await cipher.decrypt(encKey);
-      this.logService.info(
-        `[CipherService.decrypt] TideCloak legacy path - login.username=${result.login?.username != null}, login.password=${result.login?.password != null}`,
-      );
-      return result;
+      // Set encryption scope for org cipher decryption (PolicyEnabledDecryption)
+      if (cipher.organizationId && cipher.collectionIds?.length > 0) {
+        await this.setOrgEncryptionScope(cipher.organizationId, cipher.collectionIds);
+      }
+      try {
+        const encKey = await this.getKeyForCipherKeyDecryption(cipher, userId);
+        const result = await cipher.decrypt(encKey);
+        this.logService.info(
+          `[CipherService.decrypt] TideCloak legacy path - login.username=${result.login?.username != null}, login.password=${result.login?.password != null}`,
+        );
+        return result;
+      } finally {
+        this.clearEncryptionScope();
+      }
     }
     if (await this.configService.getFeatureFlag(FeatureFlag.PM19941MigrateCipherDomainToSdk)) {
       this.logService.info(`[CipherService.decrypt] Using SDK path`);
@@ -836,21 +934,32 @@ export class CipherService implements CipherServiceAbstraction {
 
     const ciphers = response.data.map((cr) => new Cipher(new CipherData(cr)));
     const key = await this.keyService.getOrgKey(organizationId);
-    const decCiphers: CipherView[] = await Promise.all(
-      ciphers.map(async (cipher) => {
-        try {
-          return await cipher.decrypt(key);
-        } catch {
-          const failedView = new CipherView(cipher);
-          failedView.name = "[error: cannot decrypt]";
-          failedView.decryptionFailure = true;
-          return failedView;
-        }
-      }),
-    );
 
-    decCiphers.sort(this.getLocaleSortingFunction());
-    return decCiphers;
+    // Set encryption scope for org ciphers (PolicyEnabledDecryption)
+    const allCollectionIds = [
+      ...new Set(ciphers.flatMap((c) => c.collectionIds ?? [])),
+    ];
+    await this.setOrgEncryptionScope(organizationId, allCollectionIds);
+
+    try {
+      const decCiphers: CipherView[] = await Promise.all(
+        ciphers.map(async (cipher) => {
+          try {
+            return await cipher.decrypt(key);
+          } catch {
+            const failedView = new CipherView(cipher);
+            failedView.name = "[error: cannot decrypt]";
+            failedView.decryptionFailure = true;
+            return failedView;
+          }
+        }),
+      );
+
+      decCiphers.sort(this.getLocaleSortingFunction());
+      return decCiphers;
+    } finally {
+      this.clearEncryptionScope();
+    }
   }
 
   async getLastUsedForUrl(
@@ -991,9 +1100,17 @@ export class CipherService implements CipherServiceAbstraction {
       );
     }
 
-    const encrypted = await this.encrypt(cipherView, userId);
-    const result = await this.createWithServer_legacy(encrypted, orgAdmin);
-    return await this.decrypt(result, userId);
+    // Set encryption scope for org cipher (PolicyEnabledEncryption)
+    if (cipherView.organizationId && cipherView.collectionIds?.length > 0) {
+      await this.setOrgEncryptionScope(cipherView.organizationId, cipherView.collectionIds);
+    }
+    try {
+      const encrypted = await this.encrypt(cipherView, userId);
+      const result = await this.createWithServer_legacy(encrypted, orgAdmin);
+      return await this.decrypt(result, userId);
+    } finally {
+      this.clearEncryptionScope();
+    }
   }
 
   private async createWithServerUsingSdk(
@@ -1053,10 +1170,18 @@ export class CipherService implements CipherServiceAbstraction {
       return await this.updateWithServerUsingSdk(cipherView, userId, originalCipherView, orgAdmin);
     }
 
-    const encrypted = await this.encrypt(cipherView, userId);
-    const updatedCipher = await this.updateWithServer_legacy(encrypted, orgAdmin);
-    const updatedCipherView = await this.decrypt(updatedCipher, userId);
-    return updatedCipherView;
+    // Set encryption scope for org cipher (PolicyEnabledEncryption)
+    if (cipherView.organizationId && cipherView.collectionIds?.length > 0) {
+      await this.setOrgEncryptionScope(cipherView.organizationId, cipherView.collectionIds);
+    }
+    try {
+      const encrypted = await this.encrypt(cipherView, userId);
+      const updatedCipher = await this.updateWithServer_legacy(encrypted, orgAdmin);
+      const updatedCipherView = await this.decrypt(updatedCipher, userId);
+      return updatedCipherView;
+    } finally {
+      this.clearEncryptionScope();
+    }
   }
 
   async updateWithServerUsingSdk(
@@ -1117,43 +1242,50 @@ export class CipherService implements CipherServiceAbstraction {
 
     await this.adjustCipherHistory(cipher, userId, originalCipher);
 
+    // Set encryption scope for org cipher (PolicyEnabledEncryption)
+    await this.setOrgEncryptionScope(organizationId, collectionIds);
+
     let encCipher: EncryptionContext;
-    if (sdkCipherEncryptionEnabled) {
-      // The SDK does not expect the cipher to already have an organizationId. It will result in the wrong
-      // cipher encryption key being used during the move to organization operation.
-      if (cipher.organizationId != null) {
-        throw new Error("Cipher is already associated with an organization.");
-      }
+    try {
+      if (sdkCipherEncryptionEnabled) {
+        // The SDK does not expect the cipher to already have an organizationId. It will result in the wrong
+        // cipher encryption key being used during the move to organization operation.
+        if (cipher.organizationId != null) {
+          throw new Error("Cipher is already associated with an organization.");
+        }
 
-      encCipher = await this.cipherEncryptionService.moveToOrganization(
-        cipher,
-        organizationId as OrganizationId,
-        userId,
-      );
-      encCipher.cipher.collectionIds = collectionIds;
-    } else {
-      // This old attachment logic is safe to remove after it is replaced in PM-22750; which will require fixing
-      // the attachment before sharing.
-      const attachmentPromises: Promise<any>[] = [];
-      if (cipher.attachments != null) {
-        cipher.attachments.forEach((attachment) => {
-          if (attachment.key == null) {
-            attachmentPromises.push(
-              this.shareAttachmentWithServer(
-                attachment,
-                cipher.id,
-                organizationId,
-                cipher.revisionDate,
-              ),
-            );
-          }
-        });
-      }
-      await Promise.all(attachmentPromises);
+        encCipher = await this.cipherEncryptionService.moveToOrganization(
+          cipher,
+          organizationId as OrganizationId,
+          userId,
+        );
+        encCipher.cipher.collectionIds = collectionIds;
+      } else {
+        // This old attachment logic is safe to remove after it is replaced in PM-22750; which will require fixing
+        // the attachment before sharing.
+        const attachmentPromises: Promise<any>[] = [];
+        if (cipher.attachments != null) {
+          cipher.attachments.forEach((attachment) => {
+            if (attachment.key == null) {
+              attachmentPromises.push(
+                this.shareAttachmentWithServer(
+                  attachment,
+                  cipher.id,
+                  organizationId,
+                  cipher.revisionDate,
+                ),
+              );
+            }
+          });
+        }
+        await Promise.all(attachmentPromises);
 
-      cipher.organizationId = organizationId;
-      cipher.collectionIds = collectionIds;
-      encCipher = await this.encryptSharedCipher(cipher, userId);
+        cipher.organizationId = organizationId;
+        cipher.collectionIds = collectionIds;
+        encCipher = await this.encryptSharedCipher(cipher, userId);
+      }
+    } finally {
+      this.clearEncryptionScope();
     }
 
     const request = new CipherShareRequest(encCipher);
@@ -1172,8 +1304,13 @@ export class CipherService implements CipherServiceAbstraction {
     const sdkCipherEncryptionEnabled = await this.configService.getFeatureFlag(
       FeatureFlag.PM22136_SdkCipherEncryption,
     );
+
+    // Set encryption scope for org cipher (PolicyEnabledEncryption)
+    await this.setOrgEncryptionScope(organizationId, collectionIds);
+
     const promises: Promise<any>[] = [];
     const encCiphers: Cipher[] = [];
+    try {
     for (const cipher of ciphers) {
       if (sdkCipherEncryptionEnabled) {
         // The SDK does not expect the cipher to already have an organizationId. It will result in the wrong
@@ -1201,6 +1338,9 @@ export class CipherService implements CipherServiceAbstraction {
       }
     }
     await Promise.all(promises);
+    } finally {
+      this.clearEncryptionScope();
+    }
     const request = new CipherBulkShareRequest(encCiphers, collectionIds, userId);
     try {
       const response = await this.apiService.putShareCiphers(request);

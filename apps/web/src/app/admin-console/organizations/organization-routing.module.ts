@@ -101,10 +101,10 @@ const routes: Routes = [
         canActivate: [organizationPermissionsGuard(canAccessSettingsTab)],
       },
       {
-        path: "collection-access",
+        path: "membership-proofs",
         loadComponent: () =>
-          import("./tide-pages/collection-access-page.component").then(
-            (m) => m.OrgCollectionAccessPageComponent,
+          import("./tide-pages/membership-proofs-page.component").then(
+            (m) => m.OrgMembershipProofsPageComponent,
           ),
         canActivate: [organizationPermissionsGuard(canAccessSettingsTab)],
       },

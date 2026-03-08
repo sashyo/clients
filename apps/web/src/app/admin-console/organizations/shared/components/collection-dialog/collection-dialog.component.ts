@@ -51,8 +51,10 @@ import {
   ToastService,
 } from "@bitwarden/components";
 
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { openChangePlanDialog } from "../../../../../billing/organizations/change-plan-dialog.component";
 import { SharedModule } from "../../../../../shared";
+import { createBackendAdminAPI, createBackendCollectionAccessAPI } from "../../../tide-pages/tide-api.service";
 import { GroupApiService, GroupView } from "../../../core";
 import { freeOrgCollectionLimitValidator } from "../../validators/free-org-collection-limit.validator";
 import { PermissionMode } from "../access-selector/access-selector.component";
@@ -149,6 +151,8 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
   protected buttonDisplayName: ButtonType = ButtonType.Save;
   protected initialPermission: CollectionPermission;
   private orgExceedingCollectionLimit!: Organization;
+  private orgUsers: OrganizationUserUserMiniResponse[] = [];
+  private committedPolicyData: string | null = null;
 
   constructor(
     @Inject(DIALOG_DATA) private params: CollectionDialogParams,
@@ -165,6 +169,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
     private toastService: ToastService,
     private collectionService: CollectionService,
     private configService: ConfigService,
+    private apiService: ApiService,
   ) {
     this.tabIndex = params.initialTab ?? CollectionDialogTabType.Info;
     this.initialPermission = params.initialPermission ?? CollectionPermission.View;
@@ -255,6 +260,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.formGroup.controls.selectedOrg.valueChanges), takeUntil(this.destroy$))
       .subscribe(({ organization, collections: allCollections, groups, users }) => {
         this.organization = organization;
+        this.orgUsers = users.data;
 
         if (this.params.collectionId) {
           this.collection = allCollections.find((c) => c.id === this.collectionId);
@@ -443,6 +449,14 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
       ? await this.collectionAdminService.update(collectionView, userId)
       : await this.collectionAdminService.create(collectionView, userId);
 
+    // Tide: sign the membership list after standard save
+    await this.signAndStoreMembership(
+      collectionResponse.id || (this.params.collectionId as string),
+      collectionView.name,
+      collectionView.organizationId,
+      this.formGroup.controls.access.value,
+    );
+
     this.toastService.showToast({
       variant: "success",
       message: this.i18nService.t(
@@ -453,6 +467,92 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
 
     this.close(CollectionDialogAction.Saved, collectionResponse);
   };
+
+  /**
+   * Assign TideCloak collection-scoped roles for each member.
+   * This triggers change requests through the normal TideCloak approval flow.
+   * Role format: org:{orgId}:collection:{colId}:{level}
+   */
+  private async signAndStoreMembership(
+    collectionId: string,
+    _collectionName: string,
+    orgId: string,
+    accessValues: AccessItemValue[],
+  ): Promise<void> {
+    // Fetch TideCloak users to resolve TC user IDs (matched by email)
+    const adminApi = createBackendAdminAPI(this.apiService, orgId);
+    let tcUsers: any[] = [];
+    try {
+      tcUsers = await adminApi.getUsers();
+    } catch (e) {
+      console.warn("[TideWarden] Could not fetch TideCloak users:", e);
+      return;
+    }
+
+    // Build email → TC user ID map
+    const emailToTcId = new Map<string, string>();
+    for (const tcUser of tcUsers) {
+      const email = tcUser.email?.toLowerCase();
+      if (email && tcUser.id) {
+        emailToTcId.set(email, tcUser.id);
+      }
+    }
+
+    // Map Bitwarden permission to TideCloak access level
+    const toAccessLevel = (perm: string): string => {
+      switch (perm) {
+        case "manage":
+          return "manage";
+        case "edit":
+        case "editExceptPass":
+          return "write";
+        default:
+          return "read";
+      }
+    };
+
+    const api = createBackendCollectionAccessAPI(this.apiService, orgId);
+
+    // Ensure the collection creator always gets a manage role
+    const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
+    const creatorEmail = activeAccount?.email?.toLowerCase();
+    const creatorTcId = creatorEmail ? emailToTcId.get(creatorEmail) : undefined;
+    const assignedTcIds = new Set<string>();
+
+    if (creatorTcId) {
+      try {
+        await api.setUserAccess(creatorTcId, collectionId, "manage");
+        assignedTcIds.add(creatorTcId);
+        console.info(`[TideWarden] Assigned collection role: ${creatorEmail} → manage (creator)`);
+      } catch (e) {
+        console.warn(`[TideWarden] Failed to assign creator collection role for ${creatorEmail}:`, e);
+      }
+    }
+
+    const memberAccessValues = accessValues.filter((v) => v.type === AccessItemType.Member);
+
+    for (const v of memberAccessValues) {
+      const orgUser = this.orgUsers.find((u) => u.id === v.id);
+      if (!orgUser) {
+        continue;
+      }
+      const tcId = emailToTcId.get(orgUser.email?.toLowerCase());
+      if (!tcId || assignedTcIds.has(tcId)) {
+        if (!tcId) {
+          console.warn(`[TideWarden] No TideCloak user for ${orgUser.email} — skipping role assignment`);
+        }
+        continue;
+      }
+      const level = toAccessLevel(v.permission as string);
+      try {
+        await api.setUserAccess(tcId, collectionId, level);
+        assignedTcIds.add(tcId);
+        console.info(`[TideWarden] Assigned collection role: ${orgUser.email} → ${level}`);
+      } catch (e) {
+        console.warn(`[TideWarden] Failed to assign collection role for ${orgUser.email}:`, e);
+      }
+    }
+  }
 
   protected delete = async () => {
     // Deleting a collection is prohibited while in read only mode

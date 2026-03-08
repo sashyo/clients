@@ -9,10 +9,9 @@
  * Uses heimdall-tide and asgard-tide (lazy-loaded).
  */
 
-import { TideCloakService } from "@bitwarden/common/key-management/tidecloak/abstractions/tidecloak.service";
-
 // Lazy-loaded Tide libraries
-let Policy: any;
+let PolicyV2: any; // asgard-tide Policy (version 2) — for UserContext policies (orgOwner)
+let PolicyV3: any; // @tideorg/js Policy (version 3) — for crypto policies with array modelIds (appUser)
 let PolicySignRequest: any;
 let TideMemory: any;
 let ApprovalType: any;
@@ -27,7 +26,9 @@ export async function loadTideLibs(): Promise<boolean> {
   try {
     const heimdall = await import("heimdall-tide");
     const asgard = await import("asgard-tide");
-    Policy = heimdall.Policy;
+    const tideorgJs = await import("@tideorg/js/dist/Models/Policy.js");
+    PolicyV2 = asgard.Policy;          // latestVersion = "2", single modelId string
+    PolicyV3 = tideorgJs.Policy;       // latestVersion = "3", modelIds as array
     PolicySignRequest = heimdall.PolicySignRequest;
     TideMemory = heimdall.TideMemory;
     ApprovalType = asgard.ApprovalType;
@@ -46,20 +47,25 @@ export function areTideLibsAvailable(): boolean {
 
 // Model IDs — same pattern as KeyleSSH
 export const MODEL_IDS = {
+  USER_CONTEXT: "UserContext:1",
   BASIC: "BasicCustom<Role>:BasicCustom<1>",
   DYNAMIC: "DynamicCustom<Role>:DynamicCustom<1>",
   DYNAMIC_APPROVED: "DynamicApprovedCustom<Role>:DynamicApprovedCustom<1>",
+  ENCRYPTION: "PolicyEnabledEncryption:1",
+  DECRYPTION: "PolicyEnabledDecryption:1",
 } as const;
+
 
 export interface RolePolicyConfig {
   roleName: string;
   threshold: number;
   approvalType: "implicit" | "explicit";
   executionType: "public" | "private";
-  modelId?: string;
+  modelId?: string | string[];
   resource: string;
   vendorId: string;
   contractCode: string;
+  templateParams?: Record<string, any>;
 }
 
 /**
@@ -70,7 +76,7 @@ export async function computeContractId(source: string): Promise<string> {
   const data = new TextEncoder().encode(source);
   const hashBuffer = await crypto.subtle.digest("SHA-512", data);
   const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
+  return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("").toUpperCase();
 }
 
 /**
@@ -82,15 +88,26 @@ function detectEntryType(source: string): string | null {
 }
 
 /**
+ * Determine whether the config requires a v3 policy (encryption/decryption model IDs)
+ * or a v2 policy (UserContext and other model IDs).
+ */
+function isV3Policy(config: RolePolicyConfig): boolean {
+  const modelIds = Array.isArray(config.modelId) ? config.modelId : [config.modelId];
+  return modelIds.some(
+    (id) => id === MODEL_IDS.ENCRYPTION || id === MODEL_IDS.DECRYPTION,
+  );
+}
+
+/**
  * Creates a PolicySignRequest, initializes it via the TideCloak enclave,
- * and returns the base64-encoded signed request.
+ * and returns the base64-encoded initialized request.
  *
- * This is the TideWarden equivalent of KeyleSSH's:
- *   createSshPolicyRequest() → initializeTideRequest() → bytesToBase64()
+ * Initialization happens here at creation time so the request is ready for
+ * the sign/approve step. Commit should NOT re-initialize (no double init).
  */
 export async function createSignedPolicyRequest(
   config: RolePolicyConfig,
-  tideCloakService: TideCloakService,
+  tideCloakService: { createTideRequest: (data: Uint8Array) => Promise<Uint8Array> },
 ): Promise<{ policyRequestBase64: string; contractId: string }> {
   if (!tideLibsAvailable) {
     throw new Error("Tide libraries (heimdall-tide, asgard-tide) not loaded. Call loadTideLibs() first.");
@@ -104,21 +121,45 @@ export async function createSignedPolicyRequest(
 
   // 3. Create Policy object with parameters
   const policyParams = new Map<string, any>();
-  policyParams.set("role", config.roleName);
   policyParams.set("threshold", config.threshold);
-  policyParams.set("resource", config.resource);
+  policyParams.set("Resource", config.resource);
   policyParams.set("approval_type", config.approvalType);
   policyParams.set("execution_type", config.executionType);
 
-  const policy = new Policy({
-    version: "2",
-    modelId: config.modelId || MODEL_IDS.BASIC,
-    contractId: contractId,
-    keyId: config.vendorId,
-    approvalType: config.approvalType === "explicit" ? ApprovalType.EXPLICIT : ApprovalType.IMPLICIT,
-    executionType: config.executionType === "private" ? ExecutionType.PRIVATE : ExecutionType.PUBLIC,
-    params: policyParams,
-  });
+  // Auto-merge any extra template params into the policy
+  if (config.templateParams) {
+    for (const [key, value] of Object.entries(config.templateParams)) {
+      policyParams.set(key, value);
+    }
+  }
+
+  // v3 for crypto policies (array modelIds), v2 for everything else (single string modelId)
+  let policy: any;
+  if (isV3Policy(config)) {
+    const modelIdArray = Array.isArray(config.modelId)
+      ? config.modelId
+      : [config.modelId || MODEL_IDS.ENCRYPTION];
+
+    policy = new PolicyV3({
+      version: "3",
+      modelId: modelIdArray,
+      contractId: contractId,
+      keyId: config.vendorId,
+      approvalType: config.approvalType === "explicit" ? ApprovalType.EXPLICIT : ApprovalType.IMPLICIT,
+      executionType: config.executionType === "private" ? ExecutionType.PRIVATE : ExecutionType.PUBLIC,
+      params: policyParams,
+    });
+  } else {
+    policy = new PolicyV2({
+      version: "2",
+      modelId: config.modelId || MODEL_IDS.USER_CONTEXT,
+      contractId: contractId,
+      keyId: config.vendorId,
+      approvalType: config.approvalType === "explicit" ? ApprovalType.EXPLICIT : ApprovalType.IMPLICIT,
+      executionType: config.executionType === "private" ? ExecutionType.PRIVATE : ExecutionType.PUBLIC,
+      params: policyParams,
+    });
+  }
 
   // 4. Create PolicySignRequest
   const policyRequest = PolicySignRequest.New(policy);
@@ -137,16 +178,13 @@ export async function createSignedPolicyRequest(
   policyRequest.draft = draftWithContract;
   policyRequest.setCustomExpiry(604800); // 7 days
 
-  // 6. Initialize (sign) via TideCloak enclave — same as KeyleSSH's initializeTideRequest()
+  // 6. Initialize via TideCloak enclave (createTideRequest).
+  // This sets up ORK nonces/session data so the request is ready for sign/approve.
+  // Commit must NOT re-initialize — no double initialization.
   const encodedRequest = policyRequest.encode();
   const initializedBytes = await tideCloakService.createTideRequest(encodedRequest);
-
-  // 7. Decode back to get the signed PolicySignRequest
   const initializedRequest = PolicySignRequest.decode(initializedBytes);
-
-  // 8. Encode the signed request to base64
-  const signedBytes = initializedRequest.encode();
-  const policyRequestBase64 = bytesToBase64(signedBytes);
+  const policyRequestBase64 = bytesToBase64(initializedRequest.encode());
 
   return { policyRequestBase64, contractId };
 }
