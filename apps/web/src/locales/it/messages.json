@@ -10770,10 +10770,10 @@
     "message": "Continua a configurare la tua prova gratuita di TideWarden"
   },
   "continueSettingUpPasswordManager": {
-    "message": "Continua a configurare la tua prova gratuita di TideWarden Password Manager"
+    "message": "Continua a configurare la tua prova gratuita di TideWarden: The Keyless Password Manager"
   },
   "continueSettingUpFreeTrialPasswordManager": {
-    "message": "Continua a configurare la tua prova gratuita di TideWarden Password Manager"
+    "message": "Continua a configurare la tua prova gratuita di TideWarden: The Keyless Password Manager"
   },
   "continueSettingUpSecretsManager": {
     "message": "Continua a configurare la tua prova gratuita di TideWarden Secrets Manager"
@@ -11317,7 +11317,7 @@
     "message": "Il tuo abbonamento Secrets Manager sarà aggiornato in base al piano selezionato"
   },
   "bitwardenPasswordManager": {
-    "message": "TideWarden Password Manager"
+    "message": "TideWarden: The Keyless Password Manager"
   },
   "secretsManagerComplimentaryPasswordManager": {
     "message": "Il tuo abbonamento complementare a Password Manager di un anno verrà aggiornato al piano selezionato. Non ti verrà addebitato nessun costo fino a quando il periodo gratuito non sarà terminato."

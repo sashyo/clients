@@ -10770,10 +10770,10 @@
     "message": "Continue setting up your free trial of TideWarden"
   },
   "continueSettingUpPasswordManager": {
-    "message": "Continue setting up TideWarden Password Manager"
+    "message": "Continue setting up TideWarden: The Keyless Password Manager"
   },
   "continueSettingUpFreeTrialPasswordManager": {
-    "message": "Continue setting up your free trial of TideWarden Password Manager"
+    "message": "Continue setting up your free trial of TideWarden: The Keyless Password Manager"
   },
   "continueSettingUpSecretsManager": {
     "message": "Continue setting up TideWarden Secrets Manager"
@@ -11317,7 +11317,7 @@
     "message": "Your Secrets Manager subscription will upgrade based on the plan selected"
   },
   "bitwardenPasswordManager": {
-    "message": "TideWarden Password Manager"
+    "message": "TideWarden: The Keyless Password Manager"
   },
   "secretsManagerComplimentaryPasswordManager": {
     "message": "Your complimentary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."

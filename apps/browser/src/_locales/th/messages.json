@@ -6,7 +6,7 @@
     "message": "โลโก้ TideWarden"
   },
   "extName": {
-    "message": "TideWarden Password Manager",
+    "message": "TideWarden: The Keyless Password Manager",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {

@@ -10770,10 +10770,10 @@
     "message": "Συνεχίστε τη ρύθμιση της δωρεάν δοκιμής σας στο TideWarden"
   },
   "continueSettingUpPasswordManager": {
-    "message": "Continue setting up TideWarden Password Manager"
+    "message": "Continue setting up TideWarden: The Keyless Password Manager"
   },
   "continueSettingUpFreeTrialPasswordManager": {
-    "message": "Συνεχίστε τη ρύθμιση της δωρεάν δοκιμής σας στο TideWarden Password Manager"
+    "message": "Συνεχίστε τη ρύθμιση της δωρεάν δοκιμής σας στο TideWarden: The Keyless Password Manager"
   },
   "continueSettingUpSecretsManager": {
     "message": "Continue setting up TideWarden Secrets Manager"
