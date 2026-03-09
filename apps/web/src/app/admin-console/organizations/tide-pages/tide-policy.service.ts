@@ -10,8 +10,7 @@
  */
 
 // Lazy-loaded Tide libraries
-let PolicyV2: any; // asgard-tide Policy (version 2) — for UserContext policies (orgOwner)
-let PolicyV3: any; // @tideorg/js Policy (version 3) — for crypto policies with array modelIds (appUser)
+let PolicyV3: any; // @tideorg/js Policy (version 3) — modelIds as array
 let PolicySignRequest: any;
 let TideMemory: any;
 let ApprovalType: any;
@@ -27,7 +26,6 @@ export async function loadTideLibs(): Promise<boolean> {
     const heimdall = await import("heimdall-tide");
     const asgard = await import("asgard-tide");
     const tideorgJs = await import("@tideorg/js/dist/Models/Policy.js");
-    PolicyV2 = asgard.Policy;          // latestVersion = "2", single modelId string
     PolicyV3 = tideorgJs.Policy;       // latestVersion = "3", modelIds as array
     PolicySignRequest = heimdall.PolicySignRequest;
     TideMemory = heimdall.TideMemory;
@@ -88,17 +86,6 @@ function detectEntryType(source: string): string | null {
 }
 
 /**
- * Determine whether the config requires a v3 policy (encryption/decryption model IDs)
- * or a v2 policy (UserContext and other model IDs).
- */
-function isV3Policy(config: RolePolicyConfig): boolean {
-  const modelIds = Array.isArray(config.modelId) ? config.modelId : [config.modelId];
-  return modelIds.some(
-    (id) => id === MODEL_IDS.ENCRYPTION || id === MODEL_IDS.DECRYPTION,
-  );
-}
-
-/**
  * Creates a PolicySignRequest, initializes it via the TideCloak enclave,
  * and returns the base64-encoded initialized request.
  *
@@ -133,33 +120,20 @@ export async function createSignedPolicyRequest(
     }
   }
 
-  // v3 for crypto policies (array modelIds), v2 for everything else (single string modelId)
-  let policy: any;
-  if (isV3Policy(config)) {
-    const modelIdArray = Array.isArray(config.modelId)
-      ? config.modelId
-      : [config.modelId || MODEL_IDS.ENCRYPTION];
+  // Use v3 policy format (modelIds as array)
+  const modelIdArray = Array.isArray(config.modelId)
+    ? config.modelId
+    : [config.modelId || MODEL_IDS.USER_CONTEXT];
 
-    policy = new PolicyV3({
-      version: "3",
-      modelId: modelIdArray,
-      contractId: contractId,
-      keyId: config.vendorId,
-      approvalType: config.approvalType === "explicit" ? ApprovalType.EXPLICIT : ApprovalType.IMPLICIT,
-      executionType: config.executionType === "private" ? ExecutionType.PRIVATE : ExecutionType.PUBLIC,
-      params: policyParams,
-    });
-  } else {
-    policy = new PolicyV2({
-      version: "2",
-      modelId: config.modelId || MODEL_IDS.USER_CONTEXT,
-      contractId: contractId,
-      keyId: config.vendorId,
-      approvalType: config.approvalType === "explicit" ? ApprovalType.EXPLICIT : ApprovalType.IMPLICIT,
-      executionType: config.executionType === "private" ? ExecutionType.PRIVATE : ExecutionType.PUBLIC,
-      params: policyParams,
-    });
-  }
+  const policy = new PolicyV3({
+    version: "3",
+    modelId: modelIdArray,
+    contractId: contractId,
+    keyId: config.vendorId,
+    approvalType: config.approvalType === "explicit" ? ApprovalType.EXPLICIT : ApprovalType.IMPLICIT,
+    executionType: config.executionType === "private" ? ExecutionType.PRIVATE : ExecutionType.PUBLIC,
+    params: policyParams,
+  });
 
   // 4. Create PolicySignRequest
   const policyRequest = PolicySignRequest.New(policy);
