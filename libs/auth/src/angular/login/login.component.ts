@@ -34,7 +34,10 @@ import { ErrorResponse } from "@bitwarden/common/models/response/error.response"
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
-import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
+import {
+  EnvironmentService,
+  Region,
+} from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
@@ -50,6 +53,7 @@ import {
   AsyncActionsModule,
   ButtonModule,
   CheckboxModule,
+  DialogService,
   FormFieldModule,
   IconButtonModule,
   LinkModule,
@@ -58,6 +62,7 @@ import {
 } from "@bitwarden/components";
 
 import { LoginComponentService, PasswordPolicies } from "./login-component.service";
+import { SelfHostedEnvConfigDialogComponent } from "../self-hosted-env-config-dialog/self-hosted-env-config-dialog.component";
 
 const BroadcasterSubscriptionId = "LoginComponent";
 
@@ -146,6 +151,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     private configService: ConfigService,
     private ssoLoginService: SsoLoginServiceAbstraction,
     private environmentService: EnvironmentService,
+    private dialogService: DialogService,
   ) {
     this.clientType = this.platformUtilsService.getClientType();
   }
@@ -580,9 +586,21 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   /**
    * Handle the SSO button click.
-   * TideWarden: Skip email validation, go directly to SSO.
+   * TideWarden: If self-hosted environment is not configured, prompt the user
+   * to enter their server URL first. Then proceed to SSO login.
    */
   async handleSsoClick() {
+    const env = await firstValueFrom(this.environmentService.environment$);
+    const region = env.getRegion();
+
+    // If user is on the cloud fallback (not self-hosted), prompt for self-hosted config
+    if (region !== Region.SelfHosted) {
+      const dialogResult = await SelfHostedEnvConfigDialogComponent.open(this.dialogService);
+      if (!dialogResult) {
+        return; // User cancelled — don't proceed
+      }
+    }
+
     const email = this.formGroup.value.email || "user@tidewarden.local";
     await this.loginComponentService.redirectToSsoLogin(email);
   }
