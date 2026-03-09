@@ -128,7 +128,7 @@ describe("VaultOnboardingComponent", () => {
 
     it("should set extensionUrl to Firefox Store when isFirefox is true", async () => {
       jest.spyOn((component as any).platformUtilsService, "isFirefox").mockReturnValue(true);
-      const expected = "https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/";
+      const expected = "https://addons.mozilla.org/en-US/firefox/addon/tidewarden-password-manager/";
       await component.ngOnInit();
       expect(component.extensionUrl).toEqual(expected);
     });

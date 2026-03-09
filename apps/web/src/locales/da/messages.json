@@ -10770,10 +10770,10 @@
     "message": "Fortsæt opsætningen af den gratis TideWarden-prøveperiode"
   },
   "continueSettingUpPasswordManager": {
-    "message": "Continue setting up TideWarden Password Manager"
+    "message": "Continue setting up TideWarden: The Keyless Password Manager"
   },
   "continueSettingUpFreeTrialPasswordManager": {
-    "message": "Fortsæt opsætningen af den gratis TideWarden Password Manager-prøveperiode"
+    "message": "Fortsæt opsætningen af den gratis TideWarden: The Keyless Password Manager-prøveperiode"
   },
   "continueSettingUpSecretsManager": {
     "message": "Continue setting up TideWarden Secrets Manager"
