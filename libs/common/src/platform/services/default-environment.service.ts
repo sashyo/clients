@@ -82,7 +82,11 @@ export const USER_CLOUD_REGION_KEY = new UserKeyDefinition<CloudRegion>(
  *
  * In the future we desire to load these urls from the config endpoint.
  */
-export const PRODUCTION_REGIONS: RegionConfig[] = [
+/**
+ * Hidden cloud regions — kept as internal fallback for URL resolution
+ * but not shown in the UI region selector.
+ */
+const CLOUD_REGIONS: RegionConfig[] = [
   {
     key: Region.US,
     domain: "bitwarden.com",
@@ -97,31 +101,23 @@ export const PRODUCTION_REGIONS: RegionConfig[] = [
       scim: "https://scim.bitwarden.com",
     },
   },
-  {
-    key: Region.EU,
-    domain: "bitwarden.eu",
-    urls: {
-      base: null,
-      api: "https://api.bitwarden.eu",
-      identity: "https://identity.bitwarden.eu",
-      icons: "https://icons.bitwarden.eu",
-      webVault: "https://vault.bitwarden.eu",
-      notifications: "https://notifications.bitwarden.eu",
-      events: "https://events.bitwarden.eu",
-      scim: "https://scim.bitwarden.eu",
-    },
-  },
 ];
 
 /**
+ * No production regions exposed for selection — TideWarden is self-hosted only.
+ */
+export const PRODUCTION_REGIONS: RegionConfig[] = [];
+
+/**
  * The default region when starting the app.
+ * Falls back to US internally for URL resolution until self-hosted is configured.
  */
 const DEFAULT_REGION = Region.US;
 
 /**
- * The default region configuration.
+ * The default region configuration (internal fallback).
  */
-const DEFAULT_REGION_CONFIG = PRODUCTION_REGIONS.find((r) => r.key === DEFAULT_REGION);
+const DEFAULT_REGION_CONFIG = CLOUD_REGIONS[0];
 
 export class DefaultEnvironmentService implements EnvironmentService {
   private globalState: GlobalState<EnvironmentState | null>;
@@ -190,9 +186,13 @@ export class DefaultEnvironmentService implements EnvironmentService {
 
   /**
    * Get the region configuration for the given region.
+   * Checks available regions first, then falls back to internal cloud regions.
    */
   private getRegionConfig(region: Region): RegionConfig | undefined {
-    return this.availableRegions().find((r) => r.key === region);
+    return (
+      this.availableRegions().find((r) => r.key === region) ??
+      CLOUD_REGIONS.find((r) => r.key === region)
+    );
   }
 
   async setEnvironment(region: Region, urls?: Urls): Promise<Urls> {
@@ -397,15 +397,11 @@ abstract class UrlEnvironment implements Environment {
       return this.urls.scim + "/v2";
     }
 
-    return this.getWebVaultUrl() === "https://vault.bitwarden.com"
-      ? "https://scim.bitwarden.com/v2"
-      : this.getWebVaultUrl() + "/scim/v2";
+    return this.getWebVaultUrl() + "/scim/v2";
   }
 
   getSendUrl() {
-    return this.getWebVaultUrl() === "https://vault.bitwarden.com"
-      ? "https://send.bitwarden.com/#"
-      : this.getWebVaultUrl() + "/#/send/";
+    return this.getWebVaultUrl() + "/#/send/";
   }
 
   /**
