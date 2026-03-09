@@ -1,9 +1,12 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
 import { CommonModule } from "@angular/common";
-import { Component, OnInit } from "@angular/core";
+import { ChangeDetectorRef, Component, OnInit } from "@angular/core";
 import { ActivatedRoute, RouterModule } from "@angular/router";
 import { combineLatest, filter, map, Observable, switchMap, withLatestFrom } from "rxjs";
+
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { TideCloakService } from "@bitwarden/common/key-management/tidecloak/abstractions/tidecloak.service";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { AdminConsoleLogo } from "@bitwarden/assets/svg";
@@ -26,7 +29,7 @@ import { AccountService } from "@bitwarden/common/auth/abstractions/account.serv
 import { getUserId } from "@bitwarden/common/auth/services/account.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { getById } from "@bitwarden/common/platform/misc";
-import { BannerModule, SvgModule } from "@bitwarden/components";
+import { BannerModule, CalloutModule, SvgModule } from "@bitwarden/components";
 import { OrganizationWarningsModule } from "@bitwarden/web-vault/app/billing/organizations/warnings/organization-warnings.module";
 import { OrganizationWarningsService } from "@bitwarden/web-vault/app/billing/organizations/warnings/services";
 import { NonIndividualSubscriber } from "@bitwarden/web-vault/app/billing/types";
@@ -50,6 +53,7 @@ import { WebLayoutModule } from "../../../layouts/web-layout.module";
     SvgModule,
     OrgSwitcherComponent,
     BannerModule,
+    CalloutModule,
     TaxIdWarningComponent,
     TaxIdWarningComponent,
     OrganizationWarningsModule,
@@ -74,6 +78,8 @@ export class OrganizationLayoutComponent implements OnInit {
   protected subscriber$: Observable<NonIndividualSubscriber>;
   protected getTaxIdWarning$: () => Observable<TaxIdWarningType | null>;
 
+  orgOwnerBanner: "pending" | "committed" | null = null;
+
   constructor(
     private route: ActivatedRoute,
     private organizationService: OrganizationService,
@@ -83,11 +89,20 @@ export class OrganizationLayoutComponent implements OnInit {
     private accountService: AccountService,
     private freeFamiliesPolicyService: FreeFamiliesPolicyService,
     private organizationWarningsService: OrganizationWarningsService,
+    private apiService: ApiService,
+    private cdr: ChangeDetectorRef,
+    private tideCloakService: TideCloakService,
   ) {}
 
   async ngOnInit() {
     document.body.classList.remove("layout_frontend");
     this.selfHosted = this.platformUtilsService.isSelfHost();
+
+    // Check org-owner policy status for banner
+    const orgId = this.route.snapshot.params["organizationId"] ?? "";
+    if (orgId) {
+      this.checkOrgOwnerStatus(orgId);
+    }
 
     this.organization$ = this.route.params.pipe(
       map((p) => p.organizationId),
@@ -192,4 +207,121 @@ export class OrganizationLayoutComponent implements OnInit {
   }
 
   refreshTaxIdWarning = () => this.organizationWarningsService.refreshTaxIdWarning();
+
+  async resetOrgOwnerPolicy() {
+    const orgId = this.route.snapshot.params["organizationId"] ?? "";
+    if (!orgId) return;
+    try {
+      await this.apiService.send(
+        "POST",
+        `/organizations/${orgId}/tide/org-owner-reset`,
+        null,
+        true,
+        false,
+      );
+      // Re-create the role and trigger fresh policy flow
+      await this.apiService.send(
+        "POST",
+        `/organizations/${orgId}/tide/org-owner-role`,
+        null,
+        true,
+        false,
+      );
+      // Refresh the page to pick up the new state
+      window.location.reload();
+    } catch (e) {
+      console.error("[TideWarden] Failed to reset org owner policy:", e);
+    }
+  }
+
+  private async checkOrgOwnerStatus(orgId: string) {
+    try {
+      const status = await this.apiService.send(
+        "GET",
+        `/organizations/${orgId}/tide/org-owner-status`,
+        null,
+        true,
+        true,
+      );
+      if (status.policyStatus === "committed") {
+        this.orgOwnerBanner = "committed";
+      } else {
+        // pending or none — policy needs to be approved
+        this.orgOwnerBanner = "pending";
+        // Auto-populate empty policy approvals in the background
+        this.autoPopulateEmptyApprovals(orgId);
+      }
+    } catch {
+      this.orgOwnerBanner = null;
+    }
+    this.cdr.detectChanges();
+  }
+
+  private async autoPopulateEmptyApprovals(orgId: string) {
+    try {
+      const { loadTideLibs, areTideLibsAvailable, createSignedPolicyRequest, MODEL_IDS } =
+        await import("../tide-pages/tide-policy.service");
+      const { ORG_OWNER_CONTRACT } = await import("../tide-pages/collection-owner-contract");
+      const { ORG_CRYPTO_CONTRACT } = await import("../tide-pages/org-crypto-contract");
+
+      await loadTideLibs();
+      await this.tideCloakService.ensureInitialized();
+
+      if (!areTideLibsAvailable() || !this.tideCloakService.isInitialized()) {
+        return;
+      }
+
+      const approvals: any[] = await this.apiService.send(
+        "GET",
+        `/organizations/${orgId}/tide/policy-approvals`,
+        null,
+        true,
+        true,
+      );
+
+      for (const approval of approvals) {
+        if (approval.policyRequestData || approval.contractCode) {
+          continue; // Already populated
+        }
+
+        const isAppUser = approval.roleId === "appUser";
+        const isOrgOwner = approval.roleId === "orgOwner";
+        if (!isAppUser && !isOrgOwner) {
+          continue;
+        }
+
+        try {
+          const contractCode = isAppUser ? ORG_CRYPTO_CONTRACT : ORG_OWNER_CONTRACT;
+          const config: any = {
+            roleName: approval.roleId,
+            threshold: approval.threshold || 1,
+            approvalType: isAppUser ? "implicit" : "explicit",
+            executionType: isAppUser ? "private" : "public",
+            resource: this.tideCloakService.getResource(),
+            vendorId: this.tideCloakService.getVendorId(),
+            contractCode,
+          };
+          if (isAppUser) {
+            config.modelId = [MODEL_IDS.ENCRYPTION, MODEL_IDS.DECRYPTION];
+          }
+
+          const { policyRequestBase64 } = await createSignedPolicyRequest(config, this.tideCloakService);
+
+          await this.apiService.send(
+            "PUT",
+            `/organizations/${orgId}/tide/policy-approvals/${approval.id}/data`,
+            { policyRequestData: policyRequestBase64, contractCode },
+            true,
+            false,
+          );
+          console.info(`[TideWarden] Auto-populated ${approval.roleId} approval ${approval.id} with policyRequestData`);
+        } catch (e) {
+          console.warn(`[TideWarden] Failed to auto-populate ${approval.roleId} approval:`, e);
+        }
+      }
+    } catch (e) {
+      // Non-critical — approvals page enrichment will catch this as fallback
+      console.warn("[TideWarden] Auto-populate approvals failed:", e);
+    }
+  }
 }

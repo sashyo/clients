@@ -85,9 +85,7 @@ export type Permission = {
 
 export const getPermissionList = (): Permission[] => {
   const permissions = [
-    { perm: CollectionPermission.ViewExceptPass, labelId: "viewItemsHidePass" },
     { perm: CollectionPermission.View, labelId: "viewItems" },
-    { perm: CollectionPermission.EditExceptPass, labelId: "editItemsHidePass" },
     { perm: CollectionPermission.Edit, labelId: "editItems" },
     { perm: CollectionPermission.Manage, labelId: "manageCollection" },
   ];

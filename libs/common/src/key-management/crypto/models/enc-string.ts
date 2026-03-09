@@ -111,6 +111,7 @@ export class EncString {
         this.mac = encPieces[1];
         break;
       case EncryptionType.TideCloakOrk:
+      case EncryptionType.TideCloakOrkPolicy:
       case EncryptionType.Plaintext:
         this.data = encPieces[0];
         break;

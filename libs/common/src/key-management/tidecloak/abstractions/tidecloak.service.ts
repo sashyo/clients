@@ -5,10 +5,16 @@ export interface TideCloakConfig {
   signedClientOrigin: string;
 }
 
+export interface EncryptionScope {
+  orgId: string;
+  collectionIds: string[];
+  policy: Uint8Array;
+}
+
 export abstract class TideCloakService {
   abstract initialize(config: TideCloakConfig, doken: string): Promise<void>;
-  abstract encrypt(data: Uint8Array, tags: string[]): Promise<Uint8Array>;
-  abstract decrypt(encrypted: Uint8Array, tags: string[]): Promise<Uint8Array>;
+  abstract encrypt(data: Uint8Array, tags: string[], decryptionPolicy?: Uint8Array): Promise<Uint8Array>;
+  abstract decrypt(encrypted: Uint8Array, tags: string[], decryptionPolicy?: Uint8Array): Promise<Uint8Array>;
   abstract updateDoken(doken: string): Promise<void>;
   abstract isInitialized(): boolean;
   /**
@@ -38,4 +44,46 @@ export abstract class TideCloakService {
   abstract setSkipOrkEncrypt(skip: boolean): void;
   abstract shouldSkipOrkEncrypt(): boolean;
   abstract destroy(): void;
+  /**
+   * Signs/initializes a Tide request using the enclave's createTideRequest.
+   * This is the equivalent of KeyleSSH's initializeTideRequest.
+   * @param encodedRequest - The encoded PolicySignRequest bytes
+   * @returns The initialized (signed) request bytes
+   */
+  abstract createTideRequest(encodedRequest: Uint8Array): Promise<Uint8Array>;
+  /**
+   * Returns the vendorId from the persisted config.
+   */
+  abstract getVendorId(): string;
+  /**
+   * Returns the TideCloak resource (client ID) for policy params.
+   * Defaults to "tidewarden".
+   */
+  abstract getResource(): string;
+  /**
+   * Opens the Tide operator approval popup for cryptographic signing of policy requests.
+   * Each request contains an id and the encoded PolicySignRequest bytes.
+   * Returns approved/denied/pending status with signed bytes for approved requests.
+   */
+  abstract approveTideRequests(
+    requests: { id: string; request: Uint8Array }[],
+  ): Promise<{ id: string; request: Uint8Array; status: "approved" | "denied" | "pending" }[]>;
+  /**
+   * Executes a signed Tide request against the ORK to get the final VVK signature.
+   * Called after a policy has been approved and is ready to commit.
+   * @param initialize - If true (default), also calls createTideRequest before executing.
+   *   Pass false for commit to avoid double initialization.
+   */
+  abstract executeSignRequest(request: Uint8Array, initialize?: boolean): Promise<Uint8Array[]>;
+  /**
+   * Returns the current doken string, or null if not available.
+   */
+  abstract getDoken(): string | null;
+  /**
+   * Sets the current encryption scope for org/collection policy-enabled encryption.
+   * When set, encrypt/decrypt will use the policy and collection-scoped tags
+   * instead of selfencrypt/selfdecrypt realm roles.
+   */
+  abstract setEncryptionScope(scope: EncryptionScope | null): void;
+  abstract getEncryptionScope(): EncryptionScope | null;
 }

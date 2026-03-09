@@ -5,7 +5,7 @@ export const BitwardenLogo = svg`
   <defs>
     <style>
       .st0 {
-        fill: #231f20;
+        fill: currentColor;
       }
 
       .st1 {
@@ -13,7 +13,7 @@ export const BitwardenLogo = svg`
       }
 
       .st2 {
-        fill: #1d1d1b;
+        fill: currentColor;
       }
     </style>
   </defs>

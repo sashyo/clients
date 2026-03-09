@@ -6686,7 +6686,7 @@
       }
     }
   },
-  "reinviteSuccessToast":{
+  "reinviteSuccessToast": {
     "message": "1 invitation sent"
   },
   "bulkReinviteSentToast": {
@@ -6719,12 +6719,12 @@
     "message": "$COUNT$ of $TOTAL$ invitations sent...",
     "placeholders": {
       "count": {
-	"content": "$1",
-	"example": "1,000"
+        "content": "$1",
+        "example": "1,000"
       },
       "total": {
-	"content": "$2",
-	"example": "2,000"
+        "content": "$2",
+        "example": "2,000"
       }
     }
   },
@@ -6735,24 +6735,24 @@
     "message": "$COUNT$ invitations didn't send",
     "placeholders": {
       "count": {
-	"content": "$1",
-	"example": "1,000"
+        "content": "$1",
+        "example": "1,000"
       }
     }
   },
   "bulkReinviteFailureTitle": {
     "message": "1 invitation didn't send"
   },
-  "bulkReinviteFailureDescription":{
+  "bulkReinviteFailureDescription": {
     "message": "An error occurred while sending invitations to $COUNT$ of $TOTAL$ members. Try sending again, and if the problem continues,",
     "placeholders": {
       "count": {
-	"content": "$1",
-	"example": "1,000"
+        "content": "$1",
+        "example": "1,000"
       },
       "total": {
-	"content": "$2",
-	"example": "2,000"
+        "content": "$2",
+        "example": "2,000"
       }
     }
   },
@@ -9636,6 +9636,18 @@
   },
   "deviceApprovals": {
     "message": "Device approvals"
+  },
+  "policyTemplates": {
+    "message": "Policy Templates"
+  },
+  "approvals": {
+    "message": "Approvals"
+  },
+  "roles": {
+    "message": "Roles"
+  },
+  "collectionAccess": {
+    "message": "Collection Access"
   },
   "deviceApprovalsDesc": {
     "message": "Approve login requests below to allow the requesting member to finish logging in. Unapproved requests expire after 1 week. Verify the member’s information before approving."
