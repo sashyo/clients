@@ -71,6 +71,7 @@ describe("LoginComponent continue() integration", () => {
       configService,
       ssoLoginService,
       environmentService,
+      {} as any,
     );
 
     jest.spyOn(component as any, "toggleLoginUiState").mockResolvedValue(undefined);

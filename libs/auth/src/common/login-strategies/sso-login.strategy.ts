@@ -359,14 +359,23 @@ export class SsoLoginStrategy extends LoginStrategy {
 
     // Initialize the ORK enclave with config + doken
     // Use browser extension origin auth if running in a browser extension context
+    const extensionProtocol = globalThis.location?.protocol;
     const isBrowserExtension =
-      typeof globalThis.chrome?.runtime?.id === "string" &&
-      globalThis.location?.protocol === "chrome-extension:";
-    const signedOrigin =
-      isBrowserExtension && tideCloakOption.signedClientOriginBrowser
-        ? tideCloakOption.signedClientOriginBrowser
-        : tideCloakOption.signedClientOrigin;
+      (extensionProtocol === "chrome-extension:" || extensionProtocol === "moz-extension:") &&
+      (typeof globalThis.chrome?.runtime?.id === "string" ||
+        typeof (globalThis as any).browser?.runtime?.id === "string");
+    let signedOrigin = tideCloakOption.signedClientOrigin;
+    if (isBrowserExtension) {
+      if (extensionProtocol === "chrome-extension:" && tideCloakOption.signedClientOriginChrome) {
+        signedOrigin = tideCloakOption.signedClientOriginChrome;
+      } else if (extensionProtocol === "moz-extension:" && tideCloakOption.signedClientOriginFirefox) {
+        signedOrigin = tideCloakOption.signedClientOriginFirefox;
+      }
+    }
 
+    this.logService.info(
+      `[TideCloak] isBrowserExtension=${isBrowserExtension}, protocol=${extensionProtocol}, hasFirefoxAuth=${!!tideCloakOption.signedClientOriginFirefox}, hasChromeAuth=${!!tideCloakOption.signedClientOriginChrome}, usingBrowserAuth=${signedOrigin !== tideCloakOption.signedClientOrigin}`,
+    );
     this.logService.info("[TideCloak] Initializing ORK enclave during SSO login");
     await this.tideCloakService.initialize(
       {

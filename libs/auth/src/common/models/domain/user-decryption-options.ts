@@ -162,7 +162,8 @@ export class TideCloakUserDecryptionOption {
   vendorId: string;
   voucherUrl: string;
   signedClientOrigin: string;
-  signedClientOriginBrowser?: string;
+  signedClientOriginChrome?: string;
+  signedClientOriginFirefox?: string;
   encryptedUserKey?: string;
 
   static fromResponse(
@@ -176,7 +177,8 @@ export class TideCloakUserDecryptionOption {
     options.vendorId = response.vendorId;
     options.voucherUrl = response.voucherUrl;
     options.signedClientOrigin = response.signedClientOrigin;
-    options.signedClientOriginBrowser = response.signedClientOriginBrowser;
+    options.signedClientOriginChrome = response.signedClientOriginChrome;
+    options.signedClientOriginFirefox = response.signedClientOriginFirefox;
     options.encryptedUserKey = response.encryptedUserKey;
     return options;
   }

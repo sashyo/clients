@@ -581,9 +581,10 @@ export default class MainBackground {
       this.memoryStorageService = this.memoryStorageForStateProviders;
     }
 
-    this.tideCloakService = BrowserApi.isManifestVersion(3)
-      ? new OffscreenTideCloakService(this.offscreenDocumentService, this.logService)
-      : new DefaultTideCloakService(this.logService);
+    this.tideCloakService =
+      BrowserApi.isManifestVersion(3) && this.offscreenDocumentService.offscreenApiSupported()
+        ? new OffscreenTideCloakService(this.offscreenDocumentService, this.logService)
+        : new DefaultTideCloakService(this.logService);
     this.encryptService = new TideCloakEncryptService(
       this.cryptoFunctionService,
       this.logService,

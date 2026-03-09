@@ -476,6 +476,13 @@ const safeProviders: SafeProvider[] = [
         return regularMemoryStorageService;
       }
 
+      // Firefox MV3 uses event pages (not service workers), which can suspend
+      // and disconnect ports. Use BrowserMemoryStorageService (chrome.storage.session)
+      // instead of ForegroundMemoryStorageService (port-based) to avoid disconnected port errors.
+      if (typeof chrome.offscreen === "undefined") {
+        return new BrowserMemoryStorageService();
+      }
+
       return new ForegroundMemoryStorageService();
     },
     deps: [OBSERVABLE_MEMORY_STORAGE],

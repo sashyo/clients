@@ -5,7 +5,8 @@ export interface ITideCloakUserDecryptionOptionServerResponse {
   VendorId: string;
   VoucherUrl: string;
   SignedClientOrigin: string;
-  SignedClientOriginBrowser?: string;
+  SignedClientOriginChrome?: string;
+  SignedClientOriginFirefox?: string;
   EncryptedUserKey?: string;
 }
 
@@ -14,7 +15,8 @@ export class TideCloakUserDecryptionOptionResponse extends BaseResponse {
   vendorId: string;
   voucherUrl: string;
   signedClientOrigin: string;
-  signedClientOriginBrowser?: string;
+  signedClientOriginChrome?: string;
+  signedClientOriginFirefox?: string;
   encryptedUserKey?: string;
 
   constructor(response: ITideCloakUserDecryptionOptionServerResponse) {
@@ -23,7 +25,8 @@ export class TideCloakUserDecryptionOptionResponse extends BaseResponse {
     this.vendorId = this.getResponseProperty("VendorId");
     this.voucherUrl = this.getResponseProperty("VoucherUrl");
     this.signedClientOrigin = this.getResponseProperty("SignedClientOrigin");
-    this.signedClientOriginBrowser = this.getResponseProperty("SignedClientOriginBrowser");
+    this.signedClientOriginChrome = this.getResponseProperty("SignedClientOriginChrome");
+    this.signedClientOriginFirefox = this.getResponseProperty("SignedClientOriginFirefox");
     this.encryptedUserKey = this.getResponseProperty("EncryptedUserKey");
   }
 }
