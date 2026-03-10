@@ -376,7 +376,10 @@ module.exports.buildConfig = function buildConfig(params) {
         path: require.resolve("path-browserify"),
       },
       cache: true,
-      alias: params.importAliases,
+      alias: {
+        "@tide/js": path.resolve(__dirname, "../../node_modules/@tideorg/js"),
+        ...params.importAliases,
+      },
     },
     output: {
       filename: "[name].js",
@@ -505,7 +508,10 @@ module.exports.buildConfig = function buildConfig(params) {
           path: require.resolve("path-browserify"),
         },
         cache: true,
-        alias: params.importAliases,
+        alias: {
+          "@tide/js": path.resolve(__dirname, "../../node_modules/@tideorg/js"),
+          ...params.importAliases,
+        },
       },
       dependencies: ["main"],
       plugins: [...requiredPlugins, new AngularCheckPlugin()],
