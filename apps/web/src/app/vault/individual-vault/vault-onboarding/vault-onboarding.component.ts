@@ -190,10 +190,10 @@ export class VaultOnboardingComponent implements OnInit, OnChanges, OnDestroy {
   setInstallExtLink() {
     if (this.platformUtilsService.isChrome()) {
       this.extensionUrl =
-        "https://chromewebstore.google.com/detail/bitwarden-password-manage/nngceckbapebfimnlniiiahkandclblb";
+        "https://chromewebstore.google.com/detail/tidewarden-the-keyless-pa/dkkppmloajmghfcfgnlafdajipgahpha";
     } else if (this.platformUtilsService.isFirefox()) {
       this.extensionUrl =
-        "https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/";
+        "https://addons.mozilla.org/en-US/firefox/addon/tidewarden-password-manager/";
     } else if (this.platformUtilsService.isSafari()) {
       this.extensionUrl = "https://apps.apple.com/us/app/bitwarden/id1352778147?mt=12";
     } else if (this.platformUtilsService.isOpera()) {

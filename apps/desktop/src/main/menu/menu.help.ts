@@ -183,7 +183,7 @@ export class HelpMenu implements IMenubarMenu {
         click: () =>
           shell.openExternal(
             "https://chromewebstore.google.com/detail/" +
-              "bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb",
+              "tidewarden-the-keyless-pa/dkkppmloajmghfcfgnlafdajipgahpha",
           ),
       },
       {
@@ -191,7 +191,7 @@ export class HelpMenu implements IMenubarMenu {
         label: "Firefox",
         click: () =>
           shell.openExternal(
-            "https://addons.mozilla.org/firefox/addon/" + "bitwarden-password-manager/",
+            "https://addons.mozilla.org/firefox/addon/" + "tidewarden-password-manager/",
           ),
       },
       {

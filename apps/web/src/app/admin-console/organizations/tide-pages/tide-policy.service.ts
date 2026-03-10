@@ -28,7 +28,7 @@ export async function loadTideLibs(): Promise<boolean> {
     const tideorgJs = await import("@tideorg/js/dist/Models/Policy.js");
     PolicyV3 = tideorgJs.Policy;       // latestVersion = "3", modelIds as array
     PolicySignRequest = heimdall.PolicySignRequest;
-    TideMemory = heimdall.TideMemory;
+    TideMemory = asgard.TideMemory;
     ApprovalType = asgard.ApprovalType;
     ExecutionType = asgard.ExecutionType;
     tideLibsAvailable = true;

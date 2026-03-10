@@ -15,9 +15,9 @@ import {
 /** Device specific Urls for the extension  */
 const WebStoreUrls: Partial<Record<DeviceType, string>> = {
   [DeviceType.ChromeBrowser]:
-    "https://chrome.google.com/webstore/detail/bitwarden-password-manage/nngceckbapebfimnlniiiahkandclblb",
+    "https://chromewebstore.google.com/detail/tidewarden-the-keyless-pa/dkkppmloajmghfcfgnlafdajipgahpha",
   [DeviceType.FirefoxBrowser]:
-    "https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/",
+    "https://addons.mozilla.org/en-US/firefox/addon/tidewarden-password-manager/",
   [DeviceType.SafariBrowser]: "https://apps.apple.com/us/app/bitwarden/id1352778147?mt=12",
   [DeviceType.OperaBrowser]:
     "https://addons.opera.com/extensions/details/bitwarden-free-password-manager/",

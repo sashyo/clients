@@ -7,9 +7,9 @@ import { DeviceType } from "@bitwarden/common/enums";
 export const getWebStoreUrl = (deviceType: DeviceType): string => {
   switch (deviceType) {
     case DeviceType.ChromeBrowser:
-      return "https://chromewebstore.google.com/detail/bitwarden-password-manage/nngceckbapebfimnlniiiahkandclblb";
+      return "https://chromewebstore.google.com/detail/tidewarden-the-keyless-pa/dkkppmloajmghfcfgnlafdajipgahpha";
     case DeviceType.FirefoxBrowser:
-      return "https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/";
+      return "https://addons.mozilla.org/en-US/firefox/addon/tidewarden-password-manager/";
     case DeviceType.SafariBrowser:
       return "https://apps.apple.com/us/app/bitwarden/id1352778147?mt=12";
     case DeviceType.OperaBrowser:

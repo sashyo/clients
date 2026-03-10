@@ -17,9 +17,9 @@ import { AboutDialogComponent } from "../about-dialog/about-dialog.component";
 
 const RateUrls = {
   [DeviceType.ChromeExtension]:
-    "https://chromewebstore.google.com/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb/reviews",
+    "https://chromewebstore.google.com/detail/tidewarden-the-keyless-pa/dkkppmloajmghfcfgnlafdajipgahpha/reviews",
   [DeviceType.FirefoxExtension]:
-    "https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/#reviews",
+    "https://addons.mozilla.org/en-US/firefox/addon/tidewarden-password-manager/#reviews",
   [DeviceType.OperaExtension]:
     "https://addons.opera.com/en/extensions/details/bitwarden-free-password-manager/#feedback-container",
   [DeviceType.EdgeExtension]:
