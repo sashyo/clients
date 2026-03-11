@@ -70,6 +70,7 @@
     "clipboardWrite",
     "contextMenus",
     "idle",
+    "identity",
     "scripting",
     "storage",
     "tabs",

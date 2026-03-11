@@ -8,6 +8,7 @@ import { SsoUrlService } from "@bitwarden/auth/common";
 import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/sso-login.service.abstraction";
 import { CryptoFunctionService } from "@bitwarden/common/key-management/crypto/abstractions/crypto-function.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
+import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 
@@ -26,6 +27,7 @@ export class ExtensionLoginComponentService
     ssoLoginService: SsoLoginServiceAbstraction,
     private extensionAnonLayoutWrapperDataService: ExtensionAnonLayoutWrapperDataService,
     private ssoUrlService: SsoUrlService,
+    private messagingService: MessagingService,
   ) {
     super(
       cryptoFunctionService,
@@ -37,11 +39,14 @@ export class ExtensionLoginComponentService
   }
 
   /**
-   * On the extension, redirecting to the SSO login page is done via a new browser window, opened
-   * to the SSO component on the web client.
-   * @param email the email of the user trying to log in, used to look up the org SSO identifier
-   * @param state the state that will be used to verify the SSO login, which needs to be passed to the IdP
-   * @param codeChallenge the challenge that will be verified after the code is returned from the IdP, which needs to be passed to the IdP
+   * On the extension, redirecting to the SSO login page is done via a new browser window
+   * opened to the SSO component on the web client.
+   *
+   * Firefox: uses browser.identity.launchWebAuthFlow with browser.identity.getRedirectURL()
+   * as the redirect URI, providing a stable callback URL for TideCloak.
+   *
+   * Chrome: opens sso-connector.html in a new tab; auth result is relayed back via
+   * content script messaging.
    */
   protected override async redirectToSso(
     email: string,
@@ -51,8 +56,11 @@ export class ExtensionLoginComponentService
   ): Promise<void> {
     const env = await firstValueFrom(this.environmentService.environment$);
     const webVaultUrl = env.getWebVaultUrl();
+    const isFirefox = this.platformUtilsService.isFirefox();
 
-    const redirectUri = webVaultUrl + "/sso-connector.html";
+    const redirectUri = isFirefox
+      ? chrome.identity.getRedirectURL()
+      : webVaultUrl + "/sso-connector.html";
 
     const webAppSsoUrl = this.ssoUrlService.buildSsoUrl(
       webVaultUrl,
@@ -64,7 +72,14 @@ export class ExtensionLoginComponentService
       orgSsoIdentifier,
     );
 
-    this.platformUtilsService.launchUri(webAppSsoUrl);
+    if (isFirefox) {
+      // Firefox: delegate to background for browser.identity.launchWebAuthFlow.
+      // The popup may close when the auth window opens, so the background
+      // handles the flow completion and opens the SSO result popout.
+      this.messagingService.send("launchSsoAuthFlow", { url: webAppSsoUrl });
+    } else {
+      this.platformUtilsService.launchUri(webAppSsoUrl);
+    }
   }
 
   showBackButton(showBackButton: boolean): void {

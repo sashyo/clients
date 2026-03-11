@@ -492,7 +492,10 @@ module.exports.buildConfig = function buildConfig(params) {
         process: false,
         path: require.resolve("path-browserify"),
       },
-      alias: params.importAliases,
+      alias: {
+        "@tide/js": path.resolve(__dirname, "../../node_modules/@tideorg/js"),
+        ...params.importAliases,
+      },
     },
     output: {
       filename: "[name].[contenthash].js",

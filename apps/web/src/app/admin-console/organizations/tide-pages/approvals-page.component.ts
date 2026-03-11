@@ -134,7 +134,7 @@ export class OrgApprovalsPageComponent implements OnInit {
 
             // 3. Decode and add admin policy
             const requestBytes = Uint8Array.from(atob(approval.policyRequestData), (c) => c.charCodeAt(0));
-            const policyRequest = PolicySignRequest.decode(requestBytes);
+            const policyRequest = (PolicySignRequest as any).decode(requestBytes);
             if (adminPolicyBase64) {
               const adminPolicyBytes = Uint8Array.from(atob(adminPolicyBase64), (c) => c.charCodeAt(0));
               policyRequest.addPolicy(adminPolicyBytes);

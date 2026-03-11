@@ -321,6 +321,25 @@ export default class RuntimeBackground {
         await this.main.reseedStorage();
         break;
       }
+      case "launchSsoAuthFlow": {
+        try {
+          const resultUrl = await chrome.identity.launchWebAuthFlow({
+            url: msg.url,
+            interactive: true,
+          });
+          if (resultUrl) {
+            const url = new URL(resultUrl);
+            const code = url.searchParams.get("code");
+            const state = url.searchParams.get("state");
+            if (code && state) {
+              await openSsoAuthResultPopout({ code, state });
+            }
+          }
+        } catch (e) {
+          this.logService.error("SSO launchWebAuthFlow failed", e);
+        }
+        break;
+      }
       case "authResult": {
         if (!(await this.isValidVaultReferrer(msg.referrer))) {
           return;

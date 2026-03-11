@@ -710,6 +710,7 @@ const safeProviders: SafeProvider[] = [
       SsoLoginServiceAbstraction,
       ExtensionAnonLayoutWrapperDataService,
       SsoUrlService,
+      MessagingService,
     ],
   }),
   safeProvider({

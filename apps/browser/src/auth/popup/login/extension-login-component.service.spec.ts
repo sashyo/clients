@@ -11,6 +11,7 @@ import {
   Environment,
   EnvironmentService,
 } from "@bitwarden/common/platform/abstractions/environment.service";
+import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
@@ -34,6 +35,7 @@ describe("ExtensionLoginComponentService", () => {
   let ssoLoginService: MockProxy<SsoLoginServiceAbstraction>;
   let extensionAnonLayoutWrapperDataService: MockProxy<ExtensionAnonLayoutWrapperDataService>;
   let ssoUrlService: MockProxy<SsoUrlService>;
+  let messagingService: MockProxy<MessagingService>;
   beforeEach(() => {
     cryptoFunctionService = mock<CryptoFunctionService>();
     environmentService = mock<EnvironmentService>();
@@ -42,6 +44,7 @@ describe("ExtensionLoginComponentService", () => {
     ssoLoginService = mock<SsoLoginServiceAbstraction>();
     ssoUrlService = mock<SsoUrlService>();
     extensionAnonLayoutWrapperDataService = mock<ExtensionAnonLayoutWrapperDataService>();
+    messagingService = mock<MessagingService>();
     environmentService.environment$ = new BehaviorSubject<Environment>({
       getWebVaultUrl: () => baseUrl,
     } as Environment);
@@ -60,6 +63,7 @@ describe("ExtensionLoginComponentService", () => {
               ssoLoginService,
               extensionAnonLayoutWrapperDataService,
               ssoUrlService,
+              messagingService,
             ),
         },
         { provide: DefaultLoginComponentService, useExisting: ExtensionLoginComponentService },
@@ -73,6 +77,7 @@ describe("ExtensionLoginComponentService", () => {
           useValue: extensionAnonLayoutWrapperDataService,
         },
         { provide: SsoUrlService, useValue: ssoUrlService },
+        { provide: MessagingService, useValue: messagingService },
       ],
     });
     service = TestBed.inject(ExtensionLoginComponentService);
@@ -98,7 +103,9 @@ describe("ExtensionLoginComponentService", () => {
 
       expect(ssoLoginService.setSsoState).toHaveBeenCalledWith(expectedState);
       expect(ssoLoginService.setCodeVerifier).toHaveBeenCalledWith(codeVerifier);
-      expect(platformUtilsService.launchUri).toHaveBeenCalled();
+      expect(messagingService.send).toHaveBeenCalledWith("launchSsoAuthFlow", {
+        url: expect.any(String),
+      });
     });
   });
 
@@ -128,7 +135,9 @@ describe("ExtensionLoginComponentService", () => {
       );
       expect(ssoLoginService.setSsoState).toHaveBeenCalledWith(expectedState);
       expect(ssoLoginService.setCodeVerifier).toHaveBeenCalledWith(codeVerifier);
-      expect(platformUtilsService.launchUri).toHaveBeenCalled();
+      expect(messagingService.send).toHaveBeenCalledWith("launchSsoAuthFlow", {
+        url: expect.any(String),
+      });
     });
   });
 

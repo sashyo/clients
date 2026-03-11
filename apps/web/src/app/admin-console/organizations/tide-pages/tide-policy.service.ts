@@ -6,7 +6,7 @@
  *   2. Initialize (sign) it via the TideCloak enclave
  *   3. Encode to base64 for backend storage
  *
- * Uses heimdall-tide and asgard-tide (lazy-loaded).
+ * Uses heimdall-tide and @tideorg/js (lazy-loaded).
  */
 
 // Lazy-loaded Tide libraries
@@ -24,13 +24,12 @@ export async function loadTideLibs(): Promise<boolean> {
   }
   try {
     const heimdall = await import("heimdall-tide");
-    const asgard = await import("asgard-tide");
-    const tideorgJs = await import("@tideorg/js/dist/Models/Policy.js");
-    PolicyV3 = tideorgJs.Policy;       // latestVersion = "3", modelIds as array
+    const tideorg = await import("@tideorg/js");
+    PolicyV3 = tideorg.Models.Policy;       // latestVersion = "3", modelIds as array
     PolicySignRequest = heimdall.PolicySignRequest;
-    TideMemory = asgard.TideMemory;
-    ApprovalType = asgard.ApprovalType;
-    ExecutionType = asgard.ExecutionType;
+    TideMemory = tideorg.Tools.TideMemory;
+    ApprovalType = tideorg.Models.ApprovalType;
+    ExecutionType = tideorg.Models.ExecutionType;
     tideLibsAvailable = true;
   } catch {
     tideLibsAvailable = false;
@@ -97,7 +96,7 @@ export async function createSignedPolicyRequest(
   tideCloakService: { createTideRequest: (data: Uint8Array) => Promise<Uint8Array> },
 ): Promise<{ policyRequestBase64: string; contractId: string }> {
   if (!tideLibsAvailable) {
-    throw new Error("Tide libraries (heimdall-tide, asgard-tide) not loaded. Call loadTideLibs() first.");
+    throw new Error("Tide libraries (heimdall-tide, @tideorg/js) not loaded. Call loadTideLibs() first.");
   }
 
   // 1. Compute contract ID from source (SHA-512 hash)
