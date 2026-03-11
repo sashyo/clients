@@ -784,6 +784,8 @@ export default class MainBackground {
       this.vaultTimeoutSettingsService,
       this.accountService,
       { createRequest: (url, request) => new Request(url, request) },
+      null, // customUserAgent
+      this.tideCloakService,
     );
 
     this.organizationUserApiService = new DefaultOrganizationUserApiService(this.apiService);

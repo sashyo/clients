@@ -15,6 +15,7 @@ import {
 } from "@bitwarden/common/admin-console/models/collections";
 
 import { ApiService as ApiServiceAbstraction } from "../abstractions/api.service";
+import { TideCloakService } from "../key-management/tidecloak/abstractions/tidecloak.service";
 import { OrganizationConnectionType } from "../admin-console/enums";
 import { CollectionBulkDeleteRequest } from "../admin-console/models/request/collection-bulk-delete.request";
 import { OrganizationSponsorshipCreateRequest } from "../admin-console/models/request/organization/organization-sponsorship-create.request";
@@ -151,9 +152,31 @@ export class ApiService implements ApiServiceAbstraction {
     private readonly accountService: AccountService,
     private readonly httpOperations: HttpOperations,
     private customUserAgent: string = null,
+    private tideCloakService?: TideCloakService,
   ) {
     this.device = platformUtilsService.getDevice();
     this.deviceType = this.device.toString();
+
+    // Register a doken refresh callback so the ORK enclave can obtain a
+    // fresh doken when the current one expires.  This triggers a Bitwarden
+    // token refresh which round-trips through TideCloak to get a new doken.
+    if (this.tideCloakService) {
+      this.tideCloakService.setDokenRefreshCallback(async () => {
+        try {
+          const userId = await firstValueFrom(
+            this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+          );
+          if (!userId) {
+            return null;
+          }
+          await this.refreshAccessToken(userId);
+          return this.tideCloakService?.getDoken() ?? null;
+        } catch (e) {
+          this.logService.error(`[ApiService] Doken refresh failed: ${e}`);
+          return null;
+        }
+      });
+    }
   }
 
   // Auth APIs
@@ -1526,6 +1549,12 @@ export class ApiService implements ApiServiceAbstraction {
         vaultTimeout,
         tokenResponse.refreshToken,
       );
+
+      // Update doken on TideCloakService so ORK enclaves stay authorized
+      if (tokenResponse.doken && this.tideCloakService) {
+        await this.tideCloakService.updateDoken(tokenResponse.doken);
+      }
+
       return refreshedTokens.accessToken;
     } else {
       const error = await this.handleTokenRefreshRequestError(response);

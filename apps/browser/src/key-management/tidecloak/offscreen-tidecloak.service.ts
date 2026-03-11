@@ -229,6 +229,10 @@ export class OffscreenTideCloakService extends TideCloakService {
     return null;
   }
 
+  setDokenRefreshCallback(_fn: () => Promise<string | null>): void {
+    // No-op: browser extension doesn't support sign operations that need doken refresh
+  }
+
   destroy(): void {
     if (this._initialized) {
       // Send cleanup message to the offscreen document

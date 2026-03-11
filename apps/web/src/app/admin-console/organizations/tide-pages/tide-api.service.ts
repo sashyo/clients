@@ -52,8 +52,8 @@ export function createBackendPolicyApprovalsAPI(apiService: ApiService, orgId: s
       await apiService.send("POST", `${basePath}/${id}/revoke`, { username }, true, false);
     },
 
-    commit: async (id: string, signedPolicyData?: string, signedPolicySignature?: string) => {
-      await apiService.send("POST", `${basePath}/${id}/commit`, { signedPolicyData, signedPolicySignature }, true, false);
+    commit: async (id: string, signedPolicyData?: string, signedPolicySignature?: string, doken?: string) => {
+      await apiService.send("POST", `${basePath}/${id}/commit`, { signedPolicyData, signedPolicySignature, doken }, true, false);
     },
 
     cancel: async (id: string) => {

@@ -1,6 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
-import { APP_INITIALIZER, ErrorHandler, LOCALE_ID, NgModule } from "@angular/core";
+import { APP_INITIALIZER, ErrorHandler, InjectionToken, LOCALE_ID, NgModule } from "@angular/core";
 import { Router } from "@angular/router";
 import { Subject } from "rxjs";
 
@@ -423,6 +423,7 @@ import { NoopViewCacheService } from "../platform/view-cache/internal";
 
 import {
   CLIENT_TYPE,
+  CUSTOM_USER_AGENT,
   DEFAULT_VAULT_TIMEOUT,
   DOCUMENT,
   ENV_ADDITIONAL_REGIONS,
@@ -837,6 +838,10 @@ const safeProviders: SafeProvider[] = [
     useValue: { createRequest: (url, request) => new Request(url, request) },
   }),
   safeProvider({
+    provide: CUSTOM_USER_AGENT,
+    useValue: null,
+  }),
+  safeProvider({
     provide: ApiServiceAbstraction,
     useClass: ApiService,
     deps: [
@@ -850,6 +855,8 @@ const safeProviders: SafeProvider[] = [
       VaultTimeoutSettingsService,
       AccountService,
       HTTP_OPERATIONS,
+      CUSTOM_USER_AGENT,
+      TideCloakService,
     ],
   }),
   safeProvider({

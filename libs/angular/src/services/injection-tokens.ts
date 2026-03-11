@@ -62,3 +62,4 @@ export const ENV_ADDITIONAL_REGIONS = new SafeInjectionToken<RegionConfig[]>(
 );
 
 export const HTTP_OPERATIONS = new SafeInjectionToken<HttpOperations>("HTTP_OPERATIONS");
+export const CUSTOM_USER_AGENT = new SafeInjectionToken<string | null>("CUSTOM_USER_AGENT");

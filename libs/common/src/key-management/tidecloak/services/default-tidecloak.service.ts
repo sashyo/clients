@@ -14,6 +14,7 @@ export class DefaultTideCloakService extends TideCloakService {
   private _encryptionScope: EncryptionScope | null = null;
   // Serialization queue — RequestEnclave can't handle concurrent postMessage operations
   private _opQueue: Promise<any> = Promise.resolve();
+  private _dokenRefreshFn: (() => Promise<string | null>) | null = null;
 
   constructor(private logService: LogService) {
     super();
@@ -59,6 +60,31 @@ export class DefaultTideCloakService extends TideCloakService {
 
     this.tc.initRequestEnclave();
     await this.tc.requestEnclave.initDone;
+
+    // Override the enclave's dokenRefreshCallback so that when the ORK
+    // detects an expired doken it can obtain a truly fresh one via
+    // Bitwarden's token refresh (which round-trips through TideCloak).
+    // The default callback just calls ensureTokenReady() which is a no-op
+    // because we set tokenParsed.exp to 1 year.
+    const self = this;
+    this.tc.requestEnclave.dokenRefreshCallback = async () => {
+      if (self._dokenRefreshFn) {
+        try {
+          const freshDoken = await self._dokenRefreshFn();
+          if (freshDoken) {
+            self.tc.doken = freshDoken;
+            self.tc.dokenParsed = JSON.parse(atob(freshDoken.split(".")[1]));
+            await self.persistDoken(freshDoken);
+            self.logService.info("[TideCloak] Doken refreshed via callback");
+            return freshDoken;
+          }
+        } catch (e) {
+          self.logService.error(`[TideCloak] Doken refresh callback failed: ${e}`);
+        }
+      }
+      // Fallback: return the current doken (may be stale)
+      return self.tc.doken;
+    };
 
     await this.persistConfig(config);
     await this.persistDoken(doken);
@@ -127,8 +153,10 @@ export class DefaultTideCloakService extends TideCloakService {
 
   async ensureInitialized(): Promise<boolean> {
     if (this.tc?.requestEnclave != null) {
+      this.logService.info(`[TideCloak] ensureInitialized: already initialized, doken=${this.tc.doken ? 'present' : 'MISSING'}`);
       return true;
     }
+    this.logService.info(`[TideCloak] ensureInitialized: NOT initialized, tc=${!!this.tc}`);
 
     // Avoid concurrent re-initialization attempts
     if (this.initializingPromise != null) {
@@ -196,7 +224,7 @@ export class DefaultTideCloakService extends TideCloakService {
     if (!this.tc?.createTideRequest) {
       throw new Error("[TideCloak] createTideRequest not available — enclave not initialized");
     }
-    this.logService.info(`[TideCloak] createTideRequest: ${encodedRequest.length} bytes`);
+    this.logService.info(`[TideCloak] createTideRequest: ${encodedRequest.length} bytes, doken=${this.tc.doken ? 'present(' + this.tc.doken.substring(0, 20) + '...)' : 'MISSING'}, enclave=${!!this.tc.requestEnclave}, enclaveClosed=${this.tc.requestEnclave?.enclaveClosed?.()}`);
     // Serialize through the operation queue like encrypt/decrypt
     const op = this._opQueue.then(() =>
       this.tc.createTideRequest(encodedRequest),
@@ -238,11 +266,20 @@ export class DefaultTideCloakService extends TideCloakService {
     if (!this.tc?.executeSignRequest) {
       throw new Error("[TideCloak] executeSignRequest not available — enclave not initialized");
     }
-    return await this.tc.executeSignRequest(request, initialize);
+    // Serialize through the operation queue like encrypt/decrypt
+    const op = this._opQueue.then(() =>
+      this.tc.executeSignRequest(request, initialize),
+    );
+    this._opQueue = op.catch(() => {});
+    return await op;
   }
 
   getDoken(): string | null {
     return this.tc?.doken ?? null;
+  }
+
+  setDokenRefreshCallback(fn: () => Promise<string | null>): void {
+    this._dokenRefreshFn = fn;
   }
 
   destroy(): void {

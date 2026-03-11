@@ -86,4 +86,10 @@ export abstract class TideCloakService {
    */
   abstract setEncryptionScope(scope: EncryptionScope | null): void;
   abstract getEncryptionScope(): EncryptionScope | null;
+  /**
+   * Registers a callback that obtains a fresh doken (e.g. by triggering a
+   * Bitwarden token refresh). Called automatically by the ORK enclave when
+   * the current doken expires.
+   */
+  abstract setDokenRefreshCallback(fn: () => Promise<string | null>): void;
 }

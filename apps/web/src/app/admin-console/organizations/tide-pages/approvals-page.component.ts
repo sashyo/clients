@@ -48,6 +48,9 @@ export class OrgApprovalsPageComponent implements OnInit {
     const tideCloakService = this.tideCloakService;
     const backendAPI = createBackendPolicyApprovalsAPI(this.apiService, orgId);
     const collectionAccessAPI = createBackendCollectionAccessAPI(this.apiService, orgId);
+    // Cache approved request bytes from requestTideOperatorApproval keyed by approval id.
+    // The ORK embeds its policy authorization into the approved bytes; commit must use them.
+    const approvedRequestCache = new Map<string, Uint8Array>();
     // Wrap the policyApprovalsAPI to:
     // 1. Auto-populate policyRequestData for approvals created by backend (empty data)
     // 2. Handle signed policy data on commit via enclave
@@ -121,6 +124,7 @@ export class OrgApprovalsPageComponent implements OnInit {
           // 1. Fetch admin policy
           const adminPolicyResponse = await collectionAccessAPI.getAdminPolicy();
           const adminPolicyBase64: string | null = adminPolicyResponse?.adminPolicy || null;
+          console.info("[TideWarden] [commit] Admin policy:", adminPolicyBase64 ? adminPolicyBase64.length + " chars" : "NOT AVAILABLE");
 
           // 2. Fetch pending approvals WITH enrichment (auto-generate policyRequestData if empty)
           const approvals = await backendAPI.getPendingPolicies();
@@ -132,18 +136,33 @@ export class OrgApprovalsPageComponent implements OnInit {
             const heimdall = await import("heimdall-tide");
             const { PolicySignRequest } = heimdall;
 
-            // 3. Decode and add admin policy
-            const requestBytes = Uint8Array.from(atob(approval.policyRequestData), (c) => c.charCodeAt(0));
-            const policyRequest = (PolicySignRequest as any).decode(requestBytes);
+            // 3. Use ORK-approved bytes from cache if available.
+            // requestTideOperatorApproval embeds the ORK's policy authorization into the returned
+            // request bytes; executeSignRequest requires those authorized bytes (not the original).
+            // Decode from either cached approved bytes or original policyRequestData
+            const cachedApprovedBytes = approvedRequestCache.get(id);
+            const sourceBytes = cachedApprovedBytes
+              ?? Uint8Array.from(atob(approval.policyRequestData), (c) => c.charCodeAt(0));
+            if (cachedApprovedBytes) {
+              console.info("[TideWarden] [commit] Using cached approved bytes (", cachedApprovedBytes.length, "bytes) for", id);
+            } else {
+              console.warn("[TideWarden] [commit] No cached approved bytes for", id, "— using policyRequestData");
+            }
+            const policyRequest = PolicySignRequest.decode(sourceBytes);
+
+            // Always attach the admin policy — ORK PolicyAuthorizationFlow requires it
             if (adminPolicyBase64) {
               const adminPolicyBytes = Uint8Array.from(atob(adminPolicyBase64), (c) => c.charCodeAt(0));
               policyRequest.addPolicy(adminPolicyBytes);
+              console.info("[TideWarden] [commit] Admin policy attached (", adminPolicyBytes.length, "bytes)");
+            } else {
+              console.warn("[TideWarden] [commit] No admin policy available — ORK may reject with PolicyAuthorizationFlow error");
             }
+            let requestBytesForSign: Uint8Array = policyRequest.encode();
 
-            // 4. Execute sign request with re-initialization for fresh nonces
-            const encoded = policyRequest.encode();
-            console.info("[TideWarden] [commit] Calling executeSignRequest with", encoded.length, "bytes");
-            const signatures = await tideCloakService.executeSignRequest(encoded, true);
+            // 4. Execute sign request; approved bytes are already ORK-initialized, no re-init
+            console.info("[TideWarden] [commit] Calling executeSignRequest with", requestBytesForSign.length, "bytes");
+            const signatures = await tideCloakService.executeSignRequest(requestBytesForSign, false);
             const policySignature = signatures?.[0];
 
             if (!policySignature) {
@@ -219,6 +238,15 @@ export class OrgApprovalsPageComponent implements OnInit {
               "[TideWarden] Enclave results:",
               results.map((r) => ({ id: r.id, status: r.status })),
             );
+            // Cache approved bytes: ORK embeds its policy authorization into approved request
+            for (const res of results) {
+              if (res.status === "approved" && res.request?.length) {
+                // @tideorg/ui prefixes ids with "approval-", strip it to get the real approval id
+                const realId = res.id.replace(/^approval-/, "");
+                approvedRequestCache.set(realId, res.request);
+                console.info("[TideWarden] Cached approved bytes for", realId, "—", res.request.length, "bytes");
+              }
+            }
             return results.map((res) => {
               if (res.status === "approved") {
                 return { id: res.id, approved: { request: res.request } };
