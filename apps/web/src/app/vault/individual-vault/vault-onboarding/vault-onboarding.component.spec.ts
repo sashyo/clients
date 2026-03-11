@@ -116,6 +116,7 @@ describe("VaultOnboardingComponent", () => {
       expect((component as any).showOnboarding).toBe(false);
     });
   });
+  
 
   describe("setInstallExtLink", () => {
     it("should set extensionUrl to Chrome Web Store when isChrome is true", async () => {
