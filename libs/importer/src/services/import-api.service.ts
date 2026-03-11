@@ -1,4 +1,5 @@
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { CollectionResponse } from "@bitwarden/common/admin-console/models/collections/collection.response";
 import { ImportCiphersRequest } from "@bitwarden/common/models/request/import-ciphers.request";
 import { ImportOrganizationCiphersRequest } from "@bitwarden/common/models/request/import-organization-ciphers.request";
 
@@ -22,5 +23,20 @@ export class ImportApiService implements ImportApiServiceAbstraction {
       true,
       false,
     );
+  }
+
+  async createCollection(
+    organizationId: string,
+    name: string,
+    externalId?: string,
+  ): Promise<CollectionResponse> {
+    const r = await this.apiService.send(
+      "POST",
+      "/organizations/" + organizationId + "/collections",
+      { name, externalId },
+      true,
+      true,
+    );
+    return new CollectionResponse(r);
   }
 }

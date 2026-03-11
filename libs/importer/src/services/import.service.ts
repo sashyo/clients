@@ -243,8 +243,9 @@ export class ImportService implements ImportServiceAbstraction {
           promptForPassword_callback,
         );
       case "lastpasscsv":
-      case "passboltcsv":
         return new LastPassCsvImporter();
+      case "passboltcsv":
+        return new BitwardenCsvImporter();
       case "keepassxcsv":
         return new KeePassXCsvImporter();
       case "aviracsv":
@@ -411,19 +412,64 @@ export class ImportService implements ImportServiceAbstraction {
       cipher.organizationId = organizationId;
     });
 
-    const encryptedCiphers = await this.cipherService.encryptMany(importResult.ciphers, userId);
-
-    for (const encryptedCipher of encryptedCiphers) {
-      request.ciphers.push(new CipherRequest(encryptedCipher));
-    }
-
+    // Phase 1: Create collections first to get real server-assigned IDs.
+    // TideCloak ORK encryption needs real collection IDs for the org-scoped tags.
+    const collectionIds: string[] = [];
     if (importResult.collections != null) {
       for (let i = 0; i < importResult.collections.length; i++) {
         importResult.collections[i].organizationId = organizationId;
         const c = await this.collectionService.encrypt(importResult.collections[i], userId);
+
+        if (c.id) {
+          // Existing collection — already has a server ID
+          collectionIds.push(c.id);
+        } else {
+          // New collection — create on the server to get a real ID
+          const response = await this.importApiService.createCollection(
+            organizationId,
+            c.name.encryptedString,
+            c.externalId,
+          );
+          // Set the server-assigned ID so the import request recognizes it as existing
+          c.id = response.id;
+          collectionIds.push(response.id);
+        }
+
         request.collections.push(new CollectionWithIdRequest(c));
       }
     }
+
+    // Phase 2: Map collection relationships onto cipher views so each cipher
+    // knows its real collection IDs before encryption.
+    const cipherCollectionMap = new Map<number, string[]>();
+    if (importResult.collectionRelationships != null) {
+      for (const [cipherIndex, collectionIndex] of importResult.collectionRelationships) {
+        if (!cipherCollectionMap.has(cipherIndex)) {
+          cipherCollectionMap.set(cipherIndex, []);
+        }
+        cipherCollectionMap.get(cipherIndex).push(collectionIds[collectionIndex]);
+      }
+    }
+
+    // Assign real collection IDs to cipher views
+    importResult.ciphers.forEach((cipher, index) => {
+      cipher.collectionIds = cipherCollectionMap.get(index) ?? [];
+    });
+
+    // Phase 3: Set TideCloak ORK encryption scope with real collection IDs, then encrypt
+    const allCollectionIds = [...new Set(collectionIds)];
+    await this.cipherService.setOrgEncryptionScope(organizationId, allCollectionIds);
+
+    try {
+      const encryptedCiphers = await this.cipherService.encryptMany(importResult.ciphers, userId);
+
+      for (const encryptedCipher of encryptedCiphers) {
+        request.ciphers.push(new CipherRequest(encryptedCipher));
+      }
+    } finally {
+      this.cipherService.clearEncryptionScope();
+    }
+
     if (importResult.collectionRelationships != null) {
       importResult.collectionRelationships.forEach((r) =>
         request.collectionRelationships.push(new KvpRequest(r[0], r[1])),

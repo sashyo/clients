@@ -291,6 +291,19 @@ export abstract class CipherService implements UserKeyRotationDataProvider<Ciphe
   abstract getNextIdentityCipher(userId: UserId): Promise<CipherView>;
 
   /**
+   * Sets the TideCloak ORK encryption scope for org cipher operations.
+   * Must be called before encrypting org ciphers so the correct collection-scoped
+   * tags and crypto policy are used.
+   */
+  abstract setOrgEncryptionScope(orgId: string, collectionIds: string[]): Promise<void>;
+
+  /**
+   * Clears the TideCloak ORK encryption scope. Must be called after org cipher
+   * encryption is complete.
+   */
+  abstract clearEncryptionScope(): void;
+
+  /**
    * Decrypts a cipher using either the use-sdk-cipheroperationsSDK or the legacy method based on the feature flag.
    * @param cipher The cipher to decrypt.
    * @param userId The user ID to use for decryption.

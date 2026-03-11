@@ -1,5 +1,6 @@
 // FIXME: Update this file to be type safe and remove this and next line
 // @ts-strict-ignore
+import { CollectionResponse } from "@bitwarden/common/admin-console/models/collections/collection.response";
 import { ImportCiphersRequest } from "@bitwarden/common/models/request/import-ciphers.request";
 import { ImportOrganizationCiphersRequest } from "@bitwarden/common/models/request/import-organization-ciphers.request";
 
@@ -9,4 +10,9 @@ export abstract class ImportApiServiceAbstraction {
     organizationId: string,
     request: ImportOrganizationCiphersRequest,
   ) => Promise<any>;
+  createCollection: (
+    organizationId: string,
+    name: string,
+    externalId?: string,
+  ) => Promise<CollectionResponse>;
 }

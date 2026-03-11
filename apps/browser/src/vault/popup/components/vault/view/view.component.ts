@@ -221,6 +221,13 @@ export class ViewComponent {
   }
 
   async getCipherData(id: string, userId: UserId) {
+    // Fetch the encrypted cipher and decrypt it fresh (including ORK fields).
+    // The cached cipherViews$ skips ORK decryption during bulk vault load,
+    // so sensitive fields would be null if we used the cache directly.
+    const cipher = await this.cipherService.get(id, userId);
+    if (cipher != null) {
+      return await this.cipherService.decrypt(cipher, userId);
+    }
     return await firstValueFrom(
       this.cipherService.cipherViews$(userId).pipe(
         filterOutNullish(),

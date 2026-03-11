@@ -112,38 +112,41 @@ export class SendService implements InternalSendServiceAbstraction {
     if (userKey == null) {
       userKey = await firstValueFrom(this.keyService.userKey$(userId));
     }
-    // Key is not a SymmetricCryptoKey, but key material used to derive the cryptoKey
-    send.key = await this.encryptService.encryptBytes(model.key, userKey);
-    send.name =
-      model.name != null
-        ? await this.encryptService.withoutOrk(() => this.encryptService.encryptString(model.name, model.cryptoKey))
-        : null;
-    send.notes =
-      model.notes != null
-        ? await this.encryptService.encryptString(model.notes, model.cryptoKey)
-        : null;
-    if (send.type === SendType.Text) {
-      send.text = new SendText();
-      // FIXME: model.text.text can be null. encryptString should not be called with null values.
-      send.text.text = await this.encryptService.encryptString(model.text.text, model.cryptoKey);
-      send.text.hidden = model.text.hidden;
-    } else if (send.type === SendType.File) {
-      send.file = new SendFile();
-      if (file != null) {
-        if (file instanceof ArrayBuffer) {
-          const [name, data] = await this.encryptFileData(
-            model.file.fileName,
-            file,
-            model.cryptoKey,
-            userId,
-          );
-          send.file.fileName = name;
-          fileData = data;
-        } else {
-          fileData = await this.parseFile(send, file, model.cryptoKey, userId);
+    // Send content must use standard AES encryption (not ORK) because recipients
+    // decrypt using the key embedded in the Send URL, without any ORK session.
+    await this.encryptService.withoutOrk(async () => {
+      // Key is not a SymmetricCryptoKey, but key material used to derive the cryptoKey
+      send.key = await this.encryptService.encryptBytes(model.key, userKey);
+      send.name =
+        model.name != null
+          ? await this.encryptService.encryptString(model.name, model.cryptoKey)
+          : null;
+      send.notes =
+        model.notes != null
+          ? await this.encryptService.encryptString(model.notes, model.cryptoKey)
+          : null;
+      if (send.type === SendType.Text) {
+        send.text = new SendText();
+        send.text.text = await this.encryptService.encryptString(model.text.text, model.cryptoKey);
+        send.text.hidden = model.text.hidden;
+      } else if (send.type === SendType.File) {
+        send.file = new SendFile();
+        if (file != null) {
+          if (file instanceof ArrayBuffer) {
+            const [name, data] = await this.encryptFileData(
+              model.file.fileName,
+              file,
+              model.cryptoKey,
+              userId,
+            );
+            send.file.fileName = name;
+            fileData = data;
+          } else {
+            fileData = await this.parseFile(send, file, model.cryptoKey, userId);
+          }
         }
       }
-    }
+    });
 
     send.authType = model.authType;
 

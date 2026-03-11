@@ -357,6 +357,7 @@ export class CipherService implements CipherServiceAbstraction {
 
     const sdkEncryptionEnabled =
       (await this.configService.getFeatureFlag(FeatureFlag.PM22136_SdkCipherEncryption)) &&
+      !(await this.isTideCloakActive()) && // TideCloak uses ORK encryption which the SDK doesn't support
       keyForCipherEncryption == null && // PM-23085 - SDK encryption does not currently support custom keys (e.g. key rotation)
       keyForCipherKeyDecryption == null; // PM-23348 - Or has explicit methods for re-encrypting ciphers with different keys (e.g. move to org)
 
@@ -411,9 +412,9 @@ export class CipherService implements CipherServiceAbstraction {
   }
 
   async encryptMany(models: CipherView[], userId: UserId): Promise<EncryptionContext[]> {
-    const sdkEncryptionEnabled = await this.configService.getFeatureFlag(
-      FeatureFlag.PM22136_SdkCipherEncryption,
-    );
+    const sdkEncryptionEnabled =
+      (await this.configService.getFeatureFlag(FeatureFlag.PM22136_SdkCipherEncryption)) &&
+      !(await this.isTideCloakActive()); // TideCloak uses ORK encryption which the SDK doesn't support
 
     if (sdkEncryptionEnabled) {
       return await this.cipherEncryptionService.encryptMany(models, userId);
