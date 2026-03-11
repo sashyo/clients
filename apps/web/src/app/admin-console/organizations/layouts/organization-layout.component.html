@@ -96,6 +96,12 @@
       route="roles"
       *ngIf="canShowSettingsTab(organization)"
     ></bit-nav-item>
+    <bit-nav-item
+      icon="bwi-refresh"
+      text="Policy Management"
+      route="policy-management"
+      *ngIf="canShowSettingsTab(organization)"
+    ></bit-nav-item>
   </app-side-nav>
 
   <bit-callout *ngIf="orgOwnerBanner === 'committed'" type="info">

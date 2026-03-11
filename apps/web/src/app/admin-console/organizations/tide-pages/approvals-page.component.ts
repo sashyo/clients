@@ -163,6 +163,7 @@ export class OrgApprovalsPageComponent implements OnInit {
         } catch (e) {
           console.error("[TideWarden] [commit] Failed to execute policy sign request:", e);
           alert("[TideWarden] Commit signing failed: " + ((e as any)?.message || e));
+          throw e; // Don't proceed with commit if signing failed
         }
 
         console.info("[TideWarden] [commit] Calling backend commit with signedPolicyData:", signedPolicyData ? signedPolicyData.length + " chars" : "EMPTY", "sig:", signedPolicySignature ? signedPolicySignature.length + " chars" : "EMPTY");

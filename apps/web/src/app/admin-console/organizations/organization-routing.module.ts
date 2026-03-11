@@ -100,6 +100,14 @@ const routes: Routes = [
           ),
         canActivate: [organizationPermissionsGuard(canAccessSettingsTab)],
       },
+      {
+        path: "policy-management",
+        loadComponent: () =>
+          import("./tide-pages/policy-management-page.component").then(
+            (m) => m.OrgPolicyManagementPageComponent,
+          ),
+        canActivate: [organizationPermissionsGuard(canAccessSettingsTab)],
+      },
     ],
   },
 ];
