@@ -1823,7 +1823,12 @@ export class ApiService implements ApiServiceAbstraction {
     // IdentityServer will return an invalid_grant response if the refresh token has expired.
     // This means that the user's session has expired, and they need to log out.
     // We issue the logoutCallback() to log the user out through messaging.
-    if (response.status === HttpStatusCode.BadRequest && responseJson?.error === "invalid_grant") {
+    // Vaultwarden (TideCloak SSO) returns 401 Unauthorized instead of 400 invalid_grant
+    // when the TideCloak session has expired — treat that as a session expiry too.
+    if (
+      (response.status === HttpStatusCode.BadRequest && responseJson?.error === "invalid_grant") ||
+      response.status === HttpStatusCode.Unauthorized
+    ) {
       await this.logoutCallback("sessionExpired");
     }
 
