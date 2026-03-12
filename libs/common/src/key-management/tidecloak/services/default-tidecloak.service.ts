@@ -309,28 +309,38 @@ export class DefaultTideCloakService extends TideCloakService {
   }
 
   // --- Storage helpers ---
-
-  private isBrowserExtension(): boolean {
-    try {
-
-      const g = globalThis as any;
-      return g.chrome?.storage?.session != null;
-    } catch {
-      return false;
-    }
-  }
-
+  //
+  // Chrome MV3: use chrome.storage.session (session-scoped, survives service worker restarts)
+  // Firefox MV2: use browser.storage.local (persistent) because browser.storage.session
+  //   is wiped on browser restart and extension updates, and the popup has no persistent
+  //   in-memory state between open/close cycles.
+  // Web / other: fall back to sessionStorage.
 
   private get chromeSessionStorage(): any {
-    return (globalThis as any).chrome.storage.session;
+    return (globalThis as any).chrome?.storage?.session ?? null;
+  }
+
+  private get firefoxLocalStorage(): any {
+    return (globalThis as any).browser?.storage?.local ?? null;
+  }
+
+  private get extensionStorage(): { storage: any; isFirefox: boolean } | null {
+    const chrome = this.chromeSessionStorage;
+    if (chrome) {
+      return { storage: chrome, isFirefox: false };
+    }
+    const firefox = this.firefoxLocalStorage;
+    if (firefox) {
+      return { storage: firefox, isFirefox: true };
+    }
+    return null;
   }
 
   private async persistConfig(config: TideCloakConfig): Promise<void> {
     try {
-      if (this.isBrowserExtension()) {
-        await this.chromeSessionStorage.set({
-          [STORAGE_KEY_CONFIG]: JSON.stringify(config),
-        });
+      const ext = this.extensionStorage;
+      if (ext) {
+        await ext.storage.set({ [STORAGE_KEY_CONFIG]: JSON.stringify(config) });
         return;
       }
       const storage = this.getSessionStorage();
@@ -344,10 +354,9 @@ export class DefaultTideCloakService extends TideCloakService {
 
   private async persistDoken(doken: string): Promise<void> {
     try {
-      if (this.isBrowserExtension()) {
-        await this.chromeSessionStorage.set({
-          [STORAGE_KEY_DOKEN]: doken,
-        });
+      const ext = this.extensionStorage;
+      if (ext) {
+        await ext.storage.set({ [STORAGE_KEY_DOKEN]: doken });
         return;
       }
       const storage = this.getSessionStorage();
@@ -361,8 +370,9 @@ export class DefaultTideCloakService extends TideCloakService {
 
   private async loadConfig(): Promise<TideCloakConfig | null> {
     try {
-      if (this.isBrowserExtension()) {
-        const result = await this.chromeSessionStorage.get([STORAGE_KEY_CONFIG]);
+      const ext = this.extensionStorage;
+      if (ext) {
+        const result = await ext.storage.get([STORAGE_KEY_CONFIG]);
         const json = result[STORAGE_KEY_CONFIG];
         return json ? (JSON.parse(json) as TideCloakConfig) : null;
       }
@@ -379,8 +389,9 @@ export class DefaultTideCloakService extends TideCloakService {
 
   private async loadDoken(): Promise<string | null> {
     try {
-      if (this.isBrowserExtension()) {
-        const result = await this.chromeSessionStorage.get([STORAGE_KEY_DOKEN]);
+      const ext = this.extensionStorage;
+      if (ext) {
+        const result = await ext.storage.get([STORAGE_KEY_DOKEN]);
         return result[STORAGE_KEY_DOKEN] ?? null;
       }
       const storage = this.getSessionStorage();
@@ -395,10 +406,9 @@ export class DefaultTideCloakService extends TideCloakService {
 
   private clearStorage(): void {
     try {
-      if (this.isBrowserExtension()) {
-        this.chromeSessionStorage
-          .remove([STORAGE_KEY_CONFIG, STORAGE_KEY_DOKEN])
-          .catch(() => {});
+      const ext = this.extensionStorage;
+      if (ext) {
+        ext.storage.remove([STORAGE_KEY_CONFIG, STORAGE_KEY_DOKEN]).catch(() => {});
         return;
       }
       const storage = this.getSessionStorage();

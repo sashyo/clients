@@ -114,6 +114,8 @@ import { EnvironmentService } from "@bitwarden/common/platform/abstractions/envi
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
 import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { TideCloakService } from "@bitwarden/common/key-management/tidecloak/abstractions/tidecloak.service";
+import { DefaultTideCloakService } from "@bitwarden/common/key-management/tidecloak/services/default-tidecloak.service";
 import {
   MessagingService,
   MessagingService as MessagingServiceAbstraction,
@@ -267,6 +269,21 @@ const safeProviders: SafeProvider[] = [
     useFactory: (initService: InitService) => initService.init(),
     deps: [InitService],
     multi: true,
+  }),
+  safeProvider({
+    // Firefox MV2: reuse the background page's already-initialized TideCloakService so
+    // every popup/popout shares the same enclave instance without needing to re-initialize.
+    // Chrome MV3: getBackgroundPage() returns null, so fall back to a fresh instance
+    // which self-initializes from chrome.storage.session via ensureInitialized().
+    provide: TideCloakService,
+    useFactory: (logService: LogService) => {
+      const bg = BrowserApi.getBackgroundPage();
+      if (bg?.bitwardenMain?.tideCloakService) {
+        return bg.bitwardenMain.tideCloakService;
+      }
+      return new DefaultTideCloakService(logService);
+    },
+    deps: [LogService],
   }),
   safeProvider({
     provide: CryptoFunctionService,

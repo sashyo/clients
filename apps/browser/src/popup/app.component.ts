@@ -44,6 +44,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { SdkService } from "@bitwarden/common/platform/abstractions/sdk/sdk.service";
 import { MessageListener } from "@bitwarden/common/platform/messaging";
+import { SyncService } from "@bitwarden/common/platform/sync";
 import { UserId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import {
@@ -115,6 +116,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private authRequestService: AuthRequestServiceAbstraction,
     private pendingAuthRequestsState: PendingAuthRequestsStateService,
     private authRequestAnsweringService: AuthRequestAnsweringService,
+    private syncService: SyncService,
   ) {
     this.deviceTrustToastService.setupListeners$.pipe(takeUntilDestroyed()).subscribe();
 
@@ -131,6 +133,18 @@ export class AppComponent implements OnInit, OnDestroy {
     this.accountService.activeAccount$.pipe(takeUntil(this.destroy$)).subscribe((account) => {
       this.activeUserId = account?.id;
     });
+
+    // Trigger a background sync on popup open for authenticated users.
+    // The background's SyncService uses the real ApiService (with logoutCallback), so if the
+    // access token is expired it will attempt a refresh — and if the refresh token is also
+    // expired it will call logoutCallback("sessionExpired"), which sends "doneLoggingOut" and
+    // navigates us to login. This is fire-and-forget: the UI doesn't wait for it.
+    const authStatus = await firstValueFrom(this.authService.activeAccountStatus$);
+    if (authStatus === AuthenticationStatus.Unlocked) {
+      void this.syncService.fullSync(false).catch((e) =>
+        this.logService.warning("Popup-open sync failed:", e),
+      );
+    }
 
     this.authRequestAnsweringService.setupUnlockListenersForProcessingAuthRequests(this.destroy$);
 
@@ -162,6 +176,7 @@ export class AppComponent implements OnInit, OnDestroy {
                 await this.displayLogoutReason(msg.logoutReason);
               }
             });
+            await this.router.navigate(["login"]);
             this.changeDetectorRef.detectChanges();
           } else if (msg.command === "authBlocked" || msg.command === "goHome") {
             await this.router.navigate(["login"]);

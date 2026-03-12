@@ -141,12 +141,11 @@ class OffscreenDocument implements OffscreenDocumentInterface {
       const tags: string[] = message.tags;
       const policy = message.policyB64 ? this.b64ToUint8Array(message.policyB64) : undefined;
 
-      const decryptCall = policy
-        ? this.tc.decrypt([{ encrypted, tags }], policy)
-        : this.tc.requestEnclave.decrypt([{ encrypted, tags }]);
       const op = this._opQueue.then(() =>
         Promise.race([
-          decryptCall,
+          policy
+            ? this.tc.decrypt([{ encrypted, tags }], policy)
+            : this.tc.requestEnclave.decrypt([{ encrypted, tags }]),
           new Promise<never>((_, reject) =>
             setTimeout(() => reject(new Error("ORK decrypt timed out")), 30_000),
           ),

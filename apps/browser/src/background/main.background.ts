@@ -1708,7 +1708,7 @@ export default class MainBackground {
         this.accountService.activeAccount$.pipe(
           filter((account) => (account?.id ?? null) === (userId ?? null)),
           timeout({
-            first: 1_000,
+            first: 10_000,
             with: () => {
               throw new Error(
                 "The account switch process did not complete in a reasonable amount of time.",
@@ -1717,9 +1717,9 @@ export default class MainBackground {
           }),
         ),
       );
-      await this.popupViewCacheBackgroundService.clearState();
       await this.accountService.switchAccount(userId);
       await switchPromise;
+      await this.popupViewCacheBackgroundService.clearState();
 
       if (userId == null) {
         await this.refreshMenu();
