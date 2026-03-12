@@ -24,7 +24,7 @@ export function getNestedCollectionTree(
   // modifies the names of collections.
   // These changes risk affecting collections store in StateService.
   const clonedCollections: CollectionView[] | CollectionAdminView[] = collections
-    .sort((a, b) => a.name.localeCompare(b.name))
+    .sort((a, b) => (a.name ?? "").localeCompare(b.name ?? ""))
     .map(cloneCollection);
 
   const all: TreeNode<CollectionView | CollectionAdminView>[] = [];
