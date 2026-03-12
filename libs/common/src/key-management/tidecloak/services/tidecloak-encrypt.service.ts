@@ -32,6 +32,105 @@ export class TideCloakEncryptService extends EncryptServiceImplementation {
     super(cryptoFunctionService, logService, logMacFailures);
   }
 
+  /**
+   * Decrypts multiple TideCloak-encrypted EncStrings in a single ORK round-trip.
+   * Items with the same policy are sent together. Non-TideCloak items fall back to
+   * individual AES decryption. Results are returned in input order.
+   */
+  async decryptEncStringsBatch(
+    encStrings: (EncString | null)[],
+    key: SymmetricCryptoKey,
+  ): Promise<(string | null)[]> {
+    if (encStrings.length === 0) return [];
+
+    // Short-circuit: nothing to decrypt if all items are null
+    if (encStrings.every((es) => !es)) {
+      return new Array(encStrings.length).fill(null);
+    }
+
+    // Cooldown after recent ORK failure
+    if (Date.now() < this._orkDecryptCooldownUntil) {
+      throw new Error("ORK decrypt temporarily disabled after recent failure");
+    }
+
+    await this.tideCloakService.ensureInitialized();
+
+    // Split into TideCloak items (batched) vs AES items (parallel)
+    const results: (string | null)[] = new Array(encStrings.length).fill(null);
+    const tidePolicyItems: { idx: number; bytes: Uint8Array }[] = [];
+    const tideOrkItems: { idx: number; bytes: Uint8Array }[] = [];
+    const aesItems: { idx: number; encString: EncString }[] = [];
+
+    const skipOrk = this.tideCloakService.shouldSkipOrkDecrypt();
+
+    for (let i = 0; i < encStrings.length; i++) {
+      const es = encStrings[i];
+      if (!es) continue;
+      if (es.encryptionType === EncryptionType.TideCloakOrkPolicy) {
+        if (!skipOrk) tidePolicyItems.push({ idx: i, bytes: Utils.fromB64ToArray(es.data) });
+        // else: stays null — bulk vault load skips ORK-encrypted sensitive fields
+      } else if (es.encryptionType === EncryptionType.TideCloakOrk) {
+        if (!skipOrk) tideOrkItems.push({ idx: i, bytes: Utils.fromB64ToArray(es.data) });
+      } else if (es.encryptionType === EncryptionType.Plaintext) {
+        results[i] = new TextDecoder().decode(Utils.fromB64ToArray(es.data));
+      } else {
+        aesItems.push({ idx: i, encString: es });
+      }
+    }
+
+    const isInitialized = this.tideCloakService.isInitialized();
+    const decoder = new TextDecoder();
+
+    // Batch: policy-encrypted — one ORK call for all items sharing the same policy
+    if (tidePolicyItems.length > 0) {
+      const { tags, policy } = this.getDecryptionContext();
+      if (policy && isInitialized) {
+        try {
+          const decrypted = await this.tideCloakService.decryptBatch(
+            tidePolicyItems.map((p) => ({ encrypted: p.bytes, tags })),
+            policy,
+          );
+          tidePolicyItems.forEach((p, i) => {
+            results[p.idx] = decoder.decode(decrypted[i]);
+          });
+        } catch (e) {
+          this.logService.error(`[TideCloakEncrypt] ORK policy batch decryption failed: ${e}`);
+          this._orkDecryptCooldownUntil = Date.now() + 10_000;
+          throw new Error("TideCloak decryption failed. Please try again or re-login.");
+        }
+      }
+      // No policy scope or enclave not ready: results stay null
+    }
+
+    // Batch: self-encrypted (legacy selfencrypt/selfdecrypt realm roles)
+    if (tideOrkItems.length > 0 && isInitialized) {
+      try {
+        const decrypted = await this.tideCloakService.decryptBatch(
+          tideOrkItems.map((p) => ({ encrypted: p.bytes, tags: ["vaultwarden"] })),
+        );
+        tideOrkItems.forEach((p, i) => {
+          results[p.idx] = decoder.decode(decrypted[i]);
+        });
+      } catch (e) {
+        this.logService.error(`[TideCloakEncrypt] ORK batch decryption failed: ${e}`);
+        this._orkDecryptCooldownUntil = Date.now() + 10_000;
+        throw new Error("TideCloak decryption failed. Please try again or re-login.");
+      }
+    }
+
+    // AES items in parallel
+    if (aesItems.length > 0) {
+      const decrypted = await Promise.all(
+        aesItems.map(({ encString }) => super.decryptString(encString, key)),
+      );
+      aesItems.forEach(({ idx }, i) => {
+        results[idx] = decrypted[i];
+      });
+    }
+
+    return results;
+  }
+
   override async encryptString(
     plainValue: string,
     key: SymmetricCryptoKey,

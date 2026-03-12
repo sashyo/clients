@@ -420,6 +420,10 @@ export class CipherService implements CipherServiceAbstraction {
       return await this.cipherEncryptionService.encryptMany(models, userId);
     }
 
+    if (await this.isTideCloakActive()) {
+      return await this.encryptManyWithOrkBatch(models, userId);
+    }
+
     // Fallback to sequential encryption if SDK disabled
     const results: EncryptionContext[] = [];
     for (const model of models) {
@@ -593,30 +597,35 @@ export class CipherService implements CipherServiceAbstraction {
     );
 
     const allViews: CipherView[] = [];
-    // Process each org group sequentially to avoid concurrent scope conflicts
-    for (const [orgId, groupedCiphers] of Object.entries(grouped)) {
-      if (orgId !== "personal") {
-        const collectionIds = [...new Set(groupedCiphers.flatMap((c) => c.collectionIds ?? []))];
-        await this.setOrgEncryptionScope(orgId, collectionIds);
+    this.tideCloakService.setSkipOrkDecrypt(false);
+    try {
+      // Process each org group sequentially to avoid concurrent scope conflicts
+      for (const [orgId, groupedCiphers] of Object.entries(grouped)) {
+        if (orgId !== "personal") {
+          const collectionIds = [...new Set(groupedCiphers.flatMap((c) => c.collectionIds ?? []))];
+          await this.setOrgEncryptionScope(orgId, collectionIds);
+        }
+        try {
+          const key = keys.orgKeys[orgId as OrganizationId] ?? keys.userKey;
+          const views = await Promise.all(
+            groupedCiphers.map(async (cipher) => {
+              try {
+                return await cipher.decrypt(key);
+              } catch {
+                const failedView = new CipherView(cipher);
+                failedView.name = "[error: cannot decrypt]";
+                failedView.decryptionFailure = true;
+                return failedView;
+              }
+            }),
+          );
+          allViews.push(...views);
+        } finally {
+          this.clearEncryptionScope();
+        }
       }
-      try {
-        const key = keys.orgKeys[orgId as OrganizationId] ?? keys.userKey;
-        const views = await Promise.all(
-          groupedCiphers.map(async (cipher) => {
-            try {
-              return await cipher.decrypt(key);
-            } catch {
-              const failedView = new CipherView(cipher);
-              failedView.name = "[error: cannot decrypt]";
-              failedView.decryptionFailure = true;
-              return failedView;
-            }
-          }),
-        );
-        allViews.push(...views);
-      } finally {
-        this.clearEncryptionScope();
-      }
+    } finally {
+      this.tideCloakService.setSkipOrkDecrypt(true);
     }
 
     allViews.sort(this.getLocaleSortingFunction());
@@ -640,15 +649,9 @@ export class CipherService implements CipherServiceAbstraction {
     ciphers: Cipher[],
     userId: UserId,
   ): Promise<[CipherView[], CipherView[]] | null> {
-    // Skip ORK decryption during bulk vault load — sensitive fields stay encrypted in memory.
-    // Only plaintext (type 101) fields are decoded. ORK fields are decrypted on-demand
-    // when the user opens a specific cipher or clicks copy.
-    this.tideCloakService.setSkipOrkDecrypt(true);
-    try {
-      return await this.decryptCiphersInternal(ciphers, userId);
-    } finally {
-      this.tideCloakService.setSkipOrkDecrypt(false);
-    }
+    // ORK decryption is skipped by default (skipOrkDecrypt = true).
+    // Sensitive fields are decrypted on-demand when the user opens a specific cipher.
+    return await this.decryptCiphersInternal(ciphers, userId);
   }
 
   private async decryptCiphersInternal(
@@ -743,6 +746,8 @@ export class CipherService implements CipherServiceAbstraction {
       if (cipher.organizationId && cipher.collectionIds?.length > 0) {
         await this.setOrgEncryptionScope(cipher.organizationId, cipher.collectionIds);
       }
+      // Enable ORK decryption for this single cipher — user explicitly opened it
+      this.tideCloakService.setSkipOrkDecrypt(false);
       try {
         const encKey = await this.getKeyForCipherKeyDecryption(cipher, userId);
         const result = await cipher.decrypt(encKey);
@@ -751,6 +756,7 @@ export class CipherService implements CipherServiceAbstraction {
         );
         return result;
       } finally {
+        this.tideCloakService.setSkipOrkDecrypt(true);
         this.clearEncryptionScope();
       }
     }
@@ -2539,6 +2545,175 @@ export class CipherService implements CipherServiceAbstraction {
 
   private clearSortedCiphers() {
     this.sortedCiphersCache.clear();
+  }
+
+  /**
+   * Encrypts multiple ciphers in a single ORK round-trip.
+   * Collects all plaintext values from all ciphers into one array, then calls
+   * tideCloakService.encryptBatch once for the entire import batch.
+   */
+  private async encryptManyWithOrkBatch(
+    models: CipherView[],
+    userId: UserId,
+  ): Promise<EncryptionContext[]> {
+    const scope = this.tideCloakService.getEncryptionScope();
+    const tags: string[] = scope
+      ? scope.collectionIds.map((cid) => `org:${scope.orgId}:collection:${cid}`)
+      : ["vaultwarden"];
+    const policy = scope?.policy;
+    const encType = policy ? EncryptionType.TideCloakOrkPolicy : EncryptionType.TideCloakOrk;
+    const encoder = new TextEncoder();
+
+    type OrkSlot = { value: string; setter: (enc: EncString) => void };
+    const slots: OrkSlot[] = [];
+
+    // Push a slot, or immediately set null on the destination if value is empty
+    const slot = (value: string | null | undefined, setter: (enc: EncString) => void) => {
+      if (value != null && value !== "") {
+        slots.push({ value, setter });
+      } else {
+        setter(null);
+      }
+    };
+
+    const ciphers: Cipher[] = [];
+    for (const model of models) {
+      this.adjustPasswordHistoryLength(model);
+
+      const cipher = new Cipher();
+      cipher.id = model.id;
+      cipher.folderId = model.folderId;
+      cipher.favorite = model.favorite;
+      cipher.organizationId = model.organizationId;
+      cipher.type = model.type;
+      cipher.collectionIds = model.collectionIds;
+      cipher.creationDate = model.creationDate;
+      cipher.revisionDate = model.revisionDate;
+      cipher.archivedDate = model.archivedDate;
+      cipher.reprompt = model.reprompt;
+      cipher.edit = model.edit;
+      cipher.key = null;
+
+      // name: plaintext (searchable by all org members)
+      this.setPlaintextProperties(model, cipher, ["name"]);
+      // notes: ORK
+      slot(model.notes, (enc) => { cipher.notes = enc; });
+
+      switch (model.type) {
+        case CipherType.Login: {
+          const login = new Login();
+          cipher.login = login;
+          login.passwordRevisionDate = model.login.passwordRevisionDate;
+          login.autofillOnPageLoad = model.login.autofillOnPageLoad;
+          slot(model.login.username, (enc) => { login.username = enc; });
+          slot(model.login.password, (enc) => { login.password = enc; });
+          slot(model.login.totp, (enc) => { login.totp = enc; });
+
+          if (model.login.uris != null) {
+            login.uris = [];
+            const uriModels = model.login.uris.filter((u) => u.uri != null && u.uri !== "");
+            for (const uriModel of uriModels) {
+              const loginUri = new LoginUri();
+              loginUri.match = uriModel.match;
+              this.setPlaintextProperties(uriModel, loginUri, ["uri"]);
+              const hash = await this.encryptService.hash(uriModel.uri, "sha256");
+              slot(hash, (enc) => { loginUri.uriChecksum = enc; });
+              login.uris.push(loginUri);
+            }
+          }
+
+          if (model.login.fido2Credentials != null) {
+            login.fido2Credentials = model.login.fido2Credentials.map((viewKey) => {
+              const domainKey = new Fido2Credential();
+              domainKey.creationDate = viewKey.creationDate;
+              for (const prop of [
+                "credentialId", "keyType", "keyAlgorithm", "keyCurve",
+                "keyValue", "rpId", "rpName", "userHandle", "userName",
+                "userDisplayName", "origin",
+              ] as const) {
+                slot((viewKey as any)[prop], (enc) => { (domainKey as any)[prop] = enc; });
+              }
+              slot(String(viewKey.counter), (enc) => { domainKey.counter = enc; });
+              slot(String(viewKey.discoverable), (enc) => { domainKey.discoverable = enc; });
+              return domainKey;
+            });
+          }
+          break;
+        }
+        case CipherType.SecureNote:
+          cipher.secureNote = new SecureNote();
+          cipher.secureNote.type = model.secureNote.type;
+          break;
+        case CipherType.Card: {
+          const card = new Card();
+          cipher.card = card;
+          for (const prop of ["cardholderName", "brand", "number", "expMonth", "expYear", "code"] as const) {
+            slot((model.card as any)[prop], (enc) => { (card as any)[prop] = enc; });
+          }
+          break;
+        }
+        case CipherType.Identity: {
+          const identity = new Identity();
+          cipher.identity = identity;
+          for (const prop of [
+            "title", "firstName", "middleName", "lastName",
+            "address1", "address2", "address3", "city", "state",
+            "postalCode", "country", "company", "email", "phone",
+            "ssn", "username", "passportNumber", "licenseNumber",
+          ] as const) {
+            slot((model.identity as any)[prop], (enc) => { (identity as any)[prop] = enc; });
+          }
+          break;
+        }
+        case CipherType.SshKey: {
+          const sshKey = new SshKey();
+          cipher.sshKey = sshKey;
+          for (const prop of ["privateKey", "publicKey", "keyFingerprint"] as const) {
+            slot((model.sshKey as any)[prop], (enc) => { (sshKey as any)[prop] = enc; });
+          }
+          break;
+        }
+      }
+
+      if (model.fields?.length) {
+        cipher.fields = model.fields.map((fieldModel) => {
+          const field = new Field();
+          field.type = fieldModel.type;
+          field.linkedId = fieldModel.linkedId;
+          let value = fieldModel.value;
+          if (fieldModel.type === FieldType.Boolean && value !== "true") {
+            value = "false";
+          }
+          slot(fieldModel.name, (enc) => { field.name = enc; });
+          slot(value, (enc) => { field.value = enc; });
+          return field;
+        });
+      }
+
+      if (model.passwordHistory?.length) {
+        cipher.passwordHistory = model.passwordHistory.map((phModel) => {
+          const ph = new Password();
+          ph.lastUsedDate = phModel.lastUsedDate;
+          slot(phModel.password, (enc) => { ph.password = enc; });
+          return ph;
+        });
+      }
+
+      cipher.attachments = null;
+      ciphers.push(cipher);
+    }
+
+    // Single ORK call for all fields across all ciphers
+    if (slots.length > 0) {
+      const items = slots.map((s) => ({ data: encoder.encode(s.value), tags }));
+      const encrypted = await this.tideCloakService.encryptBatch(items, policy);
+      for (let i = 0; i < slots.length; i++) {
+        const b64 = Utils.fromBufferToB64(encrypted[i]);
+        slots[i].setter(new EncString(encType, b64));
+      }
+    }
+
+    return ciphers.map((cipher) => ({ cipher, encryptedFor: userId }));
   }
 
   /**

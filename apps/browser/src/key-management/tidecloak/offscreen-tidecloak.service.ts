@@ -26,7 +26,7 @@ export class OffscreenTideCloakService extends TideCloakService {
   private config: TideCloakConfig | null = null;
   private _initialized = false;
   private initializingPromise: Promise<void> | null = null;
-  private _skipOrkDecrypt = false;
+  private _skipOrkDecrypt = true;
   private _skipOrkEncrypt = false;
   private _encryptionScope: EncryptionScope | null = null;
 
@@ -77,7 +77,14 @@ export class OffscreenTideCloakService extends TideCloakService {
     this.logService.info("[OffscreenTideCloak] Enclave initialized via offscreen document");
   }
 
-  async encrypt(data: Uint8Array, tags: string[], decryptionPolicy?: Uint8Array): Promise<Uint8Array> {
+  async encryptBatch(
+    items: { data: Uint8Array; tags: string[] }[],
+    policy?: Uint8Array,
+  ): Promise<Uint8Array[]> {
+    return Promise.all(items.map((item) => this.encrypt(item.data, item.tags, policy)));
+  }
+
+  async encrypt(data: Uint8Array, tags: string[], policy?: Uint8Array): Promise<Uint8Array> {
     if (!this._initialized) {
       throw new Error("[OffscreenTideCloak] Encrypt failed: Enclave not initialized");
     }
@@ -88,7 +95,7 @@ export class OffscreenTideCloakService extends TideCloakService {
       error?: string;
     }>("tidecloakEncrypt", {
       dataB64: Utils.fromBufferToB64(data),
-      policyB64: decryptionPolicy ? Utils.fromBufferToB64(decryptionPolicy) : undefined,
+      policyB64: policy ? Utils.fromBufferToB64(policy) : undefined,
       tags,
     });
 
@@ -101,7 +108,14 @@ export class OffscreenTideCloakService extends TideCloakService {
     return Utils.fromB64ToArray(response.resultB64);
   }
 
-  async decrypt(encrypted: Uint8Array, tags: string[], decryptionPolicy?: Uint8Array): Promise<Uint8Array> {
+  async decryptBatch(
+    items: { encrypted: Uint8Array; tags: string[] }[],
+    policy?: Uint8Array,
+  ): Promise<Uint8Array[]> {
+    return Promise.all(items.map((item) => this.decrypt(item.encrypted, item.tags, policy)));
+  }
+
+  async decrypt(encrypted: Uint8Array, tags: string[], policy?: Uint8Array): Promise<Uint8Array> {
     if (!this._initialized) {
       throw new Error("[OffscreenTideCloak] Decrypt failed: Enclave not initialized");
     }
@@ -112,7 +126,7 @@ export class OffscreenTideCloakService extends TideCloakService {
       error?: string;
     }>("tidecloakDecrypt", {
       encryptedB64: Utils.fromBufferToB64(encrypted),
-      policyB64: decryptionPolicy ? Utils.fromBufferToB64(decryptionPolicy) : undefined,
+      policyB64: policy ? Utils.fromBufferToB64(policy) : undefined,
       tags,
     });
 

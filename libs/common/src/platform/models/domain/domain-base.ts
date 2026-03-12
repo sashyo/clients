@@ -2,6 +2,7 @@ import { ConditionalExcept, ConditionalKeys } from "type-fest";
 
 import { EncString } from "../../../key-management/crypto/models/enc-string";
 import { View } from "../../../models/view/view";
+import { Utils } from "../../misc/utils";
 
 import { SymmetricCryptoKey } from "./symmetric-crypto-key";
 
@@ -76,13 +77,26 @@ export default class Domain {
     key: SymmetricCryptoKey | null = null,
     objectContext: string = "No Domain Context",
   ): Promise<V> {
-    for (const prop of props) {
-      viewModel[prop] =
-        (await domain[prop]?.decrypt(
-          null,
-          key,
-          `Property: ${prop as string}; ObjectContext: ${objectContext}`,
-        )) ?? null;
+    // If the encrypt service supports batch decryption (TideCloak), collect all
+    // non-null EncStrings and decrypt them in one ORK round-trip per policy group.
+    const encryptService = Utils.getContainerService().getEncryptService() as any;
+    if (typeof encryptService.decryptEncStringsBatch === "function") {
+      const encStrings = props.map((prop) => (domain[prop] as EncString | null | undefined) ?? null);
+      const results: (string | null)[] = await encryptService.decryptEncStringsBatch(encStrings, key);
+      for (let i = 0; i < props.length; i++) {
+        viewModel[props[i]] = results[i] ?? null;
+      }
+      return viewModel as V;
+    }
+
+    // Fallback: decrypt each field in parallel (non-TideCloak environments)
+    const decrypted = await Promise.all(
+      props.map((prop) =>
+        domain[prop]?.decrypt(null, key, `Property: ${prop as string}; ObjectContext: ${objectContext}`) ?? Promise.resolve(null),
+      ),
+    );
+    for (let i = 0; i < props.length; i++) {
+      viewModel[props[i]] = decrypted[i] ?? null;
     }
 
     return viewModel as V;

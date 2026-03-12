@@ -13,8 +13,10 @@ export interface EncryptionScope {
 
 export abstract class TideCloakService {
   abstract initialize(config: TideCloakConfig, doken: string): Promise<void>;
-  abstract encrypt(data: Uint8Array, tags: string[], decryptionPolicy?: Uint8Array): Promise<Uint8Array>;
-  abstract decrypt(encrypted: Uint8Array, tags: string[], decryptionPolicy?: Uint8Array): Promise<Uint8Array>;
+  abstract encryptBatch(items: { data: Uint8Array; tags: string[] }[], policy?: Uint8Array): Promise<Uint8Array[]>;
+  abstract encrypt(data: Uint8Array, tags: string[], policy?: Uint8Array): Promise<Uint8Array>;
+  abstract decryptBatch(items: { encrypted: Uint8Array; tags: string[] }[], policy?: Uint8Array): Promise<Uint8Array[]>;
+  abstract decrypt(encrypted: Uint8Array, tags: string[], policy?: Uint8Array): Promise<Uint8Array>;
   abstract updateDoken(doken: string): Promise<void>;
   abstract isInitialized(): boolean;
   /**

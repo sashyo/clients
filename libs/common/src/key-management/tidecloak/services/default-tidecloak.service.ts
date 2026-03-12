@@ -9,12 +9,13 @@ export class DefaultTideCloakService extends TideCloakService {
   private tc: any | null = null; // TideCloak
   private config: TideCloakConfig | null = null;
   private initializingPromise: Promise<void> | null = null;
-  private _skipOrkDecrypt = false;
+  private _skipOrkDecrypt = true;
   private _skipOrkEncrypt = false;
   private _encryptionScope: EncryptionScope | null = null;
   // Serialization queue — RequestEnclave can't handle concurrent postMessage operations
   private _opQueue: Promise<any> = Promise.resolve();
   private _dokenRefreshFn: (() => Promise<string | null>) | null = null;
+
 
   constructor(private logService: LogService) {
     super();
@@ -92,45 +93,49 @@ export class DefaultTideCloakService extends TideCloakService {
     this.logService.info("[TideCloak] RequestEnclave initialized");
   }
 
-  async encrypt(data: Uint8Array, tags: string[], decryptionPolicy?: Uint8Array): Promise<Uint8Array> {
+  async encryptBatch(
+    items: { data: Uint8Array; tags: string[] }[],
+    policy?: Uint8Array,
+  ): Promise<Uint8Array[]> {
     if (!this.tc) {
       throw new Error("[TideCloak] Enclave not initialized");
     }
-    // Serialize — RequestEnclave postMessage listeners can't handle concurrent ops
-    const op = this._opQueue.then(() => {
-      // Always call requestEnclave.encrypt directly — passing the policy triggers
-      // the "policy encrypt" flow in the enclave (PolicyEnabledEncryption:1).
-      // Without policy, it uses the standard "encrypt" flow (TideSelfEncryption:1).
-      console.info(`[TideCloak] encrypt: tags=${JSON.stringify(tags)}, policy=${decryptionPolicy ? `Uint8Array(${decryptionPolicy.length})` : 'undefined'}, flow=${decryptionPolicy ? 'policy encrypt' : 'encrypt'}`);
-      return this.tc.requestEnclave.encrypt([{ data, tags }], decryptionPolicy);
-    });
+    console.info(`[TideCloak] encryptBatch: ${items.length} item(s), policy=${policy ? `Uint8Array(${policy.length})` : "undefined"}, flow=${policy ? "policy encrypt" : "encrypt"}`);
+    const op = this._opQueue.then(() => this.tc.requestEnclave.encrypt(items, policy));
     this._opQueue = op.catch(() => {});
-    const results = await op;
-    return results[0];
+    return await op;
   }
 
-  async decrypt(encrypted: Uint8Array, tags: string[], decryptionPolicy?: Uint8Array): Promise<Uint8Array> {
+  async encrypt(data: Uint8Array, tags: string[], policy?: Uint8Array): Promise<Uint8Array> {
+    return (await this.encryptBatch([{ data, tags }], policy))[0];
+  }
+
+  async decryptBatch(
+    items: { encrypted: Uint8Array; tags: string[] }[],
+    policy?: Uint8Array,
+  ): Promise<Uint8Array[]> {
     if (!this.tc) {
       throw new Error("[TideCloak] Enclave not initialized");
     }
-    // Serialize — RequestEnclave postMessage listeners can't handle concurrent ops
+    console.info(`[TideCloak] decryptBatch: ${items.length} item(s), policy=${policy ? `Uint8Array(${policy.length})` : "undefined"}`);
     const op = this._opQueue.then(() => {
-      // Always call requestEnclave.decrypt directly — passing the policy triggers
-      // the "policy decrypt" flow in the enclave (PolicyEnabledDecryption:1).
-      const decryptCall = this.tc.requestEnclave.decrypt(
-        [{ encrypted, tags }],
-        decryptionPolicy,
-      );
+      const decryptCall = this.tc.requestEnclave.decrypt(items, policy);
       return Promise.race([
         decryptCall,
         new Promise<never>((_, reject) =>
-          setTimeout(() => reject(new Error("[TideCloak] ORK decrypt timed out")), 5_000),
+          setTimeout(
+            () => reject(new Error(`[TideCloak] ORK decrypt timed out (batch of ${items.length})`)),
+            30_000,
+          ),
         ),
       ]);
     });
     this._opQueue = op.catch(() => {});
-    const results = await op;
-    return results[0];
+    return await op;
+  }
+
+  async decrypt(encrypted: Uint8Array, tags: string[], policy?: Uint8Array): Promise<Uint8Array> {
+    return (await this.decryptBatch([{ encrypted, tags }], policy))[0];
   }
 
   async updateDoken(doken: string): Promise<void> {

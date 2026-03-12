@@ -39,43 +39,60 @@ interface PendingMember {
   selector: "app-org-users-page",
   template: `
     <!-- Pending confirmations banner -->
-    <div *ngIf="pendingMembers.length > 0" class="tw-mb-4 tw-rounded tw-border tw-border-warning-600 tw-bg-warning-100 tw-p-4">
-      <h3 class="tw-m-0 tw-mb-2 tw-text-base tw-font-semibold tw-text-warning-700">
-        Members Needing Key Provisioning ({{ pendingMembers.length }})
-      </h3>
-      <p class="tw-m-0 tw-mb-3 tw-text-sm tw-text-warning-700">
-        These members need their organization encryption key provisioned. Click Confirm to encrypt and send the org key to each member.
-      </p>
-      <div class="tw-flex tw-flex-col tw-gap-2">
-        <div
-          *ngFor="let member of pendingMembers"
-          class="tw-flex tw-items-center tw-justify-between tw-rounded tw-bg-background tw-px-3 tw-py-2"
+    <div *ngIf="pendingMembers.length > 0" class="tw-mb-4 tw-rounded tw-border tw-border-warning-600 tw-bg-warning-100">
+      <button
+        class="tw-flex tw-w-full tw-cursor-pointer tw-items-center tw-justify-between tw-border-0 tw-bg-transparent tw-px-4 tw-py-3 tw-text-left"
+        (click)="bannerExpanded = !bannerExpanded"
+        type="button"
+      >
+        <h3 class="tw-m-0 tw-text-base tw-font-semibold tw-text-warning-700">
+          Members Needing Key Provisioning ({{ pendingMembers.length }})
+        </h3>
+        <svg
+          class="tw-h-4 tw-w-4 tw-flex-shrink-0 tw-text-warning-700 tw-transition-transform tw-duration-200"
+          [class.tw-rotate-180]="bannerExpanded"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
         >
-          <div>
-            <span class="tw-font-medium">{{ member.name || member.email }}</span>
-            <span *ngIf="member.name" class="tw-ml-2 tw-text-sm tw-text-muted">{{ member.email }}</span>
-            <span class="tw-ml-2 tw-rounded tw-bg-warning-600 tw-px-2 tw-py-0.5 tw-text-xs tw-text-contrast">{{ member.statusLabel }}</span>
-          </div>
-          <div class="tw-flex tw-items-center tw-gap-2">
-            <span *ngIf="member.error" class="tw-text-sm tw-text-danger">{{ member.error }}</span>
-            <button
-              class="tw-rounded tw-border-0 tw-bg-primary-600 tw-px-3 tw-py-1 tw-text-sm tw-text-contrast hover:tw-bg-primary-700 disabled:tw-opacity-50"
-              [disabled]="member.confirming"
-              (click)="confirmMember(member)"
-            >
-              {{ member.confirming ? "Confirming..." : "Confirm" }}
-            </button>
+          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+        </svg>
+      </button>
+      <div *ngIf="bannerExpanded" class="tw-border-t tw-border-warning-300 tw-px-4 tw-pb-4 tw-pt-3">
+        <p class="tw-m-0 tw-mb-3 tw-text-sm tw-text-warning-700">
+          These members need their organization encryption key provisioned. Click Confirm to encrypt and send the org key to each member.
+        </p>
+        <div class="tw-flex tw-flex-col tw-gap-2">
+          <div
+            *ngFor="let member of pendingMembers"
+            class="tw-flex tw-items-center tw-justify-between tw-rounded tw-bg-background tw-px-3 tw-py-2"
+          >
+            <div>
+              <span class="tw-font-medium">{{ member.name || member.email }}</span>
+              <span *ngIf="member.name" class="tw-ml-2 tw-text-sm tw-text-muted">{{ member.email }}</span>
+              <span class="tw-ml-2 tw-rounded tw-bg-warning-600 tw-px-2 tw-py-0.5 tw-text-xs tw-text-contrast">{{ member.statusLabel }}</span>
+            </div>
+            <div class="tw-flex tw-items-center tw-gap-2">
+              <span *ngIf="member.error" class="tw-text-sm tw-text-danger">{{ member.error }}</span>
+              <button
+                class="tw-rounded tw-border-0 tw-bg-primary-600 tw-px-3 tw-py-1 tw-text-sm tw-text-contrast hover:tw-bg-primary-700 disabled:tw-opacity-50"
+                [disabled]="member.confirming"
+                (click)="confirmMember(member)"
+              >
+                {{ member.confirming ? "Confirming..." : "Confirm" }}
+              </button>
+            </div>
           </div>
         </div>
+        <button
+          *ngIf="pendingMembers.length > 1"
+          class="tw-mt-3 tw-rounded tw-border-0 tw-bg-primary-600 tw-px-4 tw-py-2 tw-text-sm tw-text-contrast hover:tw-bg-primary-700 disabled:tw-opacity-50"
+          [disabled]="confirmingAll"
+          (click)="confirmAll()"
+        >
+          {{ confirmingAll ? "Confirming All..." : "Confirm All" }}
+        </button>
       </div>
-      <button
-        *ngIf="pendingMembers.length > 1"
-        class="tw-mt-3 tw-rounded tw-border-0 tw-bg-primary-600 tw-px-4 tw-py-2 tw-text-sm tw-text-contrast hover:tw-bg-primary-700 disabled:tw-opacity-50"
-        [disabled]="confirmingAll"
-        (click)="confirmAll()"
-      >
-        {{ confirmingAll ? "Confirming All..." : "Confirm All" }}
-      </button>
     </div>
 
     <app-react-host [component]="usersPage" [props]="usersProps"></app-react-host>
@@ -89,6 +106,7 @@ export class OrgUsersPageComponent implements OnInit {
   usersProps: Record<string, any> = {};
   pendingMembers: PendingMember[] = [];
   confirmingAll = false;
+  bannerExpanded = true;
 
   private route = inject(ActivatedRoute);
   private apiService = inject(ApiService);

@@ -185,8 +185,9 @@ export class OrgApprovalsPageComponent implements OnInit {
           throw e; // Don't proceed with commit if signing failed
         }
 
-        console.info("[TideWarden] [commit] Calling backend commit with signedPolicyData:", signedPolicyData ? signedPolicyData.length + " chars" : "EMPTY", "sig:", signedPolicySignature ? signedPolicySignature.length + " chars" : "EMPTY");
-        await backendAPI.commit(id, signedPolicyData, signedPolicySignature);
+        const doken = tideCloakService.getDoken() ?? undefined;
+        console.info("[TideWarden] [commit] Calling backend commit with signedPolicyData:", signedPolicyData ? signedPolicyData.length + " chars" : "EMPTY", "sig:", signedPolicySignature ? signedPolicySignature.length + " chars" : "EMPTY", "doken:", doken ? "present" : "MISSING");
+        await backendAPI.commit(id, signedPolicyData, signedPolicySignature, doken);
       },
     };
 
